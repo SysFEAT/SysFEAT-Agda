@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Enumerated Family: 
-An Enumerated Family is a family of Class of Entities that enumerates its classified Class of Entityies.
+An Enumerated Family is a family of Concept Classes that enumerates its classified Concept Classes.
 
 Documentation : https://framework.sysfeat.com/pages/ad05c1986ae142c1.htm
 
@@ -21,16 +21,18 @@ External references:
 module SysFEAT.UpperOntology.ad05c1986ae142c1 where -- ========== EnumeratedFamily
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.d9cce31f69371045 public -- MixedOrderMetaClass
+open import SysFEAT.UpperOntology.8d1fdcc56ae832d2 public -- FamilyMetaClass
+open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
+
 
 -- ============================================================
 -- I. Concept declaration
 -- ============================================================
 EnumeratedFamily : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
-EnumeratedFamily u = MixedOrderMetaClass u
+EnumeratedFamily u = FamilyMetaClass u
 
 -- EnumeratedFamily is subTypeOf MixedOrderMetaClass
-7fc6b2ef6ae04264 : ∀ {u v} → (EnumeratedFamily u) ⊏⋆ₑ (MixedOrderMetaClass v)
+7fc6b2ef6ae04264 : ∀ {u v} → (EnumeratedFamily u) ⊏⋆ₑ (FamilyMetaClass v)
 7fc6b2ef6ae04264 = trivialPolySubTypeOfEntity
 
 
@@ -38,6 +40,6 @@ EnumeratedFamily u = MixedOrderMetaClass u
 -- II. Relation declaration
 -- ============================================================
 {- The set of Class of Entities that are members of an Enumerated Family. -}
-memberClass : ∀ {u v} → Linkage (EnumeratedFamily u) (ClassOfEntity v)
+memberClass : ∀ {u v} → Linkage (EnumeratedFamily u) (ConceptClass v)
 memberClass = make_classOfRelation "Partitioning" "partitionedClass"
 

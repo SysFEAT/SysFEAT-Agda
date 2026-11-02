@@ -17,7 +17,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.526b679569de63eb where -- ========== Mixed-Order Element
+module SysFEAT.UpperOntology.526b679569de63eb where -- ========== MixedOrder Element
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.20702b2568e9694d public -- Class of Element
