@@ -15,11 +15,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.d745dbaa6aa3840b where -- ========== Model Package
+module SysFEAT.SOF.d745dbaa6aa3840b where -- ========== ModelPackage
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.542599db6aa21e06 public -- Container Package
-open import SysFEAT.SOF.0eb95dce6855be2e public -- Model Container
+open import SysFEAT.UpperOntology.542599db6aa21e06 public -- ContainerPackage
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 
 ModelPackage : ClassOfAbstractEntity
 ModelPackage = AbstractEntity

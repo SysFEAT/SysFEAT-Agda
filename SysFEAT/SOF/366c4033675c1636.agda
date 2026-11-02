@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/366c4033675c1636.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c4033675c1636 where -- ========== Assessment Type
+module SysFEAT.SOF.366c4033675c1636 where -- ========== AssessmentType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.366c3ea8675c13e2 public -- Appraisal Type
+open import SysFEAT.SOF.366c3ea8675c13e2 public -- AppraisalType
 
 AssessmentType : ThirdOrderClass
-AssessmentType = SecondOrderClass
+AssessmentType = PropertyType
 
 
 --  AssessmentType is subTypeOf AppraisalType
@@ -26,3 +26,4 @@ st-366c4033675c1636-366c3ea8675c13e2 : AssessmentType ⊏ₑ AppraisalType
 st-366c4033675c1636-366c3ea8675c13e2 = polySubTypeOf-identity
 
 
+-- == Relations =======================

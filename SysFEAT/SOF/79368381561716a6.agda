@@ -22,23 +22,25 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.79368381561716a6 where -- ========== Agent Type
+module SysFEAT.SOF.79368381561716a6 where -- ========== AgentType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a371a43b5b865817 public -- Operating Asset Type
-open import SysFEAT.SOF.24ae31b55ed1c66d public -- Service Interface
-open import SysFEAT.SOF.d682ef5e56144e77 public -- Action Process Type
-open import SysFEAT.SOF.333f35ee5dde0c8c public -- Interaction Process Type
-open import SysFEAT.SOF.d6cd116d5ab97525 public -- Information Domain
+open import SysFEAT.SOF.a371a43b5b865817 public -- OperatingAssetType
+open import SysFEAT.SOF.a88110996ad95aaf public -- AgentMetaClass
+open import SysFEAT.SOF.24ae31b55ed1c66d public -- ServiceInterface
+open import SysFEAT.SOF.d682ef5e56144e77 public -- ActionProcessType
+open import SysFEAT.SOF.333f35ee5dde0c8c public -- InteractionProcessType
+open import SysFEAT.SOF.d6cd116d5ab97525 public -- InformationDomain
 
-AgentType : ClassOfClassOfBoundedIndividual
-AgentType = ClassOfBoundedIndividual
-
+AgentType : AgentMetaClass
+AgentType = AssetType
 
 --  AgentType is subTypeOf OperatingAssetType
 st-79368381561716a6-a371a43b5b865817 : AgentType ⊏ₑ OperatingAssetType
 st-79368381561716a6-a371a43b5b865817 = polySubTypeOf-identity
 
+postulate -- AgentType is PowerInstanceOf Agent MetaClass
+  pi-a88110b06ad95b10 : AgentType ∷ₚₑ AgentMetaClass
 
 -- == Relations =======================
 
@@ -92,18 +94,13 @@ interactionChannel = membershipOfInteractionChannel  ∘  aggregationOfServiceIn
 A Performed Process is a Action Process Type operated by an Agent Type.
 -}
 -- Aggregate Member : Performed Process
-PerformedProcess : ClassOfClassOfBoundedIndividual
-PerformedProcess = ClassOfBoundedIndividual
-
+PerformedProcess : ClassOfClassOfIndividual
+PerformedProcess = ClassOfIndividual
 
 
 --  PerformedProcess is subTypeOf OperatingAssetPart
 st-004b03b15ebd0fdb-b776b8c668b04b35 : PerformedProcess ⊏ₑ OperatingAssetPart
 st-004b03b15ebd0fdb-b776b8c668b04b35 = polySubTypeOf-identity
-
---  PerformedProcess is subTypeOf ActionProcessType
-st-004b03b15ebd0fdb-d682ef5e56144e77 : PerformedProcess ⊏ₑ ActionProcessType
-st-004b03b15ebd0fdb-d682ef5e56144e77 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedProcess :  Linkage AgentType PerformedProcess
@@ -128,18 +125,13 @@ performedProcess = membershipOfPerformedProcess  ∘  aggregationOfActionProcess
 An Agent Part is a structural composition of a sub Agent Type within its parent Agent Type.
 -}
 -- Aggregate Member : Agent Part
-AgentPart : ClassOfClassOfBoundedIndividual
-AgentPart = ClassOfBoundedIndividual
-
+AgentPart : ClassOfClassOfIndividual
+AgentPart = ClassOfIndividual
 
 
 --  AgentPart is subTypeOf OperatingAssetPart
 st-1da6216a5ebc65f7-b776b8c668b04b35 : AgentPart ⊏ₑ OperatingAssetPart
 st-1da6216a5ebc65f7-b776b8c668b04b35 = polySubTypeOf-identity
-
---  AgentPart is subTypeOf AgentType
-st-1da6216a5ebc65f7-79368381561716a6 : AgentPart ⊏ₑ AgentType
-st-1da6216a5ebc65f7-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAgentPart :  Linkage AgentType AgentPart
@@ -164,18 +156,13 @@ agentPart = membershipOfAgentPart  ∘  aggregationOfAgentTypeAgentPart
 A Performed Interaction is an Interaction Process Type operated by an Agent Type.
 -}
 -- Aggregate Member : Performed Interaction
-PerformedInteraction : ClassOfClassOfBoundedIndividual
-PerformedInteraction = ClassOfBoundedIndividual
-
+PerformedInteraction : ClassOfClassOfIndividual
+PerformedInteraction = ClassOfIndividual
 
 
 --  PerformedInteraction is subTypeOf OperatingAssetPart
 st-07e737925eccd8f1-b776b8c668b04b35 : PerformedInteraction ⊏ₑ OperatingAssetPart
 st-07e737925eccd8f1-b776b8c668b04b35 = polySubTypeOf-identity
-
---  PerformedInteraction is subTypeOf InteractionProcessType
-st-07e737925eccd8f1-333f35ee5dde0c8c : PerformedInteraction ⊏ₑ InteractionProcessType
-st-07e737925eccd8f1-333f35ee5dde0c8c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedInteraction :  Linkage AgentType PerformedInteraction
@@ -207,10 +194,6 @@ InformationStore = ClassOfIndividual
 --  InformationStore withAspect UnboundedMember
 st-f4bee5925ee1be5b-8cfaf71a6852b042 : InformationStore ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
 st-f4bee5925ee1be5b-8cfaf71a6852b042 = polySubTypeOf-identity
-
---  InformationStore is subTypeOf InformationDomain
-st-f4bee5925ee1be5b-d6cd116d5ab97525 : InformationStore ⊏ₑ InformationDomain
-st-f4bee5925ee1be5b-d6cd116d5ab97525 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfInformationStore :  Linkage AgentType InformationStore

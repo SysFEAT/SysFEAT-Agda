@@ -21,21 +21,22 @@ External references:
 module SysFEAT.SOF.515c6b23689335c3 where -- ========== Directive
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9397c3d86877842f public -- Policy Asset
-open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- Composite Property
-open import SysFEAT.SOF.952ea6c467285821 public -- Policy Category
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
+open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
+open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.SOF.952ea6c467285821 public -- PolicyCategory
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
-Directive : PropertyType
-Directive = Property
-
---  Directive withAspect PolicyAsset
-st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ (PolicyAsset (lsuc(lzero)))
-st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
+Directive : AssetPropertyType
+Directive = CompositeProperty
 
 --  Directive is subTypeOf CompositeProperty
 st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
 st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
+
+--  Directive withAspect PolicyAsset
+st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ (PolicyAsset (lsuc(lzero)))
+st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -43,10 +44,10 @@ st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Policy Category: -}
 policyCategory :  Linkage Directive PolicyCategory
-policyCategory = make_instanceOf "Policy Category" "Policy Category"
+policyCategory = make_classOfRelation "Policy Category" "Policy Category"
 
-postulate -- policyCategory is subTypeOf categoryOfArchitectureBlock
-  st-515c6b2b689335ef-f69620606a0f9c94  : policyCategory   ⊏⋆ᵣ  categoryOfArchitectureBlock  {lsuc(lsuc(lzero))}
+postulate -- policyCategory is subTypeOf assetCategorizationScheme
+  st-515c6b2b689335ef-f69620606a0f9c94  : policyCategory   ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Directive: -}

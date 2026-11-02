@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/0eb95db46855bdd5.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb95db46855bdd5 where -- ========== Model Lexical Scope
+module SysFEAT.SOF.0eb95db46855bdd5 where -- ========== ModelLexicalScope
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5c494685141b5 public -- Block Lexical Scope
-open import SysFEAT.SOF.0eb95e566855bed9 public -- Model Building Block
-open import SysFEAT.SOF.d745e6ea6aa386e5 public -- Annotation Block
-open import SysFEAT.SOF.d745e8936aa388e0 public -- Description Note
+open import SysFEAT.UpperOntology.23d5c494685141b5 public -- BlockLexicalScope
+open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
+open import SysFEAT.SOF.d745e6ea6aa386e5 public -- AnnotationBlock
+open import SysFEAT.SOF.d745e8936aa388e0 public -- DescriptionNote
 
 ModelLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ModelLexicalScope u  = MixedOrderEntity u 

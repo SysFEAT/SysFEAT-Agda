@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/01ce05f9685979d8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.01ce05f9685979d8 where -- ========== Initiative Block
+module SysFEAT.SOF.01ce05f9685979d8 where -- ========== InitiativeBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95e566855bed9 public -- Model Building Block
+open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 
 InitiativeBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 InitiativeBlock u  = MixedOrderEntity u 

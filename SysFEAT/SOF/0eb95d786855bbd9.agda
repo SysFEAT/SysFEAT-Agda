@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/0eb95d786855bbd9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb95d786855bbd9 where -- ========== Architecture Lexical Scope
+module SysFEAT.SOF.0eb95d786855bbd9 where -- ========== ArchitectureLexicalScope
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95db46855bdd5 public -- Model Lexical Scope
-open import SysFEAT.SOF.9397b45268777e3b public -- Architecture Block
+open import SysFEAT.SOF.0eb95db46855bdd5 public -- ModelLexicalScope
+open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
 ArchitectureLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ArchitectureLexicalScope u  = MixedOrderEntity u 

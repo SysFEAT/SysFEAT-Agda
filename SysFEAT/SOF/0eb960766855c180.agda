@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/0eb960766855c180.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb960766855c180 where -- ========== Architecture Block Collection
+module SysFEAT.SOF.0eb960766855c180 where -- ========== ArchitectureBlockCollection
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- Block Collection
-open import SysFEAT.UpperOntology.5425a2df6aa225cf public -- First Order Entity
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
+open import SysFEAT.UpperOntology.3aca52346aa6418d public -- AbstractEntity
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 ArchitectureBlockCollection : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ArchitectureBlockCollection u  = MixedOrderEntity u 
@@ -27,9 +27,9 @@ ArchitectureBlockCollection u  = MixedOrderEntity u
 st-0eb960766855c180-23d5aa4868513f43 : ∀ {u v} → (ArchitectureBlockCollection u) ⊏⋆ₑ (BlockCollection v)
 st-0eb960766855c180-23d5aa4868513f43 = trivialPolySubTypeOfEntity
 
---  ArchitectureBlockCollection is subTypeOf FirstOrderEntity
-st-0eb960766855c180-5425a2df6aa225cf : ∀ {u} → (ArchitectureBlockCollection u) ⊏ₘₑ FirstOrderEntity
-st-0eb960766855c180-5425a2df6aa225cf = polySubTypeOf-identity
+--  ArchitectureBlockCollection is subTypeOf AbstractEntity
+st-0eb960766855c180-3aca52346aa6418d : ∀ {u} → (ArchitectureBlockCollection u) ⊏ₘₑ AbstractEntity
+st-0eb960766855c180-3aca52346aa6418d = polySubTypeOf-identity
 
 
 -- == Relations =======================

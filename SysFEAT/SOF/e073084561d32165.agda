@@ -16,10 +16,10 @@ module SysFEAT.SOF.e073084561d32165 where -- ========== Waiver
 
 open import Agda.Primitive
 open import SysFEAT.SOF.e073f9c161d2104a public -- Resolution
-open import SysFEAT.SOF.732799d364364423 public -- Policy Decision
+open import SysFEAT.SOF.732799d364364423 public -- PolicyDecision
 
-Waiver : ClassOfBoundedIndividual
-Waiver = BoundedIndividual
+Waiver : ClassOfIndividual
+Waiver = Individual
 
 
 --  Waiver is subTypeOf Resolution

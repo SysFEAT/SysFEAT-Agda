@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/0eb95f1b6855bf64.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb95f1b6855bf64 where -- ========== Architecture Container
+module SysFEAT.SOF.0eb95f1b6855bf64 where -- ========== ArchitectureContainer
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95d786855bbd9 public -- Architecture Lexical Scope
-open import SysFEAT.SOF.0eb95dce6855be2e public -- Model Container
-open import SysFEAT.SOF.0eb960766855c180 public -- Architecture Block Collection
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.SOF.0eb95d786855bbd9 public -- ArchitectureLexicalScope
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.SOF.0eb960766855c180 public -- ArchitectureBlockCollection
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 ArchitectureContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ArchitectureContainer u  = MixedOrderEntity u 

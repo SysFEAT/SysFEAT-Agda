@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/366c4dbc675c2776.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c4dbc675c2776 where -- ========== Architecture Decision Type
+module SysFEAT.SOF.366c4dbc675c2776 where -- ========== ArchitectureDecisionType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.366c47e1675c1c07 public -- Decision Type
+open import SysFEAT.SOF.366c47e1675c1c07 public -- DecisionType
 
 ArchitectureDecisionType : ThirdOrderClass
-ArchitectureDecisionType = SecondOrderClass
+ArchitectureDecisionType = PropertyType
 
 
 --  ArchitectureDecisionType is subTypeOf DecisionType
@@ -26,3 +26,4 @@ st-366c4dbc675c2776-366c47e1675c1c07 : ArchitectureDecisionType ⊏ₑ DecisionT
 st-366c4dbc675c2776-366c47e1675c1c07 = polySubTypeOf-identity
 
 
+-- == Relations =======================

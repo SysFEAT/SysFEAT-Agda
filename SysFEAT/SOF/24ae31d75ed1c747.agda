@@ -18,12 +18,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.24ae31d75ed1c747 where -- ========== Behavioral Event
+module SysFEAT.SOF.24ae31d75ed1c747 where -- ========== BehavioralEvent
 
 open import Agda.Primitive
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- Functional Asset
-open import SysFEAT.UpperOntology.9429979a66823f90 public -- Temporal Bounding Type
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
+open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.UpperOntology.9429979a66823f90 public -- TemporalBoundingType
+open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndividual
 
 BehavioralEvent : ClassOfClassOfIndividual
 BehavioralEvent = ClassOfIndividual

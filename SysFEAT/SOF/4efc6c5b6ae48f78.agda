@@ -6,29 +6,24 @@
 Condition Category: 
 A Condition Category is a class of  Condition Property Type.Example: Measurement Types (Performance, Security, Cost), PESTEL (political, economic, social, environmental, legal)It is used to group Condition Property Type(ies) by domain of concerns represented by Family of Measurement.
 
-Documentation : https://framework.sysfeat.com/pages/6cfb6ef26a0f15e4.htm
+Documentation : https://framework.sysfeat.com/pages/4efc6c5b6ae48f78.htm
 
  - ============================== -}
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.6cfb6ef26a0f15e4 where -- ========== Condition Category
+module SysFEAT.SOF.4efc6c5b6ae48f78 where -- ========== ConditionCategory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.f69619236a0f8dcd public -- Category
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
-open import SysFEAT.SOF.6f9c71356a0f3116 public -- Family of Measurement
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- CategoryOfEntity
+open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
 
-ConditionCategory : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
-ConditionCategory u = Category u
+ConditionCategory : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ConditionCategory u = MixedOrderEntity u
 
---  ConditionCategory is subTypeOf Category
-st-6cfb6ef26a0f15e4-f69619236a0f8dcd : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (Category v)
-st-6cfb6ef26a0f15e4-f69619236a0f8dcd = trivialPolySubTypeOfEntity
-
---  ConditionCategory is subTypeOf ModelPropertyBlock
-st-6cfb6ef26a0f15e4-0eb97aff6855cd23 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (ModelPropertyBlock v)
-st-6cfb6ef26a0f15e4-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
+--  ConditionCategory is subTypeOf CategoryOfEntity
+st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (CategoryOfEntity v)
+st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================
@@ -38,3 +33,5 @@ st-6cfb6ef26a0f15e4-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 familyOfMeasurement : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
 familyOfMeasurement = make_classOfRelation "Family of Measurement" "Family of Measurement"
 
+postulate -- familyOfMeasurement is subTypeOf categorizationFamily
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → familyOfMeasurement {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}

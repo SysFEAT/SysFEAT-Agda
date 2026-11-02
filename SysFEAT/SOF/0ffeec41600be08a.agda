@@ -18,20 +18,16 @@ External references:
 module SysFEAT.SOF.0ffeec41600be08a where -- ========== Initiative
 
 open import Agda.Primitive
-open import SysFEAT.SOF.01ce05f9685979d8 public -- Initiative Block
-open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- Bounded Individual
-open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- Block Collection
-open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- Responsible Human Entity
-open import SysFEAT.EA.fe1c250d678803b6 public -- Individual Resource Behavior
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
+open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
+open import SysFEAT.SOF.01ce05f9685979d8 public -- InitiativeBlock
+open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
 
 Initiative : ClassOfBoundedIndividual
 Initiative = BoundedIndividual
 
-
---  Initiative withAspect InitiativeBlock
-st-0ffeec41600be08a-01ce05f9685979d8 : Initiative ⊏ₐₑ (InitiativeBlock lzero)
-st-0ffeec41600be08a-01ce05f9685979d8 = polySubTypeOf-identity
 
 --  Initiative is subTypeOf BoundedIndividual
 st-0ffeec41600be08a-28f07b2354be0d69 : Initiative ⊏ₑ BoundedIndividual
@@ -40,6 +36,10 @@ st-0ffeec41600be08a-28f07b2354be0d69 = polySubTypeOf-identity
 --  Initiative withAspect BlockCollection
 st-0ffeec41600be08a-23d5aa4868513f43 : Initiative ⊏ₐₑ (BlockCollection lzero)
 st-0ffeec41600be08a-23d5aa4868513f43 = polySubTypeOf-identity
+
+--  Initiative withAspect InitiativeBlock
+st-0ffeec41600be08a-01ce05f9685979d8 : Initiative ⊏ₐₑ (InitiativeBlock lzero)
+st-0ffeec41600be08a-01ce05f9685979d8 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -51,42 +51,6 @@ steeringAuthority = make_holonymyRelation "Steering Authority" "Steering Authori
 
 postulate -- steeringAuthority is subTypeOf referenceHolonymy
   st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority  ⊏⋆ᵣ  referenceHolonymy
-
--- -------------------------------------------------------------------------------------------- 
-{- Course of Action: 
-A plan recognized by an enterprise as being essential to achieving its goals - i.e. a strategic specification of what the enterprise does. In other words, a Course of Action channels efforts towards Desired Results.Business Capabilities might be required by an Enterprise to conduct its Courses of Action.
--}
--- Aggregate Member : Course of Action
-CourseOfAction : AggregateHolonymyType
-CourseOfAction = AggregateHolonymy
-
-
-
---  CourseOfAction is subTypeOf AggregateHolonymy
-st-a56baa0c689c4e7a-c2f2c9a166ea50e2 : CourseOfAction ⊏ₑ AggregateHolonymy
-st-a56baa0c689c4e7a-c2f2c9a166ea50e2 = polySubTypeOf-identity
-
---  CourseOfAction is subTypeOf IndividualResourceBehavior
-st-a56baa0c689c4e7a-fe1c250d678803b6 : CourseOfAction ⊏ₑ IndividualResourceBehavior
-st-a56baa0c689c4e7a-fe1c250d678803b6 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfCourseOfAction :  Linkage Initiative CourseOfAction
-membershipOfCourseOfAction = make_upwardNestingRelation "courseOfAction membership" "nested courseOfAction"
-
--- Aggregation relation
-aggregationOfIndividualResourceBehaviorCourseOfAction :  Linkage CourseOfAction IndividualResourceBehavior
-aggregationOfIndividualResourceBehaviorCourseOfAction = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
-
-{- courseOfAction : derived relation obtained by composing
-   membershipOfCourseOfAction and aggregationOfIndividualResourceBehaviorCourseOfAction
-   It directly links an Initiative to the final aggregated IndividualResourceBehavior
-   hiding the reifying CourseOfAction
--}
-courseOfAction : Linkage Initiative IndividualResourceBehavior
-courseOfAction = membershipOfCourseOfAction  ∘  aggregationOfIndividualResourceBehaviorCourseOfAction
-
-
 
 -- -------------------------------------------------------------------------------------------- 
 {- Initiative Subject: 
@@ -120,4 +84,40 @@ initiativeSubject {u} {w}  = membershipOfInitiativeSubject {u}   ∘  aggregatio
 
 postulate -- initiativeSubject is subTypeOf referenceHolonymy
   st-0f642fd06859b0d5-9653a95669701e02  : initiativeSubject  ⊏⋆ᵣ  referenceHolonymy
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Course of Action: 
+A plan recognized by an enterprise as being essential to achieving its goals - i.e. a strategic specification of what the enterprise does. In other words, a Course of Action channels efforts towards Desired Results.Business Capabilities might be required by an Enterprise to conduct its Courses of Action.
+-}
+-- Aggregate Member : Course of Action
+CourseOfAction : ClassOfBoundedIndividual
+CourseOfAction = BoundedIndividual
+
+
+
+--  CourseOfAction is subTypeOf AggregateHolonymy
+st-a56baa0c689c4e7a-c2f2c9a166ea50e2 : CourseOfAction ⊏ₑ AggregateHolonymy
+st-a56baa0c689c4e7a-c2f2c9a166ea50e2 = polySubTypeOf-identity
+
+--  CourseOfAction is subTypeOf IndividualResourceBehavior
+st-a56baa0c689c4e7a-fe1c250d678803b6 : CourseOfAction ⊏ₑ IndividualResourceBehavior
+st-a56baa0c689c4e7a-fe1c250d678803b6 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfCourseOfAction :  Linkage Initiative CourseOfAction
+membershipOfCourseOfAction = make_upwardNestingRelation "courseOfAction membership" "nested courseOfAction"
+
+-- Aggregation relation
+aggregationOfIndividualResourceBehaviorCourseOfAction :  Linkage CourseOfAction IndividualResourceBehavior
+aggregationOfIndividualResourceBehaviorCourseOfAction = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
+
+{- courseOfAction : derived relation obtained by composing
+   membershipOfCourseOfAction and aggregationOfIndividualResourceBehaviorCourseOfAction
+   It directly links an Initiative to the final aggregated IndividualResourceBehavior
+   hiding the reifying CourseOfAction
+-}
+courseOfAction : Linkage Initiative IndividualResourceBehavior
+courseOfAction = membershipOfCourseOfAction  ∘  aggregationOfIndividualResourceBehaviorCourseOfAction
+
 

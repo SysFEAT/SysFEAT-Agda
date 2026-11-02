@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.333f35ee5dde0c8c where -- ========== Interaction Process Type
+module SysFEAT.SOF.333f35ee5dde0c8c where -- ========== InteractionProcessType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.986cd4ec5ffca3ac public -- Behavior Type
-open import SysFEAT.SOF.30223b5c5ec90c01 public -- Outcome Event
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
+open import SysFEAT.SOF.986cd4ec5ffca3ac public -- BehaviorType
+open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
-InteractionProcessType : ClassOfClassOfBoundedIndividual
-InteractionProcessType = ClassOfBoundedIndividual
+InteractionProcessType : BehaviorMetaClass
+InteractionProcessType = BehaviorType
 
 
 --  InteractionProcessType is subTypeOf BehaviorType
@@ -51,9 +51,8 @@ postulate -- realizedScenario is subTypeOf realizedBehavior
 -- -------------------------------------------------------------------------------------------- 
 {- Interaction Flow: -}
 -- Aggregate Member : Interaction Flow
-InteractionFlow : ClassOfClassOfBoundedIndividual
-InteractionFlow = ClassOfBoundedIndividual
-
+InteractionFlow : ClassOfClassOfIndividual
+InteractionFlow = ClassOfIndividual
 
 
 --  InteractionFlow is subTypeOf TemporalOrderingType
@@ -87,18 +86,13 @@ interactionFlow = membershipOfInteractionFlow  ∘  aggregationOfOutcomeEventInt
 A Scenario Participant is a Behavior Participant engaged in Interaction Flow the context of an Interaction Process Type.
 -}
 -- Aggregate Member : Scenario Participant
-ScenarioParticipant : ClassOfClassOfBoundedIndividual
-ScenarioParticipant = ClassOfBoundedIndividual
-
+ScenarioParticipant : ClassOfClassOfIndividual
+ScenarioParticipant = ClassOfIndividual
 
 
 --  ScenarioParticipant is subTypeOf BehaviorParticipant
 st-07e737495eccd831-e0e86fad65789c43 : ScenarioParticipant ⊏ₑ BehaviorParticipant
 st-07e737495eccd831-e0e86fad65789c43 = polySubTypeOf-identity
-
---  ScenarioParticipant is subTypeOf AgentType
-st-07e737495eccd831-79368381561716a6 : ScenarioParticipant ⊏ₑ AgentType
-st-07e737495eccd831-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfScenarioParticipant :  Linkage InteractionProcessType ScenarioParticipant

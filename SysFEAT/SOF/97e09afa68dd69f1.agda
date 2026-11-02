@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/97e09afa68dd69f1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.97e09afa68dd69f1 where -- ========== Resolution Outcome
+module SysFEAT.SOF.97e09afa68dd69f1 where -- ========== ResolutionOutcome
 
 open import Agda.Primitive
-open import SysFEAT.SOF.66628b5668dd5a25 public -- Appraisal Option
-open import SysFEAT.SOF.366c4627675c1aad public -- Resolution Type
+open import SysFEAT.SOF.66628b5668dd5a25 public -- AppraisalOption
+open import SysFEAT.SOF.366c4627675c1aad public -- ResolutionType
 
 ResolutionOutcome : PropertyType
 ResolutionOutcome = Property
@@ -32,7 +32,7 @@ st-97e09afa68dd69f1-66628b5668dd5a25 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resolution Type: -}
 resolutionType :  Linkage ResolutionOutcome ResolutionType
-resolutionType = make_instanceOf "Resolution Type" "Resolution Type"
+resolutionType = make_classOfRelation "Resolution Type" "Resolution Type"
 
 postulate -- resolutionType is subTypeOf appraisalType
   st-97e09c3d68dd6b51-666294f768dd64bc  : resolutionType  ⊏⋆ᵣ  appraisalType

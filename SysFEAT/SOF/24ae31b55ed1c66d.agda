@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.24ae31b55ed1c66d where -- ========== Service Interface
+module SysFEAT.SOF.24ae31b55ed1c66d where -- ========== ServiceInterface
 
 open import Agda.Primitive
-open import SysFEAT.SOF.986cd4ec5ffca3ac public -- Behavior Type
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
-open import SysFEAT.SOF.30223b5c5ec90c01 public -- Outcome Event
+open import SysFEAT.SOF.986cd4ec5ffca3ac public -- BehaviorType
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
+open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
 
-ServiceInterface : ClassOfClassOfBoundedIndividual
-ServiceInterface = ClassOfBoundedIndividual
+ServiceInterface : BehaviorMetaClass
+ServiceInterface = BehaviorType
 
 
 --  ServiceInterface is subTypeOf BehaviorType
@@ -40,9 +40,8 @@ st-24ae31b55ed1c66d-21c5276e655759fb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Service Interface: -}
 -- Aggregate Member : Sub Service Interface
-SubServiceInterface : ClassOfClassOfBoundedIndividual
-SubServiceInterface = ClassOfBoundedIndividual
-
+SubServiceInterface : ClassOfClassOfIndividual
+SubServiceInterface = ClassOfIndividual
 
 
 --  SubServiceInterface is subTypeOf BehaviorPart
@@ -72,9 +71,8 @@ subServiceInterface = membershipOfSubServiceInterface  ∘  aggregationOfService
 A Flow Connection is an Outcome Event event that occurs between the consumer and the provider participant of a Service Interface.
 -}
 -- Aggregate Member : Flow Connection
-FlowConnection : ClassOfClassOfBoundedIndividual
-FlowConnection = ClassOfBoundedIndividual
-
+FlowConnection : ClassOfClassOfIndividual
+FlowConnection = ClassOfIndividual
 
 
 --  FlowConnection is subTypeOf BehaviorPart

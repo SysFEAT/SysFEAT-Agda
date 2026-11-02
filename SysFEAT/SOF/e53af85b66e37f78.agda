@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/e53af85b66e37f78.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e53af85b66e37f78 where -- ========== Environmental Property Type
+module SysFEAT.SOF.e53af85b66e37f78 where -- ========== EnvironmentalPropertyType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e53af71366e37de2 public -- Condition Property Type
-open import SysFEAT.SOF.6f9c78916a0f34e5 public -- Environmental Condition Type
+open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
+open import SysFEAT.SOF.4efc77266ae49efb public -- EnvironmentalCategory
 
 EnvironmentalPropertyType : ThirdOrderClass
-EnvironmentalPropertyType = SecondOrderClass
+EnvironmentalPropertyType = PropertyType
 
 
 --  EnvironmentalPropertyType is subTypeOf ConditionPropertyType
@@ -30,11 +30,11 @@ st-e53af85b66e37f78-e53af71366e37de2 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Environmental Condition Type: 
-The Environmental Condition Type that an Environmental Property Type belongs to.For instance,  Economic growth  belongs to the  Policital Factor  category. 
+{- Environmental Category: 
+The Environmental Category that an Environmental Property Type belongs to.Example:-   Economic growth  belongs to the  Policital Factor  category. 
 -}
-environmentalConditionType : ∀ {u} →  Linkage EnvironmentalPropertyType (EnvironmentalConditionType u)
-environmentalConditionType = make_classOfRelation "Environmental Condition Type" "Environmental Condition Type"
+environmentalCategory : ∀ {u} →  Linkage EnvironmentalPropertyType (EnvironmentalCategory u)
+environmentalCategory = make_subTypeOf "Environmental Category" "Environmental Category"
 
-postulate -- environmentalConditionType is subTypeOf conditionCategory
-  st-6f9c790e6a0f35b2-6f9c72c26a0f3238  : environmentalConditionType  ⊏⋆ᵣ  conditionCategory
+postulate -- environmentalCategory is subTypeOf conditionCategory
+  st-4efc78bb6ae4a140-4efc6ca86ae4901b  : environmentalCategory  ⊏⋆ᵣ  conditionCategory

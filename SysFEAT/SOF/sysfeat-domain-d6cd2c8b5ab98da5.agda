@@ -18,7 +18,11 @@ open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Refl
 open import SysFEAT.SOF.sysfeat-domain-8d6d915c685f8689 public -- Information Packaging
 open import SysFEAT.UpperOntology.sysfeat-domain-fb342c5665561f29 public -- 4D Composite Knowledge Graph
 
-open import SysFEAT.SOF.d6cd2d8e5ab98edc public -- Information Map
+open import SysFEAT.SOF.cd90e5976ae187c0 public -- Information Domain
+open import SysFEAT.SOF.00330ec96ae27ee9 public -- Information Domain Group
+open import SysFEAT.SOF.00330ffb6ae2806c public -- Information Domain Map
+open import SysFEAT.SOF.003315fd6ae286f1 public -- Information Domain Family
+open import SysFEAT.SOF.4356520b6a110f68 public -- Data Category Family
 open import SysFEAT.SOF.d6cd116d5ab97525 public -- Information Domain
 open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- Information Entity
 open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset

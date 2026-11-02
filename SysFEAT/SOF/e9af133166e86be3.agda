@@ -15,21 +15,22 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e9af133166e86be3 where -- ========== Individual Event
+module SysFEAT.SOF.e9af133166e86be3 where -- ========== IndividualEvent
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- Temporal Bounding
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
+open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- TemporalBounding
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 
-IndividualEvent : BehavioralEvent
+IndividualEvent : TemporalBoundingType
 IndividualEvent = TemporalBounding
+
 
 --  IndividualEvent is subTypeOf TemporalBounding
 st-e9af133166e86be3-267b6a126675a0b9 : IndividualEvent ⊏ₑ TemporalBounding
 st-e9af133166e86be3-267b6a126675a0b9 = polySubTypeOf-identity
 
 postulate -- IndividualEvent is PowerInstanceOf Behavioral Event
-  e9af140b66e86cb9 : IndividualEvent ∷ₚₑ BehavioralEvent
+  pi-e9af140b66e86cb9 : IndividualEvent ∷ₚₑ BehavioralEvent
 postulate -- BehavioralEvent is ReflexivePowerType 
   42a948a76aad3eb1 : BehavioralEvent ⊏ₘₑ IndividualEvent
 

@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/0f641043685975c9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0f641043685975c9 where -- ========== Governance Building Block
+module SysFEAT.SOF.0f641043685975c9 where -- ========== GovernanceBuildingBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95e566855bed9 public -- Model Building Block
+open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 
 GovernanceBuildingBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 GovernanceBuildingBlock u  = MixedOrderEntity u 

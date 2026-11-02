@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/0e55206a66f11ec5.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0e55206a66f11ec5 where -- ========== Risk Type
+module SysFEAT.SOF.0e55206a66f11ec5 where -- ========== RiskType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.87d3062666e33965 public -- Property Type
+open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
 RiskType : ThirdOrderClass
-RiskType = SecondOrderClass
+RiskType = PropertyType
+
 
 --  RiskType is subTypeOf PropertyType
 st-0e55206a66f11ec5-87d3062666e33965 : RiskType ⊏ₑ PropertyType

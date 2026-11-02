@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Assurance Initiative: 
-An Assurance Initiative is an Initiative designed to uphold operational trustworthiness by mitigating Risks, countering threats, and complying with regulatory requirements.
+An Assurance Initiative is an Initiative designed to uphold operational trustworthiness by mitigating Risks, countering threats, and complying with Regulatory Frameworks.
 
 Documentation : https://framework.sysfeat.com/pages/299e895568488eb3.htm
 
@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/299e895568488eb3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.299e895568488eb3 where -- ========== Assurance Initiative
+module SysFEAT.SOF.299e895568488eb3 where -- ========== AssuranceInitiative
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d321c226601262ae public -- Enduring Initiative
+open import SysFEAT.SOF.d321c226601262ae public -- EnduringInitiative
 
 AssuranceInitiative : ClassOfBoundedIndividual
 AssuranceInitiative = BoundedIndividual

@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/66628bbe68dd5bef.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.66628bbe68dd5bef where -- ========== Governance Property
+module SysFEAT.SOF.66628bbe68dd5bef where -- ========== GovernanceProperty
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
-open import SysFEAT.SOF.83f8933a67407206 public -- Governance Property Type
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
+open import SysFEAT.SOF.83f8933a67407206 public -- GovernancePropertyType
 
 GovernanceProperty : PropertyType
 GovernanceProperty = Property
@@ -37,7 +37,7 @@ st-66628bbe68dd5bef-6662916b68dd5f84 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Governance Property Type: -}
 governancePropertyType :  Linkage GovernanceProperty GovernancePropertyType
-governancePropertyType = make_instanceOf "Governance Property Type" "Governance Property Type"
+governancePropertyType = make_classOfRelation "Governance Property Type" "Governance Property Type"
 
 postulate -- governancePropertyType is subTypeOf propertyClassification
   st-666293d768dd6238-1976247d68925c3e  : governancePropertyType  ⊏⋆ᵣ  propertyClassification

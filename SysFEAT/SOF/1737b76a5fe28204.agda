@@ -12,23 +12,23 @@ Documentation : https://framework.sysfeat.com/pages/1737b76a5fe28204.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.1737b76a5fe28204 where -- ========== Governance Activity
+module SysFEAT.SOF.1737b76a5fe28204 where -- ========== GovernanceActivity
 
 open import Agda.Primitive
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
-open import SysFEAT.UpperOntology.342f74b166156e02 public -- Whole Life Individual
+open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
 
 GovernanceActivity : ClassOfBoundedIndividual
 GovernanceActivity = BoundedIndividual
 
 
---  GovernanceActivity withAspect GovernanceInstrument
-st-1737b76a5fe28204-6662916b68dd5f84 : GovernanceActivity ⊏ₐₑ (GovernanceInstrument lzero)
-st-1737b76a5fe28204-6662916b68dd5f84 = polySubTypeOf-identity
-
 --  GovernanceActivity is subTypeOf WholeLifeIndividual
 st-1737b76a5fe28204-342f74b166156e02 : GovernanceActivity ⊏ₑ WholeLifeIndividual
 st-1737b76a5fe28204-342f74b166156e02 = polySubTypeOf-identity
+
+--  GovernanceActivity withAspect GovernanceInstrument
+st-1737b76a5fe28204-6662916b68dd5f84 : GovernanceActivity ⊏ₐₑ (GovernanceInstrument lzero)
+st-1737b76a5fe28204-6662916b68dd5f84 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -36,8 +36,8 @@ st-1737b76a5fe28204-342f74b166156e02 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Governance Activity Part: -}
 -- Aggregate Member : Governance Activity Part
-GovernanceActivityPart : AggregateHolonymyType
-GovernanceActivityPart = AggregateHolonymy
+GovernanceActivityPart : ClassOfBoundedIndividual
+GovernanceActivityPart = BoundedIndividual
 
 
 
@@ -50,19 +50,19 @@ st-fee30a85695d0bb0-1737b76a5fe28204 : GovernanceActivityPart ⊏ₑ GovernanceA
 st-fee30a85695d0bb0-1737b76a5fe28204 = polySubTypeOf-identity
 
 -- Membership relation
-fEE30A85695D0C0E :  Linkage GovernanceActivity GovernanceActivityPart
-fEE30A85695D0C0E = make_upwardNestingRelation "governanceActivityPart membership" "nested governanceActivityPart"
+membershipOfGovernanceActivityPart :  Linkage GovernanceActivity GovernanceActivityPart
+membershipOfGovernanceActivityPart = make_upwardNestingRelation "governanceActivityPart membership" "nested governanceActivityPart"
 
 -- Aggregation relation
 aggregationOfGovernanceActivityGovernanceActivityPart :  Linkage GovernanceActivityPart GovernanceActivity
 aggregationOfGovernanceActivityGovernanceActivityPart = make_Relation "GovernanceActivity aggregation" "aggregated GovernanceActivity"
 
 {- governanceActivityPart : derived relation obtained by composing
-   fEE30A85695D0C0E and aggregationOfGovernanceActivityGovernanceActivityPart
+   membershipOfGovernanceActivityPart and aggregationOfGovernanceActivityGovernanceActivityPart
    It directly links an Governance Activity to the final aggregated GovernanceActivity
    hiding the reifying GovernanceActivityPart
 -}
 governanceActivityPart : Linkage GovernanceActivity GovernanceActivity
-governanceActivityPart = fEE30A85695D0C0E  ∘  aggregationOfGovernanceActivityGovernanceActivityPart
+governanceActivityPart = membershipOfGovernanceActivityPart  ∘  aggregationOfGovernanceActivityGovernanceActivityPart
 
 

@@ -12,15 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/2cc9717155263b89.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.2cc9717155263b89 where -- ========== Governance Committee
+module SysFEAT.SOF.2cc9717155263b89 where -- ========== GovernanceCommittee
 
 open import Agda.Primitive
 open import SysFEAT.SOF.bcebd0175491272a public -- Stakeholder
-open import SysFEAT.SOF.2cc9718655263c44 public -- Individual Stakeholder
+open import SysFEAT.SOF.2cc9718655263c44 public -- IndividualStakeholder
 
 GovernanceCommittee : ClassOfBoundedIndividual
 GovernanceCommittee = BoundedIndividual
-
 
 --  GovernanceCommittee is subTypeOf Stakeholder
 st-2cc9717155263b89-bcebd0175491272a : GovernanceCommittee ⊏ₑ Stakeholder
@@ -32,8 +31,8 @@ st-2cc9717155263b89-bcebd0175491272a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Committee: -}
 -- Aggregate Member : Sub-Committee
-SubCommittee : AggregateHolonymyType
-SubCommittee = AggregateHolonymy
+SubCommittee : ClassOfBoundedIndividual
+SubCommittee = BoundedIndividual
 
 
 
@@ -68,8 +67,8 @@ subCommittee = membershipOfSubCommittee  ∘  aggregationOfGovernanceCommitteeSu
 Role of a person in a Governance Committee.
 -}
 -- Aggregate Member : Committee member
-Committeemember : AggregateHolonymyType
-Committeemember = AggregateHolonymy
+Committeemember : ClassOfBoundedIndividual
+Committeemember = BoundedIndividual
 
 
 

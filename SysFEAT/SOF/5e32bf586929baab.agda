@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/5e32bf586929baab.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.5e32bf586929baab where -- ========== Non applicable
+module SysFEAT.SOF.5e32bf586929baab where -- ========== Nonapplicable
 
 open import Agda.Primitive
-open import SysFEAT.SOF.5e32ba416929b430 public -- Policity Decision Option
+open import SysFEAT.SOF.5e32ba416929b430 public -- PolicityDecisionOption
 
-Nonapplicable : ClassOfIndividual
-Nonapplicable = Individual
+Nonapplicable : Property
+Nonapplicable = PropertyValue
 
 
 --  Nonapplicable is subTypeOf PolicityDecisionOption

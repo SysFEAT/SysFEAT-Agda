@@ -19,20 +19,22 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.986cd4ec5ffca3ac where -- ========== Behavior Type
+module SysFEAT.SOF.986cd4ec5ffca3ac where -- ========== BehaviorType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a371a43b5b865817 public -- Operating Asset Type
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
+open import SysFEAT.SOF.a371a43b5b865817 public -- OperatingAssetType
+open import SysFEAT.SOF.a881197c6ad97047 public -- BehaviorMetaClass
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
-BehaviorType : ClassOfClassOfBoundedIndividual
-BehaviorType = ClassOfBoundedIndividual
-
+BehaviorType : BehaviorMetaClass
+BehaviorType = AssetType
 
 --  BehaviorType is subTypeOf OperatingAssetType
 st-986cd4ec5ffca3ac-a371a43b5b865817 : BehaviorType ⊏ₑ OperatingAssetType
 st-986cd4ec5ffca3ac-a371a43b5b865817 = polySubTypeOf-identity
 
+postulate -- BehaviorType is PowerInstanceOf Behavior MetaClass
+  pi-a88119b66ad972ff : BehaviorType ∷ₚₑ BehaviorMetaClass
 
 -- == Relations =======================
 
@@ -57,18 +59,13 @@ postulate -- realizedBehavior is subTypeOf realizedOperatingAsset
 A Behavior Participant is the participation of an Agent Type in a Behavior Type.
 -}
 -- Aggregate Member : Behavior Participant
-BehaviorParticipant : ClassOfClassOfBoundedIndividual
-BehaviorParticipant = ClassOfBoundedIndividual
-
+BehaviorParticipant : ClassOfClassOfIndividual
+BehaviorParticipant = ClassOfIndividual
 
 
 --  BehaviorParticipant is subTypeOf OperatingAssetPart
 st-e0e86fad65789c43-b776b8c668b04b35 : BehaviorParticipant ⊏ₑ OperatingAssetPart
 st-e0e86fad65789c43-b776b8c668b04b35 = polySubTypeOf-identity
-
---  BehaviorParticipant is subTypeOf AgentType
-st-e0e86fad65789c43-79368381561716a6 : BehaviorParticipant ⊏ₑ AgentType
-st-e0e86fad65789c43-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBehaviorParticipant :  Linkage BehaviorType BehaviorParticipant
@@ -93,18 +90,13 @@ behaviorParticipant = membershipOfBehaviorParticipant  ∘  aggregationOfAgentTy
 A composed Behavior Type that is a part of the parent Behavior Type.
 -}
 -- Aggregate Member : Behavior Part
-BehaviorPart : ClassOfClassOfBoundedIndividual
-BehaviorPart = ClassOfBoundedIndividual
-
+BehaviorPart : ClassOfClassOfIndividual
+BehaviorPart = ClassOfIndividual
 
 
 --  BehaviorPart is subTypeOf OperatingAssetPart
 st-b776b92668b04c85-b776b8c668b04b35 : BehaviorPart ⊏ₑ OperatingAssetPart
 st-b776b92668b04c85-b776b8c668b04b35 = polySubTypeOf-identity
-
---  BehaviorPart is subTypeOf BehaviorType
-st-b776b92668b04c85-986cd4ec5ffca3ac : BehaviorPart ⊏ₑ BehaviorType
-st-b776b92668b04c85-986cd4ec5ffca3ac = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBehaviorPart :  Linkage BehaviorType BehaviorPart

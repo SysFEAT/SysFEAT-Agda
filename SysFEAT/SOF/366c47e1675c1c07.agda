@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/366c47e1675c1c07.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c47e1675c1c07 where -- ========== Decision Type
+module SysFEAT.SOF.366c47e1675c1c07 where -- ========== DecisionType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.366c4627675c1aad public -- Resolution Type
+open import SysFEAT.SOF.366c4627675c1aad public -- ResolutionType
 
 DecisionType : ThirdOrderClass
-DecisionType = SecondOrderClass
+DecisionType = PropertyType
+
 
 --  DecisionType is subTypeOf ResolutionType
 st-366c47e1675c1c07-366c4627675c1aad : DecisionType ⊏ₑ ResolutionType

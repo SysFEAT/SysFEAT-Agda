@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/34bd440b61f104cb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.34bd440b61f104cb where -- ========== Waiver End
+module SysFEAT.SOF.34bd440b61f104cb where -- ========== WaiverEnd
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- Temporal Bounding
+open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- TemporalBounding
 
 WaiverEnd : TemporalBoundingType
 WaiverEnd = TemporalBounding

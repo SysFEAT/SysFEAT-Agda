@@ -15,23 +15,21 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.9e3837e46192fcad where -- ========== Individual Agent
+module SysFEAT.SOF.9e3837e46192fcad where -- ========== IndividualAgent
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9f61cf9166833fb7 public -- Individual Operating Asset
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
+open import SysFEAT.SOF.9f61cf9166833fb7 public -- IndividualOperatingAsset
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
 IndividualAgent : AgentType
-IndividualAgent = BoundedIndividual
+IndividualAgent = IndividualAsset
 
 --  IndividualAgent is subTypeOf IndividualOperatingAsset
 st-9e3837e46192fcad-9f61cf9166833fb7 : IndividualAgent ⊏ₑ IndividualOperatingAsset
 st-9e3837e46192fcad-9f61cf9166833fb7 = polySubTypeOf-identity
 
 postulate -- IndividualAgent is PowerInstanceOf Agent Type
-  64ad81da68ce5cb9 : IndividualAgent ∷ₚₑ AgentType
-postulate -- AgentType is ReflexivePowerType 
-  41909af76aaa453d : AgentType ⊏ₘₑ IndividualAgent
+  pi-64ad81da68ce5cb9 : IndividualAgent ∷ₚₑ AgentType
 
 -- == Relations =======================
 

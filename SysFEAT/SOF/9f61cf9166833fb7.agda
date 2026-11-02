@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/9f61cf9166833fb7.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.9f61cf9166833fb7 where -- ========== Individual Operating Asset
+module SysFEAT.SOF.9f61cf9166833fb7 where -- ========== IndividualOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- Individual Asset
-open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- Bounded Individual
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
+open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 
-IndividualOperatingAsset : ClassOfBoundedIndividual
-IndividualOperatingAsset = BoundedIndividual
+IndividualOperatingAsset : AssetType
+IndividualOperatingAsset = IndividualAsset
 
 
 --  IndividualOperatingAsset withAspect AssetBlock
@@ -44,7 +44,7 @@ st-9f61cf9166833fb7-28f07b2354be0d69 = polySubTypeOf-identity
 Set of Capabilitys that an Individual Individual Operating Asset exhibits.
 -}
 exhibitedCapability :  Linkage IndividualOperatingAsset Capability
-exhibitedCapability = make_instanceOf "Exhibited Capability" "Exhibited Capability"
+exhibitedCapability = make_Relation "Exhibited Capability" "Exhibited Capability"
 
 postulate -- exhibitedCapability is subTypeOf propertyOfIndividual
   st-e44104b768d586bb-19763dbb68926a48  : exhibitedCapability  ⊏⋆ᵣ  propertyOfIndividual 
@@ -54,8 +54,8 @@ postulate -- exhibitedCapability is subTypeOf propertyOfIndividual
 An Individual Operating Part is the Aggregate Holonymy of an Individual Operating Asset within a parent Individual Operating Asset.
 -}
 -- Aggregate Member : Individual Operating Part
-IndividualOperatingPart : AggregateHolonymyType
-IndividualOperatingPart = AggregateHolonymy
+IndividualOperatingPart : ClassOfBoundedIndividual
+IndividualOperatingPart = BoundedIndividual
 
 
 

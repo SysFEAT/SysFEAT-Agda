@@ -14,11 +14,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.3aca50c46aa63f3b where -- ========== Reference Dictionary
+module SysFEAT.SOF.3aca50c46aa63f3b where -- ========== ReferenceDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745dbaa6aa3840b public -- Model Package
-open import SysFEAT.SOF.0eb95f1b6855bf64 public -- Architecture Container
+open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
+open import SysFEAT.SOF.0eb95f1b6855bf64 public -- ArchitectureContainer
 
 ReferenceDictionary : ClassOfAbstractEntity
 ReferenceDictionary = AbstractEntity

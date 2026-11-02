@@ -14,14 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.d6cd2cea5ab98e5f where -- ========== Information Entity
+module SysFEAT.SOF.d6cd2cea5ab98e5f where -- ========== InformationEntity
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset
-open import SysFEAT.UpperOntology.3492c53e619642ed public -- Class of Bounded Individual
-open import SysFEAT.SOF.c189d5f068ae4d75 public -- Information Property
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
+open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
+open import SysFEAT.SOF.c189d5f068ae4d75 public -- InformationProperty
 
-InformationEntity : ClassOfClassOfBoundedIndividual
+InformationEntity : BoundedIndividualMetaClass
 InformationEntity = ClassOfBoundedIndividual
 
 
@@ -49,9 +49,8 @@ postulate -- specializedInformationEntity is subTypeOf specializedInformationAss
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Information Property: -}
 -- Aggregate Member : Qualifying Information Property
-QualifyingInformationProperty : ClassOfClassOfBoundedIndividual
-QualifyingInformationProperty = ClassOfBoundedIndividual
-
+QualifyingInformationProperty : ClassOfClassOfIndividual
+QualifyingInformationProperty = ClassOfIndividual
 
 
 --  QualifyingInformationProperty is subTypeOf InformationAssetRelationship
@@ -77,41 +76,36 @@ qualifyingInformationProperty = membershipOfQualifyingInformationProperty  ∘  
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Information Relationship: 
-An Information Relationship is a characteristic of an Information Entity that represents a relationships to other Information Entity(ies).
+{- Information Relation: 
+An Information Relation is a characteristic of an Information Entity that represents a relationships to other Information Entity(ies).
 -}
--- Aggregate Member : Information Relationship
-InformationRelationship : ClassOfClassOfBoundedIndividual
-InformationRelationship = ClassOfBoundedIndividual
+-- Aggregate Member : Information Relation
+InformationRelation : ClassOfClassOfIndividual
+InformationRelation = ClassOfIndividual
 
 
-
---  InformationRelationship is subTypeOf InformationAssetRelationship
-st-dfa4e2305ebb4d2b-18eb1f335fdb6e7f : InformationRelationship ⊏ₑ InformationAssetRelationship
+--  InformationRelation is subTypeOf InformationAssetRelationship
+st-dfa4e2305ebb4d2b-18eb1f335fdb6e7f : InformationRelation ⊏ₑ InformationAssetRelationship
 st-dfa4e2305ebb4d2b-18eb1f335fdb6e7f = polySubTypeOf-identity
 
---  InformationRelationship is subTypeOf AggregateHolonymyType
-st-dfa4e2305ebb4d2b-c2f2c83b66ea4d78 : InformationRelationship ⊏ₑ AggregateHolonymyType
+--  InformationRelation is subTypeOf AggregateHolonymyType
+st-dfa4e2305ebb4d2b-c2f2c83b66ea4d78 : InformationRelation ⊏ₑ AggregateHolonymyType
 st-dfa4e2305ebb4d2b-c2f2c83b66ea4d78 = polySubTypeOf-identity
 
---  InformationRelationship is subTypeOf InformationEntity
-st-dfa4e2305ebb4d2b-d6cd2cea5ab98e5f : InformationRelationship ⊏ₑ InformationEntity
-st-dfa4e2305ebb4d2b-d6cd2cea5ab98e5f = polySubTypeOf-identity
-
 -- Membership relation
-membershipOfInformationRelationship :  Linkage InformationEntity InformationRelationship
-membershipOfInformationRelationship = make_upwardNestingRelation "informationRelationship membership" "nested informationRelationship"
+membershipOfInformationRelation :  Linkage InformationEntity InformationRelation
+membershipOfInformationRelation = make_upwardNestingRelation "informationRelation membership" "nested informationRelation"
 
 -- Aggregation relation
-aggregationOfInformationEntityInformationRelationship :  Linkage InformationRelationship InformationEntity
-aggregationOfInformationEntityInformationRelationship = make_Relation "InformationEntity aggregation" "aggregated InformationEntity"
+aggregationOfInformationEntityInformationRelation :  Linkage InformationRelation InformationEntity
+aggregationOfInformationEntityInformationRelation = make_Relation "InformationEntity aggregation" "aggregated InformationEntity"
 
-{- informationRelationship : derived relation obtained by composing
-   membershipOfInformationRelationship and aggregationOfInformationEntityInformationRelationship
+{- informationRelation : derived relation obtained by composing
+   membershipOfInformationRelation and aggregationOfInformationEntityInformationRelation
    It directly links an Information Entity to the final aggregated InformationEntity
-   hiding the reifying InformationRelationship
+   hiding the reifying InformationRelation
 -}
-informationRelationship : Linkage InformationEntity InformationEntity
-informationRelationship = membershipOfInformationRelationship  ∘  aggregationOfInformationEntityInformationRelationship
+informationRelation : Linkage InformationEntity InformationEntity
+informationRelation = membershipOfInformationRelation  ∘  aggregationOfInformationEntityInformationRelation
 
 

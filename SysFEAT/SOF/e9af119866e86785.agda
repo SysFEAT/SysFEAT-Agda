@@ -15,21 +15,22 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e9af119866e86785 where -- ========== Individual Behavior
+module SysFEAT.SOF.e9af119866e86785 where -- ========== IndividualBehavior
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9f61cf9166833fb7 public -- Individual Operating Asset
-open import SysFEAT.SOF.986cd4ec5ffca3ac public -- Behavior Type
-open import SysFEAT.SOF.9e3837e46192fcad public -- Individual Agent
+open import SysFEAT.SOF.9f61cf9166833fb7 public -- IndividualOperatingAsset
+open import SysFEAT.SOF.986cd4ec5ffca3ac public -- BehaviorType
+open import SysFEAT.SOF.9e3837e46192fcad public -- IndividualAgent
 
-IndividualBehavior : ClassOfBoundedIndividual
-IndividualBehavior = BoundedIndividual
-
+IndividualBehavior : BehaviorType
+IndividualBehavior = IndividualAsset
 
 --  IndividualBehavior is subTypeOf IndividualOperatingAsset
 st-e9af119866e86785-9f61cf9166833fb7 : IndividualBehavior ⊏ₑ IndividualOperatingAsset
 st-e9af119866e86785-9f61cf9166833fb7 = polySubTypeOf-identity
 
+postulate -- IndividualBehavior is PowerInstanceOf Behavior Type
+  pi-64ad804568ce5bef : IndividualBehavior ∷ₚₑ BehaviorType
 
 -- == Relations =======================
 
@@ -38,8 +39,8 @@ st-e9af119866e86785-9f61cf9166833fb7 = polySubTypeOf-identity
 An Individual Behavior Part is the Aggregate Holonymy of an Individual Behavior in a parent Individual Behavior.
 -}
 -- Aggregate Member : Individual Behavior Part
-IndividualBehaviorPart : AggregateHolonymyType
-IndividualBehaviorPart = AggregateHolonymy
+IndividualBehaviorPart : BehaviorType
+IndividualBehaviorPart = IndividualBehavior
 
 
 

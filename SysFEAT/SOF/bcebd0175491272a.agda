@@ -19,12 +19,11 @@ External references:
 module SysFEAT.SOF.bcebd0175491272a where -- ========== Stakeholder
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.29cd2db0661546c4 public -- Individual State
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
+open import SysFEAT.UpperOntology.29cd2db0661546c4 public -- IndividualState
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
 
 Stakeholder : ClassOfBoundedIndividual
 Stakeholder = BoundedIndividual
-
 
 --  Stakeholder is subTypeOf IndividualState
 st-bcebd0175491272a-29cd2db0661546c4 : Stakeholder ⊏ₑ IndividualState

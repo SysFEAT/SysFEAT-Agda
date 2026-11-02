@@ -14,11 +14,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.21ed2aa6689c12ba where -- ========== Measure Property
+module SysFEAT.SOF.21ed2aa6689c12ba where -- ========== MeasureProperty
 
 open import Agda.Primitive
-open import SysFEAT.SOF.21ed231d689c0679 public -- Condition Property
-open import SysFEAT.SOF.e53af74b66e37e5d public -- Measure Property Type
+open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.SOF.e53af74b66e37e5d public -- MeasurePropertyType
 
 MeasureProperty : AssetPropertyType
 MeasureProperty = AssetProperty
@@ -34,7 +34,7 @@ st-21ed2aa6689c12ba-21ed231d689c0679 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Measure Property Type: -}
 measurePropertyType :  Linkage MeasureProperty MeasurePropertyType
-measurePropertyType = make_instanceOf "Measure Property Type" "Measure Property Type"
+measurePropertyType = make_classOfRelation "Measure Property Type" "Measure Property Type"
 
 postulate -- measurePropertyType is subTypeOf conditionPropertyType
   st-21ed59d8689c1a21-21ed5a16689c1a59  : measurePropertyType  ⊏⋆ᵣ  conditionPropertyType

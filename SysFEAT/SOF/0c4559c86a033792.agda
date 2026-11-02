@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Operating Asset: 
-An Operating Asset is a kind of Asset Block which is architectured accross Systemic Levels.
+An Operating Asset is a kind of Asset Block which is architectured accross Systemic Levels.Any Operating Asset must be either a Micro Operating Asset, a Mezzo Operating Asset or a Macro Operating Asset.
 
 Documentation : https://framework.sysfeat.com/pages/0c4559c86a033792.htm
 
@@ -12,13 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/0c4559c86a033792.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0c4559c86a033792 where -- ========== Operating Asset
+module SysFEAT.SOF.0c4559c86a033792 where -- ========== OperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.UpperOntology.6ef572f868f1366f public -- Mixed-Order Entity
-open import SysFEAT.SOF.52b05a616a104fab public -- Conceptualization Level
-open import SysFEAT.SOF.0c450e776a031ff0 public -- Systemic Level
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.UpperOntology.6ef572f868f1366f public -- MixedOrderEntity
+open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
+open import SysFEAT.SOF.5d5461906ae84234 public -- ConceptualizationLevel
+open import SysFEAT.SOF.e83018fb6ae53018 public -- OperatingAssetCategory
+open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetCategorization
 
 OperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 OperatingAsset u  = MixedOrderEntity u 
@@ -36,15 +38,13 @@ st-0c4559c86a033792-6ef572f868f1366f = trivialPolySubTypeOfEntity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Dependent Conceptual Level: -}
-dependentConceptualLevel : ∀ {u v} →  Linkage (OperatingAsset u) (ConceptualizationLevel v)
-dependentConceptualLevel = make_Relation "Dependent Conceptual Level" "Dependent Conceptual Level"
+{- Operating Asset Category: -}
+operatingAssetCategory : ∀ {u v} →  Linkage (OperatingAsset u) (OperatingAssetCategory v)
+operatingAssetCategory = make_subTypeOf "Operating Asset Category" "Operating Asset Category"
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Dependent Level Type: 
-The Systemic Level that an Operating Asset is parametred by. 
--}
-dependentLevelType : ∀ {u v} →  Linkage (OperatingAsset u) (SystemicLevel v)
-dependentLevelType = make_Relation "Dependent Level Type" "Dependent Level Type"
+{- Operating Asset Categorization: -}
+operatingAssetCategorization : ∀ {u v} →  Linkage (OperatingAsset u) (OperatingAssetCategorization v)
+operatingAssetCategorization = make_Relation "Operating Asset Categorization" "Operating Asset Categorization"
 

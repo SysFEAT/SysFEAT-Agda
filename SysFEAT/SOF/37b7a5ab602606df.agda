@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/37b7a5ab602606df.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.37b7a5ab602606df where -- ========== Assessment Process
+module SysFEAT.SOF.37b7a5ab602606df where -- ========== AssessmentProcess
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 
 AssessmentProcess : ClassOfBoundedIndividual
 AssessmentProcess = BoundedIndividual
@@ -26,4 +26,3 @@ st-37b7a5ab602606df-1737b76a5fe28204 : AssessmentProcess ⊏ₑ GovernanceActivi
 st-37b7a5ab602606df-1737b76a5fe28204 = polySubTypeOf-identity
 
 
--- == Relations =======================

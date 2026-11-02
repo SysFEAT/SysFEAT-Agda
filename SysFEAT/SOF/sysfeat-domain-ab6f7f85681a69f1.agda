@@ -14,7 +14,7 @@ Documentation : https://framework.sysfeat.com/pages/ab6f7f85681a69f1.htm
 module SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 where -- ========== Architecture Packages
 
 open import SysFEAT.UpperOntology.sysfeat-domain-f0fd779f65a18c5d public -- Packaging
-open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
+open import SysFEAT.UpperOntology.sysfeat-domain-3aca56b16aa64950 public -- Abstract Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-af4db12d62993434 public -- Model Block Packaging
 
 open import SysFEAT.SOF.3aca3fad6aa639da public -- Library

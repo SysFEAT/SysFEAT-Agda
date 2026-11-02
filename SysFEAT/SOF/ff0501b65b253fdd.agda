@@ -16,52 +16,50 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.ff0501b65b253fdd where -- ========== Governing Team
+module SysFEAT.SOF.ff0501b65b253fdd where -- ========== GoverningTeam
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0f641043685975c9 public -- Governance Building Block
-open import SysFEAT.SOF.0f64116a68597a27 public -- Governance Container
-open import SysFEAT.UpperOntology.342f74b166156e02 public -- Whole Life Individual
+open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
+open import SysFEAT.SOF.0f64116a68597a27 public -- GovernanceContainer
+open import SysFEAT.SOF.0f641043685975c9 public -- GovernanceBuildingBlock
 open import SysFEAT.SOF.f4be37465ee1cba6 public -- Audit
-open import SysFEAT.SOF.1737b50b5fe27cba public -- Governance Event
+open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
-open import SysFEAT.SOF.173706265fe3f332 public -- Measurement Instrument
-open import SysFEAT.SOF.2cc9717155263b89 public -- Governance Committee
+open import SysFEAT.SOF.173706265fe3f332 public -- MeasurementInstrument
+open import SysFEAT.SOF.2cc9717155263b89 public -- GovernanceCommittee
 
 GoverningTeam : ClassOfBoundedIndividual
 GoverningTeam = BoundedIndividual
 
 
---  GoverningTeam withAspect GovernanceBuildingBlock
-st-ff0501b65b253fdd-0f641043685975c9 : GoverningTeam ⊏ₐₑ (GovernanceBuildingBlock lzero)
-st-ff0501b65b253fdd-0f641043685975c9 = polySubTypeOf-identity
+--  GoverningTeam is subTypeOf WholeLifeIndividual
+st-ff0501b65b253fdd-342f74b166156e02 : GoverningTeam ⊏ₑ WholeLifeIndividual
+st-ff0501b65b253fdd-342f74b166156e02 = polySubTypeOf-identity
 
 --  GoverningTeam withAspect GovernanceContainer
 st-ff0501b65b253fdd-0f64116a68597a27 : GoverningTeam ⊏ₐₑ (GovernanceContainer lzero)
 st-ff0501b65b253fdd-0f64116a68597a27 = polySubTypeOf-identity
 
---  GoverningTeam is subTypeOf WholeLifeIndividual
-st-ff0501b65b253fdd-342f74b166156e02 : GoverningTeam ⊏ₑ WholeLifeIndividual
-st-ff0501b65b253fdd-342f74b166156e02 = polySubTypeOf-identity
+--  GoverningTeam withAspect GovernanceBuildingBlock
+st-ff0501b65b253fdd-0f641043685975c9 : GoverningTeam ⊏ₐₑ (GovernanceBuildingBlock lzero)
+st-ff0501b65b253fdd-0f641043685975c9 = polySubTypeOf-identity
 
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Owned Team Activity: -}
-ownedTeamActivity :  Linkage GoverningTeam Audit
-ownedTeamActivity = make_nestingRelation "Owned Team Activity" "Owned Team Activity"
+{- Packaged Team Activity: -}
+packagedTeamActivity :  Linkage GoverningTeam Audit
+packagedTeamActivity = make_nestingRelation "Packaged Team Activity" "Packaged Team Activity"
 
-postulate -- ownedTeamActivity is subTypeOf packagedGovernanceBlock
-  st-9c94c0cf695f36cb-0f6410c668597695  : ownedTeamActivity  ⊏⋆ᵣ  packagedGovernanceBlock
 
 -- -------------------------------------------------------------------------------------------- 
-{- Owned Team Event: -}
-ownedTeamEvent :  Linkage GoverningTeam GovernanceEvent
-ownedTeamEvent = make_nestingRelation "Owned Team Event" "Owned Team Event"
+{- Packaged Team Event: -}
+packagedTeamEvent :  Linkage GoverningTeam GovernanceEvent
+packagedTeamEvent = make_nestingRelation "Packaged Team Event" "Packaged Team Event"
 
-postulate -- ownedTeamEvent is subTypeOf packagedGovernanceBlock
-  st-9c94c1ad695f3777-0f6410c668597695  : ownedTeamEvent  ⊏⋆ᵣ  packagedGovernanceBlock
+postulate -- packagedTeamEvent is subTypeOf packagedGovernanceBlock
+  st-9c94c1ad695f3777-0f6410c668597695  : packagedTeamEvent  ⊏⋆ᵣ  packagedGovernanceBlock
 
 -- -------------------------------------------------------------------------------------------- 
 {- Governed Initiative: -}
@@ -86,8 +84,10 @@ postulate -- recordedMeasure is subTypeOf packagedGovernanceBlock
 subTeam :  Linkage GoverningTeam GoverningTeam
 subTeam = make_holonymyRelation "Sub-Team" "Sub-Team"
 
+postulate -- subTeam is subTypeOf nestingRelation
+  st-ac98b16e60a38cbc-02a506a968540333  : subTeam  ⊏⋆ᵣ  nestingRelation {lzero} {lzero}
 postulate -- subTeam is subTypeOf holonymyRelation
-  st-ac98b16e60a38cbc-c2f2c6ce66e90be7  : subTeam  ⊏⋆ᵣ  holonymyRelation
+  st-ac98b16e60a38cbc-f626f77b6ad475d4  : subTeam  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Team Committee: -}

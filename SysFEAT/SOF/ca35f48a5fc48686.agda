@@ -16,16 +16,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.ca35f48a5fc48686 where -- ========== Operating Eco-System
+module SysFEAT.SOF.ca35f48a5fc48686 where -- ========== OperatingEcoSystem
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- Functional Asset
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
+open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
 
 OperatingEcoSystem : ClassOfClassOfBoundedIndividual
 OperatingEcoSystem = ClassOfBoundedIndividual
-
 
 --  OperatingEcoSystem is subTypeOf FunctionalAsset
 st-ca35f48a5fc48686-a44fb6bc6748b088 : OperatingEcoSystem ⊏ₑ FunctionalAsset
@@ -70,18 +69,13 @@ operatingConnector = membershipOfOperatingConnector  ∘  aggregationOfOperating
 -- -------------------------------------------------------------------------------------------- 
 {- Ecosystem Member: -}
 -- Aggregate Member : Ecosystem Member
-EcosystemMember : ClassOfClassOfBoundedIndividual
-EcosystemMember = ClassOfBoundedIndividual
-
+EcosystemMember : ClassOfClassOfIndividual
+EcosystemMember = ClassOfIndividual
 
 
 --  EcosystemMember withAspect BoundedMember
 st-3d3f4aed6201346c-0eb999956855e070 : EcosystemMember ⊏ₐₑ (BoundedMember (lsuc(lzero)))
 st-3d3f4aed6201346c-0eb999956855e070 = polySubTypeOf-identity
-
---  EcosystemMember is subTypeOf OperatingEcoSystem
-st-3d3f4aed6201346c-ca35f48a5fc48686 : EcosystemMember ⊏ₑ OperatingEcoSystem
-st-3d3f4aed6201346c-ca35f48a5fc48686 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfEcosystemMember :  Linkage OperatingEcoSystem EcosystemMember

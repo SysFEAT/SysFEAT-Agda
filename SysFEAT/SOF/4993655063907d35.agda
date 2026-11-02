@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/4993655063907d35.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.4993655063907d35 where -- ========== Review Note
+module SysFEAT.SOF.4993655063907d35 where -- ========== ReviewNote
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b50b5fe27cba public -- Governance Event
+open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
 
-ReviewNote : ClassOfBoundedIndividual
-ReviewNote = BoundedIndividual
+ReviewNote : ClassOfIndividual
+ReviewNote = Individual
 
 
 --  ReviewNote is subTypeOf GovernanceEvent
@@ -26,4 +26,3 @@ st-4993655063907d35-1737b50b5fe27cba : ReviewNote ⊏ₑ GovernanceEvent
 st-4993655063907d35-1737b50b5fe27cba = polySubTypeOf-identity
 
 
--- == Relations =======================

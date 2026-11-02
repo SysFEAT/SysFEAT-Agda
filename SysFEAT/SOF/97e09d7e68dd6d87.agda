@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/97e09d7e68dd6d87.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.97e09d7e68dd6d87 where -- ========== Architecture Decision Outcome
+module SysFEAT.SOF.97e09d7e68dd6d87 where -- ========== ArchitectureDecisionOutcome
 
 open import Agda.Primitive
-open import SysFEAT.SOF.97e09cde68dd6c0f public -- Decision Outcome
-open import SysFEAT.SOF.366c4dbc675c2776 public -- Architecture Decision Type
+open import SysFEAT.SOF.97e09cde68dd6c0f public -- DecisionOutcome
+open import SysFEAT.SOF.366c4dbc675c2776 public -- ArchitectureDecisionType
 
 ArchitectureDecisionOutcome : PropertyType
 ArchitectureDecisionOutcome = Property
@@ -32,7 +32,7 @@ st-97e09d7e68dd6d87-97e09cde68dd6c0f = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Architecture Decision Type: -}
 architectureDecisionType :  Linkage ArchitectureDecisionOutcome ArchitectureDecisionType
-architectureDecisionType = make_instanceOf "Architecture Decision Type" "Architecture Decision Type"
+architectureDecisionType = make_classOfRelation "Architecture Decision Type" "Architecture Decision Type"
 
 postulate -- architectureDecisionType is subTypeOf decisionType
   st-97e0a05268dd7053-97e09d2068dd6cd0  : architectureDecisionType  ⊏⋆ᵣ  decisionType

@@ -15,10 +15,10 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.c189d5f068ae4d75 where -- ========== Information Property
+module SysFEAT.SOF.c189d5f068ae4d75 where -- ========== InformationProperty
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 
 InformationProperty : PropertyType
@@ -47,9 +47,8 @@ postulate -- specializedInformationProperty is subTypeOf specializedInformationA
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Information Property: -}
 -- Aggregate Member : Sub Information Property
-SubInformationProperty : ClassOfClassOfBoundedIndividual
-SubInformationProperty = ClassOfBoundedIndividual
-
+SubInformationProperty : ClassOfClassOfIndividual
+SubInformationProperty = ClassOfIndividual
 
 
 --  SubInformationProperty is subTypeOf InformationAssetRelationship

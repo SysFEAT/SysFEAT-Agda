@@ -20,15 +20,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.a44fb6bc6748b088 where -- ========== Functional Asset
+module SysFEAT.SOF.a44fb6bc6748b088 where -- ========== FunctionalAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.SOF.0e55206a66f11ec5 public -- Risk Type
 
-FunctionalAsset : ClassOfClassOfBoundedIndividual
-FunctionalAsset = ClassOfBoundedIndividual
+FunctionalAsset : BoundedIndividualMetaClass
+FunctionalAsset = AssetType
 
 
 --  FunctionalAsset is subTypeOf AssetType
@@ -55,38 +55,6 @@ realizedFunctionalAsset = make_subTypeOf "Realized Functional Asset" "Realized F
 
 postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
   st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset  ⊏⋆ᵣ  specializedClassOfIndividual
-
--- -------------------------------------------------------------------------------------------- 
-{- Policy Conformance: 
-A Policy Conformance is the conformity requirement that applies a Functional Asset.
--}
--- Aggregate Member : Policy Conformance
-PolicyConformance : ClassOfClassOfAbstractEntity
-PolicyConformance = ClassOfAbstractEntity
-
-
-
---  PolicyConformance is subTypeOf AggregateQualification
-st-01f1189f689b641d-b83e30bc696f51e5 : PolicyConformance ⊏ₑ AggregateQualification
-st-01f1189f689b641d-b83e30bc696f51e5 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfPolicyConformance :  Linkage FunctionalAsset PolicyConformance
-membershipOfPolicyConformance = make_upwardNestingRelation "policyConformance membership" "nested policyConformance"
-
--- Aggregation relation
-aggregationOfPolicyPolicyConformance :  Linkage PolicyConformance Policy
-aggregationOfPolicyPolicyConformance = make_Relation "Policy aggregation" "aggregated Policy"
-
-{- policyConformance : derived relation obtained by composing
-   membershipOfPolicyConformance and aggregationOfPolicyPolicyConformance
-   It directly links an Functional Asset to the final aggregated Policy
-   hiding the reifying PolicyConformance
--}
-policyConformance : Linkage FunctionalAsset Policy
-policyConformance = membershipOfPolicyConformance  ∘  aggregationOfPolicyPolicyConformance
-
-
 
 -- -------------------------------------------------------------------------------------------- 
 {- Risk: 
@@ -116,5 +84,37 @@ aggregationOfRiskTypeRisk = make_Relation "RiskType aggregation" "aggregated Ris
 -}
 risk : Linkage FunctionalAsset RiskType
 risk = membershipOfRisk  ∘  aggregationOfRiskTypeRisk
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Policy Conformance: 
+A Policy Conformance is the conformity requirement that applies a Functional Asset.
+-}
+-- Aggregate Member : Policy Conformance
+PolicyConformance : AbstractEntityMetaClass
+PolicyConformance = ClassOfAbstractEntity
+
+
+
+--  PolicyConformance is subTypeOf AggregateQualification
+st-01f1189f689b641d-b83e30bc696f51e5 : PolicyConformance ⊏ₑ AggregateQualification
+st-01f1189f689b641d-b83e30bc696f51e5 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfPolicyConformance :  Linkage FunctionalAsset PolicyConformance
+membershipOfPolicyConformance = make_upwardNestingRelation "policyConformance membership" "nested policyConformance"
+
+-- Aggregation relation
+aggregationOfPolicyPolicyConformance :  Linkage PolicyConformance Policy
+aggregationOfPolicyPolicyConformance = make_Relation "Policy aggregation" "aggregated Policy"
+
+{- policyConformance : derived relation obtained by composing
+   membershipOfPolicyConformance and aggregationOfPolicyPolicyConformance
+   It directly links an Functional Asset to the final aggregated Policy
+   hiding the reifying PolicyConformance
+-}
+policyConformance : Linkage FunctionalAsset Policy
+policyConformance = membershipOfPolicyConformance  ∘  aggregationOfPolicyPolicyConformance
 
 

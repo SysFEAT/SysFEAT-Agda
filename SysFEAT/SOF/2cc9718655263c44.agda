@@ -12,14 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/2cc9718655263c44.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.2cc9718655263c44 where -- ========== Individual Stakeholder
+module SysFEAT.SOF.2cc9718655263c44 where -- ========== IndividualStakeholder
 
 open import Agda.Primitive
 open import SysFEAT.SOF.bcebd0175491272a public -- Stakeholder
 
 IndividualStakeholder : ClassOfBoundedIndividual
 IndividualStakeholder = BoundedIndividual
-
 
 --  IndividualStakeholder is subTypeOf Stakeholder
 st-2cc9718655263c44-bcebd0175491272a : IndividualStakeholder ⊏ₑ Stakeholder

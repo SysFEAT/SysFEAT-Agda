@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/7625fe5b5f6c92de.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.7625fe5b5f6c92de where -- ========== Remediation Plan
+module SysFEAT.SOF.7625fe5b5f6c92de where -- ========== RemediationPlan
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 
 RemediationPlan : ClassOfBoundedIndividual
 RemediationPlan = BoundedIndividual
@@ -26,4 +26,3 @@ st-7625fe5b5f6c92de-1737b76a5fe28204 : RemediationPlan ⊏ₑ GovernanceActivity
 st-7625fe5b5f6c92de-1737b76a5fe28204 = polySubTypeOf-identity
 
 
--- == Relations =======================

@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/3a2f3b516796620e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.3a2f3b516796620e where -- ========== Whole Life Asset
+module SysFEAT.SOF.3a2f3b516796620e where -- ========== WholeLifeAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- Individual Asset
-open import SysFEAT.UpperOntology.342f74b166156e02 public -- Whole Life Individual
-open import SysFEAT.SOF.e13ce1cd678f1111 public -- Whole Life Asset Type
+open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
+open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
+open import SysFEAT.SOF.e13ce1cd678f1111 public -- WholeLifeAssetType
 
-WholeLifeAsset : ClassOfBoundedIndividual
-WholeLifeAsset = BoundedIndividual
+WholeLifeAsset : AssetType
+WholeLifeAsset = IndividualAsset
 
 
 --  WholeLifeAsset is subTypeOf IndividualAsset
@@ -31,5 +31,7 @@ st-3a2f3b516796620e-ebcfaeac5ad76ed7 = polySubTypeOf-identity
 st-3a2f3b516796620e-342f74b166156e02 : WholeLifeAsset ⊏ₑ WholeLifeIndividual
 st-3a2f3b516796620e-342f74b166156e02 = polySubTypeOf-identity
 
+postulate -- WholeLifeAsset is PowerInstanceOf Whole Life Asset Type
+  pi-9e79b2a668d25d9a : WholeLifeAsset ∷ₚₑ WholeLifeAssetType
 
 -- == Relations =======================
