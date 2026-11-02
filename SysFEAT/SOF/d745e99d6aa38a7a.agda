@@ -15,8 +15,8 @@ Documentation : https://framework.sysfeat.com/pages/d745e99d6aa38a7a.htm
 module SysFEAT.SOF.d745e99d6aa38a7a where -- ========== Tag
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745e6ea6aa386e5 public -- Annotation Block
-open import SysFEAT.UpperOntology.23d5c5fc685142de public -- Elementary Block
+open import SysFEAT.SOF.d745e6ea6aa386e5 public -- AnnotationBlock
+open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity
 
 Tag : ClassOfAbstractEntity

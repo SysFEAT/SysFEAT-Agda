@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/21ed231d689c0679.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.21ed231d689c0679 where -- ========== Condition Property
+module SysFEAT.SOF.21ed231d689c0679 where -- ========== ConditionProperty
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
-open import SysFEAT.SOF.e53af71366e37de2 public -- Condition Property Type
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
+open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 
 ConditionProperty : AssetPropertyType
 ConditionProperty = AssetProperty
@@ -32,7 +32,7 @@ st-21ed231d689c0679-515c6a856893324e = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Condition Property Type: -}
 conditionPropertyType :  Linkage ConditionProperty ConditionPropertyType
-conditionPropertyType = make_instanceOf "Condition Property Type" "Condition Property Type"
+conditionPropertyType = make_classOfRelation "Condition Property Type" "Condition Property Type"
 
 postulate -- conditionPropertyType is subTypeOf assetPropertyType
   st-21ed5a16689c1a59-190c1f03689649e5  : conditionPropertyType  ⊏⋆ᵣ  assetPropertyType

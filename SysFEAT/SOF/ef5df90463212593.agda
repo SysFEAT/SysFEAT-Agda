@@ -15,12 +15,12 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.ef5df90463212593 where -- ========== Location Type
+module SysFEAT.SOF.ef5df90463212593 where -- ========== LocationType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.3492c53e619642ed public -- Class of Bounded Individual
+open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 
-LocationType : ClassOfClassOfBoundedIndividual
+LocationType : BoundedIndividualMetaClass
 LocationType = ClassOfBoundedIndividual
 
 

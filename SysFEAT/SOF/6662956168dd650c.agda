@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/6662956168dd650c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.6662956168dd650c where -- ========== Assessment Value
+module SysFEAT.SOF.6662956168dd650c where -- ========== AssessmentValue
 
 open import Agda.Primitive
-open import SysFEAT.SOF.66628b5668dd5a25 public -- Appraisal Option
-open import SysFEAT.SOF.366c4033675c1636 public -- Assessment Type
+open import SysFEAT.SOF.66628b5668dd5a25 public -- AppraisalOption
+open import SysFEAT.SOF.366c4033675c1636 public -- AssessmentType
 
 AssessmentValue : PropertyType
 AssessmentValue = Property
@@ -32,7 +32,7 @@ st-6662956168dd650c-66628b5668dd5a25 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Assessment Type: -}
 assessmentType :  Linkage AssessmentValue AssessmentType
-assessmentType = make_instanceOf "Assessment Type" "Assessment Type"
+assessmentType = make_classOfRelation "Assessment Type" "Assessment Type"
 
 postulate -- assessmentType is subTypeOf appraisalType
   st-6662961868dd65f6-666294f768dd64bc  : assessmentType  ⊏⋆ᵣ  appraisalType

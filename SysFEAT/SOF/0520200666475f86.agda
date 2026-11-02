@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/0520200666475f86.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0520200666475f86 where -- ========== Time-bound Initiative
+module SysFEAT.SOF.0520200666475f86 where -- ========== TimeboundInitiative
 
 open import Agda.Primitive
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
-open import SysFEAT.UpperOntology.342f74b166156e02 public -- Whole Life Individual
+open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 
 TimeboundInitiative : ClassOfBoundedIndividual
 TimeboundInitiative = BoundedIndividual

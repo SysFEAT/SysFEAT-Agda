@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/366c4627675c1aad.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c4627675c1aad where -- ========== Resolution Type
+module SysFEAT.SOF.366c4627675c1aad where -- ========== ResolutionType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.366c3ea8675c13e2 public -- Appraisal Type
+open import SysFEAT.SOF.366c3ea8675c13e2 public -- AppraisalType
 
 ResolutionType : ThirdOrderClass
-ResolutionType = SecondOrderClass
+ResolutionType = PropertyType
+
 
 --  ResolutionType is subTypeOf AppraisalType
 st-366c4627675c1aad-366c3ea8675c13e2 : ResolutionType ⊏ₑ AppraisalType

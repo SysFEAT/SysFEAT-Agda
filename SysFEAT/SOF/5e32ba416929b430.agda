@@ -12,19 +12,21 @@ Documentation : https://framework.sysfeat.com/pages/5e32ba416929b430.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.5e32ba416929b430 where -- ========== Policity Decision Option
+module SysFEAT.SOF.5e32ba416929b430 where -- ========== PolicityDecisionOption
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.b85efd0868df48b1 public -- Property Value
-open import SysFEAT.SOF.97e0a19a68dd71de public -- Policy applicability Status
+open import SysFEAT.UpperOntology.b85efd0868df48b1 public -- PropertyValue
+open import SysFEAT.SOF.97e0a19a68dd71de public -- PolicyapplicabilityStatus
 
-PolicityDecisionOption : ClassOfIndividual
-PolicityDecisionOption = Individual
+PolicityDecisionOption : Property
+PolicityDecisionOption = PropertyValue
 
 
 --  PolicityDecisionOption is subTypeOf PropertyValue
 st-5e32ba416929b430-b85efd0868df48b1 : PolicityDecisionOption ⊏ₑ PropertyValue
 st-5e32ba416929b430-b85efd0868df48b1 = polySubTypeOf-identity
 
+postulate -- PolicityDecisionOption is PowerInstanceOf Policy applicability Status
+  pi-5e32ba696929b491 : PolicityDecisionOption ∷ₚₑ PolicyapplicabilityStatus
 
 -- == Relations =======================

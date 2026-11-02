@@ -12,27 +12,29 @@ Documentation : https://framework.sysfeat.com/pages/e78c5eb0661989f9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e78c5eb0661989f9 where -- ========== Initiative Stage
+module SysFEAT.SOF.e78c5eb0661989f9 where -- ========== InitiativeStage
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.29cd2db0661546c4 public -- Individual State
+open import SysFEAT.UpperOntology.29cd2db0661546c4 public -- IndividualState
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
-InitiativeStage : ClassOfBoundedIndividual
-InitiativeStage = BoundedIndividual
+InitiativeStage : StateClass
+InitiativeStage = StateConcept
 
 
 --  InitiativeStage is subTypeOf IndividualState
 st-e78c5eb0661989f9-29cd2db0661546c4 : InitiativeStage ⊏ₑ IndividualState
 st-e78c5eb0661989f9-29cd2db0661546c4 = polySubTypeOf-identity
 
---  InitiativeStage is subTypeOf Initiative
-st-e78c5eb0661989f9-0ffeec41600be08a : InitiativeStage ⊏ₑ Initiative
-st-e78c5eb0661989f9-0ffeec41600be08a = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Initiative: -}
+stateOfInitiative :  Linkage InitiativeStage Initiative
+stateOfInitiative = make_meronymyRelation "State of Initiative" "State of Initiative"
+
 
 -- -------------------------------------------------------------------------------------------- 
 {- Desired Result: -}

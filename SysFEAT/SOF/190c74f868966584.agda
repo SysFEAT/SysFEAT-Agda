@@ -15,14 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.190c74f868966584 where -- ========== Behavioral Rule
+module SysFEAT.SOF.190c74f868966584 where -- ========== BehavioralRule
 
 open import Agda.Primitive
 open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
-BehavioralRule : PropertyType
-BehavioralRule = Property
+BehavioralRule : AssetPropertyType
+BehavioralRule = Directive
+
 
 --  BehavioralRule is subTypeOf Directive
 st-190c74f868966584-515c6b23689335c3 : BehavioralRule ⊏ₑ Directive
@@ -44,7 +45,7 @@ postulate -- specializedBehavioralRule is subTypeOf specializedDirective
 Statement that a Behavioral Rule is the realization of a Policy.
 -}
 -- Aggregate Member : Policy Derivation
-PolicyDerivation : ClassOfClassOfAbstractEntity
+PolicyDerivation : AbstractEntityMetaClass
 PolicyDerivation = ClassOfAbstractEntity
 
 

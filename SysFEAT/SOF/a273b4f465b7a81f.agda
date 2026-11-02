@@ -14,32 +14,31 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.a273b4f465b7a81f where -- ========== Individual Process
+module SysFEAT.SOF.a273b4f465b7a81f where -- ========== IndividualProcess
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e9af119866e86785 public -- Individual Behavior
-open import SysFEAT.SOF.d682ef5e56144e77 public -- Action Process Type
-open import SysFEAT.SOF.9e3837e46192fcad public -- Individual Agent
+open import SysFEAT.SOF.e9af119866e86785 public -- IndividualBehavior
+open import SysFEAT.SOF.d682ef5e56144e77 public -- ActionProcessType
+open import SysFEAT.SOF.9e3837e46192fcad public -- IndividualAgent
 
-IndividualProcess : ActionProcessType
-IndividualProcess = BoundedIndividual
+IndividualProcess : BehaviorType
+IndividualProcess = IndividualBehavior
+
 
 --  IndividualProcess is subTypeOf IndividualBehavior
 st-a273b4f465b7a81f-e9af119866e86785 : IndividualProcess ⊏ₑ IndividualBehavior
 st-a273b4f465b7a81f-e9af119866e86785 = polySubTypeOf-identity
 
 postulate -- IndividualProcess is PowerInstanceOf Action Process Type
-  a44facab6749d875 : IndividualProcess ∷ₚₑ ActionProcessType
-postulate -- ActionProcessType is ReflexivePowerType 
-  41909b3d6aaa4577 : ActionProcessType ⊏ₘₑ IndividualProcess
+  pi-a44facab6749d875 : IndividualProcess ∷ₚₑ ActionProcessType
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
 {- Individual Process Part: -}
 -- Aggregate Member : Individual Process Part
-IndividualProcessPart : ActionProcessType
-IndividualProcessPart = IndividualProcess
+IndividualProcessPart : BehaviorType
+IndividualProcessPart = IndividualBehavior
 
 
 

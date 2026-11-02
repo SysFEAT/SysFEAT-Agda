@@ -17,8 +17,8 @@ External references:
 module SysFEAT.SOF.3aca3fad6aa639da where -- ========== Library
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745dbaa6aa3840b public -- Model Package
-open import SysFEAT.SOF.0eb95f1b6855bf64 public -- Architecture Container
+open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
+open import SysFEAT.SOF.0eb95f1b6855bf64 public -- ArchitectureContainer
 
 Library : ClassOfAbstractEntity
 Library = AbstractEntity

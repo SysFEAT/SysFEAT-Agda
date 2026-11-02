@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/c80acb82678413ac.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.c80acb82678413ac where -- ========== Agent Life Cycle Event
+module SysFEAT.SOF.c80acb82678413ac where -- ========== AgentLifeCycleEvent
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.9429979a66823f90 public -- Temporal Bounding Type
+open import SysFEAT.UpperOntology.9429979a66823f90 public -- TemporalBoundingType
 
 AgentLifeCycleEvent : ClassOfClassOfIndividual
 AgentLifeCycleEvent = ClassOfIndividual

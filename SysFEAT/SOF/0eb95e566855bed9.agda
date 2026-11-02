@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/0eb95e566855bed9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb95e566855bed9 where -- ========== Model Building Block
+module SysFEAT.SOF.0eb95e566855bed9 where -- ========== ModelBuildingBlock
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- Building Block
+open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 
 ModelBuildingBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ModelBuildingBlock u  = MixedOrderEntity u 

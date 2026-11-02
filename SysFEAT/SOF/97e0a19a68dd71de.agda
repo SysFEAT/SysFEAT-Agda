@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/97e0a19a68dd71de.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.97e0a19a68dd71de where -- ========== Policy applicability Status
+module SysFEAT.SOF.97e0a19a68dd71de where -- ========== PolicyapplicabilityStatus
 
 open import Agda.Primitive
-open import SysFEAT.SOF.97e09cde68dd6c0f public -- Decision Outcome
-open import SysFEAT.SOF.97e0a09268dd70b6 public -- Policy Decision Type
+open import SysFEAT.SOF.97e09cde68dd6c0f public -- DecisionOutcome
+open import SysFEAT.SOF.97e0a09268dd70b6 public -- PolicyDecisionType
 
 PolicyapplicabilityStatus : PropertyType
 PolicyapplicabilityStatus = Property
@@ -32,7 +32,7 @@ st-97e0a19a68dd71de-97e09cde68dd6c0f = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Policy Decision Type: -}
 policyDecisionType :  Linkage PolicyapplicabilityStatus PolicyDecisionType
-policyDecisionType = make_instanceOf "Policy Decision Type" "Policy Decision Type"
+policyDecisionType = make_classOfRelation "Policy Decision Type" "Policy Decision Type"
 
 postulate -- policyDecisionType is subTypeOf decisionType
   st-97e0a1e168dd7342-97e09d2068dd6cd0  : policyDecisionType  ⊏⋆ᵣ  decisionType

@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/21c5276e655759fb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.21c5276e655759fb where -- ========== Operating Connection
+module SysFEAT.SOF.21c5276e655759fb where -- ========== OperatingConnection
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.6aa8cbcb65b32971 public -- Class of Individual
-open import SysFEAT.UpperOntology.23d5eaba68515533 public -- Ordering Connection
+open import SysFEAT.UpperOntology.6aa8cbcb65b32971 public -- ClassOfIndividual
+open import SysFEAT.UpperOntology.23d5eaba68515533 public -- OrderingConnection
 
 OperatingConnection : ClassOfClassOfIndividual
 OperatingConnection = ClassOfIndividual

@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/83f88fd567406e53.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.83f88fd567406e53 where -- ========== Asset Property Type
+module SysFEAT.SOF.83f88fd567406e53 where -- ========== AssetPropertyType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.87d3062666e33965 public -- Property Type
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
+open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelPropertyBlock
 
 AssetPropertyType : ThirdOrderClass
-AssetPropertyType = SecondOrderClass
+AssetPropertyType = PropertyType
+
 
 --  AssetPropertyType is subTypeOf PropertyType
 st-83f88fd567406e53-87d3062666e33965 : AssetPropertyType ⊏ₑ PropertyType

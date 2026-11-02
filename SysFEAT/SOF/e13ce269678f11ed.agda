@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/e13ce269678f11ed.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e13ce269678f11ed where -- ========== Asset State Type
+module SysFEAT.SOF.e13ce269678f11ed where -- ========== AssetStateType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.342f43ae66156429 public -- State Class
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
+open import SysFEAT.UpperOntology.342f43ae66156429 public -- StateClass
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
 AssetStateType : ClassOfClassOfBoundedIndividual
 AssetStateType = ClassOfBoundedIndividual
-
 
 --  AssetStateType is subTypeOf StateClass
 st-e13ce269678f11ed-342f43ae66156429 : AssetStateType ⊏ₑ StateClass
 st-e13ce269678f11ed-342f43ae66156429 = polySubTypeOf-identity
 
---  AssetStateType is subTypeOf AssetType
-st-e13ce269678f11ed-a4a5b3f855585ce1 : AssetStateType ⊏ₑ AssetType
-st-e13ce269678f11ed-a4a5b3f855585ce1 = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Asset Type: -}
+stateOfAssetType :  Linkage AssetStateType AssetType
+stateOfAssetType = make_classOfMeronymy "State of Asset Type" "State of Asset Type"
+

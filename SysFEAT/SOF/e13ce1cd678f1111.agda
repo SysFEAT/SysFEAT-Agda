@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/e13ce1cd678f1111.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e13ce1cd678f1111 where -- ========== Whole Life Asset Type
+module SysFEAT.SOF.e13ce1cd678f1111 where -- ========== WholeLifeAssetType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
-open import SysFEAT.UpperOntology.00ae5d3b667038fc public -- Whole Life Class
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.UpperOntology.00ae5d3b667038fc public -- WholeLifeClass
 
-WholeLifeAssetType : ClassOfClassOfBoundedIndividual
-WholeLifeAssetType = ClassOfBoundedIndividual
+WholeLifeAssetType : BoundedIndividualMetaClass
+WholeLifeAssetType = AssetType
 
 
 --  WholeLifeAssetType is subTypeOf AssetType

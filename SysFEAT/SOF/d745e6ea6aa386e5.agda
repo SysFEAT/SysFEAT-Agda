@@ -15,11 +15,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.d745e6ea6aa386e5 where -- ========== Annotation Block
+module SysFEAT.SOF.d745e6ea6aa386e5 where -- ========== AnnotationBlock
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.3aca52346aa6418d public -- Abstract Entity
-open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- Building Block
+open import SysFEAT.UpperOntology.3aca52346aa6418d public -- AbstractEntity
+open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 open import SysFEAT.UpperOntology.23d5249e68510ff9 public -- Element
 
 AnnotationBlock : ClassOfAbstractEntity

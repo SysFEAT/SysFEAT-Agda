@@ -15,8 +15,8 @@ Documentation : https://framework.sysfeat.com/pages/f4be37465ee1cba6.htm
 module SysFEAT.SOF.f4be37465ee1cba6 where -- ========== Audit
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
-open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- Individual Asset
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
+open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
 
 Audit : ClassOfBoundedIndividual
 Audit = BoundedIndividual
@@ -32,8 +32,8 @@ st-f4be37465ee1cba6-1737b76a5fe28204 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Audit Activity: -}
 -- Aggregate Member : Audit Activity
-AuditActivity : AggregateHolonymyType
-AuditActivity = AggregateHolonymy
+AuditActivity : ClassOfBoundedIndividual
+AuditActivity = BoundedIndividual
 
 
 
@@ -66,8 +66,8 @@ auditActivity = membershipOfAuditActivity  ∘  aggregationOfAuditAuditActivity
 -- -------------------------------------------------------------------------------------------- 
 {- Finding: -}
 -- Aggregate Member : Finding
-Finding : ClassOfBoundedIndividual
-Finding = BoundedIndividual
+Finding : AssetType
+Finding = IndividualAsset
 
 
 

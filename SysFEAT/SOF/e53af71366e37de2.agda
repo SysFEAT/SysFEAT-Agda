@@ -18,14 +18,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e53af71366e37de2 where -- ========== Condition Property Type
+module SysFEAT.SOF.e53af71366e37de2 where -- ========== ConditionPropertyType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.83f88fd567406e53 public -- Asset Property Type
-open import SysFEAT.SOF.6cfb6ef26a0f15e4 public -- Condition Category
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
+open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
 
 ConditionPropertyType : ThirdOrderClass
-ConditionPropertyType = SecondOrderClass
+ConditionPropertyType = PropertyType
+
 
 --  ConditionPropertyType is subTypeOf AssetPropertyType
 st-e53af71366e37de2-83f88fd567406e53 : ConditionPropertyType ⊏ₑ AssetPropertyType
@@ -39,5 +40,7 @@ st-e53af71366e37de2-83f88fd567406e53 = polySubTypeOf-identity
 The Condition Category that a Condition Property Type belongs to.For instance,  Delivery Time  belongs to the  Performance  category.
 -}
 conditionCategory : ∀ {u} →  Linkage ConditionPropertyType (ConditionCategory u)
-conditionCategory = make_classOfRelation "Condition Category" "Condition Category"
+conditionCategory = make_subTypeOf "Condition Category" "Condition Category"
 
+postulate -- conditionCategory is subTypeOf conceptCategorization
+  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : conditionCategory  ⊏⋆ᵣ  conceptCategorization {lzero} {lsuc(lzero)} {lzero} {lsuc(lzero)}

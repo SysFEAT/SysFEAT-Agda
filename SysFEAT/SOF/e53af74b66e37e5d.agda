@@ -15,14 +15,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e53af74b66e37e5d where -- ========== Measure Property Type
+module SysFEAT.SOF.e53af74b66e37e5d where -- ========== MeasurePropertyType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e53af71366e37de2 public -- Condition Property Type
-open import SysFEAT.SOF.6f9c701b6a0f2d87 public -- Measurement Type
+open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
+open import SysFEAT.SOF.4efc76226ae49da5 public -- MeasurementCategory
 
 MeasurePropertyType : ThirdOrderClass
-MeasurePropertyType = SecondOrderClass
+MeasurePropertyType = PropertyType
 
 
 --  MeasurePropertyType is subTypeOf ConditionPropertyType
@@ -33,11 +33,11 @@ st-e53af74b66e37e5d-e53af71366e37de2 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Measurement Type: 
-The Measurement Type that a Measure Property Type belongs to.For instance,  Delivery Time  belongs to the  Performance  category.
+{- Measurement Category: 
+The Measurement Category that a Measure Property Type belongs to.Example:-   Delivery Time  belongs to the  Performance  category.
 -}
-measurementType : ∀ {u} →  Linkage MeasurePropertyType (MeasurementType u)
-measurementType = make_classOfRelation "Measurement Type" "Measurement Type"
+measurementCategory : ∀ {u} →  Linkage MeasurePropertyType (MeasurementCategory u)
+measurementCategory = make_subTypeOf "Measurement Category" "Measurement Category"
 
-postulate -- measurementType is subTypeOf conditionCategory
-  st-6f9c70516a0f2e90-6f9c72c26a0f3238  : measurementType  ⊏⋆ᵣ  conditionCategory
+postulate -- measurementCategory is subTypeOf conditionCategory
+  st-4efc77496ae49f78-4efc6ca86ae4901b  : measurementCategory  ⊏⋆ᵣ  conditionCategory

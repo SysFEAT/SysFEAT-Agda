@@ -24,10 +24,10 @@ External references:
 module SysFEAT.SOF.515c13db68953887 where -- ========== Capability
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
-open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- Composite Property
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
+open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 
 Capability : AssetPropertyType
 Capability = AssetProperty
@@ -90,7 +90,7 @@ involvedInformation = membershipOfInvolvedInformation  ∘  aggregationOfInforma
 Sub-Capability with a capability.Sub-Capabilities can have dependencies whereby a dependent capability needs the outcome of a required capability for one of its outcome to be delivered. 
 -}
 -- Aggregate Member : Capability Part
-CapabilityPart : ClassOfClassOfAbstractEntity
+CapabilityPart : AbstractEntityMetaClass
 CapabilityPart = ClassOfAbstractEntity
 
 

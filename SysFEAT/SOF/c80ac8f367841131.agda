@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/c80ac8f367841131.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.c80ac8f367841131 where -- ========== Agent State Type
+module SysFEAT.SOF.c80ac8f367841131 where -- ========== AgentStateType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e13ce269678f11ed public -- Asset State Type
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
+open import SysFEAT.SOF.e13ce269678f11ed public -- AssetStateType
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
 AgentStateType : ClassOfClassOfBoundedIndividual
 AgentStateType = ClassOfBoundedIndividual
-
 
 --  AgentStateType is subTypeOf AssetStateType
 st-c80ac8f367841131-e13ce269678f11ed : AgentStateType ⊏ₑ AssetStateType
 st-c80ac8f367841131-e13ce269678f11ed = polySubTypeOf-identity
 
---  AgentStateType is subTypeOf AgentType
-st-c80ac8f367841131-79368381561716a6 : AgentStateType ⊏ₑ AgentType
-st-c80ac8f367841131-79368381561716a6 = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Agent Type: -}
+stateOfAgentType :  Linkage AgentStateType AgentType
+stateOfAgentType = make_classOfMeronymy "State of Agent Type" "State of Agent Type"
+

@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/d745ed256aa38edc.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.d745ed256aa38edc where -- ========== Information Dictionary
+module SysFEAT.SOF.d745ed256aa38edc where -- ========== InformationDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745dbaa6aa3840b public -- Model Package
-open import SysFEAT.SOF.6c5f808b68587e49 public -- Information Lexical Scope
+open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
+open import SysFEAT.SOF.6c5f808b68587e49 public -- InformationLexicalScope
 
 InformationDictionary : ClassOfIndividual
 InformationDictionary = Individual

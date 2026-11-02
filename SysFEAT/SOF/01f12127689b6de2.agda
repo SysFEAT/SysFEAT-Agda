@@ -12,19 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/01f12127689b6de2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.01f12127689b6de2 where -- ========== Capability Map
+module SysFEAT.SOF.01f12127689b6de2 where -- ========== CapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.06710aeb68ed2d29 public -- Meta Family of Class
-open import SysFEAT.UpperOntology.8cfa942f68527849 public -- Unbounded Aggregate
+open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 
 CapabilityMap : PropertyType
 CapabilityMap = Property
-
---  CapabilityMap withAspect MetaFamilyOfClass
-st-01f12127689b6de2-06710aeb68ed2d29 : CapabilityMap ⊏ₐₑ (MetaFamilyOfClass (lsuc(lzero)))
-st-01f12127689b6de2-06710aeb68ed2d29 = polySubTypeOf-identity
 
 --  CapabilityMap withAspect UnboundedAggregate
 st-01f12127689b6de2-8cfa942f68527849 : CapabilityMap ⊏ₐₑ (UnboundedAggregate (lsuc(lzero)))

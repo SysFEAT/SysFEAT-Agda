@@ -20,8 +20,8 @@ module SysFEAT.SOF.190c7429689664b5 where -- ========== Policy
 open import Agda.Primitive
 open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
 
-Policy : PropertyType
-Policy = Property
+Policy : AssetPropertyType
+Policy = Directive
 
 
 --  Policy is subTypeOf Directive

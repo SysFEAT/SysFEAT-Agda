@@ -16,11 +16,11 @@ module SysFEAT.SOF.3b539cbb551e4c2a where -- ========== Assessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.bcdbc016617a55be public -- Appraisal
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.SOF.6662956168dd650c public -- Assessment Value
+open import SysFEAT.SOF.6662956168dd650c public -- AssessmentValue
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
-Assessment : ClassOfBoundedIndividual
-Assessment = BoundedIndividual
+Assessment : ClassOfIndividual
+Assessment = Individual
 
 
 --  Assessment is subTypeOf Appraisal
@@ -31,6 +31,14 @@ st-3b539cbb551e4c2a-bcdbc016617a55be = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Selected Assessment Value: -}
+selectedAssessmentValue :  Linkage Assessment AssessmentValue
+selectedAssessmentValue = make_Relation "Selected Assessment Value" "Selected Assessment Value"
+
+postulate -- selectedAssessmentValue is subTypeOf selectedAppraisalOption
+  st-6662956f68dd654c-6662932568dd6161  : selectedAssessmentValue  ⊏⋆ᵣ  selectedAppraisalOption
+
+-- -------------------------------------------------------------------------------------------- 
 {- Assessed Asset: 
 Asset Block that is the subject of an Assessment.
 -}
@@ -39,11 +47,3 @@ assessedAsset = make_Relation "Assessed Asset" "Assessed Asset"
 
 postulate -- assessedAsset is subTypeOf appraisedAsset
   st-6bf1843a68599028-6bf17d4e68598487  : assessedAsset  ⊏⋆ᵣ  appraisedAsset
-
--- -------------------------------------------------------------------------------------------- 
-{- Selected Assessment Value: -}
-selectedAssessmentValue :  Linkage Assessment AssessmentValue
-selectedAssessmentValue = make_instanceOf "Selected Assessment Value" "Selected Assessment Value"
-
-postulate -- selectedAssessmentValue is subTypeOf selectedAppraisalOption
-  st-6662956f68dd654c-6662932568dd6161  : selectedAssessmentValue  ⊏⋆ᵣ  selectedAppraisalOption

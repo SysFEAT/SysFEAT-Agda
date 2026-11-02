@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/66628b5668dd5a25.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.66628b5668dd5a25 where -- ========== Appraisal Option
+module SysFEAT.SOF.66628b5668dd5a25 where -- ========== AppraisalOption
 
 open import Agda.Primitive
-open import SysFEAT.SOF.66628bbe68dd5bef public -- Governance Property
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
-open import SysFEAT.SOF.366c3ea8675c13e2 public -- Appraisal Type
+open import SysFEAT.SOF.66628bbe68dd5bef public -- GovernanceProperty
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
+open import SysFEAT.SOF.366c3ea8675c13e2 public -- AppraisalType
 
 AppraisalOption : PropertyType
 AppraisalOption = Property
@@ -37,7 +37,7 @@ st-66628b5668dd5a25-6662916b68dd5f84 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Appraisal Type: -}
 appraisalType :  Linkage AppraisalOption AppraisalType
-appraisalType = make_instanceOf "Appraisal Type" "Appraisal Type"
+appraisalType = make_classOfRelation "Appraisal Type" "Appraisal Type"
 
 postulate -- appraisalType is subTypeOf governancePropertyType
   st-666294f768dd64bc-666293d768dd6238  : appraisalType  ⊏⋆ᵣ  governancePropertyType

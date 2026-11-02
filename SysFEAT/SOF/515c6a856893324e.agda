@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/515c6a856893324e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.515c6a856893324e where -- ========== Asset Property
+module SysFEAT.SOF.515c6a856893324e where -- ========== AssetProperty
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
-open import SysFEAT.SOF.83f88fd567406e53 public -- Asset Property Type
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelPropertyBlock
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 
 AssetProperty : AssetPropertyType
 AssetProperty = Property
@@ -31,16 +31,14 @@ st-515c6a856893324e-0eb97aff6855cd23 : AssetProperty ⊏ₐₑ (ModelPropertyBlo
 st-515c6a856893324e-0eb97aff6855cd23 = polySubTypeOf-identity
 
 postulate -- AssetProperty is PowerInstanceOf Asset Property Type
-  f38232926aac8ad5 : AssetProperty ∷ₚₑ AssetPropertyType
-postulate -- AssetPropertyType is ReflexivePowerType 
-  f382329d6aac8b0b : AssetPropertyType ⊏ₘₑ AssetProperty
+  pi-f38232926aac8ad5 : AssetProperty ∷ₚₑ AssetPropertyType
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Property Type: -}
 assetPropertyType :  Linkage AssetProperty AssetPropertyType
-assetPropertyType = make_instanceOf "Asset Property Type" "Asset Property Type"
+assetPropertyType = make_classOfRelation "Asset Property Type" "Asset Property Type"
 
 postulate -- assetPropertyType is subTypeOf propertyClassification
   st-190c1f03689649e5-1976247d68925c3e  : assetPropertyType  ⊏⋆ᵣ  propertyClassification

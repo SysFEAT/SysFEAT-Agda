@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/582e785466f6b36f.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.582e785466f6b36f where -- ========== Data Risk Type
+module SysFEAT.SOF.582e785466f6b36f where -- ========== DataRiskType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0e55206a66f11ec5 public -- Risk Type
+open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 
 DataRiskType : ThirdOrderClass
 DataRiskType = SecondOrderClass

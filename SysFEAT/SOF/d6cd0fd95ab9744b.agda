@@ -14,17 +14,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.d6cd0fd95ab9744b where -- ========== Agent Type Environment
+module SysFEAT.SOF.d6cd0fd95ab9744b where -- ========== AgentTypeEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ca35f48a5fc48686 public -- Operating Eco-System
-open import SysFEAT.SOF.24ae31b55ed1c66d public -- Service Interface
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
-open import SysFEAT.SOF.ca3513af5fc59413 public -- Environment Interaction Process Type
+open import SysFEAT.SOF.ca35f48a5fc48686 public -- OperatingEcoSystem
+open import SysFEAT.SOF.24ae31b55ed1c66d public -- ServiceInterface
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
+open import SysFEAT.SOF.ca3513af5fc59413 public -- InteractionProcessTypeEnvironment
 
 AgentTypeEnvironment : ClassOfClassOfBoundedIndividual
 AgentTypeEnvironment = ClassOfBoundedIndividual
-
 
 --  AgentTypeEnvironment is subTypeOf OperatingEcoSystem
 st-d6cd0fd95ab9744b-ca35f48a5fc48686 : AgentTypeEnvironment ⊏ₑ OperatingEcoSystem
@@ -81,18 +80,13 @@ serviceChannel = membershipOfServiceChannel  ∘  aggregationOfServiceInterfaceS
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Agent: -}
 -- Aggregate Member : Participant Agent
-ParticipantAgent : ClassOfClassOfBoundedIndividual
-ParticipantAgent = ClassOfBoundedIndividual
-
+ParticipantAgent : ClassOfClassOfIndividual
+ParticipantAgent = ClassOfIndividual
 
 
 --  ParticipantAgent is subTypeOf EcosystemMember
 st-80be28965fc2a6b8-3d3f4aed6201346c : ParticipantAgent ⊏ₑ EcosystemMember
 st-80be28965fc2a6b8-3d3f4aed6201346c = polySubTypeOf-identity
-
---  ParticipantAgent is subTypeOf AgentType
-st-80be28965fc2a6b8-79368381561716a6 : ParticipantAgent ⊏ₑ AgentType
-st-80be28965fc2a6b8-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantAgent :  Linkage AgentTypeEnvironment ParticipantAgent
@@ -117,52 +111,42 @@ participantAgent = membershipOfParticipantAgent  ∘  aggregationOfAgentTypePart
 set of interactions processes performed in the context of an Operating Eco-System.
 -}
 -- Aggregate Member : Performed Interaction
-PerformedInteraction : ClassOfClassOfBoundedIndividual
-PerformedInteraction = ClassOfBoundedIndividual
-
+PerformedInteraction : ClassOfClassOfIndividual
+PerformedInteraction = ClassOfIndividual
 
 
 --  PerformedInteraction is subTypeOf AggregateHolonymyType
 st-26cb2d5769610945-c2f2c83b66ea4d78 : PerformedInteraction ⊏ₑ AggregateHolonymyType
 st-26cb2d5769610945-c2f2c83b66ea4d78 = polySubTypeOf-identity
 
---  PerformedInteraction is subTypeOf EnvironmentInteractionProcessType
-st-26cb2d5769610945-ca3513af5fc59413 : PerformedInteraction ⊏ₑ EnvironmentInteractionProcessType
-st-26cb2d5769610945-ca3513af5fc59413 = polySubTypeOf-identity
-
 -- Membership relation
 26CB2D596961099C :  Linkage AgentTypeEnvironment PerformedInteraction
 26CB2D596961099C = make_upwardNestingRelation "performedInteraction membership" "nested performedInteraction"
 
 -- Aggregation relation
-aggregationOfEnvironmentInteractionProcessTypePerformedInteraction :  Linkage PerformedInteraction EnvironmentInteractionProcessType
-aggregationOfEnvironmentInteractionProcessTypePerformedInteraction = make_Relation "EnvironmentInteractionProcessType aggregation" "aggregated EnvironmentInteractionProcessType"
+aggregationOfInteractionProcessTypeEnvironmentPerformedInteraction :  Linkage PerformedInteraction InteractionProcessTypeEnvironment
+aggregationOfInteractionProcessTypeEnvironmentPerformedInteraction = make_Relation "InteractionProcessTypeEnvironment aggregation" "aggregated InteractionProcessTypeEnvironment"
 
 {- performedInteraction : derived relation obtained by composing
-   26CB2D596961099C and aggregationOfEnvironmentInteractionProcessTypePerformedInteraction
-   It directly links an Agent Type Environment to the final aggregated EnvironmentInteractionProcessType
+   26CB2D596961099C and aggregationOfInteractionProcessTypeEnvironmentPerformedInteraction
+   It directly links an Agent Type Environment to the final aggregated InteractionProcessTypeEnvironment
    hiding the reifying PerformedInteraction
 -}
-performedInteraction : Linkage AgentTypeEnvironment EnvironmentInteractionProcessType
-performedInteraction = 26CB2D596961099C  ∘  aggregationOfEnvironmentInteractionProcessTypePerformedInteraction
+performedInteraction : Linkage AgentTypeEnvironment InteractionProcessTypeEnvironment
+performedInteraction = 26CB2D596961099C  ∘  aggregationOfInteractionProcessTypeEnvironmentPerformedInteraction
 
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Agent: -}
 -- Aggregate Member : Subject Agent
-SubjectAgent : ClassOfClassOfBoundedIndividual
-SubjectAgent = ClassOfBoundedIndividual
-
+SubjectAgent : ClassOfClassOfIndividual
+SubjectAgent = ClassOfIndividual
 
 
 --  SubjectAgent is subTypeOf ParticipantAgent
 st-fa4ffc205ec86201-80be28965fc2a6b8 : SubjectAgent ⊏ₑ ParticipantAgent
 st-fa4ffc205ec86201-80be28965fc2a6b8 = polySubTypeOf-identity
-
---  SubjectAgent is subTypeOf AgentType
-st-fa4ffc205ec86201-79368381561716a6 : SubjectAgent ⊏ₑ AgentType
-st-fa4ffc205ec86201-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectAgent :  Linkage AgentTypeEnvironment SubjectAgent
@@ -185,18 +169,13 @@ subjectAgent = membershipOfSubjectAgent  ∘  aggregationOfAgentTypeSubjectAgent
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Agent: -}
 -- Aggregate Member : Partner Agent
-PartnerAgent : ClassOfClassOfBoundedIndividual
-PartnerAgent = ClassOfBoundedIndividual
-
+PartnerAgent : ClassOfClassOfIndividual
+PartnerAgent = ClassOfIndividual
 
 
 --  PartnerAgent is subTypeOf ParticipantAgent
 st-fa4ffc235ec86276-80be28965fc2a6b8 : PartnerAgent ⊏ₑ ParticipantAgent
 st-fa4ffc235ec86276-80be28965fc2a6b8 = polySubTypeOf-identity
-
---  PartnerAgent is subTypeOf AgentType
-st-fa4ffc235ec86276-79368381561716a6 : PartnerAgent ⊏ₑ AgentType
-st-fa4ffc235ec86276-79368381561716a6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerAgent :  Linkage AgentTypeEnvironment PartnerAgent

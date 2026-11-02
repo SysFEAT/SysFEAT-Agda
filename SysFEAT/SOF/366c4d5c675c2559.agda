@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/366c4d5c675c2559.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c4d5c675c2559 where -- ========== Architecture Decision
+module SysFEAT.SOF.366c4d5c675c2559 where -- ========== ArchitectureDecision
 
 open import Agda.Primitive
 open import SysFEAT.SOF.d7f9fcc95f720ee0 public -- Decision
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- Functional Asset
-open import SysFEAT.SOF.97e09d7e68dd6d87 public -- Architecture Decision Outcome
+open import SysFEAT.SOF.97e09d7e68dd6d87 public -- ArchitectureDecisionOutcome
+open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
 
-ArchitectureDecision : ClassOfBoundedIndividual
-ArchitectureDecision = BoundedIndividual
+ArchitectureDecision : ClassOfIndividual
+ArchitectureDecision = Individual
 
 
 --  ArchitectureDecision is subTypeOf Decision
@@ -31,17 +31,17 @@ st-366c4d5c675c2559-d7f9fcc95f720ee0 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Selected Architecture Option: -}
+selectedArchitectureOption :  Linkage ArchitectureDecision ArchitectureDecisionOutcome
+selectedArchitectureOption = make_Relation "Selected Architecture Option" "Selected Architecture Option"
+
+postulate -- selectedArchitectureOption is subTypeOf selectedDecisionOption
+  st-97e09e9e68dd6e8c-97e09d5368dd6d39  : selectedArchitectureOption  ⊏⋆ᵣ  selectedDecisionOption
+
+-- -------------------------------------------------------------------------------------------- 
 {- Architecture Subject: -}
 architectureSubject :  Linkage ArchitectureDecision FunctionalAsset
 architectureSubject = make_Relation "Architecture Subject" "Architecture Subject"
 
 postulate -- architectureSubject is subTypeOf decisionSubject
   st-97e0a13168dd7141-6bf18905685999a3  : architectureSubject  ⊏⋆ᵣ  decisionSubject
-
--- -------------------------------------------------------------------------------------------- 
-{- Selected Architecture Option: -}
-selectedArchitectureOption :  Linkage ArchitectureDecision ArchitectureDecisionOutcome
-selectedArchitectureOption = make_instanceOf "Selected Architecture Option" "Selected Architecture Option"
-
-postulate -- selectedArchitectureOption is subTypeOf selectedDecisionOption
-  st-97e09e9e68dd6e8c-97e09d5368dd6d39  : selectedArchitectureOption  ⊏⋆ᵣ  selectedDecisionOption

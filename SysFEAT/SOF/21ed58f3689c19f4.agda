@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/21ed58f3689c19f4.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.21ed58f3689c19f4 where -- ========== Environmental Property
+module SysFEAT.SOF.21ed58f3689c19f4 where -- ========== EnvironmentalProperty
 
 open import Agda.Primitive
-open import SysFEAT.SOF.21ed231d689c0679 public -- Condition Property
-open import SysFEAT.SOF.e53af85b66e37f78 public -- Environmental Property Type
+open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.SOF.e53af85b66e37f78 public -- EnvironmentalPropertyType
 
 EnvironmentalProperty : AssetPropertyType
 EnvironmentalProperty = AssetProperty
@@ -32,7 +32,7 @@ st-21ed58f3689c19f4-21ed231d689c0679 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Environmental Property Type: -}
 environmentalPropertyType :  Linkage EnvironmentalProperty EnvironmentalPropertyType
-environmentalPropertyType = make_instanceOf "Environmental Property Type" "Environmental Property Type"
+environmentalPropertyType = make_classOfRelation "Environmental Property Type" "Environmental Property Type"
 
 postulate -- environmentalPropertyType is subTypeOf conditionPropertyType
   st-21ed5b67689c1c35-21ed5a16689c1a59  : environmentalPropertyType  ⊏⋆ᵣ  conditionPropertyType

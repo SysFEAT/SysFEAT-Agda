@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/9397b45268777e3b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.9397b45268777e3b where -- ========== Architecture Block
+module SysFEAT.SOF.9397b45268777e3b where -- ========== ArchitectureBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95e566855bed9 public -- Model Building Block
+open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 
 ArchitectureBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ArchitectureBlock u  = MixedOrderEntity u 

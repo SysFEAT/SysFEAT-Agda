@@ -14,14 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.952ea6c467285821 where -- ========== Policy Category
+module SysFEAT.SOF.952ea6c467285821 where -- ========== PolicyCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.83f88fd567406e53 public -- Asset Property Type
-open import SysFEAT.SOF.9397c3d86877842f public -- Policy Asset
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
+open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
 
 PolicyCategory : ThirdOrderClass
-PolicyCategory = SecondOrderClass
+PolicyCategory = PropertyType
+
 
 --  PolicyCategory is subTypeOf AssetPropertyType
 st-952ea6c467285821-83f88fd567406e53 : PolicyCategory ⊏ₑ AssetPropertyType

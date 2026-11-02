@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/0f64116a68597a27.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0f64116a68597a27 where -- ========== Governance Container
+module SysFEAT.SOF.0f64116a68597a27 where -- ========== GovernanceContainer
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95dce6855be2e public -- Model Container
-open import SysFEAT.SOF.0f641043685975c9 public -- Governance Building Block
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.SOF.0f641043685975c9 public -- GovernanceBuildingBlock
 
-GovernanceContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u
-GovernanceContainer u = MixedOrderEntity u
+GovernanceContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u 
+GovernanceContainer u  = MixedOrderEntity u 
+
 
 --  GovernanceContainer is subTypeOf ModelContainer
 st-0f64116a68597a27-0eb95dce6855be2e : ∀ {u v} → (GovernanceContainer u) ⊏⋆ₑ (ModelContainer v)

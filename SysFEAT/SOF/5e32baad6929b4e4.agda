@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/5e32baad6929b4e4.htm
 module SysFEAT.SOF.5e32baad6929b4e4 where -- ========== Applicable
 
 open import Agda.Primitive
-open import SysFEAT.SOF.5e32ba416929b430 public -- Policity Decision Option
+open import SysFEAT.SOF.5e32ba416929b430 public -- PolicityDecisionOption
 
-Applicable : ClassOfIndividual
-Applicable = Individual
+Applicable : Property
+Applicable = PropertyValue
 
 
 --  Applicable is subTypeOf PolicityDecisionOption

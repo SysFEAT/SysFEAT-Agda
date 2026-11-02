@@ -15,10 +15,10 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0eb95f356855bf94 where -- ========== Asset Block
+module SysFEAT.SOF.0eb95f356855bf94 where -- ========== AssetBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9397b45268777e3b public -- Architecture Block
+open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
 AssetBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 AssetBlock u  = MixedOrderEntity u 

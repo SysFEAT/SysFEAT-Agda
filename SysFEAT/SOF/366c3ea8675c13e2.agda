@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/366c3ea8675c13e2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.366c3ea8675c13e2 where -- ========== Appraisal Type
+module SysFEAT.SOF.366c3ea8675c13e2 where -- ========== AppraisalType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.83f8933a67407206 public -- Governance Property Type
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
+open import SysFEAT.SOF.83f8933a67407206 public -- GovernancePropertyType
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
 
 AppraisalType : ThirdOrderClass
-AppraisalType = SecondOrderClass
+AppraisalType = PropertyType
+
 
 --  AppraisalType is subTypeOf GovernancePropertyType
 st-366c3ea8675c13e2-83f8933a67407206 : AppraisalType ⊏ₑ GovernancePropertyType

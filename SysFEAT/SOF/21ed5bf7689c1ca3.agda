@@ -14,12 +14,12 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.21ed5bf7689c1ca3 where -- ========== Set of Condition Properties
+module SysFEAT.SOF.21ed5bf7689c1ca3 where -- ========== SetOfConditionProperties
 
 open import Agda.Primitive
-open import SysFEAT.SOF.21ed231d689c0679 public -- Condition Property
-open import SysFEAT.UpperOntology.8cfa942f68527849 public -- Unbounded Aggregate
-open import SysFEAT.SOF.e53af87666e37fcd public -- Set of Environmental Condition Type
+open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
+open import SysFEAT.SOF.e53af87666e37fcd public -- SetOfEnvironmentalConditionType
 
 SetOfConditionProperties : PropertyType
 SetOfConditionProperties = Property
@@ -38,7 +38,7 @@ st-21ed5bf7689c1ca3-8cfa942f68527849 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Set of Environmental Condition Type: -}
 setOfEnvironmentalConditionType :  Linkage SetOfConditionProperties SetOfEnvironmentalConditionType
-setOfEnvironmentalConditionType = make_instanceOf "Set of Environmental Condition Type" "Set of Environmental Condition Type"
+setOfEnvironmentalConditionType = make_classOfRelation "Set of Environmental Condition Type" "Set of Environmental Condition Type"
 
 postulate -- setOfEnvironmentalConditionType is subTypeOf conditionPropertyType
   st-21ed5c28689c1d28-21ed5a16689c1a59  : setOfEnvironmentalConditionType  ⊏⋆ᵣ  conditionPropertyType

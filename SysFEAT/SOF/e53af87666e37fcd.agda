@@ -14,13 +14,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.e53af87666e37fcd where -- ========== Set of Environmental Condition Type
+module SysFEAT.SOF.e53af87666e37fcd where -- ========== SetOfEnvironmentalConditionType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e53af71366e37de2 public -- Condition Property Type
+open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 
 SetOfEnvironmentalConditionType : ThirdOrderClass
-SetOfEnvironmentalConditionType = SecondOrderClass
+SetOfEnvironmentalConditionType = PropertyType
 
 
 --  SetOfEnvironmentalConditionType is subTypeOf ConditionPropertyType
@@ -37,5 +37,5 @@ Set of Condition Property Types.
 combinedConditionType :  Linkage SetOfEnvironmentalConditionType SetOfEnvironmentalConditionType
 combinedConditionType = make_classOfHolonymy "Combined Condition Type" "Combined Condition Type"
 
-postulate -- combinedConditionType is subTypeOf propertyTypeHolonymy
-  st-c2f278bb66ea258a-9653a4ad6970107b  : combinedConditionType  ⊏⋆ᵣ  propertyTypeHolonymy
+postulate -- combinedConditionType is subTypeOf partOfPropertyType
+  st-c2f278bb66ea258a-86b9a0206ac32912  : combinedConditionType  ⊏⋆ᵣ  partOfPropertyType

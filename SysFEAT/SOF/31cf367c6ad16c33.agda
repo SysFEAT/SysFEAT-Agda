@@ -6,24 +6,24 @@
 Period Type: 
 A Period Type that is an arbitrary period of time.Period Type is used to define the period on which Time Events or Event Concepts can occur.Examples:- Year - the set of all years (..., -5000, ... 50, ..., 800, ..., 1000, ..., 1789, ..., 1946, ..., 2050, ...)- 3.345 Nanoseconds- the set of all 3.345 Nanosecond periods.- Quater - the set all all quaters : 1 quater of 1492, 3rd quater of 2056, ....- 7000 Years- the set of all 7000 Year period.
 
-Documentation : https://framework.sysfeat.com/pages/362ff9085b3c4933.htm
+Documentation : https://framework.sysfeat.com/pages/31cf367c6ad16c33.htm
 
  - ============================== -}
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.362ff9085b3c4933 where -- ========== Period Type
+module SysFEAT.SOF.31cf367c6ad16c33 where -- ========== PeriodType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.3492c53e619642ed public -- Class of Bounded Individual
+open import SysFEAT.UpperOntology.3aca55ee6aa645c2 public -- ClassOfAbstractEntity
 
-PeriodType : ClassOfClassOfBoundedIndividual
-PeriodType = ClassOfBoundedIndividual
+PeriodType : AbstractEntityMetaClass
+PeriodType = ClassOfAbstractEntity
 
 
---  PeriodType is subTypeOf ClassOfBoundedIndividual
-st-362ff9085b3c4933-3492c53e619642ed : PeriodType ⊏ₑ ClassOfBoundedIndividual
-st-362ff9085b3c4933-3492c53e619642ed = polySubTypeOf-identity
+--  PeriodType is subTypeOf ClassOfAbstractEntity
+st-31cf367c6ad16c33-3aca55ee6aa645c2 : PeriodType ⊏ₑ ClassOfAbstractEntity
+st-31cf367c6ad16c33-3aca55ee6aa645c2 = polySubTypeOf-identity
 
 
 -- == Relations =======================

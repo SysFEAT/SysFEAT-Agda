@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/8f46e8eb64b7719a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.8f46e8eb64b7719a where -- ========== Key Indicator
+module SysFEAT.SOF.8f46e8eb64b7719a where -- ========== KeyIndicator
 
 open import Agda.Primitive
-open import SysFEAT.SOF.173706265fe3f332 public -- Measurement Instrument
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
-open import SysFEAT.SOF.3b1bc7e968cdac60 public -- Measurement Value
+open import SysFEAT.SOF.173706265fe3f332 public -- MeasurementInstrument
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.3b1bc7e968cdac60 public -- MeasurementValue
 
 KeyIndicator : ClassOfBoundedIndividual
 KeyIndicator = BoundedIndividual
@@ -38,7 +38,7 @@ measuredAsset : ∀ {u} →  Linkage KeyIndicator (AssetBlock u)
 measuredAsset = make_Relation "Measured Asset" "Measured Asset"
 
 postulate -- measuredAsset is subTypeOf holonymyRelation
-  st-6bf1872268599564-c2f2c6ce66e90be7  : measuredAsset  ⊏⋆ᵣ  holonymyRelation
+  st-6bf1872268599564-f626f77b6ad475d4  : measuredAsset  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Measurement: 

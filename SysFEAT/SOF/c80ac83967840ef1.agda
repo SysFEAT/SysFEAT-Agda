@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c80ac83967840ef1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.c80ac83967840ef1 where -- ========== Whole Life Agent Type
+module SysFEAT.SOF.c80ac83967840ef1 where -- ========== WholeLifeAgentType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
-open import SysFEAT.SOF.e13ce1cd678f1111 public -- Whole Life Asset Type
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
+open import SysFEAT.SOF.e13ce1cd678f1111 public -- WholeLifeAssetType
 
-WholeLifeAgentType : ClassOfClassOfBoundedIndividual
-WholeLifeAgentType = ClassOfBoundedIndividual
+WholeLifeAgentType : AgentMetaClass
+WholeLifeAgentType = AgentType
 
 
 --  WholeLifeAgentType is subTypeOf AgentType

@@ -6,24 +6,19 @@
 Micro Operating Asset: 
 A Micro Operating Asset represents the foundational level at which a systems structure and interactions can be analyzed without further subdivision into smaller constituent parts.Micro Operating Assets set the stage for how higher-level behaviors emerge. As one moves up to higher hierarchical levels (mezzo, macro, etc.), the signals and boundaries at each of those levels are influenced by the foundational interactions set at the micro level.
 
-Documentation : https://framework.sysfeat.com/pages/0c4510f76a032396.htm
+Documentation : https://framework.sysfeat.com/pages/4efc554c6ae4723f.htm
 
  - ============================== -}
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.0c4510f76a032396 where -- ========== Micro Operating Asset
+module SysFEAT.SOF.4efc554c6ae4723f where -- ========== MicroOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0c450e776a031ff0 public -- Systemic Level
+open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
 
-MicroOperatingAsset : ∀ (u : Level) → MixedOrderMetaClass u 
-MicroOperatingAsset u  = ClassOfMixedOrderEntity u 
-
-
---  MicroOperatingAsset is subTypeOf SystemicLevel
-st-0c4510f76a032396-0c450e776a031ff0 : ∀ {u v} → (MicroOperatingAsset u) ⊏⋆ₑ (SystemicLevel v)
-st-0c4510f76a032396-0c450e776a031ff0 = trivialPolySubTypeOfEntity
+MicroOperatingAsset : SystemicLevelFamily
+MicroOperatingAsset = Unknown
 
 
 -- == Relations =======================
