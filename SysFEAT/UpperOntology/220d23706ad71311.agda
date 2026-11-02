@@ -22,17 +22,17 @@ External references:
 module SysFEAT.UpperOntology.220d23706ad71311 where -- ========== CategorizationFamily
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.d9cce31f69371045 public -- MixedOrderMetaClass
+open import SysFEAT.UpperOntology.8d1fdcc56ae832d2 public -- FamilyMetaClass
 
 -- ============================================================
 -- I. Concept declaration
 -- ============================================================ 
 
 CategorizationFamily : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
-CategorizationFamily u = MixedOrderMetaClass u
+CategorizationFamily u = FamilyMetaClass u
 
---  GroupingMetaClass is subTypeOf FamilyMetaClass
-7fc6b2ef6ae04264 : ∀ {u v} → (CategorizationFamily u) ⊏⋆ₑ (MixedOrderMetaClass v)
+--  GroupingMetaClass is subTypeOf MetaClass
+7fc6b2ef6ae04264 : ∀ {u v} → (CategorizationFamily u) ⊏⋆ₑ (FamilyMetaClass v)
 7fc6b2ef6ae04264 = trivialPolySubTypeOfEntity
 
 

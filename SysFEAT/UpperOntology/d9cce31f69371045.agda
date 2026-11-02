@@ -30,6 +30,6 @@ open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and MetaR
 MixedOrderMetaClass : (u : Level) → Set (lsuc (lsuc (lsuc u)))
 MixedOrderMetaClass u = MetaClass u
 
--- MixedOrderMetaClass isSubTypeOf MetaClass  [PROVED - was a postulate]
+-- MixedOrderMetaClass isSubTypeOf MetaClass
 d9cce33e693710ad : ∀ {u} →  (MixedOrderMetaClass u) ⊏⋆ₑ (MetaClass u)
 d9cce33e693710ad {u} = polySubTypeOf-identity

@@ -3,7 +3,7 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Class of Entity Partition: 
+Concept Class Partition: 
 
 
 Documentation : https://framework.sysfeat.com/pages/cd90d8756ae17cc9.htm
@@ -19,7 +19,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.cd90d8756ae17cc9 where -- ========== ClassOfEntityPartition
+module SysFEAT.UpperOntology.cd90d8756ae17cc9 where -- ========== ConceptClassPartition
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
@@ -29,11 +29,11 @@ open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity and Relation
 -- I. Concept declaration
 -- ============================================================
 
-ClassOfEntityPartition : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
-ClassOfEntityPartition u = EnumeratedFamily u
+ConceptClassPartition : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
+ConceptClassPartition u = EnumeratedFamily u
 
---  ClassOfEntityPartition is subTypeOf EnumeratedFamily
-st-a881f78e6ad8484d-6295b7f46ad720d6 : ∀ {u v} → (ClassOfEntityPartition u) ⊏⋆ₑ (EnumeratedFamily v)
+--  ConceptClassPartition is subTypeOf EnumeratedFamily
+st-a881f78e6ad8484d-6295b7f46ad720d6 : ∀ {u v} → (ConceptClassPartition u) ⊏⋆ₑ (EnumeratedFamily v)
 st-a881f78e6ad8484d-6295b7f46ad720d6 = trivialPolySubTypeOfEntity
 
 -- ============================================================
@@ -41,7 +41,7 @@ st-a881f78e6ad8484d-6295b7f46ad720d6 = trivialPolySubTypeOfEntity
 -- ============================================================
 {- The Class of Entities that a Class Of Entity Partition partitions.
 -}
-partitionedClass : ∀ {u v} → Linkage (ClassOfEntityPartition u) (ClassOfEntity v)
+partitionedClass : ∀ {u v} → Linkage (ConceptClassPartition u) (ConceptClass v)
 partitionedClass = make_classOfRelation "Partitioning" "partitionedClass"
 
 postulate -- partitionedClass is subTypeOf existentialDependency

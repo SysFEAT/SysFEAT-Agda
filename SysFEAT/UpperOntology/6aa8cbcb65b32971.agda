@@ -21,7 +21,6 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.c463c6106aa23c35 public -- FirstOrderClass
 open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndividual
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
-open import SysFEAT.UpperOntology.f69619236a0f8dcd public -- IndividualCategory
 
 ClassOfIndividual : ClassOfClassOfIndividual
 ClassOfIndividual = FirstOrderClass
@@ -54,11 +53,3 @@ specializedClassOfIndividual = make_subTypeOf "Individual Class Specialization" 
 
 postulate -- specializedClassOfIndividual is subTypeOf subTypeOfEntity
   st-e429632e66ec72ab-8336837268e9448b  : specializedClassOfIndividual  ⊏⋆ᵣ  subTypeOfEntity {lzero}
-
--- -------------------------------------------------------------------------------------------- 
-{- Categorization: -}
-categorization : ∀ {u} →  Linkage ClassOfIndividual (IndividualCategory u)
-categorization = make_subTypeOf "Categorization" "Categorization"
-
-postulate -- categorization is subTypeOf subTypeOfEntity
-  st-f69619646a0f8e6c-8336837268e9448b  : categorization  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  subTypeOfEntity {lzero}

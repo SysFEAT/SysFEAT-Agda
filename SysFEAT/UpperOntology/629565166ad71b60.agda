@@ -3,8 +3,9 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Group Family: 
-A Categorization Family is a kind of Family of Class that is not based of the sub-types of a given Class of Entity.
+Category of Entity: 
+A Category of Entity is a Class of Entity, typically used to group or organize collections of Class of Entitys that share some structural, relational, or definitional property. 
+Micro Operating Asset, Mezzo Operating Asset and Macro Operating Asset are categorization of Operating Assets.
 
 Documentation : https://framework.sysfeat.com/pages/629565166ad71b60.htm
 
@@ -22,7 +23,6 @@ External references:
 
 module SysFEAT.UpperOntology.629565166ad71b60 where -- ============ CategoryOfEntity
 
-open import SysFEAT.UpperOntology.308c3b3868e9141e public -- ClassOfMixedOrderEntity
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
 
 
@@ -30,11 +30,11 @@ open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamil
 -- I. Concept definition
 -- ============================================================ 
 CategoryOfEntity : (u : Level) → CategorizationFamily u
-CategoryOfEntity u = ClassOfMixedOrderEntity u
+CategoryOfEntity u = ClassOfEntity u
 
--- CategoryOfEntity isSubTypeOf ClassOfMixedOrderEntity
-9b7a9c936acf2af5 : ∀ {u} → (CategoryOfEntity u) ⊏ₑ (ClassOfMixedOrderEntity u)
-9b7a9c936acf2af5 {u} = polySubTypeOf-identity
+-- CategoryOfEntity isSubTypeOf ClassOfEntity
+800b81396ae83012 : ∀ {u} → (CategoryOfEntity u) ⊏ₑ (ClassOfEntity u)
+800b81396ae83012 {u} = polySubTypeOf-identity
 
 -- ============================================================
 -- II. Relation
