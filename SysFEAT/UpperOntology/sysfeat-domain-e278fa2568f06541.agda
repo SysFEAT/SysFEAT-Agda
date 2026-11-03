@@ -39,7 +39,7 @@ open import SysFEAT.UpperOntology.d9cce4e96937128c public -- Ordered Meta-Class
 open import SysFEAT.UpperOntology.0dd6b365690d316b public -- Ordered Entity
 open import SysFEAT.UpperOntology.308c3b3868e9141e public -- Class of Mixed-Order Entity
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- Categorization Family
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- Category of Entity
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- Concept Category
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- Second Order Class
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- Enumerated Family
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- Third Order Class
