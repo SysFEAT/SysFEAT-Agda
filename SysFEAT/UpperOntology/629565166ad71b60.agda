@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Category of Entity: 
-A Category of Entity is a Class of Entity, typically used to group or organize collections of Class of Entitys that share some structural, relational, or definitional property. 
+A Concept Category is a Class of Entity, typically used to group or organize collections of Class of Entitys that share some structural, relational, or definitional property. 
 Micro Operating Asset, Mezzo Operating Asset and Macro Operating Asset are categorization of Operating Assets.
 
 Documentation : https://framework.sysfeat.com/pages/629565166ad71b60.htm
@@ -21,7 +21,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.629565166ad71b60 where -- ============ CategoryOfEntity
+module SysFEAT.UpperOntology.629565166ad71b60 where -- ============ ConceptCategory
 
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
 
@@ -29,11 +29,11 @@ open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamil
 -- ============================================================
 -- I. Concept definition
 -- ============================================================ 
-CategoryOfEntity : (u : Level) → CategorizationFamily u
-CategoryOfEntity u = ClassOfEntity u
+ConceptCategory : (u : Level) → CategorizationFamily u
+ConceptCategory u = ClassOfEntity u
 
--- CategoryOfEntity isSubTypeOf ClassOfEntity
-800b81396ae83012 : ∀ {u} → (CategoryOfEntity u) ⊏ₑ (ClassOfEntity u)
+-- ConceptCategory isSubTypeOf ClassOfEntity
+800b81396ae83012 : ∀ {u} → (ConceptCategory u) ⊏ₑ (ClassOfEntity u)
 800b81396ae83012 {u} = polySubTypeOf-identity
 
 -- ============================================================

@@ -22,7 +22,7 @@ External references:
 
 module SysFEAT.UpperOntology.8d1fa46c6ae82899 where -- ============ ConceptClass
 
-open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and metaRelation
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
 
 -- ============================================================
 -- I. Concept definition
@@ -30,8 +30,8 @@ open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and metaR
 ConceptClass : (u : Level) → MetaClass u
 ConceptClass u = ClassOfEntity u
 
--- Concept Class isSubTypeOf ClassOfEntity
-8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ClassOfEntity u)
+-- Concept Class isSubTypeOf ConceptCategory
+8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ConceptCategory u)
 8d1fbb286ae82e54 {u} = polySubTypeOf-identity
 
 -- ============================================================
@@ -41,5 +41,5 @@ ConceptClass u = ClassOfEntity u
 {- Concept Categorization: 
 Concept Categorization is classification of Concept Classs by means of Category of Entity.
 -}
-conceptCategorization :  ∀ {u v} → Linkage (ConceptClass u) (ClassOfEntity v)
+conceptCategorization :  ∀ {u v} → Linkage (ConceptClass u) (ConceptCategory v)
 conceptCategorization = make_subTypeOf "Concept Categorization" "Categorizing Category"

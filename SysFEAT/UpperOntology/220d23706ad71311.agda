@@ -31,8 +31,7 @@ open import SysFEAT.UpperOntology.8d1fdcc56ae832d2 public -- FamilyMetaClass
 CategorizationFamily : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
 CategorizationFamily u = FamilyMetaClass u
 
---  GroupingMetaClass is subTypeOf MetaClass
-7fc6b2ef6ae04264 : ∀ {u v} → (CategorizationFamily u) ⊏⋆ₑ (FamilyMetaClass v)
-7fc6b2ef6ae04264 = trivialPolySubTypeOfEntity
-
+--  CategorizationFamily is subTypeOf FamilyMetaClass
+8d1fdee16ae8344f : ∀ {u v} → (CategorizationFamily u) ⊏⋆ₑ (FamilyMetaClass v)
+8d1fdee16ae8344f = trivialPolySubTypeOfEntity
 
