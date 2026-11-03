@@ -116,7 +116,7 @@ aggregateQualification : Linkage ClassOfBoundedIndividual Property
 aggregateQualification = membershipOfAggregateQualification  ∘  aggregationOfPropertyAggregateQualification
 
 postulate -- aggregateQualification is subTypeOf subTypeOfEntity
-  st-b83e30bc696f51e5-8336837268e9448b  : aggregateQualification  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-b83e30bc696f51e5-8336837268e9448b  : aggregateQualification  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
 
 
 -- -------------------------------------------------------------------------------------------- 

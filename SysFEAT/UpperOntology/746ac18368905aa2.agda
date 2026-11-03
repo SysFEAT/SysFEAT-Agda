@@ -49,7 +49,7 @@ propertyClassification :  Linkage Property PropertyType
 propertyClassification = make_classOfRelation "Property Classification" "Property Classification"
 
 postulate -- propertyClassification is subTypeOf instanceOfEntity
-  st-1976247d68925c3e-34a453a068f7a3ef  : propertyClassification  ⊏⋆ᵣ  instanceOfEntity {lzero} {lzero}
+  st-1976247d68925c3e-34a453a068f7a3ef  : propertyClassification  ⊏⋆ᵣ  instanceOfEntity {lzero} {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Property: 
@@ -59,4 +59,4 @@ specializedProperty :  Linkage Property Property
 specializedProperty = make_subTypeOf "Property Specialization" "Specialized Property"
 
 postulate -- specializedProperty is subTypeOf subTypeOfEntity
-  st-1662112a68925f90-8336837268e9448b  : specializedProperty  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-1662112a68925f90-8336837268e9448b  : specializedProperty  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}

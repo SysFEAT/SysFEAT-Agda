@@ -42,4 +42,4 @@ propertyOfIndividual :  Linkage Individual Property
 propertyOfIndividual = make_Relation "Individual Qualification" "Property of Individual"
 
 postulate -- propertyOfIndividual is subTypeOf instanceOfEntity
-  st-19763dbb68926a48-34a453a068f7a3ef  : propertyOfIndividual   ⊏⋆ᵣ  instanceOfEntity {lzero} {lzero}
+  st-19763dbb68926a48-34a453a068f7a3ef  : propertyOfIndividual   ⊏⋆ᵣ  instanceOfEntity {lzero} {lsuc(lzero)}
