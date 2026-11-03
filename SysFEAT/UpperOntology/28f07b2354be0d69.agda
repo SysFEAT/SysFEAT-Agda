@@ -57,41 +57,6 @@ postulate -- referenceHolonymy is subTypeOf referenceRelation
   st-9653a95669701e02-23d5398f68511bc1  : referenceHolonymy  ⊏⋆ᵣ  referenceRelation {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Aggregate Holonymy: 
-Aggregate Holonymy is a reified Holonymy Relation where the composed Bounded Individual becomes a Bounded Member of the whole Bounded Individual.
--}
--- Aggregate Member : Aggregate Holonymy
-AggregateHolonymy : ClassOfIndividual
-AggregateHolonymy = Individual
-
-
---  AggregateHolonymy withAspect BoundedMember
-st-c2f2c9a166ea50e2-0eb999956855e070 : AggregateHolonymy ⊏ₐₑ (BoundedMember lzero)
-st-c2f2c9a166ea50e2-0eb999956855e070 = polySubTypeOf-identity
-
---  AggregateHolonymy is subTypeOf BoundedIndividual
-st-c2f2c9a166ea50e2-28f07b2354be0d69 : AggregateHolonymy ⊏ₑ BoundedIndividual
-st-c2f2c9a166ea50e2-28f07b2354be0d69 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfAggregateHolonymy :  Linkage BoundedIndividual AggregateHolonymy
-membershipOfAggregateHolonymy = make_upwardNestingRelation "aggregateHolonymy membership" "nested aggregateHolonymy"
-
--- Aggregation relation
-aggregationOfBoundedIndividualAggregateHolonymy :  Linkage AggregateHolonymy BoundedIndividual
-aggregationOfBoundedIndividualAggregateHolonymy = make_Relation "BoundedIndividual aggregation" "aggregated BoundedIndividual"
-
-{- aggregateHolonymy : derived relation obtained by composing
-   membershipOfAggregateHolonymy and aggregationOfBoundedIndividualAggregateHolonymy
-   It directly links an Bounded Individual to the final aggregated BoundedIndividual
-   hiding the reifying AggregateHolonymy
--}
-aggregateHolonymy : Linkage BoundedIndividual BoundedIndividual
-aggregateHolonymy = membershipOfAggregateHolonymy  ∘  aggregationOfBoundedIndividualAggregateHolonymy
-
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Temporal Ordering: -}
 -- Aggregate Member : Temporal Ordering
 TemporalOrdering : ClassOfIndividual
@@ -121,5 +86,40 @@ aggregationOfTemporalBoundingTemporalOrdering = make_Relation "TemporalBounding 
 -}
 temporalOrdering : Linkage BoundedIndividual TemporalBounding
 temporalOrdering = membershipOfTemporalOrdering  ∘  aggregationOfTemporalBoundingTemporalOrdering
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Aggregate Holonymy: 
+Aggregate Holonymy is a reified Holonymy Relation where the composed Bounded Individual becomes a Bounded Member of the whole Bounded Individual.
+-}
+-- Aggregate Member : Aggregate Holonymy
+AggregateHolonymy : ClassOfIndividual
+AggregateHolonymy = Individual
+
+
+--  AggregateHolonymy is subTypeOf BoundedIndividual
+st-c2f2c9a166ea50e2-28f07b2354be0d69 : AggregateHolonymy ⊏ₑ BoundedIndividual
+st-c2f2c9a166ea50e2-28f07b2354be0d69 = polySubTypeOf-identity
+
+--  AggregateHolonymy withAspect BoundedMember
+st-c2f2c9a166ea50e2-0eb999956855e070 : AggregateHolonymy ⊏ₐₑ (BoundedMember lzero)
+st-c2f2c9a166ea50e2-0eb999956855e070 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfAggregateHolonymy :  Linkage BoundedIndividual AggregateHolonymy
+membershipOfAggregateHolonymy = make_upwardNestingRelation "aggregateHolonymy membership" "nested aggregateHolonymy"
+
+-- Aggregation relation
+aggregationOfBoundedIndividualAggregateHolonymy :  Linkage AggregateHolonymy BoundedIndividual
+aggregationOfBoundedIndividualAggregateHolonymy = make_Relation "BoundedIndividual aggregation" "aggregated BoundedIndividual"
+
+{- aggregateHolonymy : derived relation obtained by composing
+   membershipOfAggregateHolonymy and aggregationOfBoundedIndividualAggregateHolonymy
+   It directly links an Bounded Individual to the final aggregated BoundedIndividual
+   hiding the reifying AggregateHolonymy
+-}
+aggregateHolonymy : Linkage BoundedIndividual BoundedIndividual
+aggregateHolonymy = membershipOfAggregateHolonymy  ∘  aggregationOfBoundedIndividualAggregateHolonymy
 
 

@@ -36,4 +36,4 @@ specializedPropertyType :  Linkage PropertyType PropertyType
 specializedPropertyType = make_subTypeOf "Property Type Specialization" "Specialized Property Type"
 
 postulate -- specializedPropertyType is subTypeOf subTypeOfEntity
-  st-12b01dee66e92b43-8336837268e9448b  : specializedPropertyType  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-12b01dee66e92b43-8336837268e9448b  : specializedPropertyType  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}

@@ -42,7 +42,7 @@ qualifyingProperty :  Linkage ClassOfIndividual Property
 qualifyingProperty = make_subTypeOf "Qualification" "Qualifying Property"
 
 postulate -- qualifyingProperty is subTypeOf subTypeOfEntity
-  st-16621f9a689131e0-8336837268e9448b  : qualifyingProperty  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-16621f9a689131e0-8336837268e9448b  : qualifyingProperty  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Class of Individual: 
@@ -52,4 +52,4 @@ specializedClassOfIndividual :  Linkage ClassOfIndividual ClassOfIndividual
 specializedClassOfIndividual = make_subTypeOf "Individual Class Specialization" "Specialized Class of Individual"
 
 postulate -- specializedClassOfIndividual is subTypeOf subTypeOfEntity
-  st-e429632e66ec72ab-8336837268e9448b  : specializedClassOfIndividual  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-e429632e66ec72ab-8336837268e9448b  : specializedClassOfIndividual  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
