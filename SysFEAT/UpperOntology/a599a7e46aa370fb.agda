@@ -43,8 +43,8 @@ SecondOrderClass = MetaClass lzero
 34a349a068f71f77 = polySubTypeOf-identity
 
 -- SecondOrderClass isPowerInstanceOf ThirdOrderClass
---664328444b6ad764b4 : ∀ {u v} → (SecondOrderClass u) ∷ₚₑ (ThirdOrderClass v)
---664328444b6ad764b4 = trivialPowerInstanceOfEntity
+bab6c75c6ad70a27 : SecondOrderClass ∷ₚₑ ThirdOrderClass
+bab6c75c6ad70a27 = powerInstanceOfEntity-fromCoercion (λ A → Lift _ A)
 
 -- ============================================================
 -- II. Mereological Governance (Meta level M2)

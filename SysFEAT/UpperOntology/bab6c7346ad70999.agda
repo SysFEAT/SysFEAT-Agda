@@ -28,15 +28,14 @@ open import SysFEAT.UpperOntology.003302806ae27b7c public -- FourthOrderClass
 -- I. Concept declaration
 -- ============================================================
 
-ThirdOrderClass : Set (lsuc (lsuc (lsuc (lsuc lzero))))
+ThirdOrderClass : FourthOrderClass
 ThirdOrderClass = MetaClass (lsuc(lzero))
 
 --  ThirdOrderClass withAspect OrderedMetaClass
-bab6C7446ad709fb : ThirdOrderClass ⊏ₐₑ (OrderedMetaClass (lsuc(lsuc(lsuc(lzero)))))
-bab6C7446ad709fb  = trivialPolySubTypeOf
+bab6C7446ad709fb : ThirdOrderClass ⊏ₑ (OrderedMetaClass (lsuc lzero))
+bab6C7446ad709fb = polySubTypeOf-identity
 
--- ThirdOrderClass isPowerInstanceOf FourthClass
---003302946ae27bde : ∀ {u v} → (ThirdOrderClass u) ∷ₚₑ (FourthOrderClass v)
---003302946ae27bde = trivialPowerInstanceOfEntity
-
+-- ThirdOrderClass isPowerInstanceOf FourthOrderClass
+003302946ae27bde : ThirdOrderClass ∷ₚₑ FourthOrderClass
+003302946ae27bde = powerInstanceOfEntity-fromCoercion (λ A → Lift _ A)
 
