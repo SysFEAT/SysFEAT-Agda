@@ -5,7 +5,7 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-OrderedPartitonOfClassOfEntity:
+OrderedPartitionOfClassOfEntity:
 A ClassOfEntity is either a ClassOfMixedOrderEntity or a ClassOfOrderedEntity
 
 Documentation : https://framework.sysfeat.com/pages/7d356ce368f37746.htm
@@ -17,7 +17,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.7d356ce368f37746 where -- ============ OrderedPartitonOfClassOfEntity
+module SysFEAT.UpperOntology.7d356ce368f37746 where -- ============ OrderedPartitionOfClassOfEntity
 
 open import SysFEAT.UpperOntology.cd90d8756ae17cc9 public -- ConceptClassPartition
 open import SysFEAT.UpperOntology.308c3b3868e9141e public -- ClassOfMixedOrderEntity

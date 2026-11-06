@@ -25,7 +25,7 @@ ClassOfOrderedElement u = ClassOfElement u
 -- ============================================================
 -- Aspects are suptyping between a ClassOfOrderedElement and a ClassOfMixedOrderElement
 aspectOf : ∀ {u v} → Linkage (ClassOfOrderedElement u) (ClassOfMixedOrderElement v)
-aspectOf {u} {v} = make_Linkage (HomSubType {u} {v}) "Aspect Subtyping" "Super Aspect"
+aspectOf {u} {v} = make_subTypeOf "Aspect Subtyping" "Super Aspect"
 
 -- Mathematical predicate for aspectOf
 _⊏ₐ_ : ∀ {u v} → ClassOfOrderedElement u → ClassOfMixedOrderElement v → Set (lsuc (lsuc (u ⊔ v)))

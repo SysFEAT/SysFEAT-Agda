@@ -4,8 +4,8 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-NaturalPartitonOfClassOfEntity:
-A ClassOfEntity is either a
+NaturalPartitionOfClassOfEntity:
+A ClassOfEntity is either a ConceptCategory or a ConceptClass
 
 Documentation : https://framework.sysfeat.com/pages/37a0462f6aea4c24.htm
 
@@ -16,7 +16,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.37a0462f6aea4c24 where -- ============ PartitionOfConceptClass
+module SysFEAT.UpperOntology.37a0462f6aea4c24 where -- ============ NaturalPartitionOfClassOfEntity
 
 open import SysFEAT.UpperOntology.cd90d8756ae17cc9 public -- ConceptClassPartition
 open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
