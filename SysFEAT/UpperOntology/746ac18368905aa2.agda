@@ -21,20 +21,20 @@ External references:
 module SysFEAT.UpperOntology.746ac18368905aa2 where -- ========== Property
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 open import SysFEAT.UpperOntology.3aca55ee6aa645c2 public -- ClassOfAbstractEntity
+open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
 Property : PropertyType
 Property = ClassOfAbstractEntity
 
---  Property withAspect BuildingBlock
-st-746ac18368905aa2-23d5a9ea68513ced : Property ⊏ₐₑ (BuildingBlock (lsuc(lzero)))
-st-746ac18368905aa2-23d5a9ea68513ced = polySubTypeOf-identity
-
 --  Property is subTypeOf ClassOfAbstractEntity
 st-746ac18368905aa2-3aca55ee6aa645c2 : Property ⊏ₑ ClassOfAbstractEntity
 st-746ac18368905aa2-3aca55ee6aa645c2 = polySubTypeOf-identity
+
+--  Property withAspect BuildingBlock
+st-746ac18368905aa2-23d5a9ea68513ced : Property ⊏ₐₑ (BuildingBlock (lsuc(lzero)))
+st-746ac18368905aa2-23d5a9ea68513ced = polySubTypeOf-identity
 
 postulate -- Property is PowerInstanceOf Property Type
   pi-f382366f6aac9352 : Property ∷ₚₑ PropertyType

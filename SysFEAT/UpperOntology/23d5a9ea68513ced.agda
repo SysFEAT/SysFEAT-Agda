@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Building Block: 
-A Building Block is an autonomous Entity that contributes to the makeup of other Building Blocks.Building Blocks can be either reusable entities (packaged in Containers) or be local to the Aggregate Block that references them (see Block Lexical Scope and Hierarchical Member).Examples:- Functionality(ies), Business Process(es), Data Entity(ies), Tags, ARE Building Blocks. - Process Steps or Attributes of a data entity ARE NOT Building Blocks. They are members of an internal structure (see Aggregate Member).
+A Building Block is an Aspect of Entity where the Entity that treated as an autonomous unit that contributes to the makeup of other Building Blocks.Building Blocks can be either reusable entities (packaged in Containers) or be local to the Aggregate Block that references them (see Block Lexical Scope and Hierarchical Member).Examples:- Functionality(ies), Business Process(es), Data Entity(ies), Tags, ARE Building Blocks. - Process Steps or Attributes of a data entity ARE NOT Building Blocks. They are members of an internal structure (see Aggregate Member).
 
 Documentation : https://framework.sysfeat.com/pages/23d5a9ea68513ced.htm
 

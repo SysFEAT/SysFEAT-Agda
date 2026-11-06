@@ -20,6 +20,7 @@ open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndiv
 BoundedIndividualMetaClass : ThirdOrderClass
 BoundedIndividualMetaClass = ClassOfClassOfIndividual
 
+
 --  BoundedIndividualMetaClass is subTypeOf ClassOfClassOfIndividual
 st-60876d5c68de82f2-608767a668de7fb6 : BoundedIndividualMetaClass ⊏ₑ ClassOfClassOfIndividual
 st-60876d5c68de82f2-608767a668de7fb6 = polySubTypeOf-identity

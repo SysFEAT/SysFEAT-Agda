@@ -21,6 +21,7 @@ open import SysFEAT.UpperOntology.23d5eaba68515533 public -- OrderingConnection
 TemporalBoundingType : ClassOfClassOfIndividual
 TemporalBoundingType = ClassOfIndividual
 
+
 --  TemporalBoundingType is subTypeOf ClassOfIndividual
 st-9429979a66823f90-6aa8cbcb65b32971 : TemporalBoundingType ⊏ₑ ClassOfIndividual
 st-9429979a66823f90-6aa8cbcb65b32971 = polySubTypeOf-identity

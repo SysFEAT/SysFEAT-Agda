@@ -61,17 +61,17 @@ postulate -- referenceHolonymy is subTypeOf referenceRelation
 Aggregate Holonymy is a reified Holonymy Relation where the composed Bounded Individual becomes a Bounded Member of the whole Bounded Individual.
 -}
 -- Aggregate Member : Aggregate Holonymy
-AggregateHolonymy : ClassOfIndividual
+AggregateHolonymy : AggregateHolonymyType
 AggregateHolonymy = Individual
 
+
+--  AggregateHolonymy is subTypeOf Individual
+st-c2f2c9a166ea50e2-4df9512266826e23 : AggregateHolonymy ⊏ₑ Individual
+st-c2f2c9a166ea50e2-4df9512266826e23 = polySubTypeOf-identity
 
 --  AggregateHolonymy withAspect BoundedMember
 st-c2f2c9a166ea50e2-0eb999956855e070 : AggregateHolonymy ⊏ₐₑ (BoundedMember lzero)
 st-c2f2c9a166ea50e2-0eb999956855e070 = polySubTypeOf-identity
-
---  AggregateHolonymy is subTypeOf BoundedIndividual
-st-c2f2c9a166ea50e2-28f07b2354be0d69 : AggregateHolonymy ⊏ₑ BoundedIndividual
-st-c2f2c9a166ea50e2-28f07b2354be0d69 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAggregateHolonymy :  Linkage BoundedIndividual AggregateHolonymy
@@ -89,12 +89,14 @@ aggregationOfBoundedIndividualAggregateHolonymy = make_Relation "BoundedIndividu
 aggregateHolonymy : Linkage BoundedIndividual BoundedIndividual
 aggregateHolonymy = membershipOfAggregateHolonymy  ∘  aggregationOfBoundedIndividualAggregateHolonymy
 
+postulate -- aggregateHolonymy is subTypeOf holonymyRelation
+  st-c2f2c9a166ea50e2-f626f77b6ad475d4  : aggregateHolonymy  ⊏⋆ᵣ  holonymyRelation
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Temporal Ordering: -}
 -- Aggregate Member : Temporal Ordering
-TemporalOrdering : ClassOfIndividual
+TemporalOrdering : TemporalOrderingType
 TemporalOrdering = Individual
 
 
