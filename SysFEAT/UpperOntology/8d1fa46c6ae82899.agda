@@ -30,8 +30,8 @@ open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
 ConceptClass : (u : Level) → MetaClass u
 ConceptClass u = ClassOfEntity u
 
--- Concept Class isSubTypeOf ConceptCategory
-8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ConceptCategory u)
+-- Concept Class isSubTypeOf ClassOfEntity
+8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ClassOfEntity u)
 8d1fbb286ae82e54 {u} = polySubTypeOf-identity
 
 -- ============================================================

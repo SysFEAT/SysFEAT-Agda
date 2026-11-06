@@ -24,7 +24,7 @@ External references:
 
 {-# OPTIONS --safe --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.20702b2568e9694d where -- ============== Class of Element
+module SysFEAT.UpperOntology.20702b2568e9694d where -- ============== ClassOfElement
 
 open import SysFEAT.UpperOntology.23d5249e68510ff9 public -- Element
 

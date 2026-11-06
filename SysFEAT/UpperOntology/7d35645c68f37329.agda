@@ -24,6 +24,7 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity and Relation
 open import SysFEAT.UpperOntology.308c3b3868e9141e public -- ClassOfMixedOrderEntity
 open import SysFEAT.UpperOntology.d9cce4e96937128c public -- OrderedMetaClass
+open import SysFEAT.UpperOntology.62a273946ace10c3 public -- Class of Ordered Element
 
 -- ============================================================
 -- I. ClassOfOrderedEntity declaration
@@ -54,6 +55,10 @@ aspectOfEntity {u} {v} = make_subTypeOf "Aspect SubTyping" "Super Aspect"
 -- Mathematical predicate of aspectOfEntity                                                               
 _⊏ₐₑ_ :  ∀ {u v} (c1 : ClassOfOrderedEntity u) (c2 : ClassOfMixedOrderEntity v) → Set (lsuc (lsuc (u ⊔ v)))
 _⊏ₐₑ_ c1 c2 = c1 —⟨ aspectOfEntity  ⟩→ c2
+
+-- aspectOfEntity isSubTypeOf aspectOf
+aspectOfEntity-⊏-aspectOf : ∀ {u v} → aspectOfEntity {u}{v} ⊏⋆ᵣ aspectOf {u}{v}
+aspectOfEntity-⊏-aspectOf {u} {v} = polySubTypeOfRel-fromExtensionMap {subRel = (aspectOfEntity {u}{v})} {superRel = (aspectOf {u}{v})} (λ w → w)
 
 -- aspectOfEntity isSubTypeOf polySubTypeOfEntity
 da2b741c69d78c55 : ∀ {u v} → aspectOfEntity {u}{v} ⊏⋆ᵣ polySubTypeOfEntity {u}{v}
