@@ -17,11 +17,13 @@ module SysFEAT.SOF.4efc77266ae49efb where -- ========== EnvironmentalCategory
 open import Agda.Primitive
 open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
 
-EnvironmentalCategory : ∀ (u : Level) → ClassOfMixedOrderEntity u
-EnvironmentalCategory u = MixedOrderEntity u
+EnvironmentalCategory : ∀ (u : Level) → MetaClass u 
+EnvironmentalCategory u  = ClassOfEntity u 
+
 
 --  EnvironmentalCategory is subTypeOf ConditionCategory
 st-4efc77266ae49efb-4efc6c5b6ae48f78 : ∀ {u v} → (EnvironmentalCategory u) ⊏⋆ₑ (ConditionCategory v)
 st-4efc77266ae49efb-4efc6c5b6ae48f78 = trivialPolySubTypeOfEntity
 
 
+-- == Relations =======================

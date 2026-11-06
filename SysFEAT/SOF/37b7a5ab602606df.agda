@@ -17,8 +17,8 @@ module SysFEAT.SOF.37b7a5ab602606df where -- ========== AssessmentProcess
 open import Agda.Primitive
 open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 
-AssessmentProcess : ClassOfBoundedIndividual
-AssessmentProcess = BoundedIndividual
+AssessmentProcess : WholeLifeClass
+AssessmentProcess = WholeLifeIndividual
 
 
 --  AssessmentProcess is subTypeOf GovernanceActivity

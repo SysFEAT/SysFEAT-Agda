@@ -19,7 +19,7 @@ module SysFEAT.SOF.0eb95dce6855be2e where -- ========== ModelContainer
 open import Agda.Primitive
 open import SysFEAT.SOF.0eb95db46855bdd5 public -- ModelLexicalScope
 open import SysFEAT.UpperOntology.0eb93b4268549a66 public -- Container
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelPropertyBlock
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 open import SysFEAT.SOF.d745e99d6aa38a7a public -- Tag
 
@@ -39,12 +39,12 @@ st-0eb95dce6855be2e-0eb93b4268549a66 = trivialPolySubTypeOfEntity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Packaged Property Block: -}
-packagedPropertyBlock : ∀ {u v} →  Linkage (ModelContainer u) (ModelPropertyBlock v)
-packagedPropertyBlock = make_nestingRelation "Packaged Property Block" "Packaged Property Block"
+{- Packaged Categorization Block: -}
+packagedCategorizationBlock : ∀ {u v} →  Linkage (ModelContainer u) (ModelCategorizationBlock v)
+packagedCategorizationBlock = make_nestingRelation "Packaged Categorization Block" "Packaged Categorization Block"
 
-postulate -- packagedPropertyBlock is subTypeOf scopedModelBlock
-  st-0eb97c566855cef7-0eb96a306855c816  : ∀ {u v} → packagedPropertyBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}
+postulate -- packagedCategorizationBlock is subTypeOf scopedModelBlock
+  st-0eb97c566855cef7-0eb96a306855c816  : ∀ {u v} → packagedCategorizationBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Packaged Model Block: -}

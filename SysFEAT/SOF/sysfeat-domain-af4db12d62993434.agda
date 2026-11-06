@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Model Block Packaging: 
-The Model Block Packaging family of concepts defines the different kind of Building Blocks used in system and enterprise modeling:. Model Building Blocks.. Annotation Blocks. Model Property Blocks.
+The Model Block Packaging family of concepts defines the different kind of Building Blocks used in system and enterprise modeling:. Model Building Blocks.. Annotation Blocks. Model Categorization Blocks.
 
 Documentation : https://framework.sysfeat.com/pages/af4db12d62993434.htm
 
@@ -22,7 +22,7 @@ open import SysFEAT.UpperOntology.sysfeat-domain-36166b8c6157b6b4 public -- Comp
 open import SysFEAT.SOF.0eb95e566855bed9 public -- Model Building Block
 open import SysFEAT.SOF.0eb95db46855bdd5 public -- Model Lexical Scope
 open import SysFEAT.SOF.0eb95dce6855be2e public -- Model Container
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Categorization Block
 open import SysFEAT.SOF.d745dbaa6aa3840b public -- Model Package
 open import SysFEAT.SOF.d745e6ea6aa386e5 public -- Annotation Block
 open import SysFEAT.SOF.d745e8936aa388e0 public -- Description Note

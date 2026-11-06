@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 
-TimeboundInitiative : ClassOfBoundedIndividual
-TimeboundInitiative = BoundedIndividual
+TimeboundInitiative : WholeLifeClass
+TimeboundInitiative = WholeLifeIndividual
 
 
 --  TimeboundInitiative is subTypeOf Initiative

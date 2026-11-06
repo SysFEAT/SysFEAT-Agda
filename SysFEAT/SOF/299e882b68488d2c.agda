@@ -19,8 +19,9 @@ open import SysFEAT.SOF.d321c226601262ae public -- EnduringInitiative
 open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
-OperationalTransformation : ClassOfBoundedIndividual
-OperationalTransformation = BoundedIndividual
+OperationalTransformation : WholeLifeClass
+OperationalTransformation = WholeLifeIndividual
+
 
 --  OperationalTransformation is subTypeOf EnduringInitiative
 st-299e882b68488d2c-d321c226601262ae : OperationalTransformation ⊏ₑ EnduringInitiative

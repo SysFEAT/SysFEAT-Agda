@@ -37,18 +37,14 @@ postulate -- IndividualProcess is PowerInstanceOf Action Process Type
 -- -------------------------------------------------------------------------------------------- 
 {- Individual Process Part: -}
 -- Aggregate Member : Individual Process Part
-IndividualProcessPart : BehaviorType
-IndividualProcessPart = IndividualBehavior
+IndividualProcessPart : AggregateHolonymyType
+IndividualProcessPart = AggregateHolonymy
 
 
 
 --  IndividualProcessPart is subTypeOf IndividualBehaviorPart
 st-ffb903ac68d37181-ffb9011b68d36c96 : IndividualProcessPart ⊏ₑ IndividualBehaviorPart
 st-ffb903ac68d37181-ffb9011b68d36c96 = polySubTypeOf-identity
-
---  IndividualProcessPart is subTypeOf IndividualProcess
-st-ffb903ac68d37181-a273b4f465b7a81f : IndividualProcessPart ⊏ₑ IndividualProcess
-st-ffb903ac68d37181-a273b4f465b7a81f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIndividualProcessPart :  Linkage IndividualProcess IndividualProcessPart
@@ -73,18 +69,14 @@ individualProcessPart = membershipOfIndividualProcessPart  ∘  aggregationOfInd
 An Active Participant is the Aggregate Holonymy of an Individual Agent that indicates that the aggregated Individual Agent is an active participant of the Individual Process.
 -}
 -- Aggregate Member : Active Participant
-ActiveParticipant : AgentType
-ActiveParticipant = IndividualAgent
+ActiveParticipant : AggregateHolonymyType
+ActiveParticipant = AggregateHolonymy
 
 
 
 --  ActiveParticipant is subTypeOf IndividualParticipant
 st-e9af10cd66e865ee-ffb9014568d36d76 : ActiveParticipant ⊏ₑ IndividualParticipant
 st-e9af10cd66e865ee-ffb9014568d36d76 = polySubTypeOf-identity
-
---  ActiveParticipant is subTypeOf IndividualAgent
-st-e9af10cd66e865ee-9e3837e46192fcad : ActiveParticipant ⊏ₑ IndividualAgent
-st-e9af10cd66e865ee-9e3837e46192fcad = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfActiveParticipant :  Linkage IndividualProcess ActiveParticipant

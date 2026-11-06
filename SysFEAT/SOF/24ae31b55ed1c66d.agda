@@ -44,6 +44,7 @@ SubServiceInterface : ClassOfClassOfIndividual
 SubServiceInterface = ClassOfIndividual
 
 
+
 --  SubServiceInterface is subTypeOf BehaviorPart
 st-f38134c7687e3c48-b776b92668b04c85 : SubServiceInterface ⊏ₑ BehaviorPart
 st-f38134c7687e3c48-b776b92668b04c85 = polySubTypeOf-identity
@@ -73,6 +74,7 @@ A Flow Connection is an Outcome Event event that occurs between the consumer and
 -- Aggregate Member : Flow Connection
 FlowConnection : ClassOfClassOfIndividual
 FlowConnection = ClassOfIndividual
+
 
 
 --  FlowConnection is subTypeOf BehaviorPart

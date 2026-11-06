@@ -63,8 +63,9 @@ postulate -- realizedAgent is subTypeOf realizedOperatingAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Interaction Channel: -}
 -- Aggregate Member : Interaction Channel
-InteractionChannel : ClassOfClassOfIndividual
-InteractionChannel = ClassOfIndividual
+InteractionChannel : ClassOfMixedOrderEntity
+InteractionChannel = MixedOrderEntity
+
 
 
 --  InteractionChannel withAspect OrderingConnector
@@ -98,6 +99,7 @@ PerformedProcess : ClassOfClassOfIndividual
 PerformedProcess = ClassOfIndividual
 
 
+
 --  PerformedProcess is subTypeOf OperatingAssetPart
 st-004b03b15ebd0fdb-b776b8c668b04b35 : PerformedProcess ⊏ₑ OperatingAssetPart
 st-004b03b15ebd0fdb-b776b8c668b04b35 = polySubTypeOf-identity
@@ -127,6 +129,7 @@ An Agent Part is a structural composition of a sub Agent Type within its parent 
 -- Aggregate Member : Agent Part
 AgentPart : ClassOfClassOfIndividual
 AgentPart = ClassOfIndividual
+
 
 
 --  AgentPart is subTypeOf OperatingAssetPart
@@ -160,6 +163,7 @@ PerformedInteraction : ClassOfClassOfIndividual
 PerformedInteraction = ClassOfIndividual
 
 
+
 --  PerformedInteraction is subTypeOf OperatingAssetPart
 st-07e737925eccd8f1-b776b8c668b04b35 : PerformedInteraction ⊏ₑ OperatingAssetPart
 st-07e737925eccd8f1-b776b8c668b04b35 = polySubTypeOf-identity
@@ -187,8 +191,9 @@ performedInteraction = membershipOfPerformedInteraction  ∘  aggregationOfInter
 An Information Store is a storage of Information Assets necessary for an Agent Type to carry out its activities.The scope of the necessary Information Assets is given by the Information Domain associated with the Information Store.
 -}
 -- Aggregate Member : Information Store
-InformationStore : ClassOfClassOfIndividual
-InformationStore = ClassOfIndividual
+InformationStore : ClassOfMixedOrderEntity
+InformationStore = MixedOrderEntity
+
 
 
 --  InformationStore withAspect UnboundedMember

@@ -15,15 +15,16 @@ Documentation : https://framework.sysfeat.com/pages/e83018fb6ae53018.htm
 module SysFEAT.SOF.e83018fb6ae53018 where -- ========== OperatingAssetCategory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- CategoryOfEntity
+open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategory
 open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetCategorization
 
-OperatingAssetCategory : ∀ (u : Level) → ClassOfMixedOrderEntity u
-OperatingAssetCategory u = MixedOrderEntity u
+OperatingAssetCategory : ∀ (u : Level) → ClassOfMixedOrderEntity u 
+OperatingAssetCategory u  = MixedOrderEntity u 
 
---  OperatingAssetCategory is subTypeOf CategoryOfEntity
-st-e83018fb6ae53018-629565166ad71b60 : ∀ {u v} → (OperatingAssetCategory u) ⊏⋆ₑ (CategoryOfEntity v)
-st-e83018fb6ae53018-629565166ad71b60 = trivialPolySubTypeOfEntity
+
+--  OperatingAssetCategory is subTypeOf AssetCategory
+st-e83018fb6ae53018-4efc6b346ae48db7 : ∀ {u v} → (OperatingAssetCategory u) ⊏⋆ₑ (AssetCategory v)
+st-e83018fb6ae53018-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================
@@ -33,13 +34,13 @@ st-e83018fb6ae53018-629565166ad71b60 = trivialPolySubTypeOfEntity
 family : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCategorization v)
 family = make_classOfRelation "Family" "Family"
 
-postulate -- family is subTypeOf categorizationFamily
-  st-5d545e516ae83f24-890a8a9e6ae8578e  : ∀ {u v} → family {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}
+postulate -- family is subTypeOf assetCategoryFamily
+  st-5d545e516ae83f24-8d1fa3b46ae827f6  : ∀ {u v} → family {u} {v}  ⊏⋆ᵣ  assetCategoryFamily {u} {v}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Operating Asset Category: -}
-operatingAssetCategory : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCategory v)
-operatingAssetCategory = make_subTypeOf "Operating Asset Category" "Operating Asset Category"
+{- Parent Operating Category: -}
+parentOperatingCategory : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCategory v)
+parentOperatingCategory = make_subTypeOf "Parent Operating Category" "Parent Operating Category"
 
-postulate -- operatingAssetCategory is subTypeOf subCategorization
-  st-800b817a6ae83115-7ca47f996ae858c7  : ∀ {u v} → operatingAssetCategory {u} {v}  ⊏⋆ᵣ  subCategorization {u} {v}
+postulate -- parentOperatingCategory is subTypeOf parentAssetCategory
+  st-800b817a6ae83115-38f63c776aec1911  : ∀ {u v} → parentOperatingCategory {u} {v}  ⊏⋆ᵣ  parentAssetCategory {u} {v}

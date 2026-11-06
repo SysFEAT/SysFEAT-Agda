@@ -19,15 +19,16 @@ open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
 open import SysFEAT.UpperOntology.003302806ae27b7c public -- FourthOrderClass
 open import SysFEAT.SOF.00330ec96ae27ee9 public -- InformationDomainGroup
 
-InformationDomainFamily : ThirdOrderClass
-InformationDomainFamily = SecondOrderClass
+InformationDomainFamily : ∀ (u : Level) → MetaClass u 
+InformationDomainFamily u  = ClassOfEntity u 
+
 
 --  InformationDomainFamily is subTypeOf EnumeratedFamily
-st-003315fd6ae286f1-ad05c1986ae142c1 : InformationDomainFamily ⊏ₑ EnumeratedFamily
-st-003315fd6ae286f1-ad05c1986ae142c1 = polySubTypeOf-identity
+st-003315fd6ae286f1-ad05c1986ae142c1 : ∀ {u v} → (InformationDomainFamily u) ⊏⋆ₑ (EnumeratedFamily v)
+st-003315fd6ae286f1-ad05c1986ae142c1 = trivialPolySubTypeOfEntity
 
 --  InformationDomainFamily is subTypeOf FourthOrderClass
-st-003315fd6ae286f1-003302806ae27b7c : InformationDomainFamily ⊏ₑ FourthOrderClass
+st-003315fd6ae286f1-003302806ae27b7c : ∀ {u} → (InformationDomainFamily u) ⊏ₘₑ FourthOrderClass
 st-003315fd6ae286f1-003302806ae27b7c = polySubTypeOf-identity
 
 
@@ -35,6 +36,6 @@ st-003315fd6ae286f1-003302806ae27b7c = polySubTypeOf-identity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Information Family Part: -}
-informationFamilyPart :  Linkage InformationDomainFamily InformationDomainGroup
+informationFamilyPart : ∀ {u v} →  Linkage (InformationDomainFamily u) (InformationDomainGroup v)
 informationFamilyPart = make_classOfRelation "Information Family Part" "Information Family Part"
 

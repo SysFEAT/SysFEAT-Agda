@@ -18,11 +18,12 @@ open import Agda.Primitive
 open import SysFEAT.SOF.cd90e5976ae187c0 public -- InformationDomain
 open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
 
-InformationDomain : ClassOfClassOfBoundedIndividual
-InformationDomain = ClassOfBoundedIndividual
+InformationDomain : MetaClass
+InformationDomain = ClassOfEntity
 
---  InformationDomain is subTypeOf InformationDomain
-st-d6cd116d5ab97525-cd90e5976ae187c0 : InformationDomain ⊏ₘₑ InformationDomain
+
+--  InformationDomain withAspect InformationDomain
+st-d6cd116d5ab97525-cd90e5976ae187c0 : InformationDomain ⊏ₐₑ (InformationDomain (lsuc(lzero)))
 st-d6cd116d5ab97525-cd90e5976ae187c0 = polySubTypeOf-identity
 
 --  InformationDomain withAspect InformationBlock
@@ -38,4 +39,4 @@ specializedInformationDomain :  Linkage InformationDomain InformationDomain
 specializedInformationDomain = make_subTypeOf "Specialized Information Domain" "Specialized Information Domain"
 
 postulate -- specializedInformationDomain is subTypeOf subTypeOfEntity
-  st-325a380a66f34efb-8336837268e9448b  : specializedInformationDomain  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-325a380a66f34efb-8336837268e9448b  : specializedInformationDomain  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}

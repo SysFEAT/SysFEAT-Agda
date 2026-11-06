@@ -104,6 +104,7 @@ OperatingAssetPart : ClassOfClassOfIndividual
 OperatingAssetPart = ClassOfIndividual
 
 
+
 --  OperatingAssetPart is subTypeOf AggregateHolonymyType
 st-b776b8c668b04b35-c2f2c83b66ea4d78 : OperatingAssetPart ⊏ₑ AggregateHolonymyType
 st-b776b8c668b04b35-c2f2c83b66ea4d78 = polySubTypeOf-identity

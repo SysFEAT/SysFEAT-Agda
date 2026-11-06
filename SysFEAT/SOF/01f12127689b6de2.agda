@@ -18,8 +18,9 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 
-CapabilityMap : PropertyType
-CapabilityMap = Property
+CapabilityMap : ClassOfMixedOrderEntity
+CapabilityMap = MixedOrderEntity
+
 
 --  CapabilityMap withAspect UnboundedAggregate
 st-01f12127689b6de2-8cfa942f68527849 : CapabilityMap ⊏ₐₑ (UnboundedAggregate (lsuc(lzero)))
@@ -33,8 +34,9 @@ st-01f12127689b6de2-8cfa942f68527849 = polySubTypeOf-identity
 Aggregate Composition of a Capability.
 -}
 -- Aggregate Member : Capability Member
-CapabilityMember : ClassOfClassOfIndividual
-CapabilityMember = ClassOfIndividual
+CapabilityMember : ClassOfMixedOrderEntity
+CapabilityMember = MixedOrderEntity
+
 
 
 --  CapabilityMember withAspect UnboundedMember

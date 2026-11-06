@@ -19,8 +19,9 @@ open import SysFEAT.SOF.ca35f48a5fc48686 public -- OperatingEcoSystem
 open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
-InteractionProcessTypeEnvironment : ClassOfClassOfBoundedIndividual
-InteractionProcessTypeEnvironment = ClassOfBoundedIndividual
+InteractionProcessTypeEnvironment : BoundedIndividualMetaClass
+InteractionProcessTypeEnvironment = AssetType
+
 
 --  InteractionProcessTypeEnvironment is subTypeOf OperatingEcoSystem
 st-ca3513af5fc59413-ca35f48a5fc48686 : InteractionProcessTypeEnvironment ⊏ₑ OperatingEcoSystem
@@ -32,8 +33,9 @@ st-ca3513af5fc59413-ca35f48a5fc48686 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Object Flow: -}
 -- Aggregate Member : Object Flow
-ObjectFlow : ClassOfClassOfIndividual
-ObjectFlow = ClassOfIndividual
+ObjectFlow : ClassOfMixedOrderEntity
+ObjectFlow = MixedOrderEntity
+
 
 
 --  ObjectFlow is subTypeOf OperatingConnector
@@ -63,8 +65,9 @@ objectFlow = membershipOfObjectFlow  ∘  aggregationOfOutcomeEventObjectFlow
 Agent Type that is the subject of the Interaction Process Type Environment.
 -}
 -- Aggregate Member : Subject Agent
-SubjectAgent : ClassOfClassOfIndividual
-SubjectAgent = ClassOfIndividual
+SubjectAgent : ClassOfMixedOrderEntity
+SubjectAgent = MixedOrderEntity
+
 
 
 --  SubjectAgent is subTypeOf ScenarioParticipant
@@ -94,8 +97,9 @@ subjectAgent = membershipOfSubjectAgent  ∘  aggregationOfAgentTypeSubjectAgent
 Agent Types which are partners of the Subject Agent of an Interaction Process Type Environment.
 -}
 -- Aggregate Member : Partner Agent
-PartnerAgent : ClassOfClassOfIndividual
-PartnerAgent = ClassOfIndividual
+PartnerAgent : ClassOfMixedOrderEntity
+PartnerAgent = MixedOrderEntity
+
 
 
 --  PartnerAgent is subTypeOf ScenarioParticipant
@@ -123,8 +127,9 @@ partnerAgent = membershipOfPartnerAgent  ∘  aggregationOfAgentTypePartnerAgent
 -- -------------------------------------------------------------------------------------------- 
 {- Scenario Participant: -}
 -- Aggregate Member : Scenario Participant
-ScenarioParticipant : ClassOfClassOfIndividual
-ScenarioParticipant = ClassOfIndividual
+ScenarioParticipant : ClassOfMixedOrderEntity
+ScenarioParticipant = MixedOrderEntity
+
 
 
 --  ScenarioParticipant is subTypeOf EcosystemMember

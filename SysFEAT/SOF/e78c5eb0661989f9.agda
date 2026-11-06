@@ -20,7 +20,7 @@ open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
 InitiativeStage : StateClass
-InitiativeStage = StateConcept
+InitiativeStage = IndividualState
 
 
 --  InitiativeStage is subTypeOf IndividualState
@@ -39,8 +39,9 @@ stateOfInitiative = make_meronymyRelation "State of Initiative" "State of Initia
 -- -------------------------------------------------------------------------------------------- 
 {- Desired Result: -}
 -- Aggregate Member : Desired Result
-DesiredResult : ClassOfClassOfIndividual
-DesiredResult = ClassOfIndividual
+DesiredResult : ClassOfMixedOrderEntity
+DesiredResult = MixedOrderEntity
+
 
 
 --  DesiredResult withAspect AggregateMember
@@ -74,8 +75,9 @@ desiredResult = membershipOfDesiredResult  ∘  aggregationOfAssetPropertyDesire
 A Desired Result is a statement about a state or condition of Initiative Subjects of an Initiative Stage that can be obtained within this specified stage.
 -}
 -- Aggregate Member : Stage Objective
-StageObjective : ClassOfClassOfIndividual
-StageObjective = ClassOfIndividual
+StageObjective : ClassOfMixedOrderEntity
+StageObjective = MixedOrderEntity
+
 
 
 --  StageObjective is subTypeOf DesiredResult

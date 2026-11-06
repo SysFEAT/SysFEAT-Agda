@@ -18,8 +18,9 @@ open import Agda.Primitive
 open import SysFEAT.SOF.e13ce269678f11ed public -- AssetStateType
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
-AgentStateType : ClassOfClassOfBoundedIndividual
+AgentStateType : BoundedIndividualMetaClass
 AgentStateType = ClassOfBoundedIndividual
+
 
 --  AgentStateType is subTypeOf AssetStateType
 st-c80ac8f367841131-e13ce269678f11ed : AgentStateType ⊏ₑ AssetStateType

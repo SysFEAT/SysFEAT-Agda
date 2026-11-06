@@ -39,18 +39,14 @@ postulate -- IndividualBehavior is PowerInstanceOf Behavior Type
 An Individual Behavior Part is the Aggregate Holonymy of an Individual Behavior in a parent Individual Behavior.
 -}
 -- Aggregate Member : Individual Behavior Part
-IndividualBehaviorPart : BehaviorType
-IndividualBehaviorPart = IndividualBehavior
+IndividualBehaviorPart : AggregateHolonymyType
+IndividualBehaviorPart = AggregateHolonymy
 
 
 
 --  IndividualBehaviorPart is subTypeOf IndividualOperatingPart
 st-ffb9011b68d36c96-d8ee780d68d224c2 : IndividualBehaviorPart ⊏ₑ IndividualOperatingPart
 st-ffb9011b68d36c96-d8ee780d68d224c2 = polySubTypeOf-identity
-
---  IndividualBehaviorPart is subTypeOf IndividualBehavior
-st-ffb9011b68d36c96-e9af119866e86785 : IndividualBehaviorPart ⊏ₑ IndividualBehavior
-st-ffb9011b68d36c96-e9af119866e86785 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIndividualBehaviorPart :  Linkage IndividualBehavior IndividualBehaviorPart
@@ -75,18 +71,14 @@ individualBehaviorPart = membershipOfIndividualBehaviorPart  ∘  aggregationOfI
 An  Individual Participant is
 -}
 -- Aggregate Member : Individual Participant
-IndividualParticipant : AgentType
-IndividualParticipant = IndividualAgent
+IndividualParticipant : AggregateHolonymyType
+IndividualParticipant = AggregateHolonymy
 
 
 
 --  IndividualParticipant is subTypeOf IndividualOperatingPart
 st-ffb9014568d36d76-d8ee780d68d224c2 : IndividualParticipant ⊏ₑ IndividualOperatingPart
 st-ffb9014568d36d76-d8ee780d68d224c2 = polySubTypeOf-identity
-
---  IndividualParticipant is subTypeOf IndividualAgent
-st-ffb9014568d36d76-9e3837e46192fcad : IndividualParticipant ⊏ₑ IndividualAgent
-st-ffb9014568d36d76-9e3837e46192fcad = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIndividualParticipant :  Linkage IndividualBehavior IndividualParticipant

@@ -17,6 +17,7 @@ open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Ass
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-8d6d915c685f8689 public -- Information Packaging
 open import SysFEAT.UpperOntology.sysfeat-domain-fb342c5665561f29 public -- 4D Composite Knowledge Graph
+open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
 
 open import SysFEAT.SOF.cd90e5976ae187c0 public -- Information Domain
 open import SysFEAT.SOF.00330ec96ae27ee9 public -- Information Domain Group

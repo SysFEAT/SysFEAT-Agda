@@ -31,7 +31,5 @@ st-e9af133166e86be3-267b6a126675a0b9 = polySubTypeOf-identity
 
 postulate -- IndividualEvent is PowerInstanceOf Behavioral Event
   pi-e9af140b66e86cb9 : IndividualEvent ∷ₚₑ BehavioralEvent
-postulate -- BehavioralEvent is ReflexivePowerType 
-  42a948a76aad3eb1 : BehavioralEvent ⊏ₘₑ IndividualEvent
 
 -- == Relations =======================

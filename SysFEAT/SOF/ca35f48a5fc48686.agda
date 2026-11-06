@@ -23,8 +23,9 @@ open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
 
-OperatingEcoSystem : ClassOfClassOfBoundedIndividual
-OperatingEcoSystem = ClassOfBoundedIndividual
+OperatingEcoSystem : BoundedIndividualMetaClass
+OperatingEcoSystem = AssetType
+
 
 --  OperatingEcoSystem is subTypeOf FunctionalAsset
 st-ca35f48a5fc48686-a44fb6bc6748b088 : OperatingEcoSystem ⊏ₑ FunctionalAsset
@@ -40,8 +41,9 @@ st-ca35f48a5fc48686-0eb95f356855bf94 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Operating Connector: -}
 -- Aggregate Member : Operating Connector
-OperatingConnector : ClassOfClassOfIndividual
-OperatingConnector = ClassOfIndividual
+OperatingConnector : ClassOfMixedOrderEntity
+OperatingConnector = MixedOrderEntity
+
 
 
 --  OperatingConnector withAspect OrderingConnector
@@ -69,8 +71,9 @@ operatingConnector = membershipOfOperatingConnector  ∘  aggregationOfOperating
 -- -------------------------------------------------------------------------------------------- 
 {- Ecosystem Member: -}
 -- Aggregate Member : Ecosystem Member
-EcosystemMember : ClassOfClassOfIndividual
-EcosystemMember = ClassOfIndividual
+EcosystemMember : ClassOfMixedOrderEntity
+EcosystemMember = MixedOrderEntity
+
 
 
 --  EcosystemMember withAspect BoundedMember

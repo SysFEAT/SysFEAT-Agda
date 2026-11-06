@@ -15,14 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/ded830e46ae385d9.htm
 module SysFEAT.SOF.ded830e46ae385d9 where -- ========== DataCatagory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- CategoryOfEntity
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 
-DataCatagory : ∀ (u : Level) → ClassOfMixedOrderEntity u
-DataCatagory u = MixedOrderEntity u
+DataCatagory : ∀ (u : Level) → MetaClass u 
+DataCatagory u  = ClassOfEntity u 
 
---  DataCatagory is subTypeOf CategoryOfEntity
-st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → (DataCatagory u) ⊏⋆ₑ (CategoryOfEntity v)
+
+--  DataCatagory is subTypeOf ConceptCategory
+st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → (DataCatagory u) ⊏⋆ₑ (ConceptCategory v)
 st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
@@ -33,3 +34,5 @@ st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 dataCategoryFamily : ∀ {u v} →  Linkage (DataCatagory u) (DataCategoryFamily v)
 dataCategoryFamily = make_classOfRelation "Data Category Family" "Data Category Family"
 
+postulate -- dataCategoryFamily is subTypeOf categorizationFamily
+  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}

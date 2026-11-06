@@ -22,8 +22,9 @@ open import SysFEAT.SOF.24ae31b55ed1c66d public -- ServiceInterface
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 open import SysFEAT.SOF.ca3513af5fc59413 public -- InteractionProcessTypeEnvironment
 
-AgentTypeEnvironment : ClassOfClassOfBoundedIndividual
-AgentTypeEnvironment = ClassOfBoundedIndividual
+AgentTypeEnvironment : BoundedIndividualMetaClass
+AgentTypeEnvironment = AssetType
+
 
 --  AgentTypeEnvironment is subTypeOf OperatingEcoSystem
 st-d6cd0fd95ab9744b-ca35f48a5fc48686 : AgentTypeEnvironment ⊏ₑ OperatingEcoSystem
@@ -51,8 +52,9 @@ postulate -- realizedOperatingEnvironment is subTypeOf realizedFunctionalAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Service Channel: -}
 -- Aggregate Member : Service Channel
-ServiceChannel : ClassOfClassOfIndividual
-ServiceChannel = ClassOfIndividual
+ServiceChannel : ClassOfMixedOrderEntity
+ServiceChannel = MixedOrderEntity
+
 
 
 --  ServiceChannel is subTypeOf OperatingConnector
@@ -80,8 +82,9 @@ serviceChannel = membershipOfServiceChannel  ∘  aggregationOfServiceInterfaceS
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Agent: -}
 -- Aggregate Member : Participant Agent
-ParticipantAgent : ClassOfClassOfIndividual
-ParticipantAgent = ClassOfIndividual
+ParticipantAgent : ClassOfMixedOrderEntity
+ParticipantAgent = MixedOrderEntity
+
 
 
 --  ParticipantAgent is subTypeOf EcosystemMember
@@ -115,6 +118,7 @@ PerformedInteraction : ClassOfClassOfIndividual
 PerformedInteraction = ClassOfIndividual
 
 
+
 --  PerformedInteraction is subTypeOf AggregateHolonymyType
 st-26cb2d5769610945-c2f2c83b66ea4d78 : PerformedInteraction ⊏ₑ AggregateHolonymyType
 st-26cb2d5769610945-c2f2c83b66ea4d78 = polySubTypeOf-identity
@@ -140,8 +144,9 @@ performedInteraction = 26CB2D596961099C  ∘  aggregationOfInteractionProcessTyp
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Agent: -}
 -- Aggregate Member : Subject Agent
-SubjectAgent : ClassOfClassOfIndividual
-SubjectAgent = ClassOfIndividual
+SubjectAgent : ClassOfMixedOrderEntity
+SubjectAgent = MixedOrderEntity
+
 
 
 --  SubjectAgent is subTypeOf ParticipantAgent
@@ -169,8 +174,9 @@ subjectAgent = membershipOfSubjectAgent  ∘  aggregationOfAgentTypeSubjectAgent
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Agent: -}
 -- Aggregate Member : Partner Agent
-PartnerAgent : ClassOfClassOfIndividual
-PartnerAgent = ClassOfIndividual
+PartnerAgent : ClassOfMixedOrderEntity
+PartnerAgent = MixedOrderEntity
+
 
 
 --  PartnerAgent is subTypeOf ParticipantAgent

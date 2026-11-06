@@ -23,6 +23,7 @@ module SysFEAT.SOF.e53af71366e37de2 where -- ========== ConditionPropertyType
 open import Agda.Primitive
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
+open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
 
 ConditionPropertyType : ThirdOrderClass
 ConditionPropertyType = PropertyType
@@ -43,4 +44,12 @@ conditionCategory : ∀ {u} →  Linkage ConditionPropertyType (ConditionCategor
 conditionCategory = make_subTypeOf "Condition Category" "Condition Category"
 
 postulate -- conditionCategory is subTypeOf conceptCategorization
-  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : conditionCategory  ⊏⋆ᵣ  conceptCategorization {lzero} {lsuc(lzero)} {lzero} {lsuc(lzero)}
+  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : conditionCategory  ⊏⋆ᵣ  conceptCategorization {lsuc(lzero)} {lsuc(lzero)}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Family of Measurement: -}
+familyOfMeasurement : ∀ {u} →  Linkage ConditionPropertyType (FamilyOfMeasurement u)
+familyOfMeasurement = make_classOfRelation "Family of Measurement" "Family of Measurement"
+
+postulate -- familyOfMeasurement is subTypeOf categorizationFamily
+  st-051d13f06ae96ff0-890a8a9e6ae8578e  : familyOfMeasurement  ⊏⋆ᵣ  categorizationFamily {lsuc(lzero)} {lsuc(lsuc(lzero))} {lsuc(lzero)} {lsuc(lsuc(lzero))}

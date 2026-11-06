@@ -15,16 +15,20 @@ Documentation : https://framework.sysfeat.com/pages/d321c226601262ae.htm
 module SysFEAT.SOF.d321c226601262ae where -- ========== EnduringInitiative
 
 open import Agda.Primitive
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
-open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
-open import SysFEAT.SOF.01ce05606859794a public -- InitiativeInstrument
 open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
+open import SysFEAT.SOF.01ce05606859794a public -- InitiativeInstrument
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
-EnduringInitiative : ClassOfBoundedIndividual
-EnduringInitiative = BoundedIndividual
+EnduringInitiative : WholeLifeClass
+EnduringInitiative = WholeLifeIndividual
 
+
+--  EnduringInitiative withAspect ModelContainer
+st-d321c226601262ae-0eb95dce6855be2e : EnduringInitiative ⊏ₐₑ (ModelContainer lzero)
+st-d321c226601262ae-0eb95dce6855be2e = polySubTypeOf-identity
 
 --  EnduringInitiative is subTypeOf Initiative
 st-d321c226601262ae-0ffeec41600be08a : EnduringInitiative ⊏ₑ Initiative
@@ -34,20 +38,8 @@ st-d321c226601262ae-0ffeec41600be08a = polySubTypeOf-identity
 st-d321c226601262ae-342f74b166156e02 : EnduringInitiative ⊏ₑ WholeLifeIndividual
 st-d321c226601262ae-342f74b166156e02 = polySubTypeOf-identity
 
---  EnduringInitiative withAspect ModelContainer
-st-d321c226601262ae-0eb95dce6855be2e : EnduringInitiative ⊏ₐₑ (ModelContainer lzero)
-st-d321c226601262ae-0eb95dce6855be2e = polySubTypeOf-identity
-
 
 -- == Relations =======================
-
--- -------------------------------------------------------------------------------------------- 
-{- Packaged Initiative Resource: -}
-packagedInitiativeResource : ∀ {u} →  Linkage EnduringInitiative (InitiativeInstrument u)
-packagedInitiativeResource = make_nestingRelation "Packaged Initiative Resource" "Packaged Initiative Resource"
-
-postulate -- packagedInitiativeResource is subTypeOf packagedModelBlock
-  st-01ce058868597974-3346b0ad687846e9  : packagedInitiativeResource  ⊏⋆ᵣ  packagedModelBlock {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Dependent Initiative: -}
@@ -80,12 +72,21 @@ postulate -- roadmap is subTypeOf holonymyRelation
   st-29df685860086c52-f626f77b6ad475d4  : roadmap  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
+{- Packaged Initiative Resource: -}
+packagedInitiativeResource : ∀ {u} →  Linkage EnduringInitiative (InitiativeInstrument u)
+packagedInitiativeResource = make_nestingRelation "Packaged Initiative Resource" "Packaged Initiative Resource"
+
+postulate -- packagedInitiativeResource is subTypeOf packagedModelBlock
+  st-01ce058868597974-3346b0ad687846e9  : packagedInitiativeResource  ⊏⋆ᵣ  packagedModelBlock {lzero} {lzero}
+
+-- -------------------------------------------------------------------------------------------- 
 {- Goal: 
 A Goal is a statement about an Asset Property of  Initiative Subjects of an Enduring Initiative that cannot be obtained within a specified period, but which can be obtained over a longer time period.
 -}
 -- Aggregate Member : Goal
-Goal : ClassOfClassOfIndividual
-Goal = ClassOfIndividual
+Goal : ClassOfMixedOrderEntity
+Goal = MixedOrderEntity
+
 
 
 --  Goal is subTypeOf DesiredResult

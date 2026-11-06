@@ -23,8 +23,9 @@ open import SysFEAT.SOF.ded830e46ae385d9 public -- DataCatagory
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 open import SysFEAT.SOF.582e785466f6b36f public -- DataRiskType
 
-InformationAsset : ClassOfClassOfBoundedIndividual
-InformationAsset = ClassOfBoundedIndividual
+InformationAsset : BoundedIndividualMetaClass
+InformationAsset = AssetType
+
 
 --  InformationAsset is subTypeOf FunctionalAsset
 st-e6f250185f772ee1-a44fb6bc6748b088 : InformationAsset ⊏ₑ FunctionalAsset
@@ -63,7 +64,7 @@ specializedInformationAsset :  Linkage InformationAsset InformationAsset
 specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
 
 postulate -- specializedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Information Asset: -}
@@ -71,15 +72,16 @@ realizedInformationAsset :  Linkage InformationAsset InformationAsset
 realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized Information Asset"
 
 postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Risk: 
 A Data Risk is Risk that refers to the potential for loss resulting from inadequate structure and usage of an Information Asset.
 -}
 -- Aggregate Member : Data Risk
-DataRisk : ThirdOrderClass
-DataRisk = SecondOrderClass
+DataRisk : ClassOfMixedOrderEntity
+DataRisk = MixedOrderEntity
+
 
 
 --  DataRisk is subTypeOf Risk
@@ -109,8 +111,9 @@ dataRisk = membershipOfDataRisk  ∘  aggregationOfDataRiskTypeDataRisk
 An Information Asset Relationship is a characteristic of an Information Asset.It can be either an Information Relation or a Property Component.
 -}
 -- Aggregate Member : Information Asset Relationship
-InformationAssetRelationship : ClassOfClassOfIndividual
-InformationAssetRelationship = ClassOfIndividual
+InformationAssetRelationship : ClassOfMixedOrderEntity
+InformationAssetRelationship = MixedOrderEntity
+
 
 
 --  InformationAssetRelationship withAspect AggregateMember

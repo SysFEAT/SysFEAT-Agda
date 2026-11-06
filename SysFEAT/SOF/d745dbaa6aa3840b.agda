@@ -18,20 +18,20 @@ External references:
 module SysFEAT.SOF.d745dbaa6aa3840b where -- ========== ModelPackage
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.542599db6aa21e06 public -- ContainerPackage
 open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.UpperOntology.542599db6aa21e06 public -- ContainerPackage
 
-ModelPackage : ClassOfAbstractEntity
-ModelPackage = AbstractEntity
+ModelPackage : ClassOfMixedOrderEntity
+ModelPackage = MixedOrderEntity
 
-
---  ModelPackage is subTypeOf ContainerPackage
-st-d745dbaa6aa3840b-542599db6aa21e06 : ModelPackage ⊏ₑ ContainerPackage
-st-d745dbaa6aa3840b-542599db6aa21e06 = polySubTypeOf-identity
 
 --  ModelPackage withAspect ModelContainer
 st-d745dbaa6aa3840b-0eb95dce6855be2e : ModelPackage ⊏ₐₑ (ModelContainer lzero)
 st-d745dbaa6aa3840b-0eb95dce6855be2e = polySubTypeOf-identity
+
+--  ModelPackage is subTypeOf ContainerPackage
+st-d745dbaa6aa3840b-542599db6aa21e06 : ModelPackage ⊏ₑ ContainerPackage
+st-d745dbaa6aa3840b-542599db6aa21e06 = polySubTypeOf-identity
 
 
 -- == Relations =======================

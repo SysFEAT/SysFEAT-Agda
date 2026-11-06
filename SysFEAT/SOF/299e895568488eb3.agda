@@ -17,8 +17,9 @@ module SysFEAT.SOF.299e895568488eb3 where -- ========== AssuranceInitiative
 open import Agda.Primitive
 open import SysFEAT.SOF.d321c226601262ae public -- EnduringInitiative
 
-AssuranceInitiative : ClassOfBoundedIndividual
-AssuranceInitiative = BoundedIndividual
+AssuranceInitiative : WholeLifeClass
+AssuranceInitiative = WholeLifeIndividual
+
 
 --  AssuranceInitiative is subTypeOf EnduringInitiative
 st-299e895568488eb3-d321c226601262ae : AssuranceInitiative ⊏ₑ EnduringInitiative
