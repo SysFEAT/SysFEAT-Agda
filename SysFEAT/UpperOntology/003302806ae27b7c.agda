@@ -20,7 +20,7 @@ External references:
 
 {-# OPTIONS --safe --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.003302806ae27b7c where -- FourthOrderClass
+module SysFEAT.UpperOntology.003302806ae27b7c where -- ========== FourthOrderClass
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.d9cce4e96937128c public -- OrderedMetaClass
@@ -33,10 +33,9 @@ open import SysFEAT.UpperOntology.0dd6b365690d316b public -- OrderedEntity
 FourthOrderClass : Set (lsuc(lsuc (lsuc (lsuc (lsuc lzero)))))
 FourthOrderClass = MetaClass (lsuc(lsuc(lzero)))
 
---  FourthOrderClass is SubTypeOf OrderedMetaClass
-003302a56ae27C17 : FourthOrderClass ⊏ₐₑ (OrderedMetaClass (lsuc(lsuc(lzero))))
-003302a56ae27C17 = trivialPolySubTypeOf
-
+-- FourthOrderClass isSubTypeOf OrderedMetaClass
+003302a56ae27C17 : FourthOrderClass ⊏ₑ (OrderedMetaClass (lsuc (lsuc lzero)))
+003302a56ae27C17 = polySubTypeOf-identity
 
 
 
