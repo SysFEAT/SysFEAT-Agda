@@ -17,8 +17,9 @@ module SysFEAT.UpperOntology.00ae5d3b667038fc where -- ========== WholeLifeClass
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 
-WholeLifeClass : ClassOfClassOfBoundedIndividual
+WholeLifeClass : BoundedIndividualMetaClass
 WholeLifeClass = ClassOfBoundedIndividual
+
 
 --  WholeLifeClass is subTypeOf ClassOfBoundedIndividual
 st-00ae5d3b667038fc-3492c53e619642ed : WholeLifeClass ⊏ₑ ClassOfBoundedIndividual

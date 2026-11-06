@@ -19,8 +19,13 @@ module SysFEAT.UpperOntology.342f43ae66156429 where -- ========== StateClass
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 
-StateClass : ClassOfClassOfBoundedIndividual
+StateClass : BoundedIndividualMetaClass
 StateClass = ClassOfBoundedIndividual
+
+
+--  StateClass is subTypeOf ClassOfBoundedIndividual
+st-342f43ae66156429-3492c53e619642ed : StateClass ⊏ₑ ClassOfBoundedIndividual
+st-342f43ae66156429-3492c53e619642ed = polySubTypeOf-identity
 
 
 -- == Relations =======================
