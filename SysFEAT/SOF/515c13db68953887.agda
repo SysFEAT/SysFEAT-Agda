@@ -24,14 +24,18 @@ External references:
 module SysFEAT.SOF.515c13db68953887 where -- ========== Capability
 
 open import Agda.Primitive
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
-open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 
 Capability : AssetPropertyType
 Capability = AssetProperty
 
+
+--  Capability withAspect AssetBlock
+st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ (AssetBlock (lsuc(lzero)))
+st-515c13db68953887-0eb95f356855bf94 = polySubTypeOf-identity
 
 --  Capability is subTypeOf AssetProperty
 st-515c13db68953887-515c6a856893324e : Capability ⊏ₑ AssetProperty
@@ -40,10 +44,6 @@ st-515c13db68953887-515c6a856893324e = polySubTypeOf-identity
 --  Capability is subTypeOf CompositeProperty
 st-515c13db68953887-3e525e406ab05b0d : Capability ⊏ₑ CompositeProperty
 st-515c13db68953887-3e525e406ab05b0d = polySubTypeOf-identity
-
---  Capability withAspect AssetBlock
-st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ (AssetBlock (lsuc(lzero)))
-st-515c13db68953887-0eb95f356855bf94 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -59,8 +59,9 @@ postulate -- specializedCapability is subTypeOf specializedProperty
 -- -------------------------------------------------------------------------------------------- 
 {- Involved Information: -}
 -- Aggregate Member : Involved Information
-InvolvedInformation : ClassOfClassOfIndividual
-InvolvedInformation = ClassOfIndividual
+InvolvedInformation : ClassOfMixedOrderEntity
+InvolvedInformation = MixedOrderEntity
+
 
 
 --  InvolvedInformation withAspect UnboundedMember

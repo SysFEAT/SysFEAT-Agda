@@ -18,16 +18,22 @@ module SysFEAT.SOF.21ed2aa6689c12ba where -- ========== MeasureProperty
 
 open import Agda.Primitive
 open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.UpperOntology.3e525f966ab05bd8 public -- ElementaryProperty
 open import SysFEAT.SOF.e53af74b66e37e5d public -- MeasurePropertyType
 
-MeasureProperty : AssetPropertyType
-MeasureProperty = AssetProperty
-
+MeasureProperty : MeasurePropertyType
+MeasureProperty = ElementaryProperty
 
 --  MeasureProperty is subTypeOf ConditionProperty
 st-21ed2aa6689c12ba-21ed231d689c0679 : MeasureProperty ⊏ₑ ConditionProperty
 st-21ed2aa6689c12ba-21ed231d689c0679 = polySubTypeOf-identity
 
+--  MeasureProperty is subTypeOf ElementaryProperty
+st-21ed2aa6689c12ba-3e525f966ab05bd8 : MeasureProperty ⊏ₑ ElementaryProperty
+st-21ed2aa6689c12ba-3e525f966ab05bd8 = polySubTypeOf-identity
+
+postulate -- MeasureProperty is PowerInstanceOf Measure Property Type
+  pi-38f6c8576aed287c : MeasureProperty ∷ₚₑ MeasurePropertyType
 
 -- == Relations =======================
 

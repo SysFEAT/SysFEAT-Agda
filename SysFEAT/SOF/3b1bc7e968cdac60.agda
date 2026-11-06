@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.21ed2aa6689c12ba public -- MeasureProperty
 open import SysFEAT.SOF.e53af74b66e37e5d public -- MeasurePropertyType
 
-MeasurementValue : AssetPropertyType
-MeasurementValue = AssetProperty
+MeasurementValue : MeasurePropertyType
+MeasurementValue = MeasureProperty
 
 
 --  MeasurementValue is subTypeOf MeasureProperty

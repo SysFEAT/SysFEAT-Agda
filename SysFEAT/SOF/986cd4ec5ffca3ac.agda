@@ -63,6 +63,7 @@ BehaviorParticipant : ClassOfClassOfIndividual
 BehaviorParticipant = ClassOfIndividual
 
 
+
 --  BehaviorParticipant is subTypeOf OperatingAssetPart
 st-e0e86fad65789c43-b776b8c668b04b35 : BehaviorParticipant ⊏ₑ OperatingAssetPart
 st-e0e86fad65789c43-b776b8c668b04b35 = polySubTypeOf-identity
@@ -92,6 +93,7 @@ A composed Behavior Type that is a part of the parent Behavior Type.
 -- Aggregate Member : Behavior Part
 BehaviorPart : ClassOfClassOfIndividual
 BehaviorPart = ClassOfIndividual
+
 
 
 --  BehaviorPart is subTypeOf OperatingAssetPart

@@ -49,8 +49,9 @@ postulate -- specializedInformationEntity is subTypeOf specializedInformationAss
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Information Property: -}
 -- Aggregate Member : Qualifying Information Property
-QualifyingInformationProperty : ClassOfClassOfIndividual
-QualifyingInformationProperty = ClassOfIndividual
+QualifyingInformationProperty : ClassOfMixedOrderEntity
+QualifyingInformationProperty = MixedOrderEntity
+
 
 
 --  QualifyingInformationProperty is subTypeOf InformationAssetRelationship
@@ -80,8 +81,9 @@ qualifyingInformationProperty = membershipOfQualifyingInformationProperty  ∘  
 An Information Relation is a characteristic of an Information Entity that represents a relationships to other Information Entity(ies).
 -}
 -- Aggregate Member : Information Relation
-InformationRelation : ClassOfClassOfIndividual
-InformationRelation = ClassOfIndividual
+InformationRelation : ClassOfMixedOrderEntity
+InformationRelation = MixedOrderEntity
+
 
 
 --  InformationRelation is subTypeOf InformationAssetRelationship

@@ -55,6 +55,7 @@ InteractionFlow : ClassOfClassOfIndividual
 InteractionFlow = ClassOfIndividual
 
 
+
 --  InteractionFlow is subTypeOf TemporalOrderingType
 st-7d33fa1762813f5c-2557481f6758a91a : InteractionFlow ⊏ₑ TemporalOrderingType
 st-7d33fa1762813f5c-2557481f6758a91a = polySubTypeOf-identity
@@ -88,6 +89,7 @@ A Scenario Participant is a Behavior Participant engaged in Interaction Flow the
 -- Aggregate Member : Scenario Participant
 ScenarioParticipant : ClassOfClassOfIndividual
 ScenarioParticipant = ClassOfIndividual
+
 
 
 --  ScenarioParticipant is subTypeOf BehaviorParticipant

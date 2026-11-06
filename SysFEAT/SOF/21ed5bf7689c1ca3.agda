@@ -18,20 +18,27 @@ module SysFEAT.SOF.21ed5bf7689c1ca3 where -- ========== SetOfConditionProperties
 
 open import Agda.Primitive
 open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
 open import SysFEAT.SOF.e53af87666e37fcd public -- SetOfEnvironmentalConditionType
 
-SetOfConditionProperties : PropertyType
-SetOfConditionProperties = Property
+SetOfConditionProperties : SetOfEnvironmentalConditionType
+SetOfConditionProperties = CompositeProperty
 
 --  SetOfConditionProperties is subTypeOf ConditionProperty
 st-21ed5bf7689c1ca3-21ed231d689c0679 : SetOfConditionProperties ⊏ₑ ConditionProperty
 st-21ed5bf7689c1ca3-21ed231d689c0679 = polySubTypeOf-identity
 
+--  SetOfConditionProperties is subTypeOf CompositeProperty
+st-21ed5bf7689c1ca3-3e525e406ab05b0d : SetOfConditionProperties ⊏ₑ CompositeProperty
+st-21ed5bf7689c1ca3-3e525e406ab05b0d = polySubTypeOf-identity
+
 --  SetOfConditionProperties withAspect UnboundedAggregate
 st-21ed5bf7689c1ca3-8cfa942f68527849 : SetOfConditionProperties ⊏ₐₑ (UnboundedAggregate (lsuc(lzero)))
 st-21ed5bf7689c1ca3-8cfa942f68527849 = polySubTypeOf-identity
 
+postulate -- SetOfConditionProperties is PowerInstanceOf Set of Environmental Condition Type
+  pi-38f6dc1a6aed2f4d : SetOfConditionProperties ∷ₚₑ SetOfEnvironmentalConditionType
 
 -- == Relations =======================
 
@@ -48,8 +55,9 @@ postulate -- setOfEnvironmentalConditionType is subTypeOf conditionPropertyType
 And combination of a Condition Propertys.
 -}
 -- Aggregate Member : Combined Property
-CombinedProperty : ClassOfClassOfIndividual
-CombinedProperty = ClassOfIndividual
+CombinedProperty : ClassOfMixedOrderEntity
+CombinedProperty = MixedOrderEntity
+
 
 
 --  CombinedProperty withAspect UnboundedMember

@@ -16,7 +16,6 @@ module SysFEAT.SOF.515c6a856893324e where -- ========== AssetProperty
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelPropertyBlock
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 
 AssetProperty : AssetPropertyType
@@ -25,10 +24,6 @@ AssetProperty = Property
 --  AssetProperty is subTypeOf Property
 st-515c6a856893324e-746ac18368905aa2 : AssetProperty ⊏ₑ Property
 st-515c6a856893324e-746ac18368905aa2 = polySubTypeOf-identity
-
---  AssetProperty withAspect ModelPropertyBlock
-st-515c6a856893324e-0eb97aff6855cd23 : AssetProperty ⊏ₐₑ (ModelPropertyBlock (lsuc(lzero)))
-st-515c6a856893324e-0eb97aff6855cd23 = polySubTypeOf-identity
 
 postulate -- AssetProperty is PowerInstanceOf Asset Property Type
   pi-f38232926aac8ad5 : AssetProperty ∷ₚₑ AssetPropertyType

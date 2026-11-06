@@ -18,8 +18,9 @@ open import Agda.Primitive
 open import SysFEAT.SOF.bcebd0175491272a public -- Stakeholder
 open import SysFEAT.SOF.2cc9718655263c44 public -- IndividualStakeholder
 
-GovernanceCommittee : ClassOfBoundedIndividual
-GovernanceCommittee = BoundedIndividual
+GovernanceCommittee : StateClass
+GovernanceCommittee = IndividualState
+
 
 --  GovernanceCommittee is subTypeOf Stakeholder
 st-2cc9717155263b89-bcebd0175491272a : GovernanceCommittee ⊏ₑ Stakeholder
@@ -31,18 +32,14 @@ st-2cc9717155263b89-bcebd0175491272a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Committee: -}
 -- Aggregate Member : Sub-Committee
-SubCommittee : ClassOfBoundedIndividual
-SubCommittee = BoundedIndividual
+SubCommittee : AggregateHolonymyType
+SubCommittee = AggregateHolonymy
 
 
 
 --  SubCommittee is subTypeOf AggregateHolonymy
 st-18a826a35eeb6934-c2f2c9a166ea50e2 : SubCommittee ⊏ₑ AggregateHolonymy
 st-18a826a35eeb6934-c2f2c9a166ea50e2 = polySubTypeOf-identity
-
---  SubCommittee is subTypeOf GovernanceCommittee
-st-18a826a35eeb6934-2cc9717155263b89 : SubCommittee ⊏ₑ GovernanceCommittee
-st-18a826a35eeb6934-2cc9717155263b89 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubCommittee :  Linkage GovernanceCommittee SubCommittee
@@ -67,18 +64,14 @@ subCommittee = membershipOfSubCommittee  ∘  aggregationOfGovernanceCommitteeSu
 Role of a person in a Governance Committee.
 -}
 -- Aggregate Member : Committee member
-Committeemember : ClassOfBoundedIndividual
-Committeemember = BoundedIndividual
+Committeemember : AggregateHolonymyType
+Committeemember = AggregateHolonymy
 
 
 
 --  Committeemember is subTypeOf AggregateHolonymy
 st-24ae430d5ed1f6aa-c2f2c9a166ea50e2 : Committeemember ⊏ₑ AggregateHolonymy
 st-24ae430d5ed1f6aa-c2f2c9a166ea50e2 = polySubTypeOf-identity
-
---  Committeemember is subTypeOf IndividualStakeholder
-st-24ae430d5ed1f6aa-2cc9718655263c44 : Committeemember ⊏ₑ IndividualStakeholder
-st-24ae430d5ed1f6aa-2cc9718655263c44 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfCommitteemember :  Linkage GovernanceCommittee Committeemember

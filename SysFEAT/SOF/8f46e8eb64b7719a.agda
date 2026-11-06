@@ -45,8 +45,9 @@ postulate -- measuredAsset is subTypeOf holonymyRelation
 A Measurement is the result of a measurement activity, for a given Asset Block in the context of a Key Indicator.Measurements are Hierarchical Member, so they nest there referenced Measurement Value.
 -}
 -- Aggregate Member : Measurement
-Measurement : ClassOfClassOfIndividual
-Measurement = ClassOfIndividual
+Measurement : ClassOfMixedOrderEntity
+Measurement = MixedOrderEntity
+
 
 
 --  Measurement withAspect HierarchicalMember

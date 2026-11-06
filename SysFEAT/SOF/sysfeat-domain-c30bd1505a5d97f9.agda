@@ -16,6 +16,7 @@ External references:
 module SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 where -- ========== Architecture Assets
 
 open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
+open import SysFEAT.UpperOntology.sysfeat-domain-3aca56b16aa64950 public -- Abstract Knowledge Graph
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
 open import SysFEAT.SOF.sysfeat-domain-af4db12d62993434 public -- Model Block Packaging
@@ -26,6 +27,7 @@ open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- Individual Asset
 open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.4efc6b346ae48db7 public -- Asset Category
 open import SysFEAT.SOF.f69620466a0f9c2f public -- Asset Category Family
 open import SysFEAT.SOF.3a2f3b516796620e public -- Whole Life Asset
 open import SysFEAT.SOF.3a2f3c44679664b5 public -- Asset State

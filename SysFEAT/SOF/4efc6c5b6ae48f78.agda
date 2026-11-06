@@ -15,23 +15,29 @@ Documentation : https://framework.sysfeat.com/pages/4efc6c5b6ae48f78.htm
 module SysFEAT.SOF.4efc6c5b6ae48f78 where -- ========== ConditionCategory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- CategoryOfEntity
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
+open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
 
-ConditionCategory : ∀ (u : Level) → ClassOfMixedOrderEntity u
-ConditionCategory u = MixedOrderEntity u
+ConditionCategory : ∀ (u : Level) → MetaClass u 
+ConditionCategory u  = ClassOfEntity u 
 
---  ConditionCategory is subTypeOf CategoryOfEntity
-st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (CategoryOfEntity v)
+
+--  ConditionCategory is subTypeOf ConceptCategory
+st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (ConceptCategory v)
 st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
+
+--  ConditionCategory is subTypeOf ThirdOrderClass
+st-4efc6c5b6ae48f78-bab6c7346ad70999 : ∀ {u} → (ConditionCategory u) ⊏ₘₑ ThirdOrderClass
+st-4efc6c5b6ae48f78-bab6c7346ad70999 = polySubTypeOf-identity
 
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Family of Measurement: -}
-familyOfMeasurement : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
-familyOfMeasurement = make_classOfRelation "Family of Measurement" "Family of Measurement"
+{- Condtition Category Family: -}
+condtitionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
+condtitionCategoryFamily = make_classOfRelation "Condtition Category Family" "Condtition Category Family"
 
-postulate -- familyOfMeasurement is subTypeOf categorizationFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → familyOfMeasurement {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}
+postulate -- condtitionCategoryFamily is subTypeOf categorizationFamily
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → condtitionCategoryFamily {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}

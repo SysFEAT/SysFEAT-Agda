@@ -21,8 +21,8 @@ External references:
 module SysFEAT.SOF.515c6b23689335c3 where -- ========== Directive
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.SOF.952ea6c467285821 public -- PolicyCategory
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
@@ -30,13 +30,13 @@ open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 Directive : AssetPropertyType
 Directive = CompositeProperty
 
---  Directive is subTypeOf CompositeProperty
-st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
-st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
-
 --  Directive withAspect PolicyAsset
 st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ (PolicyAsset (lsuc(lzero)))
 st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
+
+--  Directive is subTypeOf CompositeProperty
+st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
+st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -70,8 +70,9 @@ postulate -- realizedDirective is subTypeOf specializedProperty
 Any Asset Type that is the subject of a Directive.
 -}
 -- Aggregate Member : Directive Subject
-DirectiveSubject : ClassOfClassOfIndividual
-DirectiveSubject = ClassOfIndividual
+DirectiveSubject : ClassOfMixedOrderEntity
+DirectiveSubject = MixedOrderEntity
+
 
 
 --  DirectiveSubject withAspect UnboundedMember

@@ -17,8 +17,9 @@ module SysFEAT.SOF.828885ab6ae86a83 where -- ========== LogicalResource
 open import Agda.Primitive
 open import SysFEAT.SOF.a04ea6866ae7465e public -- ResourceLevel
 
-LogicalResource : ∀ (u : Level) → ClassOfMixedOrderEntity u
-LogicalResource u = MixedOrderEntity u
+LogicalResource : ∀ (u : Level) → ConceptualizationLevel u 
+LogicalResource u  = ResourceLevel u 
+
 
 --  LogicalResource is subTypeOf ResourceLevel
 st-828885ab6ae86a83-a04ea6866ae7465e : ∀ {u v} → (LogicalResource u) ⊏⋆ₑ (ResourceLevel v)

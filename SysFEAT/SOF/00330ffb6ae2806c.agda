@@ -17,12 +17,13 @@ module SysFEAT.SOF.00330ffb6ae2806c where -- ========== InformationDomainMap
 open import Agda.Primitive
 open import SysFEAT.SOF.003315fd6ae286f1 public -- InformationDomainFamily
 
-InformationDomainMap : ThirdOrderClass
-InformationDomainMap = SecondOrderClass
+InformationDomainMap : ∀ (u : Level) → MetaClass u 
+InformationDomainMap u  = ClassOfEntity u 
+
 
 --  InformationDomainMap is subTypeOf InformationDomainFamily
-st-00330ffb6ae2806c-003315fd6ae286f1 : InformationDomainMap ⊏ₑ InformationDomainFamily
-st-00330ffb6ae2806c-003315fd6ae286f1 = polySubTypeOf-identity
+st-00330ffb6ae2806c-003315fd6ae286f1 : ∀ {u v} → (InformationDomainMap u) ⊏⋆ₑ (InformationDomainFamily v)
+st-00330ffb6ae2806c-003315fd6ae286f1 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================

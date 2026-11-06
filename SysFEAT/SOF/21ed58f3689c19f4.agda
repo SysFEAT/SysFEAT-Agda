@@ -16,16 +16,22 @@ module SysFEAT.SOF.21ed58f3689c19f4 where -- ========== EnvironmentalProperty
 
 open import Agda.Primitive
 open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
+open import SysFEAT.UpperOntology.3e525f966ab05bd8 public -- ElementaryProperty
 open import SysFEAT.SOF.e53af85b66e37f78 public -- EnvironmentalPropertyType
 
-EnvironmentalProperty : AssetPropertyType
-EnvironmentalProperty = AssetProperty
-
+EnvironmentalProperty : EnvironmentalPropertyType
+EnvironmentalProperty = ElementaryProperty
 
 --  EnvironmentalProperty is subTypeOf ConditionProperty
 st-21ed58f3689c19f4-21ed231d689c0679 : EnvironmentalProperty ⊏ₑ ConditionProperty
 st-21ed58f3689c19f4-21ed231d689c0679 = polySubTypeOf-identity
 
+--  EnvironmentalProperty is subTypeOf ElementaryProperty
+st-21ed58f3689c19f4-3e525f966ab05bd8 : EnvironmentalProperty ⊏ₑ ElementaryProperty
+st-21ed58f3689c19f4-3e525f966ab05bd8 = polySubTypeOf-identity
+
+postulate -- EnvironmentalProperty is PowerInstanceOf Environmental Property Type
+  pi-38f6c9276aed2929 : EnvironmentalProperty ∷ₚₑ EnvironmentalPropertyType
 
 -- == Relations =======================
 

@@ -15,19 +15,20 @@ Documentation : https://framework.sysfeat.com/pages/d745ed256aa38edc.htm
 module SysFEAT.SOF.d745ed256aa38edc where -- ========== InformationDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
 open import SysFEAT.SOF.6c5f808b68587e49 public -- InformationLexicalScope
+open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
 
-InformationDictionary : ClassOfIndividual
-InformationDictionary = Individual
+InformationDictionary : ClassOfMixedOrderEntity
+InformationDictionary = MixedOrderEntity
 
---  InformationDictionary is subTypeOf ModelPackage
-st-d745ed256aa38edc-d745dbaa6aa3840b : InformationDictionary ⊏ₑ ModelPackage
-st-d745ed256aa38edc-d745dbaa6aa3840b = polySubTypeOf-identity
 
 --  InformationDictionary withAspect InformationLexicalScope
 st-d745ed256aa38edc-6c5f808b68587e49 : InformationDictionary ⊏ₐₑ (InformationLexicalScope lzero)
 st-d745ed256aa38edc-6c5f808b68587e49 = polySubTypeOf-identity
+
+--  InformationDictionary is subTypeOf ModelPackage
+st-d745ed256aa38edc-d745dbaa6aa3840b : InformationDictionary ⊏ₑ ModelPackage
+st-d745ed256aa38edc-d745dbaa6aa3840b = polySubTypeOf-identity
 
 
 -- == Relations =======================

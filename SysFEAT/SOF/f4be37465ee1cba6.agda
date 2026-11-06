@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
 
-Audit : ClassOfBoundedIndividual
-Audit = BoundedIndividual
+Audit : WholeLifeClass
+Audit = WholeLifeIndividual
 
 
 --  Audit is subTypeOf GovernanceActivity
@@ -32,18 +32,14 @@ st-f4be37465ee1cba6-1737b76a5fe28204 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Audit Activity: -}
 -- Aggregate Member : Audit Activity
-AuditActivity : ClassOfBoundedIndividual
-AuditActivity = BoundedIndividual
+AuditActivity : AggregateHolonymyType
+AuditActivity = AggregateHolonymy
 
 
 
 --  AuditActivity is subTypeOf GovernanceActivityPart
 st-833987cd68e33de9-fee30a85695d0bb0 : AuditActivity ⊏ₑ GovernanceActivityPart
 st-833987cd68e33de9-fee30a85695d0bb0 = polySubTypeOf-identity
-
---  AuditActivity is subTypeOf Audit
-st-833987cd68e33de9-f4be37465ee1cba6 : AuditActivity ⊏ₑ Audit
-st-833987cd68e33de9-f4be37465ee1cba6 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAuditActivity :  Linkage Audit AuditActivity
@@ -66,18 +62,14 @@ auditActivity = membershipOfAuditActivity  ∘  aggregationOfAuditAuditActivity
 -- -------------------------------------------------------------------------------------------- 
 {- Finding: -}
 -- Aggregate Member : Finding
-Finding : AssetType
-Finding = IndividualAsset
+Finding : ClassOfMixedOrderEntity
+Finding = MixedOrderEntity
 
 
 
 --  Finding withAspect UnboundedMember
 st-8339882968e33e98-8cfaf71a6852b042 : Finding ⊏ₐₑ (UnboundedMember lzero)
 st-8339882968e33e98-8cfaf71a6852b042 = polySubTypeOf-identity
-
---  Finding is subTypeOf IndividualAsset
-st-8339882968e33e98-ebcfaeac5ad76ed7 : Finding ⊏ₑ IndividualAsset
-st-8339882968e33e98-ebcfaeac5ad76ed7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfFinding :  Linkage Audit Finding

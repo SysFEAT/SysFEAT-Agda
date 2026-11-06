@@ -47,8 +47,9 @@ postulate -- specializedInformationProperty is subTypeOf specializedInformationA
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Information Property: -}
 -- Aggregate Member : Sub Information Property
-SubInformationProperty : ClassOfClassOfIndividual
-SubInformationProperty = ClassOfIndividual
+SubInformationProperty : ClassOfMixedOrderEntity
+SubInformationProperty = MixedOrderEntity
+
 
 
 --  SubInformationProperty is subTypeOf InformationAssetRelationship

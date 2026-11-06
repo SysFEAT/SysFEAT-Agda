@@ -61,8 +61,9 @@ postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
 A  Risk refers to the potential for loss resulting from inadequate structure or behavior of a Functional Asset.
 -}
 -- Aggregate Member : Risk
-Risk : ThirdOrderClass
-Risk = SecondOrderClass
+Risk : ClassOfMixedOrderEntity
+Risk = MixedOrderEntity
+
 
 
 --  Risk withAspect UnboundedMember

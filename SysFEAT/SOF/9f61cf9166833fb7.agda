@@ -54,18 +54,14 @@ postulate -- exhibitedCapability is subTypeOf propertyOfIndividual
 An Individual Operating Part is the Aggregate Holonymy of an Individual Operating Asset within a parent Individual Operating Asset.
 -}
 -- Aggregate Member : Individual Operating Part
-IndividualOperatingPart : ClassOfBoundedIndividual
-IndividualOperatingPart = BoundedIndividual
+IndividualOperatingPart : AggregateHolonymyType
+IndividualOperatingPart = AggregateHolonymy
 
 
 
 --  IndividualOperatingPart is subTypeOf AggregateHolonymy
 st-d8ee780d68d224c2-c2f2c9a166ea50e2 : IndividualOperatingPart ⊏ₑ AggregateHolonymy
 st-d8ee780d68d224c2-c2f2c9a166ea50e2 = polySubTypeOf-identity
-
---  IndividualOperatingPart is subTypeOf IndividualOperatingAsset
-st-d8ee780d68d224c2-9f61cf9166833fb7 : IndividualOperatingPart ⊏ₑ IndividualOperatingAsset
-st-d8ee780d68d224c2-9f61cf9166833fb7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIndividualOperatingPart :  Linkage IndividualOperatingAsset IndividualOperatingPart

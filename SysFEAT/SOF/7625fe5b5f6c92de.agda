@@ -17,8 +17,8 @@ module SysFEAT.SOF.7625fe5b5f6c92de where -- ========== RemediationPlan
 open import Agda.Primitive
 open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 
-RemediationPlan : ClassOfBoundedIndividual
-RemediationPlan = BoundedIndividual
+RemediationPlan : WholeLifeClass
+RemediationPlan = WholeLifeIndividual
 
 
 --  RemediationPlan is subTypeOf GovernanceActivity

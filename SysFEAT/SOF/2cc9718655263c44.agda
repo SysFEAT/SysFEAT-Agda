@@ -17,8 +17,9 @@ module SysFEAT.SOF.2cc9718655263c44 where -- ========== IndividualStakeholder
 open import Agda.Primitive
 open import SysFEAT.SOF.bcebd0175491272a public -- Stakeholder
 
-IndividualStakeholder : ClassOfBoundedIndividual
-IndividualStakeholder = BoundedIndividual
+IndividualStakeholder : StateClass
+IndividualStakeholder = IndividualState
+
 
 --  IndividualStakeholder is subTypeOf Stakeholder
 st-2cc9718655263c44-bcebd0175491272a : IndividualStakeholder ⊏ₑ Stakeholder

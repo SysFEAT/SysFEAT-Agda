@@ -64,8 +64,9 @@ postulate -- realizedProces is subTypeOf realizedBehavior
 A Sequence Flow is used to show the order in which steps of a process will be performed. Each sequence flow has only one source and only one target. 
 -}
 -- Aggregate Member : Sequence Flow
-SequenceFlow : ClassOfClassOfIndividual
-SequenceFlow = ClassOfIndividual
+SequenceFlow : TemporalOrderingType
+SequenceFlow = TemporalOrdering
+
 
 
 --  SequenceFlow is subTypeOf TemporalOrdering
@@ -95,8 +96,9 @@ sequenceFlow = membershipOfSequenceFlow  ∘  aggregationOfBehavioralEventSequen
 Object Flow is a Sequence Flow that convey from its source 
 -}
 -- Aggregate Member : Object Flow
-ObjectFlow : ClassOfClassOfIndividual
-ObjectFlow = ClassOfIndividual
+ObjectFlow : TemporalOrderingType
+ObjectFlow = TemporalOrdering
+
 
 
 --  ObjectFlow is subTypeOf SequenceFlow
@@ -126,8 +128,9 @@ objectFlow = membershipOfObjectFlow  ∘  aggregationOfOutcomeEventObjectFlow
 An Process Store references an Information Domain necessary for activities of the process.
 -}
 -- Aggregate Member : Process Store
-ProcessStore : ClassOfClassOfIndividual
-ProcessStore = ClassOfIndividual
+ProcessStore : ClassOfMixedOrderEntity
+ProcessStore = MixedOrderEntity
+
 
 
 --  ProcessStore withAspect UnboundedMember
@@ -161,6 +164,7 @@ ActiveParticipant : ClassOfClassOfIndividual
 ActiveParticipant = ClassOfIndividual
 
 
+
 --  ActiveParticipant is subTypeOf ProcessParticipant
 st-004b041f5ebd1119-fafb50d966460369 : ActiveParticipant ⊏ₑ ProcessParticipant
 st-004b041f5ebd1119-fafb50d966460369 = polySubTypeOf-identity
@@ -192,6 +196,7 @@ ProcessParticipant : ClassOfClassOfIndividual
 ProcessParticipant = ClassOfIndividual
 
 
+
 --  ProcessParticipant is subTypeOf BehaviorParticipant
 st-fafb50d966460369-e0e86fad65789c43 : ProcessParticipant ⊏ₑ BehaviorParticipant
 st-fafb50d966460369-e0e86fad65789c43 = polySubTypeOf-identity
@@ -221,6 +226,7 @@ A Process Step is a Process Activity  invoking another Action Process Type
 -- Aggregate Member : Process Step
 ProcessStep : ClassOfClassOfIndividual
 ProcessStep = ClassOfIndividual
+
 
 
 --  ProcessStep is subTypeOf BehaviorPart
