@@ -17,7 +17,7 @@ External references:
 module SysFEAT.SOF.e6f250185f772ee1 where -- ========== InformationAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
 open import SysFEAT.SOF.ded830e46ae385d9 public -- DataCatagory
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
@@ -27,9 +27,9 @@ InformationAsset : BoundedIndividualMetaClass
 InformationAsset = AssetType
 
 
---  InformationAsset is subTypeOf FunctionalAsset
-st-e6f250185f772ee1-a44fb6bc6748b088 : InformationAsset ⊏ₑ FunctionalAsset
-st-e6f250185f772ee1-a44fb6bc6748b088 = polySubTypeOf-identity
+--  InformationAsset is subTypeOf AssetType
+st-e6f250185f772ee1-a4a5b3f855585ce1 : InformationAsset ⊏ₑ AssetType
+st-e6f250185f772ee1-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  InformationAsset withAspect InformationBlock
 st-e6f250185f772ee1-6c5f80e468587f06 : InformationAsset ⊏ₐₑ (InformationBlock (lsuc(lzero)))

@@ -23,4 +23,7 @@ open import SysFEAT.SOF.0eb95d786855bbd9 public -- Architecture Lexical Scope
 open import SysFEAT.SOF.0eb95f1b6855bf64 public -- Architecture Container
 open import SysFEAT.SOF.0eb960766855c180 public -- Architecture Block Collection
 open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.EA.786b34fc6abe5efe public -- Policy Framework
+open import SysFEAT.SOF.a88122526ad9893a public -- Policy Framework Class
+open import SysFEAT.SOF.9397c3d86877842f public -- Policy Asset
 open import SysFEAT.SOF.9397b45268777e3b public -- Architecture Block

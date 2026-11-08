@@ -19,7 +19,7 @@ External references:
 module SysFEAT.SOF.ca35f48a5fc48686 where -- ========== OperatingEcoSystem
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
 
@@ -27,9 +27,9 @@ OperatingEcoSystem : BoundedIndividualMetaClass
 OperatingEcoSystem = AssetType
 
 
---  OperatingEcoSystem is subTypeOf FunctionalAsset
-st-ca35f48a5fc48686-a44fb6bc6748b088 : OperatingEcoSystem ⊏ₑ FunctionalAsset
-st-ca35f48a5fc48686-a44fb6bc6748b088 = polySubTypeOf-identity
+--  OperatingEcoSystem is subTypeOf AssetType
+st-ca35f48a5fc48686-a4a5b3f855585ce1 : OperatingEcoSystem ⊏ₑ AssetType
+st-ca35f48a5fc48686-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  OperatingEcoSystem withAspect AssetBlock
 st-ca35f48a5fc48686-0eb95f356855bf94 : OperatingEcoSystem ⊏ₐₑ (AssetBlock (lsuc(lzero)))

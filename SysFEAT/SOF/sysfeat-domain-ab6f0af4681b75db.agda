@@ -14,7 +14,6 @@ Documentation : https://framework.sysfeat.com/pages/ab6f0af4681b75db.htm
 module SysFEAT.SOF.sysfeat-domain-ab6f0af4681b75db where -- ========== Architecture Assets & Packaging
 
 open import SysFEAT.UpperOntology.sysfeat-domain-f0fd779f65a18c5d public -- Packaging
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.UpperOntology.sysfeat-domain-3aca56b16aa64950 public -- Abstract Knowledge Graph
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages

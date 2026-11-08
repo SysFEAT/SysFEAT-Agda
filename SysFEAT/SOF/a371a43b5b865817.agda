@@ -17,7 +17,7 @@ External references:
 module SysFEAT.SOF.a371a43b5b865817 where -- ========== OperatingAssetType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.0c4559c86a033792 public -- OperatingAsset
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 open import SysFEAT.SOF.190c74f868966584 public -- BehavioralRule
@@ -26,9 +26,9 @@ OperatingAssetType : BoundedIndividualMetaClass
 OperatingAssetType = AssetType
 
 
---  OperatingAssetType is subTypeOf FunctionalAsset
-st-a371a43b5b865817-a44fb6bc6748b088 : OperatingAssetType ⊏ₑ FunctionalAsset
-st-a371a43b5b865817-a44fb6bc6748b088 = polySubTypeOf-identity
+--  OperatingAssetType is subTypeOf AssetType
+st-a371a43b5b865817-a4a5b3f855585ce1 : OperatingAssetType ⊏ₑ AssetType
+st-a371a43b5b865817-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  OperatingAssetType withAspect OperatingAsset
 st-a371a43b5b865817-0c4559c86a033792 : OperatingAssetType ⊏ₐₑ (OperatingAsset (lsuc(lzero)))
@@ -52,8 +52,8 @@ postulate -- fulfilledCapability is subTypeOf assetTypeQualification
 specializedOperatingAsset :  Linkage OperatingAssetType OperatingAssetType
 specializedOperatingAsset = make_subTypeOf "Specialized Operating Asset" "Specialized Operating Asset"
 
-postulate -- specializedOperatingAsset is subTypeOf specializedFunctionalAsset
-  st-6a70772167873276-6a7076d2678731e2  : specializedOperatingAsset  ⊏⋆ᵣ  specializedFunctionalAsset
+postulate -- specializedOperatingAsset is subTypeOf specializedAsset
+  st-6a70772167873276-12b0287266e936d5  : specializedOperatingAsset  ⊏⋆ᵣ  specializedAsset
 postulate -- specializedOperatingAsset is subTypeOf specializedClassOfBoundedIndividual
   st-6a70772167873276-e53a627766e4b4cd  : specializedOperatingAsset  ⊏⋆ᵣ  specializedClassOfBoundedIndividual
 

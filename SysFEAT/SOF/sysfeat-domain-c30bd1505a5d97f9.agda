@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Architecture Assets: 
-The Architecture Assets domain defines top level constructs used in enterprise architecting: Asset Types, Asset Category Family(ies), Asset Property(ies).
+The Architecture Assets domain defines top level constructs used in enterprise architecting: Asset Types, Asset Category Family(ies), Asset Property(ies).Among domain defines  Directives and Behavioral Rules that constrain enterprise structures (Agent Types structure) and Behavior Types.
 
 Documentation : https://framework.sysfeat.com/pages/c30bd1505a5d97f9.htm
 
@@ -15,7 +15,6 @@ External references:
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 where -- ========== Architecture Assets
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.UpperOntology.sysfeat-domain-3aca56b16aa64950 public -- Abstract Knowledge Graph
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
@@ -38,6 +37,10 @@ open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- Condition Category
 open import SysFEAT.SOF.4efc76226ae49da5 public -- Measurement Category
 open import SysFEAT.SOF.4efc77266ae49efb public -- Environmental Category
 open import SysFEAT.SOF.83f88fd567406e53 public -- Asset Property Type
+open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
+open import SysFEAT.SOF.190c7429689664b5 public -- Policy
+open import SysFEAT.SOF.190c74f868966584 public -- Behavioral Rule
+open import SysFEAT.SOF.0e55206a66f11ec5 public -- Risk Type
 open import SysFEAT.SOF.e13ce1cd678f1111 public -- Whole Life Asset Type
 open import SysFEAT.SOF.e13ce269678f11ed public -- Asset State Type
 open import SysFEAT.SOF.21ed2aa6689c12ba public -- Measure Property
