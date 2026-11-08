@@ -19,9 +19,9 @@ module SysFEAT.SOF.ebcfaeac5ad76ed7 where -- ========== IndividualAsset
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.SOF.31cf36be6ad16caa public -- Period
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
-open import SysFEAT.SOF.31cf36be6ad16caa public -- Period
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 
 IndividualAsset : AssetType
@@ -35,6 +35,14 @@ postulate -- IndividualAsset is PowerInstanceOf Asset Type
   pi-12b0296966e9378b : IndividualAsset ∷ₚₑ AssetType
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- happens during: -}
+happensduring :  Linkage IndividualAsset Period
+happensduring = make_meronymyRelation "happens during" "happens during"
+
+postulate -- happensduring is subTypeOf meronymyRelation
+  st-391539766ad51c09-e818e86d6ad45d7a  : happensduring  ⊏⋆ᵣ  meronymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Asset Property: -}
@@ -53,14 +61,6 @@ qualifyingConditionProperty = make_Relation "Qualifying Condition Property" "Qua
 
 postulate -- qualifyingConditionProperty is subTypeOf qualifyingAssetProperty
   st-21ed5601689c1844-190c414968965640  : qualifyingConditionProperty  ⊏⋆ᵣ  qualifyingAssetProperty
-
--- -------------------------------------------------------------------------------------------- 
-{- happens during: -}
-happensduring :  Linkage IndividualAsset Period
-happensduring = make_meronymyRelation "happens during" "happens during"
-
-postulate -- happensduring is subTypeOf meronymyRelation
-  st-391539766ad51c09-e818e86d6ad45d7a  : happensduring  ⊏⋆ᵣ  meronymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Located at: -}

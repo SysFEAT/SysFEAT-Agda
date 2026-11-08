@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/ded858a36ae39422.htm
 module SysFEAT.SOF.ded858a36ae39422 where -- ========== MacroOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
 open import SysFEAT.SOF.e83018fb6ae53018 public -- OperatingAssetCategory
+open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
 
-MacroOperatingAsset : SystemicLevelFamily
-MacroOperatingAsset = Unknown
+MacroOperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u
+MacroOperatingAsset u = MixedOrderEntity u
 
 
 -- == Relations =======================

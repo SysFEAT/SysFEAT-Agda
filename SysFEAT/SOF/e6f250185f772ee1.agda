@@ -39,26 +39,6 @@ st-e6f250185f772ee1-6c5f80e468587f06 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Data Categorization: 
-Classification of an Information Asset as belonging to a Data Catagory.
--}
-dataCategorization : ∀ {u} →  Linkage InformationAsset (DataCatagory u)
-dataCategorization = make_subTypeOf "Data Categorization" "Data Categorization"
-
-postulate -- dataCategorization is subTypeOf assetCategorization
-  st-ded838016ae3883c-4efc6b426ae48e32  : dataCategorization  ⊏⋆ᵣ  assetCategorization
-
--- -------------------------------------------------------------------------------------------- 
-{- Data Categorization Scheme: 
-Classification of an Information Asset as belonging to a Data Category Family.
--}
-dataCategorizationScheme : ∀ {u} →  Linkage InformationAsset (DataCategoryFamily u)
-dataCategorizationScheme = make_classOfRelation "Data Categorization Scheme" "Data Categorization Scheme"
-
-postulate -- dataCategorizationScheme is subTypeOf assetCategorizationScheme
-  st-435652586a111043-f69620606a0f9c94  : dataCategorizationScheme  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
-
--- -------------------------------------------------------------------------------------------- 
 {- Specialized Information Asset: -}
 specializedInformationAsset :  Linkage InformationAsset InformationAsset
 specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
@@ -73,6 +53,26 @@ realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized
 
 postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
   st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Data Categorization: 
+Classification of an Information Asset as belonging to a Data Catagory.
+-}
+dataCategorization : ∀ {u} →  Linkage InformationAsset (DataCatagory u)
+dataCategorization = make_subTypeOf "Data Categorization" "Data Categorization"
+
+postulate -- dataCategorization is subTypeOf assetCategorization
+  st-ded838016ae3883c-4efc6b426ae48e32  : dataCategorization  {lsuc(lzero)}  ⊏⋆ᵣ  assetCategorization  {lsuc(lzero)}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Data Categorization Scheme: 
+Classification of an Information Asset as belonging to a Data Category Family.
+-}
+dataCategorizationScheme : ∀ {u} →  Linkage InformationAsset (DataCategoryFamily u)
+dataCategorizationScheme = make_classOfRelation "Data Categorization Scheme" "Data Categorization Scheme"
+
+postulate -- dataCategorizationScheme is subTypeOf assetCategorizationScheme
+  st-435652586a111043-f69620606a0f9c94  : dataCategorizationScheme  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Risk: 

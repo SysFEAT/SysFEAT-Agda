@@ -34,5 +34,5 @@ st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 dataCategoryFamily : ∀ {u v} →  Linkage (DataCatagory u) (DataCategoryFamily v)
 dataCategoryFamily = make_classOfRelation "Data Category Family" "Data Category Family"
 
-postulate -- dataCategoryFamily is subTypeOf categorizationFamily
-  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}
+postulate -- dataCategoryFamily is subTypeOf parentFamily
+  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {v}  ⊏⋆ᵣ  parentFamily {u} {v}

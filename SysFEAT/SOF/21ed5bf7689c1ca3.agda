@@ -19,7 +19,6 @@ module SysFEAT.SOF.21ed5bf7689c1ca3 where -- ========== SetOfConditionProperties
 open import Agda.Primitive
 open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
-open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
 open import SysFEAT.SOF.e53af87666e37fcd public -- SetOfEnvironmentalConditionType
 
 SetOfConditionProperties : SetOfEnvironmentalConditionType
@@ -32,10 +31,6 @@ st-21ed5bf7689c1ca3-21ed231d689c0679 = polySubTypeOf-identity
 --  SetOfConditionProperties is subTypeOf CompositeProperty
 st-21ed5bf7689c1ca3-3e525e406ab05b0d : SetOfConditionProperties ⊏ₑ CompositeProperty
 st-21ed5bf7689c1ca3-3e525e406ab05b0d = polySubTypeOf-identity
-
---  SetOfConditionProperties withAspect UnboundedAggregate
-st-21ed5bf7689c1ca3-8cfa942f68527849 : SetOfConditionProperties ⊏ₐₑ (UnboundedAggregate (lsuc(lzero)))
-st-21ed5bf7689c1ca3-8cfa942f68527849 = polySubTypeOf-identity
 
 postulate -- SetOfConditionProperties is PowerInstanceOf Set of Environmental Condition Type
   pi-38f6dc1a6aed2f4d : SetOfConditionProperties ∷ₚₑ SetOfEnvironmentalConditionType
@@ -55,14 +50,14 @@ postulate -- setOfEnvironmentalConditionType is subTypeOf conditionPropertyType
 And combination of a Condition Propertys.
 -}
 -- Aggregate Member : Combined Property
-CombinedProperty : ClassOfMixedOrderEntity
-CombinedProperty = MixedOrderEntity
+CombinedProperty : AbstractEntityMetaClass
+CombinedProperty = ClassOfAbstractEntity
 
 
 
---  CombinedProperty withAspect UnboundedMember
-st-dd26df9f689e4681-8cfaf71a6852b042 : CombinedProperty ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
-st-dd26df9f689e4681-8cfaf71a6852b042 = polySubTypeOf-identity
+--  CombinedProperty is subTypeOf PropertyPart
+st-dd26df9f689e4681-3e5261066ab05e0f : CombinedProperty ⊏⋆ₑ PropertyPart
+st-dd26df9f689e4681-3e5261066ab05e0f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfCombinedProperty :  Linkage SetOfConditionProperties CombinedProperty
