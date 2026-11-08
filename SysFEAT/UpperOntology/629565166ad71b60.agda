@@ -23,8 +23,8 @@ External references:
 
 module SysFEAT.UpperOntology.629565166ad71b60 where -- ============ ConceptCategory
 
+open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity and Relation
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
-
 
 -- ============================================================
 -- I. Concept definition
@@ -39,5 +39,13 @@ ConceptCategory u = ClassOfEntity u
 -- ============================================================
 -- II. Relation
 -- ============================================================ 
+{- Categorization Family: the Categorization Family that a Concept Category belongs to -}
+parentFamily : ∀ {u v} →  Linkage (ConceptCategory u) (CategorizationFamily v)
+parentFamily = make_instanceOf "Category Classification" "Parent Family"
+
+postulate -- parentFamily is subTypeOf instanceOfEntity
+  8d1fa37b6ae82572 : ∀ {u} → parentFamily {u} {lsuc(u)} ⊏⋆ᵣ instanceOfEntity {u} {lsuc(u)}
+  --8d1fa37b6ae82572 {u} = polySubTypeOfRel-fromExtensionMap {subRel = (parentFamily {u}{lsuc(u)})} {superRel = (instanceOfEntity {u}{lsuc(u)})} (λ w → w)
+
 
 
