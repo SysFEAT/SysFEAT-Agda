@@ -51,5 +51,5 @@ postulate -- conditionCategory is subTypeOf conceptCategorization
 familyOfMeasurement : ∀ {u} →  Linkage ConditionPropertyType (FamilyOfMeasurement u)
 familyOfMeasurement = make_classOfRelation "Family of Measurement" "Family of Measurement"
 
-postulate -- familyOfMeasurement is subTypeOf categorizationFamily
-  st-051d13f06ae96ff0-890a8a9e6ae8578e  : familyOfMeasurement  ⊏⋆ᵣ  categorizationFamily {lsuc(lzero)} {lsuc(lsuc(lzero))} {lsuc(lzero)} {lsuc(lsuc(lzero))}
+postulate -- familyOfMeasurement is subTypeOf parentFamily
+  st-051d13f06ae96ff0-890a8a9e6ae8578e  : familyOfMeasurement  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  parentFamily {lsuc(lzero)} {lsuc(lsuc(lzero))} {lsuc(lzero)} {lsuc(lsuc(lzero))}

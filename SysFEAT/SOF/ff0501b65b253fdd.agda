@@ -22,11 +22,11 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0f64116a68597a27 public -- GovernanceContainer
 open import SysFEAT.SOF.0f641043685975c9 public -- GovernanceBuildingBlock
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
+open import SysFEAT.SOF.f4be37465ee1cba6 public -- Audit
+open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.SOF.173706265fe3f332 public -- MeasurementInstrument
 open import SysFEAT.SOF.2cc9717155263b89 public -- GovernanceCommittee
-open import SysFEAT.SOF.f4be37465ee1cba6 public -- Audit
-open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
 
 GoverningTeam : WholeLifeClass
 GoverningTeam = WholeLifeIndividual
@@ -46,6 +46,20 @@ st-ff0501b65b253fdd-342f74b166156e02 = polySubTypeOf-identity
 
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Packaged Team Activity: -}
+packagedTeamActivity :  Linkage GoverningTeam Audit
+packagedTeamActivity = make_nestingRelation "Packaged Team Activity" "Packaged Team Activity"
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Packaged Team Event: -}
+packagedTeamEvent :  Linkage GoverningTeam GovernanceEvent
+packagedTeamEvent = make_nestingRelation "Packaged Team Event" "Packaged Team Event"
+
+postulate -- packagedTeamEvent is subTypeOf packagedGovernanceBlock
+  st-9c94c1ad695f3777-0f6410c668597695  : packagedTeamEvent  ⊏⋆ᵣ  packagedGovernanceBlock
 
 -- -------------------------------------------------------------------------------------------- 
 {- Governed Initiative: -}
@@ -82,17 +96,3 @@ teamCommittee = make_holonymyRelation "Team Committee" "Team Committee"
 
 postulate -- teamCommittee is subTypeOf referenceHolonymy
   st-b0d7b34f5ea02f2c-9653a95669701e02  : teamCommittee  ⊏⋆ᵣ  referenceHolonymy
-
--- -------------------------------------------------------------------------------------------- 
-{- Packaged Team Activity: -}
-packagedTeamActivity :  Linkage GoverningTeam Audit
-packagedTeamActivity = make_nestingRelation "Packaged Team Activity" "Packaged Team Activity"
-
-
--- -------------------------------------------------------------------------------------------- 
-{- Packaged Team Event: -}
-packagedTeamEvent :  Linkage GoverningTeam GovernanceEvent
-packagedTeamEvent = make_nestingRelation "Packaged Team Event" "Packaged Team Event"
-
-postulate -- packagedTeamEvent is subTypeOf packagedGovernanceBlock
-  st-9c94c1ad695f3777-0f6410c668597695  : packagedTeamEvent  ⊏⋆ᵣ  packagedGovernanceBlock

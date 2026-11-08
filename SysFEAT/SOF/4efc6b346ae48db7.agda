@@ -31,4 +31,3 @@ st-4efc6b346ae48db7-629565166ad71b60 : ∀ {u v} → (AssetCategory u) ⊏⋆ₑ
 st-4efc6b346ae48db7-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

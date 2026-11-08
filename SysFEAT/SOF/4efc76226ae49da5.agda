@@ -26,4 +26,3 @@ st-4efc76226ae49da5-4efc6c5b6ae48f78 : ∀ {u v} → (MeasurementCategory u) ⊏
 st-4efc76226ae49da5-4efc6c5b6ae48f78 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

@@ -26,4 +26,3 @@ st-4efc77266ae49efb-4efc6c5b6ae48f78 : ∀ {u v} → (EnvironmentalCategory u) �
 st-4efc77266ae49efb-4efc6c5b6ae48f78 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

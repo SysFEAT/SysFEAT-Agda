@@ -16,7 +16,6 @@ module SysFEAT.SOF.4efc6c5b6ae48f78 where -- ========== ConditionCategory
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
-open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
 
 ConditionCategory : ∀ (u : Level) → MetaClass u 
@@ -27,17 +26,13 @@ ConditionCategory u  = ClassOfEntity u
 st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (ConceptCategory v)
 st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 
---  ConditionCategory is subTypeOf ThirdOrderClass
-st-4efc6c5b6ae48f78-bab6c7346ad70999 : ∀ {u} → (ConditionCategory u) ⊏ₘₑ ThirdOrderClass
-st-4efc6c5b6ae48f78-bab6c7346ad70999 = polySubTypeOf-identity
-
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Condtition Category Family: -}
-condtitionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
-condtitionCategoryFamily = make_classOfRelation "Condtition Category Family" "Condtition Category Family"
+{- Condition Category Family: -}
+conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
+conditionCategoryFamily = make_classOfRelation "Condition Category Family" "Condition Category Family"
 
-postulate -- condtitionCategoryFamily is subTypeOf categorizationFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → condtitionCategoryFamily {u} {v}  ⊏⋆ᵣ  categorizationFamily {u} {v}
+postulate -- conditionCategoryFamily is subTypeOf parentFamily
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {v}  ⊏⋆ᵣ  parentFamily {u} {v}
