@@ -1,0 +1,113 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Operating Domain: 
+An Operating Domain is a Macro functional division of labor within an enterprise, acting as a Conceptual Agent.It embodies a collection of interrelated  Business Functions which collaboratively provide one or more Business Capability(ies).Operating Domains serve as the highest hierarchical grouping of Business Functions within the enterprises Conceptual Environment.
+
+Documentation : https://framework.sysfeat.com/pages/9810b060551137d0.htm
+
+External references:
+  Russell Ackoff - System of concepts - FunctionalDivisionOfLabor: ../resources/external-references/Ackoff-1971-Towards-a-system-of-systems-concepts.pdf#FunctionalDivisionOfLabor
+  Christensen Institute - Modularity: https://www.christenseninstitute.org/theory/modularity
+  OMG - UAF - OperationalPerformer: https://www.omg.org/spec/UAF/1.2/Beta1/DMM/PDF#OperationalPerformer
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.C-SOF.9810b060551137d0 where -- ========== OperatingDomain
+
+open import Agda.Primitive
+open import SysFEAT.SOF.ded858a36ae39422 public -- MacroOperatingAsset
+open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
+open import SysFEAT.C-SOF.7c4094d2552717db public -- BusinessFunction
+
+OperatingDomain : AgentMetaClass
+OperatingDomain = AgentType
+
+
+--  OperatingDomain withAspect MacroOperatingAsset
+st-9810b060551137d0-ded858a36ae39422 : OperatingDomain ⊏ₐₑ (MacroOperatingAsset (lsuc(lzero)))
+st-9810b060551137d0-ded858a36ae39422 = polySubTypeOf-identity
+
+--  OperatingDomain is subTypeOf ConceptualAgent
+st-9810b060551137d0-7c40987055271d04 : OperatingDomain ⊏ₑ ConceptualAgent
+st-9810b060551137d0-7c40987055271d04 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Specialized Business Domain: 
+Composition of a sub Business Function Architecture in a parent Business Function Architecture .
+-}
+specializedBusinessDomain :  Linkage OperatingDomain OperatingDomain
+specializedBusinessDomain = make_subTypeOf "Specialized Business Domain" "Specialized Business Domain"
+
+postulate -- specializedBusinessDomain is subTypeOf specializedAgent
+  st-325a37b366f349dd-2b5b440b66ed56d4  : specializedBusinessDomain  ⊏⋆ᵣ  specializedAgent
+
+-- -------------------------------------------------------------------------------------------- 
+{- sub-business function: 
+A sub-business function represents the role of a business function as part of a parent Operating Domain.
+-}
+-- Aggregate Member : sub-business function
+subbusinessfunction : ClassOfClassOfIndividual
+subbusinessfunction = ClassOfIndividual
+
+
+
+--  subbusinessfunction is subTypeOf ConceptualAgentPart
+st-e8bfed085ebb8227-258c36965fd28288 : subbusinessfunction ⊏ₑ ConceptualAgentPart
+st-e8bfed085ebb8227-258c36965fd28288 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfsubbusinessfunction :  Linkage OperatingDomain subbusinessfunction
+membershipOfsubbusinessfunction = make_upwardNestingRelation "subbusinessfunction membership" "nested subbusinessfunction"
+
+-- Aggregation relation
+aggregationOfBusinessFunctionsubbusinessfunction :  Linkage subbusinessfunction BusinessFunction
+aggregationOfBusinessFunctionsubbusinessfunction = make_Relation "BusinessFunction aggregation" "aggregated BusinessFunction"
+
+{- subbusinessfunction : derived relation obtained by composing
+   membershipOfsubbusinessfunction and aggregationOfBusinessFunctionsubbusinessfunction
+   It directly links an Operating Domain to the final aggregated BusinessFunction
+   hiding the reifying subbusinessfunction
+-}
+subbusinessfunction : Linkage OperatingDomain BusinessFunction
+subbusinessfunction = membershipOfsubbusinessfunction  ∘  aggregationOfBusinessFunctionsubbusinessfunction
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Sub Activity Domain: 
+Usage of a Business Functional Area which is internal to the considered environment.
+-}
+-- Aggregate Member : Sub Activity Domain
+SubActivityDomain : ClassOfClassOfIndividual
+SubActivityDomain = ClassOfIndividual
+
+
+
+--  SubActivityDomain is subTypeOf ConceptualAgentPart
+st-e8bfed275ebb82ac-258c36965fd28288 : SubActivityDomain ⊏ₑ ConceptualAgentPart
+st-e8bfed275ebb82ac-258c36965fd28288 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfSubActivityDomain :  Linkage OperatingDomain SubActivityDomain
+membershipOfSubActivityDomain = make_upwardNestingRelation "subActivityDomain membership" "nested subActivityDomain"
+
+-- Aggregation relation
+aggregationOfOperatingDomainSubActivityDomain :  Linkage SubActivityDomain OperatingDomain
+aggregationOfOperatingDomainSubActivityDomain = make_Relation "OperatingDomain aggregation" "aggregated OperatingDomain"
+
+{- subActivityDomain : derived relation obtained by composing
+   membershipOfSubActivityDomain and aggregationOfOperatingDomainSubActivityDomain
+   It directly links an Operating Domain to the final aggregated OperatingDomain
+   hiding the reifying SubActivityDomain
+-}
+subActivityDomain : Linkage OperatingDomain OperatingDomain
+subActivityDomain = membershipOfSubActivityDomain  ∘  aggregationOfOperatingDomainSubActivityDomain
+
+
