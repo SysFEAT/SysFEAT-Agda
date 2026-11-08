@@ -16,7 +16,7 @@ module SysFEAT.SOF.366c4d5c675c2559 where -- ========== ArchitectureDecision
 
 open import Agda.Primitive
 open import SysFEAT.SOF.d7f9fcc95f720ee0 public -- Decision
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.97e09d7e68dd6d87 public -- ArchitectureDecisionOutcome
 
 ArchitectureDecision : ClassOfIndividual
@@ -32,7 +32,7 @@ st-366c4d5c675c2559-d7f9fcc95f720ee0 = polySubTypeOf-identity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Architecture Subject: -}
-architectureSubject :  Linkage ArchitectureDecision FunctionalAsset
+architectureSubject :  Linkage ArchitectureDecision AssetType
 architectureSubject = make_Relation "Architecture Subject" "Architecture Subject"
 
 postulate -- architectureSubject is subTypeOf decisionSubject

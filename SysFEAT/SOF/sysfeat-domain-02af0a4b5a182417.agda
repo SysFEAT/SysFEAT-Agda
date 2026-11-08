@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 System Operating Framework - SOF: 
-The System Operating Framework - SOF models how an active system (Agent Type) operates/functions (Behavior Type) in its Operating Eco-System to produce Outcome Events that benefit (value) to other Agent Types or affect (have an effect upon) these Agent Types.The SOF includes Agent Types, Action Process Types, Interaction Process Types, Policy(ies), Capability(ies), Outcome Events.
+The System Operating Framework - SOF models how an active system (Agent Type) operates/functions (Behavior Type) in its Operating Eco-System to produce Outcome Events that benefit (value) to other Agent Types or affect (have an effect upon) these Agent Types.The SOF includes Agent Types, Action Process Types, Interaction Process Types, Policy(ies), Capability(ies), Outcome Events.Functional Assets include:1. Blocks defining results of Behavior Types of the enterprise or its sub-systems, that benefit to it internal or external customers : Outcome Event,2. Blocks used to describe information: Information Asset.3. Blocks used to describe how the enterprise operates: Operating Asset Types (Agent Type, Behavior Type, Service Interface).All Functional Assets are constrained by Policys and are exposed to Risk Types.
 
 Documentation : https://framework.sysfeat.com/pages/02af0a4b5a182417.htm
 
@@ -17,7 +17,6 @@ External references:
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 where -- ========== System Operating Framework - SOF
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 public -- Information Assets
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
 open import SysFEAT.SOF.sysfeat-domain-0c450d696a031e95 public -- Systemic and Conceptualization Levels

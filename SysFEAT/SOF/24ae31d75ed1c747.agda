@@ -22,21 +22,21 @@ module SysFEAT.SOF.24ae31d75ed1c747 where -- ========== BehavioralEvent
 
 open import Agda.Primitive
 open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.UpperOntology.9429979a66823f90 public -- TemporalBoundingType
 open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndividual
 
-BehavioralEvent : TemporalBoundingType
-BehavioralEvent = TemporalBounding
+BehavioralEvent : BoundedIndividualMetaClass
+BehavioralEvent = AssetType
 
 
 --  BehavioralEvent is subTypeOf OperatingConnection
 st-24ae31d75ed1c747-21c5276e655759fb : BehavioralEvent ⊏ₑ OperatingConnection
 st-24ae31d75ed1c747-21c5276e655759fb = polySubTypeOf-identity
 
---  BehavioralEvent is subTypeOf FunctionalAsset
-st-24ae31d75ed1c747-a44fb6bc6748b088 : BehavioralEvent ⊏ₑ FunctionalAsset
-st-24ae31d75ed1c747-a44fb6bc6748b088 = polySubTypeOf-identity
+--  BehavioralEvent is subTypeOf AssetType
+st-24ae31d75ed1c747-a4a5b3f855585ce1 : BehavioralEvent ⊏ₑ AssetType
+st-24ae31d75ed1c747-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  BehavioralEvent is subTypeOf TemporalBoundingType
 st-24ae31d75ed1c747-9429979a66823f90 : BehavioralEvent ⊏ₑ TemporalBoundingType

@@ -15,15 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/0e55206a66f11ec5.htm
 module SysFEAT.SOF.0e55206a66f11ec5 where -- ========== RiskType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 
 RiskType : ThirdOrderClass
 RiskType = PropertyType
 
 
---  RiskType is subTypeOf PropertyType
-st-0e55206a66f11ec5-87d3062666e33965 : RiskType ⊏ₑ PropertyType
-st-0e55206a66f11ec5-87d3062666e33965 = polySubTypeOf-identity
+--  RiskType is subTypeOf AssetPropertyType
+st-0e55206a66f11ec5-83f88fd567406e53 : RiskType ⊏ₑ AssetPropertyType
+st-0e55206a66f11ec5-83f88fd567406e53 = polySubTypeOf-identity
 
 
 -- == Relations =======================

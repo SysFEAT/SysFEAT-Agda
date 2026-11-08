@@ -13,7 +13,6 @@ Documentation : https://framework.sysfeat.com/pages/d6cd2c8b5ab98da5.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 where -- ========== Information Assets
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-8d6d915c685f8689 public -- Information Packaging
 open import SysFEAT.UpperOntology.sysfeat-domain-fb342c5665561f29 public -- 4D Composite Knowledge Graph

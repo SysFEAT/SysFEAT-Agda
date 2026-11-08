@@ -16,7 +16,7 @@ module SysFEAT.SOF.732799d364364423 where -- ========== PolicyDecision
 
 open import Agda.Primitive
 open import SysFEAT.SOF.d7f9fcc95f720ee0 public -- Decision
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- FunctionalAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 open import SysFEAT.SOF.97e0a19a68dd71de public -- PolicyapplicabilityStatus
 
@@ -35,7 +35,7 @@ st-732799d364364423-d7f9fcc95f720ee0 = polySubTypeOf-identity
 {- Applicability Domain: 
 The set of Functional Assets which are subject of the Policy Decision.
 -}
-applicabilityDomain :  Linkage PolicyDecision FunctionalAsset
+applicabilityDomain :  Linkage PolicyDecision AssetType
 applicabilityDomain = make_Relation "Applicability Domain" "Applicability Domain"
 
 postulate -- applicabilityDomain is subTypeOf concernedAsset

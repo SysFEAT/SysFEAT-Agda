@@ -24,8 +24,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
-OutcomeEvent : TemporalBoundingType
-OutcomeEvent = TemporalBounding
+OutcomeEvent : BoundedIndividualMetaClass
+OutcomeEvent = AssetType
 
 
 --  OutcomeEvent is subTypeOf BehavioralEvent

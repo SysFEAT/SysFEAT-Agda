@@ -15,12 +15,16 @@ Documentation : https://framework.sysfeat.com/pages/e13ce269678f11ed.htm
 module SysFEAT.SOF.e13ce269678f11ed where -- ========== AssetStateType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.342f43ae66156429 public -- StateClass
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.UpperOntology.342f43ae66156429 public -- StateClass
 
 AssetStateType : BoundedIndividualMetaClass
-AssetStateType = ClassOfBoundedIndividual
+AssetStateType = AssetType
 
+
+--  AssetStateType is subTypeOf AssetType
+st-e13ce269678f11ed-a4a5b3f855585ce1 : AssetStateType ⊏ₑ AssetType
+st-e13ce269678f11ed-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  AssetStateType is subTypeOf StateClass
 st-e13ce269678f11ed-342f43ae66156429 : AssetStateType ⊏ₑ StateClass

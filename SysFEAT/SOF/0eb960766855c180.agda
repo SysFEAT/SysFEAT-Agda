@@ -17,7 +17,7 @@ module SysFEAT.SOF.0eb960766855c180 where -- ========== ArchitectureBlockCollect
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
 open import SysFEAT.UpperOntology.3aca52346aa6418d public -- AbstractEntity
-open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
 ArchitectureBlockCollection : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ArchitectureBlockCollection u  = MixedOrderEntity u 
@@ -36,7 +36,7 @@ st-0eb960766855c180-3aca52346aa6418d = polySubTypeOf-identity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Grouped Architecture Block: -}
-groupedArchitectureBlock : ∀ {u v} →  Linkage (ArchitectureBlockCollection u) (AssetBlock v)
+groupedArchitectureBlock : ∀ {u v} →  Linkage (ArchitectureBlockCollection u) (ArchitectureBlock v)
 groupedArchitectureBlock = make_Relation "Grouped Architecture Block" "Grouped Architecture Block"
 
 postulate -- groupedArchitectureBlock is subTypeOf groupedBuildingBlock

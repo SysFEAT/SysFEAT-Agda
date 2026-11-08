@@ -22,17 +22,22 @@ module SysFEAT.SOF.515c6b23689335c3 where -- ========== Directive
 
 open import Agda.Primitive
 open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.SOF.952ea6c467285821 public -- PolicyCategory
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
 Directive : AssetPropertyType
-Directive = CompositeProperty
+Directive = AssetProperty
 
 --  Directive withAspect PolicyAsset
 st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ (PolicyAsset (lsuc(lzero)))
 st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
+
+--  Directive is subTypeOf AssetProperty
+st-515c6b23689335c3-515c6a856893324e : Directive ⊏ₑ AssetProperty
+st-515c6b23689335c3-515c6a856893324e = polySubTypeOf-identity
 
 --  Directive is subTypeOf CompositeProperty
 st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
