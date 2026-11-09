@@ -23,7 +23,7 @@ PropertyValue : Property
 PropertyValue = AbstractEntity
 
 --  PropertyValue withAspect BuildingBlock
-st-b85efd0868df48b1-23d5a9ea68513ced : PropertyValue ⊏ₐₑ (BuildingBlock lzero)
+st-b85efd0868df48b1-23d5a9ea68513ced : PropertyValue ⊏ₐₑ BuildingBlock lzero
 st-b85efd0868df48b1-23d5a9ea68513ced = polySubTypeOf-identity
 
 --  PropertyValue is subTypeOf AbstractEntity

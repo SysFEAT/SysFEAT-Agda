@@ -23,7 +23,7 @@ BlockCollection u  = MixedOrderEntity u
 
 
 --  BlockCollection is subTypeOf AspectOfEntity
-st-23d5aa4868513f43-86b9b1d46ac32bda : ∀ {u v} → (BlockCollection u) ⊏⋆ₑ (AspectOfEntity v)
+st-23d5aa4868513f43-86b9b1d46ac32bda : ∀ {u v} → BlockCollection u ⊏⋆ₑ AspectOfEntity v
 st-23d5aa4868513f43-86b9b1d46ac32bda = trivialPolySubTypeOfEntity
 
 

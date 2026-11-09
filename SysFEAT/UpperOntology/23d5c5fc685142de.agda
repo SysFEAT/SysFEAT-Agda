@@ -22,7 +22,7 @@ ElementaryBlock u  = MixedOrderEntity u
 
 
 --  ElementaryBlock is subTypeOf BuildingBlock
-st-23d5c5fc685142de-23d5a9ea68513ced : ∀ {u v} → (ElementaryBlock u) ⊏⋆ₑ (BuildingBlock v)
+st-23d5c5fc685142de-23d5a9ea68513ced : ∀ {u v} → ElementaryBlock u ⊏⋆ₑ BuildingBlock v
 st-23d5c5fc685142de-23d5a9ea68513ced = trivialPolySubTypeOfEntity
 
 

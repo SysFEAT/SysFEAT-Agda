@@ -27,7 +27,7 @@ ClassOfIndividual : ClassOfClassOfIndividual
 ClassOfIndividual = FirstOrderClass
 
 --  ClassOfIndividual withAspect ConceptClass
-st-6aa8cbcb65b32971-8d1fa46c6ae82899 : ClassOfIndividual ⊏ₐₑ (ConceptClass (lsuc(lzero)))
+st-6aa8cbcb65b32971-8d1fa46c6ae82899 : ClassOfIndividual ⊏ₐₑ ConceptClass lzero
 st-6aa8cbcb65b32971-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  ClassOfIndividual is subTypeOf FirstOrderClass

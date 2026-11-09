@@ -25,7 +25,7 @@ ClassOfAbstractEntity : AbstractEntityMetaClass
 ClassOfAbstractEntity = FirstOrderClass
 
 --  ClassOfAbstractEntity withAspect ConceptClass
-st-3aca55ee6aa645c2-8d1fa46c6ae82899 : ClassOfAbstractEntity ⊏ₐₑ (ConceptClass (lsuc(lzero)))
+st-3aca55ee6aa645c2-8d1fa46c6ae82899 : ClassOfAbstractEntity ⊏ₐₑ ConceptClass lzero
 st-3aca55ee6aa645c2-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  ClassOfAbstractEntity is subTypeOf FirstOrderClass

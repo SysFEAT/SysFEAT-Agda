@@ -25,7 +25,7 @@ CompositeProperty : CompositePropertyType
 CompositeProperty = Property
 
 --  CompositeProperty withAspect AggregateEntityBlock
-st-3e525e406ab05b0d-23d56d9868525869 : CompositeProperty ⊏ₐₑ (AggregateEntityBlock (lsuc(lzero)))
+st-3e525e406ab05b0d-23d56d9868525869 : CompositeProperty ⊏ₐₑ AggregateEntityBlock (lsuc( lzero))
 st-3e525e406ab05b0d-23d56d9868525869 = polySubTypeOf-identity
 
 --  CompositeProperty is subTypeOf Property
@@ -48,7 +48,7 @@ PropertyPart = ClassOfAbstractEntity
 
 
 --  PropertyPart withAspect UnboundedMember
-st-3e5261066ab05e0f-8cfaf71a6852b042 : PropertyPart ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-3e5261066ab05e0f-8cfaf71a6852b042 : PropertyPart ⊏ₐₑ UnboundedMember (lsuc((lsuc((lsuc( lzero))))))
 st-3e5261066ab05e0f-8cfaf71a6852b042 = polySubTypeOf-identity
 
 --  PropertyPart is subTypeOf ClassOfAbstractEntity
