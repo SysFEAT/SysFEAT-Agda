@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/4b9477ae68a4926d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.4b9477ae68a4926d where -- ========== Control Asset
+module SysFEAT.EA.4b9477ae68a4926d where -- ========== ControlAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9397c3d86877842f public -- Policy Asset
+open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
 
 ControlAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 ControlAsset u  = MixedOrderEntity u 

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/31257f5261dcdfca.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.31257f5261dcdfca where -- ========== Product Portfolio Stage
+module SysFEAT.EA.31257f5261dcdfca where -- ========== ProductPortfolioStage
 
 open import Agda.Primitive
 

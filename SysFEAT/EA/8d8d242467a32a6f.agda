@@ -15,15 +15,17 @@ Documentation : https://framework.sysfeat.com/pages/8d8d242467a32a6f.htm
 module SysFEAT.EA.8d8d242467a32a6f where -- ========== Vendor
 
 open import Agda.Primitive
-open import SysFEAT.EA.e78cee446618815a public -- Legal Entity
+open import SysFEAT.EA.e78cee446618815a public -- LegalEntity
 
 Vendor : StateClass
 Vendor = StateConcept
 
 
---  Vendor is subTypeOf LegalEntity
-st-8d8d242467a32a6f-e78cee446618815a : Vendor ⊏ₑ LegalEntity
-st-8d8d242467a32a6f-e78cee446618815a = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Legal Entity: -}
+stateOfLegalEntity :  Linkage Vendor LegalEntity
+stateOfLegalEntity = make_meronymyRelation "State of Legal Entity" "State of Legal Entity"
+

@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/2b705f2661ba04de.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2b705f2661ba04de where -- ========== Business Ecosystem
+module SysFEAT.EA.2b705f2661ba04de where -- ========== BusinessEcosystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f332061bae622 public -- Business Resource Ecosystem
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.EA.2b6f332061bae622 public -- BusinessResourceEcosystem
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
 BusinessEcosystem : ClassOfClassOfBoundedIndividual
 BusinessEcosystem = ClassOfBoundedIndividual
@@ -61,18 +61,13 @@ businessEcosystemConnection = membershipOfBusinessEcosystemConnection  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Business Ecosystem Part: -}
 -- Aggregate Member : Business Ecosystem Part
-BusinessEcosystemPart : ClassOfClassOfBoundedIndividual
-BusinessEcosystemPart = ClassOfBoundedIndividual
-
+BusinessEcosystemPart : ClassOfClassOfIndividual
+BusinessEcosystemPart = ClassOfIndividual
 
 
 --  BusinessEcosystemPart is subTypeOf ResourceEcosystemPart
 st-a813cb556356781f-95129626620b544c : BusinessEcosystemPart ⊏ₑ ResourceEcosystemPart
 st-a813cb556356781f-95129626620b544c = polySubTypeOf-identity
-
---  BusinessEcosystemPart is subTypeOf OrgUnitType
-st-a813cb556356781f-076d15425a5e158c : BusinessEcosystemPart ⊏ₑ OrgUnitType
-st-a813cb556356781f-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessEcosystemPart :  Linkage BusinessEcosystem BusinessEcosystemPart

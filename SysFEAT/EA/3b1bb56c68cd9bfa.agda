@@ -15,11 +15,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1bb56c68cd9bfa where -- ========== Individual Physical Resource Agent
+module SysFEAT.EA.3b1bb56c68cd9bfa where -- ========== IndividualPhysicalResourceAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.340f52dc686212f5 public -- Physical Resource Agent
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.340f52dc686212f5 public -- PhysicalResourceAgent
 
 IndividualPhysicalResourceAgent : AgentType
 IndividualPhysicalResourceAgent = IndividualAgent
@@ -29,5 +29,7 @@ IndividualPhysicalResourceAgent = IndividualAgent
 st-3b1bb56c68cd9bfa-fe1c231267880201 : IndividualPhysicalResourceAgent ⊏ₑ IndividualResourceAgent
 st-3b1bb56c68cd9bfa-fe1c231267880201 = polySubTypeOf-identity
 
+postulate -- IndividualPhysicalResourceAgent is PowerInstanceOf Physical Resource Agent
+  pi-3b1bb5f868cd9cec : IndividualPhysicalResourceAgent ∷ₚₑ PhysicalResourceAgent
 
 -- == Relations =======================

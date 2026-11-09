@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/7d3786425fd04ea2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d3786425fd04ea2 where -- ========== Privacy Block
+module SysFEAT.EA.7d3786425fd04ea2 where -- ========== PrivacyBlock
 
 open import Agda.Primitive
-open import SysFEAT.EA.44226d6561819b50 public -- Data Assurance Instrument
+open import SysFEAT.EA.622b7c7d6ae3438e public -- DataAssuranceInstrument
 
-PrivacyBlock : ClassOfBoundedIndividual
-PrivacyBlock = BoundedIndividual
-
---  PrivacyBlock is subTypeOf DataAssuranceInstrument
-st-7d3786425fd04ea2-44226d6561819b50 : PrivacyBlock ⊏ₑ DataAssuranceInstrument
-st-7d3786425fd04ea2-44226d6561819b50 = polySubTypeOf-identity
+PrivacyBlock : ClassOfMixedOrderEntity
+PrivacyBlock = MixedOrderEntity
 
 
--- == Relations =======================
+--  PrivacyBlock withAspect DataAssuranceInstrument
+st-7d3786425fd04ea2-622b7c7d6ae3438e : PrivacyBlock ⊏ₐₑ (DataAssuranceInstrument lzero)
+st-7d3786425fd04ea2-622b7c7d6ae3438e = polySubTypeOf-identity
+
+

@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/762590ae5f6c7cc1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.762590ae5f6c7cc1 where -- ========== Key Risk Indicator
+module SysFEAT.EA.762590ae5f6c7cc1 where -- ========== KeyRiskIndicator
 
 open import Agda.Primitive
-open import SysFEAT.SOF.8f46e8eb64b7719a public -- Key Indicator
+open import SysFEAT.SOF.8f46e8eb64b7719a public -- KeyIndicator
 
 KeyRiskIndicator : ClassOfBoundedIndividual
 KeyRiskIndicator = BoundedIndividual

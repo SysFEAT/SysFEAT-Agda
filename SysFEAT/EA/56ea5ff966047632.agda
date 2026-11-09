@@ -21,19 +21,21 @@ External references:
 module SysFEAT.EA.56ea5ff966047632 where -- ========== Product
 
 open import Agda.Primitive
-open import SysFEAT.EA.d9f4dcc5688d5969 public -- Resource Asset
-open import SysFEAT.EA.21ed240a689c08df public -- Value Proposition
-open import SysFEAT.EA.d1600c7062e093eb public -- Capability Configuration
+open import SysFEAT.EA.d9f4dcc5688d5969 public -- ResourceAsset
+open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
+open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 
 Product : ClassOfClassOfBoundedIndividual
 Product = ClassOfBoundedIndividual
 
---  Product is subTypeOf ResourceAsset
-st-56ea5ff966047632-d9f4dcc5688d5969 : Product ⊏ₑ ResourceAsset
-st-56ea5ff966047632-d9f4dcc5688d5969 = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Resource Asset: -}
+stateOfResourceAsset :  Linkage Product ResourceAsset
+stateOfResourceAsset = make_classOfMeronymy "State of Resource Asset" "State of Resource Asset"
+
 
 -- -------------------------------------------------------------------------------------------- 
 {- Product Characteristic: 
@@ -71,10 +73,6 @@ GoodsOffering : ClassOfClassOfIndividual
 GoodsOffering = ClassOfIndividual
 
 
---  GoodsOffering is subTypeOf ResourceAsset
-st-215ccf6a606c38cc-d9f4dcc5688d5969 : GoodsOffering ⊏ₑ ResourceAsset
-st-215ccf6a606c38cc-d9f4dcc5688d5969 = polySubTypeOf-identity
-
 -- Membership relation
 membershipOfGoodsOffering :  Linkage Product GoodsOffering
 membershipOfGoodsOffering = make_upwardNestingRelation "goodsOffering membership" "nested goodsOffering"
@@ -98,14 +96,9 @@ goodsOffering = membershipOfGoodsOffering  ∘  aggregationOfResourceAssetGoodsO
 Service Offerings are exposed Business Service Interfaces, productized as services provisions the context of an enterprise offering (Products), 
 -}
 -- Aggregate Member : Service Offering
-ServiceOffering : ClassOfClassOfBoundedIndividual
-ServiceOffering = ClassOfBoundedIndividual
+ServiceOffering : ClassOfClassOfIndividual
+ServiceOffering = ClassOfIndividual
 
-
-
---  ServiceOffering is subTypeOf CapabilityConfiguration
-st-215cd221606c3ed3-d1600c7062e093eb : ServiceOffering ⊏ₑ CapabilityConfiguration
-st-215cd221606c3ed3-d1600c7062e093eb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfServiceOffering :  Linkage Product ServiceOffering

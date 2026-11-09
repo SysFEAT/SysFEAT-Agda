@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/f4be14d25ee1eaff.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f4be14d25ee1eaff where -- ========== Resource Configuration
+module SysFEAT.EA.f4be14d25ee1eaff where -- ========== ResourceConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be11b15ee1e0fa public -- System of Resources
+open import SysFEAT.EA.f4be11b15ee1e0fa public -- SystemOfResources
 
-ResourceConfiguration : ClassOfClassOfBoundedIndividual
-ResourceConfiguration = ClassOfBoundedIndividual
+ResourceConfiguration : BoundedIndividualMetaClass
+ResourceConfiguration = AssetType
 
 
 --  ResourceConfiguration is subTypeOf SystemOfResources

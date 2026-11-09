@@ -18,10 +18,10 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d17034875be85304 where -- ========== Job-to-be-done
+module SysFEAT.EA.d17034875be85304 where -- ========== Jobtobedone
 
 open import Agda.Primitive
-open import SysFEAT.EA.d170d24a5be72d09 public -- Customer Task
+open import SysFEAT.EA.d170d24a5be72d09 public -- CustomerTask
 
 Jobtobedone : ClassOfClassOfBoundedIndividual
 Jobtobedone = ClassOfBoundedIndividual
@@ -39,10 +39,6 @@ st-d17034875be85304-d170d24a5be72d09 = polySubTypeOf-identity
 IncludedJobtobedone : ClassOfClassOfIndividual
 IncludedJobtobedone = ClassOfIndividual
 
-
---  IncludedJobtobedone is subTypeOf CustomerTask
-st-07e73d5e5eccef4a-d170d24a5be72d09 : IncludedJobtobedone ⊏ₑ CustomerTask
-st-07e73d5e5eccef4a-d170d24a5be72d09 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIncludedJobtobedone :  Linkage Jobtobedone IncludedJobtobedone

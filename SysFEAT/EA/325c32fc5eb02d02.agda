@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.325c32fc5eb02d02 where -- ========== Data Entity
+module SysFEAT.EA.325c32fc5eb02d02 where -- ========== DataEntity
 
 open import Agda.Primitive
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
-open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- Information Entity
-open import SysFEAT.EA.8f1c991068ca8a23 public -- Data Property
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
+open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- InformationEntity
+open import SysFEAT.EA.8f1c991068ca8a23 public -- DataProperty
 
-DataEntity : ClassOfClassOfBoundedIndividual
-DataEntity = ClassOfBoundedIndividual
+DataEntity : BoundedIndividualMetaClass
+DataEntity = AssetType
 
 
 --  DataEntity is subTypeOf DataAsset
@@ -50,8 +50,8 @@ postulate -- specializedDataEntity is subTypeOf specializedDataObject
 -- -------------------------------------------------------------------------------------------- 
 {- Attribute: -}
 -- Aggregate Member : Attribute
-Attribute : ClassOfClassOfBoundedIndividual
-Attribute = ClassOfBoundedIndividual
+Attribute : ClassOfMixedOrderEntity
+Attribute = MixedOrderEntity
 
 
 
@@ -86,8 +86,8 @@ attribute = membershipOfAttribute  ∘  aggregationOfDataPropertyAttribute
 Relationship between a source Data Entity and a target Data Entity.
 -}
 -- Aggregate Member : Relationship
-Relationship : ClassOfClassOfBoundedIndividual
-Relationship = ClassOfBoundedIndividual
+Relationship : ClassOfMixedOrderEntity
+Relationship = MixedOrderEntity
 
 
 
@@ -95,13 +95,9 @@ Relationship = ClassOfBoundedIndividual
 st-b6e3cc7a5fbb6878-b6e3cdf35fbb6ad1 : Relationship ⊏ₑ DataObjectMember
 st-b6e3cc7a5fbb6878-b6e3cdf35fbb6ad1 = polySubTypeOf-identity
 
---  Relationship is subTypeOf InformationRelationship
-st-b6e3cc7a5fbb6878-dfa4e2305ebb4d2b : Relationship ⊏ₑ InformationRelationship
+--  Relationship is subTypeOf InformationRelation
+st-b6e3cc7a5fbb6878-dfa4e2305ebb4d2b : Relationship ⊏ₑ InformationRelation
 st-b6e3cc7a5fbb6878-dfa4e2305ebb4d2b = polySubTypeOf-identity
-
---  Relationship is subTypeOf DataEntity
-st-b6e3cc7a5fbb6878-325c32fc5eb02d02 : Relationship ⊏ₑ DataEntity
-st-b6e3cc7a5fbb6878-325c32fc5eb02d02 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfRelationship :  Linkage DataEntity Relationship

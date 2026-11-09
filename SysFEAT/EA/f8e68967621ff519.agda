@@ -12,21 +12,21 @@ Documentation : https://framework.sysfeat.com/pages/f8e68967621ff519.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f8e68967621ff519 where -- ========== Resource Operating Environment Scenario
+module SysFEAT.EA.f8e68967621ff519 where -- ========== ResourceOperatingEnvironmentScenario
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ca3513af5fc59413 public -- Environment Interaction Process Type
-open import SysFEAT.EA.f8e64b51621dd3f3 public -- Resource Operating Ecosystem
-open import SysFEAT.EA.f8e62fc5621fdcf4 public -- Resource Operating Environment
-open import SysFEAT.EA.6a70c0b36787698c public -- Resource Outcome Event
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.SOF.ca3513af5fc59413 public -- InteractionProcessTypeEnvironment
+open import SysFEAT.EA.f8e64b51621dd3f3 public -- ResourceOperatingEcosystem
+open import SysFEAT.EA.f8e62fc5621fdcf4 public -- ResourceOperatingEnvironment
+open import SysFEAT.EA.6a70c0b36787698c public -- ResourceOutcomeEvent
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-ResourceOperatingEnvironmentScenario : ClassOfClassOfBoundedIndividual
-ResourceOperatingEnvironmentScenario = ClassOfBoundedIndividual
+ResourceOperatingEnvironmentScenario : BoundedIndividualMetaClass
+ResourceOperatingEnvironmentScenario = AssetType
 
 
---  ResourceOperatingEnvironmentScenario is subTypeOf EnvironmentInteractionProcessType
-st-f8e68967621ff519-ca3513af5fc59413 : ResourceOperatingEnvironmentScenario ⊏ₑ EnvironmentInteractionProcessType
+--  ResourceOperatingEnvironmentScenario is subTypeOf InteractionProcessTypeEnvironment
+st-f8e68967621ff519-ca3513af5fc59413 : ResourceOperatingEnvironmentScenario ⊏ₑ InteractionProcessTypeEnvironment
 st-f8e68967621ff519-ca3513af5fc59413 = polySubTypeOf-identity
 
 --  ResourceOperatingEnvironmentScenario is subTypeOf ResourceOperatingEcosystem
@@ -47,12 +47,13 @@ postulate -- scenarizedOperatingEnvironment is subTypeOf performedInteraction
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Object Flow: -}
 -- Aggregate Member : Resource Object Flow
-ResourceObjectFlow : ClassOfClassOfIndividual
-ResourceObjectFlow = ClassOfIndividual
+ResourceObjectFlow : ClassOfMixedOrderEntity
+ResourceObjectFlow = MixedOrderEntity
 
 
---  ResourceObjectFlow is subTypeOf EnterpriseEcosystemConnection
-st-2b6f41d961baf74b-f8e7b91f621f01e9 : ResourceObjectFlow ⊏ₑ EnterpriseEcosystemConnection
+
+--  ResourceObjectFlow is subTypeOf ResourceEcosystemConnection
+st-2b6f41d961baf74b-f8e7b91f621f01e9 : ResourceObjectFlow ⊏ₑ ResourceEcosystemConnection
 st-2b6f41d961baf74b-f8e7b91f621f01e9 = polySubTypeOf-identity
 
 --  ResourceObjectFlow is subTypeOf ObjectFlow
@@ -63,8 +64,8 @@ st-2b6f41d961baf74b-ca3519b05fc5a0b2 = polySubTypeOf-identity
 st-2b6f41d961baf74b-a813ce0063567e9b : ResourceObjectFlow ⊏ₑ BusinessEcosystemConnection
 st-2b6f41d961baf74b-a813ce0063567e9b = polySubTypeOf-identity
 
---  ResourceObjectFlow is subTypeOf EnterpriseEcosystemConnection
-st-2b6f41d961baf74b-f8e7b91f621f01e9 : ResourceObjectFlow ⊏ₑ EnterpriseEcosystemConnection
+--  ResourceObjectFlow is subTypeOf ResourceEcosystemConnection
+st-2b6f41d961baf74b-f8e7b91f621f01e9 : ResourceObjectFlow ⊏ₑ ResourceEcosystemConnection
 st-2b6f41d961baf74b-f8e7b91f621f01e9 = polySubTypeOf-identity
 
 --  ResourceObjectFlow is subTypeOf BusinessEcosystemConnection
@@ -90,60 +91,44 @@ resourceObjectFlow = membershipOfResourceObjectFlow  ∘  aggregationOfResourceO
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Participant Enterprise Agent: -}
--- Aggregate Member : Participant Enterprise Agent
-ParticipantEnterpriseAgent : ClassOfClassOfBoundedIndividual
-ParticipantEnterpriseAgent = ClassOfBoundedIndividual
+{- Participant Resource Agent: -}
+-- Aggregate Member : Participant Resource Agent
+ParticipantResourceAgent : ClassOfMixedOrderEntity
+ParticipantResourceAgent = MixedOrderEntity
 
 
 
---  ParticipantEnterpriseAgent is subTypeOf EnterpriseEcosystemPart
-st-2b6f3bf061baf60a-f8e6b83c621fffe6 : ParticipantEnterpriseAgent ⊏ₑ EnterpriseEcosystemPart
-st-2b6f3bf061baf60a-f8e6b83c621fffe6 = polySubTypeOf-identity
-
---  ParticipantEnterpriseAgent is subTypeOf ResourceEcosystemPart
-st-2b6f3bf061baf60a-95129626620b544c : ParticipantEnterpriseAgent ⊏ₑ ResourceEcosystemPart
-st-2b6f3bf061baf60a-95129626620b544c = polySubTypeOf-identity
-
---  ParticipantEnterpriseAgent is subTypeOf ScenarioParticipant
-st-2b6f3bf061baf60a-ca3518a45fc59e76 : ParticipantEnterpriseAgent ⊏ₑ ScenarioParticipant
+--  ParticipantResourceAgent is subTypeOf ScenarioParticipant
+st-2b6f3bf061baf60a-ca3518a45fc59e76 : ParticipantResourceAgent ⊏ₑ ScenarioParticipant
 st-2b6f3bf061baf60a-ca3518a45fc59e76 = polySubTypeOf-identity
 
---  ParticipantEnterpriseAgent is subTypeOf BusinessEcosystemPart
-st-2b6f3bf061baf60a-a813cb556356781f : ParticipantEnterpriseAgent ⊏ₑ BusinessEcosystemPart
-st-2b6f3bf061baf60a-a813cb556356781f = polySubTypeOf-identity
-
---  ParticipantEnterpriseAgent is subTypeOf EnterpriseEcosystemPart
-st-2b6f3bf061baf60a-f8e6b83c621fffe6 : ParticipantEnterpriseAgent ⊏ₑ EnterpriseEcosystemPart
+--  ParticipantResourceAgent is subTypeOf ResourceEcosystemPart
+st-2b6f3bf061baf60a-f8e6b83c621fffe6 : ParticipantResourceAgent ⊏ₑ ResourceEcosystemPart
 st-2b6f3bf061baf60a-f8e6b83c621fffe6 = polySubTypeOf-identity
 
---  ParticipantEnterpriseAgent is subTypeOf ResourceAgentType
-st-2b6f3bf061baf60a-e2ef091962147ad7 : ParticipantEnterpriseAgent ⊏ₑ ResourceAgentType
-st-2b6f3bf061baf60a-e2ef091962147ad7 = polySubTypeOf-identity
-
 -- Membership relation
-membershipOfParticipantEnterpriseAgent :  Linkage ResourceOperatingEnvironmentScenario ParticipantEnterpriseAgent
-membershipOfParticipantEnterpriseAgent = make_upwardNestingRelation "participantEnterpriseAgent membership" "nested participantEnterpriseAgent"
+membershipOfParticipantResourceAgent :  Linkage ResourceOperatingEnvironmentScenario ParticipantResourceAgent
+membershipOfParticipantResourceAgent = make_upwardNestingRelation "participantResourceAgent membership" "nested participantResourceAgent"
 
 -- Aggregation relation
-aggregationOfResourceAgentTypeParticipantEnterpriseAgent :  Linkage ParticipantEnterpriseAgent ResourceAgentType
-aggregationOfResourceAgentTypeParticipantEnterpriseAgent = make_Relation "ResourceAgentType aggregation" "aggregated ResourceAgentType"
+aggregationOfResourceAgentTypeParticipantResourceAgent :  Linkage ParticipantResourceAgent ResourceAgentType
+aggregationOfResourceAgentTypeParticipantResourceAgent = make_Relation "ResourceAgentType aggregation" "aggregated ResourceAgentType"
 
-{- participantEnterpriseAgent : derived relation obtained by composing
-   membershipOfParticipantEnterpriseAgent and aggregationOfResourceAgentTypeParticipantEnterpriseAgent
+{- participantResourceAgent : derived relation obtained by composing
+   membershipOfParticipantResourceAgent and aggregationOfResourceAgentTypeParticipantResourceAgent
    It directly links an Resource Operating Environment Scenario to the final aggregated ResourceAgentType
-   hiding the reifying ParticipantEnterpriseAgent
+   hiding the reifying ParticipantResourceAgent
 -}
-participantEnterpriseAgent : Linkage ResourceOperatingEnvironmentScenario ResourceAgentType
-participantEnterpriseAgent = membershipOfParticipantEnterpriseAgent  ∘  aggregationOfResourceAgentTypeParticipantEnterpriseAgent
+participantResourceAgent : Linkage ResourceOperatingEnvironmentScenario ResourceAgentType
+participantResourceAgent = membershipOfParticipantResourceAgent  ∘  aggregationOfResourceAgentTypeParticipantResourceAgent
 
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Resource Agent: -}
 -- Aggregate Member : Subject Resource Agent
-SubjectResourceAgent : ClassOfClassOfBoundedIndividual
-SubjectResourceAgent = ClassOfBoundedIndividual
+SubjectResourceAgent : ClassOfMixedOrderEntity
+SubjectResourceAgent = MixedOrderEntity
 
 
 
@@ -151,13 +136,9 @@ SubjectResourceAgent = ClassOfBoundedIndividual
 st-f8e6b637621ffa9b-ca3514125fc59538 : SubjectResourceAgent ⊏ₑ SubjectAgent
 st-f8e6b637621ffa9b-ca3514125fc59538 = polySubTypeOf-identity
 
---  SubjectResourceAgent is subTypeOf ParticipantEnterpriseAgent
-st-f8e6b637621ffa9b-2b6f3bf061baf60a : SubjectResourceAgent ⊏ₑ ParticipantEnterpriseAgent
+--  SubjectResourceAgent is subTypeOf ParticipantResourceAgent
+st-f8e6b637621ffa9b-2b6f3bf061baf60a : SubjectResourceAgent ⊏ₑ ParticipantResourceAgent
 st-f8e6b637621ffa9b-2b6f3bf061baf60a = polySubTypeOf-identity
-
---  SubjectResourceAgent is subTypeOf ResourceAgentType
-st-f8e6b637621ffa9b-e2ef091962147ad7 : SubjectResourceAgent ⊏ₑ ResourceAgentType
-st-f8e6b637621ffa9b-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectResourceAgent :  Linkage ResourceOperatingEnvironmentScenario SubjectResourceAgent
@@ -180,22 +161,18 @@ subjectResourceAgent = membershipOfSubjectResourceAgent  ∘  aggregationOfResou
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Resource Agent: -}
 -- Aggregate Member : Partner Resource Agent
-PartnerResourceAgent : ClassOfClassOfBoundedIndividual
-PartnerResourceAgent = ClassOfBoundedIndividual
+PartnerResourceAgent : ClassOfMixedOrderEntity
+PartnerResourceAgent = MixedOrderEntity
 
 
 
---  PartnerResourceAgent is subTypeOf ParticipantEnterpriseAgent
-st-f8e6b685621ffb8a-2b6f3bf061baf60a : PartnerResourceAgent ⊏ₑ ParticipantEnterpriseAgent
+--  PartnerResourceAgent is subTypeOf ParticipantResourceAgent
+st-f8e6b685621ffb8a-2b6f3bf061baf60a : PartnerResourceAgent ⊏ₑ ParticipantResourceAgent
 st-f8e6b685621ffb8a-2b6f3bf061baf60a = polySubTypeOf-identity
 
 --  PartnerResourceAgent is subTypeOf PartnerAgent
 st-f8e6b685621ffb8a-ca35159e5fc5978d : PartnerResourceAgent ⊏ₑ PartnerAgent
 st-f8e6b685621ffb8a-ca35159e5fc5978d = polySubTypeOf-identity
-
---  PartnerResourceAgent is subTypeOf ResourceAgentType
-st-f8e6b685621ffb8a-e2ef091962147ad7 : PartnerResourceAgent ⊏ₑ ResourceAgentType
-st-f8e6b685621ffb8a-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerResourceAgent :  Linkage ResourceOperatingEnvironmentScenario PartnerResourceAgent

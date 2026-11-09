@@ -14,20 +14,19 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affeb2255f6051e6 where -- ========== Deployed Data Store
+module SysFEAT.EA.affeb2255f6051e6 where -- ========== DeployedDataStore
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1cb5a068caab57 public -- NoSQL Dictionary
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.c758eed8600a399f public -- NoSQL Library
+open import SysFEAT.EA.d874bfae6ab72b78 public -- NoSQLDictionary
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
 
-DeployedDataStore : ClassOfAbstractEntity
-DeployedDataStore = AbstractEntity
+DeployedDataStore : ClassOfMixedOrderEntity
+DeployedDataStore = MixedOrderEntity
 
 
---  DeployedDataStore withAspect NoSQLDictionary
-st-affeb2255f6051e6-8f1cb5a068caab57 : DeployedDataStore ⊏ₐₑ (NoSQLDictionary lzero)
-st-affeb2255f6051e6-8f1cb5a068caab57 = polySubTypeOf-identity
+--  DeployedDataStore is subTypeOf NoSQLDictionary
+st-affeb2255f6051e6-d874bfae6ab72b78 : DeployedDataStore ⊏ₑ NoSQLDictionary
+st-affeb2255f6051e6-d874bfae6ab72b78 = polySubTypeOf-identity
 
 --  DeployedDataStore is subTypeOf DeployedBusinessSystem
 st-affeb2255f6051e6-3642454f6007e80e : DeployedDataStore ⊏ₑ DeployedBusinessSystem
@@ -35,9 +34,3 @@ st-affeb2255f6051e6-3642454f6007e80e = polySubTypeOf-identity
 
 
 -- == Relations =======================
-
--- -------------------------------------------------------------------------------------------- 
-{- Imported Package: -}
-importedPackage :  Linkage DeployedDataStore NoSQLLibrary
-importedPackage = make_holonymyRelation "Imported Package" "Imported Package"
-

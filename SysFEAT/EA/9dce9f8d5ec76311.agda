@@ -19,14 +19,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9dce9f8d5ec76311 where -- ========== Application Interface
+module SysFEAT.EA.9dce9f8d5ec76311 where -- ========== ApplicationInterface
 
 open import Agda.Primitive
-open import SysFEAT.EA.9dcea2655ec768ee public -- Business Service Interface
-open import SysFEAT.EA.302238be5ec9020a public -- Information Outcome Event
+open import SysFEAT.EA.9dcea2655ec768ee public -- BusinessServiceInterface
+open import SysFEAT.EA.302238be5ec9020a public -- InformationOutcomeEvent
 
-ApplicationInterface : ClassOfClassOfBoundedIndividual
-ApplicationInterface = ClassOfBoundedIndividual
+ApplicationInterface : BehaviorMetaClass
+ApplicationInterface = BehaviorType
 
 
 --  ApplicationInterface is subTypeOf BusinessServiceInterface
@@ -41,8 +41,8 @@ st-9dce9f8d5ec76311-9dcea2655ec768ee = polySubTypeOf-identity
 An Information Flow Connection is an Information Outcome Event that occurs between the participant of an Application Interface.
 -}
 -- Aggregate Member : Information Flow Connection
-InformationFlowConnection : ClassOfClassOfBoundedIndividual
-InformationFlowConnection = ClassOfBoundedIndividual
+InformationFlowConnection : ClassOfClassOfIndividual
+InformationFlowConnection = ClassOfIndividual
 
 
 

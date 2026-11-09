@@ -15,13 +15,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d5e6ddd05c46547c where -- ========== Software Technology
+module SysFEAT.EA.d5e6ddd05c46547c where -- ========== SOftwareTechnology
 
 open import Agda.Primitive
-open import SysFEAT.EA.0463ea9a63fd8b6c public -- Software Technology System
+open import SysFEAT.EA.0463ea9a63fd8b6c public -- SOftwareTechnologySystem
 
-SOftwareTechnology : ClassOfClassOfBoundedIndividual
-SOftwareTechnology = ClassOfBoundedIndividual
+SOftwareTechnology : BoundedIndividualMetaClass
+SOftwareTechnology = AssetType
 
 
 --  SOftwareTechnology is subTypeOf SOftwareTechnologySystem

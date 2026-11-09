@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Agent Type: 
-A Resource Agent Type is an entity type which instance belongs to the physical space, and comprises Human Agent Categorys, Hardware System Categorys, Software System Categorys and Natural Resource Categorys. Resource Agent Type is the supertype of all types of Agent Types that produce and react to Resource Outcome Events.This includes:1) Business Agent Types which represent  physical resources that produce and react to Business Outcome Events of the enterprise.2) Technology Systems which represents enabling systems that produce and react to  Technology Outcome Events.
+A Resource Agent Type is an entity type which instance belongs to the physical space, and comprises Human Agent Types, Hardware System Types, Software System Types and Natural Resource Types. Resource Agent Type is the supertype of all types of Agent Types that produce and react to Resource Outcome Events.This includes:1) Business Agent Types which represent  physical resources that produce and react to Business Outcome Events of the enterprise.2) Technology Systems which represents enabling systems that produce and react to  Technology Outcome Events.
 
 Documentation : https://framework.sysfeat.com/pages/e2ef091962147ad7.htm
 
@@ -12,22 +12,22 @@ Documentation : https://framework.sysfeat.com/pages/e2ef091962147ad7.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e2ef091962147ad7 where -- ========== Resource Agent Type
+module SysFEAT.EA.e2ef091962147ad7 where -- ========== ResourceAgentType
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
-open import SysFEAT.SOF.79368381561716a6 public -- Agent Type
-open import SysFEAT.EA.6a70c21067876cd8 public -- Resource Service Interface
-open import SysFEAT.EA.7d337d67628134c5 public -- Resource Interaction Process
-open import SysFEAT.EA.e2ef095b62147bf9 public -- Resource Action Process
-open import SysFEAT.SOF.d6cd116d5ab97525 public -- Information Domain
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.SOF.79368381561716a6 public -- AgentType
+open import SysFEAT.EA.6a70c21067876cd8 public -- ResourceServiceInterface
+open import SysFEAT.EA.7d337d67628134c5 public -- ResourceInteractionProcess
+open import SysFEAT.EA.e2ef095b62147bf9 public -- ResourceActionProcess
+open import SysFEAT.SOF.d6cd116d5ab97525 public -- InformationDomain
 
-ResourceAgentType : ClassOfClassOfBoundedIndividual
-ResourceAgentType = ClassOfBoundedIndividual
+ResourceAgentType : AgentMetaClass
+ResourceAgentType = AgentType
 
 
---  ResourceAgentType is subTypeOf ResourceOperatingAsset
-st-e2ef091962147ad7-f8e61da0621db6fa : ResourceAgentType ⊏ₑ ResourceOperatingAsset
+--  ResourceAgentType is subTypeOf ResourceOperatingAssetType
+st-e2ef091962147ad7-f8e61da0621db6fa : ResourceAgentType ⊏ₑ ResourceOperatingAssetType
 st-e2ef091962147ad7-f8e61da0621db6fa = polySubTypeOf-identity
 
 --  ResourceAgentType is subTypeOf AgentType
@@ -50,8 +50,9 @@ postulate -- specializedBusinessOperatingAgent is subTypeOf specializedResourceO
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Connection: -}
 -- Aggregate Member : Resource Connection
-ResourceConnection : ClassOfClassOfIndividual
-ResourceConnection = ClassOfIndividual
+ResourceConnection : ClassOfMixedOrderEntity
+ResourceConnection = MixedOrderEntity
+
 
 
 --  ResourceConnection is subTypeOf InteractionChannel
@@ -79,8 +80,8 @@ resourceConnection = membershipOfResourceConnection  ∘  aggregationOfResourceS
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Agent Part: -}
 -- Aggregate Member : Resource Agent Part
-ResourceAgentPart : ClassOfClassOfBoundedIndividual
-ResourceAgentPart = ClassOfBoundedIndividual
+ResourceAgentPart : ClassOfClassOfIndividual
+ResourceAgentPart = ClassOfIndividual
 
 
 
@@ -91,10 +92,6 @@ st-e2ef09de62147eb7-1da6216a5ebc65f7 = polySubTypeOf-identity
 --  ResourceAgentPart is subTypeOf ResourceOperatingAssetPart
 st-e2ef09de62147eb7-b776bf0868b0fbb3 : ResourceAgentPart ⊏ₑ ResourceOperatingAssetPart
 st-e2ef09de62147eb7-b776bf0868b0fbb3 = polySubTypeOf-identity
-
---  ResourceAgentPart is subTypeOf ResourceAgentType
-st-e2ef09de62147eb7-e2ef091962147ad7 : ResourceAgentPart ⊏ₑ ResourceAgentType
-st-e2ef09de62147eb7-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceAgentPart :  Linkage ResourceAgentType ResourceAgentPart
@@ -119,18 +116,14 @@ resourceAgentPart = membershipOfResourceAgentPart  ∘  aggregationOfResourceAge
 A Performed Resource Scenario is a Resource Interaction Process operated by a Resource Agent Type.
 -}
 -- Aggregate Member : Performed Resource Scenario
-PerformedResourceScenario : ClassOfClassOfBoundedIndividual
-PerformedResourceScenario = ClassOfBoundedIndividual
+PerformedResourceScenario : ClassOfClassOfIndividual
+PerformedResourceScenario = ClassOfIndividual
 
 
 
 --  PerformedResourceScenario is subTypeOf PerformedInteraction
 st-7d330fcd62824acd-07e737925eccd8f1 : PerformedResourceScenario ⊏ₑ PerformedInteraction
 st-7d330fcd62824acd-07e737925eccd8f1 = polySubTypeOf-identity
-
---  PerformedResourceScenario is subTypeOf ResourceInteractionProcess
-st-7d330fcd62824acd-7d337d67628134c5 : PerformedResourceScenario ⊏ₑ ResourceInteractionProcess
-st-7d330fcd62824acd-7d337d67628134c5 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedResourceScenario :  Linkage ResourceAgentType PerformedResourceScenario
@@ -155,18 +148,14 @@ performedResourceScenario = membershipOfPerformedResourceScenario  ∘  aggregat
 A Performed Resource Process is a Resource Action Process operated by a Resource Agent Type.
 -}
 -- Aggregate Member : Performed Resource Process
-PerformedResourceProcess : ClassOfClassOfBoundedIndividual
-PerformedResourceProcess = ClassOfBoundedIndividual
+PerformedResourceProcess : ClassOfClassOfIndividual
+PerformedResourceProcess = ClassOfIndividual
 
 
 
 --  PerformedResourceProcess is subTypeOf PerformedProcess
 st-f8e61c7f621db43d-004b03b15ebd0fdb : PerformedResourceProcess ⊏ₑ PerformedProcess
 st-f8e61c7f621db43d-004b03b15ebd0fdb = polySubTypeOf-identity
-
---  PerformedResourceProcess is subTypeOf ResourceActionProcess
-st-f8e61c7f621db43d-e2ef095b62147bf9 : PerformedResourceProcess ⊏ₑ ResourceActionProcess
-st-f8e61c7f621db43d-e2ef095b62147bf9 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedResourceProcess :  Linkage ResourceAgentType PerformedResourceProcess
@@ -189,17 +178,14 @@ performedResourceProcess = membershipOfPerformedResourceProcess  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Store: -}
 -- Aggregate Member : Resource Store
-ResourceStore : ClassOfClassOfIndividual
-ResourceStore = ClassOfIndividual
+ResourceStore : ClassOfMixedOrderEntity
+ResourceStore = MixedOrderEntity
+
 
 
 --  ResourceStore is subTypeOf InformationStore
 st-f8e7df39621f14b6-f4bee5925ee1be5b : ResourceStore ⊏ₑ InformationStore
 st-f8e7df39621f14b6-f4bee5925ee1be5b = polySubTypeOf-identity
-
---  ResourceStore is subTypeOf InformationDomain
-st-f8e7df39621f14b6-d6cd116d5ab97525 : ResourceStore ⊏ₑ InformationDomain
-st-f8e7df39621f14b6-d6cd116d5ab97525 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceStore :  Linkage ResourceAgentType ResourceStore

@@ -12,19 +12,21 @@ Documentation : https://framework.sysfeat.com/pages/62ff75f363765899.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.62ff75f363765899 where -- ========== Individual Business Asset
+module SysFEAT.EA.62ff75f363765899 where -- ========== IndividualBusinessAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c24fa6788036e public -- Individual Resource Asset
-open import SysFEAT.EA.62466ea661b80d09 public -- Business Operating Asset
+open import SysFEAT.EA.fe1c24fa6788036e public -- IndividualResourceAsset
+open import SysFEAT.EA.62466ea661b80d09 public -- BusinessOperatingAsset
 
-IndividualBusinessAsset : ClassOfBoundedIndividual
-IndividualBusinessAsset = BoundedIndividual
+IndividualBusinessAsset : AssetType
+IndividualBusinessAsset = IndividualAsset
 
 
 --  IndividualBusinessAsset is subTypeOf IndividualResourceAsset
 st-62ff75f363765899-fe1c24fa6788036e : IndividualBusinessAsset ⊏ₑ IndividualResourceAsset
 st-62ff75f363765899-fe1c24fa6788036e = polySubTypeOf-identity
 
+postulate -- IndividualBusinessAsset is PowerInstanceOf Business Operating Asset
+  pi-4e5651cf68de494d : IndividualBusinessAsset ∷ₚₑ BusinessOperatingAsset
 
 -- == Relations =======================

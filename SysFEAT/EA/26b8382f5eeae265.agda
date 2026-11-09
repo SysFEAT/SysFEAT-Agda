@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.26b8382f5eeae265 where -- ========== Technology Interface
+module SysFEAT.EA.26b8382f5eeae265 where -- ========== TechnologyInterface
 
 open import Agda.Primitive
-open import SysFEAT.EA.97f89a8865ae5279 public -- Technology Behavior
-open import SysFEAT.EA.6a70c21067876cd8 public -- Resource Service Interface
-open import SysFEAT.EA.f4be0a955ee1c4f5 public -- Technology Outcome Event
+open import SysFEAT.EA.97f89a8865ae5279 public -- TechnologyBehavior
+open import SysFEAT.EA.6a70c21067876cd8 public -- ResourceServiceInterface
+open import SysFEAT.EA.f4be0a955ee1c4f5 public -- TechnologyOutcomeEvent
 
-TechnologyInterface : ClassOfClassOfBoundedIndividual
-TechnologyInterface = ClassOfBoundedIndividual
+TechnologyInterface : BoundedIndividualMetaClass
+TechnologyInterface = AssetType
 
 
 --  TechnologyInterface is subTypeOf TechnologyBehavior
@@ -39,8 +39,8 @@ st-26b8382f5eeae265-6a70c21067876cd8 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Flow Connection: -}
 -- Aggregate Member : Technology Flow Connection
-TechnologyFlowConnection : ClassOfClassOfBoundedIndividual
-TechnologyFlowConnection = ClassOfBoundedIndividual
+TechnologyFlowConnection : ClassOfClassOfIndividual
+TechnologyFlowConnection = ClassOfIndividual
 
 
 

@@ -14,14 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d5e6dc425c46518a where -- ========== Deployable Data Package
+module SysFEAT.EA.d5e6dc425c46518a where -- ========== DeployableDataPackage
 
 open import Agda.Primitive
-open import SysFEAT.EA.4c7883cd5fca4d5b public -- Deployable Package
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
+open import SysFEAT.EA.4c7883cd5fca4d5b public -- DeployablePackage
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
 
-DeployableDataPackage : ClassOfClassOfBoundedIndividual
-DeployableDataPackage = ClassOfBoundedIndividual
+DeployableDataPackage : AgentMetaClass
+DeployableDataPackage = AgentType
+
 
 --  DeployableDataPackage is subTypeOf DeployablePackage
 st-d5e6dc425c46518a-4c7883cd5fca4d5b : DeployableDataPackage ⊏ₑ DeployablePackage
@@ -38,10 +39,6 @@ A technical data store represents the usage of a physical data area in a technic
 TechnicalDataStore : ClassOfClassOfIndividual
 TechnicalDataStore = ClassOfIndividual
 
-
---  TechnicalDataStore is subTypeOf PhysicalDataDomain
-st-f4bedc285ee1a735-028f03ff5b4f55ee : TechnicalDataStore ⊏ₑ PhysicalDataDomain
-st-f4bedc285ee1a735-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfTechnicalDataStore :  Linkage DeployableDataPackage TechnicalDataStore

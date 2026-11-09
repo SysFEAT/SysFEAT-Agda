@@ -23,12 +23,12 @@ External references:
 module SysFEAT.EA.bcebd8e9549144db where -- ========== Application
 
 open import Agda.Primitive
-open import SysFEAT.EA.c30bdac25a5d9eaf public -- Software Module
-open import SysFEAT.EA.f160fb6267d72652 public -- Mezzo Business System
+open import SysFEAT.EA.c30bdac25a5d9eaf public -- SOftwareModule
+open import SysFEAT.EA.f160fb6267d72652 public -- MezzoBusinessSystem
 open import SysFEAT.EA.d6a956495a395d28 public -- MicroService
 
-Application : ClassOfClassOfBoundedIndividual
-Application = ClassOfBoundedIndividual
+Application : BoundedIndividualMetaClass
+Application = AssetType
 
 
 --  Application is subTypeOf SOftwareModule
@@ -57,18 +57,14 @@ postulate -- specializedApplication is subTypeOf specializedSOftwareSystem
 The embbding of MicroService a into an Application.As MicroServices are selft deployable packages, Applications made of MicroServices can be incrementally updated and deployed.
 -}
 -- Aggregate Member : Micro-Service Part
-MicroServicePart : ClassOfClassOfBoundedIndividual
-MicroServicePart = ClassOfBoundedIndividual
+MicroServicePart : ClassOfClassOfIndividual
+MicroServicePart = ClassOfIndividual
 
 
 
 --  MicroServicePart is subTypeOf SOftwarePart
 st-45de6d1e618efb7f-173f4d015eb8c686 : MicroServicePart ⊏ₑ SOftwarePart
 st-45de6d1e618efb7f-173f4d015eb8c686 = polySubTypeOf-identity
-
---  MicroServicePart is subTypeOf MicroService
-st-45de6d1e618efb7f-d6a956495a395d28 : MicroServicePart ⊏ₑ MicroService
-st-45de6d1e618efb7f-d6a956495a395d28 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfMicroServicePart :  Linkage Application MicroServicePart

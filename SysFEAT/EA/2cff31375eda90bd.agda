@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/2cff31375eda90bd.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2cff31375eda90bd where -- ========== Process Family
+module SysFEAT.EA.2cff31375eda90bd where -- ========== ProcessFamily
 
 open import Agda.Primitive
 

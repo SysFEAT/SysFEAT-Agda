@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecba75f6079b2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecba75f6079b2 where -- ========== Maximum Value
+module SysFEAT.EA.affecba75f6079b2 where -- ========== MaximumValue
 
 open import Agda.Primitive
 

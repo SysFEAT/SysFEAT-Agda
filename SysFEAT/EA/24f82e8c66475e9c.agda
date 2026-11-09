@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/24f82e8c66475e9c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.24f82e8c66475e9c where -- ========== Application Management Initiative
+module SysFEAT.EA.24f82e8c66475e9c where -- ========== ApplicationManagementInitiative
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201bc866475765 public -- Asset Management Initiative
-open import SysFEAT.EA.dd26389d68a071f0 public -- Functionality Map
+open import SysFEAT.EA.05201bc866475765 public -- AssetManagementInitiative
+open import SysFEAT.EA.dd26389d68a071f0 public -- FunctionalityMap
 
 ApplicationManagementInitiative : ClassOfBoundedIndividual
 ApplicationManagementInitiative = BoundedIndividual
@@ -32,5 +32,5 @@ st-24f82e8c66475e9c-05201bc866475765 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Functional Scope: -}
 functionalScope :  Linkage ApplicationManagementInitiative FunctionalityMap
-functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
+functionalScope = make_Relation "Functional Scope" "Functional Scope"
 

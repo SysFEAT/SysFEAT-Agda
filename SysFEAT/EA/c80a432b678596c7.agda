@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c80a432b678596c7.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a432b678596c7 where -- ========== Individual Resource Configuration
+module SysFEAT.EA.c80a432b678596c7 where -- ========== IndividualResourceConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.c80a41b7678595bb public -- Individual System of Resources
-open import SysFEAT.EA.f4be14d25ee1eaff public -- Resource Configuration
+open import SysFEAT.EA.c80a41b7678595bb public -- IndividualSystemOfResources
+open import SysFEAT.EA.f4be14d25ee1eaff public -- ResourceConfiguration
 
-IndividualResourceConfiguration : ClassOfBoundedIndividual
-IndividualResourceConfiguration = BoundedIndividual
+IndividualResourceConfiguration : AssetType
+IndividualResourceConfiguration = IndividualAsset
 
 
 --  IndividualResourceConfiguration is subTypeOf IndividualSystemOfResources
@@ -32,7 +32,7 @@ st-c80a432b678596c7-c80a41b7678595bb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Configuration: -}
 resourceConfiguration :  Linkage IndividualResourceConfiguration ResourceConfiguration
-resourceConfiguration = make_instanceOf "Resource Configuration" "Resource Configuration"
+resourceConfiguration = make_Relation "Resource Configuration" "Resource Configuration"
 
 postulate -- resourceConfiguration is subTypeOf systemOfResourceType
   st-c80a43566785973a-c80a436c67859774  : resourceConfiguration  ⊏⋆ᵣ  systemOfResourceType

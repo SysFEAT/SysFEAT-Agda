@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/003f595c64775717.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.003f595c64775717 where -- ========== Data Quality Indicator
+module SysFEAT.EA.003f595c64775717 where -- ========== DataQualityIndicator
 
 open import Agda.Primitive
-open import SysFEAT.SOF.8f46e8eb64b7719a public -- Key Indicator
-open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
+open import SysFEAT.SOF.8f46e8eb64b7719a public -- KeyIndicator
+open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
 
 DataQualityIndicator : ClassOfBoundedIndividual
 DataQualityIndicator = BoundedIndividual

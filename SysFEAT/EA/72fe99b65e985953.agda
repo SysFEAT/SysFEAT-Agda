@@ -12,18 +12,19 @@ Documentation : https://framework.sysfeat.com/pages/72fe99b65e985953.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.72fe99b65e985953 where -- ========== Data Processor
+module SysFEAT.EA.72fe99b65e985953 where -- ========== DataProcessor
 
 open import Agda.Primitive
-open import SysFEAT.EA.44226d6561819b50 public -- Data Assurance Instrument
-open import SysFEAT.EA.c195014a5fc19153 public -- Data Processing Category
+open import SysFEAT.EA.622b7c7d6ae3438e public -- DataAssuranceInstrument
+open import SysFEAT.EA.c195014a5fc19153 public -- DataProcessingCategory
 
-DataProcessor : ClassOfClassOfBoundedIndividual
-DataProcessor = ClassOfBoundedIndividual
+DataProcessor : ClassOfMixedOrderEntity
+DataProcessor = MixedOrderEntity
 
---  DataProcessor is subTypeOf DataAssuranceInstrument
-st-72fe99b65e985953-44226d6561819b50 : DataProcessor ⊏⋆ₑ DataAssuranceInstrument
-st-72fe99b65e985953-44226d6561819b50 = polySubTypeOf-identity
+
+--  DataProcessor withAspect DataAssuranceInstrument
+st-72fe99b65e985953-622b7c7d6ae3438e : DataProcessor ⊏ₐₑ (DataAssuranceInstrument (lsuc(lzero)))
+st-72fe99b65e985953-622b7c7d6ae3438e = polySubTypeOf-identity
 
 
 -- == Relations =======================

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affec3715f6074bb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affec3715f6074bb where -- ========== Number of Entities
+module SysFEAT.EA.affec3715f6074bb where -- ========== NumberOfEntities
 
 open import Agda.Primitive
 

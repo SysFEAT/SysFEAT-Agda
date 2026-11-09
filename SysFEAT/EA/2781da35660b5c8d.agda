@@ -14,13 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2781da35660b5c8d where -- ========== Operations Process
+module SysFEAT.EA.2781da35660b5c8d where -- ========== OperationsProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.57dfc52d550932ef public -- Business Process
+open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
 
-OperationsProcess : ClassOfClassOfBoundedIndividual
-OperationsProcess = ClassOfBoundedIndividual
+OperationsProcess : BoundedIndividualMetaClass
+OperationsProcess = AssetType
+
 
 --  OperationsProcess is subTypeOf BusinessProcess
 st-2781da35660b5c8d-57dfc52d550932ef : OperationsProcess ⊏ₑ BusinessProcess

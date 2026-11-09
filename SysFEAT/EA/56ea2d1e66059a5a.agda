@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/56ea2d1e66059a5a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.56ea2d1e66059a5a where -- ========== Business Output
+module SysFEAT.EA.56ea2d1e66059a5a where -- ========== BusinessOutput
 
 open import Agda.Primitive
 

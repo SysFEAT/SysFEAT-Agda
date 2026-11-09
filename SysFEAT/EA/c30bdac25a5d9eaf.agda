@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c30bdac25a5d9eaf where -- ========== Software Module
+module SysFEAT.EA.c30bdac25a5d9eaf where -- ========== SOftwareModule
 
 open import Agda.Primitive
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
-open import SysFEAT.EA.46194ce9560d3ab8 public -- Application Component
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
+open import SysFEAT.EA.46194ce9560d3ab8 public -- ApplicationComponent
 
-SOftwareModule : ClassOfClassOfBoundedIndividual
-SOftwareModule = ClassOfBoundedIndividual
+SOftwareModule : BoundedIndividualMetaClass
+SOftwareModule = AssetType
 
 
 --  SOftwareModule is subTypeOf BusinessSOftwareSystem
@@ -48,18 +48,14 @@ postulate -- requiredsOftwaretechnology is subTypeOf enablerTechnologySystem
 Embbeding of an Application Component in an Application or in another Application Component.
 -}
 -- Aggregate Member : Component Part
-ComponentPart : ClassOfClassOfBoundedIndividual
-ComponentPart = ClassOfBoundedIndividual
+ComponentPart : ClassOfClassOfIndividual
+ComponentPart = ClassOfIndividual
 
 
 
 --  ComponentPart is subTypeOf SOftwarePart
 st-8109f9be5eb8bd66-173f4d015eb8c686 : ComponentPart ⊏ₑ SOftwarePart
 st-8109f9be5eb8bd66-173f4d015eb8c686 = polySubTypeOf-identity
-
---  ComponentPart is subTypeOf ApplicationComponent
-st-8109f9be5eb8bd66-46194ce9560d3ab8 : ComponentPart ⊏ₑ ApplicationComponent
-st-8109f9be5eb8bd66-46194ce9560d3ab8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfComponentPart :  Linkage SOftwareModule ComponentPart

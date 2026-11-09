@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/137d5bac5ee2b904.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.137d5bac5ee2b904 where -- ========== Hardware Portolio
+module SysFEAT.EA.137d5bac5ee2b904 where -- ========== HardwarePortolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8889c5eea8ab7 public -- Asset Portfolio
-open import SysFEAT.EA.24f8475766477e0a public -- Hardware Management Initiative
-open import SysFEAT.EA.24f84973664783b4 public -- Hardware Portfolio Stage
-open import SysFEAT.EA.c30bf4015a5da72b public -- Concrete Hardware System
+open import SysFEAT.EA.26b8889c5eea8ab7 public -- AssetPortfolio
+open import SysFEAT.EA.24f8475766477e0a public -- HardwareManagementInitiative
+open import SysFEAT.EA.24f84973664783b4 public -- HardwarePortfolioStage
+open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
 
 HardwarePortolio : ClassOfBoundedIndividual
 HardwarePortolio = BoundedIndividual
@@ -50,8 +50,9 @@ postulate -- roadmap is subTypeOf portfolioRoadmap
 A Managed Hardware represents the status of a Concrete Hardware System under the management of an Application Portfolio.
 -}
 -- Aggregate Member : Managed Hardware
-ManagedHardware : ClassOfClassOfIndividual
-ManagedHardware = ClassOfIndividual
+ManagedHardware : ClassOfMixedOrderEntity
+ManagedHardware = MixedOrderEntity
+
 
 
 --  ManagedHardware is subTypeOf ManagedResourceAsset

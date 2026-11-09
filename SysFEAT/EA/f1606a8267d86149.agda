@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/f1606a8267d86149.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f1606a8267d86149 where -- ========== Operational Assurance Case
+module SysFEAT.EA.f1606a8267d86149 where -- ========== OperationalAssuranceCase
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca19e95dd854e9 public -- Assurance Case
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
-open import SysFEAT.EA.f1606adf67d861a5 public -- Operating Risk Type
+open import SysFEAT.EA.07ca19e95dd854e9 public -- AssuranceCase
+open import SysFEAT.EA.f1606adf67d861a5 public -- OperatingRiskType
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-OperationalAssuranceCase : ClassOfClassOfBoundedIndividual
-OperationalAssuranceCase = ClassOfBoundedIndividual
+OperationalAssuranceCase : ClassOfClassOfIndividual
+OperationalAssuranceCase = ClassOfIndividual
+
 
 --  OperationalAssuranceCase is subTypeOf AssuranceCase
 st-f1606a8267d86149-07ca19e95dd854e9 : OperationalAssuranceCase ⊏ₑ AssuranceCase
@@ -30,44 +31,11 @@ st-f1606a8267d86149-07ca19e95dd854e9 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Resource Operating Asset: -}
--- Aggregate Member : Resource Operating Asset
-ResourceOperatingAsset : ClassOfClassOfBoundedIndividual
-ResourceOperatingAsset = ClassOfBoundedIndividual
-
-
-
---  ResourceOperatingAsset is subTypeOf InvolvedAsset
-st-f1606bb067d86473-9152e6975ed764d3 : ResourceOperatingAsset ⊏ₑ InvolvedAsset
-st-f1606bb067d86473-9152e6975ed764d3 = polySubTypeOf-identity
-
---  ResourceOperatingAsset is subTypeOf ResourceOperatingAsset
-st-f1606bb067d86473-f8e61da0621db6fa : ResourceOperatingAsset ⊏ₑ ResourceOperatingAsset
-st-f1606bb067d86473-f8e61da0621db6fa = polySubTypeOf-identity
-
--- Membership relation
-membershipOfResourceOperatingAsset :  Linkage OperationalAssuranceCase ResourceOperatingAsset
-membershipOfResourceOperatingAsset = make_upwardNestingRelation "resourceOperatingAsset membership" "nested resourceOperatingAsset"
-
--- Aggregation relation
-aggregationOfResourceOperatingAssetResourceOperatingAsset :  Linkage ResourceOperatingAsset ResourceOperatingAsset
-aggregationOfResourceOperatingAssetResourceOperatingAsset = make_Relation "ResourceOperatingAsset aggregation" "aggregated ResourceOperatingAsset"
-
-{- resourceOperatingAsset : derived relation obtained by composing
-   membershipOfResourceOperatingAsset and aggregationOfResourceOperatingAssetResourceOperatingAsset
-   It directly links an Operational Assurance Case to the final aggregated ResourceOperatingAsset
-   hiding the reifying ResourceOperatingAsset
--}
-resourceOperatingAsset : Linkage OperationalAssuranceCase ResourceOperatingAsset
-resourceOperatingAsset = membershipOfResourceOperatingAsset  ∘  aggregationOfResourceOperatingAssetResourceOperatingAsset
-
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Mitigated Operational Risk: -}
 -- Aggregate Member : Mitigated Operational Risk
-MitigatedOperationalRisk : ThirdOrderClass
-MitigatedOperationalRisk = SecondOrderClass
+MitigatedOperationalRisk : ClassOfMixedOrderEntity
+MitigatedOperationalRisk = MixedOrderEntity
+
 
 
 --  MitigatedOperationalRisk is subTypeOf MitigatedRisk
@@ -89,5 +57,34 @@ aggregationOfOperatingRiskTypeMitigatedOperationalRisk = make_Relation "Operatin
 -}
 mitigatedOperationalRisk : Linkage OperationalAssuranceCase OperatingRiskType
 mitigatedOperationalRisk = membershipOfMitigatedOperationalRisk  ∘  aggregationOfOperatingRiskTypeMitigatedOperationalRisk
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Resource Operating Asset Type: -}
+-- Aggregate Member : Resource Operating Asset Type
+ResourceOperatingAssetType : ClassOfClassOfIndividual
+ResourceOperatingAssetType = ClassOfIndividual
+
+
+--  ResourceOperatingAssetType is subTypeOf InvolvedAsset
+st-f1606bb067d86473-9152e6975ed764d3 : ResourceOperatingAssetType ⊏ₑ InvolvedAsset
+st-f1606bb067d86473-9152e6975ed764d3 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfResourceOperatingAssetType :  Linkage OperationalAssuranceCase ResourceOperatingAssetType
+membershipOfResourceOperatingAssetType = make_upwardNestingRelation "resourceOperatingAssetType membership" "nested resourceOperatingAssetType"
+
+-- Aggregation relation
+aggregationOfResourceOperatingAssetTypeResourceOperatingAssetType :  Linkage ResourceOperatingAssetType ResourceOperatingAssetType
+aggregationOfResourceOperatingAssetTypeResourceOperatingAssetType = make_Relation "ResourceOperatingAssetType aggregation" "aggregated ResourceOperatingAssetType"
+
+{- resourceOperatingAssetType : derived relation obtained by composing
+   membershipOfResourceOperatingAssetType and aggregationOfResourceOperatingAssetTypeResourceOperatingAssetType
+   It directly links an Operational Assurance Case to the final aggregated ResourceOperatingAssetType
+   hiding the reifying ResourceOperatingAssetType
+-}
+resourceOperatingAssetType : Linkage OperationalAssuranceCase ResourceOperatingAssetType
+resourceOperatingAssetType = membershipOfResourceOperatingAssetType  ∘  aggregationOfResourceOperatingAssetTypeResourceOperatingAssetType
 
 

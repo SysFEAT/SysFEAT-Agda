@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/22ba23ea67643262.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.22ba23ea67643262 where -- ========== Technology Management Initiative
+module SysFEAT.EA.22ba23ea67643262 where -- ========== TechnologyManagementInitiative
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201bc866475765 public -- Asset Management Initiative
+open import SysFEAT.EA.05201bc866475765 public -- AssetManagementInitiative
 
 TechnologyManagementInitiative : ClassOfBoundedIndividual
 TechnologyManagementInitiative = BoundedIndividual

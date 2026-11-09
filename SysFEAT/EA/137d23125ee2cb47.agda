@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/137d23125ee2cb47.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.137d23125ee2cb47 where -- ========== Relational Data Map
+module SysFEAT.EA.137d23125ee2cb47 where -- ========== RelationalDataMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be4bb95ee18b51 public -- Physical Data Map
-open import SysFEAT.EA.7731894d62166495 public -- Relational Data bLOCK
-open import SysFEAT.EA.362f3c7e5b3b22f8 public -- Relational Schema
+open import SysFEAT.EA.d874bd8d6ab727f1 public -- RelationalDataBlock
+open import SysFEAT.EA.f4be4bb95ee18b51 public -- PhysicalDataMap
+open import SysFEAT.EA.362f3c7e5b3b22f8 public -- RelationalSchema
 
-RelationalDataMap : ClassOfClassOfBoundedIndividual
-RelationalDataMap = ClassOfBoundedIndividual
+RelationalDataMap : ClassOfMixedOrderEntity
+RelationalDataMap = MixedOrderEntity
+
+
+--  RelationalDataMap withAspect RelationalDataBlock
+st-137d23125ee2cb47-d874bd8d6ab727f1 : RelationalDataMap ⊏ₐₑ (RelationalDataBlock (lsuc(lzero)))
+st-137d23125ee2cb47-d874bd8d6ab727f1 = polySubTypeOf-identity
 
 --  RelationalDataMap is subTypeOf PhysicalDataMap
 st-137d23125ee2cb47-f4be4bb95ee18b51 : RelationalDataMap ⊏ₑ PhysicalDataMap
 st-137d23125ee2cb47-f4be4bb95ee18b51 = polySubTypeOf-identity
-
---  RelationalDataMap is subTypeOf RelationalDatabLOCK
-st-137d23125ee2cb47-7731894d62166495 : RelationalDataMap ⊏⋆ₑ RelationalDatabLOCK
-st-137d23125ee2cb47-7731894d62166495 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -43,10 +44,6 @@ SubRelationalDomain = ClassOfIndividual
 --  SubRelationalDomain is subTypeOf PhysicalDomainMember
 st-137d232b5ee2ccee-f4be4c025ee18d1e : SubRelationalDomain ⊏ₑ PhysicalDomainMember
 st-137d232b5ee2ccee-f4be4c025ee18d1e = polySubTypeOf-identity
-
---  SubRelationalDomain is subTypeOf RelationalSchema
-st-137d232b5ee2ccee-362f3c7e5b3b22f8 : SubRelationalDomain ⊏ₑ RelationalSchema
-st-137d232b5ee2ccee-362f3c7e5b3b22f8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubRelationalDomain :  Linkage RelationalDataMap SubRelationalDomain
@@ -76,10 +73,6 @@ ExternalRelationalDomain = ClassOfIndividual
 --  ExternalRelationalDomain is subTypeOf ExternalPhysicalDomain
 st-1f235c605fbe93d7-4447473c5f4f6a69 : ExternalRelationalDomain ⊏ₑ ExternalPhysicalDomain
 st-1f235c605fbe93d7-4447473c5f4f6a69 = polySubTypeOf-identity
-
---  ExternalRelationalDomain is subTypeOf RelationalSchema
-st-1f235c605fbe93d7-362f3c7e5b3b22f8 : ExternalRelationalDomain ⊏ₑ RelationalSchema
-st-1f235c605fbe93d7-362f3c7e5b3b22f8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfExternalRelationalDomain :  Linkage RelationalDataMap ExternalRelationalDomain

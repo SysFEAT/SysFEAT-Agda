@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/952eab2a67285b02.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.952eab2a67285b02 where -- ========== Architecture Principle Category
+module SysFEAT.EA.952eab2a67285b02 where -- ========== ArchitecturePrincipleCategory
 
 open import Agda.Primitive
-open import SysFEAT.EA.952eaada67285ac3 public -- Policy Framework Category
+open import SysFEAT.EA.952eaada67285ac3 public -- PolicyFrameworkCategory
 
 ArchitecturePrincipleCategory : ThirdOrderClass
-ArchitecturePrincipleCategory = SecondOrderClass
+ArchitecturePrincipleCategory = PropertyType
+
 
 --  ArchitecturePrincipleCategory is subTypeOf PolicyFrameworkCategory
 st-952eab2a67285b02-952eaada67285ac3 : ArchitecturePrincipleCategory ⊏ₑ PolicyFrameworkCategory

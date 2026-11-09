@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Business Object Assurance Case: 
-A Business Object Assurance Case is a Data Assurance Case related to a critial Conceptual Entity Asset.Its purpose is to defined the quality and integrity rules that apply to a Conceptual Entity Asset in each business contexts such as activity domains on the enterprise.
+A Business Object Assurance Case is a Data Assurance Case related to a critial Business Object.Its purpose is to defined the quality and integrity rules that apply to a Business Object in each business contexts such as activity domains on the enterprise.
 
 Documentation : https://framework.sysfeat.com/pages/fe6314c8618165e2.htm
 
@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/fe6314c8618165e2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.fe6314c8618165e2 where -- ========== Business Object Assurance Case
+module SysFEAT.EA.fe6314c8618165e2 where -- ========== BusinessObjectAssuranceCase
 
 open import Agda.Primitive
-open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
-open import SysFEAT.EA.362fc8045b3c3e65 public -- Conceptual Entity Asset
-open import SysFEAT.EA.582e7ac266f6b8ef public -- Data Quality Risk Type
+open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
+open import SysFEAT.EA.582e7ac266f6b8ef public -- DataQualityRiskType
+open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-BusinessObjectAssuranceCase : ClassOfClassOfBoundedIndividual
-BusinessObjectAssuranceCase = ClassOfBoundedIndividual
+BusinessObjectAssuranceCase : ClassOfClassOfIndividual
+BusinessObjectAssuranceCase = ClassOfIndividual
+
 
 --  BusinessObjectAssuranceCase is subTypeOf DataAssuranceCase
 st-fe6314c8618165e2-b90aeac8600e619f : BusinessObjectAssuranceCase ⊏ₑ DataAssuranceCase
@@ -30,44 +31,11 @@ st-fe6314c8618165e2-b90aeac8600e619f = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Assured Business Object: -}
--- Aggregate Member : Assured Business Object
-AssuredBusinessObject : ClassOfClassOfBoundedIndividual
-AssuredBusinessObject = ClassOfBoundedIndividual
-
-
-
---  AssuredBusinessObject is subTypeOf ConcernedInformation
-st-fe631645618166c9-b90afa69600e715c : AssuredBusinessObject ⊏ₑ ConcernedInformation
-st-fe631645618166c9-b90afa69600e715c = polySubTypeOf-identity
-
---  AssuredBusinessObject is subTypeOf ConceptualEntityAsset
-st-fe631645618166c9-362fc8045b3c3e65 : AssuredBusinessObject ⊏ₑ ConceptualEntityAsset
-st-fe631645618166c9-362fc8045b3c3e65 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfAssuredBusinessObject :  Linkage BusinessObjectAssuranceCase AssuredBusinessObject
-membershipOfAssuredBusinessObject = make_upwardNestingRelation "assuredBusinessObject membership" "nested assuredBusinessObject"
-
--- Aggregation relation
-aggregationOfConceptualEntityAssetAssuredBusinessObject :  Linkage AssuredBusinessObject ConceptualEntityAsset
-aggregationOfConceptualEntityAssetAssuredBusinessObject = make_Relation "ConceptualEntityAsset aggregation" "aggregated ConceptualEntityAsset"
-
-{- assuredBusinessObject : derived relation obtained by composing
-   membershipOfAssuredBusinessObject and aggregationOfConceptualEntityAssetAssuredBusinessObject
-   It directly links an Business Object Assurance Case to the final aggregated ConceptualEntityAsset
-   hiding the reifying AssuredBusinessObject
--}
-assuredBusinessObject : Linkage BusinessObjectAssuranceCase ConceptualEntityAsset
-assuredBusinessObject = membershipOfAssuredBusinessObject  ∘  aggregationOfConceptualEntityAssetAssuredBusinessObject
-
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Mitigated Quality Risk: -}
 -- Aggregate Member : Mitigated Quality Risk
-MitigatedQualityRisk : ThirdOrderClass
-MitigatedQualityRisk = SecondOrderClass
+MitigatedQualityRisk : ClassOfMixedOrderEntity
+MitigatedQualityRisk = MixedOrderEntity
+
 
 
 --  MitigatedQualityRisk is subTypeOf MitigatedDataRisk
@@ -89,5 +57,34 @@ aggregationOfDataQualityRiskTypeMitigatedQualityRisk = make_Relation "DataQualit
 -}
 mitigatedQualityRisk : Linkage BusinessObjectAssuranceCase DataQualityRiskType
 mitigatedQualityRisk = membershipOfMitigatedQualityRisk  ∘  aggregationOfDataQualityRiskTypeMitigatedQualityRisk
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Assured Business Object: -}
+-- Aggregate Member : Assured Business Object
+AssuredBusinessObject : ClassOfClassOfIndividual
+AssuredBusinessObject = ClassOfIndividual
+
+
+--  AssuredBusinessObject is subTypeOf ConcernedInformation
+st-fe631645618166c9-b90afa69600e715c : AssuredBusinessObject ⊏ₑ ConcernedInformation
+st-fe631645618166c9-b90afa69600e715c = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfAssuredBusinessObject :  Linkage BusinessObjectAssuranceCase AssuredBusinessObject
+membershipOfAssuredBusinessObject = make_upwardNestingRelation "assuredBusinessObject membership" "nested assuredBusinessObject"
+
+-- Aggregation relation
+fE631645618166E4 :  Linkage AssuredBusinessObject ConceptualEntity
+fE631645618166E4 = make_Relation "ConceptualEntity aggregation" "aggregated ConceptualEntity"
+
+{- assuredBusinessObject : derived relation obtained by composing
+   membershipOfAssuredBusinessObject and fE631645618166E4
+   It directly links an Business Object Assurance Case to the final aggregated ConceptualEntity
+   hiding the reifying AssuredBusinessObject
+-}
+assuredBusinessObject : Linkage BusinessObjectAssuranceCase ConceptualEntity
+assuredBusinessObject = membershipOfAssuredBusinessObject  ∘  fE631645618166E4
 
 

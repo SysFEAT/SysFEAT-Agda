@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.254e46f95f7f83ec where -- ========== NoSQL Dataset
+module SysFEAT.EA.254e46f95f7f83ec where -- ========== NoSQLDataset
 
 open import Agda.Primitive
-open import SysFEAT.EA.762582bb5f6bd659 public -- Physical Data Entity
-open import SysFEAT.EA.8180baa3600110c8 public -- NoSQL Element
-open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQL Field
+open import SysFEAT.EA.762582bb5f6bd659 public -- PhysicalDataEntity
+open import SysFEAT.EA.8180baa3600110c8 public -- NoSQLElement
+open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQLField
 
-NoSQLDataset : ClassOfClassOfBoundedIndividual
-NoSQLDataset = ClassOfBoundedIndividual
+NoSQLDataset : BoundedIndividualMetaClass
+NoSQLDataset = AssetType
 
 
 --  NoSQLDataset is subTypeOf PhysicalDataEntity
@@ -41,8 +41,8 @@ st-254e46f95f7f83ec-8180baa3600110c8 = polySubTypeOf-identity
 A Value MetaField is a NoSQL Field used to store data in a NoSQL Dataset. Each Value MetaField has a unique name. Its associated NoSQL Field specifies the kind of data that can be stored in it. For instance, a  Customer  
 -}
 -- Aggregate Member : Value MetaField
-ValueMetaField : ClassOfClassOfBoundedIndividual
-ValueMetaField = ClassOfBoundedIndividual
+ValueMetaField : ClassOfMixedOrderEntity
+ValueMetaField = MixedOrderEntity
 
 
 
@@ -53,10 +53,6 @@ st-254e1b8d5f809015-e6f222845f771913 = polySubTypeOf-identity
 --  ValueMetaField is subTypeOf MetaDatasetMember
 st-254e1b8d5f809015-a80dfa5063d34f48 : ValueMetaField ⊏ₑ MetaDatasetMember
 st-254e1b8d5f809015-a80dfa5063d34f48 = polySubTypeOf-identity
-
---  ValueMetaField is subTypeOf NoSQLField
-st-254e1b8d5f809015-254e4dd45f7f8749 : ValueMetaField ⊏ₑ NoSQLField
-st-254e1b8d5f809015-254e4dd45f7f8749 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfValueMetaField :  Linkage NoSQLDataset ValueMetaField
@@ -81,8 +77,8 @@ valueMetaField = membershipOfValueMetaField  ∘  aggregationOfNoSQLFieldValueMe
 A Relationship MetaField is a NoSQL Field used to establish a relationship with another NoSQL Dataset.
 -}
 -- Aggregate Member : Relationship MetaField
-RelationshipMetaField : ClassOfClassOfBoundedIndividual
-RelationshipMetaField = ClassOfBoundedIndividual
+RelationshipMetaField : ClassOfMixedOrderEntity
+RelationshipMetaField = MixedOrderEntity
 
 
 
@@ -93,10 +89,6 @@ st-254e1c7e5f8090eb-b6e3df8e5fbb724d = polySubTypeOf-identity
 --  RelationshipMetaField is subTypeOf MetaDatasetMember
 st-254e1c7e5f8090eb-a80dfa5063d34f48 : RelationshipMetaField ⊏ₑ MetaDatasetMember
 st-254e1c7e5f8090eb-a80dfa5063d34f48 = polySubTypeOf-identity
-
---  RelationshipMetaField is subTypeOf NoSQLField
-st-254e1c7e5f8090eb-254e4dd45f7f8749 : RelationshipMetaField ⊏ₑ NoSQLField
-st-254e1c7e5f8090eb-254e4dd45f7f8749 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfRelationshipMetaField :  Linkage NoSQLDataset RelationshipMetaField
@@ -121,18 +113,14 @@ relationshipMetaField = membershipOfRelationshipMetaField  ∘  aggregationOfNoS
 An Identification MetaField is a NoSQL Field that is is the identifier of a NoSQL Dataset.It is sometimes called the Primary Key of its NoSQL Dataset.A NoSQL Field can be the Identification MetaField of one and only one NoSQL Dataset.
 -}
 -- Aggregate Member : Identification MetaField
-IdentificationMetaField : ClassOfClassOfBoundedIndividual
-IdentificationMetaField = ClassOfBoundedIndividual
+IdentificationMetaField : ClassOfMixedOrderEntity
+IdentificationMetaField = MixedOrderEntity
 
 
 
 --  IdentificationMetaField is subTypeOf MetaDatasetMember
 st-a80df86163d34c47-a80dfa5063d34f48 : IdentificationMetaField ⊏ₑ MetaDatasetMember
 st-a80df86163d34c47-a80dfa5063d34f48 = polySubTypeOf-identity
-
---  IdentificationMetaField is subTypeOf NoSQLField
-st-a80df86163d34c47-254e4dd45f7f8749 : IdentificationMetaField ⊏ₑ NoSQLField
-st-a80df86163d34c47-254e4dd45f7f8749 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIdentificationMetaField :  Linkage NoSQLDataset IdentificationMetaField

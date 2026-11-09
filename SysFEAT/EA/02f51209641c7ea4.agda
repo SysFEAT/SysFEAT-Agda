@@ -12,18 +12,18 @@ Documentation : https://framework.sysfeat.com/pages/02f51209641c7ea4.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.02f51209641c7ea4 where -- ========== Computing Device
+module SysFEAT.EA.02f51209641c7ea4 where -- ========== ComputingDevice
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8384f5eeae33c public -- Networking System
-open import SysFEAT.EA.f4be0eda5ee1d6c0 public -- Computing System
-open import SysFEAT.EA.d5e6d7eb5c464b21 public -- Deployable Application Package
+open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.EA.f4be0eda5ee1d6c0 public -- ComputingSystem
+open import SysFEAT.EA.d5e6d7eb5c464b21 public -- DeployableApplicationPackage
 open import SysFEAT.EA.d6a956495a395d28 public -- MicroService
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
 
-ComputingDevice : ClassOfClassOfBoundedIndividual
-ComputingDevice = ClassOfBoundedIndividual
+ComputingDevice : BoundedIndividualMetaClass
+ComputingDevice = AssetType
 
 
 --  ComputingDevice is subTypeOf NetworkingSystem
@@ -42,8 +42,8 @@ st-02f51209641c7ea4-f4be0eda5ee1d6c0 = polySubTypeOf-identity
 Hosting of a Deployable Application Package in a Computing System.
 -}
 -- Aggregate Member : Hosted Application Package
-HostedApplicationPackage : ClassOfClassOfBoundedIndividual
-HostedApplicationPackage = ClassOfBoundedIndividual
+HostedApplicationPackage : ClassOfClassOfIndividual
+HostedApplicationPackage = ClassOfIndividual
 
 
 
@@ -54,10 +54,6 @@ st-f4be10485ee1dbcc-70ba9b2e64224962 = polySubTypeOf-identity
 --  HostedApplicationPackage is subTypeOf NetworkingPart
 st-f4be10485ee1dbcc-26b8386e5eeae4a4 : HostedApplicationPackage ⊏ₑ NetworkingPart
 st-f4be10485ee1dbcc-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  HostedApplicationPackage is subTypeOf DeployableApplicationPackage
-st-f4be10485ee1dbcc-d5e6d7eb5c464b21 : HostedApplicationPackage ⊏ₑ DeployableApplicationPackage
-st-f4be10485ee1dbcc-d5e6d7eb5c464b21 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedApplicationPackage :  Linkage ComputingDevice HostedApplicationPackage
@@ -82,18 +78,14 @@ hostedApplicationPackage = membershipOfHostedApplicationPackage  ∘  aggregatio
 Hosting of a MicroService in a Computing System.
 -}
 -- Aggregate Member : Hosted Micro-Service
-HostedMicroService : ClassOfClassOfBoundedIndividual
-HostedMicroService = ClassOfBoundedIndividual
+HostedMicroService : ClassOfClassOfIndividual
+HostedMicroService = ClassOfIndividual
 
 
 
 --  HostedMicroService is subTypeOf NetworkingPart
 st-26b830735eeadc36-26b8386e5eeae4a4 : HostedMicroService ⊏ₑ NetworkingPart
 st-26b830735eeadc36-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  HostedMicroService is subTypeOf MicroService
-st-26b830735eeadc36-d6a956495a395d28 : HostedMicroService ⊏ₑ MicroService
-st-26b830735eeadc36-d6a956495a395d28 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedMicroService :  Linkage ComputingDevice HostedMicroService
@@ -118,18 +110,14 @@ hostedMicroService = membershipOfHostedMicroService  ∘  aggregationOfMicroServ
 Hosting a set of Physical Data Assets in a data store of a Computing System.
 -}
 -- Aggregate Member : Hosted Data
-HostedData : ClassOfClassOfBoundedIndividual
-HostedData = ClassOfBoundedIndividual
+HostedData : ClassOfClassOfIndividual
+HostedData = ClassOfIndividual
 
 
 
 --  HostedData is subTypeOf NetworkingPart
 st-26b831345eeadddc-26b8386e5eeae4a4 : HostedData ⊏ₑ NetworkingPart
 st-26b831345eeadddc-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  HostedData is subTypeOf PhysicalDataDomain
-st-26b831345eeadddc-028f03ff5b4f55ee : HostedData ⊏ₑ PhysicalDataDomain
-st-26b831345eeadddc-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedData :  Linkage ComputingDevice HostedData
@@ -154,18 +142,14 @@ hostedData = membershipOfHostedData  ∘  aggregationOfPhysicalDataDomainHostedD
 Hosting of a Software Technology in a Computing Device.
 -}
 -- Aggregate Member : Hosted Software Technology
-HostedSOftwareTechnology : ClassOfClassOfBoundedIndividual
-HostedSOftwareTechnology = ClassOfBoundedIndividual
+HostedSOftwareTechnology : ClassOfClassOfIndividual
+HostedSOftwareTechnology = ClassOfIndividual
 
 
 
 --  HostedSOftwareTechnology is subTypeOf NetworkingPart
 st-26b847ee5eea002d-26b8386e5eeae4a4 : HostedSOftwareTechnology ⊏ₑ NetworkingPart
 st-26b847ee5eea002d-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  HostedSOftwareTechnology is subTypeOf SOftwareTechnology
-st-26b847ee5eea002d-d5e6ddd05c46547c : HostedSOftwareTechnology ⊏ₑ SOftwareTechnology
-st-26b847ee5eea002d-d5e6ddd05c46547c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedSOftwareTechnology :  Linkage ComputingDevice HostedSOftwareTechnology

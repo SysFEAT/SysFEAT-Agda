@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Agent Configuration: 
-A Resource Agent Configuration is a Resource Agent Type that is combination of Human Agent Categorys and Artifacts.
+A Resource Agent Configuration is a Resource Agent Type that is combination of Human Agent Types and Artifacts.
 
 Documentation : https://framework.sysfeat.com/pages/ffdf64a868608999.htm
 
@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/ffdf64a868608999.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.ffdf64a868608999 where -- ========== Resource Agent Configuration
+module SysFEAT.EA.ffdf64a868608999 where -- ========== ResourceAgentConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-ResourceAgentConfiguration : ClassOfClassOfBoundedIndividual
-ResourceAgentConfiguration = ClassOfBoundedIndividual
+ResourceAgentConfiguration : AgentMetaClass
+ResourceAgentConfiguration = AgentType
+
 
 --  ResourceAgentConfiguration is subTypeOf ResourceAgentType
 st-ffdf64a868608999-e2ef091962147ad7 : ResourceAgentConfiguration ⊏ₑ ResourceAgentType

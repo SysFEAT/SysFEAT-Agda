@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/3b1b943568cd8922.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1b943568cd8922 where -- ========== Individual Human Agent
+module SysFEAT.EA.3b1b943568cd8922 where -- ========== IndividualHumanAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
 
 IndividualHumanAgent : AgentType
 IndividualHumanAgent = IndividualAgent
@@ -25,5 +25,7 @@ IndividualHumanAgent = IndividualAgent
 st-3b1b943568cd8922-fe1c231267880201 : IndividualHumanAgent ⊏ₑ IndividualResourceAgent
 st-3b1b943568cd8922-fe1c231267880201 = polySubTypeOf-identity
 
+postulate -- IndividualHumanAgent is PowerInstanceOf Human Agent Type
+  pi-3b1b946d68cd8973 : IndividualHumanAgent ∷ₚₑ HumanAgentType
 
 -- == Relations =======================

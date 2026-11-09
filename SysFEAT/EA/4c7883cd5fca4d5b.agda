@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.4c7883cd5fca4d5b where -- ========== Deployable Package
+module SysFEAT.EA.4c7883cd5fca4d5b where -- ========== DeployablePackage
 
 open import Agda.Primitive
-open import SysFEAT.EA.d5e6d8015c464b40 public -- Deployable Software System
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
+open import SysFEAT.EA.d5e6d8015c464b40 public -- DeployableSOftwareSystem
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
 
-DeployablePackage : ClassOfClassOfBoundedIndividual
-DeployablePackage = ClassOfBoundedIndividual
+DeployablePackage : AgentMetaClass
+DeployablePackage = AgentType
 
 
 --  DeployablePackage is subTypeOf DeployableSOftwareSystem
@@ -31,12 +31,6 @@ st-4c7883cd5fca4d5b-d5e6d8015c464b40 = polySubTypeOf-identity
 
 
 -- == Relations =======================
-
--- -------------------------------------------------------------------------------------------- 
-{- Required Software Technology: -}
-requiredSOftwareTechnology :  Linkage DeployablePackage SOftwareTechnology
-requiredSOftwareTechnology = make_classOfHolonymy "Required Software Technology" "Required Software Technology"
-
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Package: -}
@@ -53,3 +47,9 @@ packagedApplication = make_subTypeOf "Packaged Application" "Packaged Applicatio
 
 postulate -- packagedApplication is subTypeOf deployableSOftwareSystem
   st-ca58cc0c684f7487-ca58cad6684f737d  : packagedApplication  ⊏⋆ᵣ  deployableSOftwareSystem
+
+-- -------------------------------------------------------------------------------------------- 
+{- Required Software Technology: -}
+requiredSOftwareTechnology :  Linkage DeployablePackage SOftwareTechnology
+requiredSOftwareTechnology = make_classOfHolonymy "Required Software Technology" "Required Software Technology"
+

@@ -20,8 +20,8 @@ External references:
 module SysFEAT.EA.dd26aa0568a1f939 where -- ========== Functionality
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd26288968a05d00 public -- Business Resource Capability
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
+open import SysFEAT.EA.dd26288968a05d00 public -- BusinessResourceCapability
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
 
 Functionality : AssetPropertyType
 Functionality = AssetProperty
@@ -45,8 +45,9 @@ postulate -- specializedFunctionality is subTypeOf specializedBusinessResourceCa
 -- -------------------------------------------------------------------------------------------- 
 {- Involved Data Element: -}
 -- Aggregate Member : Involved Data Element
-InvolvedDataElement : ClassOfClassOfIndividual
-InvolvedDataElement = ClassOfIndividual
+InvolvedDataElement : ClassOfMixedOrderEntity
+InvolvedDataElement = MixedOrderEntity
+
 
 
 --  InvolvedDataElement is subTypeOf InvolvedInformation
@@ -74,7 +75,7 @@ involvedDataElement = membershipOfInvolvedDataElement  ∘  aggregationOfDataAss
 -- -------------------------------------------------------------------------------------------- 
 {- Functionality Part: -}
 -- Aggregate Member : Functionality Part
-FunctionalityPart : ClassOfClassOfAbstractEntity
+FunctionalityPart : AbstractEntityMetaClass
 FunctionalityPart = ClassOfAbstractEntity
 
 

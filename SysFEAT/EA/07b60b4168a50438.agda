@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Rule: 
-A Resource Rule is a Behavioral Rule that is enforced by Resource Operating Assets.
+A Resource Rule is a Behavioral Rule that is enforced by Resource Operating Asset Types.
 
 Documentation : https://framework.sysfeat.com/pages/07b60b4168a50438.htm
 
@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/07b60b4168a50438.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.07b60b4168a50438 where -- ========== Resource Rule
+module SysFEAT.EA.07b60b4168a50438 where -- ========== ResourceRule
 
 open import Agda.Primitive
-open import SysFEAT.SOF.190c74f868966584 public -- Behavioral Rule
+open import SysFEAT.SOF.190c74f868966584 public -- BehavioralRule
 
-ResourceRule : PropertyType
-ResourceRule = Property
+ResourceRule : AssetPropertyType
+ResourceRule = Directive
+
 
 --  ResourceRule is subTypeOf BehavioralRule
 st-07b60b4168a50438-190c74f868966584 : ResourceRule ⊏ₑ BehavioralRule

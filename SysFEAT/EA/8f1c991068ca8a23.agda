@@ -16,14 +16,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8f1c991068ca8a23 where -- ========== Data Property
+module SysFEAT.EA.8f1c991068ca8a23 where -- ========== DataProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
-open import SysFEAT.SOF.c189d5f068ae4d75 public -- Information Property
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
+open import SysFEAT.SOF.c189d5f068ae4d75 public -- InformationProperty
 
-DataProperty : PropertyType
-DataProperty = Property
+DataProperty : BoundedIndividualMetaClass
+DataProperty = AssetType
+
 
 --  DataProperty is subTypeOf DataAsset
 st-8f1c991068ca8a23-6d2b7c935fbb6270 : DataProperty ⊏ₑ DataAsset

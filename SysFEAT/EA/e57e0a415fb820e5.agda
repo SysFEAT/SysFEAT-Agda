@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/e57e0a415fb820e5.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e57e0a415fb820e5 where -- ========== IT Asset Assessment
+module SysFEAT.EA.e57e0a415fb820e5 where -- ========== ITAssetAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
 
-ITAssetAssessment : ClassOfBoundedIndividual
-ITAssetAssessment = BoundedIndividual
+ITAssetAssessment : ClassOfIndividual
+ITAssetAssessment = Individual
 
 
 --  ITAssetAssessment is subTypeOf Assessment

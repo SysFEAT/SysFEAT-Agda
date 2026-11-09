@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/82a9892166ec3b89.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.82a9892166ec3b89 where -- ========== Process Family
+module SysFEAT.EA.82a9892166ec3b89 where -- ========== ProcessFamily
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- Asset Category
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
 
-ProcessFamily : ThirdOrderClass
-ProcessFamily = SecondOrderClass
+ProcessFamily : ClassOfMixedOrderEntity
+ProcessFamily = MixedOrderEntity
 
---  ProcessFamily withAspect AssetCategory
-st-82a9892166ec3b89-f69620466a0f9c2f : ProcessFamily ⊏ₐₑ (AssetCategory (lsuc(lsuc(lzero))))
+
+--  ProcessFamily withAspect AssetCategoryFamily
+st-82a9892166ec3b89-f69620466a0f9c2f : ProcessFamily ⊏ₐₑ (AssetCategoryFamily (lsuc(lsuc(lzero))))
 st-82a9892166ec3b89-f69620466a0f9c2f = polySubTypeOf-identity
 
 
--- == Relations =======================

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/254e4dd45f7f8749.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.254e4dd45f7f8749 where -- ========== NoSQL Field
+module SysFEAT.EA.254e4dd45f7f8749 where -- ========== NoSQLField
 
 open import Agda.Primitive
-open import SysFEAT.EA.e6f220d45f771837 public -- Physical Data Property
-open import SysFEAT.EA.8180baa3600110c8 public -- NoSQL Element
+open import SysFEAT.EA.e6f220d45f771837 public -- PhysicalDataProperty
+open import SysFEAT.EA.8180baa3600110c8 public -- NoSQLElement
 
-NoSQLField : ClassOfClassOfBoundedIndividual
-NoSQLField = ClassOfBoundedIndividual
+NoSQLField : BoundedIndividualMetaClass
+NoSQLField = AssetType
 
 
 --  NoSQLField is subTypeOf PhysicalDataProperty

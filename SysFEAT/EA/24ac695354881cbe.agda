@@ -14,21 +14,22 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.24ac695354881cbe where -- ========== Project Type
+module SysFEAT.EA.24ac695354881cbe where -- ========== ProjectType
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b5887d05ef07b3b public -- Program Asset
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
+open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 
-ProjectType : ClassOfClassOfBoundedIndividual
-ProjectType = ClassOfBoundedIndividual
+ProjectType : ClassOfMixedOrderEntity
+ProjectType = MixedOrderEntity
 
---  ProjectType is subTypeOf ProgramAsset
-st-24ac695354881cbe-2b5887d05ef07b3b : ProjectType ⊏⋆ₑ ProgramAsset
-st-24ac695354881cbe-2b5887d05ef07b3b = polySubTypeOf-identity
 
---  ProjectType withAspect ModelPropertyBlock
-st-24ac695354881cbe-0eb97aff6855cd23 : ProjectType ⊏ₐₑ (ModelPropertyBlock (lsuc(lzero)))
+--  ProjectType withAspect ProgramAsset
+st-24ac695354881cbe-52e0b14c6abf4c76 : ProjectType ⊏ₐₑ (ProgramAsset (lsuc(lzero)))
+st-24ac695354881cbe-52e0b14c6abf4c76 = polySubTypeOf-identity
+
+--  ProjectType withAspect ModelCategorizationBlock
+st-24ac695354881cbe-0eb97aff6855cd23 : ProjectType ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
 st-24ac695354881cbe-0eb97aff6855cd23 = polySubTypeOf-identity
 
 

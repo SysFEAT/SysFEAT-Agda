@@ -19,7 +19,7 @@ External references:
 module SysFEAT.EA.dd26f17a68a0b08b where -- ========== Skill
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd26288968a05d00 public -- Business Resource Capability
+open import SysFEAT.EA.dd26288968a05d00 public -- BusinessResourceCapability
 
 Skill : AssetPropertyType
 Skill = AssetProperty
@@ -43,7 +43,7 @@ postulate -- specializedSkill is subTypeOf specializedBusinessResourceCapability
 -- -------------------------------------------------------------------------------------------- 
 {- Skill Part: -}
 -- Aggregate Member : Skill Part
-SkillPart : ClassOfClassOfAbstractEntity
+SkillPart : AbstractEntityMetaClass
 SkillPart = ClassOfAbstractEntity
 
 

@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/c80a3f9d67859211.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a3f9d67859211 where -- ========== Individual Capability Configuration
+module SysFEAT.EA.c80a3f9d67859211 where -- ========== IndividualCapabilityConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.66f8685a620b1440 public -- Individual Business Agent
-open import SysFEAT.EA.3b1b936468cd8851 public -- Individual Resource Agent Configuration
-open import SysFEAT.EA.d1600c7062e093eb public -- Capability Configuration
+open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.EA.3b1b936468cd8851 public -- IndividualResourceAgentConfiguration
+open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 
-IndividualCapabilityConfiguration : ClassOfBoundedIndividual
-IndividualCapabilityConfiguration = BoundedIndividual
+IndividualCapabilityConfiguration : AssetType
+IndividualCapabilityConfiguration = IndividualAsset
 
 
 --  IndividualCapabilityConfiguration is subTypeOf IndividualBusinessAgent
@@ -37,5 +37,5 @@ st-c80a3f9d67859211-3b1b936468cd8851 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Configuration Type: -}
 configurationType :  Linkage IndividualCapabilityConfiguration CapabilityConfiguration
-configurationType = make_instanceOf "Configuration Type" "Configuration Type"
+configurationType = make_Relation "Configuration Type" "Configuration Type"
 

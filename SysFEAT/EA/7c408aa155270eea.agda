@@ -20,15 +20,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7c408aa155270eea where -- ========== Department Type
+module SysFEAT.EA.7c408aa155270eea where -- ========== DepartmentType
 
 open import Agda.Primitive
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
-open import SysFEAT.EA.57dfc52d550932ef public -- Business Process
-open import SysFEAT.EA.076d151c5a5e1561 public -- Organizational Position
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
+open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
+open import SysFEAT.EA.076d151c5a5e1561 public -- OrganizationalPosition
 
-DepartmentType : ClassOfClassOfBoundedIndividual
-DepartmentType = ClassOfBoundedIndividual
+DepartmentType : BoundedIndividualMetaClass
+DepartmentType = AssetType
 
 
 --  DepartmentType is subTypeOf OrgUnitType
@@ -51,18 +51,14 @@ postulate -- specializedOrgUnit is subTypeOf specializedResourceAgent
 The set of Business Processes that is opered by a Department Type.
 -}
 -- Aggregate Member : Operated Business Process
-OperatedBusinessProcess : ClassOfClassOfBoundedIndividual
-OperatedBusinessProcess = ClassOfBoundedIndividual
+OperatedBusinessProcess : ClassOfClassOfIndividual
+OperatedBusinessProcess = ClassOfIndividual
 
 
 
 --  OperatedBusinessProcess is subTypeOf PerformedBusinessResourceProcess
 st-ef0800f55fffa405-240353b45fc7a13f : OperatedBusinessProcess ⊏ₑ PerformedBusinessResourceProcess
 st-ef0800f55fffa405-240353b45fc7a13f = polySubTypeOf-identity
-
---  OperatedBusinessProcess is subTypeOf BusinessProcess
-st-ef0800f55fffa405-57dfc52d550932ef : OperatedBusinessProcess ⊏ₑ BusinessProcess
-st-ef0800f55fffa405-57dfc52d550932ef = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOperatedBusinessProcess :  Linkage DepartmentType OperatedBusinessProcess
@@ -87,18 +83,14 @@ operatedBusinessProcess = membershipOfOperatedBusinessProcess  ∘  aggregationO
 Hiearchical composition of Department Types.
 -}
 -- Aggregate Member : Sub-Department
-SubDepartment : ClassOfClassOfBoundedIndividual
-SubDepartment = ClassOfBoundedIndividual
+SubDepartment : ClassOfClassOfIndividual
+SubDepartment = ClassOfIndividual
 
 
 
 --  SubDepartment is subTypeOf ResourceAgentPart
 st-520e542b5eb86c3a-24034f6d5fc79c3f : SubDepartment ⊏ₑ ResourceAgentPart
 st-520e542b5eb86c3a-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  SubDepartment is subTypeOf DepartmentType
-st-520e542b5eb86c3a-7c408aa155270eea : SubDepartment ⊏ₑ DepartmentType
-st-520e542b5eb86c3a-7c408aa155270eea = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubDepartment :  Linkage DepartmentType SubDepartment
@@ -123,18 +115,14 @@ subDepartment = membershipOfSubDepartment  ∘  aggregationOfDepartmentTypeSubDe
 An Organizational Position that is part of an Department Type.
 -}
 -- Aggregate Member : Organization Position
-OrganizationPosition : ClassOfClassOfBoundedIndividual
-OrganizationPosition = ClassOfBoundedIndividual
+OrganizationPosition : ClassOfClassOfIndividual
+OrganizationPosition = ClassOfIndividual
 
 
 
 --  OrganizationPosition is subTypeOf ResourceAgentPart
 st-520e546c5eb86cf4-24034f6d5fc79c3f : OrganizationPosition ⊏ₑ ResourceAgentPart
 st-520e546c5eb86cf4-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  OrganizationPosition is subTypeOf OrganizationalPosition
-st-520e546c5eb86cf4-076d151c5a5e1561 : OrganizationPosition ⊏ₑ OrganizationalPosition
-st-520e546c5eb86cf4-076d151c5a5e1561 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOrganizationPosition :  Linkage DepartmentType OrganizationPosition

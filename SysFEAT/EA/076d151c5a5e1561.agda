@@ -17,14 +17,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.076d151c5a5e1561 where -- ========== Organizational Position
+module SysFEAT.EA.076d151c5a5e1561 where -- ========== OrganizationalPosition
 
 open import Agda.Primitive
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
 
-OrganizationalPosition : ClassOfClassOfBoundedIndividual
-OrganizationalPosition = ClassOfBoundedIndividual
+OrganizationalPosition : BoundedIndividualMetaClass
+OrganizationalPosition = AssetType
+
 
 --  OrganizationalPosition is subTypeOf OrgUnitType
 st-076d151c5a5e1561-076d15425a5e158c : OrganizationalPosition ⊏ₑ OrgUnitType
@@ -46,14 +47,9 @@ postulate -- specializedPositionType is subTypeOf specializedResourceAgent
 An Equipment is a Business System made available to an Organizational Position for the purpose of accomplishing his/her work.For example, numerous companies equip their employees with smartphones to facilitate coordination of their activities.
 -}
 -- Aggregate Member : Equipment
-Equipment : ClassOfClassOfBoundedIndividual
-Equipment = ClassOfBoundedIndividual
+Equipment : ClassOfClassOfIndividual
+Equipment = ClassOfIndividual
 
-
-
---  Equipment is subTypeOf BusinessSystem
-st-986cd24c5ffc9d7c-278675d65b252f4d : Equipment ⊏ₑ BusinessSystem
-st-986cd24c5ffc9d7c-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfEquipment :  Linkage OrganizationalPosition Equipment

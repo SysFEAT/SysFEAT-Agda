@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/6a70c0c8678769d3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6a70c0c8678769d3 where -- ========== Resource Event
+module SysFEAT.EA.6a70c0c8678769d3 where -- ========== ResourceEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.9bec9fbf66fb0d6f public -- Resource Functional Asset
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
+open import SysFEAT.EA.9bec9fbf66fb0d6f public -- ResourceFunctionalAsset
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 
-ResourceEvent : ClassOfClassOfBoundedIndividual
-ResourceEvent = ClassOfBoundedIndividual
+ResourceEvent : BoundedIndividualMetaClass
+ResourceEvent = AssetType
 
 
 --  ResourceEvent is subTypeOf ResourceFunctionalAsset

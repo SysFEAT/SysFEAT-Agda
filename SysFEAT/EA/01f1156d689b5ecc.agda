@@ -16,23 +16,24 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.01f1156d689b5ecc where -- ========== Control Directive
+module SysFEAT.EA.01f1156d689b5ecc where -- ========== ControlDirective
 
 open import Agda.Primitive
+open import SysFEAT.EA.4b9477ae68a4926d public -- ControlAsset
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.4b9477ae68a4926d public -- Control Asset
-open import SysFEAT.EA.190c57d568976e60 public -- Regulation Article
+open import SysFEAT.EA.190c57d568976e60 public -- RegulationArticle
 
-ControlDirective : PropertyType
-ControlDirective = Property
+ControlDirective : ClassOfMixedOrderEntity
+ControlDirective = MixedOrderEntity
 
---  ControlDirective is subTypeOf Policy
-st-01f1156d689b5ecc-190c7429689664b5 : ControlDirective ⊏ₑ Policy
-st-01f1156d689b5ecc-190c7429689664b5 = polySubTypeOf-identity
 
 --  ControlDirective withAspect ControlAsset
 st-01f1156d689b5ecc-4b9477ae68a4926d : ControlDirective ⊏ₐₑ (ControlAsset (lsuc(lzero)))
 st-01f1156d689b5ecc-4b9477ae68a4926d = polySubTypeOf-identity
+
+--  ControlDirective is subTypeOf Policy
+st-01f1156d689b5ecc-190c7429689664b5 : ControlDirective ⊏ₑ Policy
+st-01f1156d689b5ecc-190c7429689664b5 = polySubTypeOf-identity
 
 
 -- == Relations =======================

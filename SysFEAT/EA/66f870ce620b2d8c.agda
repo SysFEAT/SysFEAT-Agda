@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/66f870ce620b2d8c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.66f870ce620b2d8c where -- ========== Individual Business Software System
+module SysFEAT.EA.66f870ce620b2d8c where -- ========== IndividualBusinessSOftwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
 
-IndividualBusinessSOftwareSystem : ClassOfBoundedIndividual
-IndividualBusinessSOftwareSystem = BoundedIndividual
+IndividualBusinessSOftwareSystem : AssetType
+IndividualBusinessSOftwareSystem = IndividualAsset
 
 
 --  IndividualBusinessSOftwareSystem is subTypeOf DeployedBusinessSystem
@@ -32,7 +32,7 @@ st-66f870ce620b2d8c-3642454f6007e80e = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Software System Type: -}
 sOftwareSystemType :  Linkage IndividualBusinessSOftwareSystem BusinessSOftwareSystem
-sOftwareSystemType = make_instanceOf "Software System Type" "Software System Type"
+sOftwareSystemType = make_Relation "Software System Type" "Software System Type"
 
 postulate -- sOftwareSystemType is subTypeOf businessSystemType
   st-e2dc060266fd4c0c-e2dc074666fd6d03  : sOftwareSystemType  ⊏⋆ᵣ  businessSystemType
@@ -40,18 +40,14 @@ postulate -- sOftwareSystemType is subTypeOf businessSystemType
 -- -------------------------------------------------------------------------------------------- 
 {- Deployed Software Component: -}
 -- Aggregate Member : Deployed Software Component
-DeployedSOftwareComponent : AgentType
-DeployedSOftwareComponent = IndividualAgent
+DeployedSOftwareComponent : AggregateHolonymyType
+DeployedSOftwareComponent = AggregateHolonymy
 
 
 
 --  DeployedSOftwareComponent is subTypeOf DeployedSystemComponent
 st-66f87126620b2f4d-9d38a3d061c41a2b : DeployedSOftwareComponent ⊏ₑ DeployedSystemComponent
 st-66f87126620b2f4d-9d38a3d061c41a2b = polySubTypeOf-identity
-
---  DeployedSOftwareComponent is subTypeOf IndividualBusinessSOftwareSystem
-st-66f87126620b2f4d-66f870ce620b2d8c : DeployedSOftwareComponent ⊏ₑ IndividualBusinessSOftwareSystem
-st-66f87126620b2f4d-66f870ce620b2d8c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDeployedSOftwareComponent :  Linkage IndividualBusinessSOftwareSystem DeployedSOftwareComponent

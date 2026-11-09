@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecaa25f60782d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecaa25f60782d where -- ========== Information Entity Component Data Type
+module SysFEAT.EA.affecaa25f60782d where -- ========== InformationEntityComponentDataType
 
 open import Agda.Primitive
 

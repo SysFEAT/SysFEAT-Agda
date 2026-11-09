@@ -17,11 +17,11 @@ External references:
 module SysFEAT.EA.137d21b55ee2c717 where -- ========== Table
 
 open import Agda.Primitive
-open import SysFEAT.EA.362f3ca45b3b234b public -- Relational Entity
-open import SysFEAT.EA.4619527e560d45eb public -- Logical Data Entity
+open import SysFEAT.EA.362f3ca45b3b234b public -- RelationalEntity
+open import SysFEAT.EA.4619527e560d45eb public -- LogicalDataEntity
 
-Table : ClassOfClassOfBoundedIndividual
-Table = ClassOfBoundedIndividual
+Table : ClassOfMixedOrderEntity
+Table = MixedOrderEntity
 
 
 --  Table is subTypeOf RelationalEntity

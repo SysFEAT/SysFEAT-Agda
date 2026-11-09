@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/d170d3075be72e6b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d170d3075be72e6b where -- ========== Customer Need
+module SysFEAT.EA.d170d3075be72e6b where -- ========== CustomerNeed
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
 CustomerNeed : AssetPropertyType
 CustomerNeed = AssetProperty
@@ -26,4 +26,3 @@ st-d170d3075be72e6b-515c6a856893324e : CustomerNeed ⊏ₑ AssetProperty
 st-d170d3075be72e6b-515c6a856893324e = polySubTypeOf-identity
 
 
--- == Relations =======================

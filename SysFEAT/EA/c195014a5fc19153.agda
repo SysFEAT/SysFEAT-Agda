@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/c195014a5fc19153.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c195014a5fc19153 where -- ========== Data Processing Category
+module SysFEAT.EA.c195014a5fc19153 where -- ========== DataProcessingCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 
-DataProcessingCategory : ClassOfClassOfBoundedIndividual
-DataProcessingCategory = ClassOfBoundedIndividual
+DataProcessingCategory : ClassOfMixedOrderEntity
+DataProcessingCategory = MixedOrderEntity
 
---  DataProcessingCategory withAspect ModelPropertyBlock
-st-c195014a5fc19153-0eb97aff6855cd23 : DataProcessingCategory ⊏ₐₑ (ModelPropertyBlock (lsuc(lzero)))
+
+--  DataProcessingCategory withAspect ModelCategorizationBlock
+st-c195014a5fc19153-0eb97aff6855cd23 : DataProcessingCategory ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
 st-c195014a5fc19153-0eb97aff6855cd23 = polySubTypeOf-identity
 
 

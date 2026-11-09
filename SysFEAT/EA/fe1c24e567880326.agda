@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/fe1c24e567880326.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.fe1c24e567880326 where -- ========== Individual Resource Process
+module SysFEAT.EA.fe1c24e567880326 where -- ========== IndividualResourceProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c250d678803b6 public -- Individual Resource Behavior
-open import SysFEAT.SOF.a273b4f465b7a81f public -- Individual Process
-open import SysFEAT.EA.e2ef095b62147bf9 public -- Resource Action Process
+open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.SOF.a273b4f465b7a81f public -- IndividualProcess
+open import SysFEAT.EA.e2ef095b62147bf9 public -- ResourceActionProcess
 
-IndividualResourceProcess : ActionProcessType
-IndividualResourceProcess = IndividualProcess
+IndividualResourceProcess : BehaviorType
+IndividualResourceProcess = IndividualBehavior
 
 
 --  IndividualResourceProcess is subTypeOf IndividualResourceBehavior
@@ -37,5 +37,5 @@ st-fe1c24e567880326-a273b4f465b7a81f = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Process Type: -}
 resourceProcessType :  Linkage IndividualResourceProcess ResourceActionProcess
-resourceProcessType = make_instanceOf "Resource Process Type" "Resource Process Type"
+resourceProcessType = make_Relation "Resource Process Type" "Resource Process Type"
 

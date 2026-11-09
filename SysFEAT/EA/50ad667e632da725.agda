@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/50ad667e632da725.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.50ad667e632da725 where -- ========== Security Control Family
+module SysFEAT.EA.50ad667e632da725 where -- ========== SecurityControlFamily
 
 open import Agda.Primitive
 

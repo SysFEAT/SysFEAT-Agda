@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Capability: 
- Resource Capability belongs to the Resource Conceptualization Levels as opposed to Business Capability that belongs to the Conceptual .Resource Operating Asset is the supertype of all Capabilitys that are fufilled by Resource Operating Assets.is a Capability that is fullfiled by benefits to Customers (internal or external) of the enterprise. It expresses an ability to produce Resource Outcome Events.This includes; among others, Functionality, Skill and Technology Capability.
+ Resource Capability belongs to the Resource Conceptualization Levels as opposed to Business Capability that belongs to the Conceptual .Resource Operating Asset Type is the supertype of all Capabilitys that are fufilled by Resource Operating Asset Types.is a Capability that is fullfiled by benefits to Customers (internal or external) of the enterprise. It expresses an ability to produce Resource Outcome Events.This includes; among others, Functionality, Skill and Technology Capability.
 
 Documentation : https://framework.sysfeat.com/pages/dd265414689f5987.htm
 
@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/dd265414689f5987.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd265414689f5987 where -- ========== Resource Capability
+module SysFEAT.EA.dd265414689f5987 where -- ========== ResourceCapability
 
 open import Agda.Primitive
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
@@ -41,7 +41,7 @@ postulate -- specializedResourceCapability is subTypeOf specializedCapability
 Aggregate Composition of a Resource Capability.
 -}
 -- Aggregate Member : Resource Capability Part
-ResourceCapabilityPart : ClassOfClassOfAbstractEntity
+ResourceCapabilityPart : AbstractEntityMetaClass
 ResourceCapabilityPart = ClassOfAbstractEntity
 
 

@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/dd27b40768a112f8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd27b40768a112f8 where -- ========== Technology Capability Map
+module SysFEAT.EA.dd27b40768a112f8 where -- ========== TechnologyCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd26307668a065f5 public -- Resource Capability Map
-open import SysFEAT.EA.dd27b08d68a10b12 public -- Technology Capability
+open import SysFEAT.EA.dd26307668a065f5 public -- ResourceCapabilityMap
+open import SysFEAT.EA.dd27b08d68a10b12 public -- TechnologyCapability
 
-TechnologyCapabilityMap : PropertyType
-TechnologyCapabilityMap = Property
+TechnologyCapabilityMap : ClassOfMixedOrderEntity
+TechnologyCapabilityMap = MixedOrderEntity
+
 
 --  TechnologyCapabilityMap is subTypeOf ResourceCapabilityMap
 st-dd27b40768a112f8-dd26307668a065f5 : TechnologyCapabilityMap ⊏ₑ ResourceCapabilityMap
@@ -31,8 +32,9 @@ st-dd27b40768a112f8-dd26307668a065f5 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Tehnology Capability Member: -}
 -- Aggregate Member : Tehnology Capability Member
-TehnologyCapabilityMember : ClassOfClassOfIndividual
-TehnologyCapabilityMember = ClassOfIndividual
+TehnologyCapabilityMember : ClassOfMixedOrderEntity
+TehnologyCapabilityMember = MixedOrderEntity
+
 
 
 --  TehnologyCapabilityMember is subTypeOf ResourceCapabilityMember

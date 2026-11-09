@@ -14,16 +14,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f8e62fc5621fdcf4 where -- ========== Resource Operating Environment
+module SysFEAT.EA.f8e62fc5621fdcf4 where -- ========== ResourceOperatingEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d6cd0fd95ab9744b public -- Agent Type Environment
-open import SysFEAT.EA.f8e64b51621dd3f3 public -- Resource Operating Ecosystem
-open import SysFEAT.EA.6a70c21067876cd8 public -- Resource Service Interface
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.SOF.d6cd0fd95ab9744b public -- AgentTypeEnvironment
+open import SysFEAT.EA.f8e64b51621dd3f3 public -- ResourceOperatingEcosystem
+open import SysFEAT.EA.6a70c21067876cd8 public -- ResourceServiceInterface
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-ResourceOperatingEnvironment : ClassOfClassOfBoundedIndividual
-ResourceOperatingEnvironment = ClassOfBoundedIndividual
+ResourceOperatingEnvironment : BoundedIndividualMetaClass
+ResourceOperatingEnvironment = AssetType
 
 
 --  ResourceOperatingEnvironment is subTypeOf AgentTypeEnvironment
@@ -56,16 +56,17 @@ postulate -- realizedEnterpriseEnvironment is subTypeOf realizedOperatingEnviron
 -- -------------------------------------------------------------------------------------------- 
 {- Business Service Channel: -}
 -- Aggregate Member : Business Service Channel
-BusinessServiceChannel : ClassOfClassOfIndividual
-BusinessServiceChannel = ClassOfIndividual
+BusinessServiceChannel : ClassOfMixedOrderEntity
+BusinessServiceChannel = MixedOrderEntity
+
 
 
 --  BusinessServiceChannel is subTypeOf ServiceChannel
 st-2b6f436f61bafb0b-80be29065fc2a83d : BusinessServiceChannel ⊏ₑ ServiceChannel
 st-2b6f436f61bafb0b-80be29065fc2a83d = polySubTypeOf-identity
 
---  BusinessServiceChannel is subTypeOf EnterpriseEcosystemConnection
-st-2b6f436f61bafb0b-f8e7b91f621f01e9 : BusinessServiceChannel ⊏ₑ EnterpriseEcosystemConnection
+--  BusinessServiceChannel is subTypeOf ResourceEcosystemConnection
+st-2b6f436f61bafb0b-f8e7b91f621f01e9 : BusinessServiceChannel ⊏ₑ ResourceEcosystemConnection
 st-2b6f436f61bafb0b-f8e7b91f621f01e9 = polySubTypeOf-identity
 
 --  BusinessServiceChannel is subTypeOf BusinessEcosystemConnection
@@ -93,8 +94,8 @@ businessServiceChannel = membershipOfBusinessServiceChannel  ∘  aggregationOfR
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Resource Agent: -}
 -- Aggregate Member : Subject Resource Agent
-SubjectResourceAgent : ClassOfClassOfBoundedIndividual
-SubjectResourceAgent = ClassOfBoundedIndividual
+SubjectResourceAgent : ClassOfMixedOrderEntity
+SubjectResourceAgent = MixedOrderEntity
 
 
 
@@ -105,10 +106,6 @@ st-f8e6390c621fddf1-fa4ffc205ec86201 = polySubTypeOf-identity
 --  SubjectResourceAgent is subTypeOf ParticipantEnterpriseAgent
 st-f8e6390c621fddf1-2b6f42fc61baf9b7 : SubjectResourceAgent ⊏ₑ ParticipantEnterpriseAgent
 st-f8e6390c621fddf1-2b6f42fc61baf9b7 = polySubTypeOf-identity
-
---  SubjectResourceAgent is subTypeOf ResourceAgentType
-st-f8e6390c621fddf1-e2ef091962147ad7 : SubjectResourceAgent ⊏ₑ ResourceAgentType
-st-f8e6390c621fddf1-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectResourceAgent :  Linkage ResourceOperatingEnvironment SubjectResourceAgent
@@ -131,8 +128,8 @@ subjectResourceAgent = membershipOfSubjectResourceAgent  ∘  aggregationOfResou
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Resource Agent: -}
 -- Aggregate Member : Partner Resource Agent
-PartnerResourceAgent : ClassOfClassOfBoundedIndividual
-PartnerResourceAgent = ClassOfBoundedIndividual
+PartnerResourceAgent : ClassOfMixedOrderEntity
+PartnerResourceAgent = MixedOrderEntity
 
 
 
@@ -143,10 +140,6 @@ st-f8e63939621fdefd-fa4ffc235ec86276 = polySubTypeOf-identity
 --  PartnerResourceAgent is subTypeOf ParticipantEnterpriseAgent
 st-f8e63939621fdefd-2b6f42fc61baf9b7 : PartnerResourceAgent ⊏ₑ ParticipantEnterpriseAgent
 st-f8e63939621fdefd-2b6f42fc61baf9b7 = polySubTypeOf-identity
-
---  PartnerResourceAgent is subTypeOf ResourceAgentType
-st-f8e63939621fdefd-e2ef091962147ad7 : PartnerResourceAgent ⊏ₑ ResourceAgentType
-st-f8e63939621fdefd-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerResourceAgent :  Linkage ResourceOperatingEnvironment PartnerResourceAgent
@@ -169,8 +162,8 @@ partnerResourceAgent = membershipOfPartnerResourceAgent  ∘  aggregationOfResou
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Enterprise Agent: -}
 -- Aggregate Member : Participant Enterprise Agent
-ParticipantEnterpriseAgent : ClassOfClassOfBoundedIndividual
-ParticipantEnterpriseAgent = ClassOfBoundedIndividual
+ParticipantEnterpriseAgent : ClassOfMixedOrderEntity
+ParticipantEnterpriseAgent = MixedOrderEntity
 
 
 
@@ -178,17 +171,13 @@ ParticipantEnterpriseAgent = ClassOfBoundedIndividual
 st-2b6f42fc61baf9b7-80be28965fc2a6b8 : ParticipantEnterpriseAgent ⊏ₑ ParticipantAgent
 st-2b6f42fc61baf9b7-80be28965fc2a6b8 = polySubTypeOf-identity
 
---  ParticipantEnterpriseAgent is subTypeOf EnterpriseEcosystemPart
-st-2b6f42fc61baf9b7-f8e6b83c621fffe6 : ParticipantEnterpriseAgent ⊏ₑ EnterpriseEcosystemPart
+--  ParticipantEnterpriseAgent is subTypeOf ResourceEcosystemPart
+st-2b6f42fc61baf9b7-f8e6b83c621fffe6 : ParticipantEnterpriseAgent ⊏ₑ ResourceEcosystemPart
 st-2b6f42fc61baf9b7-f8e6b83c621fffe6 = polySubTypeOf-identity
 
 --  ParticipantEnterpriseAgent is subTypeOf ResourceEcosystemPart
 st-2b6f42fc61baf9b7-95129626620b544c : ParticipantEnterpriseAgent ⊏ₑ ResourceEcosystemPart
 st-2b6f42fc61baf9b7-95129626620b544c = polySubTypeOf-identity
-
---  ParticipantEnterpriseAgent is subTypeOf ResourceAgentType
-st-2b6f42fc61baf9b7-e2ef091962147ad7 : ParticipantEnterpriseAgent ⊏ₑ ResourceAgentType
-st-2b6f42fc61baf9b7-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantEnterpriseAgent :  Linkage ResourceOperatingEnvironment ParticipantEnterpriseAgent

@@ -17,18 +17,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9e38352f6192f750 where -- ========== Data Center
+module SysFEAT.EA.9e38352f6192f750 where -- ========== DataCenter
 
 open import Agda.Primitive
-open import SysFEAT.EA.c80a413e678594ec public -- Individual Facility
-open import SysFEAT.EA.56cd60a95c513aaf public -- Deployed Application
-open import SysFEAT.EA.56cd60f85c513b04 public -- Deployed Server
+open import SysFEAT.EA.c80a413e678594ec public -- IndividualFacility
+open import SysFEAT.EA.56cd60a95c513aaf public -- DeployedApplication
+open import SysFEAT.EA.56cd60f85c513b04 public -- DeployedServer
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
-open import SysFEAT.EA.affeb2255f6051e6 public -- Deployed Data Store
+open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
 open import SysFEAT.EA.f4be0e865ee1d53b public -- Facility
 
-DataCenter : ClassOfBoundedIndividual
-DataCenter = BoundedIndividual
+DataCenter : AssetType
+DataCenter = IndividualAsset
 
 
 --  DataCenter is subTypeOf IndividualFacility
@@ -65,5 +65,5 @@ hostedDataStore = make_holonymyRelation "Hosted Data Store" "Hosted Data Store"
 -- -------------------------------------------------------------------------------------------- 
 {- Data Center Type: -}
 dataCenterType :  Linkage DataCenter Facility
-dataCenterType = make_instanceOf "Data Center Type" "Data Center Type"
+dataCenterType = make_Relation "Data Center Type" "Data Center Type"
 

@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.97f8985d65ae4d42 where -- ========== Technology Process
+module SysFEAT.EA.97f8985d65ae4d42 where -- ========== TechnologyProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.97f89a8865ae5279 public -- Technology Behavior
-open import SysFEAT.EA.e2ef095b62147bf9 public -- Resource Action Process
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
+open import SysFEAT.EA.97f89a8865ae5279 public -- TechnologyBehavior
+open import SysFEAT.EA.e2ef095b62147bf9 public -- ResourceActionProcess
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
 
-TechnologyProcess : ClassOfClassOfBoundedIndividual
-TechnologyProcess = ClassOfBoundedIndividual
+TechnologyProcess : BoundedIndividualMetaClass
+TechnologyProcess = AssetType
 
 
 --  TechnologyProcess is subTypeOf TechnologyBehavior
@@ -40,14 +40,9 @@ st-97f8985d65ae4d42-e2ef095b62147bf9 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- System Participant: -}
 -- Aggregate Member : System Participant
-SystemParticipant : ClassOfClassOfBoundedIndividual
-SystemParticipant = ClassOfBoundedIndividual
+SystemParticipant : ClassOfClassOfIndividual
+SystemParticipant = ClassOfIndividual
 
-
-
---  SystemParticipant is subTypeOf TechnologySystem
-st-97f899e565ae4fc4-0cbd1fa663fe18ac : SystemParticipant ⊏ₑ TechnologySystem
-st-97f899e565ae4fc4-0cbd1fa663fe18ac = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemParticipant :  Linkage TechnologyProcess SystemParticipant

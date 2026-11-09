@@ -18,7 +18,7 @@ External references:
 module SysFEAT.EA.df7ce6c363682f79 where -- ========== Requirement
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
 Requirement : AssetPropertyType
 Requirement = AssetProperty
@@ -29,4 +29,3 @@ st-df7ce6c363682f79-515c6a856893324e : Requirement ⊏ₑ AssetProperty
 st-df7ce6c363682f79-515c6a856893324e = polySubTypeOf-identity
 
 
--- == Relations =======================

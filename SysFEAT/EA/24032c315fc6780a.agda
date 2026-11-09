@@ -15,13 +15,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.24032c315fc6780a where -- ========== Transformation Program
+module SysFEAT.EA.24032c315fc6780a where -- ========== TransformationProgram
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
 open import SysFEAT.EA.84c799c1664d8b2f public -- Epic
-open import SysFEAT.EA.22ba264367643346 public -- Technology Portfolio Stage
-open import SysFEAT.EA.2b5887d05ef07b3b public -- Program Asset
+open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
+open import SysFEAT.EA.22ba264367643346 public -- TechnologyPortfolioStage
 
 TransformationProgram : ClassOfBoundedIndividual
 TransformationProgram = BoundedIndividual
@@ -39,15 +39,15 @@ st-24032c315fc6780a-84c799c1664d8b2f = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Packaged Program Asset: -}
+packagedProgramAsset : ∀ {u} →  Linkage TransformationProgram (ProgramAsset u)
+packagedProgramAsset = make_nestingRelation "Packaged Program Asset" "Packaged Program Asset"
+
+postulate -- packagedProgramAsset is subTypeOf packagedInitiativeResource
+  st-52e0b1b76abf4cfa-01ce058868597974  : packagedProgramAsset  ⊏⋆ᵣ  packagedInitiativeResource
+
+-- -------------------------------------------------------------------------------------------- 
 {- Roadmap: -}
 roadmap :  Linkage TransformationProgram TechnologyPortfolioStage
 roadmap = make_holonymyRelation "Roadmap" "Roadmap"
 
-
--- -------------------------------------------------------------------------------------------- 
-{- Owned Program Block: -}
-ownedProgramBlock :  Linkage TransformationProgram ProgramAsset
-ownedProgramBlock = make_holonymyRelation "Owned Program Block" "Owned Program Block"
-
-postulate -- ownedProgramBlock is subTypeOf packagedInitiativeResource
-  st-2b5887fc5ef07c71-01ce058868597974  : ownedProgramBlock  ⊏⋆ᵣ  packagedInitiativeResource

@@ -12,27 +12,29 @@ Documentation : https://framework.sysfeat.com/pages/0520133e66474954.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0520133e66474954 where -- ========== Asset Portfolio Stage
+module SysFEAT.EA.0520133e66474954 where -- ========== AssetPortfolioStage
 
 open import Agda.Primitive
-open import SysFEAT.EA.05200e1c66474509 public -- Management Stage
-open import SysFEAT.EA.05201bc866475765 public -- Asset Management Initiative
-open import SysFEAT.EA.dd265414689f5987 public -- Resource Capability
+open import SysFEAT.EA.05200e1c66474509 public -- ManagementStage
+open import SysFEAT.EA.05201bc866475765 public -- AssetManagementInitiative
+open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
 
-AssetPortfolioStage : ClassOfBoundedIndividual
-AssetPortfolioStage = BoundedIndividual
+AssetPortfolioStage : StateClass
+AssetPortfolioStage = IndividualState
 
 
 --  AssetPortfolioStage is subTypeOf ManagementStage
 st-0520133e66474954-05200e1c66474509 : AssetPortfolioStage ⊏ₑ ManagementStage
 st-0520133e66474954-05200e1c66474509 = polySubTypeOf-identity
 
---  AssetPortfolioStage is subTypeOf AssetManagementInitiative
-st-0520133e66474954-05201bc866475765 : AssetPortfolioStage ⊏ₑ AssetManagementInitiative
-st-0520133e66474954-05201bc866475765 = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Asset Management Initiative: -}
+stateOfAssetManagementInitiative :  Linkage AssetPortfolioStage AssetManagementInitiative
+stateOfAssetManagementInitiative = make_meronymyRelation "State of Asset Management Initiative" "State of Asset Management Initiative"
+
 
 -- -------------------------------------------------------------------------------------------- 
 {- Exhibited Resource Capability: -}

@@ -14,14 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d5e6d7de5c464b02 where -- ========== Application Deployment Environment
+module SysFEAT.EA.d5e6d7de5c464b02 where -- ========== ApplicationDeploymentEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.108442775fce4918 public -- Software Deployment Environment
-open import SysFEAT.EA.d5e6d7c65c464ae3 public -- Application Deployment Architecture
+open import SysFEAT.EA.108442775fce4918 public -- SOftwareDeploymentEnvironment
+open import SysFEAT.EA.d5e6d7c65c464ae3 public -- ApplicationDeploymentArchitecture
 
-ApplicationDeploymentEnvironment : ClassOfClassOfBoundedIndividual
-ApplicationDeploymentEnvironment = ClassOfBoundedIndividual
+ApplicationDeploymentEnvironment : BoundedIndividualMetaClass
+ApplicationDeploymentEnvironment = AssetType
 
 
 --  ApplicationDeploymentEnvironment is subTypeOf SOftwareDeploymentEnvironment
@@ -34,14 +34,9 @@ st-d5e6d7de5c464b02-108442775fce4918 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Application Deployment: -}
 -- Aggregate Member : Subject Application Deployment
-SubjectApplicationDeployment : ClassOfClassOfBoundedIndividual
-SubjectApplicationDeployment = ClassOfBoundedIndividual
+SubjectApplicationDeployment : ClassOfClassOfIndividual
+SubjectApplicationDeployment = ClassOfIndividual
 
-
-
---  SubjectApplicationDeployment is subTypeOf ApplicationDeploymentArchitecture
-st-624e69095ed96e51-d5e6d7c65c464ae3 : SubjectApplicationDeployment ⊏ₑ ApplicationDeploymentArchitecture
-st-624e69095ed96e51-d5e6d7c65c464ae3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectApplicationDeployment :  Linkage ApplicationDeploymentEnvironment SubjectApplicationDeployment
@@ -64,14 +59,9 @@ subjectApplicationDeployment = membershipOfSubjectApplicationDeployment  ∘  ag
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Deployment Architecture: -}
 -- Aggregate Member : Partner Deployment Architecture
-PartnerDeploymentArchitecture : ClassOfClassOfBoundedIndividual
-PartnerDeploymentArchitecture = ClassOfBoundedIndividual
+PartnerDeploymentArchitecture : ClassOfClassOfIndividual
+PartnerDeploymentArchitecture = ClassOfIndividual
 
-
-
---  PartnerDeploymentArchitecture is subTypeOf ApplicationDeploymentArchitecture
-st-624e69885ed96fb6-d5e6d7c65c464ae3 : PartnerDeploymentArchitecture ⊏ₑ ApplicationDeploymentArchitecture
-st-624e69885ed96fb6-d5e6d7c65c464ae3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerDeploymentArchitecture :  Linkage ApplicationDeploymentEnvironment PartnerDeploymentArchitecture

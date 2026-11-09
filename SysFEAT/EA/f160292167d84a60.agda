@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/f160292167d84a60.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f160292167d84a60 where -- ========== Compliance Assessment
+module SysFEAT.EA.f160292167d84a60 where -- ========== ComplianceAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
-open import SysFEAT.EA.07ca19e95dd854e9 public -- Assurance Case
+open import SysFEAT.EA.07ca19e95dd854e9 public -- AssuranceCase
 
-ComplianceAssessment : ClassOfBoundedIndividual
-ComplianceAssessment = BoundedIndividual
+ComplianceAssessment : ClassOfIndividual
+ComplianceAssessment = Individual
 
 
 --  ComplianceAssessment is subTypeOf Assessment
@@ -32,5 +32,5 @@ st-f160292167d84a60-3b539cbb551e4c2a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Assurance Case: -}
 assuranceCase :  Linkage ComplianceAssessment AssuranceCase
-assuranceCase = make_instanceOf "Assurance Case" "Assurance Case"
+assuranceCase = make_Relation "Assurance Case" "Assurance Case"
 

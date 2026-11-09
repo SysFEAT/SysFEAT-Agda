@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/7a22a5c95fdbb655.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a22a5c95fdbb655 where -- ========== Risk Likelihood
+module SysFEAT.EA.7a22a5c95fdbb655 where -- ========== RiskLikelihood
 
 open import Agda.Primitive
 

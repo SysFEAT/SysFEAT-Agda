@@ -12,19 +12,19 @@ Documentation : https://framework.sysfeat.com/pages/8180baa3600110c8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8180baa3600110c8 where -- ========== NoSQL Element
+module SysFEAT.EA.8180baa3600110c8 where -- ========== NoSQLElement
 
 open import Agda.Primitive
-open import SysFEAT.EA.77318c6c62167dd7 public -- NoSQL Data Asset
-open import SysFEAT.EA.7d37d08d5fd07aaa public -- Physical Data Asset
+open import SysFEAT.EA.d874be1f6ab728a2 public -- NoSQLDataAsset
+open import SysFEAT.EA.7d37d08d5fd07aaa public -- PhysicalDataAsset
 
-NoSQLElement : ClassOfClassOfBoundedIndividual
-NoSQLElement = ClassOfBoundedIndividual
+NoSQLElement : ClassOfMixedOrderEntity
+NoSQLElement = MixedOrderEntity
 
 
---  NoSQLElement is subTypeOf NoSQLDataAsset
-st-8180baa3600110c8-77318c6c62167dd7 : NoSQLElement ⊏⋆ₑ NoSQLDataAsset
-st-8180baa3600110c8-77318c6c62167dd7 = polySubTypeOf-identity
+--  NoSQLElement withAspect NoSQLDataAsset
+st-8180baa3600110c8-d874be1f6ab728a2 : NoSQLElement ⊏ₐₑ (NoSQLDataAsset (lsuc(lzero)))
+st-8180baa3600110c8-d874be1f6ab728a2 = polySubTypeOf-identity
 
 --  NoSQLElement is subTypeOf PhysicalDataAsset
 st-8180baa3600110c8-7d37d08d5fd07aaa : NoSQLElement ⊏ₑ PhysicalDataAsset
@@ -38,18 +38,14 @@ st-8180baa3600110c8-7d37d08d5fd07aaa = polySubTypeOf-identity
 A MetaData Object Member is a characteristic of a NoSQL Element.It can be either an Identification MetaField or a Relationship MetaField or a Value MetaField.
 -}
 -- Aggregate Member : MetaData Object Member
-MetaDataObjectMember : ClassOfClassOfBoundedIndividual
-MetaDataObjectMember = ClassOfBoundedIndividual
+MetaDataObjectMember : ClassOfMixedOrderEntity
+MetaDataObjectMember = MixedOrderEntity
 
 
 
 --  MetaDataObjectMember is subTypeOf PhysicalDataMember
 st-05b0b95c6006bc80-163c29e85fda678c : MetaDataObjectMember ⊏ₑ PhysicalDataMember
 st-05b0b95c6006bc80-163c29e85fda678c = polySubTypeOf-identity
-
---  MetaDataObjectMember is subTypeOf NoSQLElement
-st-05b0b95c6006bc80-8180baa3600110c8 : MetaDataObjectMember ⊏ₑ NoSQLElement
-st-05b0b95c6006bc80-8180baa3600110c8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfMetaDataObjectMember :  Linkage NoSQLElement MetaDataObjectMember

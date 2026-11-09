@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c80a7be56785c09b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a7be56785c09b where -- ========== Deployed Hardware System
+module SysFEAT.EA.c80a7be56785c09b where -- ========== DeployedHardwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.c30bf4015a5da72b public -- Concrete Hardware System
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
 
-DeployedHardwareSystem : ClassOfBoundedIndividual
-DeployedHardwareSystem = BoundedIndividual
+DeployedHardwareSystem : AssetType
+DeployedHardwareSystem = IndividualAsset
 
 
 --  DeployedHardwareSystem is subTypeOf DeployedBusinessSystem
@@ -32,7 +32,7 @@ st-c80a7be56785c09b-3642454f6007e80e = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Hardware Type: -}
 hardwareType :  Linkage DeployedHardwareSystem ConcreteHardwareSystem
-hardwareType = make_instanceOf "Hardware Type" "Hardware Type"
+hardwareType = make_Relation "Hardware Type" "Hardware Type"
 
 postulate -- hardwareType is subTypeOf businessSystemType
   st-c80a7d4f6785c18f-e2dc074666fd6d03  : hardwareType  ⊏⋆ᵣ  businessSystemType

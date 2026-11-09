@@ -13,7 +13,7 @@ Documentation : https://framework.sysfeat.com/pages/2b58a67a5eec0662.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-2b58a67a5eec0662 where -- ========== EA Pattern - Data Domain
 
-open import SysFEAT.EA.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
+open import SysFEAT.C-SOF.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
 open import SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 public -- Information Assets
 open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
 open import SysFEAT.SOF.sysfeat-domain-8d6d915c685f8689 public -- Information Packaging

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/fe1c250d678803b6.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.fe1c250d678803b6 where -- ========== Individual Resource Behavior
+module SysFEAT.EA.fe1c250d678803b6 where -- ========== IndividualResourceBehavior
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c24fa6788036e public -- Individual Resource Asset
-open import SysFEAT.SOF.e9af119866e86785 public -- Individual Behavior
+open import SysFEAT.EA.fe1c24fa6788036e public -- IndividualResourceAsset
+open import SysFEAT.SOF.e9af119866e86785 public -- IndividualBehavior
 
-IndividualResourceBehavior : ClassOfBoundedIndividual
-IndividualResourceBehavior = BoundedIndividual
+IndividualResourceBehavior : BehaviorType
+IndividualResourceBehavior = IndividualBehavior
 
 
 --  IndividualResourceBehavior is subTypeOf IndividualResourceAsset

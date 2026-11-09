@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecc0a5f607b6c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecc0a5f607b6c where -- ========== Number of Nulls
+module SysFEAT.EA.affecc0a5f607b6c where -- ========== NumberOfNulls
 
 open import Agda.Primitive
 

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecbbe5f607a1f.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecbbe5f607a1f where -- ========== Minimum Value
+module SysFEAT.EA.affecbbe5f607a1f where -- ========== MinimumValue
 
 open import Agda.Primitive
 

@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/0463ea9a63fd8b6c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0463ea9a63fd8b6c where -- ========== Software Technology System
+module SysFEAT.EA.0463ea9a63fd8b6c where -- ========== SOftwareTechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
-open import SysFEAT.EA.24035cc65fc7ad7f public -- Concrete Software System
-open import SysFEAT.EA.624e6ac55ed972a7 public -- Physical Software Interface
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
+open import SysFEAT.EA.24035cc65fc7ad7f public -- ConcreteSOftwareSystem
+open import SysFEAT.EA.624e6ac55ed972a7 public -- PhysicalSOftwareInterface
 
-SOftwareTechnologySystem : ClassOfClassOfBoundedIndividual
-SOftwareTechnologySystem = ClassOfBoundedIndividual
+SOftwareTechnologySystem : BoundedIndividualMetaClass
+SOftwareTechnologySystem = AssetType
 
 
 --  SOftwareTechnologySystem is subTypeOf TechnologySystem
@@ -68,18 +68,14 @@ sOftwareTechnologyConnection = membershipOfSOftwareTechnologyConnection  ∘  ag
 Kind of artifact that provides technical functionalities to other artifacts and that is not directly used by humans to achieve their duty.
 -}
 -- Aggregate Member : Software System Part
-SOftwareSystemPart : ClassOfClassOfBoundedIndividual
-SOftwareSystemPart = ClassOfBoundedIndividual
+SOftwareSystemPart : ClassOfClassOfIndividual
+SOftwareSystemPart = ClassOfIndividual
 
 
 
 --  SOftwareSystemPart is subTypeOf TechnologySystemMember
 st-24035e705fc7afb1-d1600a8f62e08fb2 : SOftwareSystemPart ⊏ₑ TechnologySystemMember
 st-24035e705fc7afb1-d1600a8f62e08fb2 = polySubTypeOf-identity
-
---  SOftwareSystemPart is subTypeOf SOftwareTechnologySystem
-st-24035e705fc7afb1-0463ea9a63fd8b6c : SOftwareSystemPart ⊏ₑ SOftwareTechnologySystem
-st-24035e705fc7afb1-0463ea9a63fd8b6c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSOftwareSystemPart :  Linkage SOftwareTechnologySystem SOftwareSystemPart

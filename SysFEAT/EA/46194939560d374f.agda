@@ -16,18 +16,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.46194939560d374f where -- ========== System Process
+module SysFEAT.EA.46194939560d374f where -- ========== SystemProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.7c40c3c85527466b public -- Business Resource Process
-open import SysFEAT.EA.6246927f61b81996 public -- Business System Asset
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.302238be5ec9020a public -- Information Outcome Event
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
+open import SysFEAT.EA.7c40c3c85527466b public -- BusinessResourceProcess
+open import SysFEAT.EA.6246927f61b81996 public -- BusinessSystemAsset
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.EA.302238be5ec9020a public -- InformationOutcomeEvent
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
 
-SystemProcess : ClassOfClassOfBoundedIndividual
-SystemProcess = ClassOfBoundedIndividual
+SystemProcess : BoundedIndividualMetaClass
+SystemProcess = AssetType
 
 
 --  SystemProcess is subTypeOf BusinessResourceProcess
@@ -54,8 +54,9 @@ postulate -- specializedSytemProcess is subTypeOf specializedResourceProcess
 -- -------------------------------------------------------------------------------------------- 
 {- System Sequence: -}
 -- Aggregate Member : System Sequence
-SystemSequence : ClassOfClassOfIndividual
-SystemSequence = ClassOfIndividual
+SystemSequence : TemporalOrderingType
+SystemSequence = TemporalOrdering
+
 
 
 --  SystemSequence is subTypeOf ResourceActivitySequence
@@ -83,8 +84,9 @@ systemSequence = membershipOfSystemSequence  ∘  aggregationOfBehavioralEventSy
 -- -------------------------------------------------------------------------------------------- 
 {- System Flow: -}
 -- Aggregate Member : System Flow
-SystemFlow : ClassOfClassOfIndividual
-SystemFlow = ClassOfIndividual
+SystemFlow : TemporalOrderingType
+SystemFlow = TemporalOrdering
+
 
 
 --  SystemFlow is subTypeOf ResourceFlow
@@ -114,18 +116,14 @@ systemFlow = membershipOfSystemFlow  ∘  aggregationOfInformationOutcomeEventSy
 A participant defines a partition of the actions of a process that will be assigned to a same agent.A participant can be decomposed into sub-partition to delegate responsibility for a subset of its actions.
 -}
 -- Aggregate Member : System Process Participant
-SystemProcessParticipant : ClassOfClassOfBoundedIndividual
-SystemProcessParticipant = ClassOfBoundedIndividual
+SystemProcessParticipant : ClassOfClassOfIndividual
+SystemProcessParticipant = ClassOfIndividual
 
 
 
 --  SystemProcessParticipant is subTypeOf ParticipantBusinessAgent
 st-0c9b0d1b5ebd8260-b4ebbe325ffdca40 : SystemProcessParticipant ⊏ₑ ParticipantBusinessAgent
 st-0c9b0d1b5ebd8260-b4ebbe325ffdca40 = polySubTypeOf-identity
-
---  SystemProcessParticipant is subTypeOf BusinessSystem
-st-0c9b0d1b5ebd8260-278675d65b252f4d : SystemProcessParticipant ⊏ₑ BusinessSystem
-st-0c9b0d1b5ebd8260-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemProcessParticipant :  Linkage SystemProcess SystemProcessParticipant
@@ -150,18 +148,14 @@ systemProcessParticipant = membershipOfSystemProcessParticipant  ∘  aggregatio
 Elementary step that is included within a system process. A task is used when the work in the system process is not broken down to a finer level of the process. Generally, an end-user and/or an IT service are used to perform the task when it is executed.
 -}
 -- Aggregate Member : System Process Step
-SystemProcessStep : ClassOfClassOfBoundedIndividual
-SystemProcessStep = ClassOfBoundedIndividual
+SystemProcessStep : ClassOfClassOfIndividual
+SystemProcessStep = ClassOfIndividual
 
 
 
 --  SystemProcessStep is subTypeOf BusinessResourceProcessStep
 st-0c9b0d8c5ebd83f7-b4ebbe6b5ffdcb19 : SystemProcessStep ⊏ₑ BusinessResourceProcessStep
 st-0c9b0d8c5ebd83f7-b4ebbe6b5ffdcb19 = polySubTypeOf-identity
-
---  SystemProcessStep is subTypeOf SystemProcess
-st-0c9b0d8c5ebd83f7-46194939560d374f : SystemProcessStep ⊏ₑ SystemProcess
-st-0c9b0d8c5ebd83f7-46194939560d374f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemProcessStep :  Linkage SystemProcess SystemProcessStep
@@ -184,17 +178,14 @@ systemProcessStep = membershipOfSystemProcessStep  ∘  aggregationOfSystemProce
 -- -------------------------------------------------------------------------------------------- 
 {- Data Store: -}
 -- Aggregate Member : Data Store
-DataStore : ClassOfClassOfIndividual
-DataStore = ClassOfIndividual
+DataStore : ClassOfMixedOrderEntity
+DataStore = MixedOrderEntity
+
 
 
 --  DataStore is subTypeOf BusinessDataStore
 st-ca9de7d65fcf44b7-b4ebd0e45ffdef12 : DataStore ⊏ₑ BusinessDataStore
 st-ca9de7d65fcf44b7-b4ebd0e45ffdef12 = polySubTypeOf-identity
-
---  DataStore is subTypeOf PhysicalDataDomain
-st-ca9de7d65fcf44b7-028f03ff5b4f55ee : DataStore ⊏ₑ PhysicalDataDomain
-st-ca9de7d65fcf44b7-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataStore :  Linkage SystemProcess DataStore

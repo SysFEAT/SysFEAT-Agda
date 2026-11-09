@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6246167661ba2d05 where -- ========== Application Scenario
+module SysFEAT.EA.6246167661ba2d05 where -- ========== ApplicationScenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c09cb461e2efd3 public -- Software System Scenario
+open import SysFEAT.EA.25c09cb461e2efd3 public -- SOftwareSystemScenario
 open import SysFEAT.EA.d6a956495a395d28 public -- MicroService
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
 
-ApplicationScenario : ClassOfClassOfBoundedIndividual
-ApplicationScenario = ClassOfBoundedIndividual
+ApplicationScenario : BoundedIndividualMetaClass
+ApplicationScenario = AssetType
 
 
 --  ApplicationScenario is subTypeOf SOftwareSystemScenario
@@ -36,18 +36,14 @@ st-6246167661ba2d05-25c09cb461e2efd3 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Participant IT Service: -}
 -- Aggregate Member : Participant IT Service
-ParticipantITService : ClassOfClassOfBoundedIndividual
-ParticipantITService = ClassOfBoundedIndividual
+ParticipantITService : ClassOfClassOfIndividual
+ParticipantITService = ClassOfIndividual
 
 
 
 --  ParticipantITService is subTypeOf ParticipantSOftware
 st-6246173661ba2ed4-25c1b19061e21ed1 : ParticipantITService ⊏ₑ ParticipantSOftware
 st-6246173661ba2ed4-25c1b19061e21ed1 = polySubTypeOf-identity
-
---  ParticipantITService is subTypeOf MicroService
-st-6246173661ba2ed4-d6a956495a395d28 : ParticipantITService ⊏ₑ MicroService
-st-6246173661ba2ed4-d6a956495a395d28 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantITService :  Linkage ApplicationScenario ParticipantITService
@@ -70,18 +66,14 @@ participantITService = membershipOfParticipantITService  ∘  aggregationOfMicro
 -- -------------------------------------------------------------------------------------------- 
 {- Performed Scenario: -}
 -- Aggregate Member : Performed Scenario
-PerformedScenario : ClassOfClassOfBoundedIndividual
-PerformedScenario = ClassOfBoundedIndividual
+PerformedScenario : ClassOfClassOfIndividual
+PerformedScenario = ClassOfIndividual
 
 
 
 --  PerformedScenario is subTypeOf PerformedSOftwareSystemScenario
 st-25c1bac961e23189-25c1b2d361e22368 : PerformedScenario ⊏ₑ PerformedSOftwareSystemScenario
 st-25c1bac961e23189-25c1b2d361e22368 = polySubTypeOf-identity
-
---  PerformedScenario is subTypeOf Application
-st-25c1bac961e23189-bcebd8e9549144db : PerformedScenario ⊏ₑ Application
-st-25c1bac961e23189-bcebd8e9549144db = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedScenario :  Linkage ApplicationScenario PerformedScenario

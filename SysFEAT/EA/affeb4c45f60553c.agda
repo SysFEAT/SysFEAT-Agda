@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/affeb4c45f60553c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affeb4c45f60553c where -- ========== Data Field Snapshot
+module SysFEAT.EA.affeb4c45f60553c where -- ========== DataFieldSnapshot
 
 open import Agda.Primitive
-open import SysFEAT.EA.762580705f6bd560 public -- Data Source Snaphot Item
+open import SysFEAT.EA.762580705f6bd560 public -- DataSourceSnaphotItem
 
 DataFieldSnapshot : ClassOfBoundedIndividual
 DataFieldSnapshot = BoundedIndividual

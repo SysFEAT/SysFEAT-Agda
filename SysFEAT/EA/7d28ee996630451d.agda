@@ -12,63 +12,29 @@ Documentation : https://framework.sysfeat.com/pages/7d28ee996630451d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d28ee996630451d where -- ========== Enterprise Stage
+module SysFEAT.EA.7d28ee996630451d where -- ========== EnterpriseStage
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e78c5eb0661989f9 public -- Initiative Stage
-open import SysFEAT.EA.036a3de3548f229e public -- Enterprise Initiative
-open import SysFEAT.EA.fe1c250d678803b6 public -- Individual Resource Behavior
-open import SysFEAT.EA.21ed240a689c08df public -- Value Proposition
+open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
+open import SysFEAT.EA.036a3de3548f229e public -- EnterpriseInitiative
+open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
+open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
 
-EnterpriseStage : ClassOfBoundedIndividual
-EnterpriseStage = BoundedIndividual
+EnterpriseStage : StateClass
+EnterpriseStage = IndividualState
 
 
 --  EnterpriseStage is subTypeOf InitiativeStage
 st-7d28ee996630451d-e78c5eb0661989f9 : EnterpriseStage ⊏ₑ InitiativeStage
 st-7d28ee996630451d-e78c5eb0661989f9 = polySubTypeOf-identity
 
---  EnterpriseStage is subTypeOf EnterpriseInitiative
-st-7d28ee996630451d-036a3de3548f229e : EnterpriseStage ⊏ₑ EnterpriseInitiative
-st-7d28ee996630451d-036a3de3548f229e = polySubTypeOf-identity
-
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Tactic: 
-A Tactic is a Course of Action that represents part of the detailing of Strategies. A Tactic implements Strategies. For example, the Tactic  Call first-time customers personally  implements the Strategy  Increase repeat business. Tactics generally channel efforts towards Objectives. For example, the Tactic  Ship products for free  channels efforts towards the Objective  Within six months, 10% increase in product sales. 
--}
--- Aggregate Member : Tactic
-Tactic : AggregateHolonymyType
-Tactic = AggregateHolonymy
-
-
-
---  Tactic is subTypeOf EnterpriseCourseOfAction
-st-dd26e12e68a0a1a9-dd2696c768a1d406 : Tactic ⊏ₑ EnterpriseCourseOfAction
-st-dd26e12e68a0a1a9-dd2696c768a1d406 = polySubTypeOf-identity
-
---  Tactic is subTypeOf IndividualResourceBehavior
-st-dd26e12e68a0a1a9-fe1c250d678803b6 : Tactic ⊏ₑ IndividualResourceBehavior
-st-dd26e12e68a0a1a9-fe1c250d678803b6 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfTactic :  Linkage EnterpriseStage Tactic
-membershipOfTactic = make_upwardNestingRelation "tactic membership" "nested tactic"
-
--- Aggregation relation
-aggregationOfIndividualResourceBehaviorTactic :  Linkage Tactic IndividualResourceBehavior
-aggregationOfIndividualResourceBehaviorTactic = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
-
-{- tactic : derived relation obtained by composing
-   membershipOfTactic and aggregationOfIndividualResourceBehaviorTactic
-   It directly links an Enterprise Stage to the final aggregated IndividualResourceBehavior
-   hiding the reifying Tactic
--}
-tactic : Linkage EnterpriseStage IndividualResourceBehavior
-tactic = membershipOfTactic  ∘  aggregationOfIndividualResourceBehaviorTactic
-
+{- State of Enterprise Initiative: -}
+stateOfEnterpriseInitiative :  Linkage EnterpriseStage EnterpriseInitiative
+stateOfEnterpriseInitiative = make_meronymyRelation "State of Enterprise Initiative" "State of Enterprise Initiative"
 
 
 -- -------------------------------------------------------------------------------------------- 
@@ -76,8 +42,9 @@ tactic = membershipOfTactic  ∘  aggregationOfIndividualResourceBehaviorTactic
 Business Capability that is exhibited by an Enterprise Stage with quantified measure (KPI) and potential geopolitical scope (Site) for a defined market segment (Business Partner).An Enterprise Objective is a quantifiable end that a company/organization wants to achieve for a given Enterprise Initiative.An Enterprise Objective may support an Enterprise Goal; it may be refined into sub-objectives.An Enterprise Objective may concern a defined Exhibited Capability and be addressed by a defined Tactic.
 -}
 -- Aggregate Member : Enterprise Objective
-EnterpriseObjective : ClassOfClassOfIndividual
-EnterpriseObjective = ClassOfIndividual
+EnterpriseObjective : ClassOfMixedOrderEntity
+EnterpriseObjective = MixedOrderEntity
+
 
 
 --  EnterpriseObjective is subTypeOf StageObjective
@@ -99,5 +66,37 @@ aggregationOfValuePropositionEnterpriseObjective = make_Relation "ValuePropositi
 -}
 enterpriseObjective : Linkage EnterpriseStage ValueProposition
 enterpriseObjective = membershipOfEnterpriseObjective  ∘  aggregationOfValuePropositionEnterpriseObjective
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Tactic: 
+A Tactic is a Course of Action that represents part of the detailing of Strategies. A Tactic implements Strategies. For example, the Tactic  Call first-time customers personally  implements the Strategy  Increase repeat business. Tactics generally channel efforts towards Objectives. For example, the Tactic  Ship products for free  channels efforts towards the Objective  Within six months, 10% increase in product sales. 
+-}
+-- Aggregate Member : Tactic
+Tactic : AggregateHolonymyType
+Tactic = AggregateHolonymy
+
+
+
+--  Tactic is subTypeOf EnterpriseCourseOfAction
+st-dd26e12e68a0a1a9-dd2696c768a1d406 : Tactic ⊏ₑ EnterpriseCourseOfAction
+st-dd26e12e68a0a1a9-dd2696c768a1d406 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfTactic :  Linkage EnterpriseStage Tactic
+membershipOfTactic = make_upwardNestingRelation "tactic membership" "nested tactic"
+
+-- Aggregation relation
+aggregationOfIndividualResourceBehaviorTactic :  Linkage Tactic IndividualResourceBehavior
+aggregationOfIndividualResourceBehaviorTactic = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
+
+{- tactic : derived relation obtained by composing
+   membershipOfTactic and aggregationOfIndividualResourceBehaviorTactic
+   It directly links an Enterprise Stage to the final aggregated IndividualResourceBehavior
+   hiding the reifying Tactic
+-}
+tactic : Linkage EnterpriseStage IndividualResourceBehavior
+tactic = membershipOfTactic  ∘  aggregationOfIndividualResourceBehaviorTactic
 
 

@@ -12,19 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/9815a0dc5f682fa1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9815a0dc5f682fa1 where -- ========== Data Control
+module SysFEAT.EA.9815a0dc5f682fa1 where -- ========== DataControl
 
 open import Agda.Primitive
-open import SysFEAT.EA.44226d6561819b50 public -- Data Assurance Instrument
-open import SysFEAT.EA.98159f6b5f682d1e public -- Data Quality Policy
-open import SysFEAT.EA.72fe99d65e98598e public -- Data Quality Measure
+open import SysFEAT.EA.622b7c7d6ae3438e public -- DataAssuranceInstrument
+open import SysFEAT.EA.98159f6b5f682d1e public -- DataQualityPolicy
+open import SysFEAT.EA.72fe99d65e98598e public -- DataQualityMeasure
 
-DataControl : ClassOfClassOfBoundedIndividual
-DataControl = ClassOfBoundedIndividual
+DataControl : ClassOfMixedOrderEntity
+DataControl = MixedOrderEntity
 
---  DataControl is subTypeOf DataAssuranceInstrument
-st-9815a0dc5f682fa1-44226d6561819b50 : DataControl ⊏⋆ₑ DataAssuranceInstrument
-st-9815a0dc5f682fa1-44226d6561819b50 = polySubTypeOf-identity
+
+--  DataControl withAspect DataAssuranceInstrument
+st-9815a0dc5f682fa1-622b7c7d6ae3438e : DataControl ⊏ₐₑ (DataAssuranceInstrument (lsuc(lzero)))
+st-9815a0dc5f682fa1-622b7c7d6ae3438e = polySubTypeOf-identity
 
 
 -- == Relations =======================

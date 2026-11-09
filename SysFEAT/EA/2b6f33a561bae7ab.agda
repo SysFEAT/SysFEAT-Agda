@@ -12,17 +12,18 @@ Documentation : https://framework.sysfeat.com/pages/2b6f33a561bae7ab.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2b6f33a561bae7ab where -- ========== Business Agent Environment
+module SysFEAT.EA.2b6f33a561bae7ab where -- ========== BusinessAgentEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f332061bae622 public -- Business Resource Ecosystem
-open import SysFEAT.EA.f8e62fc5621fdcf4 public -- Resource Operating Environment
-open import SysFEAT.EA.2b6f337e61bae6d6 public -- Business Environment Scenario
-open import SysFEAT.EA.7c4097c855271c8e public -- Conceptual Environment
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
+open import SysFEAT.EA.2b6f332061bae622 public -- BusinessResourceEcosystem
+open import SysFEAT.EA.f8e62fc5621fdcf4 public -- ResourceOperatingEnvironment
+open import SysFEAT.C-SOF.7c4097c855271c8e public -- ConceptualEnvironment
+open import SysFEAT.EA.2b6f337e61bae6d6 public -- BusinessEnvironmentScenario
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-BusinessAgentEnvironment : ClassOfClassOfBoundedIndividual
-BusinessAgentEnvironment = ClassOfBoundedIndividual
+BusinessAgentEnvironment : BoundedIndividualMetaClass
+BusinessAgentEnvironment = AssetType
+
 
 --  BusinessAgentEnvironment is subTypeOf BusinessResourceEcosystem
 st-2b6f33a561bae7ab-2b6f332061bae622 : BusinessAgentEnvironment ⊏ₑ BusinessResourceEcosystem
@@ -34,14 +35,6 @@ st-2b6f33a561bae7ab-f8e62fc5621fdcf4 = polySubTypeOf-identity
 
 
 -- == Relations =======================
-
--- -------------------------------------------------------------------------------------------- 
-{- Scenarized Business Environment: -}
-scenarizedBusinessEnvironment :  Linkage BusinessAgentEnvironment BusinessEnvironmentScenario
-scenarizedBusinessEnvironment = make_classOfHolonymy "Scenarized Business Environment" "Scenarized Business Environment"
-
-postulate -- scenarizedBusinessEnvironment is subTypeOf scenarizedOperatingEnvironment
-  st-2b6f37c161baeeed-f8e7d8be621f0722  : scenarizedBusinessEnvironment  ⊏⋆ᵣ  scenarizedOperatingEnvironment
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Resource Agent Environment: -}
@@ -60,10 +53,18 @@ postulate -- realizedLogicalEnvironment is subTypeOf realizedEnterpriseEnvironme
   st-325a3a1366f35a5e-325a3a1766f35d1f  : realizedLogicalEnvironment  ⊏⋆ᵣ  realizedEnterpriseEnvironment
 
 -- -------------------------------------------------------------------------------------------- 
+{- Scenarized Business Environment: -}
+scenarizedBusinessEnvironment :  Linkage BusinessAgentEnvironment BusinessEnvironmentScenario
+scenarizedBusinessEnvironment = make_classOfHolonymy "Scenarized Business Environment" "Scenarized Business Environment"
+
+postulate -- scenarizedBusinessEnvironment is subTypeOf scenarizedOperatingEnvironment
+  st-2b6f37c161baeeed-f8e7d8be621f0722  : scenarizedBusinessEnvironment  ⊏⋆ᵣ  scenarizedOperatingEnvironment
+
+-- -------------------------------------------------------------------------------------------- 
 {- Partner Resource Agent: -}
 -- Aggregate Member : Partner Resource Agent
-PartnerResourceAgent : ClassOfClassOfBoundedIndividual
-PartnerResourceAgent = ClassOfBoundedIndividual
+PartnerResourceAgent : ClassOfMixedOrderEntity
+PartnerResourceAgent = MixedOrderEntity
 
 
 
@@ -74,10 +75,6 @@ st-2b6f34c861bae941-f8e63939621fdefd = polySubTypeOf-identity
 --  PartnerResourceAgent is subTypeOf ParticipantEnterpriseAgent
 st-2b6f34c861bae941-2b6f42fc61baf9b7 : PartnerResourceAgent ⊏ₑ ParticipantEnterpriseAgent
 st-2b6f34c861bae941-2b6f42fc61baf9b7 = polySubTypeOf-identity
-
---  PartnerResourceAgent is subTypeOf BusinessAgentType
-st-2b6f34c861bae941-bcebd31f5491302c : PartnerResourceAgent ⊏ₑ BusinessAgentType
-st-2b6f34c861bae941-bcebd31f5491302c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerResourceAgent :  Linkage BusinessAgentEnvironment PartnerResourceAgent
@@ -100,8 +97,8 @@ partnerResourceAgent = membershipOfPartnerResourceAgent  ∘  aggregationOfBusin
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Resource Agent: -}
 -- Aggregate Member : Subject Resource Agent
-SubjectResourceAgent : ClassOfClassOfBoundedIndividual
-SubjectResourceAgent = ClassOfBoundedIndividual
+SubjectResourceAgent : ClassOfMixedOrderEntity
+SubjectResourceAgent = MixedOrderEntity
 
 
 
@@ -112,10 +109,6 @@ st-2b6f350061baea62-f8e6390c621fddf1 = polySubTypeOf-identity
 --  SubjectResourceAgent is subTypeOf ParticipantEnterpriseAgent
 st-2b6f350061baea62-2b6f42fc61baf9b7 : SubjectResourceAgent ⊏ₑ ParticipantEnterpriseAgent
 st-2b6f350061baea62-2b6f42fc61baf9b7 = polySubTypeOf-identity
-
---  SubjectResourceAgent is subTypeOf BusinessAgentType
-st-2b6f350061baea62-bcebd31f5491302c : SubjectResourceAgent ⊏ₑ BusinessAgentType
-st-2b6f350061baea62-bcebd31f5491302c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectResourceAgent :  Linkage BusinessAgentEnvironment SubjectResourceAgent

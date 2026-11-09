@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/c189f8c868ae5b73.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c189f8c868ae5b73 where -- ========== Business Capability Map
+module SysFEAT.EA.c189f8c868ae5b73 where -- ========== BusinessCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.SOF.01f12127689b6de2 public -- Capability Map
-open import SysFEAT.EA.dd268f2868a08150 public -- Business Capability
+open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
+open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
 
-BusinessCapabilityMap : PropertyType
-BusinessCapabilityMap = Property
+BusinessCapabilityMap : ClassOfMixedOrderEntity
+BusinessCapabilityMap = MixedOrderEntity
+
 
 --  BusinessCapabilityMap is subTypeOf CapabilityMap
 st-c189f8c868ae5b73-01f12127689b6de2 : BusinessCapabilityMap ⊏ₑ CapabilityMap
@@ -31,8 +32,9 @@ st-c189f8c868ae5b73-01f12127689b6de2 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Member Business Capability: -}
 -- Aggregate Member : Member Business Capability
-MemberBusinessCapability : ClassOfClassOfIndividual
-MemberBusinessCapability = ClassOfIndividual
+MemberBusinessCapability : ClassOfMixedOrderEntity
+MemberBusinessCapability = MixedOrderEntity
+
 
 
 --  MemberBusinessCapability is subTypeOf CapabilityMember

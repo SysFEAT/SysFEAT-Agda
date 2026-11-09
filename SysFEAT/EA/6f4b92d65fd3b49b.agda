@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/6f4b92d65fd3b49b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6f4b92d65fd3b49b where -- ========== Business Environment
+module SysFEAT.EA.6f4b92d65fd3b49b where -- ========== BusinessEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b705f2661ba04de public -- Business Ecosystem
-open import SysFEAT.EA.2b6f33a561bae7ab public -- Business Agent Environment
-open import SysFEAT.EA.9dcea2655ec768ee public -- Business Service Interface
-open import SysFEAT.EA.7c408aa155270eea public -- Department Type
-open import SysFEAT.EA.08d181af678a2d51 public -- Customer
+open import SysFEAT.EA.2b705f2661ba04de public -- BusinessEcosystem
+open import SysFEAT.EA.2b6f33a561bae7ab public -- BusinessAgentEnvironment
+open import SysFEAT.EA.9dcea2655ec768ee public -- BusinessServiceInterface
+open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
+open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
 
-BusinessEnvironment : ClassOfClassOfBoundedIndividual
-BusinessEnvironment = ClassOfBoundedIndividual
+BusinessEnvironment : BoundedIndividualMetaClass
+BusinessEnvironment = AssetType
 
 
 --  BusinessEnvironment is subTypeOf BusinessEcosystem
@@ -47,8 +47,9 @@ postulate -- specializedBusinessEnvironment is subTypeOf specializedResourceAgen
 -- -------------------------------------------------------------------------------------------- 
 {- Operations Service Channel: -}
 -- Aggregate Member : Operations Service Channel
-OperationsServiceChannel : ClassOfClassOfIndividual
-OperationsServiceChannel = ClassOfIndividual
+OperationsServiceChannel : ClassOfMixedOrderEntity
+OperationsServiceChannel = MixedOrderEntity
+
 
 
 --  OperationsServiceChannel is subTypeOf BusinessServiceChannel
@@ -80,8 +81,8 @@ operationsServiceChannel = membershipOfOperationsServiceChannel  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Org-Unit: -}
 -- Aggregate Member : Partner Org-Unit
-PartnerOrgUnit : ClassOfClassOfBoundedIndividual
-PartnerOrgUnit = ClassOfBoundedIndividual
+PartnerOrgUnit : ClassOfMixedOrderEntity
+PartnerOrgUnit = MixedOrderEntity
 
 
 
@@ -92,10 +93,6 @@ st-0a2620c6601df71a-6f4b989c5fd3c371 = polySubTypeOf-identity
 --  PartnerOrgUnit is subTypeOf PartnerResourceAgent
 st-0a2620c6601df71a-2b6f34c861bae941 : PartnerOrgUnit ⊏ₑ PartnerResourceAgent
 st-0a2620c6601df71a-2b6f34c861bae941 = polySubTypeOf-identity
-
---  PartnerOrgUnit is subTypeOf DepartmentType
-st-0a2620c6601df71a-7c408aa155270eea : PartnerOrgUnit ⊏ₑ DepartmentType
-st-0a2620c6601df71a-7c408aa155270eea = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerOrgUnit :  Linkage BusinessEnvironment PartnerOrgUnit
@@ -118,18 +115,14 @@ partnerOrgUnit = membershipOfPartnerOrgUnit  ∘  aggregationOfDepartmentTypePar
 -- -------------------------------------------------------------------------------------------- 
 {- Served customer: -}
 -- Aggregate Member : Served customer
-Servedcustomer : ClassOfClassOfBoundedIndividual
-Servedcustomer = ClassOfBoundedIndividual
+Servedcustomer : ClassOfMixedOrderEntity
+Servedcustomer = MixedOrderEntity
 
 
 
 --  Servedcustomer is subTypeOf ParticipantDepartment
 st-4666536c64088070-6f4b989c5fd3c371 : Servedcustomer ⊏ₑ ParticipantDepartment
 st-4666536c64088070-6f4b989c5fd3c371 = polySubTypeOf-identity
-
---  Servedcustomer is subTypeOf Customer
-st-4666536c64088070-08d181af678a2d51 : Servedcustomer ⊏ₑ Customer
-st-4666536c64088070-08d181af678a2d51 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfServedcustomer :  Linkage BusinessEnvironment Servedcustomer
@@ -152,8 +145,8 @@ servedcustomer = membershipOfServedcustomer  ∘  aggregationOfCustomerServedcus
 -- -------------------------------------------------------------------------------------------- 
 {- Subject-Department: -}
 -- Aggregate Member : Subject-Department
-SubjectDepartment : ClassOfClassOfBoundedIndividual
-SubjectDepartment = ClassOfBoundedIndividual
+SubjectDepartment : ClassOfMixedOrderEntity
+SubjectDepartment = MixedOrderEntity
 
 
 
@@ -164,10 +157,6 @@ st-6f4b98595fd3c2be-2b6f350061baea62 = polySubTypeOf-identity
 --  SubjectDepartment is subTypeOf ParticipantDepartment
 st-6f4b98595fd3c2be-6f4b989c5fd3c371 : SubjectDepartment ⊏ₑ ParticipantDepartment
 st-6f4b98595fd3c2be-6f4b989c5fd3c371 = polySubTypeOf-identity
-
---  SubjectDepartment is subTypeOf DepartmentType
-st-6f4b98595fd3c2be-7c408aa155270eea : SubjectDepartment ⊏ₑ DepartmentType
-st-6f4b98595fd3c2be-7c408aa155270eea = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectDepartment :  Linkage BusinessEnvironment SubjectDepartment

@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/258c68065fd254de.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.258c68065fd254de where -- ========== Transfer Safe Guard
+module SysFEAT.EA.258c68065fd254de where -- ========== TransferSafeGuard
 
 open import Agda.Primitive
-open import SysFEAT.EA.7d3786425fd04ea2 public -- Privacy Block
+open import SysFEAT.EA.7d3786425fd04ea2 public -- PrivacyBlock
 
-TransferSafeGuard : ClassOfClassOfBoundedIndividual
-TransferSafeGuard = ClassOfBoundedIndividual
+TransferSafeGuard : ClassOfMixedOrderEntity
+TransferSafeGuard = MixedOrderEntity
+
 
 --  TransferSafeGuard is subTypeOf PrivacyBlock
 st-258c68065fd254de-7d3786425fd04ea2 : TransferSafeGuard ⊏⋆ₑ PrivacyBlock

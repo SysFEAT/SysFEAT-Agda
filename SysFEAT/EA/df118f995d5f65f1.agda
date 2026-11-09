@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/df118f995d5f65f1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.df118f995d5f65f1 where -- ========== Computer Device
+module SysFEAT.EA.df118f995d5f65f1 where -- ========== ComputerDevice
 
 open import Agda.Primitive
-open import SysFEAT.EA.02f51209641c7ea4 public -- Computing Device
+open import SysFEAT.EA.02f51209641c7ea4 public -- ComputingDevice
 
-ComputerDevice : ClassOfClassOfBoundedIndividual
-ComputerDevice = ClassOfBoundedIndividual
+ComputerDevice : BoundedIndividualMetaClass
+ComputerDevice = AssetType
 
 
 --  ComputerDevice is subTypeOf ComputingDevice

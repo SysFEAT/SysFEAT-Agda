@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/3642454f6007e80e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3642454f6007e80e where -- ========== Deployed Business System
+module SysFEAT.EA.3642454f6007e80e where -- ========== DeployedBusinessSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.66f8685a620b1440 public -- Individual Business Agent
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
+open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
 
-DeployedBusinessSystem : ClassOfBoundedIndividual
-DeployedBusinessSystem = BoundedIndividual
+DeployedBusinessSystem : AssetType
+DeployedBusinessSystem = IndividualAsset
 
 
 --  DeployedBusinessSystem is subTypeOf IndividualBusinessAgent
@@ -32,24 +32,20 @@ st-3642454f6007e80e-66f8685a620b1440 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Business System Type: -}
 businessSystemType :  Linkage DeployedBusinessSystem BusinessSystem
-businessSystemType = make_instanceOf "Business System Type" "Business System Type"
+businessSystemType = make_Relation "Business System Type" "Business System Type"
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Deployed System Component: -}
 -- Aggregate Member : Deployed System Component
-DeployedSystemComponent : AgentType
-DeployedSystemComponent = IndividualAgent
+DeployedSystemComponent : AggregateHolonymyType
+DeployedSystemComponent = AggregateHolonymy
 
 
 
 --  DeployedSystemComponent is subTypeOf DeployedBusinessAgentPart
 st-9d38a3d061c41a2b-66f868de620b14e6 : DeployedSystemComponent ⊏ₑ DeployedBusinessAgentPart
 st-9d38a3d061c41a2b-66f868de620b14e6 = polySubTypeOf-identity
-
---  DeployedSystemComponent is subTypeOf DeployedBusinessSystem
-st-9d38a3d061c41a2b-3642454f6007e80e : DeployedSystemComponent ⊏ₑ DeployedBusinessSystem
-st-9d38a3d061c41a2b-3642454f6007e80e = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDeployedSystemComponent :  Linkage DeployedBusinessSystem DeployedSystemComponent

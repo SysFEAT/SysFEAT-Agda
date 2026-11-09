@@ -13,11 +13,12 @@ Documentation : https://framework.sysfeat.com/pages/44254cce6182c076.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-44254cce6182c076 where -- ========== Data Governance Core
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
+open import SysFEAT.C-SOF.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
 open import SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 public -- Information Assets
 open import SysFEAT.EA.sysfeat-domain-fe663dd261817752 public -- Operational Assurance
 open import SysFEAT.EA.sysfeat-domain-a951eec1619413a3 public -- Deployed Facility Assets
+open import SysFEAT.EA.sysfeat-domain-7c3aae72617a2499 public -- Data Asset Assurance
+open import SysFEAT.EA.sysfeat-domain-d326d866617a49a5 public -- Data Provenance & Reliability Assurance
 
 open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
-open import SysFEAT.EA.44226d6561819b50 public -- Data Assurance Instrument
 open import SysFEAT.EA.9152d8875ed741ef public -- Data Catalog

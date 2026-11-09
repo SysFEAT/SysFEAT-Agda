@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.be94e82f655c90e7 where -- ========== Physical Business Agent
+module SysFEAT.EA.be94e82f655c90e7 where -- ========== PhysicalBusinessAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.340f52dc686212f5 public -- Physical Resource Agent
-open import SysFEAT.EA.9b089d1868a45ed3 public -- Physical Capability
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.340f52dc686212f5 public -- PhysicalResourceAgent
+open import SysFEAT.EA.9b089d1868a45ed3 public -- PhysicalCapability
 
-PhysicalBusinessAgent : ClassOfClassOfBoundedIndividual
-PhysicalBusinessAgent = ClassOfBoundedIndividual
+PhysicalBusinessAgent : BoundedIndividualMetaClass
+PhysicalBusinessAgent = AssetType
 
 
 --  PhysicalBusinessAgent is subTypeOf BusinessAgentType
@@ -47,18 +47,14 @@ fulfilledPhysicalCapability = make_subTypeOf "Fulfilled Physical Capability" "Fu
 Structural composition of a Physical Business Agent.
 -}
 -- Aggregate Member : Physical Resource Agent Part
-PhysicalResourceAgentPart : ClassOfClassOfBoundedIndividual
-PhysicalResourceAgentPart = ClassOfBoundedIndividual
+PhysicalResourceAgentPart : ClassOfClassOfIndividual
+PhysicalResourceAgentPart = ClassOfIndividual
 
 
 
 --  PhysicalResourceAgentPart is subTypeOf ResourceAgentPart
 st-c80a1a0f67854745-24034f6d5fc79c3f : PhysicalResourceAgentPart ⊏ₑ ResourceAgentPart
 st-c80a1a0f67854745-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  PhysicalResourceAgentPart is subTypeOf PhysicalBusinessAgent
-st-c80a1a0f67854745-be94e82f655c90e7 : PhysicalResourceAgentPart ⊏ₑ PhysicalBusinessAgent
-st-c80a1a0f67854745-be94e82f655c90e7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalResourceAgentPart :  Linkage PhysicalBusinessAgent PhysicalResourceAgentPart

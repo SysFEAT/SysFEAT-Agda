@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/24f8475766477e0a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.24f8475766477e0a where -- ========== Hardware Management Initiative
+module SysFEAT.EA.24f8475766477e0a where -- ========== HardwareManagementInitiative
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
-open import SysFEAT.EA.9b089fb468a46506 public -- Physical Capability Map
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
+open import SysFEAT.EA.9b089fb468a46506 public -- PhysicalCapabilityMap
 
 HardwareManagementInitiative : ClassOfBoundedIndividual
 HardwareManagementInitiative = BoundedIndividual
@@ -32,5 +32,5 @@ st-24f8475766477e0a-05201b936647570a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Porfolio Hardware Map: -}
 porfolioHardwareMap :  Linkage HardwareManagementInitiative PhysicalCapabilityMap
-porfolioHardwareMap = make_instanceOf "Porfolio Hardware Map" "Porfolio Hardware Map"
+porfolioHardwareMap = make_Relation "Porfolio Hardware Map" "Porfolio Hardware Map"
 

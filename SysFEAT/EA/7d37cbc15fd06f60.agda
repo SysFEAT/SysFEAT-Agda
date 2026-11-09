@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/7d37cbc15fd06f60.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d37cbc15fd06f60 where -- ========== Physical Data Lineage
+module SysFEAT.EA.7d37cbc15fd06f60 where -- ========== PhysicalDataLineage
 
 open import Agda.Primitive
-open import SysFEAT.EA.23ab2e945da829b8 public -- Data Lineage
-open import SysFEAT.EA.7d37c0565fd067ce public -- Concept Lineage
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.762582bb5f6bd659 public -- Physical Data Entity
+open import SysFEAT.EA.23ab2e945da829b8 public -- DataLineage
+open import SysFEAT.EA.7d37c0565fd067ce public -- ConceptLineage
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.EA.762582bb5f6bd659 public -- PhysicalDataEntity
 
-PhysicalDataLineage : ClassOfClassOfBoundedIndividual
-PhysicalDataLineage = ClassOfBoundedIndividual
+PhysicalDataLineage : ClassOfClassOfIndividual
+PhysicalDataLineage = ClassOfIndividual
+
 
 --  PhysicalDataLineage is subTypeOf DataLineage
 st-7d37cbc15fd06f60-23ab2e945da829b8 : PhysicalDataLineage ⊏ₑ DataLineage
@@ -70,18 +71,13 @@ physicalLineageFlow = membershipOfPhysicalLineageFlow  ∘  aggregationOfBehavio
 -- -------------------------------------------------------------------------------------------- 
 {- Origin Physical Entity: -}
 -- Aggregate Member : Origin Physical Entity
-OriginPhysicalEntity : ClassOfClassOfBoundedIndividual
-OriginPhysicalEntity = ClassOfBoundedIndividual
-
+OriginPhysicalEntity : ClassOfClassOfIndividual
+OriginPhysicalEntity = ClassOfIndividual
 
 
 --  OriginPhysicalEntity is subTypeOf OriginEntity
 st-acb4c817624587c9-acb4af8462457ab3 : OriginPhysicalEntity ⊏ₑ OriginEntity
 st-acb4c817624587c9-acb4af8462457ab3 = polySubTypeOf-identity
-
---  OriginPhysicalEntity is subTypeOf PhysicalDataEntity
-st-acb4c817624587c9-762582bb5f6bd659 : OriginPhysicalEntity ⊏ₑ PhysicalDataEntity
-st-acb4c817624587c9-762582bb5f6bd659 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOriginPhysicalEntity :  Linkage PhysicalDataLineage OriginPhysicalEntity
@@ -104,18 +100,13 @@ originPhysicalEntity = membershipOfOriginPhysicalEntity  ∘  aggregationOfPhysi
 -- -------------------------------------------------------------------------------------------- 
 {- Final Physical Entity: -}
 -- Aggregate Member : Final Physical Entity
-FinalPhysicalEntity : ClassOfClassOfBoundedIndividual
-FinalPhysicalEntity = ClassOfBoundedIndividual
-
+FinalPhysicalEntity : ClassOfClassOfIndividual
+FinalPhysicalEntity = ClassOfIndividual
 
 
 --  FinalPhysicalEntity is subTypeOf FinalEntity
 st-acb4c83f624588a3-acb4b3b562457c32 : FinalPhysicalEntity ⊏ₑ FinalEntity
 st-acb4c83f624588a3-acb4b3b562457c32 = polySubTypeOf-identity
-
---  FinalPhysicalEntity is subTypeOf PhysicalDataEntity
-st-acb4c83f624588a3-762582bb5f6bd659 : FinalPhysicalEntity ⊏ₑ PhysicalDataEntity
-st-acb4c83f624588a3-762582bb5f6bd659 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfFinalPhysicalEntity :  Linkage PhysicalDataLineage FinalPhysicalEntity
@@ -138,18 +129,13 @@ finalPhysicalEntity = membershipOfFinalPhysicalEntity  ∘  aggregationOfPhysica
 -- -------------------------------------------------------------------------------------------- 
 {- Intermediate Store: -}
 -- Aggregate Member : Intermediate Store
-IntermediateStore : ClassOfClassOfBoundedIndividual
-IntermediateStore = ClassOfBoundedIndividual
-
+IntermediateStore : ClassOfClassOfIndividual
+IntermediateStore = ClassOfIndividual
 
 
 --  IntermediateStore is subTypeOf IntermediateEntity
 st-acb4c86d62458979-acb4b3f162457d1a : IntermediateStore ⊏ₑ IntermediateEntity
 st-acb4c86d62458979-acb4b3f162457d1a = polySubTypeOf-identity
-
---  IntermediateStore is subTypeOf PhysicalDataEntity
-st-acb4c86d62458979-762582bb5f6bd659 : IntermediateStore ⊏ₑ PhysicalDataEntity
-st-acb4c86d62458979-762582bb5f6bd659 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIntermediateStore :  Linkage PhysicalDataLineage IntermediateStore

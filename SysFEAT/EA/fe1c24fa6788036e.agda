@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/fe1c24fa6788036e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.fe1c24fa6788036e where -- ========== Individual Resource Asset
+module SysFEAT.EA.fe1c24fa6788036e where -- ========== IndividualResourceAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.9f61cf9166833fb7 public -- Individual Operating Asset
-open import SysFEAT.EA.dd265414689f5987 public -- Resource Capability
+open import SysFEAT.SOF.9f61cf9166833fb7 public -- IndividualOperatingAsset
+open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
 
-IndividualResourceAsset : ClassOfBoundedIndividual
-IndividualResourceAsset = BoundedIndividual
+IndividualResourceAsset : AssetType
+IndividualResourceAsset = IndividualAsset
 
 
 --  IndividualResourceAsset is subTypeOf IndividualOperatingAsset
@@ -34,7 +34,7 @@ st-fe1c24fa6788036e-9f61cf9166833fb7 = polySubTypeOf-identity
 Set of Resource Capabilitys that an Individual Resource Asset exhibits.
 -}
 exhibitedResourceCapability :  Linkage IndividualResourceAsset ResourceCapability
-exhibitedResourceCapability = make_instanceOf "Exhibited Resource Capability" "Exhibited Resource Capability"
+exhibitedResourceCapability = make_Relation "Exhibited Resource Capability" "Exhibited Resource Capability"
 
 postulate -- exhibitedResourceCapability is subTypeOf exhibitedCapability
   st-e44105a768d5bf7a-e44104b768d586bb  : exhibitedResourceCapability  ⊏⋆ᵣ  exhibitedCapability

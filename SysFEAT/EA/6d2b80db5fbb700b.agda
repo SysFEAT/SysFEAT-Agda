@@ -12,19 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/6d2b80db5fbb700b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6d2b80db5fbb700b where -- ========== Data Map
+module SysFEAT.EA.6d2b80db5fbb700b where -- ========== DataMap
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d6cd2d8e5ab98edc public -- Information Map
-open import SysFEAT.EA.8f1c937168ca8195 public -- Data Block
-open import SysFEAT.EA.325c32165eb02a4a public -- Data Domain
+open import SysFEAT.SOF.00330ffb6ae2806c public -- InformationDomainMap
+open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
+open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
 
-DataMap : ClassOfClassOfBoundedIndividual
-DataMap = ClassOfBoundedIndividual
+DataMap : MetaClass
+DataMap = ClassOfEntity
 
---  DataMap is subTypeOf InformationMap
-st-6d2b80db5fbb700b-d6cd2d8e5ab98edc : DataMap ⊏ₑ InformationMap
-st-6d2b80db5fbb700b-d6cd2d8e5ab98edc = polySubTypeOf-identity
+
+--  DataMap withAspect InformationDomainMap
+st-6d2b80db5fbb700b-00330ffb6ae2806c : DataMap ⊏ₐₑ (InformationDomainMap (lsuc(lzero)))
+st-6d2b80db5fbb700b-00330ffb6ae2806c = polySubTypeOf-identity
 
 --  DataMap withAspect DataBlock
 st-6d2b80db5fbb700b-8f1c937168ca8195 : DataMap ⊏ₐₑ (DataBlock (lsuc(lzero)))
@@ -41,14 +42,6 @@ Data Domain that isa component of a Data Map.
 DataDomainMember : ClassOfClassOfIndividual
 DataDomainMember = ClassOfIndividual
 
-
---  DataDomainMember is subTypeOf InformationDomainMember
-st-6d2b81965fbb71ad-dfa4e2865ebb4e38 : DataDomainMember ⊏ₑ InformationDomainMember
-st-6d2b81965fbb71ad-dfa4e2865ebb4e38 = polySubTypeOf-identity
-
---  DataDomainMember is subTypeOf DataDomain
-st-6d2b81965fbb71ad-325c32165eb02a4a : DataDomainMember ⊏ₑ DataDomain
-st-6d2b81965fbb71ad-325c32165eb02a4a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataDomainMember :  Linkage DataMap DataDomainMember
@@ -74,14 +67,6 @@ dataDomainMember = membershipOfDataDomainMember  ∘  aggregationOfDataDomainDat
 ExternalDataArea : ClassOfClassOfIndividual
 ExternalDataArea = ClassOfIndividual
 
-
---  ExternalDataArea is subTypeOf externalInformationArea
-st-fd1bf5b05fbc6c5a-dfa4e2b35ebb4ee8 : ExternalDataArea ⊏ₑ externalInformationArea
-st-fd1bf5b05fbc6c5a-dfa4e2b35ebb4ee8 = polySubTypeOf-identity
-
---  ExternalDataArea is subTypeOf DataDomain
-st-fd1bf5b05fbc6c5a-325c32165eb02a4a : ExternalDataArea ⊏ₑ DataDomain
-st-fd1bf5b05fbc6c5a-325c32165eb02a4a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfExternalDataArea :  Linkage DataMap ExternalDataArea

@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/7eaa886156121e80.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7eaa886156121e80 where -- ========== Logical Data View
+module SysFEAT.EA.7eaa886156121e80 where -- ========== LogicalDataView
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b5858b85eec51d9 public -- Logical Data Element
-open import SysFEAT.EA.325c32fc5eb02d02 public -- Data Entity
-open import SysFEAT.EA.4619527e560d45eb public -- Logical Data Entity
+open import SysFEAT.EA.2b5858b85eec51d9 public -- LogicalDataElement
+open import SysFEAT.EA.325c32fc5eb02d02 public -- DataEntity
+open import SysFEAT.EA.4619527e560d45eb public -- LogicalDataEntity
 
-LogicalDataView : ClassOfClassOfBoundedIndividual
-LogicalDataView = ClassOfBoundedIndividual
+LogicalDataView : ClassOfMixedOrderEntity
+LogicalDataView = MixedOrderEntity
 
 
 --  LogicalDataView is subTypeOf LogicalDataElement
@@ -37,14 +37,9 @@ st-7eaa886156121e80-325c32fc5eb02d02 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Root Data Entity: -}
 -- Aggregate Member : Root Data Entity
-RootDataEntity : ClassOfClassOfBoundedIndividual
-RootDataEntity = ClassOfBoundedIndividual
+RootDataEntity : ClassOfClassOfIndividual
+RootDataEntity = ClassOfIndividual
 
-
-
---  RootDataEntity is subTypeOf LogicalDataEntity
-st-2b585c895eec581f-4619527e560d45eb : RootDataEntity ⊏ₑ LogicalDataEntity
-st-2b585c895eec581f-4619527e560d45eb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfRootDataEntity :  Linkage LogicalDataView RootDataEntity
@@ -67,18 +62,14 @@ rootDataEntity = membershipOfRootDataEntity  ∘  aggregationOfLogicalDataEntity
 -- -------------------------------------------------------------------------------------------- 
 {- Embedded Data Object: -}
 -- Aggregate Member : Embedded Data Object
-EmbeddedDataObject : ClassOfClassOfBoundedIndividual
-EmbeddedDataObject = ClassOfBoundedIndividual
+EmbeddedDataObject : ClassOfMixedOrderEntity
+EmbeddedDataObject = MixedOrderEntity
 
 
 
 --  EmbeddedDataObject is subTypeOf Attribute
 st-2b58627c5eec61ec-8f1c9ad668ca8db4 : EmbeddedDataObject ⊏ₑ Attribute
 st-2b58627c5eec61ec-8f1c9ad668ca8db4 = polySubTypeOf-identity
-
---  EmbeddedDataObject is subTypeOf LogicalDataElement
-st-2b58627c5eec61ec-2b5858b85eec51d9 : EmbeddedDataObject ⊏ₑ LogicalDataElement
-st-2b58627c5eec61ec-2b5858b85eec51d9 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfEmbeddedDataObject :  Linkage LogicalDataView EmbeddedDataObject
@@ -101,8 +92,8 @@ embeddedDataObject = membershipOfEmbeddedDataObject  ∘  aggregationOfLogicalDa
 -- -------------------------------------------------------------------------------------------- 
 {- Referenced Entity: -}
 -- Aggregate Member : Referenced Entity
-ReferencedEntity : ClassOfClassOfBoundedIndividual
-ReferencedEntity = ClassOfBoundedIndividual
+ReferencedEntity : ClassOfMixedOrderEntity
+ReferencedEntity = MixedOrderEntity
 
 
 
@@ -113,10 +104,6 @@ st-2b5862e95eec6337-e7e3fa0a5fbb0ddb = polySubTypeOf-identity
 --  ReferencedEntity is subTypeOf Relationship
 st-2b5862e95eec6337-b6e3cc7a5fbb6878 : ReferencedEntity ⊏ₑ Relationship
 st-2b5862e95eec6337-b6e3cc7a5fbb6878 = polySubTypeOf-identity
-
---  ReferencedEntity is subTypeOf LogicalDataEntity
-st-2b5862e95eec6337-4619527e560d45eb : ReferencedEntity ⊏ₑ LogicalDataEntity
-st-2b5862e95eec6337-4619527e560d45eb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfReferencedEntity :  Linkage LogicalDataView ReferencedEntity

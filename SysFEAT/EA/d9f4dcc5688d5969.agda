@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/d9f4dcc5688d5969.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d9f4dcc5688d5969 where -- ========== Resource Asset
+module SysFEAT.EA.d9f4dcc5688d5969 where -- ========== ResourceAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
-ResourceAsset : ClassOfClassOfBoundedIndividual
-ResourceAsset = ClassOfBoundedIndividual
+ResourceAsset : BoundedIndividualMetaClass
+ResourceAsset = AssetType
+
 
 --  ResourceAsset is subTypeOf AssetType
 st-d9f4dcc5688d5969-a4a5b3f855585ce1 : ResourceAsset ⊏ₑ AssetType

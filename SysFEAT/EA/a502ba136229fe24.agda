@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/a502ba136229fe24.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.a502ba136229fe24 where -- ========== Physical Service Interface
+module SysFEAT.EA.a502ba136229fe24 where -- ========== PhysicalServiceInterface
 
 open import Agda.Primitive
-open import SysFEAT.EA.9dcea2655ec768ee public -- Business Service Interface
-open import SysFEAT.EA.c334e2925ecb8db4 public -- Physical Outcome Event
+open import SysFEAT.EA.9dcea2655ec768ee public -- BusinessServiceInterface
+open import SysFEAT.EA.c334e2925ecb8db4 public -- PhysicalOutcomeEvent
 
-PhysicalServiceInterface : ClassOfClassOfBoundedIndividual
-PhysicalServiceInterface = ClassOfBoundedIndividual
+PhysicalServiceInterface : BehaviorMetaClass
+PhysicalServiceInterface = BehaviorType
 
 
 --  PhysicalServiceInterface is subTypeOf BusinessServiceInterface
@@ -32,8 +32,8 @@ st-a502ba136229fe24-9dcea2655ec768ee = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Choreographed Material Outcome: -}
 -- Aggregate Member : Choreographed Material Outcome
-ChoreographedMaterialOutcome : ClassOfClassOfBoundedIndividual
-ChoreographedMaterialOutcome = ClassOfBoundedIndividual
+ChoreographedMaterialOutcome : ClassOfClassOfIndividual
+ChoreographedMaterialOutcome = ClassOfIndividual
 
 
 

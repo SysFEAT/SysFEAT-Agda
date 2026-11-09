@@ -15,15 +15,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.a41ab2d25b378b12 where -- ========== Computer Network
+module SysFEAT.EA.a41ab2d25b378b12 where -- ========== ComputerNetwork
 
 open import Agda.Primitive
-open import SysFEAT.EA.a41ab3105b378b66 public -- IT Infrastructure System
-open import SysFEAT.EA.070b0d5564011dbb public -- Networking System
-open import SysFEAT.EA.f4be0fba5ee1d935 public -- Network Device
+open import SysFEAT.EA.a41ab3105b378b66 public -- ITInfrastructureSystem
+open import SysFEAT.EA.070b0d5564011dbb public -- NetworkingSystem
+open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
-ComputerNetwork : ClassOfClassOfBoundedIndividual
-ComputerNetwork = ClassOfBoundedIndividual
+ComputerNetwork : BoundedIndividualMetaClass
+ComputerNetwork = AssetType
 
 
 --  ComputerNetwork is subTypeOf ITInfrastructureSystem
@@ -42,18 +42,14 @@ st-a41ab2d25b378b12-070b0d5564011dbb = polySubTypeOf-identity
 Role of a Network Device in a Computer Network.
 -}
 -- Aggregate Member : Network Node
-NetworkNode : ClassOfClassOfBoundedIndividual
-NetworkNode = ClassOfBoundedIndividual
+NetworkNode : ClassOfClassOfIndividual
+NetworkNode = ClassOfIndividual
 
 
 
 --  NetworkNode is subTypeOf NetworkingPart
 st-f4be0fd85ee1da9d-26b8386e5eeae4a4 : NetworkNode ⊏ₑ NetworkingPart
 st-f4be0fd85ee1da9d-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  NetworkNode is subTypeOf NetworkDevice
-st-f4be0fd85ee1da9d-f4be0fba5ee1d935 : NetworkNode ⊏ₑ NetworkDevice
-st-f4be0fd85ee1da9d-f4be0fba5ee1d935 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfNetworkNode :  Linkage ComputerNetwork NetworkNode

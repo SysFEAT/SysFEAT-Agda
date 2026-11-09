@@ -16,12 +16,12 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.21ed240a689c08df where -- ========== Value Proposition
+module SysFEAT.EA.21ed240a689c08df where -- ========== ValueProposition
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
-open import SysFEAT.EA.dd268f2868a08150 public -- Business Capability
-open import SysFEAT.SOF.21ed231d689c0679 public -- Condition Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
+open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
+open import SysFEAT.SOF.21ed231d689c0679 public -- ConditionProperty
 
 ValueProposition : AssetPropertyType
 ValueProposition = AssetProperty

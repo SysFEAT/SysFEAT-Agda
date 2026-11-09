@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/fd1bf2a45fbc64fb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.fd1bf2a45fbc64fb where -- ========== Logical Data Asset
+module SysFEAT.EA.fd1bf2a45fbc64fb where -- ========== LogicalDataAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c937168ca8195 public -- Data Block
+open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
 
-LogicalDataAsset : ClassOfClassOfBoundedIndividual
-LogicalDataAsset = ClassOfBoundedIndividual
+LogicalDataAsset : ClassOfMixedOrderEntity
+LogicalDataAsset = MixedOrderEntity
+
 
 --  LogicalDataAsset withAspect DataBlock
 st-fd1bf2a45fbc64fb-8f1c937168ca8195 : LogicalDataAsset ⊏ₐₑ (DataBlock (lsuc(lzero)))

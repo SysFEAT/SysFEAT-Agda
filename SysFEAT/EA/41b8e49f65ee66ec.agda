@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/41b8e49f65ee66ec.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.41b8e49f65ee66ec where -- ========== Person Type
+module SysFEAT.EA.41b8e49f65ee66ec where -- ========== PersonType
 
 open import Agda.Primitive
-open import SysFEAT.EA.2c93337b67644a6a public -- Human Resource
-open import SysFEAT.EA.be94e82f655c90e7 public -- Physical Business Agent
+open import SysFEAT.EA.2c93337b67644a6a public -- HumanResource
+open import SysFEAT.EA.be94e82f655c90e7 public -- PhysicalBusinessAgent
 
-PersonType : ClassOfClassOfBoundedIndividual
-PersonType = ClassOfBoundedIndividual
+PersonType : BoundedIndividualMetaClass
+PersonType = AssetType
 
 
 --  PersonType is subTypeOf HumanResource

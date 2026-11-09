@@ -14,15 +14,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.25c09cb461e2efd3 where -- ========== Software System Scenario
+module SysFEAT.EA.25c09cb461e2efd3 where -- ========== SOftwareSystemScenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.7a0a06c45ddf969e public -- Business System Interaction Process
-open import SysFEAT.EA.302238be5ec9020a public -- Information Outcome Event
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
+open import SysFEAT.EA.7a0a06c45ddf969e public -- BusinessSystemInteractionProcess
+open import SysFEAT.EA.302238be5ec9020a public -- InformationOutcomeEvent
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
 
-SOftwareSystemScenario : ClassOfClassOfBoundedIndividual
-SOftwareSystemScenario = ClassOfBoundedIndividual
+SOftwareSystemScenario : BoundedIndividualMetaClass
+SOftwareSystemScenario = AssetType
+
 
 --  SOftwareSystemScenario is subTypeOf BusinessSystemInteractionProcess
 st-25c09cb461e2efd3-7a0a06c45ddf969e : SOftwareSystemScenario ⊏ₑ BusinessSystemInteractionProcess
@@ -34,8 +35,8 @@ st-25c09cb461e2efd3-7a0a06c45ddf969e = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Application Flow: -}
 -- Aggregate Member : Application Flow
-ApplicationFlow : ClassOfClassOfBoundedIndividual
-ApplicationFlow = ClassOfBoundedIndividual
+ApplicationFlow : ClassOfClassOfIndividual
+ApplicationFlow = ClassOfIndividual
 
 
 
@@ -64,18 +65,14 @@ applicationFlow = membershipOfApplicationFlow  ∘  aggregationOfInformationOutc
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Software: -}
 -- Aggregate Member : Participant Software
-ParticipantSOftware : ClassOfClassOfBoundedIndividual
-ParticipantSOftware = ClassOfBoundedIndividual
+ParticipantSOftware : ClassOfClassOfIndividual
+ParticipantSOftware = ClassOfIndividual
 
 
 
 --  ParticipantSOftware is subTypeOf ParticipantBusinessAgent
 st-25c1b19061e21ed1-230b35ed61d88944 : ParticipantSOftware ⊏ₑ ParticipantBusinessAgent
 st-25c1b19061e21ed1-230b35ed61d88944 = polySubTypeOf-identity
-
---  ParticipantSOftware is subTypeOf BusinessSOftwareSystem
-st-25c1b19061e21ed1-d6cd02865ab966e8 : ParticipantSOftware ⊏ₑ BusinessSOftwareSystem
-st-25c1b19061e21ed1-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantSOftware :  Linkage SOftwareSystemScenario ParticipantSOftware

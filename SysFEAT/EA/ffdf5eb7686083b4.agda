@@ -17,10 +17,11 @@ External references:
 module SysFEAT.EA.ffdf5eb7686083b4 where -- ========== Artifact
 
 open import Agda.Primitive
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-Artifact : ClassOfClassOfBoundedIndividual
-Artifact = ClassOfBoundedIndividual
+Artifact : AgentMetaClass
+Artifact = AgentType
+
 
 --  Artifact is subTypeOf ResourceAgentType
 st-ffdf5eb7686083b4-e2ef091962147ad7 : Artifact ⊏ₑ ResourceAgentType

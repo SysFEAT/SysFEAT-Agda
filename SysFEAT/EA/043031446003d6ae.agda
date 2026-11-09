@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/043031446003d6ae.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.043031446003d6ae where -- ========== Data breach
+module SysFEAT.EA.043031446003d6ae where -- ========== Databreach
 
 open import Agda.Primitive
 open import SysFEAT..d059da695ef11294 public -- Incident
-open import SysFEAT.EA.167124af6008e9d3 public -- Regulatory agency
+open import SysFEAT.EA.167124af6008e9d3 public -- Regulatoryagency
 
-Databreach : ClassOfBoundedIndividual
-Databreach = BoundedIndividual
+Databreach : ClassOfIndividual
+Databreach = Individual
 
 
 --  Databreach is subTypeOf Incident

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c334e2925ecb8db4.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c334e2925ecb8db4 where -- ========== Physical Outcome Event
+module SysFEAT.EA.c334e2925ecb8db4 where -- ========== PhysicalOutcomeEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
-open import SysFEAT.EA.be94e82f655c90e7 public -- Physical Business Agent
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.EA.be94e82f655c90e7 public -- PhysicalBusinessAgent
 
-PhysicalOutcomeEvent : ClassOfClassOfBoundedIndividual
-PhysicalOutcomeEvent = ClassOfBoundedIndividual
+PhysicalOutcomeEvent : BoundedIndividualMetaClass
+PhysicalOutcomeEvent = AssetType
 
 
 --  PhysicalOutcomeEvent is subTypeOf BusinessOutcomeEvent
@@ -34,18 +34,14 @@ st-c334e2925ecb8db4-9dcea4535ec76e6c = polySubTypeOf-identity
 A Physical Outcome is a state of any Physical Business Agent that is the subject of a business transaction.As such, a Physical Business Agent is created, enhanced or transformed through the Behavior of a producer Hardware System, resulting in an increase in value (Physical Outcome Event) that benefits (value) to the Business Behavior of a consumer Hardware System.Examples:- A produced manufactured product (car, appliance, furniture, etc.) that is the result of development, production and sales activities of a manufacturing company (producer Agent) for the benefit of an end user (Retail customers, wholesale customers, ...).
 -}
 -- Aggregate Member : Physical Outcome
-PhysicalOutcome : ClassOfClassOfBoundedIndividual
-PhysicalOutcome = ClassOfBoundedIndividual
+PhysicalOutcome : ClassOfMixedOrderEntity
+PhysicalOutcome = MixedOrderEntity
 
 
 
 --  PhysicalOutcome is subTypeOf BusinessOutcome
 st-be94eb36655c95ea-be94e0c4655c85b4 : PhysicalOutcome ⊏ₑ BusinessOutcome
 st-be94eb36655c95ea-be94e0c4655c85b4 = polySubTypeOf-identity
-
---  PhysicalOutcome is subTypeOf PhysicalBusinessAgent
-st-be94eb36655c95ea-be94e82f655c90e7 : PhysicalOutcome ⊏ₑ PhysicalBusinessAgent
-st-be94eb36655c95ea-be94e82f655c90e7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalOutcome :  Linkage PhysicalOutcomeEvent PhysicalOutcome

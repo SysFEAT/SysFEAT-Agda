@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/d7f9fbd45f720d19.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d7f9fbd45f720d19 where -- ========== Data Control Execution
+module SysFEAT.EA.d7f9fbd45f720d19 where -- ========== DataControlExecution
 
 open import Agda.Primitive
-open import SysFEAT.EA.b90ac213600e39bb public -- Data Governance Block
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
-open import SysFEAT.EA.003f595c64775717 public -- Data Quality Indicator
-open import SysFEAT.EA.d7f9fc7b5f720e1f public -- Data Issue
-open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
+open import SysFEAT.EA.b90ac213600e39bb public -- DataGovernanceBlock
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
+open import SysFEAT.EA.003f595c64775717 public -- DataQualityIndicator
+open import SysFEAT.EA.d7f9fc7b5f720e1f public -- DataIssue
+open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
 
-DataControlExecution : ClassOfBoundedIndividual
-DataControlExecution = BoundedIndividual
+DataControlExecution : ClassOfMixedOrderEntity
+DataControlExecution = MixedOrderEntity
 
 
 --  DataControlExecution is subTypeOf DataGovernanceBlock

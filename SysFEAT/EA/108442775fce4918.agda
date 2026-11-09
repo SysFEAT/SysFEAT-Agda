@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/108442775fce4918.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.108442775fce4918 where -- ========== Software Deployment Environment
+module SysFEAT.EA.108442775fce4918 where -- ========== SOftwareDeploymentEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d6cd0fd95ab9744b public -- Agent Type Environment
-open import SysFEAT.EA.26b8382f5eeae265 public -- Technology Interface
-open import SysFEAT.EA.24035cc65fc7ad7f public -- Concrete Software System
+open import SysFEAT.SOF.d6cd0fd95ab9744b public -- AgentTypeEnvironment
+open import SysFEAT.EA.26b8382f5eeae265 public -- TechnologyInterface
+open import SysFEAT.EA.24035cc65fc7ad7f public -- ConcreteSOftwareSystem
 
-SOftwareDeploymentEnvironment : ClassOfClassOfBoundedIndividual
-SOftwareDeploymentEnvironment = ClassOfBoundedIndividual
+SOftwareDeploymentEnvironment : BoundedIndividualMetaClass
+SOftwareDeploymentEnvironment = AssetType
+
 
 --  SOftwareDeploymentEnvironment is subTypeOf AgentTypeEnvironment
 st-108442775fce4918-d6cd0fd95ab9744b : SOftwareDeploymentEnvironment ⊏ₑ AgentTypeEnvironment
@@ -32,8 +33,9 @@ st-108442775fce4918-d6cd0fd95ab9744b = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Technical Service Channel: -}
 -- Aggregate Member : Technical Service Channel
-TechnicalServiceChannel : ClassOfClassOfIndividual
-TechnicalServiceChannel = ClassOfIndividual
+TechnicalServiceChannel : ClassOfMixedOrderEntity
+TechnicalServiceChannel = MixedOrderEntity
+
 
 
 --  TechnicalServiceChannel is subTypeOf ServiceChannel
@@ -61,18 +63,14 @@ technicalServiceChannel = membershipOfTechnicalServiceChannel  ∘  aggregationO
 -- -------------------------------------------------------------------------------------------- 
 {- Operating Technical Artifact: -}
 -- Aggregate Member : Operating Technical Artifact
-OperatingTechnicalArtifact : ClassOfClassOfBoundedIndividual
-OperatingTechnicalArtifact = ClassOfBoundedIndividual
+OperatingTechnicalArtifact : ClassOfMixedOrderEntity
+OperatingTechnicalArtifact = MixedOrderEntity
 
 
 
 --  OperatingTechnicalArtifact is subTypeOf ParticipantAgent
 st-108452655fce54ce-80be28965fc2a6b8 : OperatingTechnicalArtifact ⊏ₑ ParticipantAgent
 st-108452655fce54ce-80be28965fc2a6b8 = polySubTypeOf-identity
-
---  OperatingTechnicalArtifact is subTypeOf ConcreteSOftwareSystem
-st-108452655fce54ce-24035cc65fc7ad7f : OperatingTechnicalArtifact ⊏ₑ ConcreteSOftwareSystem
-st-108452655fce54ce-24035cc65fc7ad7f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOperatingTechnicalArtifact :  Linkage SOftwareDeploymentEnvironment OperatingTechnicalArtifact
@@ -95,18 +93,14 @@ operatingTechnicalArtifact = membershipOfOperatingTechnicalArtifact  ∘  aggreg
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Technical Artifact: -}
 -- Aggregate Member : Subject Technical Artifact
-SubjectTechnicalArtifact : ClassOfClassOfBoundedIndividual
-SubjectTechnicalArtifact = ClassOfBoundedIndividual
+SubjectTechnicalArtifact : ClassOfMixedOrderEntity
+SubjectTechnicalArtifact = MixedOrderEntity
 
 
 
 --  SubjectTechnicalArtifact is subTypeOf SubjectAgent
 st-108452da5fce55f9-fa4ffc205ec86201 : SubjectTechnicalArtifact ⊏ₑ SubjectAgent
 st-108452da5fce55f9-fa4ffc205ec86201 = polySubTypeOf-identity
-
---  SubjectTechnicalArtifact is subTypeOf ConcreteSOftwareSystem
-st-108452da5fce55f9-24035cc65fc7ad7f : SubjectTechnicalArtifact ⊏ₑ ConcreteSOftwareSystem
-st-108452da5fce55f9-24035cc65fc7ad7f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectTechnicalArtifact :  Linkage SOftwareDeploymentEnvironment SubjectTechnicalArtifact
@@ -129,8 +123,8 @@ subjectTechnicalArtifact = membershipOfSubjectTechnicalArtifact  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Technical Artifact: -}
 -- Aggregate Member : Partner Technical Artifact
-PartnerTechnicalArtifact : ClassOfClassOfBoundedIndividual
-PartnerTechnicalArtifact = ClassOfBoundedIndividual
+PartnerTechnicalArtifact : ClassOfMixedOrderEntity
+PartnerTechnicalArtifact = MixedOrderEntity
 
 
 
@@ -141,10 +135,6 @@ st-1084535e5fce5779-108452655fce54ce = polySubTypeOf-identity
 --  PartnerTechnicalArtifact is subTypeOf PartnerAgent
 st-1084535e5fce5779-fa4ffc235ec86276 : PartnerTechnicalArtifact ⊏ₑ PartnerAgent
 st-1084535e5fce5779-fa4ffc235ec86276 = polySubTypeOf-identity
-
---  PartnerTechnicalArtifact is subTypeOf ConcreteSOftwareSystem
-st-1084535e5fce5779-24035cc65fc7ad7f : PartnerTechnicalArtifact ⊏ₑ ConcreteSOftwareSystem
-st-1084535e5fce5779-24035cc65fc7ad7f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerTechnicalArtifact :  Linkage SOftwareDeploymentEnvironment PartnerTechnicalArtifact

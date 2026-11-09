@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/f4be0eda5ee1d6c0.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f4be0eda5ee1d6c0 where -- ========== Computing System
+module SysFEAT.EA.f4be0eda5ee1d6c0 where -- ========== ComputingSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.d16006d362e085f2 public -- Technology Operating Asset
-open import SysFEAT.EA.24035cc65fc7ad7f public -- Concrete Software System
+open import SysFEAT.EA.d16006d362e085f2 public -- TechnologyOperatingAsset
+open import SysFEAT.EA.24035cc65fc7ad7f public -- ConcreteSOftwareSystem
 
-ComputingSystem : ClassOfClassOfBoundedIndividual
-ComputingSystem = ClassOfBoundedIndividual
+ComputingSystem : BoundedIndividualMetaClass
+ComputingSystem = AssetType
 
 
 --  ComputingSystem is subTypeOf TechnologyOperatingAsset
@@ -32,14 +32,9 @@ st-f4be0eda5ee1d6c0-d16006d362e085f2 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Hosted Software: -}
 -- Aggregate Member : Hosted Software
-HostedSOftware : ClassOfClassOfBoundedIndividual
-HostedSOftware = ClassOfBoundedIndividual
+HostedSOftware : ClassOfClassOfIndividual
+HostedSOftware = ClassOfIndividual
 
-
-
---  HostedSOftware is subTypeOf ConcreteSOftwareSystem
-st-70ba9b2e64224962-24035cc65fc7ad7f : HostedSOftware ⊏ₑ ConcreteSOftwareSystem
-st-70ba9b2e64224962-24035cc65fc7ad7f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedSOftware :  Linkage ComputingSystem HostedSOftware

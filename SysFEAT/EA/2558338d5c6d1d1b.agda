@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/2558338d5c6d1d1b.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2558338d5c6d1d1b where -- ========== Logical Software System
+module SysFEAT.EA.2558338d5c6d1d1b where -- ========== LogicalSOftwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
-open import SysFEAT.EA.9dce9f8d5ec76311 public -- Application Interface
-open import SysFEAT.EA.461950e9560d4461 public -- Logical Data Domain
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+open import SysFEAT.EA.9dce9f8d5ec76311 public -- ApplicationInterface
+open import SysFEAT.EA.461950e9560d4461 public -- LogicalDataDomain
 
-LogicalSOftwareSystem : ClassOfClassOfBoundedIndividual
-LogicalSOftwareSystem = ClassOfBoundedIndividual
+LogicalSOftwareSystem : BoundedIndividualMetaClass
+LogicalSOftwareSystem = AssetType
 
 
 --  LogicalSOftwareSystem is subTypeOf BusinessSOftwareSystem
@@ -33,8 +33,9 @@ st-2558338d5c6d1d1b-d6cd02865ab966e8 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Logical Software Channel: -}
 -- Aggregate Member : Logical Software Channel
-LogicalSOftwareChannel : ClassOfClassOfIndividual
-LogicalSOftwareChannel = ClassOfIndividual
+LogicalSOftwareChannel : ClassOfMixedOrderEntity
+LogicalSOftwareChannel = MixedOrderEntity
+
 
 
 --  LogicalSOftwareChannel is subTypeOf SOftwareConnection
@@ -62,17 +63,14 @@ logicalSOftwareChannel = membershipOfLogicalSOftwareChannel  ∘  aggregationOfA
 -- -------------------------------------------------------------------------------------------- 
 {- Logical Data Store: -}
 -- Aggregate Member : Logical Data Store
-LogicalDataStore : ClassOfClassOfIndividual
-LogicalDataStore = ClassOfIndividual
+LogicalDataStore : ClassOfMixedOrderEntity
+LogicalDataStore = MixedOrderEntity
+
 
 
 --  LogicalDataStore is subTypeOf Physicaldatastore
 st-0f0f1277607f70b3-7b8780615eb81b83 : LogicalDataStore ⊏ₑ Physicaldatastore
 st-0f0f1277607f70b3-7b8780615eb81b83 = polySubTypeOf-identity
-
---  LogicalDataStore is subTypeOf LogicalDataDomain
-st-0f0f1277607f70b3-461950e9560d4461 : LogicalDataStore ⊏ₑ LogicalDataDomain
-st-0f0f1277607f70b3-461950e9560d4461 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDataStore :  Linkage LogicalSOftwareSystem LogicalDataStore
@@ -95,18 +93,14 @@ logicalDataStore = membershipOfLogicalDataStore  ∘  aggregationOfLogicalDataDo
 -- -------------------------------------------------------------------------------------------- 
 {- Logical Software Member: -}
 -- Aggregate Member : Logical Software Member
-LogicalSOftwareMember : ClassOfClassOfBoundedIndividual
-LogicalSOftwareMember = ClassOfBoundedIndividual
+LogicalSOftwareMember : ClassOfClassOfIndividual
+LogicalSOftwareMember = ClassOfIndividual
 
 
 
 --  LogicalSOftwareMember is subTypeOf SOftwarePart
 st-13931800607f240a-173f4d015eb8c686 : LogicalSOftwareMember ⊏ₑ SOftwarePart
 st-13931800607f240a-173f4d015eb8c686 = polySubTypeOf-identity
-
---  LogicalSOftwareMember is subTypeOf LogicalSOftwareSystem
-st-13931800607f240a-2558338d5c6d1d1b : LogicalSOftwareMember ⊏ₑ LogicalSOftwareSystem
-st-13931800607f240a-2558338d5c6d1d1b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalSOftwareMember :  Linkage LogicalSOftwareSystem LogicalSOftwareMember

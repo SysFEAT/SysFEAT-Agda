@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Control Measure: 
-A Control Measure is a Resource Operating Asset (agent or behavior) that is taken to prevent, eliminate or reduce the occurrence of a hazard that has been identified in the context of an Assurance Case.
+A Control Measure is a Resource Operating Asset Type (agent or behavior) that is taken to prevent, eliminate or reduce the occurrence of a hazard that has been identified in the context of an Assurance Case.
 
 Documentation : https://framework.sysfeat.com/pages/f1600ddf67d8444b.htm
 
@@ -16,37 +16,37 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f1600ddf67d8444b where -- ========== Control Measure
+module SysFEAT.EA.f1600ddf67d8444b where -- ========== ControlMeasure
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
-open import SysFEAT.EA.4b9477ae68a4926d public -- Control Asset
-open import SysFEAT.EA.582e764f66f6a4cc public -- Control Measure Category
-open import SysFEAT.EA.01f1156d689b5ecc public -- Control Directive
+open import SysFEAT.EA.4b9477ae68a4926d public -- ControlAsset
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.EA.01f1156d689b5ecc public -- ControlDirective
+open import SysFEAT.EA.582e764f66f6a4cc public -- ControlMeasureCategory
 
-ControlMeasure : ClassOfClassOfBoundedIndividual
-ControlMeasure = ClassOfBoundedIndividual
+ControlMeasure : ClassOfMixedOrderEntity
+ControlMeasure = MixedOrderEntity
 
-
---  ControlMeasure is subTypeOf ResourceOperatingAsset
-st-f1600ddf67d8444b-f8e61da0621db6fa : ControlMeasure ⊏ₑ ResourceOperatingAsset
-st-f1600ddf67d8444b-f8e61da0621db6fa = polySubTypeOf-identity
 
 --  ControlMeasure withAspect ControlAsset
 st-f1600ddf67d8444b-4b9477ae68a4926d : ControlMeasure ⊏ₐₑ (ControlAsset (lsuc(lzero)))
 st-f1600ddf67d8444b-4b9477ae68a4926d = polySubTypeOf-identity
 
+--  ControlMeasure is subTypeOf ResourceOperatingAssetType
+st-f1600ddf67d8444b-f8e61da0621db6fa : ControlMeasure ⊏ₑ ResourceOperatingAssetType
+st-f1600ddf67d8444b-f8e61da0621db6fa = polySubTypeOf-identity
+
 
 -- == Relations =======================
-
--- -------------------------------------------------------------------------------------------- 
-{- Control Measure Category: -}
-controlMeasureCategory :  Linkage ControlMeasure ControlMeasureCategory
-controlMeasureCategory = make_instanceOf "Control Measure Category" "Control Measure Category"
-
 
 -- -------------------------------------------------------------------------------------------- 
 {- Enforced Control Directive: -}
 enforcedControlDirective :  Linkage ControlMeasure ControlDirective
 enforcedControlDirective = make_subTypeOf "Enforced Control Directive" "Enforced Control Directive"
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Control Measure Category: -}
+controlMeasureCategory :  Linkage ControlMeasure ControlMeasureCategory
+controlMeasureCategory = make_classOfRelation "Control Measure Category" "Control Measure Category"
 

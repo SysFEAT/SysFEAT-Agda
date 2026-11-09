@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/61e3b04c679f13de.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.61e3b04c679f13de where -- ========== Micro Resource Operating Asset
+module SysFEAT.EA.61e3b04c679f13de where -- ========== MicroResourceOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-MicroResourceOperatingAsset : ClassOfClassOfBoundedIndividual
-MicroResourceOperatingAsset = ClassOfBoundedIndividual
+MicroResourceOperatingAsset : BoundedIndividualMetaClass
+MicroResourceOperatingAsset = AssetType
 
---  MicroResourceOperatingAsset is subTypeOf ResourceOperatingAsset
-st-61e3b04c679f13de-f8e61da0621db6fa : MicroResourceOperatingAsset ⊏ₑ ResourceOperatingAsset
+
+--  MicroResourceOperatingAsset is subTypeOf ResourceOperatingAssetType
+st-61e3b04c679f13de-f8e61da0621db6fa : MicroResourceOperatingAsset ⊏ₑ ResourceOperatingAssetType
 st-61e3b04c679f13de-f8e61da0621db6fa = polySubTypeOf-identity
 
 

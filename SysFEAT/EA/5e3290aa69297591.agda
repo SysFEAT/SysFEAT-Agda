@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/5e3290aa69297591.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.5e3290aa69297591 where -- ========== Composite Data Property
+module SysFEAT.EA.5e3290aa69297591 where -- ========== CompositeDataProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c991068ca8a23 public -- Data Property
+open import SysFEAT.EA.8f1c991068ca8a23 public -- DataProperty
 
-CompositeDataProperty : PropertyType
-CompositeDataProperty = Property
+CompositeDataProperty : BoundedIndividualMetaClass
+CompositeDataProperty = AssetType
+
 
 --  CompositeDataProperty is subTypeOf DataProperty
 st-5e3290aa69297591-8f1c991068ca8a23 : CompositeDataProperty ⊏ₑ DataProperty

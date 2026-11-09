@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/8a5c926e5c0d632c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8a5c926e5c0d632c where -- ========== Customer Activity
+module SysFEAT.EA.8a5c926e5c0d632c where -- ========== CustomerActivity
 
 open import Agda.Primitive
-open import SysFEAT.EA.08d181af678a2d51 public -- Customer
+open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
 
 CustomerActivity : ClassOfClassOfBoundedIndividual
 CustomerActivity = ClassOfBoundedIndividual
@@ -39,10 +39,6 @@ Step of a Customer Journey where a Customer experiences offered capability throu
 CustomerActivityMember : ClassOfClassOfIndividual
 CustomerActivityMember = ClassOfIndividual
 
-
---  CustomerActivityMember is subTypeOf CustomerActivity
-st-ec200f5b630f47c5-8a5c926e5c0d632c : CustomerActivityMember ⊏ₑ CustomerActivity
-st-ec200f5b630f47c5-8a5c926e5c0d632c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfCustomerActivityMember :  Linkage CustomerActivity CustomerActivityMember

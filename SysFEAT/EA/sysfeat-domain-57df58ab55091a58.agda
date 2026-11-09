@@ -20,9 +20,10 @@ module SysFEAT.EA.sysfeat-domain-57df58ab55091a58 where -- ========== Enterprise
 
 open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
 open import SysFEAT.EA.sysfeat-domain-75ef50ab620fb787 public -- EA Pattern - Physical Data Domain
+open import SysFEAT.C-SOF.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
 open import SysFEAT.EA.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
-open import SysFEAT.EA.sysfeat-domain-19dc1a30555649d9 public -- Conceptual Operating Model
+open import SysFEAT.C-SOF.sysfeat-domain-19dc1a30555649d9 public -- Conceptual Operating Model
 open import SysFEAT.EA.sysfeat-domain-25c09f1b61e2f2a0 public -- SOF - Business Software Operating Model
 open import SysFEAT.SOF.sysfeat-domain-83bb9d706192357b public -- Appraisal Pattern
 open import SysFEAT.EA.sysfeat-domain-d17029ff5be84c49 public -- Product & Customer Experience

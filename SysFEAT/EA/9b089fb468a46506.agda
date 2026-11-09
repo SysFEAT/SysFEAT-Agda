@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/9b089fb468a46506.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9b089fb468a46506 where -- ========== Physical Capability Map
+module SysFEAT.EA.9b089fb468a46506 where -- ========== PhysicalCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT..dd2638ba68a073a8 public -- Business Resource Capability Map
-open import SysFEAT.EA.9b089d1868a45ed3 public -- Physical Capability
+open import SysFEAT..dd2638ba68a073a8 public -- BusinessResourceCapabilityMap
+open import SysFEAT.EA.9b089d1868a45ed3 public -- PhysicalCapability
 
-PhysicalCapabilityMap : PropertyType
-PhysicalCapabilityMap = Property
+PhysicalCapabilityMap : ClassOfMixedOrderEntity
+PhysicalCapabilityMap = MixedOrderEntity
+
 
 --  PhysicalCapabilityMap is subTypeOf BusinessResourceCapabilityMap
 st-9b089fb468a46506-dd2638ba68a073a8 : PhysicalCapabilityMap ⊏ₑ BusinessResourceCapabilityMap
@@ -31,8 +32,9 @@ st-9b089fb468a46506-dd2638ba68a073a8 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Map Member: -}
 -- Aggregate Member : Physical Map Member
-PhysicalMapMember : ClassOfClassOfIndividual
-PhysicalMapMember = ClassOfIndividual
+PhysicalMapMember : ClassOfMixedOrderEntity
+PhysicalMapMember = MixedOrderEntity
+
 
 
 --  PhysicalMapMember is subTypeOf BusinessResourceCapabilityMember

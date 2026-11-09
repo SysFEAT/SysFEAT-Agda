@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/9b089d1868a45ed3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9b089d1868a45ed3 where -- ========== Physical Capability
+module SysFEAT.EA.9b089d1868a45ed3 where -- ========== PhysicalCapability
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd26288968a05d00 public -- Business Resource Capability
+open import SysFEAT.EA.dd26288968a05d00 public -- BusinessResourceCapability
 
 PhysicalCapability : AssetPropertyType
 PhysicalCapability = AssetProperty
@@ -39,7 +39,7 @@ postulate -- specializedPhysicalCapability is subTypeOf specializedBusinessResou
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Capability Part: -}
 -- Aggregate Member : Physical Capability Part
-PhysicalCapabilityPart : ClassOfClassOfAbstractEntity
+PhysicalCapabilityPart : AbstractEntityMetaClass
 PhysicalCapabilityPart = ClassOfAbstractEntity
 
 

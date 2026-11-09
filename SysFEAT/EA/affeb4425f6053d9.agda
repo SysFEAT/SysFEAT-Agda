@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/affeb4425f6053d9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affeb4425f6053d9 where -- ========== Data Inventory Snapshot
+module SysFEAT.EA.affeb4425f6053d9 where -- ========== DataInventorySnapshot
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.SOF.0eb95dce6855be2e public -- Model Container
-open import SysFEAT.EA.affeb2255f6051e6 public -- Deployed Data Store
-open import SysFEAT.EA.affeb4955f6054cd public -- Data Set Snapshot
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
+open import SysFEAT.EA.affeb4955f6054cd public -- DataSetSnapshot
 
-DataInventorySnapshot : ClassOfBoundedIndividual
-DataInventorySnapshot = BoundedIndividual
+DataInventorySnapshot : AssetType
+DataInventorySnapshot = IndividualAsset
 
 
 --  DataInventorySnapshot is subTypeOf DeployedBusinessSystem

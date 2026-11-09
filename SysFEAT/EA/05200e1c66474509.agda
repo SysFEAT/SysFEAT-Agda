@@ -12,23 +12,25 @@ Documentation : https://framework.sysfeat.com/pages/05200e1c66474509.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.05200e1c66474509 where -- ========== Management Stage
+module SysFEAT.EA.05200e1c66474509 where -- ========== ManagementStage
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e78c5eb0661989f9 public -- Initiative Stage
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
+open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
 
-ManagementStage : ClassOfBoundedIndividual
-ManagementStage = BoundedIndividual
+ManagementStage : StateClass
+ManagementStage = IndividualState
 
 
 --  ManagementStage is subTypeOf InitiativeStage
 st-05200e1c66474509-e78c5eb0661989f9 : ManagementStage ⊏ₑ InitiativeStage
 st-05200e1c66474509-e78c5eb0661989f9 = polySubTypeOf-identity
 
---  ManagementStage is subTypeOf ManagementInitiative
-st-05200e1c66474509-05201b936647570a : ManagementStage ⊏ₑ ManagementInitiative
-st-05200e1c66474509-05201b936647570a = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Management Initiative: -}
+stateOfManagementInitiative :  Linkage ManagementStage ManagementInitiative
+stateOfManagementInitiative = make_meronymyRelation "State of Management Initiative" "State of Management Initiative"
+

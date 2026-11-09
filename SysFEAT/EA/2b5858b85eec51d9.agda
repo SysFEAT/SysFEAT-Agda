@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/2b5858b85eec51d9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2b5858b85eec51d9 where -- ========== Logical Data Element
+module SysFEAT.EA.2b5858b85eec51d9 where -- ========== LogicalDataElement
 
 open import Agda.Primitive
-open import SysFEAT.EA.fd1bf2a45fbc64fb public -- Logical Data Asset
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
+open import SysFEAT.EA.fd1bf2a45fbc64fb public -- LogicalDataAsset
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
 
-LogicalDataElement : ClassOfClassOfBoundedIndividual
-LogicalDataElement = ClassOfBoundedIndividual
+LogicalDataElement : ClassOfMixedOrderEntity
+LogicalDataElement = MixedOrderEntity
 
 
 --  LogicalDataElement is subTypeOf LogicalDataAsset
@@ -36,18 +36,14 @@ st-2b5858b85eec51d9-6d2b7c935fbb6270 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Logical Data Member: -}
 -- Aggregate Member : Logical Data Member
-LogicalDataMember : ClassOfClassOfBoundedIndividual
-LogicalDataMember = ClassOfBoundedIndividual
+LogicalDataMember : ClassOfMixedOrderEntity
+LogicalDataMember = MixedOrderEntity
 
 
 
 --  LogicalDataMember is subTypeOf DataObjectMember
 st-e7e3fa0a5fbb0ddb-b6e3cdf35fbb6ad1 : LogicalDataMember ⊏ₑ DataObjectMember
 st-e7e3fa0a5fbb0ddb-b6e3cdf35fbb6ad1 = polySubTypeOf-identity
-
---  LogicalDataMember is subTypeOf LogicalDataElement
-st-e7e3fa0a5fbb0ddb-2b5858b85eec51d9 : LogicalDataMember ⊏ₑ LogicalDataElement
-st-e7e3fa0a5fbb0ddb-2b5858b85eec51d9 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDataMember :  Linkage LogicalDataElement LogicalDataMember

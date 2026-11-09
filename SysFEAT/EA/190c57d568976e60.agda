@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/190c57d568976e60.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.190c57d568976e60 where -- ========== Regulation Article
+module SysFEAT.EA.190c57d568976e60 where -- ========== RegulationArticle
 
 open import Agda.Primitive
+open import SysFEAT.EA.4b947d2068a49dbb public -- RegulatoryAsset
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.4b947d2068a49dbb public -- Regulatory Asset
-open import SysFEAT.EA.952eb284672864df public -- Regulation section
+open import SysFEAT.EA.952eb284672864df public -- Regulationsection
 
-RegulationArticle : PropertyType
-RegulationArticle = Property
+RegulationArticle : ClassOfMixedOrderEntity
+RegulationArticle = MixedOrderEntity
 
---  RegulationArticle is subTypeOf Policy
-st-190c57d568976e60-190c7429689664b5 : RegulationArticle ⊏ₑ Policy
-st-190c57d568976e60-190c7429689664b5 = polySubTypeOf-identity
 
 --  RegulationArticle withAspect RegulatoryAsset
 st-190c57d568976e60-4b947d2068a49dbb : RegulationArticle ⊏ₐₑ (RegulatoryAsset (lsuc(lzero)))
 st-190c57d568976e60-4b947d2068a49dbb = polySubTypeOf-identity
+
+--  RegulationArticle is subTypeOf Policy
+st-190c57d568976e60-190c7429689664b5 : RegulationArticle ⊏ₑ Policy
+st-190c57d568976e60-190c7429689664b5 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -36,7 +37,7 @@ st-190c57d568976e60-4b947d2068a49dbb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Parent Section: -}
 parentSection :  Linkage RegulationArticle Regulationsection
-parentSection = make_instanceOf "Parent Section" "Parent Section"
+parentSection = make_classOfRelation "Parent Section" "Parent Section"
 
 
 -- -------------------------------------------------------------------------------------------- 

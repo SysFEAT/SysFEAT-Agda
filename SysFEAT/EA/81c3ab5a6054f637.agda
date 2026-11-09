@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/81c3ab5a6054f637.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.81c3ab5a6054f637 where -- ========== Vendor Catalog
+module SysFEAT.EA.81c3ab5a6054f637 where -- ========== VendorCatalog
 
 open import Agda.Primitive
-open import SysFEAT.SOF.3aca50c46aa63f3b public -- Reference Dictionary
+open import SysFEAT.SOF.3aca50c46aa63f3b public -- ReferenceDictionary
 open import SysFEAT.EA.8d8d242467a32a6f public -- Vendor
 
-VendorCatalog : ClassOfAbstractEntity
-VendorCatalog = AbstractEntity
+VendorCatalog : ClassOfMixedOrderEntity
+VendorCatalog = MixedOrderEntity
 
 
 --  VendorCatalog is subTypeOf ReferenceDictionary

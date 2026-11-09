@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/dc0bed125ae95913.htm
 module SysFEAT.EA.dc0bed125ae95913 where -- ========== DPIA
 
 open import Agda.Primitive
-open import SysFEAT.EA.8a9f9fe55ee0a603 public -- Privacy Assessment
+open import SysFEAT.EA.8a9f9fe55ee0a603 public -- PrivacyAssessment
 
-DPIA : ClassOfBoundedIndividual
-DPIA = BoundedIndividual
+DPIA : ClassOfIndividual
+DPIA = Individual
 
 
 --  DPIA is subTypeOf PrivacyAssessment

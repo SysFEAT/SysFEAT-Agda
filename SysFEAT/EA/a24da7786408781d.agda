@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/a24da7786408781d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.a24da7786408781d where -- ========== Software Technology Outcome Event
+module SysFEAT.EA.a24da7786408781d where -- ========== SOftwareTechnologyOutcomeEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be0a955ee1c4f5 public -- Technology Outcome Event
+open import SysFEAT.EA.f4be0a955ee1c4f5 public -- TechnologyOutcomeEvent
 
-SOftwareTechnologyOutcomeEvent : ClassOfClassOfIndividual
-SOftwareTechnologyOutcomeEvent = ClassOfIndividual
+SOftwareTechnologyOutcomeEvent : BoundedIndividualMetaClass
+SOftwareTechnologyOutcomeEvent = AssetType
+
 
 --  SOftwareTechnologyOutcomeEvent is subTypeOf TechnologyOutcomeEvent
 st-a24da7786408781d-f4be0a955ee1c4f5 : SOftwareTechnologyOutcomeEvent ⊏ₑ TechnologyOutcomeEvent

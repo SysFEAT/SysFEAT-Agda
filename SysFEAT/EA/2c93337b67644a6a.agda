@@ -12,22 +12,22 @@ Documentation : https://framework.sysfeat.com/pages/2c93337b67644a6a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2c93337b67644a6a where -- ========== Human Resource
+module SysFEAT.EA.2c93337b67644a6a where -- ========== HumanResource
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.ffdf61506860875a public -- Human Agent Category
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.ffdf61506860875a public -- HumanAgentType
 
-HumanResource : ClassOfClassOfBoundedIndividual
-HumanResource = ClassOfBoundedIndividual
+HumanResource : BoundedIndividualMetaClass
+HumanResource = AssetType
 
 
 --  HumanResource is subTypeOf BusinessAgentType
 st-2c93337b67644a6a-bcebd31f5491302c : HumanResource ⊏ₑ BusinessAgentType
 st-2c93337b67644a6a-bcebd31f5491302c = polySubTypeOf-identity
 
---  HumanResource is subTypeOf HumanAgentCategory
-st-2c93337b67644a6a-ffdf61506860875a : HumanResource ⊏ₑ HumanAgentCategory
+--  HumanResource is subTypeOf HumanAgentType
+st-2c93337b67644a6a-ffdf61506860875a : HumanResource ⊏ₑ HumanAgentType
 st-2c93337b67644a6a-ffdf61506860875a = polySubTypeOf-identity
 
 

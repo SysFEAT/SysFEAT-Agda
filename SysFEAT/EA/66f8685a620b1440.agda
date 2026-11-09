@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/66f8685a620b1440.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.66f8685a620b1440 where -- ========== Individual Business Agent
+module SysFEAT.EA.66f8685a620b1440 where -- ========== IndividualBusinessAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.62ff75f363765899 public -- Individual Business Asset
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
+open import SysFEAT.EA.62ff75f363765899 public -- IndividualBusinessAsset
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-IndividualBusinessAgent : ClassOfBoundedIndividual
-IndividualBusinessAgent = BoundedIndividual
+IndividualBusinessAgent : AssetType
+IndividualBusinessAgent = IndividualAsset
 
 
 --  IndividualBusinessAgent is subTypeOf IndividualBusinessAsset
@@ -31,24 +31,22 @@ st-66f8685a620b1440-62ff75f363765899 = polySubTypeOf-identity
 st-66f8685a620b1440-fe1c231267880201 : IndividualBusinessAgent ⊏ₑ IndividualResourceAgent
 st-66f8685a620b1440-fe1c231267880201 = polySubTypeOf-identity
 
+postulate -- IndividualBusinessAgent is PowerInstanceOf Business Agent Type
+  pi-4e5651f568de499f : IndividualBusinessAgent ∷ₚₑ BusinessAgentType
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
 {- Deployed Business Agent Part: -}
 -- Aggregate Member : Deployed Business Agent Part
-DeployedBusinessAgentPart : AgentType
-DeployedBusinessAgentPart = IndividualAgent
+DeployedBusinessAgentPart : AggregateHolonymyType
+DeployedBusinessAgentPart = AggregateHolonymy
 
 
 
 --  DeployedBusinessAgentPart is subTypeOf IndividualResourceAgentPart
 st-66f868de620b14e6-fe1c2ae667880c06 : DeployedBusinessAgentPart ⊏ₑ IndividualResourceAgentPart
 st-66f868de620b14e6-fe1c2ae667880c06 = polySubTypeOf-identity
-
---  DeployedBusinessAgentPart is subTypeOf IndividualBusinessAgent
-st-66f868de620b14e6-66f8685a620b1440 : DeployedBusinessAgentPart ⊏ₑ IndividualBusinessAgent
-st-66f868de620b14e6-66f8685a620b1440 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDeployedBusinessAgentPart :  Linkage IndividualBusinessAgent DeployedBusinessAgentPart

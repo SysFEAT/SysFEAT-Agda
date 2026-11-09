@@ -14,14 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e4c0e7285ed0625d where -- ========== Application System Scenario
+module SysFEAT.EA.e4c0e7285ed0625d where -- ========== ApplicationSystemScenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c09cb461e2efd3 public -- Software System Scenario
-open import SysFEAT.EA.46194ca7560d3a45 public -- Application System
+open import SysFEAT.EA.25c09cb461e2efd3 public -- SOftwareSystemScenario
+open import SysFEAT.EA.46194ca7560d3a45 public -- ApplicationSystem
 
-ApplicationSystemScenario : ClassOfClassOfBoundedIndividual
-ApplicationSystemScenario = ClassOfBoundedIndividual
+ApplicationSystemScenario : BoundedIndividualMetaClass
+ApplicationSystemScenario = AssetType
+
 
 --  ApplicationSystemScenario is subTypeOf SOftwareSystemScenario
 st-e4c0e7285ed0625d-25c09cb461e2efd3 : ApplicationSystemScenario ⊏ₑ SOftwareSystemScenario
@@ -33,14 +34,9 @@ st-e4c0e7285ed0625d-25c09cb461e2efd3 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Application System: -}
 -- Aggregate Member : Partner Application System
-PartnerApplicationSystem : ClassOfClassOfBoundedIndividual
-PartnerApplicationSystem = ClassOfBoundedIndividual
+PartnerApplicationSystem : ClassOfClassOfIndividual
+PartnerApplicationSystem = ClassOfIndividual
 
-
-
---  PartnerApplicationSystem is subTypeOf ApplicationSystem
-st-e4c0e7985ed064d2-46194ca7560d3a45 : PartnerApplicationSystem ⊏ₑ ApplicationSystem
-st-e4c0e7985ed064d2-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerApplicationSystem :  Linkage ApplicationSystemScenario PartnerApplicationSystem

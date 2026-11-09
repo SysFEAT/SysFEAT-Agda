@@ -12,18 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/22ba264367643346.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.22ba264367643346 where -- ========== Technology Portfolio Stage
+module SysFEAT.EA.22ba264367643346 where -- ========== TechnologyPortfolioStage
 
 open import Agda.Primitive
-open import SysFEAT.EA.22ba23ea67643262 public -- Technology Management Initiative
+open import SysFEAT.EA.22ba23ea67643262 public -- TechnologyManagementInitiative
 
 TechnologyPortfolioStage : StateClass
 TechnologyPortfolioStage = StateConcept
 
 
---  TechnologyPortfolioStage is subTypeOf TechnologyManagementInitiative
-st-22ba264367643346-22ba23ea67643262 : TechnologyPortfolioStage ⊏ₑ TechnologyManagementInitiative
-st-22ba264367643346-22ba23ea67643262 = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Technology Management Initiative: -}
+stateOfTechnologyManagementInitiative :  Linkage TechnologyPortfolioStage TechnologyManagementInitiative
+stateOfTechnologyManagementInitiative = make_meronymyRelation "State of Technology Management Initiative" "State of Technology Management Initiative"
+

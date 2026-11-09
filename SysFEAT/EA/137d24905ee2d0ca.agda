@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/137d24905ee2d0ca.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.137d24905ee2d0ca where -- ========== Table View
+module SysFEAT.EA.137d24905ee2d0ca where -- ========== TableView
 
 open import Agda.Primitive
-open import SysFEAT.EA.362f3ca45b3b234b public -- Relational Entity
+open import SysFEAT.EA.362f3ca45b3b234b public -- RelationalEntity
 
-TableView : ClassOfClassOfBoundedIndividual
-TableView = ClassOfBoundedIndividual
+TableView : ClassOfMixedOrderEntity
+TableView = MixedOrderEntity
 
 
 --  TableView is subTypeOf RelationalEntity

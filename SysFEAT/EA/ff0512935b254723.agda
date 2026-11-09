@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/ff0512935b254723.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.ff0512935b254723 where -- ========== Architecture Governance Committee
+module SysFEAT.EA.ff0512935b254723 where -- ========== ArchitectureGovernanceCommittee
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ff0501b65b253fdd public -- Governing Team
+open import SysFEAT.SOF.ff0501b65b253fdd public -- GoverningTeam
 open import SysFEAT.EA.b181b82a54891668 public -- Enterprise
-open import SysFEAT.EA.05b091f46006f913 public -- Management Initiative Committee
+open import SysFEAT.EA.05b091f46006f913 public -- ManagementInitiativeCommittee
 
-ArchitectureGovernanceCommittee : ClassOfBoundedIndividual
-ArchitectureGovernanceCommittee = BoundedIndividual
+ArchitectureGovernanceCommittee : WholeLifeClass
+ArchitectureGovernanceCommittee = WholeLifeIndividual
 
 
 --  ArchitectureGovernanceCommittee is subTypeOf GoverningTeam

@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/2b6f332061bae622.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2b6f332061bae622 where -- ========== Business Resource Ecosystem
+module SysFEAT.EA.2b6f332061bae622 where -- ========== BusinessResourceEcosystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e64b51621dd3f3 public -- Resource Operating Ecosystem
-open import SysFEAT.EA.7c4097c855271c8e public -- Conceptual Environment
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
-open import SysFEAT.EA.62466ea661b80d09 public -- Business Operating Asset
+open import SysFEAT.EA.f8e64b51621dd3f3 public -- ResourceOperatingEcosystem
+open import SysFEAT.C-SOF.7c4097c855271c8e public -- ConceptualEnvironment
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
+open import SysFEAT.EA.62466ea661b80d09 public -- BusinessOperatingAsset
 
 BusinessResourceEcosystem : ClassOfClassOfBoundedIndividual
 BusinessResourceEcosystem = ClassOfBoundedIndividual
@@ -43,8 +43,8 @@ BusinessEcosystemConnection : ClassOfClassOfIndividual
 BusinessEcosystemConnection = ClassOfIndividual
 
 
---  BusinessEcosystemConnection is subTypeOf EnterpriseEcosystemConnection
-st-f8e7db56621f0cef-f8e7b91f621f01e9 : BusinessEcosystemConnection ⊏ₑ EnterpriseEcosystemConnection
+--  BusinessEcosystemConnection is subTypeOf ResourceEcosystemConnection
+st-f8e7db56621f0cef-f8e7b91f621f01e9 : BusinessEcosystemConnection ⊏ₑ ResourceEcosystemConnection
 st-f8e7db56621f0cef-f8e7b91f621f01e9 = polySubTypeOf-identity
 
 -- Membership relation
@@ -68,18 +68,13 @@ businessEcosystemConnection = membershipOfBusinessEcosystemConnection  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Ecosystem Part: -}
 -- Aggregate Member : Resource Ecosystem Part
-ResourceEcosystemPart : ClassOfClassOfBoundedIndividual
-ResourceEcosystemPart = ClassOfBoundedIndividual
+ResourceEcosystemPart : ClassOfClassOfIndividual
+ResourceEcosystemPart = ClassOfIndividual
 
 
-
---  ResourceEcosystemPart is subTypeOf EnterpriseEcosystemPart
-st-95129626620b544c-f8e6b83c621fffe6 : ResourceEcosystemPart ⊏ₑ EnterpriseEcosystemPart
+--  ResourceEcosystemPart is subTypeOf ResourceEcosystemPart
+st-95129626620b544c-f8e6b83c621fffe6 : ResourceEcosystemPart ⊏ₑ ResourceEcosystemPart
 st-95129626620b544c-f8e6b83c621fffe6 = polySubTypeOf-identity
-
---  ResourceEcosystemPart is subTypeOf BusinessOperatingAsset
-st-95129626620b544c-62466ea661b80d09 : ResourceEcosystemPart ⊏ₑ BusinessOperatingAsset
-st-95129626620b544c-62466ea661b80d09 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceEcosystemPart :  Linkage BusinessResourceEcosystem ResourceEcosystemPart

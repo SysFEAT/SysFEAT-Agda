@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/67d376e36aa45056.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.67d376e36aa45056 where -- ========== Data Dictionary
+module SysFEAT.EA.67d376e36aa45056 where -- ========== DataDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.d745ed256aa38edc public -- Information Dictionary
-open import SysFEAT.EA.8f1c937168ca8195 public -- Data Block
+open import SysFEAT.SOF.d745ed256aa38edc public -- InformationDictionary
+open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
 
-DataDictionary : ClassOfIndividual
-DataDictionary = Individual
+DataDictionary : ClassOfMixedOrderEntity
+DataDictionary = MixedOrderEntity
+
 
 --  DataDictionary is subTypeOf InformationDictionary
 st-67d376e36aa45056-d745ed256aa38edc : DataDictionary ⊏ₑ InformationDictionary

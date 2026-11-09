@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/254e4d265f7f857a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.254e4d265f7f857a where -- ========== MetaData Schema
+module SysFEAT.EA.254e4d265f7f857a where -- ========== MetaDataSchema
 
 open import Agda.Primitive
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
-open import SysFEAT.EA.77318c6c62167dd7 public -- NoSQL Data Asset
-open import SysFEAT.EA.8180baa3600110c8 public -- NoSQL Element
+open import SysFEAT.EA.d874be1f6ab728a2 public -- NoSQLDataAsset
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
+open import SysFEAT.EA.8180baa3600110c8 public -- NoSQLElement
 
-MetaDataSchema : ClassOfClassOfBoundedIndividual
-MetaDataSchema = ClassOfBoundedIndividual
+MetaDataSchema : ClassOfMixedOrderEntity
+MetaDataSchema = MixedOrderEntity
+
+
+--  MetaDataSchema withAspect NoSQLDataAsset
+st-254e4d265f7f857a-d874be1f6ab728a2 : MetaDataSchema ⊏ₐₑ (NoSQLDataAsset (lsuc(lzero)))
+st-254e4d265f7f857a-d874be1f6ab728a2 = polySubTypeOf-identity
 
 --  MetaDataSchema is subTypeOf PhysicalDataDomain
 st-254e4d265f7f857a-028f03ff5b4f55ee : MetaDataSchema ⊏ₑ PhysicalDataDomain
 st-254e4d265f7f857a-028f03ff5b4f55ee = polySubTypeOf-identity
-
---  MetaDataSchema is subTypeOf NoSQLDataAsset
-st-254e4d265f7f857a-77318c6c62167dd7 : MetaDataSchema ⊏⋆ₑ NoSQLDataAsset
-st-254e4d265f7f857a-77318c6c62167dd7 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -38,18 +39,13 @@ st-254e4d265f7f857a-77318c6c62167dd7 = polySubTypeOf-identity
 NoSQL Dataset that is defined by a MetaData Schema.
 -}
 -- Aggregate Member : Data Set
-DataSet : ClassOfClassOfBoundedIndividual
-DataSet = ClassOfBoundedIndividual
-
+DataSet : ClassOfClassOfIndividual
+DataSet = ClassOfIndividual
 
 
 --  DataSet is subTypeOf PhysicalDomainObject
 st-ae242ff3603900b2-e6f223f55f771b8d : DataSet ⊏ₑ PhysicalDomainObject
 st-ae242ff3603900b2-e6f223f55f771b8d = polySubTypeOf-identity
-
---  DataSet is subTypeOf NoSQLElement
-st-ae242ff3603900b2-8180baa3600110c8 : DataSet ⊏ₑ NoSQLElement
-st-ae242ff3603900b2-8180baa3600110c8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataSet :  Linkage MetaDataSchema DataSet

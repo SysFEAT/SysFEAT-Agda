@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/dd26f21668a0b0fd.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd26f21668a0b0fd where -- ========== Skill Map
+module SysFEAT.EA.dd26f21668a0b0fd where -- ========== SkillMap
 
 open import Agda.Primitive
-open import SysFEAT..dd2638ba68a073a8 public -- Business Resource Capability Map
+open import SysFEAT..dd2638ba68a073a8 public -- BusinessResourceCapabilityMap
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
 
-SkillMap : PropertyType
-SkillMap = Property
+SkillMap : ClassOfMixedOrderEntity
+SkillMap = MixedOrderEntity
+
 
 --  SkillMap is subTypeOf BusinessResourceCapabilityMap
 st-dd26f21668a0b0fd-dd2638ba68a073a8 : SkillMap ⊏ₑ BusinessResourceCapabilityMap
@@ -31,8 +32,9 @@ st-dd26f21668a0b0fd-dd2638ba68a073a8 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Skill Member: -}
 -- Aggregate Member : Skill Member
-SkillMember : ClassOfClassOfIndividual
-SkillMember = ClassOfIndividual
+SkillMember : ClassOfMixedOrderEntity
+SkillMember = MixedOrderEntity
+
 
 
 --  SkillMember is subTypeOf BusinessResourceCapabilityMember

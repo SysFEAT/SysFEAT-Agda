@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/215ccfab606c3a18.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.215ccfab606c3a18 where -- ========== Product Portfolio
+module SysFEAT.EA.215ccfab606c3a18 where -- ========== ProductPortfolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.29df3f4060084c07 public -- Management System
-open import SysFEAT.EA.31257f5261dcdfca public -- Product Portfolio Stage
+open import SysFEAT.EA.29df3f4060084c07 public -- ManagementSystem
+open import SysFEAT.EA.31257f5261dcdfca public -- ProductPortfolioStage
 open import SysFEAT.EA.56ea5ff966047632 public -- Product
 
 ProductPortfolio : ClassOfBoundedIndividual
 ProductPortfolio = BoundedIndividual
+
 
 --  ProductPortfolio is subTypeOf ManagementSystem
 st-215ccfab606c3a18-29df3f4060084c07 : ProductPortfolio ⊏ₑ ManagementSystem
@@ -40,8 +41,9 @@ postulate -- ownedPortfolioStage is subTypeOf roadmap
 -- -------------------------------------------------------------------------------------------- 
 {- Managed Product: -}
 -- Aggregate Member : Managed Product
-ManagedProduct : ClassOfClassOfIndividual
-ManagedProduct = ClassOfIndividual
+ManagedProduct : ClassOfMixedOrderEntity
+ManagedProduct = MixedOrderEntity
+
 
 
 --  ManagedProduct withAspect ManagementSystemSubject

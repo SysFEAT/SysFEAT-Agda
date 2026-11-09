@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/c80a3bc867858386.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a3bc867858386 where -- ========== Individual Natural Resource
+module SysFEAT.EA.c80a3bc867858386 where -- ========== IndividualNaturalResource
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.3b1bb56c68cd9bfa public -- Individual Physical Resource Agent
-open import SysFEAT.EA.861987db6372446e public -- Natural Resource Category
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.3b1bb56c68cd9bfa public -- IndividualPhysicalResourceAgent
+open import SysFEAT.EA.861987db6372446e public -- NaturalResourceType
 
 IndividualNaturalResource : AgentType
 IndividualNaturalResource = IndividualAgent
@@ -31,5 +31,7 @@ st-c80a3bc867858386-fe1c231267880201 = polySubTypeOf-identity
 st-c80a3bc867858386-3b1bb56c68cd9bfa : IndividualNaturalResource ⊏ₑ IndividualPhysicalResourceAgent
 st-c80a3bc867858386-3b1bb56c68cd9bfa = polySubTypeOf-identity
 
+postulate -- IndividualNaturalResource is PowerInstanceOf Natural Resource Type
+  pi-3b1b8dfa68cd8064 : IndividualNaturalResource ∷ₚₑ NaturalResourceType
 
 -- == Relations =======================

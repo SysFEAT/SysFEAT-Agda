@@ -15,26 +15,26 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c30bf4015a5da72b where -- ========== Concrete Hardware System
+module SysFEAT.EA.c30bf4015a5da72b where -- ========== ConcreteHardwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.be94e82f655c90e7 public -- Physical Business Agent
-open import SysFEAT.EA.ffdf60af68608674 public -- Hardware System Category
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
-open import SysFEAT..3b364dc363d9bda7 public -- Hardware Technology
-open import SysFEAT.EA.c334e2925ecb8db4 public -- Physical Outcome Event
-open import SysFEAT.EA.02f51209641c7ea4 public -- Computing Device
+open import SysFEAT.EA.be94e82f655c90e7 public -- PhysicalBusinessAgent
+open import SysFEAT.EA.ffdf60af68608674 public -- HardwareSystemType
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
+open import SysFEAT..3b364dc363d9bda7 public -- HardwareTechnology
+open import SysFEAT.EA.c334e2925ecb8db4 public -- PhysicalOutcomeEvent
+open import SysFEAT.EA.02f51209641c7ea4 public -- ComputingDevice
 
-ConcreteHardwareSystem : ClassOfClassOfBoundedIndividual
-ConcreteHardwareSystem = ClassOfBoundedIndividual
+ConcreteHardwareSystem : BoundedIndividualMetaClass
+ConcreteHardwareSystem = AssetType
 
 
 --  ConcreteHardwareSystem is subTypeOf PhysicalBusinessAgent
 st-c30bf4015a5da72b-be94e82f655c90e7 : ConcreteHardwareSystem ⊏ₑ PhysicalBusinessAgent
 st-c30bf4015a5da72b-be94e82f655c90e7 = polySubTypeOf-identity
 
---  ConcreteHardwareSystem is subTypeOf HardwareSystemCategory
-st-c30bf4015a5da72b-ffdf60af68608674 : ConcreteHardwareSystem ⊏ₑ HardwareSystemCategory
+--  ConcreteHardwareSystem is subTypeOf HardwareSystemType
+st-c30bf4015a5da72b-ffdf60af68608674 : ConcreteHardwareSystem ⊏ₑ HardwareSystemType
 st-c30bf4015a5da72b-ffdf60af68608674 = polySubTypeOf-identity
 
 --  ConcreteHardwareSystem is subTypeOf BusinessSystem
@@ -55,8 +55,9 @@ requiredHardwareTechnology = make_classOfHolonymy "Required Hardware Technology"
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Interaction Channel: -}
 -- Aggregate Member : Physical Interaction Channel
-PhysicalInteractionChannel : ClassOfClassOfIndividual
-PhysicalInteractionChannel = ClassOfIndividual
+PhysicalInteractionChannel : ClassOfMixedOrderEntity
+PhysicalInteractionChannel = MixedOrderEntity
+
 
 
 --  PhysicalInteractionChannel is subTypeOf BusinessConnection
@@ -84,14 +85,9 @@ physicalInteractionChannel = membershipOfPhysicalInteractionChannel  ∘  aggreg
 -- -------------------------------------------------------------------------------------------- 
 {- Hosted Computing Device: -}
 -- Aggregate Member : Hosted Computing Device
-HostedComputingDevice : ClassOfClassOfBoundedIndividual
-HostedComputingDevice = ClassOfBoundedIndividual
+HostedComputingDevice : ClassOfClassOfIndividual
+HostedComputingDevice = ClassOfIndividual
 
-
-
---  HostedComputingDevice is subTypeOf ComputingDevice
-st-26b83dd35eeaf258-02f51209641c7ea4 : HostedComputingDevice ⊏ₑ ComputingDevice
-st-26b83dd35eeaf258-02f51209641c7ea4 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHostedComputingDevice :  Linkage ConcreteHardwareSystem HostedComputingDevice
@@ -114,18 +110,14 @@ hostedComputingDevice = membershipOfHostedComputingDevice  ∘  aggregationOfCom
 -- -------------------------------------------------------------------------------------------- 
 {- Hardware Part: -}
 -- Aggregate Member : Hardware Part
-HardwarePart : ClassOfClassOfBoundedIndividual
-HardwarePart = ClassOfBoundedIndividual
+HardwarePart : ClassOfClassOfIndividual
+HardwarePart = ClassOfIndividual
 
 
 
 --  HardwarePart is subTypeOf ResourceAgentPart
 st-c334e3e75ecb964e-24034f6d5fc79c3f : HardwarePart ⊏ₑ ResourceAgentPart
 st-c334e3e75ecb964e-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  HardwarePart is subTypeOf ConcreteHardwareSystem
-st-c334e3e75ecb964e-c30bf4015a5da72b : HardwarePart ⊏ₑ ConcreteHardwareSystem
-st-c334e3e75ecb964e-c30bf4015a5da72b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHardwarePart :  Linkage ConcreteHardwareSystem HardwarePart

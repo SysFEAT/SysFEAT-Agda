@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/6246927f61b81996.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6246927f61b81996 where -- ========== Business System Asset
+module SysFEAT.EA.6246927f61b81996 where -- ========== BusinessSystemAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.62466ea661b80d09 public -- Business Operating Asset
-open import SysFEAT.EA.df7ce6c363682f79 public -- Requirement
+open import SysFEAT.EA.62466ea661b80d09 public -- BusinessOperatingAsset
 open import SysFEAT.EA.dd26aa0568a1f939 public -- Functionality
-open import SysFEAT.EA.23bf9a5368ad2bdd public -- System Rule
+open import SysFEAT.EA.df7ce6c363682f79 public -- Requirement
+open import SysFEAT.EA.23bf9a5368ad2bdd public -- SystemRule
 
-BusinessSystemAsset : ClassOfClassOfBoundedIndividual
-BusinessSystemAsset = ClassOfBoundedIndividual
+BusinessSystemAsset : BoundedIndividualMetaClass
+BusinessSystemAsset = AssetType
 
 
 --  BusinessSystemAsset is subTypeOf BusinessOperatingAsset
@@ -30,6 +30,14 @@ st-6246927f61b81996-62466ea661b80d09 = polySubTypeOf-identity
 
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Fulfilled Functionality: -}
+fulfilledFunctionality :  Linkage BusinessSystemAsset Functionality
+fulfilledFunctionality = make_subTypeOf "Fulfilled Functionality" "Fulfilled Functionality"
+
+postulate -- fulfilledFunctionality is subTypeOf fulfilledBusinessResourceCapability
+  st-dd26ab3968a1fa4a-dd2681a968a1b9d1  : fulfilledFunctionality  ⊏⋆ᵣ  fulfilledBusinessResourceCapability
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Business System Asset: -}
@@ -44,14 +52,6 @@ postulate -- specializedBusinessSystemAsset is subTypeOf specializedResourceAsse
 fulfilledRequirement :  Linkage BusinessSystemAsset Requirement
 fulfilledRequirement = make_subTypeOf "Fulfilled Requirement" "Fulfilled Requirement"
 
-
--- -------------------------------------------------------------------------------------------- 
-{- Fulfilled Functionality: -}
-fulfilledFunctionality :  Linkage BusinessSystemAsset Functionality
-fulfilledFunctionality = make_subTypeOf "Fulfilled Functionality" "Fulfilled Functionality"
-
-postulate -- fulfilledFunctionality is subTypeOf fulfilledBusinessResourceCapability
-  st-dd26ab3968a1fa4a-dd2681a968a1b9d1  : fulfilledFunctionality  ⊏⋆ᵣ  fulfilledBusinessResourceCapability
 
 -- -------------------------------------------------------------------------------------------- 
 {- System Rule Enforcement: -}
@@ -81,18 +81,14 @@ systemRuleEnforcement = membershipOfSystemRuleEnforcement  ∘  aggregationOfSys
 -- -------------------------------------------------------------------------------------------- 
 {- Business System Asset Part: -}
 -- Aggregate Member : Business System Asset Part
-BusinessSystemAssetPart : ClassOfClassOfBoundedIndividual
-BusinessSystemAssetPart = ClassOfBoundedIndividual
+BusinessSystemAssetPart : ClassOfClassOfIndividual
+BusinessSystemAssetPart = ClassOfIndividual
 
 
 
 --  BusinessSystemAssetPart is subTypeOf BusinessOperatingAssetPart
 st-9e0fedcf68be6cd9-b777c10368b071b8 : BusinessSystemAssetPart ⊏ₑ BusinessOperatingAssetPart
 st-9e0fedcf68be6cd9-b777c10368b071b8 = polySubTypeOf-identity
-
---  BusinessSystemAssetPart is subTypeOf BusinessSystemAsset
-st-9e0fedcf68be6cd9-6246927f61b81996 : BusinessSystemAssetPart ⊏ₑ BusinessSystemAsset
-st-9e0fedcf68be6cd9-6246927f61b81996 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessSystemAssetPart :  Linkage BusinessSystemAsset BusinessSystemAssetPart

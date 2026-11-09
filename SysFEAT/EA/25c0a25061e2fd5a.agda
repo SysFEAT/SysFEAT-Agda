@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/25c0a25061e2fd5a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.25c0a25061e2fd5a where -- ========== Software System Environment
+module SysFEAT.EA.25c0a25061e2fd5a where -- ========== SOftwareSystemEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.c450d4c261de5f07 public -- Business System Environment
-open import SysFEAT.EA.9dce9f8d5ec76311 public -- Application Interface
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.EA.c450d4c261de5f07 public -- BusinessSystemEnvironment
+open import SysFEAT.EA.9dce9f8d5ec76311 public -- ApplicationInterface
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
-SOftwareSystemEnvironment : ClassOfClassOfBoundedIndividual
-SOftwareSystemEnvironment = ClassOfBoundedIndividual
+SOftwareSystemEnvironment : BoundedIndividualMetaClass
+SOftwareSystemEnvironment = AssetType
+
 
 --  SOftwareSystemEnvironment is subTypeOf BusinessSystemEnvironment
 st-25c0a25061e2fd5a-c450d4c261de5f07 : SOftwareSystemEnvironment ⊏ₑ BusinessSystemEnvironment
@@ -33,8 +34,9 @@ st-25c0a25061e2fd5a-c450d4c261de5f07 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Software Connection: -}
 -- Aggregate Member : Software Connection
-SOftwareConnection : ClassOfClassOfIndividual
-SOftwareConnection = ClassOfIndividual
+SOftwareConnection : ClassOfMixedOrderEntity
+SOftwareConnection = MixedOrderEntity
+
 
 
 --  SOftwareConnection is subTypeOf BusinessServiceChannel
@@ -62,8 +64,8 @@ sOftwareConnection = membershipOfSOftwareConnection  ∘  aggregationOfApplicati
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Software: -}
 -- Aggregate Member : Participant Software
-ParticipantSOftware : ClassOfClassOfBoundedIndividual
-ParticipantSOftware = ClassOfBoundedIndividual
+ParticipantSOftware : ClassOfMixedOrderEntity
+ParticipantSOftware = MixedOrderEntity
 
 
 
@@ -74,10 +76,6 @@ st-25c1a63d61e206d7-c450d63661de652a = polySubTypeOf-identity
 --  ParticipantSOftware is subTypeOf ParticipantEnterpriseAgent
 st-25c1a63d61e206d7-2b6f42fc61baf9b7 : ParticipantSOftware ⊏ₑ ParticipantEnterpriseAgent
 st-25c1a63d61e206d7-2b6f42fc61baf9b7 = polySubTypeOf-identity
-
---  ParticipantSOftware is subTypeOf BusinessSOftwareSystem
-st-25c1a63d61e206d7-d6cd02865ab966e8 : ParticipantSOftware ⊏ₑ BusinessSOftwareSystem
-st-25c1a63d61e206d7-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantSOftware :  Linkage SOftwareSystemEnvironment ParticipantSOftware
@@ -100,8 +98,8 @@ participantSOftware = membershipOfParticipantSOftware  ∘  aggregationOfBusines
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Software System: -}
 -- Aggregate Member : Subject Software System
-SubjectSOftwareSystem : ClassOfClassOfBoundedIndividual
-SubjectSOftwareSystem = ClassOfBoundedIndividual
+SubjectSOftwareSystem : ClassOfMixedOrderEntity
+SubjectSOftwareSystem = MixedOrderEntity
 
 
 
@@ -112,10 +110,6 @@ st-25c1a65861e2077a-c450d59061de6127 = polySubTypeOf-identity
 --  SubjectSOftwareSystem is subTypeOf ParticipantSOftware
 st-25c1a65861e2077a-25c1a63d61e206d7 : SubjectSOftwareSystem ⊏ₑ ParticipantSOftware
 st-25c1a65861e2077a-25c1a63d61e206d7 = polySubTypeOf-identity
-
---  SubjectSOftwareSystem is subTypeOf BusinessSOftwareSystem
-st-25c1a65861e2077a-d6cd02865ab966e8 : SubjectSOftwareSystem ⊏ₑ BusinessSOftwareSystem
-st-25c1a65861e2077a-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectSOftwareSystem :  Linkage SOftwareSystemEnvironment SubjectSOftwareSystem
@@ -138,8 +132,8 @@ subjectSOftwareSystem = membershipOfSubjectSOftwareSystem  ∘  aggregationOfBus
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Software System: -}
 -- Aggregate Member : Partner Software System
-PartnerSOftwareSystem : ClassOfClassOfBoundedIndividual
-PartnerSOftwareSystem = ClassOfBoundedIndividual
+PartnerSOftwareSystem : ClassOfMixedOrderEntity
+PartnerSOftwareSystem = MixedOrderEntity
 
 
 
@@ -150,10 +144,6 @@ st-25c1a6bc61e20826-c450d5b361de622e = polySubTypeOf-identity
 --  PartnerSOftwareSystem is subTypeOf ParticipantSOftware
 st-25c1a6bc61e20826-25c1a63d61e206d7 : PartnerSOftwareSystem ⊏ₑ ParticipantSOftware
 st-25c1a6bc61e20826-25c1a63d61e206d7 = polySubTypeOf-identity
-
---  PartnerSOftwareSystem is subTypeOf BusinessSOftwareSystem
-st-25c1a6bc61e20826-d6cd02865ab966e8 : PartnerSOftwareSystem ⊏ₑ BusinessSOftwareSystem
-st-25c1a6bc61e20826-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerSOftwareSystem :  Linkage SOftwareSystemEnvironment PartnerSOftwareSystem
@@ -178,18 +168,14 @@ partnerSOftwareSystem = membershipOfPartnerSOftwareSystem  ∘  aggregationOfBus
 An End User is a Org-Unit Type who actually uses a particular Business Software System.
 -}
 -- Aggregate Member : End User
-EndUser : ClassOfClassOfBoundedIndividual
-EndUser = ClassOfBoundedIndividual
+EndUser : ClassOfMixedOrderEntity
+EndUser = MixedOrderEntity
 
 
 
 --  EndUser is subTypeOf ParticipantSOftware
 st-2dcea8705fc4827c-25c1a63d61e206d7 : EndUser ⊏ₑ ParticipantSOftware
 st-2dcea8705fc4827c-25c1a63d61e206d7 = polySubTypeOf-identity
-
---  EndUser is subTypeOf OrgUnitType
-st-2dcea8705fc4827c-076d15425a5e158c : EndUser ⊏ₑ OrgUnitType
-st-2dcea8705fc4827c-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfEndUser :  Linkage SOftwareSystemEnvironment EndUser

@@ -12,18 +12,18 @@ Documentation : https://framework.sysfeat.com/pages/230b35b461d8884d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.230b35b461d8884d where -- ========== Business Resource Interaction Process
+module SysFEAT.EA.230b35b461d8884d where -- ========== BusinessResourceInteractionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.b4ebbf3e5ffdccdf public -- Business Behavior
-open import SysFEAT.EA.7d337d67628134c5 public -- Resource Interaction Process
-open import SysFEAT.EA.f97e3146632b266e public -- Conceptual Interaction Scenario
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
-open import SysFEAT.EA.23bf9a7868ad2d94 public -- Business Resource Rule
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
+open import SysFEAT.EA.b4ebbf3e5ffdccdf public -- BusinessBehavior
+open import SysFEAT.EA.7d337d67628134c5 public -- ResourceInteractionProcess
+open import SysFEAT.C-SOF.f97e3146632b266e public -- ConceptualInteractionScenario
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.EA.23bf9a7868ad2d94 public -- BusinessResourceRule
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-BusinessResourceInteractionProcess : ClassOfClassOfBoundedIndividual
-BusinessResourceInteractionProcess = ClassOfBoundedIndividual
+BusinessResourceInteractionProcess : BoundedIndividualMetaClass
+BusinessResourceInteractionProcess = AssetType
 
 
 --  BusinessResourceInteractionProcess is subTypeOf BusinessBehavior
@@ -60,8 +60,8 @@ postulate -- realizedLogicalScenario is subTypeOf realizedLogicalOperatingAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Flow: -}
 -- Aggregate Member : Resource Flow
-ResourceFlow : ClassOfClassOfBoundedIndividual
-ResourceFlow = ClassOfBoundedIndividual
+ResourceFlow : ClassOfClassOfIndividual
+ResourceFlow = ClassOfIndividual
 
 
 
@@ -94,7 +94,7 @@ resourceFlow = membershipOfResourceFlow  ∘  aggregationOfBusinessOutcomeEventR
 -- -------------------------------------------------------------------------------------------- 
 {- Business Rule Enforcement: -}
 -- Aggregate Member : Business Rule Enforcement
-BusinessRuleEnforcement : ClassOfClassOfAbstractEntity
+BusinessRuleEnforcement : AbstractEntityMetaClass
 BusinessRuleEnforcement = ClassOfAbstractEntity
 
 
@@ -124,18 +124,14 @@ businessRuleEnforcement = membershipOfBusinessRuleEnforcement  ∘  aggregationO
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Business Agent: -}
 -- Aggregate Member : Participant Business Agent
-ParticipantBusinessAgent : ClassOfClassOfBoundedIndividual
-ParticipantBusinessAgent = ClassOfBoundedIndividual
+ParticipantBusinessAgent : ClassOfClassOfIndividual
+ParticipantBusinessAgent = ClassOfIndividual
 
 
 
 --  ParticipantBusinessAgent is subTypeOf ResourceBehaviorParticipant
 st-230b35ed61d88944-e0e87af46578a950 : ParticipantBusinessAgent ⊏ₑ ResourceBehaviorParticipant
 st-230b35ed61d88944-e0e87af46578a950 = polySubTypeOf-identity
-
---  ParticipantBusinessAgent is subTypeOf BusinessAgentType
-st-230b35ed61d88944-bcebd31f5491302c : ParticipantBusinessAgent ⊏ₑ BusinessAgentType
-st-230b35ed61d88944-bcebd31f5491302c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantBusinessAgent :  Linkage BusinessResourceInteractionProcess ParticipantBusinessAgent

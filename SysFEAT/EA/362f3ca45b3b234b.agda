@@ -14,24 +14,24 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.362f3ca45b3b234b where -- ========== Relational Entity
+module SysFEAT.EA.362f3ca45b3b234b where -- ========== RelationalEntity
 
 open import Agda.Primitive
-open import SysFEAT.EA.762582bb5f6bd659 public -- Physical Data Entity
-open import SysFEAT.EA.7731894d62166495 public -- Relational Data bLOCK
-open import SysFEAT.EA.137d21d35ee2c7f3 public -- Column Type
+open import SysFEAT.EA.d874bd8d6ab727f1 public -- RelationalDataBlock
+open import SysFEAT.EA.762582bb5f6bd659 public -- PhysicalDataEntity
+open import SysFEAT.EA.137d21d35ee2c7f3 public -- ColumnType
 
-RelationalEntity : ClassOfClassOfBoundedIndividual
-RelationalEntity = ClassOfBoundedIndividual
+RelationalEntity : ClassOfMixedOrderEntity
+RelationalEntity = MixedOrderEntity
 
+
+--  RelationalEntity withAspect RelationalDataBlock
+st-362f3ca45b3b234b-d874bd8d6ab727f1 : RelationalEntity ⊏ₐₑ (RelationalDataBlock (lsuc(lzero)))
+st-362f3ca45b3b234b-d874bd8d6ab727f1 = polySubTypeOf-identity
 
 --  RelationalEntity is subTypeOf PhysicalDataEntity
 st-362f3ca45b3b234b-762582bb5f6bd659 : RelationalEntity ⊏ₑ PhysicalDataEntity
 st-362f3ca45b3b234b-762582bb5f6bd659 = polySubTypeOf-identity
-
---  RelationalEntity is subTypeOf RelationalDatabLOCK
-st-362f3ca45b3b234b-7731894d62166495 : RelationalEntity ⊏⋆ₑ RelationalDatabLOCK
-st-362f3ca45b3b234b-7731894d62166495 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -41,8 +41,8 @@ st-362f3ca45b3b234b-7731894d62166495 = polySubTypeOf-identity
 A Column is the basic component of a relational Relational Entity (Table or Table View). A Column is derived from the Attribute of a Logical Data Entity or an Association. It can be connected to the Index or the Key that it constitutes.
 -}
 -- Aggregate Member : Column
-Column : ClassOfClassOfBoundedIndividual
-Column = ClassOfBoundedIndividual
+Column : ClassOfMixedOrderEntity
+Column = MixedOrderEntity
 
 
 
@@ -53,10 +53,6 @@ st-137d21e95ee2c954-e6f222845f771913 = polySubTypeOf-identity
 --  Column is subTypeOf PhysicalRelationship
 st-137d21e95ee2c954-b6e3df8e5fbb724d : Column ⊏ₑ PhysicalRelationship
 st-137d21e95ee2c954-b6e3df8e5fbb724d = polySubTypeOf-identity
-
---  Column is subTypeOf ColumnType
-st-137d21e95ee2c954-137d21d35ee2c7f3 : Column ⊏ₑ ColumnType
-st-137d21e95ee2c954-137d21d35ee2c7f3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfColumn :  Linkage RelationalEntity Column

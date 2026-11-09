@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Data Block: 
-A Data Block is an Information Block used for the description of data consumed and produced by Software System Categorys.They are defined in Data Dictionary(ies).
+A Data Block is an Information Block used for the description of data consumed and produced by Software System Types.They are defined in Data Dictionary(ies).
 
 Documentation : https://framework.sysfeat.com/pages/8f1c937168ca8195.htm
 
@@ -14,10 +14,10 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8f1c937168ca8195 where -- ========== Data Block
+module SysFEAT.EA.8f1c937168ca8195 where -- ========== DataBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.6c5f80e468587f06 public -- Information Block
+open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
 
 DataBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
 DataBlock u  = MixedOrderEntity u 

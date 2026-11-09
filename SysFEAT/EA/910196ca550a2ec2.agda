@@ -23,9 +23,9 @@ External references:
 module SysFEAT.EA.910196ca550a2ec2 where -- ========== Organization
 
 open import Agda.Primitive
-open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- Responsible Human Entity
-open import SysFEAT.EA.66f8685a620b1440 public -- Individual Business Agent
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
+open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 open import SysFEAT.EA.c7dad43c5ae92d25 public -- Person
 
 Organization : AgentType
@@ -40,20 +40,18 @@ st-910196ca550a2ec2-c7dad03f5ae92ae9 = polySubTypeOf-identity
 st-910196ca550a2ec2-66f8685a620b1440 : Organization ⊏ₑ IndividualBusinessAgent
 st-910196ca550a2ec2-66f8685a620b1440 = polySubTypeOf-identity
 
+postulate -- Organization is PowerInstanceOf Org-Unit Type
+  pi-561f70ee68d57c7d : Organization ∷ₚₑ OrgUnitType
 
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Contractor: -}
 -- Aggregate Member : Sub Contractor
-SubContractor : AgentType
-SubContractor = IndividualAgent
+SubContractor : ClassOfOrderedEntity (lsuc(lzero))
+SubContractor = AggregateMember (lsuc(lzero))
 
 
-
---  SubContractor is subTypeOf Organization
-st-302241f95ec91eed-910196ca550a2ec2 : SubContractor ⊏ₑ Organization
-st-302241f95ec91eed-910196ca550a2ec2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubContractor :  Linkage Organization SubContractor
@@ -76,14 +74,10 @@ subContractor = membershipOfSubContractor  ∘  aggregationOfOrganizationSubCont
 -- -------------------------------------------------------------------------------------------- 
 {- Organizational Position: -}
 -- Aggregate Member : Organizational Position
-OrganizationalPosition : AgentType
-OrganizationalPosition = IndividualAgent
+OrganizationalPosition : ClassOfOrderedEntity (lsuc(lzero))
+OrganizationalPosition = AggregateMember (lsuc(lzero))
 
 
-
---  OrganizationalPosition is subTypeOf Person
-st-c334e7de5ecba16d-c7dad43c5ae92d25 : OrganizationalPosition ⊏ₑ Person
-st-c334e7de5ecba16d-c7dad43c5ae92d25 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOrganizationalPosition :  Linkage Organization OrganizationalPosition
@@ -106,14 +100,10 @@ organizationalPosition = membershipOfOrganizationalPosition  ∘  aggregationOfP
 -- -------------------------------------------------------------------------------------------- 
 {- Organizational Reponsibility: -}
 -- Aggregate Member : Organizational Reponsibility
-OrganizationalReponsibility : AgentType
-OrganizationalReponsibility = IndividualAgent
+OrganizationalReponsibility : ClassOfOrderedEntity (lsuc(lzero))
+OrganizationalReponsibility = AggregateMember (lsuc(lzero))
 
 
-
---  OrganizationalReponsibility is subTypeOf Person
-st-c334e8355ecba267-c7dad43c5ae92d25 : OrganizationalReponsibility ⊏ₑ Person
-st-c334e8355ecba267-c7dad43c5ae92d25 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOrganizationalReponsibility :  Linkage Organization OrganizationalReponsibility
@@ -136,14 +126,10 @@ organizationalReponsibility = membershipOfOrganizationalReponsibility  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Unit: -}
 -- Aggregate Member : Sub-Unit
-SubUnit : AgentType
-SubUnit = IndividualAgent
+SubUnit : ClassOfOrderedEntity (lsuc(lzero))
+SubUnit = AggregateMember (lsuc(lzero))
 
 
-
---  SubUnit is subTypeOf Organization
-st-c334e93b5ecba369-910196ca550a2ec2 : SubUnit ⊏ₑ Organization
-st-c334e93b5ecba369-910196ca550a2ec2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubUnit :  Linkage Organization SubUnit

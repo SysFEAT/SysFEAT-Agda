@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/2cff2f4c5eda7e8a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2cff2f4c5eda7e8a where -- ========== Work Paper
+module SysFEAT.EA.2cff2f4c5eda7e8a where -- ========== WorkPaper
 
 open import Agda.Primitive
 

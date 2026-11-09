@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/258c66a25fd25310.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.258c66a25fd25310 where -- ========== Person Right
+module SysFEAT.EA.258c66a25fd25310 where -- ========== PersonRight
 
 open import Agda.Primitive
 open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
 
-PersonRight : PropertyType
-PersonRight = Property
+PersonRight : AssetPropertyType
+PersonRight = Directive
 
 
 --  PersonRight is subTypeOf Directive

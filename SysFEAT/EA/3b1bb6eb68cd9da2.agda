@@ -14,11 +14,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1bb6eb68cd9da2 where -- ========== Individual Intangible Resource Agent
+module SysFEAT.EA.3b1bb6eb68cd9da2 where -- ========== IndividualIntangibleResourceAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.c80afd2f6784305d public -- Intangible Resource Agent
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.c80afd2f6784305d public -- IntangibleResourceAgent
 
 IndividualIntangibleResourceAgent : AgentType
 IndividualIntangibleResourceAgent = IndividualAgent
@@ -28,5 +28,7 @@ IndividualIntangibleResourceAgent = IndividualAgent
 st-3b1bb6eb68cd9da2-fe1c231267880201 : IndividualIntangibleResourceAgent ⊏ₑ IndividualResourceAgent
 st-3b1bb6eb68cd9da2-fe1c231267880201 = polySubTypeOf-identity
 
+postulate -- IndividualIntangibleResourceAgent is PowerInstanceOf Intangible Resource Agent
+  pi-3b1bb70868cd9e13 : IndividualIntangibleResourceAgent ∷ₚₑ IntangibleResourceAgent
 
 -- == Relations =======================

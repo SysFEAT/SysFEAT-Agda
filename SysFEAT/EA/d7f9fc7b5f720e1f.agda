@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/d7f9fc7b5f720e1f.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d7f9fc7b5f720e1f where -- ========== Data Issue
+module SysFEAT.EA.d7f9fc7b5f720e1f where -- ========== DataIssue
 
 open import Agda.Primitive
 open import SysFEAT..d059da695ef11294 public -- Incident
-open import SysFEAT.EA.b90ac213600e39bb public -- Data Governance Block
+open import SysFEAT.EA.b90ac213600e39bb public -- DataGovernanceBlock
 
-DataIssue : ClassOfBoundedIndividual
-DataIssue = BoundedIndividual
+DataIssue : ClassOfIndividual
+DataIssue = Individual
 
 
 --  DataIssue is subTypeOf Incident
@@ -31,4 +31,3 @@ st-d7f9fc7b5f720e1f-b90ac213600e39bb : DataIssue ⊏ₑ DataGovernanceBlock
 st-d7f9fc7b5f720e1f-b90ac213600e39bb = polySubTypeOf-identity
 
 
--- == Relations =======================

@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/952ead2b67285cfd.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.952ead2b67285cfd where -- ========== Business Policy Category
+module SysFEAT.EA.952ead2b67285cfd where -- ========== BusinessPolicyCategory
 
 open import Agda.Primitive
-open import SysFEAT.EA.952eaada67285ac3 public -- Policy Framework Category
+open import SysFEAT.EA.952eaada67285ac3 public -- PolicyFrameworkCategory
 
 BusinessPolicyCategory : ThirdOrderClass
-BusinessPolicyCategory = SecondOrderClass
+BusinessPolicyCategory = PropertyType
+
 
 --  BusinessPolicyCategory is subTypeOf PolicyFrameworkCategory
 st-952ead2b67285cfd-952eaada67285ac3 : BusinessPolicyCategory ⊏ₑ PolicyFrameworkCategory

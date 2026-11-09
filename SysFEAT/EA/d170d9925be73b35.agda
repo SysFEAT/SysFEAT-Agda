@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/d170d9925be73b35.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d170d9925be73b35 where -- ========== Pain Point (Type)
+module SysFEAT.EA.d170d9925be73b35 where -- ========== PainPointType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
 PainPointType : AssetPropertyType
 PainPointType = AssetProperty
@@ -26,4 +26,3 @@ st-d170d9925be73b35-515c6a856893324e : PainPointType ⊏ₑ AssetProperty
 st-d170d9925be73b35-515c6a856893324e = polySubTypeOf-identity
 
 
--- == Relations =======================

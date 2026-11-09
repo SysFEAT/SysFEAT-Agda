@@ -20,10 +20,10 @@ External references:
 module SysFEAT.EA.f4be0e865ee1d53b where -- ========== Facility
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be11b15ee1e0fa public -- System of Resources
+open import SysFEAT.EA.f4be11b15ee1e0fa public -- SystemOfResources
 
-Facility : ClassOfClassOfBoundedIndividual
-Facility = ClassOfBoundedIndividual
+Facility : BoundedIndividualMetaClass
+Facility = AssetType
 
 
 --  Facility is subTypeOf SystemOfResources

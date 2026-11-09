@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/762580705f6bd560.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.762580705f6bd560 where -- ========== Data Source Snaphot Item
+module SysFEAT.EA.762580705f6bd560 where -- ========== DataSourceSnaphotItem
 
 open import Agda.Primitive
 

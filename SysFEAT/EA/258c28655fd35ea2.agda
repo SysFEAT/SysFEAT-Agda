@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/258c28655fd35ea2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.258c28655fd35ea2 where -- ========== Processing Sensitivity
+module SysFEAT.EA.258c28655fd35ea2 where -- ========== ProcessingSensitivity
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- Asset Category
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
 
-ProcessingSensitivity : ClassOfClassOfBoundedIndividual
-ProcessingSensitivity = ClassOfBoundedIndividual
+ProcessingSensitivity : ClassOfMixedOrderEntity
+ProcessingSensitivity = MixedOrderEntity
 
---  ProcessingSensitivity withAspect AssetCategory
-st-258c28655fd35ea2-f69620466a0f9c2f : ProcessingSensitivity ⊏ₐₑ (AssetCategory (lsuc(lzero)))
+
+--  ProcessingSensitivity withAspect AssetCategoryFamily
+st-258c28655fd35ea2-f69620466a0f9c2f : ProcessingSensitivity ⊏ₐₑ (AssetCategoryFamily (lsuc(lzero)))
 st-258c28655fd35ea2-f69620466a0f9c2f = polySubTypeOf-identity
 
 
--- == Relations =======================

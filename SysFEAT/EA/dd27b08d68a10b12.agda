@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/dd27b08d68a10b12.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd27b08d68a10b12 where -- ========== Technology Capability
+module SysFEAT.EA.dd27b08d68a10b12 where -- ========== TechnologyCapability
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd265414689f5987 public -- Resource Capability
+open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
 
-TechnologyCapability : PropertyType
-TechnologyCapability = Property
+TechnologyCapability : AssetPropertyType
+TechnologyCapability = AssetProperty
+
 
 --  TechnologyCapability is subTypeOf ResourceCapability
 st-dd27b08d68a10b12-dd265414689f5987 : TechnologyCapability ⊏ₑ ResourceCapability
@@ -30,7 +31,7 @@ st-dd27b08d68a10b12-dd265414689f5987 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Capability Part: -}
 -- Aggregate Member : Technology Capability Part
-TechnologyCapabilityPart : ClassOfClassOfAbstractEntity
+TechnologyCapabilityPart : AbstractEntityMetaClass
 TechnologyCapabilityPart = ClassOfAbstractEntity
 
 

@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/a80ddb0963d34800.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.a80ddb0963d34800 where -- ========== Structured Field
+module SysFEAT.EA.a80ddb0963d34800 where -- ========== StructuredField
 
 open import Agda.Primitive
-open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQL Field
+open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQLField
 
-StructuredField : ClassOfClassOfBoundedIndividual
-StructuredField = ClassOfBoundedIndividual
+StructuredField : BoundedIndividualMetaClass
+StructuredField = AssetType
 
 
 --  StructuredField is subTypeOf NoSQLField
@@ -33,8 +33,8 @@ st-a80ddb0963d34800-254e4dd45f7f8749 = polySubTypeOf-identity
 A Sub-Field is a component of a Structured Field.
 -}
 -- Aggregate Member : Sub-Field
-SubField : ClassOfClassOfBoundedIndividual
-SubField = ClassOfBoundedIndividual
+SubField : ClassOfMixedOrderEntity
+SubField = MixedOrderEntity
 
 
 
@@ -49,10 +49,6 @@ st-086d16b85fd15793-05b0b95c6006bc80 = polySubTypeOf-identity
 --  SubField is subTypeOf SubPhysicalDataProperty
 st-086d16b85fd15793-82c3bbbb5fdcc433 : SubField ⊏ₑ SubPhysicalDataProperty
 st-086d16b85fd15793-82c3bbbb5fdcc433 = polySubTypeOf-identity
-
---  SubField is subTypeOf NoSQLField
-st-086d16b85fd15793-254e4dd45f7f8749 : SubField ⊏ₑ NoSQLField
-st-086d16b85fd15793-254e4dd45f7f8749 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubField :  Linkage StructuredField SubField

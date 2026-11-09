@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d5e6d7eb5c464b21 where -- ========== Deployable Application Package
+module SysFEAT.EA.d5e6d7eb5c464b21 where -- ========== DeployableApplicationPackage
 
 open import Agda.Primitive
-open import SysFEAT.EA.4c7883cd5fca4d5b public -- Deployable Package
-open import SysFEAT.EA.46194ce9560d3ab8 public -- Application Component
-open import SysFEAT.EA.d5e6dc425c46518a public -- Deployable Data Package
+open import SysFEAT.EA.4c7883cd5fca4d5b public -- DeployablePackage
+open import SysFEAT.EA.46194ce9560d3ab8 public -- ApplicationComponent
+open import SysFEAT.EA.d5e6dc425c46518a public -- DeployableDataPackage
 
-DeployableApplicationPackage : ClassOfClassOfBoundedIndividual
-DeployableApplicationPackage = ClassOfBoundedIndividual
+DeployableApplicationPackage : AgentMetaClass
+DeployableApplicationPackage = AgentType
 
 
 --  DeployableApplicationPackage is subTypeOf DeployablePackage
@@ -37,14 +37,9 @@ st-d5e6d7eb5c464b21-4c7883cd5fca4d5b = polySubTypeOf-identity
 A Packaged IT Service is a configuration of an Application Component in a Deployable Application Package according to deployment and runtime requirements.
 -}
 -- Aggregate Member : Packaged IT Service
-PackagedITService : ClassOfClassOfBoundedIndividual
-PackagedITService = ClassOfBoundedIndividual
+PackagedITService : ClassOfClassOfIndividual
+PackagedITService = ClassOfIndividual
 
-
-
---  PackagedITService is subTypeOf ApplicationComponent
-st-cd7a40015ff3d873-46194ce9560d3ab8 : PackagedITService ⊏ₑ ApplicationComponent
-st-cd7a40015ff3d873-46194ce9560d3ab8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPackagedITService :  Linkage DeployableApplicationPackage PackagedITService
@@ -67,18 +62,14 @@ packagedITService = membershipOfPackagedITService  ∘  aggregationOfApplication
 -- -------------------------------------------------------------------------------------------- 
 {- Member Package: -}
 -- Aggregate Member : Member Package
-MemberPackage : ClassOfClassOfBoundedIndividual
-MemberPackage = ClassOfBoundedIndividual
+MemberPackage : ClassOfClassOfIndividual
+MemberPackage = ClassOfIndividual
 
 
 
 --  MemberPackage is subTypeOf DeployableSOftwareMember
 st-624e72a25ed98474-624e6cab5ed977a2 : MemberPackage ⊏ₑ DeployableSOftwareMember
 st-624e72a25ed98474-624e6cab5ed977a2 = polySubTypeOf-identity
-
---  MemberPackage is subTypeOf DeployableApplicationPackage
-st-624e72a25ed98474-d5e6d7eb5c464b21 : MemberPackage ⊏ₑ DeployableApplicationPackage
-st-624e72a25ed98474-d5e6d7eb5c464b21 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfMemberPackage :  Linkage DeployableApplicationPackage MemberPackage
@@ -101,18 +92,14 @@ memberPackage = membershipOfMemberPackage  ∘  aggregationOfDeployableApplicati
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Domain Member: -}
 -- Aggregate Member : Physical Domain Member
-PhysicalDomainMember : ClassOfClassOfBoundedIndividual
-PhysicalDomainMember = ClassOfBoundedIndividual
+PhysicalDomainMember : ClassOfClassOfIndividual
+PhysicalDomainMember = ClassOfIndividual
 
 
 
 --  PhysicalDomainMember is subTypeOf DeployableSOftwareMember
 st-4c7884f65fca4ed4-624e6cab5ed977a2 : PhysicalDomainMember ⊏ₑ DeployableSOftwareMember
 st-4c7884f65fca4ed4-624e6cab5ed977a2 = polySubTypeOf-identity
-
---  PhysicalDomainMember is subTypeOf DeployableDataPackage
-st-4c7884f65fca4ed4-d5e6dc425c46518a : PhysicalDomainMember ⊏ₑ DeployableDataPackage
-st-4c7884f65fca4ed4-d5e6dc425c46518a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalDomainMember :  Linkage DeployableApplicationPackage PhysicalDomainMember

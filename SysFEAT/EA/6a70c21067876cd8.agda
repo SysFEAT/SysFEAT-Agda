@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/6a70c21067876cd8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6a70c21067876cd8 where -- ========== Resource Service Interface
+module SysFEAT.EA.6a70c21067876cd8 where -- ========== ResourceServiceInterface
 
 open import Agda.Primitive
-open import SysFEAT.SOF.24ae31b55ed1c66d public -- Service Interface
-open import SysFEAT.EA.0185cd936221bd72 public -- Resource Behavior
-open import SysFEAT.EA.6a70c0b36787698c public -- Resource Outcome Event
+open import SysFEAT.SOF.24ae31b55ed1c66d public -- ServiceInterface
+open import SysFEAT.EA.0185cd936221bd72 public -- ResourceBehavior
+open import SysFEAT.EA.6a70c0b36787698c public -- ResourceOutcomeEvent
 
-ResourceServiceInterface : ClassOfClassOfIndividual
-ResourceServiceInterface = ClassOfIndividual
+ResourceServiceInterface : BehaviorMetaClass
+ResourceServiceInterface = BehaviorType
+
 
 --  ResourceServiceInterface is subTypeOf ServiceInterface
 st-6a70c21067876cd8-24ae31b55ed1c66d : ResourceServiceInterface ⊏ₑ ServiceInterface
@@ -36,8 +37,8 @@ st-6a70c21067876cd8-0185cd936221bd72 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Flow Connection: -}
 -- Aggregate Member : Resource Flow Connection
-ResourceFlowConnection : ClassOfClassOfBoundedIndividual
-ResourceFlowConnection = ClassOfBoundedIndividual
+ResourceFlowConnection : ClassOfClassOfIndividual
+ResourceFlowConnection = ClassOfIndividual
 
 
 

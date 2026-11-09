@@ -14,16 +14,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.25c0a10061e2fc12 where -- ========== Software System Environment Scenario
+module SysFEAT.EA.25c0a10061e2fc12 where -- ========== SOftwareSystemEnvironmentScenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.4edf5eab5fc58ef3 public -- Business System Environment Sxcenario
-open import SysFEAT.EA.25c0a25061e2fd5a public -- Software System Environment
-open import SysFEAT.EA.302238be5ec9020a public -- Information Outcome Event
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
+open import SysFEAT.EA.4edf5eab5fc58ef3 public -- BusinessSystemEnvironmentSxcenario
+open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.EA.302238be5ec9020a public -- InformationOutcomeEvent
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
 
-SOftwareSystemEnvironmentScenario : ClassOfClassOfBoundedIndividual
-SOftwareSystemEnvironmentScenario = ClassOfBoundedIndividual
+SOftwareSystemEnvironmentScenario : BoundedIndividualMetaClass
+SOftwareSystemEnvironmentScenario = AssetType
 
 
 --  SOftwareSystemEnvironmentScenario is subTypeOf BusinessSystemEnvironmentSxcenario
@@ -44,8 +44,9 @@ postulate -- scenarizedSOftwareSystemEnvironment is subTypeOf scenarizedSystemEn
 -- -------------------------------------------------------------------------------------------- 
 {- Application Flow: -}
 -- Aggregate Member : Application Flow
-ApplicationFlow : ClassOfClassOfIndividual
-ApplicationFlow = ClassOfIndividual
+ApplicationFlow : ClassOfMixedOrderEntity
+ApplicationFlow = MixedOrderEntity
+
 
 
 --  ApplicationFlow is subTypeOf ResourceObjectFlow
@@ -73,14 +74,9 @@ applicationFlow = membershipOfApplicationFlow  ∘  aggregationOfInformationOutc
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Software: -}
 -- Aggregate Member : Participant Software
-ParticipantSOftware : ClassOfClassOfBoundedIndividual
-ParticipantSOftware = ClassOfBoundedIndividual
+ParticipantSOftware : ClassOfClassOfIndividual
+ParticipantSOftware = ClassOfIndividual
 
-
-
---  ParticipantSOftware is subTypeOf BusinessSOftwareSystem
-st-25c1a32461e200b5-d6cd02865ab966e8 : ParticipantSOftware ⊏ₑ BusinessSOftwareSystem
-st-25c1a32461e200b5-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantSOftware :  Linkage SOftwareSystemEnvironmentScenario ParticipantSOftware
@@ -103,8 +99,8 @@ participantSOftware = membershipOfParticipantSOftware  ∘  aggregationOfBusines
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Software System: -}
 -- Aggregate Member : Partner Software System
-PartnerSOftwareSystem : ClassOfClassOfBoundedIndividual
-PartnerSOftwareSystem = ClassOfBoundedIndividual
+PartnerSOftwareSystem : ClassOfMixedOrderEntity
+PartnerSOftwareSystem = MixedOrderEntity
 
 
 
@@ -119,10 +115,6 @@ st-25c1a53f61e20355-4edf5fa95fc593f0 = polySubTypeOf-identity
 --  PartnerSOftwareSystem is subTypeOf ParticipantSOftware
 st-25c1a53f61e20355-25c1a32461e200b5 : PartnerSOftwareSystem ⊏ₑ ParticipantSOftware
 st-25c1a53f61e20355-25c1a32461e200b5 = polySubTypeOf-identity
-
---  PartnerSOftwareSystem is subTypeOf BusinessSOftwareSystem
-st-25c1a53f61e20355-d6cd02865ab966e8 : PartnerSOftwareSystem ⊏ₑ BusinessSOftwareSystem
-st-25c1a53f61e20355-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerSOftwareSystem :  Linkage SOftwareSystemEnvironmentScenario PartnerSOftwareSystem
@@ -145,8 +137,8 @@ partnerSOftwareSystem = membershipOfPartnerSOftwareSystem  ∘  aggregationOfBus
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Software System: -}
 -- Aggregate Member : Subject Software System
-SubjectSOftwareSystem : ClassOfClassOfBoundedIndividual
-SubjectSOftwareSystem = ClassOfBoundedIndividual
+SubjectSOftwareSystem : ClassOfMixedOrderEntity
+SubjectSOftwareSystem = MixedOrderEntity
 
 
 
@@ -157,10 +149,6 @@ st-25c1a55461e20430-4edf5f1f5fc590f0 = polySubTypeOf-identity
 --  SubjectSOftwareSystem is subTypeOf ParticipantSOftware
 st-25c1a55461e20430-25c1a32461e200b5 : SubjectSOftwareSystem ⊏ₑ ParticipantSOftware
 st-25c1a55461e20430-25c1a32461e200b5 = polySubTypeOf-identity
-
---  SubjectSOftwareSystem is subTypeOf BusinessSOftwareSystem
-st-25c1a55461e20430-d6cd02865ab966e8 : SubjectSOftwareSystem ⊏ₑ BusinessSOftwareSystem
-st-25c1a55461e20430-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectSOftwareSystem :  Linkage SOftwareSystemEnvironmentScenario SubjectSOftwareSystem

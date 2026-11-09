@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/1a5fcc995fd7834d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.1a5fcc995fd7834d where -- ========== Customer Journey Phase
+module SysFEAT.EA.1a5fcc995fd7834d where -- ========== CustomerJourneyPhase
 
 open import Agda.Primitive
 

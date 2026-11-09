@@ -17,14 +17,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c0a3c7c666417665 where -- ========== Legal Entity Type
+module SysFEAT.EA.c0a3c7c666417665 where -- ========== LegalEntityType
 
 open import Agda.Primitive
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
-open import SysFEAT.EA.7c408aa155270eea public -- Department Type
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
+open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 
-LegalEntityType : ClassOfClassOfBoundedIndividual
-LegalEntityType = ClassOfBoundedIndividual
+LegalEntityType : BoundedIndividualMetaClass
+LegalEntityType = AssetType
 
 
 --  LegalEntityType is subTypeOf OrgUnitType
@@ -37,14 +37,9 @@ st-c0a3c7c666417665-076d15425a5e158c = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Department Type: -}
 -- Aggregate Member : Department Type
-DepartmentType : ClassOfClassOfBoundedIndividual
-DepartmentType = ClassOfBoundedIndividual
+DepartmentType : ClassOfClassOfIndividual
+DepartmentType = ClassOfIndividual
 
-
-
---  DepartmentType is subTypeOf DepartmentType
-st-c0a3ca65664177b7-7c408aa155270eea : DepartmentType ⊏ₑ DepartmentType
-st-c0a3ca65664177b7-7c408aa155270eea = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDepartmentType :  Linkage LegalEntityType DepartmentType

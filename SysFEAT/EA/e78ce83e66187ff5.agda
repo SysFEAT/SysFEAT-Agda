@@ -20,7 +20,7 @@ module SysFEAT.EA.e78ce83e66187ff5 where -- ========== Department
 
 open import Agda.Primitive
 open import SysFEAT.EA.910196ca550a2ec2 public -- Organization
-open import SysFEAT.EA.7c408aa155270eea public -- Department Type
+open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 
 Department : AgentType
 Department = IndividualAgent
@@ -30,5 +30,7 @@ Department = IndividualAgent
 st-e78ce83e66187ff5-910196ca550a2ec2 : Department ⊏ₑ Organization
 st-e78ce83e66187ff5-910196ca550a2ec2 = polySubTypeOf-identity
 
+postulate -- Department is PowerInstanceOf Department Type
+  pi-561f711f68d57d01 : Department ∷ₚₑ DepartmentType
 
 -- == Relations =======================
