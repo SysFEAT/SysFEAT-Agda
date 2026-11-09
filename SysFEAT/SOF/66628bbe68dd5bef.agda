@@ -37,7 +37,7 @@ st-66628bbe68dd5bef-6662916b68dd5f84 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Governance Property Type: -}
 governancePropertyType :  Linkage GovernanceProperty GovernancePropertyType
-governancePropertyType = make_classOfRelation "Governance Property Type" "Governance Property Type"
+governancePropertyType = make_instanceOf "Governance Property Type" "Governance Property Type"
 
 postulate -- governancePropertyType is subTypeOf propertyClassification
   st-666293d768dd6238-1976247d68925c3e  : governancePropertyType  ⊏⋆ᵣ  propertyClassification

@@ -32,7 +32,7 @@ st-3b1bc7e968cdac60-21ed2aa6689c12ba = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Measured Property Type: -}
 measuredPropertyType :  Linkage MeasurementValue MeasurePropertyType
-measuredPropertyType = make_classOfRelation "Measured Property Type" "Measured Property Type"
+measuredPropertyType = make_instanceOf "Measured Property Type" "Measured Property Type"
 
 postulate -- measuredPropertyType is subTypeOf measurePropertyType
   st-3b1bc80968cdad31-21ed59d8689c1a21  : measuredPropertyType  ⊏⋆ᵣ  measurePropertyType

@@ -83,7 +83,7 @@ postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
 Set of Condition Property Types that can be applied to an Asset Type.
 -}
 applicableConditionType :  Linkage AssetType ConditionPropertyType
-applicableConditionType = make_classOfRelation "Applicable Condition Type" "Applicable Condition Type"
+applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicable Condition Type"
 
 postulate -- applicableConditionType is subTypeOf categorizingFamily
   st-c2f2709166ea21a0-d9b8dfaa6ae044ee  : applicableConditionType  ⊏⋆ᵣ  categorizingFamily
@@ -166,4 +166,6 @@ aggregationOfPolicyPolicyConformance = make_Relation "Policy aggregation" "aggre
 policyConformance : Linkage AssetType Policy
 policyConformance = membershipOfPolicyConformance  ∘  aggregationOfPolicyPolicyConformance
 
+postulate -- policyConformance is subTypeOf assetTypeQualification
+  st-01f1189f689b641d-a04ea2346ae7302f  : policyConformance  ⊏⋆ᵣ  assetTypeQualification
 

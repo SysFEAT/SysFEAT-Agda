@@ -33,7 +33,7 @@ postulate -- AssetProperty is PowerInstanceOf Asset Property Type
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Property Type: -}
 assetPropertyType :  Linkage AssetProperty AssetPropertyType
-assetPropertyType = make_classOfRelation "Asset Property Type" "Asset Property Type"
+assetPropertyType = make_instanceOf "Asset Property Type" "Asset Property Type"
 
 postulate -- assetPropertyType is subTypeOf propertyClassification
   st-190c1f03689649e5-1976247d68925c3e  : assetPropertyType  ⊏⋆ᵣ  propertyClassification

@@ -32,7 +32,9 @@ st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 -- -------------------------------------------------------------------------------------------- 
 {- Condition Category Family: -}
 conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
-conditionCategoryFamily = make_classOfRelation "Condition Category Family" "Condition Category Family"
+conditionCategoryFamily = make_instanceOf "Condition Category Family" "Condition Category Family"
 
 postulate -- conditionCategoryFamily is subTypeOf parentFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {v}  ⊏⋆ᵣ  parentFamily {u} {v}
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {lsuc u} {lsuc(u ⊔ v)}
+
+  --8d1fa37b6ae82572 :                    ∀ {u v} → parentFamily {u} {u ⊔ v} ⊏⋆ᵣ instanceOfEntity {lsuc u} {lsuc (u ⊔ v)}

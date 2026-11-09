@@ -35,7 +35,7 @@ st-299e882b68488d2c-d321c226601262ae = polySubTypeOf-identity
 The defining set of  Capabilitys establishing the functional characteriscs required for Assets subject to the Operational Transformation.
 -}
 functionalScope :  Linkage OperationalTransformation CapabilityMap
-functionalScope = make_Relation "Functional Scope" "Functional Scope"
+functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
 
 postulate -- functionalScope is subTypeOf propertyOfIndividual
   st-01f1214c689b6e0f-19763dbb68926a48  : functionalScope  ⊏⋆ᵣ  propertyOfIndividual 

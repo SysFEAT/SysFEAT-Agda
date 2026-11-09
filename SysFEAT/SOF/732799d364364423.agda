@@ -54,7 +54,7 @@ postulate -- concernedPolicy is subTypeOf decisionSubject
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Policy Option: -}
 selectedPolicyOption :  Linkage PolicyDecision PolicyapplicabilityStatus
-selectedPolicyOption = make_Relation "Selected Policy Option" "Selected Policy Option"
+selectedPolicyOption = make_instanceOf "Selected Policy Option" "Selected Policy Option"
 
 postulate -- selectedPolicyOption is subTypeOf selectedDecisionOption
   st-97e0a1b668dd7256-97e09d5368dd6d39  : selectedPolicyOption  ⊏⋆ᵣ  selectedDecisionOption

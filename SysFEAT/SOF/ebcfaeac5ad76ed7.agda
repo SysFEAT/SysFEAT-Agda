@@ -47,7 +47,7 @@ postulate -- happensduring is subTypeOf meronymyRelation
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Asset Property: -}
 qualifyingAssetProperty :  Linkage IndividualAsset AssetProperty
-qualifyingAssetProperty = make_Relation "Qualifying Asset Property" "Qualifying Asset Property"
+qualifyingAssetProperty = make_instanceOf "Qualifying Asset Property" "Qualifying Asset Property"
 
 postulate -- qualifyingAssetProperty is subTypeOf propertyOfIndividual
   st-190c414968965640-19763dbb68926a48  : qualifyingAssetProperty  ⊏⋆ᵣ  propertyOfIndividual 
@@ -57,7 +57,7 @@ postulate -- qualifyingAssetProperty is subTypeOf propertyOfIndividual
 The classification of Individual Assets  by Condition Propertys.
 -}
 qualifyingConditionProperty :  Linkage IndividualAsset ConditionProperty
-qualifyingConditionProperty = make_Relation "Qualifying Condition Property" "Qualifying Condition Property"
+qualifyingConditionProperty = make_instanceOf "Qualifying Condition Property" "Qualifying Condition Property"
 
 postulate -- qualifyingConditionProperty is subTypeOf qualifyingAssetProperty
   st-21ed5601689c1844-190c414968965640  : qualifyingConditionProperty  ⊏⋆ᵣ  qualifyingAssetProperty

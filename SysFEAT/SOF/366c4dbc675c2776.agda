@@ -26,4 +26,3 @@ st-366c4dbc675c2776-366c47e1675c1c07 : ArchitectureDecisionType ⊏ₑ DecisionT
 st-366c4dbc675c2776-366c47e1675c1c07 = polySubTypeOf-identity
 
 
--- == Relations =======================

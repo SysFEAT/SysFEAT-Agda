@@ -20,7 +20,6 @@ open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Refl
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
 open import SysFEAT.SOF.sysfeat-domain-af4db12d62993434 public -- Model Block Packaging
 open import SysFEAT.UpperOntology.sysfeat-domain-fb342c5665561f29 public -- 4D Composite Knowledge Graph
-open import SysFEAT.UpperOntology.sysfeat-domain-36166b8c6157b6b4 public -- Compositionality
 
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 open import SysFEAT.SOF.a4a5b3f855585ce1 public -- Asset Type

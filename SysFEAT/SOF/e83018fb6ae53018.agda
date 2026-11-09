@@ -32,7 +32,7 @@ st-e83018fb6ae53018-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 -- -------------------------------------------------------------------------------------------- 
 {- Family: -}
 family : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCategorization v)
-family = make_classOfRelation "Family" "Family"
+family = make_instanceOf "Family" "Family"
 
 postulate -- family is subTypeOf assetCategoryFamily
   st-5d545e516ae83f24-8d1fa3b46ae827f6  : ∀ {u v} → family {u} {v}  ⊏⋆ᵣ  assetCategoryFamily {u} {v}

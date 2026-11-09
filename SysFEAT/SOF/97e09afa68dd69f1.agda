@@ -32,7 +32,7 @@ st-97e09afa68dd69f1-66628b5668dd5a25 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resolution Type: -}
 resolutionType :  Linkage ResolutionOutcome ResolutionType
-resolutionType = make_classOfRelation "Resolution Type" "Resolution Type"
+resolutionType = make_instanceOf "Resolution Type" "Resolution Type"
 
 postulate -- resolutionType is subTypeOf appraisalType
   st-97e09c3d68dd6b51-666294f768dd64bc  : resolutionType  ⊏⋆ᵣ  appraisalType
