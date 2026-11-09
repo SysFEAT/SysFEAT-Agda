@@ -26,7 +26,7 @@ AbstractEntityMetaClass = SecondOrderClass
 
 
 --  AbstractEntityMetaClass withAspect ConceptClass
-st-3aca564b6aa646ce-8d1fa46c6ae82899 : AbstractEntityMetaClass ⊏ₐₑ (ConceptClass (lsuc(lsuc(lzero))))
+st-3aca564b6aa646ce-8d1fa46c6ae82899 : AbstractEntityMetaClass ⊏ₐₑ ConceptClass (lsuc( lzero))
 st-3aca564b6aa646ce-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  AbstractEntityMetaClass is subTypeOf SecondOrderClass

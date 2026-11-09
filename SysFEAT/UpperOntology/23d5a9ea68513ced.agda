@@ -27,7 +27,7 @@ BuildingBlock u  = MixedOrderEntity u
 
 
 --  BuildingBlock is subTypeOf AspectOfEntity
-st-23d5a9ea68513ced-86b9b1d46ac32bda : ∀ {u v} → (BuildingBlock u) ⊏⋆ₑ (AspectOfEntity v)
+st-23d5a9ea68513ced-86b9b1d46ac32bda : ∀ {u v} → BuildingBlock u ⊏⋆ₑ AspectOfEntity v
 st-23d5a9ea68513ced-86b9b1d46ac32bda = trivialPolySubTypeOfEntity
 
 

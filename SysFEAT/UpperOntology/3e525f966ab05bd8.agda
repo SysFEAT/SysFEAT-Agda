@@ -25,7 +25,7 @@ ElementaryProperty : ElementaryPropertyType
 ElementaryProperty = Property
 
 --  ElementaryProperty withAspect ElementaryBlock
-st-3e525f966ab05bd8-23d5c5fc685142de : ElementaryProperty ⊏ₐₑ (ElementaryBlock (lsuc(lzero)))
+st-3e525f966ab05bd8-23d5c5fc685142de : ElementaryProperty ⊏ₐₑ ElementaryBlock (lsuc( lzero))
 st-3e525f966ab05bd8-23d5c5fc685142de = polySubTypeOf-identity
 
 --  ElementaryProperty is subTypeOf Property

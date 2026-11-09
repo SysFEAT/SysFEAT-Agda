@@ -28,7 +28,7 @@ Container u  = MixedOrderEntity u
 
 
 --  Container is subTypeOf BlockLexicalScope
-st-0eb93b4268549a66-23d5c494685141b5 : ∀ {u v} → (Container u) ⊏⋆ₑ (BlockLexicalScope v)
+st-0eb93b4268549a66-23d5c494685141b5 : ∀ {u v} → Container u ⊏⋆ₑ BlockLexicalScope v
 st-0eb93b4268549a66-23d5c494685141b5 = trivialPolySubTypeOfEntity
 
 

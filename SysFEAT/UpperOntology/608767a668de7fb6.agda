@@ -25,7 +25,7 @@ ClassOfClassOfIndividual : ThirdOrderClass
 ClassOfClassOfIndividual = SecondOrderClass
 
 --  ClassOfClassOfIndividual withAspect ConceptClass
-st-608767a668de7fb6-8d1fa46c6ae82899 : ClassOfClassOfIndividual ⊏ₐₑ (ConceptClass (lsuc(lsuc(lzero))))
+st-608767a668de7fb6-8d1fa46c6ae82899 : ClassOfClassOfIndividual ⊏ₐₑ ConceptClass (lsuc( lzero))
 st-608767a668de7fb6-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  ClassOfClassOfIndividual is subTypeOf SecondOrderClass

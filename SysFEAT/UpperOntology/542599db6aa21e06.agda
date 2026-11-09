@@ -23,7 +23,7 @@ ContainerPackage = AbstractEntity
 
 
 --  ContainerPackage withAspect Container
-st-542599db6aa21e06-0eb93b4268549a66 : ContainerPackage ⊏ₐₑ (Container lzero)
+st-542599db6aa21e06-0eb93b4268549a66 : ContainerPackage ⊏ₐₑ Container lzero
 st-542599db6aa21e06-0eb93b4268549a66 = polySubTypeOf-identity
 
 --  ContainerPackage is subTypeOf AbstractEntity
