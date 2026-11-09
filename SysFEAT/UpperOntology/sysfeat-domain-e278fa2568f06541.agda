@@ -43,7 +43,7 @@ open import SysFEAT.UpperOntology.629565166ad71b60 public -- Concept Category
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- Second Order Class
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- Enumerated Family
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- Third Order Class
-open import SysFEAT.UpperOntology.8d1fdcc56ae832d2 public -- Family Meta-Class
+open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- Family meta-Class
 open import SysFEAT.UpperOntology.d9cce31f69371045 public -- Mixed-Order MetaClass
 open import SysFEAT.UpperOntology.a39aaa7f685e5118 public -- Lexical Scope
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity

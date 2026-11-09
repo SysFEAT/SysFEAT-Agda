@@ -17,11 +17,16 @@ External references:
 module SysFEAT.UpperOntology.3aca55ee6aa645c2 where -- ========== ClassOfAbstractEntity
 
 open import Agda.Primitive
+open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
 open import SysFEAT.UpperOntology.c463c6106aa23c35 public -- FirstOrderClass
 open import SysFEAT.UpperOntology.3aca564b6aa646ce public -- AbstractEntityMetaClass
 
 ClassOfAbstractEntity : AbstractEntityMetaClass
 ClassOfAbstractEntity = FirstOrderClass
+
+--  ClassOfAbstractEntity withAspect ConceptClass
+st-3aca55ee6aa645c2-8d1fa46c6ae82899 : ClassOfAbstractEntity ⊏ₐₑ (ConceptClass (lsuc(lzero)))
+st-3aca55ee6aa645c2-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  ClassOfAbstractEntity is subTypeOf FirstOrderClass
 st-3aca55ee6aa645c2-c463c6106aa23c35 : ClassOfAbstractEntity ⊏ₑ FirstOrderClass
