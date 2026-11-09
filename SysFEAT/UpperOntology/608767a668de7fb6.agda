@@ -17,11 +17,16 @@ External references:
 module SysFEAT.UpperOntology.608767a668de7fb6 where -- ========== ClassOfClassOfIndividual
 
 open import Agda.Primitive
+open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- SecondOrderClass
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 
 ClassOfClassOfIndividual : ThirdOrderClass
 ClassOfClassOfIndividual = SecondOrderClass
+
+--  ClassOfClassOfIndividual withAspect ConceptClass
+st-608767a668de7fb6-8d1fa46c6ae82899 : ClassOfClassOfIndividual ⊏ₐₑ (ConceptClass (lsuc(lsuc(lzero))))
+st-608767a668de7fb6-8d1fa46c6ae82899 = polySubTypeOf-identity
 
 --  ClassOfClassOfIndividual is subTypeOf SecondOrderClass
 st-608767a668de7fb6-a599a7e46aa370fb : ClassOfClassOfIndividual ⊏ₑ SecondOrderClass
