@@ -22,7 +22,7 @@ External references:
 module SysFEAT.UpperOntology.220d23706ad71311 where -- ========== CategorizationFamily
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.8d1fdcc56ae832d2 public -- FamilyMetaClass
+open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- FamilyMetaClass
 
 -- ============================================================
 -- I. Concept declaration
