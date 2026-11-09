@@ -43,3 +43,27 @@ Concept Categorization is classification of Concept Classs by means of Category 
 -}
 conceptCategorization :  ∀ {u v} → Linkage (ConceptClass u) (ConceptCategory v)
 conceptCategorization = make_subTypeOf "Concept Categorization" "Categorizing Category"
+
+-- conceptCategorization isSubTypeOf polySubTypeOfEntity
+8d1fcd8e6ae8301f : ∀ {u v} → conceptCategorization {u} {v} ⊏⋆ᵣ polySubTypeOfEntity {u} {v}
+8d1fcd8e6ae8301f {u} {v} =
+  polySubTypeOfRel-fromExtensionMap
+    {subRel   = conceptCategorization {u} {v}}
+    {superRel = polySubTypeOfEntity {u} {v}}
+    (λ w → w)
+
+-- -------------------------------------------------------------------------------------------- 
+{- Categorization Scheme: 
+Categorization Family that defines allowed concept categories for a given Concept Class
+-}
+categorizationScheme :  ∀ {u v} → Linkage (ConceptClass u) (CategorizationFamily v)
+categorizationScheme = make_classOfRelation "Concept Categorization Sheme" "Scheme Family"
+
+-- categorizationScheme isSubTypeOf classOfRelation
+7e3437356af24a05 : ∀ {u v} → categorizationScheme {u} {v} ⊏⋆ᵣ classOfRelation {u} {lsuc(v)}
+7e3437356af24a05 {u} {v} =
+  polySubTypeOfRel-fromExtensionMap
+    {subRel   = categorizationScheme {u} {v}}
+    {superRel = classOfRelation {u} {lsuc(v)}}
+    (λ w → w)
+
