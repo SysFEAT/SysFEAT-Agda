@@ -65,7 +65,7 @@ st-2557481f6758a91a-6aa8cbcb65b32971 : TemporalOrderingType ⊏ₑ ClassOfIndivi
 st-2557481f6758a91a-6aa8cbcb65b32971 = polySubTypeOf-identity
 
 --  TemporalOrderingType withAspect OrderingConnector
-st-2557481f6758a91a-478a4a4468565425 : TemporalOrderingType ⊏ₐₑ OrderingConnector (lsuc((lsuc((lsuc( lzero))))))
+st-2557481f6758a91a-478a4a4468565425 : TemporalOrderingType ⊏ₐₑ OrderingConnector (lsuc( lzero))
 st-2557481f6758a91a-478a4a4468565425 = polySubTypeOf-identity
 
 -- Membership relation
@@ -97,7 +97,7 @@ AggregateQualification = ClassOfAbstractEntity
 
 
 --  AggregateQualification withAspect UnboundedMember
-st-b83e30bc696f51e5-8cfaf71a6852b042 : AggregateQualification ⊏ₐₑ UnboundedMember (lsuc((lsuc((lsuc( lzero))))))
+st-b83e30bc696f51e5-8cfaf71a6852b042 : AggregateQualification ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-b83e30bc696f51e5-8cfaf71a6852b042 = polySubTypeOf-identity
 
 --  AggregateQualification is subTypeOf ClassOfAbstractEntity
@@ -139,7 +139,7 @@ st-c2f2c83b66ea4d78-6aa8cbcb65b32971 : AggregateHolonymyType ⊏ₑ ClassOfIndiv
 st-c2f2c83b66ea4d78-6aa8cbcb65b32971 = polySubTypeOf-identity
 
 --  AggregateHolonymyType withAspect BoundedMember
-st-c2f2c83b66ea4d78-0eb999956855e070 : AggregateHolonymyType ⊏ₐₑ BoundedMember (lsuc((lsuc((lsuc( lzero))))))
+st-c2f2c83b66ea4d78-0eb999956855e070 : AggregateHolonymyType ⊏ₐₑ BoundedMember (lsuc( lzero))
 st-c2f2c83b66ea4d78-0eb999956855e070 = polySubTypeOf-identity
 
 -- Membership relation

@@ -70,7 +70,7 @@ st-c2f2c9a166ea50e2-4df9512266826e23 : AggregateHolonymy ⊏ₑ Individual
 st-c2f2c9a166ea50e2-4df9512266826e23 = polySubTypeOf-identity
 
 --  AggregateHolonymy withAspect BoundedMember
-st-c2f2c9a166ea50e2-0eb999956855e070 : AggregateHolonymy ⊏ₐₑ BoundedMember (lsuc((lsuc( lzero))))
+st-c2f2c9a166ea50e2-0eb999956855e070 : AggregateHolonymy ⊏ₐₑ BoundedMember lzero
 st-c2f2c9a166ea50e2-0eb999956855e070 = polySubTypeOf-identity
 
 -- Membership relation
@@ -105,7 +105,7 @@ st-255744cb6758a69e-4df9512266826e23 : TemporalOrdering ⊏ₑ Individual
 st-255744cb6758a69e-4df9512266826e23 = polySubTypeOf-identity
 
 --  TemporalOrdering withAspect OrderingConnector
-st-255744cb6758a69e-478a4a4468565425 : TemporalOrdering ⊏ₐₑ OrderingConnector (lsuc((lsuc( lzero))))
+st-255744cb6758a69e-478a4a4468565425 : TemporalOrdering ⊏ₐₑ OrderingConnector lzero
 st-255744cb6758a69e-478a4a4468565425 = polySubTypeOf-identity
 
 -- Membership relation

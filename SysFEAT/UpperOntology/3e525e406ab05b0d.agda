@@ -48,7 +48,7 @@ PropertyPart = ClassOfAbstractEntity
 
 
 --  PropertyPart withAspect UnboundedMember
-st-3e5261066ab05e0f-8cfaf71a6852b042 : PropertyPart ⊏ₐₑ UnboundedMember (lsuc((lsuc((lsuc( lzero))))))
+st-3e5261066ab05e0f-8cfaf71a6852b042 : PropertyPart ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-3e5261066ab05e0f-8cfaf71a6852b042 = polySubTypeOf-identity
 
 --  PropertyPart is subTypeOf ClassOfAbstractEntity
