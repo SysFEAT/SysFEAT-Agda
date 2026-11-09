@@ -43,9 +43,12 @@ ConceptCategory u = ClassOfEntity u
 parentFamily : ∀ {u v} →  Linkage (ConceptCategory u) (CategorizationFamily v)
 parentFamily = make_instanceOf "Category Classification" "Parent Family"
 
-postulate -- parentFamily is subTypeOf instanceOfEntity
-  8d1fa37b6ae82572 : ∀ {u} → parentFamily {u} {lsuc(u)} ⊏⋆ᵣ instanceOfEntity {u} {lsuc(u)}
-  --8d1fa37b6ae82572 {u} = polySubTypeOfRel-fromExtensionMap {subRel = (parentFamily {u}{lsuc(u)})} {superRel = (instanceOfEntity {u}{lsuc(u)})} (λ w → w)
+8d1fa37b6ae82572 : ∀ {u v} → parentFamily {u} {u ⊔ v} ⊏⋆ᵣ instanceOfEntity {lsuc u} {lsuc (u ⊔ v)}
+8d1fa37b6ae82572 {u} {v} =
+  polySubTypeOfRel-fromExtensionMap
+    {subRel   = parentFamily {u} {u ⊔ v}}
+    {superRel = instanceOfEntity {lsuc u} {lsuc (u ⊔ v)}}
+    (λ w → w)
 
 
 
