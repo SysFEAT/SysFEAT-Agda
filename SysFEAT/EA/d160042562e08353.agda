@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/d160042562e08353.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d160042562e08353 where -- ========== Network Interface
+module SysFEAT.EA.d160042562e08353 where -- ========== NetworkInterface
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8382f5eeae265 public -- Technology Interface
+open import SysFEAT.EA.26b8382f5eeae265 public -- TechnologyInterface
 
-NetworkInterface : ClassOfClassOfBoundedIndividual
-NetworkInterface = ClassOfBoundedIndividual
+NetworkInterface : BoundedIndividualMetaClass
+NetworkInterface = AssetType
 
 
 --  NetworkInterface is subTypeOf TechnologyInterface

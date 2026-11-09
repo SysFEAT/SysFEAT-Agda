@@ -16,16 +16,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6d2b7c935fbb6270 where -- ========== Data Asset
+module SysFEAT.EA.6d2b7c935fbb6270 where -- ========== DataAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset
-open import SysFEAT.EA.8f1c937168ca8195 public -- Data Block
-open import SysFEAT.EA.6a70b9f6678763db public -- Business Asset
-open import SysFEAT.EA.362fc8045b3c3e65 public -- Conceptual Entity Asset
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
+open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
+open import SysFEAT.EA.6a70b9f6678763db public -- BusinessFunctionalAsset
+open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-DataAsset : ClassOfClassOfBoundedIndividual
-DataAsset = ClassOfBoundedIndividual
+DataAsset : BoundedIndividualMetaClass
+DataAsset = AssetType
 
 
 --  DataAsset is subTypeOf InformationAsset
@@ -36,8 +36,8 @@ st-6d2b7c935fbb6270-e6f250185f772ee1 = polySubTypeOf-identity
 st-6d2b7c935fbb6270-8f1c937168ca8195 : DataAsset ⊏ₐₑ (DataBlock (lsuc(lzero)))
 st-6d2b7c935fbb6270-8f1c937168ca8195 = polySubTypeOf-identity
 
---  DataAsset is subTypeOf BusinessAsset
-st-6d2b7c935fbb6270-6a70b9f6678763db : DataAsset ⊏ₑ BusinessAsset
+--  DataAsset is subTypeOf BusinessFunctionalAsset
+st-6d2b7c935fbb6270-6a70b9f6678763db : DataAsset ⊏ₑ BusinessFunctionalAsset
 st-6d2b7c935fbb6270-6a70b9f6678763db = polySubTypeOf-identity
 
 
@@ -55,7 +55,7 @@ postulate -- specializedDataObject is subTypeOf specializedInformationAsset
 {- Realized Concept: 
 Data Domains that the Data Asset is an implementation of.
 -}
-realizedConcept :  Linkage DataAsset ConceptualEntityAsset
+realizedConcept :  Linkage DataAsset ConceptualEntity
 realizedConcept = make_subTypeOf "Realized Concept" "Realized Concept"
 
 postulate -- realizedConcept is subTypeOf realizedInformationAsset
@@ -66,18 +66,14 @@ postulate -- realizedConcept is subTypeOf realizedInformationAsset
 A Data Object Member is a characteristic of an Information Asset].It can be either Relationship an or a Attribute.
 -}
 -- Aggregate Member : Data Object Member
-DataObjectMember : ClassOfClassOfBoundedIndividual
-DataObjectMember = ClassOfBoundedIndividual
+DataObjectMember : ClassOfMixedOrderEntity
+DataObjectMember = MixedOrderEntity
 
 
 
 --  DataObjectMember is subTypeOf InformationAssetRelationship
 st-b6e3cdf35fbb6ad1-18eb1f335fdb6e7f : DataObjectMember ⊏ₑ InformationAssetRelationship
 st-b6e3cdf35fbb6ad1-18eb1f335fdb6e7f = polySubTypeOf-identity
-
---  DataObjectMember is subTypeOf DataAsset
-st-b6e3cdf35fbb6ad1-6d2b7c935fbb6270 : DataObjectMember ⊏ₑ DataAsset
-st-b6e3cdf35fbb6ad1-6d2b7c935fbb6270 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataObjectMember :  Linkage DataAsset DataObjectMember

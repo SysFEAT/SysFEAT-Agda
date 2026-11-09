@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/05b091f46006f913.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.05b091f46006f913 where -- ========== Management Initiative Committee
+module SysFEAT.EA.05b091f46006f913 where -- ========== ManagementInitiativeCommittee
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ff0501b65b253fdd public -- Governing Team
-open import SysFEAT.EA.29df3f4060084c07 public -- Management System
+open import SysFEAT.SOF.ff0501b65b253fdd public -- GoverningTeam
+open import SysFEAT.EA.29df3f4060084c07 public -- ManagementSystem
 open import SysFEAT.EA.84c799c1664d8b2f public -- Epic
-open import SysFEAT.EA.d34222c65b131d09 public -- Architecture Project
+open import SysFEAT.EA.d34222c65b131d09 public -- ArchitectureProject
 
-ManagementInitiativeCommittee : ClassOfBoundedIndividual
-ManagementInitiativeCommittee = BoundedIndividual
+ManagementInitiativeCommittee : WholeLifeClass
+ManagementInitiativeCommittee = WholeLifeIndividual
 
 
 --  ManagementInitiativeCommittee is subTypeOf GoverningTeam

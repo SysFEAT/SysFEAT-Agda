@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/d170d24a5be72d09.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d170d24a5be72d09 where -- ========== Customer Task
+module SysFEAT.EA.d170d24a5be72d09 where -- ========== CustomerTask
 
 open import Agda.Primitive
-open import SysFEAT.EA.8a5c926e5c0d632c public -- Customer Activity
-open import SysFEAT.EA.d170d3075be72e6b public -- Customer Need
-open import SysFEAT.EA.d170d9925be73b35 public -- Pain Point (Type)
+open import SysFEAT.EA.8a5c926e5c0d632c public -- CustomerActivity
+open import SysFEAT.EA.d170d3075be72e6b public -- CustomerNeed
+open import SysFEAT.EA.d170d9925be73b35 public -- PainPointType
 
 CustomerTask : ClassOfClassOfBoundedIndividual
 CustomerTask = ClassOfBoundedIndividual

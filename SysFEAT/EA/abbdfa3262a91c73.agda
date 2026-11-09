@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/abbdfa3262a91c73.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.abbdfa3262a91c73 where -- ========== Hardware Asset Assessment
+module SysFEAT.EA.abbdfa3262a91c73 where -- ========== HardwareAssetAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
-open import SysFEAT.EA.c30bf4015a5da72b public -- Concrete Hardware System
+open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
 
-HardwareAssetAssessment : ClassOfBoundedIndividual
-HardwareAssetAssessment = BoundedIndividual
+HardwareAssetAssessment : ClassOfIndividual
+HardwareAssetAssessment = Individual
 
 
 --  HardwareAssetAssessment is subTypeOf Assessment

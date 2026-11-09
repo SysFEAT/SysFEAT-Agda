@@ -12,21 +12,22 @@ Documentation : https://framework.sysfeat.com/pages/2d18f6705ac37b70.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2d18f6705ac37b70 where -- ========== Projet Risk Type
+module SysFEAT.EA.2d18f6705ac37b70 where -- ========== ProjetRiskType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
-open import SysFEAT.EA.2b5887d05ef07b3b public -- Program Asset
+open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 
-ProjetRiskType : ClassOfClassOfBoundedIndividual
-ProjetRiskType = ClassOfBoundedIndividual
+ProjetRiskType : ClassOfMixedOrderEntity
+ProjetRiskType = MixedOrderEntity
 
---  ProjetRiskType withAspect ModelPropertyBlock
-st-2d18f6705ac37b70-0eb97aff6855cd23 : ProjetRiskType ⊏ₐₑ (ModelPropertyBlock (lsuc(lzero)))
+
+--  ProjetRiskType withAspect ProgramAsset
+st-2d18f6705ac37b70-52e0b14c6abf4c76 : ProjetRiskType ⊏ₐₑ (ProgramAsset (lsuc(lzero)))
+st-2d18f6705ac37b70-52e0b14c6abf4c76 = polySubTypeOf-identity
+
+--  ProjetRiskType withAspect ModelCategorizationBlock
+st-2d18f6705ac37b70-0eb97aff6855cd23 : ProjetRiskType ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
 st-2d18f6705ac37b70-0eb97aff6855cd23 = polySubTypeOf-identity
-
---  ProjetRiskType is subTypeOf ProgramAsset
-st-2d18f6705ac37b70-2b5887d05ef07b3b : ProjetRiskType ⊏⋆ₑ ProgramAsset
-st-2d18f6705ac37b70-2b5887d05ef07b3b = polySubTypeOf-identity
 
 

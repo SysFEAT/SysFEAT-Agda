@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/6a70c0b36787698c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6a70c0b36787698c where -- ========== Resource Outcome Event
+module SysFEAT.EA.6a70c0b36787698c where -- ========== ResourceOutcomeEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.6a70c0c8678769d3 public -- Resource Event
-open import SysFEAT.SOF.30223b5c5ec90c01 public -- Outcome Event
-open import SysFEAT.EA.d9f4dcc5688d5969 public -- Resource Asset
+open import SysFEAT.EA.6a70c0c8678769d3 public -- ResourceEvent
+open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
+open import SysFEAT.EA.d9f4dcc5688d5969 public -- ResourceAsset
 
-ResourceOutcomeEvent : ClassOfClassOfBoundedIndividual
-ResourceOutcomeEvent = ClassOfBoundedIndividual
+ResourceOutcomeEvent : BoundedIndividualMetaClass
+ResourceOutcomeEvent = AssetType
 
 
 --  ResourceOutcomeEvent is subTypeOf ResourceEvent
@@ -39,18 +39,14 @@ st-6a70c0b36787698c-30223b5c5ec90c01 = polySubTypeOf-identity
 The changed state of Resource Asset that is signaled as being an Resource Outcome Event.A Resource Outcome is a state of a Resource Asset that is the subject of a transaction.A Resource Outcome is the result of a Behavior of a producer Agent State and is signaled as an Outcome that benefits (value) to a Agent State Agent.Examples:- An improved process (Behavior) that is the result of a refactoring activity done by a consulting organization (producer Agent) for the benefit of a business unit (user Agent).- A new application (Sofware System) that is the result of development and sales activities of a software company (producer Agent) for the benefit of an end user (user Agent).- A produced car (Hardware System) that is the result of development, production and sales activities of a car manufacturing company (producer Agent) for the benefit of an end user (Retail Customers, Fleet Customers, ...).
 -}
 -- Aggregate Member : Resource Outcome
-ResourceOutcome : ClassOfClassOfBoundedIndividual
-ResourceOutcome = ClassOfBoundedIndividual
+ResourceOutcome : ClassOfMixedOrderEntity
+ResourceOutcome = MixedOrderEntity
 
 
 
 --  ResourceOutcome is subTypeOf Outcome
 st-6a70e2636787968e-af41ed1265ea77e5 : ResourceOutcome ⊏ₑ Outcome
 st-6a70e2636787968e-af41ed1265ea77e5 = polySubTypeOf-identity
-
---  ResourceOutcome is subTypeOf ResourceAsset
-st-6a70e2636787968e-d9f4dcc5688d5969 : ResourceOutcome ⊏ₑ ResourceAsset
-st-6a70e2636787968e-d9f4dcc5688d5969 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceOutcome :  Linkage ResourceOutcomeEvent ResourceOutcome

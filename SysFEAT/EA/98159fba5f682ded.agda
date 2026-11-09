@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/98159fba5f682ded.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.98159fba5f682ded where -- ========== Measurable Data Quality
+module SysFEAT.EA.98159fba5f682ded where -- ========== MeasurableDataQuality
 
 open import Agda.Primitive
 

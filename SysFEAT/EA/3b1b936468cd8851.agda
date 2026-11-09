@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/3b1b936468cd8851.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1b936468cd8851 where -- ========== Individual Resource Agent Configuration
+module SysFEAT.EA.3b1b936468cd8851 where -- ========== IndividualResourceAgentConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.ffdf64a868608999 public -- Resource Agent Configuration
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.ffdf64a868608999 public -- ResourceAgentConfiguration
 
 IndividualResourceAgentConfiguration : AgentType
 IndividualResourceAgentConfiguration = IndividualAgent
@@ -26,5 +26,7 @@ IndividualResourceAgentConfiguration = IndividualAgent
 st-3b1b936468cd8851-fe1c231267880201 : IndividualResourceAgentConfiguration ⊏ₑ IndividualResourceAgent
 st-3b1b936468cd8851-fe1c231267880201 = polySubTypeOf-identity
 
+postulate -- IndividualResourceAgentConfiguration is PowerInstanceOf Resource Agent Configuration
+  pi-3b1b956e68cd8b2b : IndividualResourceAgentConfiguration ∷ₚₑ ResourceAgentConfiguration
 
 -- == Relations =======================

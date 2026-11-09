@@ -14,18 +14,19 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d26b6b685fe0c6b9 where -- ========== Project Portfolio
+module SysFEAT.EA.d26b6b685fe0c6b9 where -- ========== ProjectPortfolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b5887d05ef07b3b public -- Program Asset
+open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
 open import SysFEAT.EA.91be97ff54882d9f public -- Project
 
-ProjectPortfolio : ClassOfBoundedIndividual
-ProjectPortfolio = BoundedIndividual
+ProjectPortfolio : ClassOfMixedOrderEntity
+ProjectPortfolio = MixedOrderEntity
 
---  ProjectPortfolio is subTypeOf ProgramAsset
-st-d26b6b685fe0c6b9-2b5887d05ef07b3b : ProjectPortfolio ⊏ₑ ProgramAsset
-st-d26b6b685fe0c6b9-2b5887d05ef07b3b = polySubTypeOf-identity
+
+--  ProjectPortfolio withAspect ProgramAsset
+st-d26b6b685fe0c6b9-52e0b14c6abf4c76 : ProjectPortfolio ⊏ₐₑ (ProgramAsset lzero)
+st-d26b6b685fe0c6b9-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -35,14 +36,10 @@ st-d26b6b685fe0c6b9-2b5887d05ef07b3b = polySubTypeOf-identity
 A Project Portfolio line is defined to enable the assessment of a Project in a given Portfolio.It is related to assessment criteria defined at the portfolio level, and its corresponding score.
 -}
 -- Aggregate Member : Portfolio Line
-PortfolioLine : ClassOfBoundedIndividual
-PortfolioLine = BoundedIndividual
+PortfolioLine : ClassOfOrderedEntity (lsuc(lzero))
+PortfolioLine = AggregateMember (lsuc(lzero))
 
 
-
---  PortfolioLine is subTypeOf Project
-st-d26b6bcd5fe0c851-91be97ff54882d9f : PortfolioLine ⊏ₑ Project
-st-d26b6bcd5fe0c851-91be97ff54882d9f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPortfolioLine :  Linkage ProjectPortfolio PortfolioLine

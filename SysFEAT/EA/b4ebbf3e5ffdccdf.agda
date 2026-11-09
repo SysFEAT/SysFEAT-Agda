@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/b4ebbf3e5ffdccdf.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.b4ebbf3e5ffdccdf where -- ========== Business Behavior
+module SysFEAT.EA.b4ebbf3e5ffdccdf where -- ========== BusinessBehavior
 
 open import Agda.Primitive
-open import SysFEAT.EA.62466ea661b80d09 public -- Business Operating Asset
-open import SysFEAT.EA.0185cd936221bd72 public -- Resource Behavior
-open import SysFEAT.EA.82a9892166ec3b89 public -- Process Family
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.325c32165eb02a4a public -- Data Domain
+open import SysFEAT.EA.62466ea661b80d09 public -- BusinessOperatingAsset
+open import SysFEAT.EA.0185cd936221bd72 public -- ResourceBehavior
+open import SysFEAT.EA.82a9892166ec3b89 public -- ProcessFamily
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
 
-BusinessBehavior : ClassOfClassOfBoundedIndividual
-BusinessBehavior = ClassOfBoundedIndividual
+BusinessBehavior : BoundedIndividualMetaClass
+BusinessBehavior = AssetType
 
 
 --  BusinessBehavior is subTypeOf BusinessOperatingAsset
@@ -49,7 +49,7 @@ postulate -- specializedBusinessResourceBehavior is subTypeOf specializedResourc
 -- -------------------------------------------------------------------------------------------- 
 {- Supported Process Family: -}
 supportedProcessFamily :  Linkage BusinessBehavior ProcessFamily
-supportedProcessFamily = make_instanceOf "Supported Process Family" "Supported Process Family"
+supportedProcessFamily = make_classOfRelation "Supported Process Family" "Supported Process Family"
 
 
 -- -------------------------------------------------------------------------------------------- 
@@ -57,18 +57,14 @@ supportedProcessFamily = make_instanceOf "Supported Process Family" "Supported P
 A Resource Behavior Participant refers to the participation of a Business Agent Type in a Business Behavior as an actor of the Business Behavior.
 -}
 -- Aggregate Member : Resource Behavior Participant
-ResourceBehaviorParticipant : ClassOfClassOfBoundedIndividual
-ResourceBehaviorParticipant = ClassOfBoundedIndividual
+ResourceBehaviorParticipant : ClassOfClassOfIndividual
+ResourceBehaviorParticipant = ClassOfIndividual
 
 
 
 --  ResourceBehaviorParticipant is subTypeOf ResourceBehaviorParticipant
 st-e0e87af46578a950-e0e874626578a341 : ResourceBehaviorParticipant ⊏ₑ ResourceBehaviorParticipant
 st-e0e87af46578a950-e0e874626578a341 = polySubTypeOf-identity
-
---  ResourceBehaviorParticipant is subTypeOf BusinessAgentType
-st-e0e87af46578a950-bcebd31f5491302c : ResourceBehaviorParticipant ⊏ₑ BusinessAgentType
-st-e0e87af46578a950-bcebd31f5491302c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceBehaviorParticipant :  Linkage BusinessBehavior ResourceBehaviorParticipant
@@ -91,18 +87,14 @@ resourceBehaviorParticipant = membershipOfResourceBehaviorParticipant  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Business Behavior Part: -}
 -- Aggregate Member : Business Behavior Part
-BusinessBehaviorPart : ClassOfClassOfBoundedIndividual
-BusinessBehaviorPart = ClassOfBoundedIndividual
+BusinessBehaviorPart : ClassOfClassOfIndividual
+BusinessBehaviorPart = ClassOfIndividual
 
 
 
 --  BusinessBehaviorPart is subTypeOf BusinessOperatingAssetPart
 st-b777c1de68b07336-b777c10368b071b8 : BusinessBehaviorPart ⊏ₑ BusinessOperatingAssetPart
 st-b777c1de68b07336-b777c10368b071b8 = polySubTypeOf-identity
-
---  BusinessBehaviorPart is subTypeOf BusinessBehavior
-st-b777c1de68b07336-b4ebbf3e5ffdccdf : BusinessBehaviorPart ⊏ₑ BusinessBehavior
-st-b777c1de68b07336-b4ebbf3e5ffdccdf = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessBehaviorPart :  Linkage BusinessBehavior BusinessBehaviorPart
@@ -125,17 +117,14 @@ businessBehaviorPart = membershipOfBusinessBehaviorPart  ∘  aggregationOfBusin
 -- -------------------------------------------------------------------------------------------- 
 {- Business Data Store: -}
 -- Aggregate Member : Business Data Store
-BusinessDataStore : ClassOfClassOfIndividual
-BusinessDataStore = ClassOfIndividual
+BusinessDataStore : ClassOfMixedOrderEntity
+BusinessDataStore = MixedOrderEntity
+
 
 
 --  BusinessDataStore is subTypeOf OperatingProcessStore
 st-b4ebd0e45ffdef12-d69196306228f16e : BusinessDataStore ⊏ₑ OperatingProcessStore
 st-b4ebd0e45ffdef12-d69196306228f16e = polySubTypeOf-identity
-
---  BusinessDataStore is subTypeOf DataDomain
-st-b4ebd0e45ffdef12-325c32165eb02a4a : BusinessDataStore ⊏ₑ DataDomain
-st-b4ebd0e45ffdef12-325c32165eb02a4a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessDataStore :  Linkage BusinessBehavior BusinessDataStore

@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/7326bf5e63d77585.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7326bf5e63d77585 where -- ========== Primitive Type
+module SysFEAT.EA.7326bf5e63d77585 where -- ========== PrimitiveType
 
 open import Agda.Primitive
-open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQL Field
+open import SysFEAT.EA.254e4dd45f7f8749 public -- NoSQLField
 
-PrimitiveType : ClassOfClassOfBoundedIndividual
-PrimitiveType = ClassOfBoundedIndividual
+PrimitiveType : BoundedIndividualMetaClass
+PrimitiveType = AssetType
+
 
 --  PrimitiveType is subTypeOf NoSQLField
 st-7326bf5e63d77585-254e4dd45f7f8749 : PrimitiveType ⊏ₑ NoSQLField

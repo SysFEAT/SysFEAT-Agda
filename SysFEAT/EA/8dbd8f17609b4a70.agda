@@ -14,13 +14,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8dbd8f17609b4a70 where -- ========== BCM System
+module SysFEAT.EA.8dbd8f17609b4a70 where -- ========== BCMSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca18d25dd85477 public -- Assurance System
-open import SysFEAT.EA.2cff31375eda90bd public -- Process Family
-open import SysFEAT.EA.62466ea661b80d09 public -- Business Operating Asset
-open import SysFEAT.EA.57dfc52d550932ef public -- Business Process
+open import SysFEAT.EA.07ca18d25dd85477 public -- AssuranceSystem
+open import SysFEAT.EA.2cff31375eda90bd public -- ProcessFamily
+open import SysFEAT.EA.62466ea661b80d09 public -- BusinessOperatingAsset
+open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
 
 BCMSystem : ClassOfBoundedIndividual
 BCMSystem = BoundedIndividual

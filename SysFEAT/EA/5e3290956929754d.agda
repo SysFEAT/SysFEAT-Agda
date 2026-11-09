@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/5e3290956929754d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.5e3290956929754d where -- ========== Simple Data Property
+module SysFEAT.EA.5e3290956929754d where -- ========== SimpleDataProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c991068ca8a23 public -- Data Property
+open import SysFEAT.EA.8f1c991068ca8a23 public -- DataProperty
 
-SimpleDataProperty : PropertyType
-SimpleDataProperty = Property
+SimpleDataProperty : BoundedIndividualMetaClass
+SimpleDataProperty = AssetType
+
 
 --  SimpleDataProperty is subTypeOf DataProperty
 st-5e3290956929754d-8f1c991068ca8a23 : SimpleDataProperty ⊏ₑ DataProperty

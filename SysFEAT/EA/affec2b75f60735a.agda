@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affec2b75f60735a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affec2b75f60735a where -- ========== Creation Date
+module SysFEAT.EA.affec2b75f60735a where -- ========== CreationDate
 
 open import Agda.Primitive
 

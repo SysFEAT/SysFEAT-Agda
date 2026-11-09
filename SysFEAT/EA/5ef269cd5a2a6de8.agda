@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/5ef269cd5a2a6de8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.5ef269cd5a2a6de8 where -- ========== Privacy Endpoint
+module SysFEAT.EA.5ef269cd5a2a6de8 where -- ========== PrivacyEndpoint
 
 open import Agda.Primitive
-open import SysFEAT.EA.7d3786425fd04ea2 public -- Privacy Block
+open import SysFEAT.EA.7d3786425fd04ea2 public -- PrivacyBlock
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 
-PrivacyEndpoint : ClassOfBoundedIndividual
-PrivacyEndpoint = BoundedIndividual
+PrivacyEndpoint : ClassOfMixedOrderEntity
+PrivacyEndpoint = MixedOrderEntity
+
 
 --  PrivacyEndpoint is subTypeOf PrivacyBlock
 st-5ef269cd5a2a6de8-7d3786425fd04ea2 : PrivacyEndpoint ⊏ₑ PrivacyBlock

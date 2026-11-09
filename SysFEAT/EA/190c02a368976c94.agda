@@ -19,23 +19,24 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.190c02a368976c94 where -- ========== Architecture principle
+module SysFEAT.EA.190c02a368976c94 where -- ========== Architectureprinciple
 
 open import Agda.Primitive
+open import SysFEAT.EA.4b945e8668a47f80 public -- PolicyFrameworkAsset
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.4b945e8668a47f80 public -- Policy Framework Asset
-open import SysFEAT.EA.952eab2a67285b02 public -- Architecture Principle Category
+open import SysFEAT.EA.952eab2a67285b02 public -- ArchitecturePrincipleCategory
 
-Architectureprinciple : PropertyType
-Architectureprinciple = Property
+Architectureprinciple : ClassOfMixedOrderEntity
+Architectureprinciple = MixedOrderEntity
 
---  Architectureprinciple is subTypeOf Policy
-st-190c02a368976c94-190c7429689664b5 : Architectureprinciple ⊏ₑ Policy
-st-190c02a368976c94-190c7429689664b5 = polySubTypeOf-identity
 
 --  Architectureprinciple withAspect PolicyFrameworkAsset
 st-190c02a368976c94-4b945e8668a47f80 : Architectureprinciple ⊏ₐₑ (PolicyFrameworkAsset (lsuc(lzero)))
 st-190c02a368976c94-4b945e8668a47f80 = polySubTypeOf-identity
+
+--  Architectureprinciple is subTypeOf Policy
+st-190c02a368976c94-190c7429689664b5 : Architectureprinciple ⊏ₑ Policy
+st-190c02a368976c94-190c7429689664b5 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -43,5 +44,5 @@ st-190c02a368976c94-4b945e8668a47f80 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Principle Category: -}
 principleCategory :  Linkage Architectureprinciple ArchitecturePrincipleCategory
-principleCategory = make_instanceOf "Principle Category" "Principle Category"
+principleCategory = make_classOfRelation "Principle Category" "Principle Category"
 

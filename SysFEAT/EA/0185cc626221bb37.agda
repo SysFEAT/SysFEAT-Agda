@@ -14,18 +14,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0185cc626221bb37 where -- ========== Business Event
+module SysFEAT.EA.0185cc626221bb37 where -- ========== BusinessEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.6a70b9f6678763db public -- Business Asset
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
+open import SysFEAT.EA.6a70b9f6678763db public -- BusinessFunctionalAsset
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 
-BusinessEvent : ClassOfClassOfBoundedIndividual
-BusinessEvent = ClassOfBoundedIndividual
+BusinessEvent : BoundedIndividualMetaClass
+BusinessEvent = AssetType
 
 
---  BusinessEvent is subTypeOf BusinessAsset
-st-0185cc626221bb37-6a70b9f6678763db : BusinessEvent ⊏ₑ BusinessAsset
+--  BusinessEvent is subTypeOf BusinessFunctionalAsset
+st-0185cc626221bb37-6a70b9f6678763db : BusinessEvent ⊏ₑ BusinessFunctionalAsset
 st-0185cc626221bb37-6a70b9f6678763db = polySubTypeOf-identity
 
 --  BusinessEvent is subTypeOf BehavioralEvent

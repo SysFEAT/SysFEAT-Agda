@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/325c32165eb02a4a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.325c32165eb02a4a where -- ========== Data Domain
+module SysFEAT.EA.325c32165eb02a4a where -- ========== DataDomain
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c937168ca8195 public -- Data Block
-open import SysFEAT.SOF.d6cd116d5ab97525 public -- Information Domain
-open import SysFEAT.EA.203b8ff05a5f43fe public -- Concept Domain
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
+open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
+open import SysFEAT.SOF.d6cd116d5ab97525 public -- InformationDomain
+open import SysFEAT.C-SOF.203b8ff05a5f43fe public -- ConceptDomain
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
 
-DataDomain : ClassOfClassOfBoundedIndividual
-DataDomain = ClassOfBoundedIndividual
+DataDomain : ClassOfMixedOrderEntity
+DataDomain = MixedOrderEntity
+
 
 --  DataDomain withAspect DataBlock
 st-325c32165eb02a4a-8f1c937168ca8195 : DataDomain ⊏ₐₑ (DataBlock (lsuc(lzero)))
@@ -47,24 +48,13 @@ postulate -- specializedDataArea is subTypeOf specializedInformationDomain
 realizedConceptDomain :  Linkage DataDomain ConceptDomain
 realizedConceptDomain = make_subTypeOf "Realized Concept Domain" "Realized Concept Domain"
 
-postulate -- realizedConceptDomain is subTypeOf realizedInformationDomain
-  st-325a3a1566f35bda-325a3a0e66f3562c  : realizedConceptDomain  ⊏⋆ᵣ  realizedInformationDomain
 
 -- -------------------------------------------------------------------------------------------- 
 {- Domain Data Object: -}
 -- Aggregate Member : Domain Data Object
-DomainDataObject : ClassOfClassOfBoundedIndividual
-DomainDataObject = ClassOfBoundedIndividual
+DomainDataObject : ClassOfClassOfIndividual
+DomainDataObject = ClassOfIndividual
 
-
-
---  DomainDataObject is subTypeOf DomainAsset
-st-6d2b7d9e5fbb65f3-24ae4a405ed16bcf : DomainDataObject ⊏ₑ DomainAsset
-st-6d2b7d9e5fbb65f3-24ae4a405ed16bcf = polySubTypeOf-identity
-
---  DomainDataObject is subTypeOf DataAsset
-st-6d2b7d9e5fbb65f3-6d2b7c935fbb6270 : DomainDataObject ⊏ₑ DataAsset
-st-6d2b7d9e5fbb65f3-6d2b7c935fbb6270 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDomainDataObject :  Linkage DataDomain DomainDataObject
@@ -90,14 +80,6 @@ domainDataObject = membershipOfDomainDataObject  ∘  aggregationOfDataAssetDoma
 SubDataArea : ClassOfClassOfIndividual
 SubDataArea = ClassOfIndividual
 
-
---  SubDataArea is subTypeOf SubInformationArea
-st-cbd9dff65fb7dd57-24ae4a625ed16c60 : SubDataArea ⊏ₑ SubInformationArea
-st-cbd9dff65fb7dd57-24ae4a625ed16c60 = polySubTypeOf-identity
-
---  SubDataArea is subTypeOf DataDomain
-st-cbd9dff65fb7dd57-325c32165eb02a4a : SubDataArea ⊏ₑ DataDomain
-st-cbd9dff65fb7dd57-325c32165eb02a4a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubDataArea :  Linkage DataDomain SubDataArea

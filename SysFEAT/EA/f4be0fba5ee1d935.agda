@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/f4be0fba5ee1d935.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f4be0fba5ee1d935 where -- ========== Network Device
+module SysFEAT.EA.f4be0fba5ee1d935 where -- ========== NetworkDevice
 
 open import Agda.Primitive
-open import SysFEAT.EA.070b0d5564011dbb public -- Networking System
+open import SysFEAT.EA.070b0d5564011dbb public -- NetworkingSystem
 
-NetworkDevice : ClassOfClassOfBoundedIndividual
-NetworkDevice = ClassOfBoundedIndividual
+NetworkDevice : BoundedIndividualMetaClass
+NetworkDevice = AssetType
 
 
 --  NetworkDevice is subTypeOf NetworkingSystem

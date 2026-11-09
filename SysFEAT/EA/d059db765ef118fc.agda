@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/d059db765ef118fc.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d059db765ef118fc where -- ========== Operational Risk Assessment
+module SysFEAT.EA.d059db765ef118fc where -- ========== OperationalRiskAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
-open import SysFEAT.EA.f1606a8267d86149 public -- Operational Assurance Case
+open import SysFEAT.EA.f1606a8267d86149 public -- OperationalAssuranceCase
 
-OperationalRiskAssessment : ClassOfBoundedIndividual
-OperationalRiskAssessment = BoundedIndividual
+OperationalRiskAssessment : ClassOfIndividual
+OperationalRiskAssessment = Individual
 
 
 --  OperationalRiskAssessment is subTypeOf Assessment

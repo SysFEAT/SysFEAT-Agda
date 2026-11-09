@@ -20,5 +20,5 @@ open import SysFEAT.EA.e6f220d45f771837 public -- Physical Data Property
 open import SysFEAT.EA.7d37d08d5fd07aaa public -- Physical Data Asset
 open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
 open import SysFEAT.EA.762582bb5f6bd659 public -- Physical Data Entity
-open import SysFEAT.EA.8f1caa7f68ca98cc public -- Physical Data Dictionary
 open import SysFEAT.EA.8f1cad7d68ca9df0 public -- Physical Data Block
+open import SysFEAT.EA.d874bc056ab7254a public -- Physical Data Dictionary

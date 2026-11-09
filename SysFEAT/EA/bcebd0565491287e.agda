@@ -20,13 +20,13 @@ External references:
 module SysFEAT.EA.bcebd0565491287e where -- ========== Driver
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b50b5fe27cba public -- Governance Event
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 open import SysFEAT.SOF.bcebd0175491272a public -- Stakeholder
 
-Driver : ClassOfBoundedIndividual
-Driver = BoundedIndividual
+Driver : ClassOfIndividual
+Driver = Individual
 
 
 --  Driver is subTypeOf GovernanceEvent

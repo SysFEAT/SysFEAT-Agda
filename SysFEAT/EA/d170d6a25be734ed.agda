@@ -15,16 +15,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d170d6a25be734ed where -- ========== Customer Journey
+module SysFEAT.EA.d170d6a25be734ed where -- ========== CustomerJourney
 
 open import Agda.Primitive
-open import SysFEAT.EA.8a5c926e5c0d632c public -- Customer Activity
-open import SysFEAT.EA.ae7c99be60234bcf public -- Business Line
-open import SysFEAT.EA.952e9d71672849ba public -- Customer Journey Category
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.21ed240a689c08df public -- Value Proposition
-open import SysFEAT.EA.1a5fcc995fd7834d public -- Customer Journey Phase
-open import SysFEAT.EA.d17034875be85304 public -- Job-to-be-done
+open import SysFEAT.EA.8a5c926e5c0d632c public -- CustomerActivity
+open import SysFEAT.EA.ae7c99be60234bcf public -- BusinessLine
+open import SysFEAT.EA.952e9d71672849ba public -- CustomerJourneyCategory
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
+open import SysFEAT.EA.1a5fcc995fd7834d public -- CustomerJourneyPhase
+open import SysFEAT.EA.d17034875be85304 public -- Jobtobedone
 
 CustomerJourney : ClassOfClassOfBoundedIndividual
 CustomerJourney = ClassOfBoundedIndividual
@@ -41,15 +41,15 @@ st-d170d6a25be734ed-8a5c926e5c0d632c = polySubTypeOf-identity
 categorizingBusinessLine :  Linkage CustomerJourney BusinessLine
 categorizingBusinessLine = make_classOfHolonymy "Categorizing Business Line" "Categorizing Business Line"
 
-postulate -- categorizingBusinessLine is subTypeOf categoryOfArchitectureBlock
-  st-ae7c9a2b60234de6-f69620606a0f9c94  : categorizingBusinessLine  ⊏⋆ᵣ  categoryOfArchitectureBlock  {lsuc(lsuc(lzero))}
+postulate -- categorizingBusinessLine is subTypeOf assetCategorizationScheme
+  st-ae7c9a2b60234de6-f69620606a0f9c94  : categorizingBusinessLine  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Customer Journey Category: 
 A categorization of Customer Journeys.
 -}
 customerJourneyCategory :  Linkage CustomerJourney CustomerJourneyCategory
-customerJourneyCategory = make_instanceOf "Customer Journey Category" "Customer Journey Category"
+customerJourneyCategory = make_classOfRelation "Customer Journey Category" "Customer Journey Category"
 
 
 -- -------------------------------------------------------------------------------------------- 
@@ -113,10 +113,6 @@ SubCustomerJourney : ClassOfClassOfIndividual
 SubCustomerJourney = ClassOfIndividual
 
 
---  SubCustomerJourney is subTypeOf CustomerJourney
-st-561c57fd5ec20ea2-d170d6a25be734ed : SubCustomerJourney ⊏ₑ CustomerJourney
-st-561c57fd5ec20ea2-d170d6a25be734ed = polySubTypeOf-identity
-
 -- Membership relation
 membershipOfSubCustomerJourney :  Linkage CustomerJourney SubCustomerJourney
 membershipOfSubCustomerJourney = make_upwardNestingRelation "subCustomerJourney membership" "nested subCustomerJourney"
@@ -143,10 +139,6 @@ A phase context defines the context for carrying out the action plan. It is used
 PhaseStatus : ClassOfClassOfIndividual
 PhaseStatus = ClassOfIndividual
 
-
---  PhaseStatus is subTypeOf CustomerJourneyPhase
-st-1a5fced95fd783c5-1a5fcc995fd7834d : PhaseStatus ⊏ₑ CustomerJourneyPhase
-st-1a5fced95fd783c5-1a5fcc995fd7834d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhaseStatus :  Linkage CustomerJourney PhaseStatus
@@ -178,10 +170,6 @@ CustomerJourneyStep = ClassOfIndividual
 --  CustomerJourneyStep is subTypeOf CustomerActivityMember
 st-c581da866023333b-ec200f5b630f47c5 : CustomerJourneyStep ⊏ₑ CustomerActivityMember
 st-c581da866023333b-ec200f5b630f47c5 = polySubTypeOf-identity
-
---  CustomerJourneyStep is subTypeOf Jobtobedone
-st-c581da866023333b-d17034875be85304 : CustomerJourneyStep ⊏ₑ Jobtobedone
-st-c581da866023333b-d17034875be85304 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfCustomerJourneyStep :  Linkage CustomerJourney CustomerJourneyStep

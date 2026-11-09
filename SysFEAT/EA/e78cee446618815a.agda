@@ -18,11 +18,11 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e78cee446618815a where -- ========== Legal Entity
+module SysFEAT.EA.e78cee446618815a where -- ========== LegalEntity
 
 open import Agda.Primitive
 open import SysFEAT.EA.910196ca550a2ec2 public -- Organization
-open import SysFEAT.EA.c0a3c7c666417665 public -- Legal Entity Type
+open import SysFEAT.EA.c0a3c7c666417665 public -- LegalEntityType
 
 LegalEntity : AgentType
 LegalEntity = IndividualAgent
@@ -32,5 +32,7 @@ LegalEntity = IndividualAgent
 st-e78cee446618815a-910196ca550a2ec2 : LegalEntity ⊏ₑ Organization
 st-e78cee446618815a-910196ca550a2ec2 = polySubTypeOf-identity
 
+postulate -- LegalEntity is PowerInstanceOf Legal Entity Type
+  pi-561f710568d57cc2 : LegalEntity ∷ₚₑ LegalEntityType
 
 -- == Relations =======================

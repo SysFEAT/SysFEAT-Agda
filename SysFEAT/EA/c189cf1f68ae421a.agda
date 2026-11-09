@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c189cf1f68ae421a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c189cf1f68ae421a where -- ========== Business Rule
+module SysFEAT.EA.c189cf1f68ae421a where -- ========== BusinessRule
 
 open import Agda.Primitive
-open import SysFEAT.EA.23bf9a7868ad2d94 public -- Business Resource Rule
+open import SysFEAT.EA.23bf9a7868ad2d94 public -- BusinessResourceRule
 
-BusinessRule : PropertyType
-BusinessRule = Property
+BusinessRule : AssetPropertyType
+BusinessRule = Directive
+
 
 --  BusinessRule is subTypeOf BusinessResourceRule
 st-c189cf1f68ae421a-23bf9a7868ad2d94 : BusinessRule ⊏ₑ BusinessResourceRule

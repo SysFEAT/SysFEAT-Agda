@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/2c93304a6764424d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2c93304a6764424d where -- ========== Deployed Software Technology System
+module SysFEAT.EA.2c93304a6764424d where -- ========== DeployedSOftwareTechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.c80a54ad6785a44d public -- Individual Technology System
-open import SysFEAT.EA.0463ea9a63fd8b6c public -- Software Technology System
+open import SysFEAT.EA.c80a54ad6785a44d public -- IndividualTechnologySystem
+open import SysFEAT.EA.0463ea9a63fd8b6c public -- SOftwareTechnologySystem
 
 DeployedSOftwareTechnologySystem : AgentType
 DeployedSOftwareTechnologySystem = IndividualAgent
@@ -32,7 +32,7 @@ st-2c93304a6764424d-c80a54ad6785a44d = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Software Technology Type: -}
 sOftwareTechnologyType :  Linkage DeployedSOftwareTechnologySystem SOftwareTechnologySystem
-sOftwareTechnologyType = make_instanceOf "Software Technology Type" "Software Technology Type"
+sOftwareTechnologyType = make_Relation "Software Technology Type" "Software Technology Type"
 
 postulate -- sOftwareTechnologyType is subTypeOf systemType
   st-2c9330e06764470a-c80a5a2e6785a53e  : sOftwareTechnologyType  ⊏⋆ᵣ  systemType

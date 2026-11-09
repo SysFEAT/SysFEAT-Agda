@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.1084480e5fce4ccb where -- ========== Application System Deployment Architecture
+module SysFEAT.EA.1084480e5fce4ccb where -- ========== ApplicationSystemDeploymentArchitecture
 
 open import Agda.Primitive
-open import SysFEAT.EA.10844c325fce4e80 public -- Software Deployment Architecture
-open import SysFEAT.EA.46194ca7560d3a45 public -- Application System
-open import SysFEAT.EA.d5e6d7c65c464ae3 public -- Application Deployment Architecture
+open import SysFEAT.EA.10844c325fce4e80 public -- SOftwareDeploymentArchitecture
+open import SysFEAT.EA.46194ca7560d3a45 public -- ApplicationSystem
+open import SysFEAT.EA.d5e6d7c65c464ae3 public -- ApplicationDeploymentArchitecture
 
-ApplicationSystemDeploymentArchitecture : ClassOfClassOfBoundedIndividual
-ApplicationSystemDeploymentArchitecture = ClassOfBoundedIndividual
+ApplicationSystemDeploymentArchitecture : AgentMetaClass
+ApplicationSystemDeploymentArchitecture = AgentType
 
 
 --  ApplicationSystemDeploymentArchitecture is subTypeOf SOftwareDeploymentArchitecture
@@ -43,18 +43,14 @@ postulate -- deployableApplicationSystem is subTypeOf deployableSOftwareSystem
 -- -------------------------------------------------------------------------------------------- 
 {- System Architecture Member: -}
 -- Aggregate Member : System Architecture Member
-SystemArchitectureMember : ClassOfClassOfBoundedIndividual
-SystemArchitectureMember = ClassOfBoundedIndividual
+SystemArchitectureMember : ClassOfClassOfIndividual
+SystemArchitectureMember = ClassOfIndividual
 
 
 
 --  SystemArchitectureMember is subTypeOf DeployableSOftwareMember
 st-10845e385fce6ce2-624e6cab5ed977a2 : SystemArchitectureMember ⊏ₑ DeployableSOftwareMember
 st-10845e385fce6ce2-624e6cab5ed977a2 = polySubTypeOf-identity
-
---  SystemArchitectureMember is subTypeOf ApplicationDeploymentArchitecture
-st-10845e385fce6ce2-d5e6d7c65c464ae3 : SystemArchitectureMember ⊏ₑ ApplicationDeploymentArchitecture
-st-10845e385fce6ce2-d5e6d7c65c464ae3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemArchitectureMember :  Linkage ApplicationSystemDeploymentArchitecture SystemArchitectureMember
@@ -77,18 +73,14 @@ systemArchitectureMember = membershipOfSystemArchitectureMember  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Application Deployment Member: -}
 -- Aggregate Member : Application Deployment Member
-ApplicationDeploymentMember : ClassOfClassOfBoundedIndividual
-ApplicationDeploymentMember = ClassOfBoundedIndividual
+ApplicationDeploymentMember : ClassOfClassOfIndividual
+ApplicationDeploymentMember = ClassOfIndividual
 
 
 
 --  ApplicationDeploymentMember is subTypeOf DeployableSOftwareMember
 st-37b77384602a0acc-624e6cab5ed977a2 : ApplicationDeploymentMember ⊏ₑ DeployableSOftwareMember
 st-37b77384602a0acc-624e6cab5ed977a2 = polySubTypeOf-identity
-
---  ApplicationDeploymentMember is subTypeOf ApplicationDeploymentArchitecture
-st-37b77384602a0acc-d5e6d7c65c464ae3 : ApplicationDeploymentMember ⊏ₑ ApplicationDeploymentArchitecture
-st-37b77384602a0acc-d5e6d7c65c464ae3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfApplicationDeploymentMember :  Linkage ApplicationSystemDeploymentArchitecture ApplicationDeploymentMember

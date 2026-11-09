@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/c80a54ad6785a44d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a54ad6785a44d where -- ========== Individual Technology System
+module SysFEAT.EA.c80a54ad6785a44d where -- ========== IndividualTechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- Individual Resource Agent
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
+open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
 
 IndividualTechnologySystem : AgentType
 IndividualTechnologySystem = IndividualAgent
@@ -32,5 +32,5 @@ st-c80a54ad6785a44d-fe1c231267880201 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- System Type: -}
 systemType :  Linkage IndividualTechnologySystem TechnologySystem
-systemType = make_instanceOf "System Type" "System Type"
+systemType = make_Relation "System Type" "System Type"
 

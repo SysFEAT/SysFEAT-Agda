@@ -19,17 +19,17 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.076d15425a5e158c where -- ========== Org-Unit Type
+module SysFEAT.EA.076d15425a5e158c where -- ========== OrgUnitType
 
 open import Agda.Primitive
-open import SysFEAT.EA.2c93337b67644a6a public -- Human Resource
-open import SysFEAT.EA.c80afd2f6784305d public -- Intangible Resource Agent
+open import SysFEAT.EA.2c93337b67644a6a public -- HumanResource
+open import SysFEAT.EA.c80afd2f6784305d public -- IntangibleResourceAgent
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
-open import SysFEAT.EA.c189cf1f68ae421a public -- Business Rule
-open import SysFEAT.EA.6f4b93a15fd3b6bf public -- Business Interaction Process
+open import SysFEAT.EA.c189cf1f68ae421a public -- BusinessRule
+open import SysFEAT.EA.6f4b93a15fd3b6bf public -- BusinessInteractionProcess
 
-OrgUnitType : ClassOfClassOfBoundedIndividual
-OrgUnitType = ClassOfBoundedIndividual
+OrgUnitType : BoundedIndividualMetaClass
+OrgUnitType = AssetType
 
 
 --  OrgUnitType is subTypeOf HumanResource
@@ -44,14 +44,6 @@ st-076d15425a5e158c-c80afd2f6784305d = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Specialized Org-Unit: -}
-specializedOrgUnit :  Linkage OrgUnitType OrgUnitType
-specializedOrgUnit = make_subTypeOf "Specialized Org-Unit" "Specialized Org-Unit"
-
-postulate -- specializedOrgUnit is subTypeOf specializedResourceAgent
-  st-325a3c7666f35f12-52c3540066f226f4  : specializedOrgUnit  ⊏⋆ᵣ  specializedResourceAgent
-
--- -------------------------------------------------------------------------------------------- 
 {- Fulfilled Skill: -}
 fulfilledSkill :  Linkage OrgUnitType Skill
 fulfilledSkill = make_subTypeOf "Fulfilled Skill" "Fulfilled Skill"
@@ -60,11 +52,19 @@ postulate -- fulfilledSkill is subTypeOf fulfilledBusinessResourceCapability
   st-dd26a26568a1eb03-dd2681a968a1b9d1  : fulfilledSkill  ⊏⋆ᵣ  fulfilledBusinessResourceCapability
 
 -- -------------------------------------------------------------------------------------------- 
+{- Specialized Org-Unit: -}
+specializedOrgUnit :  Linkage OrgUnitType OrgUnitType
+specializedOrgUnit = make_subTypeOf "Specialized Org-Unit" "Specialized Org-Unit"
+
+postulate -- specializedOrgUnit is subTypeOf specializedResourceAgent
+  st-325a3c7666f35f12-52c3540066f226f4  : specializedOrgUnit  ⊏⋆ᵣ  specializedResourceAgent
+
+-- -------------------------------------------------------------------------------------------- 
 {- Operational Rule Enforcement: 
 The set Business Rules that are enforced by an Org-Unit Type.
 -}
 -- Aggregate Member : Operational Rule Enforcement
-OperationalRuleEnforcement : ClassOfClassOfAbstractEntity
+OperationalRuleEnforcement : AbstractEntityMetaClass
 OperationalRuleEnforcement = ClassOfAbstractEntity
 
 
@@ -94,18 +94,14 @@ operationalRuleEnforcement = membershipOfOperationalRuleEnforcement  ∘  aggreg
 -- -------------------------------------------------------------------------------------------- 
 {- Performed Business Interaction: -}
 -- Aggregate Member : Performed Business Interaction
-PerformedBusinessInteraction : ClassOfClassOfBoundedIndividual
-PerformedBusinessInteraction = ClassOfBoundedIndividual
+PerformedBusinessInteraction : ClassOfClassOfIndividual
+PerformedBusinessInteraction = ClassOfIndividual
 
 
 
 --  PerformedBusinessInteraction is subTypeOf PerformedResourceScenario
 st-230b415a61d8966d-230b3f9061d8937b : PerformedBusinessInteraction ⊏ₑ PerformedResourceScenario
 st-230b415a61d8966d-230b3f9061d8937b = polySubTypeOf-identity
-
---  PerformedBusinessInteraction is subTypeOf BusinessInteractionProcess
-st-230b415a61d8966d-6f4b93a15fd3b6bf : PerformedBusinessInteraction ⊏ₑ BusinessInteractionProcess
-st-230b415a61d8966d-6f4b93a15fd3b6bf = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedBusinessInteraction :  Linkage OrgUnitType PerformedBusinessInteraction

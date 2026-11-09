@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/255833cb5c6d1d64.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.255833cb5c6d1d64 where -- ========== Logical Application System
+module SysFEAT.EA.255833cb5c6d1d64 where -- ========== LogicalApplicationSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.2558338d5c6d1d1b public -- Logical Software System
-open import SysFEAT.EA.461950e9560d4461 public -- Logical Data Domain
-open import SysFEAT.EA.255833f95c6d1db3 public -- Logical Application
+open import SysFEAT.EA.2558338d5c6d1d1b public -- LogicalSOftwareSystem
+open import SysFEAT.EA.461950e9560d4461 public -- LogicalDataDomain
+open import SysFEAT.EA.255833f95c6d1db3 public -- LogicalApplication
 
-LogicalApplicationSystem : ClassOfClassOfBoundedIndividual
-LogicalApplicationSystem = ClassOfBoundedIndividual
+LogicalApplicationSystem : BoundedIndividualMetaClass
+LogicalApplicationSystem = AssetType
 
 
 --  LogicalApplicationSystem is subTypeOf LogicalSOftwareSystem
@@ -36,10 +36,6 @@ st-255833cb5c6d1d64-2558338d5c6d1d1b = polySubTypeOf-identity
 LogicalDataStore : ClassOfClassOfIndividual
 LogicalDataStore = ClassOfIndividual
 
-
---  LogicalDataStore is subTypeOf LogicalDataDomain
-st-137d20905ee2c46f-461950e9560d4461 : LogicalDataStore ⊏ₑ LogicalDataDomain
-st-137d20905ee2c46f-461950e9560d4461 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDataStore :  Linkage LogicalApplicationSystem LogicalDataStore
@@ -64,14 +60,9 @@ logicalDataStore = membershipOfLogicalDataStore  ∘  aggregationOfLogicalDataDo
 Role of an IT Service architecture in a composition relationship that links it to a parent IT Service architecture. 
 -}
 -- Aggregate Member : Logical Application System Part
-LogicalApplicationSystemPart : ClassOfClassOfBoundedIndividual
-LogicalApplicationSystemPart = ClassOfBoundedIndividual
+LogicalApplicationSystemPart : ClassOfClassOfIndividual
+LogicalApplicationSystemPart = ClassOfIndividual
 
-
-
---  LogicalApplicationSystemPart is subTypeOf LogicalApplicationSystem
-st-f4bee8265ee1c035-255833cb5c6d1d64 : LogicalApplicationSystemPart ⊏ₑ LogicalApplicationSystem
-st-f4bee8265ee1c035-255833cb5c6d1d64 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalApplicationSystemPart :  Linkage LogicalApplicationSystem LogicalApplicationSystemPart
@@ -96,14 +87,9 @@ logicalApplicationSystemPart = membershipOfLogicalApplicationSystemPart  ∘  ag
 A Logical Application Component defines how a Logical Application breakdowns into a sub-Logical Application
 -}
 -- Aggregate Member : Logical Application Part
-LogicalApplicationPart : ClassOfClassOfBoundedIndividual
-LogicalApplicationPart = ClassOfBoundedIndividual
+LogicalApplicationPart : ClassOfClassOfIndividual
+LogicalApplicationPart = ClassOfIndividual
 
-
-
---  LogicalApplicationPart is subTypeOf LogicalApplication
-st-f4bee86b5ee1c0de-255833f95c6d1db3 : LogicalApplicationPart ⊏ₑ LogicalApplication
-st-f4bee86b5ee1c0de-255833f95c6d1db3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalApplicationPart :  Linkage LogicalApplicationSystem LogicalApplicationPart

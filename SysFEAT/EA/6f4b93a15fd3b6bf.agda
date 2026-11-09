@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/6f4b93a15fd3b6bf.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6f4b93a15fd3b6bf where -- ========== Business Interaction Process
+module SysFEAT.EA.6f4b93a15fd3b6bf where -- ========== BusinessInteractionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.230b35b461d8884d public -- Business Resource Interaction Process
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.EA.230b35b461d8884d public -- BusinessResourceInteractionProcess
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
-BusinessInteractionProcess : ClassOfClassOfBoundedIndividual
-BusinessInteractionProcess = ClassOfBoundedIndividual
+BusinessInteractionProcess : BoundedIndividualMetaClass
+BusinessInteractionProcess = AssetType
+
 
 --  BusinessInteractionProcess is subTypeOf BusinessResourceInteractionProcess
 st-6f4b93a15fd3b6bf-230b35b461d8884d : BusinessInteractionProcess ⊏ₑ BusinessResourceInteractionProcess
@@ -31,18 +32,14 @@ st-6f4b93a15fd3b6bf-230b35b461d8884d = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Department: -}
 -- Aggregate Member : Participant Department
-ParticipantDepartment : ClassOfClassOfBoundedIndividual
-ParticipantDepartment = ClassOfBoundedIndividual
+ParticipantDepartment : ClassOfClassOfIndividual
+ParticipantDepartment = ClassOfIndividual
 
 
 
 --  ParticipantDepartment is subTypeOf ParticipantBusinessAgent
 st-6f4b94625fd3b99a-230b35ed61d88944 : ParticipantDepartment ⊏ₑ ParticipantBusinessAgent
 st-6f4b94625fd3b99a-230b35ed61d88944 = polySubTypeOf-identity
-
---  ParticipantDepartment is subTypeOf OrgUnitType
-st-6f4b94625fd3b99a-076d15425a5e158c : ParticipantDepartment ⊏ₑ OrgUnitType
-st-6f4b94625fd3b99a-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantDepartment :  Linkage BusinessInteractionProcess ParticipantDepartment

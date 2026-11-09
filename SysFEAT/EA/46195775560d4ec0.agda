@@ -14,14 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.46195775560d4ec0 where -- ========== System of Systems
+module SysFEAT.EA.46195775560d4ec0 where -- ========== SystemOfSystems
 
 open import Agda.Primitive
-open import SysFEAT.EA.d1600c7062e093eb public -- Capability Configuration
-open import SysFEAT.EA.f4be11b15ee1e0fa public -- System of Resources
+open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
+open import SysFEAT.EA.f4be11b15ee1e0fa public -- SystemOfResources
 
-SystemOfSystems : ClassOfClassOfBoundedIndividual
-SystemOfSystems = ClassOfBoundedIndividual
+SystemOfSystems : BoundedIndividualMetaClass
+SystemOfSystems = AssetType
 
 
 --  SystemOfSystems is subTypeOf CapabilityConfiguration
@@ -34,8 +34,8 @@ st-46195775560d4ec0-d1600c7062e093eb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- System of System Member: -}
 -- Aggregate Member : System of System Member
-SystemOfSystemMember : ClassOfClassOfBoundedIndividual
-SystemOfSystemMember = ClassOfBoundedIndividual
+SystemOfSystemMember : ClassOfClassOfIndividual
+SystemOfSystemMember = ClassOfIndividual
 
 
 
@@ -46,10 +46,6 @@ st-f4be19a45ee1f3c0-24034f6d5fc79c3f = polySubTypeOf-identity
 --  SystemOfSystemMember is subTypeOf NetworkingPart
 st-f4be19a45ee1f3c0-26b8386e5eeae4a4 : SystemOfSystemMember ⊏ₑ NetworkingPart
 st-f4be19a45ee1f3c0-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  SystemOfSystemMember is subTypeOf SystemOfSystems
-st-f4be19a45ee1f3c0-46195775560d4ec0 : SystemOfSystemMember ⊏ₑ SystemOfSystems
-st-f4be19a45ee1f3c0-46195775560d4ec0 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemOfSystemMember :  Linkage SystemOfSystems SystemOfSystemMember
@@ -72,14 +68,9 @@ systemOfSystemMember = membershipOfSystemOfSystemMember  ∘  aggregationOfSyste
 -- -------------------------------------------------------------------------------------------- 
 {- System of Resource Member: -}
 -- Aggregate Member : System of Resource Member
-SystemOfResourceMember : ClassOfClassOfBoundedIndividual
-SystemOfResourceMember = ClassOfBoundedIndividual
+SystemOfResourceMember : ClassOfClassOfIndividual
+SystemOfResourceMember = ClassOfIndividual
 
-
-
---  SystemOfResourceMember is subTypeOf SystemOfResources
-st-26b83ccf5eeaf0c2-f4be11b15ee1e0fa : SystemOfResourceMember ⊏ₑ SystemOfResources
-st-26b83ccf5eeaf0c2-f4be11b15ee1e0fa = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSystemOfResourceMember :  Linkage SystemOfSystems SystemOfResourceMember

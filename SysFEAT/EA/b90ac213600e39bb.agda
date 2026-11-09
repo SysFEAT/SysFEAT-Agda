@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/b90ac213600e39bb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.b90ac213600e39bb where -- ========== Data Governance Block
+module SysFEAT.EA.b90ac213600e39bb where -- ========== DataGovernanceBlock
 
 open import Agda.Primitive
-open import SysFEAT.SOF.6662916b68dd5f84 public -- Governance Instrument
+open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
 
-DataGovernanceBlock : ClassOfBoundedIndividual
-DataGovernanceBlock = BoundedIndividual
+DataGovernanceBlock : ClassOfMixedOrderEntity
+DataGovernanceBlock = MixedOrderEntity
+
 
 --  DataGovernanceBlock withAspect GovernanceInstrument
 st-b90ac213600e39bb-6662916b68dd5f84 : DataGovernanceBlock ⊏ₐₑ (GovernanceInstrument lzero)

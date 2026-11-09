@@ -16,13 +16,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f4be11b15ee1e0fa where -- ========== System of Resources
+module SysFEAT.EA.f4be11b15ee1e0fa where -- ========== SystemOfResources
 
 open import Agda.Primitive
-open import SysFEAT.EA.d1600c7062e093eb public -- Capability Configuration
+open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 
-SystemOfResources : ClassOfClassOfBoundedIndividual
-SystemOfResources = ClassOfBoundedIndividual
+SystemOfResources : BoundedIndividualMetaClass
+SystemOfResources = AssetType
 
 
 --  SystemOfResources is subTypeOf CapabilityConfiguration

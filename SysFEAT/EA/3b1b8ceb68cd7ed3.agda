@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/3b1b8ceb68cd7ed3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1b8ceb68cd7ed3 where -- ========== Individual Software System
+module SysFEAT.EA.3b1b8ceb68cd7ed3 where -- ========== IndividualSOftwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.3b1b91ea68cd8733 public -- Individual Artifact
-open import SysFEAT.EA.3b1bb6eb68cd9da2 public -- Individual Intangible Resource Agent
+open import SysFEAT.EA.3b1b91ea68cd8733 public -- IndividualArtifact
+open import SysFEAT.EA.3b1bb6eb68cd9da2 public -- IndividualIntangibleResourceAgent
 
 IndividualSOftwareSystem : AgentType
 IndividualSOftwareSystem = IndividualAgent
@@ -30,5 +30,7 @@ st-3b1b8ceb68cd7ed3-3b1b91ea68cd8733 = polySubTypeOf-identity
 st-3b1b8ceb68cd7ed3-3b1bb6eb68cd9da2 : IndividualSOftwareSystem ⊏ₑ IndividualIntangibleResourceAgent
 st-3b1b8ceb68cd7ed3-3b1bb6eb68cd9da2 = polySubTypeOf-identity
 
+postulate -- IndividualSOftwareSystem is PowerInstanceOf Software System Type
+  pi-3b1b8d7c68cd7fcc : IndividualSOftwareSystem ∷ₚₑ SOftwareSystemType
 
 -- == Relations =======================

@@ -14,15 +14,16 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.b90aeac8600e619f where -- ========== Data Assurance Case
+module SysFEAT.EA.b90aeac8600e619f where -- ========== DataAssuranceCase
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca19e95dd854e9 public -- Assurance Case
-open import SysFEAT.SOF.e6f250185f772ee1 public -- Information Asset
-open import SysFEAT.SOF.582e785466f6b36f public -- Data Risk Type
+open import SysFEAT.EA.07ca19e95dd854e9 public -- AssuranceCase
+open import SysFEAT.SOF.582e785466f6b36f public -- DataRiskType
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 
-DataAssuranceCase : ClassOfClassOfBoundedIndividual
-DataAssuranceCase = ClassOfBoundedIndividual
+DataAssuranceCase : ClassOfClassOfIndividual
+DataAssuranceCase = ClassOfIndividual
+
 
 --  DataAssuranceCase is subTypeOf AssuranceCase
 st-b90aeac8600e619f-07ca19e95dd854e9 : DataAssuranceCase ⊏ₑ AssuranceCase
@@ -32,44 +33,11 @@ st-b90aeac8600e619f-07ca19e95dd854e9 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Concerned Information: -}
--- Aggregate Member : Concerned Information
-ConcernedInformation : ClassOfClassOfBoundedIndividual
-ConcernedInformation = ClassOfBoundedIndividual
-
-
-
---  ConcernedInformation is subTypeOf InvolvedAsset
-st-b90afa69600e715c-9152e6975ed764d3 : ConcernedInformation ⊏ₑ InvolvedAsset
-st-b90afa69600e715c-9152e6975ed764d3 = polySubTypeOf-identity
-
---  ConcernedInformation is subTypeOf InformationAsset
-st-b90afa69600e715c-e6f250185f772ee1 : ConcernedInformation ⊏ₑ InformationAsset
-st-b90afa69600e715c-e6f250185f772ee1 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfConcernedInformation :  Linkage DataAssuranceCase ConcernedInformation
-membershipOfConcernedInformation = make_upwardNestingRelation "concernedInformation membership" "nested concernedInformation"
-
--- Aggregation relation
-aggregationOfInformationAssetConcernedInformation :  Linkage ConcernedInformation InformationAsset
-aggregationOfInformationAssetConcernedInformation = make_Relation "InformationAsset aggregation" "aggregated InformationAsset"
-
-{- concernedInformation : derived relation obtained by composing
-   membershipOfConcernedInformation and aggregationOfInformationAssetConcernedInformation
-   It directly links an Data Assurance Case to the final aggregated InformationAsset
-   hiding the reifying ConcernedInformation
--}
-concernedInformation : Linkage DataAssuranceCase InformationAsset
-concernedInformation = membershipOfConcernedInformation  ∘  aggregationOfInformationAssetConcernedInformation
-
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Mitigated Data Risk: -}
 -- Aggregate Member : Mitigated Data Risk
-MitigatedDataRisk : ThirdOrderClass
-MitigatedDataRisk = SecondOrderClass
+MitigatedDataRisk : ClassOfMixedOrderEntity
+MitigatedDataRisk = MixedOrderEntity
+
 
 
 --  MitigatedDataRisk is subTypeOf MitigatedRisk
@@ -91,5 +59,34 @@ aggregationOfDataRiskTypeMitigatedDataRisk = make_Relation "DataRiskType aggrega
 -}
 mitigatedDataRisk : Linkage DataAssuranceCase DataRiskType
 mitigatedDataRisk = membershipOfMitigatedDataRisk  ∘  aggregationOfDataRiskTypeMitigatedDataRisk
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Concerned Information: -}
+-- Aggregate Member : Concerned Information
+ConcernedInformation : ClassOfClassOfIndividual
+ConcernedInformation = ClassOfIndividual
+
+
+--  ConcernedInformation is subTypeOf InvolvedAsset
+st-b90afa69600e715c-9152e6975ed764d3 : ConcernedInformation ⊏ₑ InvolvedAsset
+st-b90afa69600e715c-9152e6975ed764d3 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfConcernedInformation :  Linkage DataAssuranceCase ConcernedInformation
+membershipOfConcernedInformation = make_upwardNestingRelation "concernedInformation membership" "nested concernedInformation"
+
+-- Aggregation relation
+aggregationOfInformationAssetConcernedInformation :  Linkage ConcernedInformation InformationAsset
+aggregationOfInformationAssetConcernedInformation = make_Relation "InformationAsset aggregation" "aggregated InformationAsset"
+
+{- concernedInformation : derived relation obtained by composing
+   membershipOfConcernedInformation and aggregationOfInformationAssetConcernedInformation
+   It directly links an Data Assurance Case to the final aggregated InformationAsset
+   hiding the reifying ConcernedInformation
+-}
+concernedInformation : Linkage DataAssuranceCase InformationAsset
+concernedInformation = membershipOfConcernedInformation  ∘  aggregationOfInformationAssetConcernedInformation
 
 

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/0faf549b640bbfea.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0faf549b640bbfea where -- ========== Application System Deployment Environment
+module SysFEAT.EA.0faf549b640bbfea where -- ========== ApplicationSystemDeploymentEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.108442775fce4918 public -- Software Deployment Environment
-open import SysFEAT.EA.1084480e5fce4ccb public -- Application System Deployment Architecture
+open import SysFEAT.EA.108442775fce4918 public -- SOftwareDeploymentEnvironment
+open import SysFEAT.EA.1084480e5fce4ccb public -- ApplicationSystemDeploymentArchitecture
 
-ApplicationSystemDeploymentEnvironment : ClassOfClassOfBoundedIndividual
-ApplicationSystemDeploymentEnvironment = ClassOfBoundedIndividual
+ApplicationSystemDeploymentEnvironment : BoundedIndividualMetaClass
+ApplicationSystemDeploymentEnvironment = AssetType
 
 
 --  ApplicationSystemDeploymentEnvironment is subTypeOf SOftwareDeploymentEnvironment
@@ -32,14 +32,9 @@ st-0faf549b640bbfea-108442775fce4918 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Deployment Architecture: -}
 -- Aggregate Member : Partner Deployment Architecture
-PartnerDeploymentArchitecture : ClassOfClassOfBoundedIndividual
-PartnerDeploymentArchitecture = ClassOfBoundedIndividual
+PartnerDeploymentArchitecture : ClassOfClassOfIndividual
+PartnerDeploymentArchitecture = ClassOfIndividual
 
-
-
---  PartnerDeploymentArchitecture is subTypeOf ApplicationSystemDeploymentArchitecture
-st-0faf54b3640bc05d-1084480e5fce4ccb : PartnerDeploymentArchitecture ⊏ₑ ApplicationSystemDeploymentArchitecture
-st-0faf54b3640bc05d-1084480e5fce4ccb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerDeploymentArchitecture :  Linkage ApplicationSystemDeploymentEnvironment PartnerDeploymentArchitecture
@@ -62,14 +57,9 @@ partnerDeploymentArchitecture = membershipOfPartnerDeploymentArchitecture  ∘  
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Application Deployment: -}
 -- Aggregate Member : Subject Application Deployment
-SubjectApplicationDeployment : ClassOfClassOfBoundedIndividual
-SubjectApplicationDeployment = ClassOfBoundedIndividual
+SubjectApplicationDeployment : ClassOfClassOfIndividual
+SubjectApplicationDeployment = ClassOfIndividual
 
-
-
---  SubjectApplicationDeployment is subTypeOf ApplicationSystemDeploymentArchitecture
-st-0faf54c3640bc0d4-1084480e5fce4ccb : SubjectApplicationDeployment ⊏ₑ ApplicationSystemDeploymentArchitecture
-st-0faf54c3640bc0d4-1084480e5fce4ccb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectApplicationDeployment :  Linkage ApplicationSystemDeploymentEnvironment SubjectApplicationDeployment

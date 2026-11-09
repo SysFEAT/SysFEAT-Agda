@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/f9d0444861aed37e.htm
 module SysFEAT.EA.f9d0444861aed37e where -- ========== Firewall
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be0fba5ee1d935 public -- Network Device
+open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
-Firewall : ClassOfClassOfBoundedIndividual
-Firewall = ClassOfBoundedIndividual
+Firewall : BoundedIndividualMetaClass
+Firewall = AssetType
 
 
 --  Firewall is subTypeOf NetworkDevice

@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/dd26288968a05d00.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd26288968a05d00 where -- ========== Business Resource Capability
+module SysFEAT.EA.dd26288968a05d00 where -- ========== BusinessResourceCapability
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd265414689f5987 public -- Resource Capability
-open import SysFEAT.EA.dd268f2868a08150 public -- Business Capability
+open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
+open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
 
 BusinessResourceCapability : AssetPropertyType
 BusinessResourceCapability = AssetProperty
@@ -48,7 +48,7 @@ postulate -- specializedBusinessResourceCapability is subTypeOf specializedResou
 -- -------------------------------------------------------------------------------------------- 
 {- Business Resource Capability Part: -}
 -- Aggregate Member : Business Resource Capability Part
-BusinessResourceCapabilityPart : ClassOfClassOfAbstractEntity
+BusinessResourceCapabilityPart : AbstractEntityMetaClass
 BusinessResourceCapabilityPart = ClassOfAbstractEntity
 
 

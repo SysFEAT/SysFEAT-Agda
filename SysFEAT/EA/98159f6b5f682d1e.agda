@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/98159f6b5f682d1e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.98159f6b5f682d1e where -- ========== Data Quality Policy
+module SysFEAT.EA.98159f6b5f682d1e where -- ========== DataQualityPolicy
 
 open import Agda.Primitive
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.d7f90fc35f737c24 public -- Data Quality Measure Value
-open import SysFEAT.EA.98159fba5f682ded public -- Measurable Data Quality
-open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- Information Entity
+open import SysFEAT.EA.d7f90fc35f737c24 public -- DataQualityMeasureValue
+open import SysFEAT.EA.98159fba5f682ded public -- MeasurableDataQuality
+open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- InformationEntity
 
-DataQualityPolicy : ClassOfClassOfBoundedIndividual
-DataQualityPolicy = ClassOfBoundedIndividual
+DataQualityPolicy : AssetPropertyType
+DataQualityPolicy = Directive
+
 
 --  DataQualityPolicy is subTypeOf Policy
 st-98159f6b5f682d1e-190c7429689664b5 : DataQualityPolicy ⊏ₑ Policy

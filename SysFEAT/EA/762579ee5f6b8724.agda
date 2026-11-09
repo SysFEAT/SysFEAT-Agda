@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/762579ee5f6b8724.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.762579ee5f6b8724 where -- ========== Inventory Period
+module SysFEAT.EA.762579ee5f6b8724 where -- ========== InventoryPeriod
 
 open import Agda.Primitive
 

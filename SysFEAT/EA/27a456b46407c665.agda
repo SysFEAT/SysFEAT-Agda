@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/27a456b46407c665.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.27a456b46407c665 where -- ========== Configured Technology System
+module SysFEAT.EA.27a456b46407c665 where -- ========== ConfiguredTechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
 
-ConfiguredTechnologySystem : ClassOfClassOfBoundedIndividual
-ConfiguredTechnologySystem = ClassOfBoundedIndividual
+ConfiguredTechnologySystem : BoundedIndividualMetaClass
+ConfiguredTechnologySystem = AssetType
+
 
 --  ConfiguredTechnologySystem is subTypeOf TechnologySystem
 st-27a456b46407c665-0cbd1fa663fe18ac : ConfiguredTechnologySystem ⊏ₑ TechnologySystem

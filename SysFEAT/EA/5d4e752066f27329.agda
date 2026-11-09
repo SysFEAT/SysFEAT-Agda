@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/5d4e752066f27329.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.5d4e752066f27329 where -- ========== Technology Risk Type
+module SysFEAT.EA.5d4e752066f27329 where -- ========== TechnologyRiskType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0e55206a66f11ec5 public -- Risk Type
+open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 
 TechnologyRiskType : ThirdOrderClass
-TechnologyRiskType = SecondOrderClass
+TechnologyRiskType = PropertyType
 
 
 --  TechnologyRiskType is subTypeOf RiskType

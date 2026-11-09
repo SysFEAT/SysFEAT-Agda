@@ -17,26 +17,26 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d6cd02865ab966e8 where -- ========== Business Software System
+module SysFEAT.EA.d6cd02865ab966e8 where -- ========== BusinessSOftwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
-open import SysFEAT.EA.ffdf5e1f68608352 public -- Software System Category
-open import SysFEAT.EA.2558338d5c6d1d1b public -- Logical Software System
-open import SysFEAT.EA.9dce9f8d5ec76311 public -- Application Interface
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
-open import SysFEAT.EA.25c09cb461e2efd3 public -- Software System Scenario
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
+open import SysFEAT.EA.ffdf5e1f68608352 public -- SOftwareSystemType
+open import SysFEAT.EA.2558338d5c6d1d1b public -- LogicalSOftwareSystem
+open import SysFEAT.EA.9dce9f8d5ec76311 public -- ApplicationInterface
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
+open import SysFEAT.EA.25c09cb461e2efd3 public -- SOftwareSystemScenario
 
-BusinessSOftwareSystem : ClassOfClassOfBoundedIndividual
-BusinessSOftwareSystem = ClassOfBoundedIndividual
+BusinessSOftwareSystem : BoundedIndividualMetaClass
+BusinessSOftwareSystem = AssetType
 
 
 --  BusinessSOftwareSystem is subTypeOf BusinessSystem
 st-d6cd02865ab966e8-278675d65b252f4d : BusinessSOftwareSystem ⊏ₑ BusinessSystem
 st-d6cd02865ab966e8-278675d65b252f4d = polySubTypeOf-identity
 
---  BusinessSOftwareSystem is subTypeOf SOftwareSystemCategory
-st-d6cd02865ab966e8-ffdf5e1f68608352 : BusinessSOftwareSystem ⊏ₑ SOftwareSystemCategory
+--  BusinessSOftwareSystem is subTypeOf SOftwareSystemType
+st-d6cd02865ab966e8-ffdf5e1f68608352 : BusinessSOftwareSystem ⊏ₑ SOftwareSystemType
 st-d6cd02865ab966e8-ffdf5e1f68608352 = polySubTypeOf-identity
 
 
@@ -61,8 +61,9 @@ realizedLogicalSystem = make_subTypeOf "Realized Logical System" "Realized Logic
 An Interaction represents a contract between entities in a specific context inside or outside a company. These entities can be organizational units, activities, or processes.The content of this contract is described in a protocol.
 -}
 -- Aggregate Member : Software Connection
-SOftwareConnection : ClassOfClassOfIndividual
-SOftwareConnection = ClassOfIndividual
+SOftwareConnection : ClassOfMixedOrderEntity
+SOftwareConnection = MixedOrderEntity
+
 
 
 --  SOftwareConnection is subTypeOf BusinessConnection
@@ -92,18 +93,14 @@ sOftwareConnection = membershipOfSOftwareConnection  ∘  aggregationOfApplicati
 A Software Part represents the role that a Business Software System plays in the context of a parent Business Software System.  
 -}
 -- Aggregate Member : Software Part
-SOftwarePart : ClassOfClassOfBoundedIndividual
-SOftwarePart = ClassOfBoundedIndividual
+SOftwarePart : ClassOfClassOfIndividual
+SOftwarePart = ClassOfIndividual
 
 
 
 --  SOftwarePart is subTypeOf ResourceAgentPart
 st-173f4d015eb8c686-24034f6d5fc79c3f : SOftwarePart ⊏ₑ ResourceAgentPart
 st-173f4d015eb8c686-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  SOftwarePart is subTypeOf BusinessSOftwareSystem
-st-173f4d015eb8c686-d6cd02865ab966e8 : SOftwarePart ⊏ₑ BusinessSOftwareSystem
-st-173f4d015eb8c686-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSOftwarePart :  Linkage BusinessSOftwareSystem SOftwarePart
@@ -126,17 +123,14 @@ sOftwarePart = membershipOfSOftwarePart  ∘  aggregationOfBusinessSOftwareSyste
 -- -------------------------------------------------------------------------------------------- 
 {- Physical data store: -}
 -- Aggregate Member : Physical data store
-Physicaldatastore : ClassOfClassOfIndividual
-Physicaldatastore = ClassOfIndividual
+Physicaldatastore : ClassOfMixedOrderEntity
+Physicaldatastore = MixedOrderEntity
+
 
 
 --  Physicaldatastore is subTypeOf ResourceAgentStore
 st-7b8780615eb81b83-ca9df5bb5fcf5a75 : Physicaldatastore ⊏ₑ ResourceAgentStore
 st-7b8780615eb81b83-ca9df5bb5fcf5a75 = polySubTypeOf-identity
-
---  Physicaldatastore is subTypeOf PhysicalDataDomain
-st-7b8780615eb81b83-028f03ff5b4f55ee : Physicaldatastore ⊏ₑ PhysicalDataDomain
-st-7b8780615eb81b83-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicaldatastore :  Linkage BusinessSOftwareSystem Physicaldatastore
@@ -159,18 +153,14 @@ physicaldatastore = membershipOfPhysicaldatastore  ∘  aggregationOfPhysicalDat
 -- -------------------------------------------------------------------------------------------- 
 {- Performed Software System Scenario: -}
 -- Aggregate Member : Performed Software System Scenario
-PerformedSOftwareSystemScenario : ClassOfClassOfBoundedIndividual
-PerformedSOftwareSystemScenario = ClassOfBoundedIndividual
+PerformedSOftwareSystemScenario : ClassOfClassOfIndividual
+PerformedSOftwareSystemScenario = ClassOfIndividual
 
 
 
 --  PerformedSOftwareSystemScenario is subTypeOf PerformedBusinessSystemScenario
 st-25c1b2d361e22368-24034ee25fc79b20 : PerformedSOftwareSystemScenario ⊏ₑ PerformedBusinessSystemScenario
 st-25c1b2d361e22368-24034ee25fc79b20 = polySubTypeOf-identity
-
---  PerformedSOftwareSystemScenario is subTypeOf SOftwareSystemScenario
-st-25c1b2d361e22368-25c09cb461e2efd3 : PerformedSOftwareSystemScenario ⊏ₑ SOftwareSystemScenario
-st-25c1b2d361e22368-25c09cb461e2efd3 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedSOftwareSystemScenario :  Linkage BusinessSOftwareSystem PerformedSOftwareSystemScenario

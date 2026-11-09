@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/d34222c65b131d09.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d34222c65b131d09 where -- ========== Architecture Project
+module SysFEAT.EA.d34222c65b131d09 where -- ========== ArchitectureProject
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
-open import SysFEAT.SOF.ff0501b65b253fdd public -- Governing Team
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
+open import SysFEAT.SOF.ff0501b65b253fdd public -- GoverningTeam
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
-ArchitectureProject : ClassOfBoundedIndividual
-ArchitectureProject = BoundedIndividual
+ArchitectureProject : WholeLifeClass
+ArchitectureProject = WholeLifeIndividual
 
 
 --  ArchitectureProject is subTypeOf GovernanceActivity

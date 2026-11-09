@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/26b8889c5eea8ab7.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.26b8889c5eea8ab7 where -- ========== Asset Portfolio
+module SysFEAT.EA.26b8889c5eea8ab7 where -- ========== AssetPortfolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.29df3f4060084c07 public -- Management System
-open import SysFEAT.SOF.299e882b68488d2c public -- Operational Transformation
-open import SysFEAT.EA.05201bc866475765 public -- Asset Management Initiative
-open import SysFEAT.EA.0520133e66474954 public -- Asset Portfolio Stage
-open import SysFEAT.EA.dd26307668a065f5 public -- Resource Capability Map
-open import SysFEAT.EA.61e3afb3679f1256 public -- Mezzo Resource Operating Asset
+open import SysFEAT.EA.29df3f4060084c07 public -- ManagementSystem
+open import SysFEAT.SOF.299e882b68488d2c public -- OperationalTransformation
+open import SysFEAT.EA.05201bc866475765 public -- AssetManagementInitiative
+open import SysFEAT.EA.dd26307668a065f5 public -- ResourceCapabilityMap
+open import SysFEAT.EA.0520133e66474954 public -- AssetPortfolioStage
+open import SysFEAT.EA.61e3afb3679f1256 public -- MezzoResourceOperatingAsset
 
 AssetPortfolio : ClassOfBoundedIndividual
 AssetPortfolio = BoundedIndividual
@@ -42,6 +42,14 @@ st-26b8889c5eea8ab7-05201bc866475765 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Portfolio Functional Scope: -}
+portfolioFunctionalScope :  Linkage AssetPortfolio ResourceCapabilityMap
+portfolioFunctionalScope = make_Relation "Portfolio Functional Scope" "Portfolio Functional Scope"
+
+postulate -- portfolioFunctionalScope is subTypeOf functionalScope
+  st-dd2630ca68a0669f-01f1214c689b6e0f  : portfolioFunctionalScope  ⊏⋆ᵣ  functionalScope
+
+-- -------------------------------------------------------------------------------------------- 
 {- Portfolio Roadmap: 
 Set of all Asset Portfolio Stages of an Asset Portfolio that , in conjunction with coordinating initiative milestones, establishes the roadmap for the Business Operating Assets under its supervision.
 -}
@@ -52,20 +60,13 @@ postulate -- portfolioRoadmap is subTypeOf /ManagementRoadmap
   st-f277fa24601bef67-612367e761dd7a42  : portfolioRoadmap  ⊏⋆ᵣ  /ManagementRoadmap
 
 -- -------------------------------------------------------------------------------------------- 
-{- Portfolio Functional Scope: -}
-portfolioFunctionalScope :  Linkage AssetPortfolio ResourceCapabilityMap
-portfolioFunctionalScope = make_instanceOf "Portfolio Functional Scope" "Portfolio Functional Scope"
-
-postulate -- portfolioFunctionalScope is subTypeOf functionalScope
-  st-dd2630ca68a0669f-01f1214c689b6e0f  : portfolioFunctionalScope  ⊏⋆ᵣ  functionalScope
-
--- -------------------------------------------------------------------------------------------- 
 {- Managed Resource Asset: 
 A Managed Resource Asset represents the status of a Business Operating Asset which creation, maintenance, evolutation and rating is under the control of an Asset Portfolio.
 -}
 -- Aggregate Member : Managed Resource Asset
-ManagedResourceAsset : ClassOfClassOfIndividual
-ManagedResourceAsset = ClassOfIndividual
+ManagedResourceAsset : ClassOfMixedOrderEntity
+ManagedResourceAsset = MixedOrderEntity
+
 
 
 --  ManagedResourceAsset withAspect ManagementSystemSubject

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/25582c685c6d1c93.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.25582c685c6d1c93 where -- ========== Logical Operating Environment
+module SysFEAT.EA.25582c685c6d1c93 where -- ========== LogicalOperatingEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c0a25061e2fd5a public -- Software System Environment
-open import SysFEAT.EA.255833cb5c6d1d64 public -- Logical Application System
+open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.EA.255833cb5c6d1d64 public -- LogicalApplicationSystem
 
-LogicalOperatingEnvironment : ClassOfClassOfBoundedIndividual
-LogicalOperatingEnvironment = ClassOfBoundedIndividual
+LogicalOperatingEnvironment : BoundedIndividualMetaClass
+LogicalOperatingEnvironment = AssetType
 
 
 --  LogicalOperatingEnvironment is subTypeOf SOftwareSystemEnvironment
@@ -32,18 +32,14 @@ st-25582c685c6d1c93-25c0a25061e2fd5a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Logical Part: -}
 -- Aggregate Member : Partner Logical Part
-PartnerLogicalPart : ClassOfClassOfBoundedIndividual
-PartnerLogicalPart = ClassOfBoundedIndividual
+PartnerLogicalPart : ClassOfMixedOrderEntity
+PartnerLogicalPart = MixedOrderEntity
 
 
 
 --  PartnerLogicalPart is subTypeOf PartnerSOftwareSystem
 st-137d1fdb5ee2c266-25c1a6bc61e20826 : PartnerLogicalPart ⊏ₑ PartnerSOftwareSystem
 st-137d1fdb5ee2c266-25c1a6bc61e20826 = polySubTypeOf-identity
-
---  PartnerLogicalPart is subTypeOf LogicalApplicationSystem
-st-137d1fdb5ee2c266-255833cb5c6d1d64 : PartnerLogicalPart ⊏ₑ LogicalApplicationSystem
-st-137d1fdb5ee2c266-255833cb5c6d1d64 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerLogicalPart :  Linkage LogicalOperatingEnvironment PartnerLogicalPart
@@ -66,18 +62,14 @@ partnerLogicalPart = membershipOfPartnerLogicalPart  ∘  aggregationOfLogicalAp
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Logical Member: -}
 -- Aggregate Member : Subject Logical Member
-SubjectLogicalMember : ClassOfClassOfBoundedIndividual
-SubjectLogicalMember = ClassOfBoundedIndividual
+SubjectLogicalMember : ClassOfMixedOrderEntity
+SubjectLogicalMember = MixedOrderEntity
 
 
 
 --  SubjectLogicalMember is subTypeOf SubjectSOftwareSystem
 st-137d20165ee2c309-25c1a65861e2077a : SubjectLogicalMember ⊏ₑ SubjectSOftwareSystem
 st-137d20165ee2c309-25c1a65861e2077a = polySubTypeOf-identity
-
---  SubjectLogicalMember is subTypeOf LogicalApplicationSystem
-st-137d20165ee2c309-255833cb5c6d1d64 : SubjectLogicalMember ⊏ₑ LogicalApplicationSystem
-st-137d20165ee2c309-255833cb5c6d1d64 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectLogicalMember :  Linkage LogicalOperatingEnvironment SubjectLogicalMember

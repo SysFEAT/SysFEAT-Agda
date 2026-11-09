@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/affeb4955f6054cd.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affeb4955f6054cd where -- ========== Data Set Snapshot
+module SysFEAT.EA.affeb4955f6054cd where -- ========== DataSetSnapshot
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.762580705f6bd560 public -- Data Source Snaphot Item
-open import SysFEAT.EA.254e46f95f7f83ec public -- NoSQL Dataset
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.EA.762580705f6bd560 public -- DataSourceSnaphotItem
+open import SysFEAT.EA.254e46f95f7f83ec public -- NoSQLDataset
 
-DataSetSnapshot : ClassOfBoundedIndividual
-DataSetSnapshot = BoundedIndividual
+DataSetSnapshot : AssetType
+DataSetSnapshot = IndividualAsset
 
 
 --  DataSetSnapshot is subTypeOf DeployedBusinessSystem
@@ -37,14 +37,10 @@ st-affeb4955f6054cd-762580705f6bd560 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Data Field Snapshot: -}
 -- Aggregate Member : Data Field Snapshot
-DataFieldSnapshot : ClassOfBoundedIndividual
-DataFieldSnapshot = BoundedIndividual
+DataFieldSnapshot : ClassOfOrderedEntity (lsuc(lzero))
+DataFieldSnapshot = AggregateMember (lsuc(lzero))
 
 
-
---  DataFieldSnapshot is subTypeOf DataSetSnapshot
-st-8339876768e33caa-affeb4955f6054cd : DataFieldSnapshot ⊏ₑ DataSetSnapshot
-st-8339876768e33caa-affeb4955f6054cd = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataFieldSnapshot :  Linkage DataSetSnapshot DataFieldSnapshot

@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/7d37d08d5fd07aaa.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d37d08d5fd07aaa where -- ========== Physical Data Asset
+module SysFEAT.EA.7d37d08d5fd07aaa where -- ========== PhysicalDataAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
-open import SysFEAT.EA.8f1cad7d68ca9df0 public -- Physical Data Block
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
+open import SysFEAT.EA.8f1cad7d68ca9df0 public -- PhysicalDataBlock
 
-PhysicalDataAsset : ClassOfClassOfBoundedIndividual
-PhysicalDataAsset = ClassOfBoundedIndividual
+PhysicalDataAsset : BoundedIndividualMetaClass
+PhysicalDataAsset = AssetType
+
 
 --  PhysicalDataAsset is subTypeOf DataAsset
 st-7d37d08d5fd07aaa-6d2b7c935fbb6270 : PhysicalDataAsset ⊏ₑ DataAsset
@@ -53,18 +54,14 @@ postulate -- realizedDataAsset is subTypeOf realizedInformationAsset
 A Physical Data Member is a characteristic of a Physical Data Asset.It can be either a Physical Relationship or a Physical Data Slot.
 -}
 -- Aggregate Member : Physical Data Member
-PhysicalDataMember : ClassOfClassOfBoundedIndividual
-PhysicalDataMember = ClassOfBoundedIndividual
+PhysicalDataMember : ClassOfMixedOrderEntity
+PhysicalDataMember = MixedOrderEntity
 
 
 
 --  PhysicalDataMember is subTypeOf DataObjectMember
 st-163c29e85fda678c-b6e3cdf35fbb6ad1 : PhysicalDataMember ⊏ₑ DataObjectMember
 st-163c29e85fda678c-b6e3cdf35fbb6ad1 = polySubTypeOf-identity
-
---  PhysicalDataMember is subTypeOf PhysicalDataAsset
-st-163c29e85fda678c-7d37d08d5fd07aaa : PhysicalDataMember ⊏ₑ PhysicalDataAsset
-st-163c29e85fda678c-7d37d08d5fd07aaa = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalDataMember :  Linkage PhysicalDataAsset PhysicalDataMember

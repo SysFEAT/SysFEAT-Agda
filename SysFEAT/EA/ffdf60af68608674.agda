@@ -3,8 +3,8 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Hardware System Category: 
-A Hardware System Category is a type of physical, material Artifact engineered to produce and consume physical effects.
+Hardware System Type: 
+A Hardware System Type is a type of physical, material Artifact engineered to produce and consume physical effects.
 
 Documentation : https://framework.sysfeat.com/pages/ffdf60af68608674.htm
 
@@ -12,21 +12,22 @@ Documentation : https://framework.sysfeat.com/pages/ffdf60af68608674.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.ffdf60af68608674 where -- ========== Hardware System Category
+module SysFEAT.EA.ffdf60af68608674 where -- ========== HardwareSystemType
 
 open import Agda.Primitive
 open import SysFEAT.EA.ffdf5eb7686083b4 public -- Artifact
-open import SysFEAT.EA.340f52dc686212f5 public -- Physical Resource Agent
+open import SysFEAT.EA.340f52dc686212f5 public -- PhysicalResourceAgent
 
-HardwareSystemCategory : ClassOfClassOfBoundedIndividual
-HardwareSystemCategory = ClassOfBoundedIndividual
+HardwareSystemType : AgentMetaClass
+HardwareSystemType = AgentType
 
---  HardwareSystemCategory is subTypeOf Artifact
-st-ffdf60af68608674-ffdf5eb7686083b4 : HardwareSystemCategory ⊏ₑ Artifact
+
+--  HardwareSystemType is subTypeOf Artifact
+st-ffdf60af68608674-ffdf5eb7686083b4 : HardwareSystemType ⊏ₑ Artifact
 st-ffdf60af68608674-ffdf5eb7686083b4 = polySubTypeOf-identity
 
---  HardwareSystemCategory is subTypeOf PhysicalResourceAgent
-st-ffdf60af68608674-340f52dc686212f5 : HardwareSystemCategory ⊏ₑ PhysicalResourceAgent
+--  HardwareSystemType is subTypeOf PhysicalResourceAgent
+st-ffdf60af68608674-340f52dc686212f5 : HardwareSystemType ⊏ₑ PhysicalResourceAgent
 st-ffdf60af68608674-340f52dc686212f5 = polySubTypeOf-identity
 
 

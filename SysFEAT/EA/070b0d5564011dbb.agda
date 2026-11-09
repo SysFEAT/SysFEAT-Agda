@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/070b0d5564011dbb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.070b0d5564011dbb where -- ========== Networking System
+module SysFEAT.EA.070b0d5564011dbb where -- ========== NetworkingSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8384f5eeae33c public -- Networking System
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
+open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
 
-NetworkingSystem : ClassOfClassOfBoundedIndividual
-NetworkingSystem = ClassOfBoundedIndividual
+NetworkingSystem : BoundedIndividualMetaClass
+NetworkingSystem = AssetType
 
 
 --  NetworkingSystem is subTypeOf NetworkingSystem

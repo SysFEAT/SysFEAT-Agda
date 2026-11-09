@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/9152d8875ed741ef.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9152d8875ed741ef where -- ========== Data Catalog
+module SysFEAT.EA.9152d8875ed741ef where -- ========== DataCatalog
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca18d25dd85477 public -- Assurance System
-open import SysFEAT.EA.44226d6561819b50 public -- Data Assurance Instrument
-open import SysFEAT.EA.affeb2255f6051e6 public -- Deployed Data Store
-open import SysFEAT.EA.203b8fdb5a5f43dd public -- Concept Domain Map
-open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
+open import SysFEAT.EA.07ca18d25dd85477 public -- AssuranceSystem
+open import SysFEAT.EA.9815a0dc5f682fa1 public -- DataControl
+open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
+open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
+open import SysFEAT.C-SOF.622b76b06ae334e6 public -- ConceptDomainMap
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.98159f6b5f682d1e public -- Data Quality Policy
+open import SysFEAT.EA.98159f6b5f682d1e public -- DataQualityPolicy
 
 DataCatalog : ClassOfBoundedIndividual
 DataCatalog = BoundedIndividual
@@ -35,12 +35,12 @@ st-9152d8875ed741ef-07ca18d25dd85477 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Owned Data Resource: -}
-ownedDataResource :  Linkage DataCatalog DataAssuranceInstrument
-ownedDataResource = make_holonymyRelation "Owned Data Resource" "Owned Data Resource"
+{- Packaged Data Resource: -}
+packagedDataResource :  Linkage DataCatalog DataControl
+packagedDataResource = make_nestingRelation "Packaged Data Resource" "Packaged Data Resource"
 
-postulate -- ownedDataResource is subTypeOf packagedAssuranceInstrument
-  st-fe6323de6181763a-561f36fc68d68770  : ownedDataResource  ⊏⋆ᵣ  packagedAssuranceInstrument
+postulate -- packagedDataResource is subTypeOf packagedAssuranceInstrument
+  st-dc9c2f016acd697b-561f36fc68d68770  : packagedDataResource  ⊏⋆ᵣ  packagedAssuranceInstrument
 
 -- -------------------------------------------------------------------------------------------- 
 {- Managed Data Store: -}
@@ -49,26 +49,27 @@ managedDataStore = make_holonymyRelation "Managed Data Store" "Managed Data Stor
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Business Concept Scope: -}
-businessConceptScope :  Linkage DataCatalog ConceptDomainMap
-businessConceptScope = make_Relation "Business Concept Scope" "Business Concept Scope"
-
-postulate -- businessConceptScope is subTypeOf functionalScope
-  st-d326dc90617a5e08-01f1214c689b6e0f  : businessConceptScope  ⊏⋆ᵣ  functionalScope
-
--- -------------------------------------------------------------------------------------------- 
 {- Owned Data Assurance Case: -}
 ownedDataAssuranceCase :  Linkage DataCatalog DataAssuranceCase
 ownedDataAssuranceCase = make_Relation "Owned Data Assurance Case" "Owned Data Assurance Case"
 
-postulate -- ownedDataAssuranceCase is subTypeOf ownedAssuranceCase
-  st-b90ae7db600e5e7a-0b950f8868e54f9f  : ownedDataAssuranceCase  ⊏⋆ᵣ  ownedAssuranceCase
+postulate -- ownedDataAssuranceCase is subTypeOf packagedAssuranceCase
+  st-b90ae7db600e5e7a-0b950f8868e54f9f  : ownedDataAssuranceCase  ⊏⋆ᵣ  packagedAssuranceCase
+
+-- -------------------------------------------------------------------------------------------- 
+{- Business Concept Scope: -}
+businessConceptScope : ∀ {u} →  Linkage DataCatalog (ConceptDomainMap u)
+businessConceptScope = make_Relation "Business Concept Scope" "Business Concept Scope"
+
+postulate -- businessConceptScope is subTypeOf functionalScope
+  st-622b78ef6ae33a93-01f1214c689b6e0f  : businessConceptScope  ⊏⋆ᵣ  functionalScope
 
 -- -------------------------------------------------------------------------------------------- 
 {- Enforced Policy: -}
 -- Aggregate Member : Enforced Policy
-EnforcedPolicy : ClassOfClassOfIndividual
-EnforcedPolicy = ClassOfIndividual
+EnforcedPolicy : ClassOfMixedOrderEntity
+EnforcedPolicy = MixedOrderEntity
+
 
 
 --  EnforcedPolicy withAspect ManagementSystemSubject

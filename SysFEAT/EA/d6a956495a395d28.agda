@@ -21,11 +21,11 @@ External references:
 module SysFEAT.EA.d6a956495a395d28 where -- ========== MicroService
 
 open import Agda.Primitive
-open import SysFEAT.EA.4c7883cd5fca4d5b public -- Deployable Package
-open import SysFEAT.EA.c30bdac25a5d9eaf public -- Software Module
+open import SysFEAT.EA.4c7883cd5fca4d5b public -- DeployablePackage
+open import SysFEAT.EA.c30bdac25a5d9eaf public -- SOftwareModule
 
-MicroService : ClassOfClassOfBoundedIndividual
-MicroService = ClassOfBoundedIndividual
+MicroService : AgentMetaClass
+MicroService = AgentType
 
 
 --  MicroService is subTypeOf DeployablePackage

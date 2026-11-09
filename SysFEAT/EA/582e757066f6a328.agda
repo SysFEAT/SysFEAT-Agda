@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/582e757066f6a328.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.582e757066f6a328 where -- ========== Compliance Risk Type
+module SysFEAT.EA.582e757066f6a328 where -- ========== ComplianceRiskType
 
 open import Agda.Primitive
-open import SysFEAT.EA.0e55230266f12252 public -- Operational Risk Type
+open import SysFEAT.EA.0e55230266f12252 public -- OperationalRiskType
 
 ComplianceRiskType : ThirdOrderClass
-ComplianceRiskType = SecondOrderClass
+ComplianceRiskType = PropertyType
 
 
 --  ComplianceRiskType is subTypeOf OperationalRiskType
@@ -26,3 +26,4 @@ st-582e757066f6a328-0e55230266f12252 : ComplianceRiskType ⊏ₑ OperationalRisk
 st-582e757066f6a328-0e55230266f12252 = polySubTypeOf-identity
 
 
+-- == Relations =======================

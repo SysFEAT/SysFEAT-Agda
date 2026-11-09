@@ -12,21 +12,22 @@ Documentation : https://framework.sysfeat.com/pages/23ab2e945da829b8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.23ab2e945da829b8 where -- ========== Data Lineage
+module SysFEAT.EA.23ab2e945da829b8 where -- ========== DataLineage
 
 open import Agda.Primitive
-open import SysFEAT.EA.b90aeac8600e619f public -- Data Assurance Case
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.72fe99b65e985953 public -- Data Processor
-open import SysFEAT.EA.72fe99d65e98598e public -- Data Quality Measure
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- Functional Asset
-open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- Information Entity
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.EA.72fe99b65e985953 public -- DataProcessor
+open import SysFEAT.EA.72fe99d65e98598e public -- DataQualityMeasure
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- InformationEntity
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
-DataLineage : ClassOfClassOfBoundedIndividual
-DataLineage = ClassOfBoundedIndividual
+DataLineage : ClassOfClassOfIndividual
+DataLineage = ClassOfIndividual
+
 
 --  DataLineage is subTypeOf DataAssuranceCase
 st-23ab2e945da829b8-b90aeac8600e619f : DataLineage ⊏ₑ DataAssuranceCase
@@ -69,18 +70,13 @@ dataLineageFlow = membershipOfDataLineageFlow  ∘  aggregationOfBehavioralEvent
 -- -------------------------------------------------------------------------------------------- 
 {- Data Processing: -}
 -- Aggregate Member : Data Processing
-DataProcessing : ClassOfClassOfBoundedIndividual
-DataProcessing = ClassOfBoundedIndividual
-
+DataProcessing : ClassOfClassOfIndividual
+DataProcessing = ClassOfIndividual
 
 
 --  DataProcessing is subTypeOf AssetInvolvement
 st-137d42a35ee25d48-8f6d910868e36ddc : DataProcessing ⊏ₑ AssetInvolvement
 st-137d42a35ee25d48-8f6d910868e36ddc = polySubTypeOf-identity
-
---  DataProcessing is subTypeOf DataProcessor
-st-137d42a35ee25d48-72fe99b65e985953 : DataProcessing ⊏ₑ DataProcessor
-st-137d42a35ee25d48-72fe99b65e985953 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataProcessing :  Linkage DataLineage DataProcessing
@@ -103,9 +99,8 @@ dataProcessing = membershipOfDataProcessing  ∘  aggregationOfDataProcessorData
 -- -------------------------------------------------------------------------------------------- 
 {- Data Quality Node: -}
 -- Aggregate Member : Data Quality Node
-DataQualityNode : ClassOfClassOfBoundedIndividual
-DataQualityNode = ClassOfBoundedIndividual
-
+DataQualityNode : ClassOfClassOfIndividual
+DataQualityNode = ClassOfIndividual
 
 
 --  DataQualityNode is subTypeOf AssetInvolvement
@@ -115,10 +110,6 @@ st-137d43985ee2f548-8f6d910868e36ddc = polySubTypeOf-identity
 --  DataQualityNode is subTypeOf AppliedControlMeasure
 st-137d43985ee2f548-f1600eb767d84743 : DataQualityNode ⊏ₑ AppliedControlMeasure
 st-137d43985ee2f548-f1600eb767d84743 = polySubTypeOf-identity
-
---  DataQualityNode is subTypeOf DataQualityMeasure
-st-137d43985ee2f548-72fe99d65e98598e : DataQualityNode ⊏ₑ DataQualityMeasure
-st-137d43985ee2f548-72fe99d65e98598e = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataQualityNode :  Linkage DataLineage DataQualityNode
@@ -141,52 +132,42 @@ dataQualityNode = membershipOfDataQualityNode  ∘  aggregationOfDataQualityMeas
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Involvement: -}
 -- Aggregate Member : Asset Involvement
-AssetInvolvement : ClassOfClassOfBoundedIndividual
-AssetInvolvement = ClassOfBoundedIndividual
-
+AssetInvolvement : ClassOfClassOfIndividual
+AssetInvolvement = ClassOfIndividual
 
 
 --  AssetInvolvement is subTypeOf InvolvedAsset
 st-8f6d910868e36ddc-9152e6975ed764d3 : AssetInvolvement ⊏ₑ InvolvedAsset
 st-8f6d910868e36ddc-9152e6975ed764d3 = polySubTypeOf-identity
 
---  AssetInvolvement is subTypeOf FunctionalAsset
-st-8f6d910868e36ddc-a44fb6bc6748b088 : AssetInvolvement ⊏ₑ FunctionalAsset
-st-8f6d910868e36ddc-a44fb6bc6748b088 = polySubTypeOf-identity
-
 -- Membership relation
 membershipOfAssetInvolvement :  Linkage DataLineage AssetInvolvement
 membershipOfAssetInvolvement = make_upwardNestingRelation "assetInvolvement membership" "nested assetInvolvement"
 
 -- Aggregation relation
-aggregationOfFunctionalAssetAssetInvolvement :  Linkage AssetInvolvement FunctionalAsset
-aggregationOfFunctionalAssetAssetInvolvement = make_Relation "FunctionalAsset aggregation" "aggregated FunctionalAsset"
+8F6D910868E36DE2 :  Linkage AssetInvolvement AssetType
+8F6D910868E36DE2 = make_Relation "AssetType aggregation" "aggregated AssetType"
 
 {- assetInvolvement : derived relation obtained by composing
-   membershipOfAssetInvolvement and aggregationOfFunctionalAssetAssetInvolvement
-   It directly links an Data Lineage to the final aggregated FunctionalAsset
+   membershipOfAssetInvolvement and 8F6D910868E36DE2
+   It directly links an Data Lineage to the final aggregated AssetType
    hiding the reifying AssetInvolvement
 -}
-assetInvolvement : Linkage DataLineage FunctionalAsset
-assetInvolvement = membershipOfAssetInvolvement  ∘  aggregationOfFunctionalAssetAssetInvolvement
+assetInvolvement : Linkage DataLineage AssetType
+assetInvolvement = membershipOfAssetInvolvement  ∘  8F6D910868E36DE2
 
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Origin Entity: -}
 -- Aggregate Member : Origin Entity
-OriginEntity : ClassOfClassOfBoundedIndividual
-OriginEntity = ClassOfBoundedIndividual
-
+OriginEntity : ClassOfClassOfIndividual
+OriginEntity = ClassOfIndividual
 
 
 --  OriginEntity is subTypeOf AssetInvolvement
 st-acb4af8462457ab3-8f6d910868e36ddc : OriginEntity ⊏ₑ AssetInvolvement
 st-acb4af8462457ab3-8f6d910868e36ddc = polySubTypeOf-identity
-
---  OriginEntity is subTypeOf InformationEntity
-st-acb4af8462457ab3-d6cd2cea5ab98e5f : OriginEntity ⊏ₑ InformationEntity
-st-acb4af8462457ab3-d6cd2cea5ab98e5f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOriginEntity :  Linkage DataLineage OriginEntity
@@ -209,14 +190,9 @@ originEntity = membershipOfOriginEntity  ∘  aggregationOfInformationEntityOrig
 -- -------------------------------------------------------------------------------------------- 
 {- External Source: -}
 -- Aggregate Member : External Source
-ExternalSource : ClassOfClassOfBoundedIndividual
-ExternalSource = ClassOfBoundedIndividual
+ExternalSource : ClassOfClassOfIndividual
+ExternalSource = ClassOfIndividual
 
-
-
---  ExternalSource is subTypeOf SOftwareTechnology
-st-7d37b0345fd05c45-d5e6ddd05c46547c : ExternalSource ⊏ₑ SOftwareTechnology
-st-7d37b0345fd05c45-d5e6ddd05c46547c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfExternalSource :  Linkage DataLineage ExternalSource
@@ -239,14 +215,9 @@ externalSource = membershipOfExternalSource  ∘  aggregationOfSOftwareTechnolog
 -- -------------------------------------------------------------------------------------------- 
 {- Data Source: -}
 -- Aggregate Member : Data Source
-DataSource : ClassOfClassOfBoundedIndividual
-DataSource = ClassOfBoundedIndividual
+DataSource : ClassOfClassOfIndividual
+DataSource = ClassOfIndividual
 
-
-
---  DataSource is subTypeOf BusinessSOftwareSystem
-st-7d37b2e25fd05f48-d6cd02865ab966e8 : DataSource ⊏ₑ BusinessSOftwareSystem
-st-7d37b2e25fd05f48-d6cd02865ab966e8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataSource :  Linkage DataLineage DataSource
@@ -269,18 +240,13 @@ dataSource = membershipOfDataSource  ∘  aggregationOfBusinessSOftwareSystemDat
 -- -------------------------------------------------------------------------------------------- 
 {- Final Entity: -}
 -- Aggregate Member : Final Entity
-FinalEntity : ClassOfClassOfBoundedIndividual
-FinalEntity = ClassOfBoundedIndividual
-
+FinalEntity : ClassOfClassOfIndividual
+FinalEntity = ClassOfIndividual
 
 
 --  FinalEntity is subTypeOf ConcernedInformation
 st-acb4b3b562457c32-b90afa69600e715c : FinalEntity ⊏ₑ ConcernedInformation
 st-acb4b3b562457c32-b90afa69600e715c = polySubTypeOf-identity
-
---  FinalEntity is subTypeOf InformationEntity
-st-acb4b3b562457c32-d6cd2cea5ab98e5f : FinalEntity ⊏ₑ InformationEntity
-st-acb4b3b562457c32-d6cd2cea5ab98e5f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfFinalEntity :  Linkage DataLineage FinalEntity
@@ -303,18 +269,13 @@ finalEntity = membershipOfFinalEntity  ∘  aggregationOfInformationEntityFinalE
 -- -------------------------------------------------------------------------------------------- 
 {- Intermediate Entity: -}
 -- Aggregate Member : Intermediate Entity
-IntermediateEntity : ClassOfClassOfBoundedIndividual
-IntermediateEntity = ClassOfBoundedIndividual
-
+IntermediateEntity : ClassOfClassOfIndividual
+IntermediateEntity = ClassOfIndividual
 
 
 --  IntermediateEntity is subTypeOf AssetInvolvement
 st-acb4b3f162457d1a-8f6d910868e36ddc : IntermediateEntity ⊏ₑ AssetInvolvement
 st-acb4b3f162457d1a-8f6d910868e36ddc = polySubTypeOf-identity
-
---  IntermediateEntity is subTypeOf InformationEntity
-st-acb4b3f162457d1a-d6cd2cea5ab98e5f : IntermediateEntity ⊏ₑ InformationEntity
-st-acb4b3f162457d1a-d6cd2cea5ab98e5f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIntermediateEntity :  Linkage DataLineage IntermediateEntity
@@ -339,14 +300,9 @@ intermediateEntity = membershipOfIntermediateEntity  ∘  aggregationOfInformati
 The Data Lineage Participant helps to define where the data lineage node (Processing, Control..). occurs.It can represent an Organization or Position Type.
 -}
 -- Aggregate Member : Participant Organization
-ParticipantOrganization : ClassOfClassOfBoundedIndividual
-ParticipantOrganization = ClassOfBoundedIndividual
+ParticipantOrganization : ClassOfClassOfIndividual
+ParticipantOrganization = ClassOfIndividual
 
-
-
---  ParticipantOrganization is subTypeOf OrgUnitType
-st-9152dbc85ed74d86-076d15425a5e158c : ParticipantOrganization ⊏ₑ OrgUnitType
-st-9152dbc85ed74d86-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantOrganization :  Linkage DataLineage ParticipantOrganization

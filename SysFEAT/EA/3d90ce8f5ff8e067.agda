@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/3d90ce8f5ff8e067.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3d90ce8f5ff8e067 where -- ========== Privacy Pre-Assessment
+module SysFEAT.EA.3d90ce8f5ff8e067 where -- ========== PrivacyPreAssessment
 
 open import Agda.Primitive
-open import SysFEAT.EA.8a9f9fe55ee0a603 public -- Privacy Assessment
+open import SysFEAT.EA.8a9f9fe55ee0a603 public -- PrivacyAssessment
 
-PrivacyPreAssessment : ClassOfBoundedIndividual
-PrivacyPreAssessment = BoundedIndividual
+PrivacyPreAssessment : ClassOfIndividual
+PrivacyPreAssessment = Individual
 
 
 --  PrivacyPreAssessment is subTypeOf PrivacyAssessment

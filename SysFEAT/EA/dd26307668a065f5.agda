@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/dd26307668a065f5.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd26307668a065f5 where -- ========== Resource Capability Map
+module SysFEAT.EA.dd26307668a065f5 where -- ========== ResourceCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.SOF.01f12127689b6de2 public -- Capability Map
-open import SysFEAT.EA.dd265414689f5987 public -- Resource Capability
+open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
+open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
 
-ResourceCapabilityMap : PropertyType
-ResourceCapabilityMap = Property
+ResourceCapabilityMap : ClassOfMixedOrderEntity
+ResourceCapabilityMap = MixedOrderEntity
+
 
 --  ResourceCapabilityMap is subTypeOf CapabilityMap
 st-dd26307668a065f5-01f12127689b6de2 : ResourceCapabilityMap ⊏ₑ CapabilityMap
@@ -31,8 +32,9 @@ st-dd26307668a065f5-01f12127689b6de2 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Capability Member: -}
 -- Aggregate Member : Resource Capability Member
-ResourceCapabilityMember : ClassOfClassOfIndividual
-ResourceCapabilityMember = ClassOfIndividual
+ResourceCapabilityMember : ClassOfMixedOrderEntity
+ResourceCapabilityMember = MixedOrderEntity
+
 
 
 --  ResourceCapabilityMember is subTypeOf CapabilityMember

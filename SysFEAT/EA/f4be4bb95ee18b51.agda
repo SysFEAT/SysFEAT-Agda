@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/f4be4bb95ee18b51.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f4be4bb95ee18b51 where -- ========== Physical Data Map
+module SysFEAT.EA.f4be4bb95ee18b51 where -- ========== PhysicalDataMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.6d2b80db5fbb700b public -- Data Map
-open import SysFEAT.EA.8f1cad7d68ca9df0 public -- Physical Data Block
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
+open import SysFEAT.EA.6d2b80db5fbb700b public -- DataMap
+open import SysFEAT.EA.8f1cad7d68ca9df0 public -- PhysicalDataBlock
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
 
-PhysicalDataMap : ClassOfClassOfBoundedIndividual
-PhysicalDataMap = ClassOfBoundedIndividual
+PhysicalDataMap : MetaClass
+PhysicalDataMap = ClassOfEntity
+
 
 --  PhysicalDataMap is subTypeOf DataMap
 st-f4be4bb95ee18b51-6d2b80db5fbb700b : PhysicalDataMap ⊏ₑ DataMap
@@ -40,17 +41,9 @@ ExternalPhysicalDomain : ClassOfClassOfIndividual
 ExternalPhysicalDomain = ClassOfIndividual
 
 
---  ExternalPhysicalDomain is subTypeOf externalInformationArea
-st-4447473c5f4f6a69-dfa4e2b35ebb4ee8 : ExternalPhysicalDomain ⊏ₑ externalInformationArea
-st-4447473c5f4f6a69-dfa4e2b35ebb4ee8 = polySubTypeOf-identity
-
 --  ExternalPhysicalDomain is subTypeOf ExternalDataArea
 st-4447473c5f4f6a69-fd1bf5b05fbc6c5a : ExternalPhysicalDomain ⊏ₑ ExternalDataArea
 st-4447473c5f4f6a69-fd1bf5b05fbc6c5a = polySubTypeOf-identity
-
---  ExternalPhysicalDomain is subTypeOf PhysicalDataDomain
-st-4447473c5f4f6a69-028f03ff5b4f55ee : ExternalPhysicalDomain ⊏ₑ PhysicalDataDomain
-st-4447473c5f4f6a69-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfExternalPhysicalDomain :  Linkage PhysicalDataMap ExternalPhysicalDomain
@@ -79,17 +72,9 @@ PhysicalDomainMember : ClassOfClassOfIndividual
 PhysicalDomainMember = ClassOfIndividual
 
 
---  PhysicalDomainMember is subTypeOf InformationDomainMember
-st-f4be4c025ee18d1e-dfa4e2865ebb4e38 : PhysicalDomainMember ⊏ₑ InformationDomainMember
-st-f4be4c025ee18d1e-dfa4e2865ebb4e38 = polySubTypeOf-identity
-
 --  PhysicalDomainMember is subTypeOf DataDomainMember
 st-f4be4c025ee18d1e-6d2b81965fbb71ad : PhysicalDomainMember ⊏ₑ DataDomainMember
 st-f4be4c025ee18d1e-6d2b81965fbb71ad = polySubTypeOf-identity
-
---  PhysicalDomainMember is subTypeOf PhysicalDataDomain
-st-f4be4c025ee18d1e-028f03ff5b4f55ee : PhysicalDomainMember ⊏ₑ PhysicalDataDomain
-st-f4be4c025ee18d1e-028f03ff5b4f55ee = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalDomainMember :  Linkage PhysicalDataMap PhysicalDomainMember

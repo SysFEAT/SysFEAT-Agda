@@ -15,17 +15,17 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.46194ca7560d3a45 where -- ========== Application System
+module SysFEAT.EA.46194ca7560d3a45 where -- ========== ApplicationSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
-open import SysFEAT.EA.e4c0e7285ed0625d public -- Application System Scenario
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
+open import SysFEAT.EA.e4c0e7285ed0625d public -- ApplicationSystemScenario
 open import SysFEAT.EA.d6a956495a395d28 public -- MicroService
 
-ApplicationSystem : ClassOfClassOfBoundedIndividual
-ApplicationSystem = ClassOfBoundedIndividual
+ApplicationSystem : BoundedIndividualMetaClass
+ApplicationSystem = AssetType
 
 
 --  ApplicationSystem is subTypeOf BusinessSOftwareSystem
@@ -40,18 +40,14 @@ st-46194ca7560d3a45-d6cd02865ab966e8 = polySubTypeOf-identity
 Role of an application system in a composition relationship that links it to a parent application system. 
 -}
 -- Aggregate Member : Application System Member
-ApplicationSystemMember : ClassOfClassOfBoundedIndividual
-ApplicationSystemMember = ClassOfBoundedIndividual
+ApplicationSystemMember : ClassOfClassOfIndividual
+ApplicationSystemMember = ClassOfIndividual
 
 
 
 --  ApplicationSystemMember is subTypeOf SOftwarePart
 st-02fe03b05eb9539c-173f4d015eb8c686 : ApplicationSystemMember ⊏ₑ SOftwarePart
 st-02fe03b05eb9539c-173f4d015eb8c686 = polySubTypeOf-identity
-
---  ApplicationSystemMember is subTypeOf ApplicationSystem
-st-02fe03b05eb9539c-46194ca7560d3a45 : ApplicationSystemMember ⊏ₑ ApplicationSystem
-st-02fe03b05eb9539c-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfApplicationSystemMember :  Linkage ApplicationSystem ApplicationSystemMember
@@ -76,18 +72,14 @@ applicationSystemMember = membershipOfApplicationSystemMember  ∘  aggregationO
 Role of an application in a composition relationship that links it to a parent application or a parent application architecture. 
 -}
 -- Aggregate Member : Application Part
-ApplicationPart : ClassOfClassOfBoundedIndividual
-ApplicationPart = ClassOfBoundedIndividual
+ApplicationPart : ClassOfClassOfIndividual
+ApplicationPart = ClassOfIndividual
 
 
 
 --  ApplicationPart is subTypeOf SOftwarePart
 st-7b877c395eb813cf-173f4d015eb8c686 : ApplicationPart ⊏ₑ SOftwarePart
 st-7b877c395eb813cf-173f4d015eb8c686 = polySubTypeOf-identity
-
---  ApplicationPart is subTypeOf Application
-st-7b877c395eb813cf-bcebd8e9549144db : ApplicationPart ⊏ₑ Application
-st-7b877c395eb813cf-bcebd8e9549144db = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfApplicationPart :  Linkage ApplicationSystem ApplicationPart
@@ -112,14 +104,9 @@ applicationPart = membershipOfApplicationPart  ∘  aggregationOfApplicationAppl
 Role of an organizational unit interacting at the boundary of an application architecture or a software service architecture. 
 -}
 -- Aggregate Member : operator
-operator : ClassOfClassOfBoundedIndividual
-operator = ClassOfBoundedIndividual
+operator : ClassOfClassOfIndividual
+operator = ClassOfIndividual
 
-
-
---  operator is subTypeOf OrgUnitType
-st-7b877e095eb81a21-076d15425a5e158c : operator ⊏ₑ OrgUnitType
-st-7b877e095eb81a21-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfoperator :  Linkage ApplicationSystem operator
@@ -142,18 +129,14 @@ operator = membershipOfoperator  ∘  aggregationOfOrgUnitTypeoperator
 -- -------------------------------------------------------------------------------------------- 
 {- Performed Scenario: -}
 -- Aggregate Member : Performed Scenario
-PerformedScenario : ClassOfClassOfBoundedIndividual
-PerformedScenario = ClassOfBoundedIndividual
+PerformedScenario : ClassOfClassOfIndividual
+PerformedScenario = ClassOfIndividual
 
 
 
 --  PerformedScenario is subTypeOf PerformedSOftwareSystemScenario
 st-e4c0e8515ed0678e-25c1b2d361e22368 : PerformedScenario ⊏ₑ PerformedSOftwareSystemScenario
 st-e4c0e8515ed0678e-25c1b2d361e22368 = polySubTypeOf-identity
-
---  PerformedScenario is subTypeOf ApplicationSystemScenario
-st-e4c0e8515ed0678e-e4c0e7285ed0625d : PerformedScenario ⊏ₑ ApplicationSystemScenario
-st-e4c0e8515ed0678e-e4c0e7285ed0625d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedScenario :  Linkage ApplicationSystem PerformedScenario
@@ -178,14 +161,9 @@ performedScenario = membershipOfPerformedScenario  ∘  aggregationOfApplication
 A micro-service component represents the use of a micro-service in the structure of another software component (application, IT Service, micro-service) or in the environment of an application.
 -}
 -- Aggregate Member : Micro-Service Part
-MicroServicePart : ClassOfClassOfBoundedIndividual
-MicroServicePart = ClassOfBoundedIndividual
+MicroServicePart : ClassOfClassOfIndividual
+MicroServicePart = ClassOfIndividual
 
-
-
---  MicroServicePart is subTypeOf MicroService
-st-8109fc685eb8c563-d6a956495a395d28 : MicroServicePart ⊏ₑ MicroService
-st-8109fc685eb8c563-d6a956495a395d28 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfMicroServicePart :  Linkage ApplicationSystem MicroServicePart

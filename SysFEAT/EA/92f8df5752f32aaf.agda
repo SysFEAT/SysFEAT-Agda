@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/92f8df5752f32aaf.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.92f8df5752f32aaf where -- ========== Dictionary View
+module SysFEAT.EA.92f8df5752f32aaf where -- ========== DictionaryView
 
 open import Agda.Primitive
 

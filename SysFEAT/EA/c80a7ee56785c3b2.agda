@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/c80a7ee56785c3b2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c80a7ee56785c3b2 where -- ========== Deployed Hardware Equipment
+module SysFEAT.EA.c80a7ee56785c3b2 where -- ========== DeployedHardwareEquipment
 
 open import Agda.Primitive
-open import SysFEAT.EA.c80a7be56785c09b public -- Deployed Hardware System
-open import SysFEAT.EA.9788a1fe661765ee public -- Hardware Equipment
+open import SysFEAT.EA.c80a7be56785c09b public -- DeployedHardwareSystem
+open import SysFEAT.EA.9788a1fe661765ee public -- HardwareEquipment
 
-DeployedHardwareEquipment : ClassOfBoundedIndividual
-DeployedHardwareEquipment = BoundedIndividual
+DeployedHardwareEquipment : AssetType
+DeployedHardwareEquipment = IndividualAsset
 
 
 --  DeployedHardwareEquipment is subTypeOf DeployedHardwareSystem
@@ -32,7 +32,7 @@ st-c80a7ee56785c3b2-c80a7be56785c09b = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Hardware Equipment: -}
 hardwareEquipment :  Linkage DeployedHardwareEquipment HardwareEquipment
-hardwareEquipment = make_instanceOf "Hardware Equipment" "Hardware Equipment"
+hardwareEquipment = make_Relation "Hardware Equipment" "Hardware Equipment"
 
 postulate -- hardwareEquipment is subTypeOf hardwareType
   st-c80a83856785c5ac-c80a7d4f6785c18f  : hardwareEquipment  ⊏⋆ᵣ  hardwareType

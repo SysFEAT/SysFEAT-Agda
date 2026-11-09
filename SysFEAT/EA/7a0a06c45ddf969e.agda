@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/7a0a06c45ddf969e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a0a06c45ddf969e where -- ========== Business System Interaction Process
+module SysFEAT.EA.7a0a06c45ddf969e where -- ========== BusinessSystemInteractionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.6246927f61b81996 public -- Business System Asset
-open import SysFEAT.EA.230b35b461d8884d public -- Business Resource Interaction Process
+open import SysFEAT.EA.6246927f61b81996 public -- BusinessSystemAsset
+open import SysFEAT.EA.230b35b461d8884d public -- BusinessResourceInteractionProcess
 
-BusinessSystemInteractionProcess : ClassOfClassOfBoundedIndividual
-BusinessSystemInteractionProcess = ClassOfBoundedIndividual
+BusinessSystemInteractionProcess : BoundedIndividualMetaClass
+BusinessSystemInteractionProcess = AssetType
 
 
 --  BusinessSystemInteractionProcess is subTypeOf BusinessSystemAsset

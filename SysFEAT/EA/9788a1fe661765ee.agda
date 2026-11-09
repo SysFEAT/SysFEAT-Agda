@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/9788a1fe661765ee.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9788a1fe661765ee where -- ========== Hardware Equipment
+module SysFEAT.EA.9788a1fe661765ee where -- ========== HardwareEquipment
 
 open import Agda.Primitive
-open import SysFEAT.EA.c30bf4015a5da72b public -- Concrete Hardware System
+open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
 
-HardwareEquipment : ClassOfClassOfBoundedIndividual
-HardwareEquipment = ClassOfBoundedIndividual
+HardwareEquipment : BoundedIndividualMetaClass
+HardwareEquipment = AssetType
 
 
 --  HardwareEquipment is subTypeOf ConcreteHardwareSystem

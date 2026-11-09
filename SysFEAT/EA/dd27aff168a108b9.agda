@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/dd27aff168a108b9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd27aff168a108b9 where -- ========== Software Technology Capability
+module SysFEAT.EA.dd27aff168a108b9 where -- ========== SOftwareTechnologyCapability
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd27b08d68a10b12 public -- Technology Capability
+open import SysFEAT.EA.dd27b08d68a10b12 public -- TechnologyCapability
 
 SOftwareTechnologyCapability : AssetPropertyType
 SOftwareTechnologyCapability = AssetProperty
@@ -26,4 +26,3 @@ st-dd27aff168a108b9-dd27b08d68a10b12 : SOftwareTechnologyCapability ⊏ₑ Techn
 st-dd27aff168a108b9-dd27b08d68a10b12 = polySubTypeOf-identity
 
 
--- == Relations =======================

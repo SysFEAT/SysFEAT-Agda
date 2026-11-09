@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/61e3ae8f679f0e2d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.61e3ae8f679f0e2d where -- ========== Macro Resource Operating Asset
+module SysFEAT.EA.61e3ae8f679f0e2d where -- ========== MacroResourceOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-MacroResourceOperatingAsset : ClassOfClassOfBoundedIndividual
-MacroResourceOperatingAsset = ClassOfBoundedIndividual
+MacroResourceOperatingAsset : BoundedIndividualMetaClass
+MacroResourceOperatingAsset = AssetType
 
---  MacroResourceOperatingAsset is subTypeOf ResourceOperatingAsset
-st-61e3ae8f679f0e2d-f8e61da0621db6fa : MacroResourceOperatingAsset ⊏ₑ ResourceOperatingAsset
+
+--  MacroResourceOperatingAsset is subTypeOf ResourceOperatingAssetType
+st-61e3ae8f679f0e2d-f8e61da0621db6fa : MacroResourceOperatingAsset ⊏ₑ ResourceOperatingAssetType
 st-61e3ae8f679f0e2d-f8e61da0621db6fa = polySubTypeOf-identity
 
 

@@ -14,13 +14,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a717ae75596283e where -- ========== Exogenous Driver
+module SysFEAT.EA.7a717ae75596283e where -- ========== ExogenousDriver
 
 open import Agda.Primitive
 open import SysFEAT.EA.bcebd0565491287e public -- Driver
 
-ExogenousDriver : ClassOfBoundedIndividual
-ExogenousDriver = BoundedIndividual
+ExogenousDriver : ClassOfIndividual
+ExogenousDriver = Individual
 
 
 --  ExogenousDriver is subTypeOf Driver

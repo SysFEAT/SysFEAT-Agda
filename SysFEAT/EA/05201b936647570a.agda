@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/05201b936647570a.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.05201b936647570a where -- ========== Management Initiative
+module SysFEAT.EA.05201b936647570a where -- ========== ManagementInitiative
 
 open import Agda.Primitive
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative

@@ -19,25 +19,25 @@ External references:
 module SysFEAT.EA.91be97ff54882d9f where -- ========== Project
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
-open import SysFEAT.EA.2b5887d05ef07b3b public -- Program Asset
+open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
 open import SysFEAT.EA.84c799c1664d8b2f public -- Epic
-open import SysFEAT.EA.2d18f6705ac37b70 public -- Projet Risk Type
-open import SysFEAT.EA.24ac695354881cbe public -- Project Type
-open import SysFEAT.EA.dd268f2868a08150 public -- Business Capability
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
+open import SysFEAT.EA.24ac695354881cbe public -- ProjectType
+open import SysFEAT.EA.2d18f6705ac37b70 public -- ProjetRiskType
+open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-Project : ClassOfBoundedIndividual
-Project = BoundedIndividual
+Project : ClassOfMixedOrderEntity
+Project = MixedOrderEntity
 
+
+--  Project withAspect ProgramAsset
+st-91be97ff54882d9f-52e0b14c6abf4c76 : Project ⊏ₐₑ (ProgramAsset lzero)
+st-91be97ff54882d9f-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 --  Project is subTypeOf ManagementInitiative
 st-91be97ff54882d9f-05201b936647570a : Project ⊏ₑ ManagementInitiative
 st-91be97ff54882d9f-05201b936647570a = polySubTypeOf-identity
-
---  Project is subTypeOf ProgramAsset
-st-91be97ff54882d9f-2b5887d05ef07b3b : Project ⊏ₑ ProgramAsset
-st-91be97ff54882d9f-2b5887d05ef07b3b = polySubTypeOf-identity
 
 --  Project is subTypeOf Epic
 st-91be97ff54882d9f-84c799c1664d8b2f : Project ⊏ₑ Epic
@@ -47,45 +47,15 @@ st-91be97ff54882d9f-84c799c1664d8b2f = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Project Classification: -}
+projectClassification :  Linkage Project ProjectType
+projectClassification = make_Relation "Project Classification" "Project Classification"
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Project Risk: -}
 projectRisk :  Linkage Project ProjetRiskType
 projectRisk = make_Relation "Project Risk" "Project Risk"
-
-
--- -------------------------------------------------------------------------------------------- 
-{- Project Classification: -}
-projectClassification :  Linkage Project ProjectType
-projectClassification = make_instanceOf "Project Classification" "Project Classification"
-
-
--- -------------------------------------------------------------------------------------------- 
-{- Project Dependency: -}
--- Aggregate Member : Project Dependency
-ProjectDependency : ClassOfBoundedIndividual
-ProjectDependency = BoundedIndividual
-
-
-
---  ProjectDependency is subTypeOf Project
-st-8339871c68e33b79-91be97ff54882d9f : ProjectDependency ⊏ₑ Project
-st-8339871c68e33b79-91be97ff54882d9f = polySubTypeOf-identity
-
--- Membership relation
-membershipOfProjectDependency :  Linkage Project ProjectDependency
-membershipOfProjectDependency = make_upwardNestingRelation "projectDependency membership" "nested projectDependency"
-
--- Aggregation relation
-aggregationOfProjectProjectDependency :  Linkage ProjectDependency Project
-aggregationOfProjectProjectDependency = make_Relation "Project aggregation" "aggregated Project"
-
-{- projectDependency : derived relation obtained by composing
-   membershipOfProjectDependency and aggregationOfProjectProjectDependency
-   It directly links an Project to the final aggregated Project
-   hiding the reifying ProjectDependency
--}
-projectDependency : Linkage Project Project
-projectDependency = membershipOfProjectDependency  ∘  aggregationOfProjectProjectDependency
-
 
 
 -- -------------------------------------------------------------------------------------------- 
@@ -114,10 +84,37 @@ projectPurpose = membershipOfProjectPurpose  ∘  aggregationOfBusinessCapabilit
 
 
 -- -------------------------------------------------------------------------------------------- 
+{- Project Dependency: -}
+-- Aggregate Member : Project Dependency
+ProjectDependency : ClassOfOrderedEntity (lsuc(lzero))
+ProjectDependency = AggregateMember (lsuc(lzero))
+
+
+
+-- Membership relation
+membershipOfProjectDependency :  Linkage Project ProjectDependency
+membershipOfProjectDependency = make_upwardNestingRelation "projectDependency membership" "nested projectDependency"
+
+-- Aggregation relation
+aggregationOfProjectProjectDependency :  Linkage ProjectDependency Project
+aggregationOfProjectProjectDependency = make_Relation "Project aggregation" "aggregated Project"
+
+{- projectDependency : derived relation obtained by composing
+   membershipOfProjectDependency and aggregationOfProjectProjectDependency
+   It directly links an Project to the final aggregated Project
+   hiding the reifying ProjectDependency
+-}
+projectDependency : Linkage Project Project
+projectDependency = membershipOfProjectDependency  ∘  aggregationOfProjectProjectDependency
+
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Project Deliverable: -}
 -- Aggregate Member : Project Deliverable
-ProjectDeliverable : ClassOfClassOfIndividual
-ProjectDeliverable = ClassOfIndividual
+ProjectDeliverable : ClassOfElement
+ProjectDeliverable = Element
+
 
 
 --  ProjectDeliverable withAspect InitiativeSubject
@@ -129,16 +126,16 @@ membershipOfProjectDeliverable :  Linkage Project ProjectDeliverable
 membershipOfProjectDeliverable = make_upwardNestingRelation "projectDeliverable membership" "nested projectDeliverable"
 
 -- Aggregation relation
-aggregationOfResourceOperatingAssetProjectDeliverable :  Linkage ProjectDeliverable ResourceOperatingAsset
-aggregationOfResourceOperatingAssetProjectDeliverable = make_Relation "ResourceOperatingAsset aggregation" "aggregated ResourceOperatingAsset"
+aggregationOfResourceOperatingAssetTypeProjectDeliverable :  Linkage ProjectDeliverable ResourceOperatingAssetType
+aggregationOfResourceOperatingAssetTypeProjectDeliverable = make_Relation "ResourceOperatingAssetType aggregation" "aggregated ResourceOperatingAssetType"
 
 {- projectDeliverable : derived relation obtained by composing
-   membershipOfProjectDeliverable and aggregationOfResourceOperatingAssetProjectDeliverable
-   It directly links an Project to the final aggregated ResourceOperatingAsset
+   membershipOfProjectDeliverable and aggregationOfResourceOperatingAssetTypeProjectDeliverable
+   It directly links an Project to the final aggregated ResourceOperatingAssetType
    hiding the reifying ProjectDeliverable
 -}
-projectDeliverable : Linkage Project ResourceOperatingAsset
-projectDeliverable = membershipOfProjectDeliverable  ∘  aggregationOfResourceOperatingAssetProjectDeliverable
+projectDeliverable : Linkage Project ResourceOperatingAssetType
+projectDeliverable = membershipOfProjectDeliverable  ∘  aggregationOfResourceOperatingAssetTypeProjectDeliverable
 
 
 

@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/e6f220d45f771837.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e6f220d45f771837 where -- ========== Physical Data Property
+module SysFEAT.EA.e6f220d45f771837 where -- ========== PhysicalDataProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c991068ca8a23 public -- Data Property
-open import SysFEAT.EA.7d37d08d5fd07aaa public -- Physical Data Asset
+open import SysFEAT.EA.8f1c991068ca8a23 public -- DataProperty
+open import SysFEAT.EA.7d37d08d5fd07aaa public -- PhysicalDataAsset
 
-PhysicalDataProperty : ClassOfClassOfBoundedIndividual
-PhysicalDataProperty = ClassOfBoundedIndividual
+PhysicalDataProperty : BoundedIndividualMetaClass
+PhysicalDataProperty = AssetType
 
 
 --  PhysicalDataProperty is subTypeOf DataProperty
@@ -44,8 +44,8 @@ postulate -- specializedPhysicalValueObject is subTypeOf specializedPhysicalObje
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Physical Data Property: -}
 -- Aggregate Member : Sub Physical Data Property
-SubPhysicalDataProperty : ClassOfClassOfBoundedIndividual
-SubPhysicalDataProperty = ClassOfBoundedIndividual
+SubPhysicalDataProperty : ClassOfMixedOrderEntity
+SubPhysicalDataProperty = MixedOrderEntity
 
 
 
@@ -56,10 +56,6 @@ st-82c3bbbb5fdcc433-163c29e85fda678c = polySubTypeOf-identity
 --  SubPhysicalDataProperty is subTypeOf SubDataProperty
 st-82c3bbbb5fdcc433-8f1c9c3268ca90a3 : SubPhysicalDataProperty ⊏⋆ₑ SubDataProperty
 st-82c3bbbb5fdcc433-8f1c9c3268ca90a3 = polySubTypeOf-identity
-
---  SubPhysicalDataProperty is subTypeOf PhysicalDataProperty
-st-82c3bbbb5fdcc433-e6f220d45f771837 : SubPhysicalDataProperty ⊏ₑ PhysicalDataProperty
-st-82c3bbbb5fdcc433-e6f220d45f771837 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubPhysicalDataProperty :  Linkage PhysicalDataProperty SubPhysicalDataProperty

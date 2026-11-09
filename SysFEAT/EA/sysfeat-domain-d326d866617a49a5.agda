@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Data Provenance & Reliability Assurance: 
-Data Provenance &amp; Reliability Assurance establishes trust in the provenance of Conceptual Entity Assets.It uses Data Lineage as a means to track data provenance.
+Data Provenance &amp; Reliability Assurance establishes trust in the provenance of Concept Objects.It uses Data Lineage as a means to track data provenance.
 
 Documentation : https://framework.sysfeat.com/pages/d326d866617a49a5.htm
 
@@ -13,14 +13,14 @@ Documentation : https://framework.sysfeat.com/pages/d326d866617a49a5.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-d326d866617a49a5 where -- ========== Data Provenance & Reliability Assurance
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.EA.sysfeat-domain-75ef50ab620fb787 public -- EA Pattern - Physical Data Domain
-open import SysFEAT.EA.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
+open import SysFEAT.C-SOF.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
 open import SysFEAT.EA.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
 open import SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 public -- Information Assets
 open import SysFEAT.EA.sysfeat-domain-25c09f1b61e2f2a0 public -- SOF - Business Software Operating Model
 open import SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 public -- System Operating Framework - SOF
+open import SysFEAT.EA.sysfeat-domain-7c3aae72617a2499 public -- Data Asset Assurance
 open import SysFEAT.EA.sysfeat-domain-44254cce6182c076 public -- Data Governance Core
 
 open import SysFEAT.EA.72fe99b65e985953 public -- Data Processor

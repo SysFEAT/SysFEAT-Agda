@@ -14,18 +14,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e2ef095b62147bf9 where -- ========== Resource Action Process
+module SysFEAT.EA.e2ef095b62147bf9 where -- ========== ResourceActionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.0185cd936221bd72 public -- Resource Behavior
-open import SysFEAT.SOF.d682ef5e56144e77 public -- Action Process Type
-open import SysFEAT.EA.0185cc626221bb37 public -- Business Event
-open import SysFEAT.EA.6a70c0b36787698c public -- Resource Outcome Event
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
-open import SysFEAT.SOF.d6cd116d5ab97525 public -- Information Domain
+open import SysFEAT.EA.0185cd936221bd72 public -- ResourceBehavior
+open import SysFEAT.SOF.d682ef5e56144e77 public -- ActionProcessType
+open import SysFEAT.EA.0185cc626221bb37 public -- BusinessEvent
+open import SysFEAT.EA.6a70c0b36787698c public -- ResourceOutcomeEvent
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
+open import SysFEAT.SOF.d6cd116d5ab97525 public -- InformationDomain
 
-ResourceActionProcess : ClassOfClassOfBoundedIndividual
-ResourceActionProcess = ClassOfBoundedIndividual
+ResourceActionProcess : BehaviorMetaClass
+ResourceActionProcess = BehaviorType
 
 
 --  ResourceActionProcess is subTypeOf ResourceBehavior
@@ -60,8 +60,9 @@ postulate -- realizedOperatingProcess is subTypeOf realizedProces
 -- -------------------------------------------------------------------------------------------- 
 {- Sequence Flow: -}
 -- Aggregate Member : Sequence Flow
-SequenceFlow : ClassOfClassOfIndividual
-SequenceFlow = ClassOfIndividual
+SequenceFlow : TemporalOrderingType
+SequenceFlow = TemporalOrdering
+
 
 
 --  SequenceFlow is subTypeOf SequenceFlow
@@ -89,8 +90,9 @@ sequenceFlow = membershipOfSequenceFlow  ∘  aggregationOfBusinessEventSequence
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Object Flow: -}
 -- Aggregate Member : Resource Object Flow
-ResourceObjectFlow : ClassOfClassOfIndividual
-ResourceObjectFlow = ClassOfIndividual
+ResourceObjectFlow : TemporalOrderingType
+ResourceObjectFlow = TemporalOrdering
+
 
 
 --  ResourceObjectFlow is subTypeOf ObjectFlow
@@ -118,8 +120,8 @@ resourceObjectFlow = membershipOfResourceObjectFlow  ∘  aggregationOfResourceO
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Resource Agent: -}
 -- Aggregate Member : Participant Resource Agent
-ParticipantResourceAgent : ClassOfClassOfBoundedIndividual
-ParticipantResourceAgent = ClassOfBoundedIndividual
+ParticipantResourceAgent : ClassOfClassOfIndividual
+ParticipantResourceAgent = ClassOfIndividual
 
 
 
@@ -130,10 +132,6 @@ st-f8e61ffd621dbebc-e0e874626578a341 = polySubTypeOf-identity
 --  ParticipantResourceAgent is subTypeOf ActiveParticipant
 st-f8e61ffd621dbebc-004b041f5ebd1119 : ParticipantResourceAgent ⊏ₑ ActiveParticipant
 st-f8e61ffd621dbebc-004b041f5ebd1119 = polySubTypeOf-identity
-
---  ParticipantResourceAgent is subTypeOf ResourceAgentType
-st-f8e61ffd621dbebc-e2ef091962147ad7 : ParticipantResourceAgent ⊏ₑ ResourceAgentType
-st-f8e61ffd621dbebc-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantResourceAgent :  Linkage ResourceActionProcess ParticipantResourceAgent
@@ -156,18 +154,14 @@ participantResourceAgent = membershipOfParticipantResourceAgent  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Process Step: -}
 -- Aggregate Member : Resource Process Step
-ResourceProcessStep : ClassOfClassOfBoundedIndividual
-ResourceProcessStep = ClassOfBoundedIndividual
+ResourceProcessStep : ClassOfClassOfIndividual
+ResourceProcessStep = ClassOfIndividual
 
 
 
 --  ResourceProcessStep is subTypeOf ProcessStep
 st-f8e62045621dbffb-8e1390925ebe3db7 : ResourceProcessStep ⊏ₑ ProcessStep
 st-f8e62045621dbffb-8e1390925ebe3db7 = polySubTypeOf-identity
-
---  ResourceProcessStep is subTypeOf ResourceActionProcess
-st-f8e62045621dbffb-e2ef095b62147bf9 : ResourceProcessStep ⊏ₑ ResourceActionProcess
-st-f8e62045621dbffb-e2ef095b62147bf9 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceProcessStep :  Linkage ResourceActionProcess ResourceProcessStep
@@ -190,17 +184,14 @@ resourceProcessStep = membershipOfResourceProcessStep  ∘  aggregationOfResourc
 -- -------------------------------------------------------------------------------------------- 
 {- Operating Process Store: -}
 -- Aggregate Member : Operating Process Store
-OperatingProcessStore : ClassOfClassOfIndividual
-OperatingProcessStore = ClassOfIndividual
+OperatingProcessStore : ClassOfMixedOrderEntity
+OperatingProcessStore = MixedOrderEntity
+
 
 
 --  OperatingProcessStore is subTypeOf ProcessStore
 st-d69196306228f16e-e4c003255ed1f037 : OperatingProcessStore ⊏ₑ ProcessStore
 st-d69196306228f16e-e4c003255ed1f037 = polySubTypeOf-identity
-
---  OperatingProcessStore is subTypeOf InformationDomain
-st-d69196306228f16e-d6cd116d5ab97525 : OperatingProcessStore ⊏ₑ InformationDomain
-st-d69196306228f16e-d6cd116d5ab97525 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOperatingProcessStore :  Linkage ResourceActionProcess OperatingProcessStore

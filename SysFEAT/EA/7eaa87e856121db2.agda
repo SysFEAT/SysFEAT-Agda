@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/7eaa87e856121db2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7eaa87e856121db2 where -- ========== Logical Data Dictionary
+module SysFEAT.EA.7eaa87e856121db2 where -- ========== LogicalDataDictionary
 
 open import Agda.Primitive
-open import SysFEAT.EA.67d376e36aa45056 public -- Data Dictionary
-open import SysFEAT.EA.fd1bf2a45fbc64fb public -- Logical Data Asset
+open import SysFEAT.EA.67d376e36aa45056 public -- DataDictionary
+open import SysFEAT.EA.fd1bf2a45fbc64fb public -- LogicalDataAsset
 
-LogicalDataDictionary : ClassOfAbstractEntity
-LogicalDataDictionary = AbstractEntity
+LogicalDataDictionary : ClassOfMixedOrderEntity
+LogicalDataDictionary = MixedOrderEntity
 
 
 --  LogicalDataDictionary is subTypeOf DataDictionary

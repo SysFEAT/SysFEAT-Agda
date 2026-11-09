@@ -14,13 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.10844c325fce4e80 where -- ========== Software Deployment Architecture
+module SysFEAT.EA.10844c325fce4e80 where -- ========== SOftwareDeploymentArchitecture
 
 open import Agda.Primitive
-open import SysFEAT.EA.d5e6d8015c464b40 public -- Deployable Software System
+open import SysFEAT.EA.d5e6d8015c464b40 public -- DeployableSOftwareSystem
 
-SOftwareDeploymentArchitecture : ClassOfClassOfBoundedIndividual
-SOftwareDeploymentArchitecture = ClassOfBoundedIndividual
+SOftwareDeploymentArchitecture : AgentMetaClass
+SOftwareDeploymentArchitecture = AgentType
+
 
 --  SOftwareDeploymentArchitecture is subTypeOf DeployableSOftwareSystem
 st-10844c325fce4e80-d5e6d8015c464b40 : SOftwareDeploymentArchitecture ⊏ₑ DeployableSOftwareSystem

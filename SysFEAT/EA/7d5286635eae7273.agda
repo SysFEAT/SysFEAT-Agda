@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/7d5286635eae7273.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d5286635eae7273 where -- ========== Logical Data Property
+module SysFEAT.EA.7d5286635eae7273 where -- ========== LogicalDataProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b5858b85eec51d9 public -- Logical Data Element
-open import SysFEAT.EA.8f1c991068ca8a23 public -- Data Property
+open import SysFEAT.EA.2b5858b85eec51d9 public -- LogicalDataElement
+open import SysFEAT.EA.8f1c991068ca8a23 public -- DataProperty
 
-LogicalDataProperty : ClassOfClassOfBoundedIndividual
-LogicalDataProperty = ClassOfBoundedIndividual
+LogicalDataProperty : ClassOfMixedOrderEntity
+LogicalDataProperty = MixedOrderEntity
 
 
 --  LogicalDataProperty is subTypeOf LogicalDataElement
@@ -44,8 +44,8 @@ postulate -- specializedLogicalValue is subTypeOf specializedDataObject
 -- -------------------------------------------------------------------------------------------- 
 {- Data Value Member: -}
 -- Aggregate Member : Data Value Member
-DataValueMember : ClassOfClassOfBoundedIndividual
-DataValueMember = ClassOfBoundedIndividual
+DataValueMember : ClassOfMixedOrderEntity
+DataValueMember = MixedOrderEntity
 
 
 
@@ -57,13 +57,9 @@ st-2b585ad05eec569f-e7e3fa0a5fbb0ddb = polySubTypeOf-identity
 st-2b585ad05eec569f-8f1c9c3268ca90a3 : DataValueMember ⊏⋆ₑ SubDataProperty
 st-2b585ad05eec569f-8f1c9c3268ca90a3 = polySubTypeOf-identity
 
---  DataValueMember is subTypeOf InformationRelationship
-st-2b585ad05eec569f-dfa4e2305ebb4d2b : DataValueMember ⊏ₑ InformationRelationship
+--  DataValueMember is subTypeOf InformationRelation
+st-2b585ad05eec569f-dfa4e2305ebb4d2b : DataValueMember ⊏ₑ InformationRelation
 st-2b585ad05eec569f-dfa4e2305ebb4d2b = polySubTypeOf-identity
-
---  DataValueMember is subTypeOf LogicalDataProperty
-st-2b585ad05eec569f-7d5286635eae7273 : DataValueMember ⊏ₑ LogicalDataProperty
-st-2b585ad05eec569f-7d5286635eae7273 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDataValueMember :  Linkage LogicalDataProperty DataValueMember

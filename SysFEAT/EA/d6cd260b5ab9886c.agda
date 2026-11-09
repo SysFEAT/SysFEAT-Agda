@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/d6cd260b5ab9886c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d6cd260b5ab9886c where -- ========== Application System Environment
+module SysFEAT.EA.d6cd260b5ab9886c where -- ========== ApplicationSystemEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c0a25061e2fd5a public -- Software System Environment
-open import SysFEAT.EA.46194ca7560d3a45 public -- Application System
+open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.EA.46194ca7560d3a45 public -- ApplicationSystem
 
-ApplicationSystemEnvironment : ClassOfClassOfBoundedIndividual
-ApplicationSystemEnvironment = ClassOfBoundedIndividual
+ApplicationSystemEnvironment : BoundedIndividualMetaClass
+ApplicationSystemEnvironment = AssetType
 
 
 --  ApplicationSystemEnvironment is subTypeOf SOftwareSystemEnvironment
@@ -38,8 +38,8 @@ specializedSystemEnvironment = make_subTypeOf "Specialized System Environment" "
 -- -------------------------------------------------------------------------------------------- 
 {- Subject System: -}
 -- Aggregate Member : Subject System
-SubjectSystem : ClassOfClassOfBoundedIndividual
-SubjectSystem = ClassOfBoundedIndividual
+SubjectSystem : ClassOfMixedOrderEntity
+SubjectSystem = MixedOrderEntity
 
 
 
@@ -50,10 +50,6 @@ st-173f4a805eb8c14e-25c1a63d61e206d7 = polySubTypeOf-identity
 --  SubjectSystem is subTypeOf SubjectSOftwareSystem
 st-173f4a805eb8c14e-25c1a65861e2077a : SubjectSystem ⊏ₑ SubjectSOftwareSystem
 st-173f4a805eb8c14e-25c1a65861e2077a = polySubTypeOf-identity
-
---  SubjectSystem is subTypeOf ApplicationSystem
-st-173f4a805eb8c14e-46194ca7560d3a45 : SubjectSystem ⊏ₑ ApplicationSystem
-st-173f4a805eb8c14e-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectSystem :  Linkage ApplicationSystemEnvironment SubjectSystem
@@ -76,8 +72,8 @@ subjectSystem = membershipOfSubjectSystem  ∘  aggregationOfApplicationSystemSu
 -- -------------------------------------------------------------------------------------------- 
 {- Partner System: -}
 -- Aggregate Member : Partner System
-PartnerSystem : ClassOfClassOfBoundedIndividual
-PartnerSystem = ClassOfBoundedIndividual
+PartnerSystem : ClassOfMixedOrderEntity
+PartnerSystem = MixedOrderEntity
 
 
 
@@ -88,10 +84,6 @@ st-173f4ad15eb8c1f5-25c1a63d61e206d7 = polySubTypeOf-identity
 --  PartnerSystem is subTypeOf PartnerSOftwareSystem
 st-173f4ad15eb8c1f5-25c1a6bc61e20826 : PartnerSystem ⊏ₑ PartnerSOftwareSystem
 st-173f4ad15eb8c1f5-25c1a6bc61e20826 = polySubTypeOf-identity
-
---  PartnerSystem is subTypeOf ApplicationSystem
-st-173f4ad15eb8c1f5-46194ca7560d3a45 : PartnerSystem ⊏ₑ ApplicationSystem
-st-173f4ad15eb8c1f5-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerSystem :  Linkage ApplicationSystemEnvironment PartnerSystem

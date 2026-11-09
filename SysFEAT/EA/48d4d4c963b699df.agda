@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/48d4d4c963b699df.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.48d4d4c963b699df where -- ========== Project Milesone
+module SysFEAT.EA.48d4d4c963b699df where -- ========== ProjectMilesone
 
 open import Agda.Primitive
 

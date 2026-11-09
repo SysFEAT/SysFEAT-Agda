@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/624e6ac55ed972a7.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.624e6ac55ed972a7 where -- ========== Physical Software Interface
+module SysFEAT.EA.624e6ac55ed972a7 where -- ========== PhysicalSOftwareInterface
 
 open import Agda.Primitive
-open import SysFEAT.SOF.24ae31b55ed1c66d public -- Service Interface
+open import SysFEAT.SOF.24ae31b55ed1c66d public -- ServiceInterface
 
-PhysicalSOftwareInterface : ClassOfClassOfIndividual
-PhysicalSOftwareInterface = ClassOfIndividual
+PhysicalSOftwareInterface : BehaviorMetaClass
+PhysicalSOftwareInterface = BehaviorType
+
 
 --  PhysicalSOftwareInterface is subTypeOf ServiceInterface
 st-624e6ac55ed972a7-24ae31b55ed1c66d : PhysicalSOftwareInterface ⊏ₑ ServiceInterface

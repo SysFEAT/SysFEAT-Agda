@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/3b1b8cc868cd7e82.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3b1b8cc868cd7e82 where -- ========== Individual Hardware System
+module SysFEAT.EA.3b1b8cc868cd7e82 where -- ========== IndividualHardwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.3b1b91ea68cd8733 public -- Individual Artifact
-open import SysFEAT.EA.3b1bb56c68cd9bfa public -- Individual Physical Resource Agent
+open import SysFEAT.EA.3b1b91ea68cd8733 public -- IndividualArtifact
+open import SysFEAT.EA.3b1bb56c68cd9bfa public -- IndividualPhysicalResourceAgent
 
 IndividualHardwareSystem : AgentType
 IndividualHardwareSystem = IndividualAgent
@@ -30,5 +30,7 @@ st-3b1b8cc868cd7e82-3b1b91ea68cd8733 = polySubTypeOf-identity
 st-3b1b8cc868cd7e82-3b1bb56c68cd9bfa : IndividualHardwareSystem ⊏ₑ IndividualPhysicalResourceAgent
 st-3b1b8cc868cd7e82-3b1bb56c68cd9bfa = polySubTypeOf-identity
 
+postulate -- IndividualHardwareSystem is PowerInstanceOf Hardware System Type
+  pi-3b1b8d7468cd7f90 : IndividualHardwareSystem ∷ₚₑ HardwareSystemType
 
 -- == Relations =======================

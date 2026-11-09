@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecc5a5f607c65.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecc5a5f607c65 where -- ========== Number of Distinct Values
+module SysFEAT.EA.affecc5a5f607c65 where -- ========== NumberOfDistinctValues
 
 open import Agda.Primitive
 

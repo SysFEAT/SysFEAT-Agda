@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/582e783366f6b210.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.582e783366f6b210 where -- ========== Privacy Risk Type
+module SysFEAT.EA.582e783366f6b210 where -- ========== PrivacyRiskType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.582e785466f6b36f public -- Data Risk Type
+open import SysFEAT.SOF.582e785466f6b36f public -- DataRiskType
 
 PrivacyRiskType : ThirdOrderClass
-PrivacyRiskType = SecondOrderClass
+PrivacyRiskType = PropertyType
 
 
 --  PrivacyRiskType is subTypeOf DataRiskType
@@ -26,3 +26,4 @@ st-582e783366f6b210-582e785466f6b36f : PrivacyRiskType ⊏ₑ DataRiskType
 st-582e783366f6b210-582e785466f6b36f = polySubTypeOf-identity
 
 
+-- == Relations =======================

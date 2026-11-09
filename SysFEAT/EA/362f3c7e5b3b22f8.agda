@@ -12,23 +12,24 @@ Documentation : https://framework.sysfeat.com/pages/362f3c7e5b3b22f8.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.362f3c7e5b3b22f8 where -- ========== Relational Schema
+module SysFEAT.EA.362f3c7e5b3b22f8 where -- ========== RelationalSchema
 
 open import Agda.Primitive
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
-open import SysFEAT.EA.7731894d62166495 public -- Relational Data bLOCK
-open import SysFEAT.EA.362f3ca45b3b234b public -- Relational Entity
+open import SysFEAT.EA.d874bd8d6ab727f1 public -- RelationalDataBlock
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
+open import SysFEAT.EA.362f3ca45b3b234b public -- RelationalEntity
 
-RelationalSchema : ClassOfClassOfBoundedIndividual
-RelationalSchema = ClassOfBoundedIndividual
+RelationalSchema : ClassOfMixedOrderEntity
+RelationalSchema = MixedOrderEntity
+
+
+--  RelationalSchema withAspect RelationalDataBlock
+st-362f3c7e5b3b22f8-d874bd8d6ab727f1 : RelationalSchema ⊏ₐₑ (RelationalDataBlock (lsuc(lzero)))
+st-362f3c7e5b3b22f8-d874bd8d6ab727f1 = polySubTypeOf-identity
 
 --  RelationalSchema is subTypeOf PhysicalDataDomain
 st-362f3c7e5b3b22f8-028f03ff5b4f55ee : RelationalSchema ⊏ₑ PhysicalDataDomain
 st-362f3c7e5b3b22f8-028f03ff5b4f55ee = polySubTypeOf-identity
-
---  RelationalSchema is subTypeOf RelationalDatabLOCK
-st-362f3c7e5b3b22f8-7731894d62166495 : RelationalSchema ⊏⋆ₑ RelationalDatabLOCK
-st-362f3c7e5b3b22f8-7731894d62166495 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -36,18 +37,13 @@ st-362f3c7e5b3b22f8-7731894d62166495 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Relation Store Part: -}
 -- Aggregate Member : Relation Store Part
-RelationStorePart : ClassOfClassOfBoundedIndividual
-RelationStorePart = ClassOfBoundedIndividual
-
+RelationStorePart : ClassOfClassOfIndividual
+RelationStorePart = ClassOfIndividual
 
 
 --  RelationStorePart is subTypeOf PhysicalDomainObject
 st-137d23d85ee2ced6-e6f223f55f771b8d : RelationStorePart ⊏ₑ PhysicalDomainObject
 st-137d23d85ee2ced6-e6f223f55f771b8d = polySubTypeOf-identity
-
---  RelationStorePart is subTypeOf RelationalEntity
-st-137d23d85ee2ced6-362f3ca45b3b234b : RelationStorePart ⊏ₑ RelationalEntity
-st-137d23d85ee2ced6-362f3ca45b3b234b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfRelationStorePart :  Linkage RelationalSchema RelationStorePart
@@ -70,14 +66,9 @@ relationStorePart = membershipOfRelationStorePart  ∘  aggregationOfRelationalE
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Data Area: -}
 -- Aggregate Member : Sub Data Area
-SubDataArea : ClassOfClassOfBoundedIndividual
-SubDataArea = ClassOfBoundedIndividual
+SubDataArea : ClassOfClassOfIndividual
+SubDataArea = ClassOfIndividual
 
-
-
---  SubDataArea is subTypeOf RelationalEntity
-st-f4be32dc5ee1b4ee-362f3ca45b3b234b : SubDataArea ⊏ₑ RelationalEntity
-st-f4be32dc5ee1b4ee-362f3ca45b3b234b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubDataArea :  Linkage RelationalSchema SubDataArea

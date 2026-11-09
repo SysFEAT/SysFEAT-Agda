@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a0a96b05ddfb9f5 where -- ========== Application Environment Scenario
+module SysFEAT.EA.7a0a96b05ddfb9f5 where -- ========== ApplicationEnvironmentScenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c0a10061e2fc12 public -- Software System Environment Scenario
-open import SysFEAT.EA.c450d47c61de5dbc public -- Application Environment
+open import SysFEAT.EA.25c0a10061e2fc12 public -- SOftwareSystemEnvironmentScenario
+open import SysFEAT.EA.c450d47c61de5dbc public -- ApplicationEnvironment
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
 
-ApplicationEnvironmentScenario : ClassOfClassOfBoundedIndividual
-ApplicationEnvironmentScenario = ClassOfBoundedIndividual
+ApplicationEnvironmentScenario : BoundedIndividualMetaClass
+ApplicationEnvironmentScenario = AssetType
 
 
 --  ApplicationEnvironmentScenario is subTypeOf SOftwareSystemEnvironmentScenario
@@ -45,8 +45,8 @@ postulate -- scenarizedApplicationEnvironment is subTypeOf scenarizedSOftwareSys
 An application partner in an application environment represents the appearance of an application in the environment of another application.
 -}
 -- Aggregate Member : Partner Application
-PartnerApplication : ClassOfClassOfBoundedIndividual
-PartnerApplication = ClassOfBoundedIndividual
+PartnerApplication : ClassOfMixedOrderEntity
+PartnerApplication = MixedOrderEntity
 
 
 
@@ -57,10 +57,6 @@ st-c334dc6b5ecb6eec-25c1a53f61e20355 = polySubTypeOf-identity
 --  PartnerApplication is subTypeOf ParticipantSOftware
 st-c334dc6b5ecb6eec-25c1a32461e200b5 : PartnerApplication ⊏ₑ ParticipantSOftware
 st-c334dc6b5ecb6eec-25c1a32461e200b5 = polySubTypeOf-identity
-
---  PartnerApplication is subTypeOf Application
-st-c334dc6b5ecb6eec-bcebd8e9549144db : PartnerApplication ⊏ₑ Application
-st-c334dc6b5ecb6eec-bcebd8e9549144db = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerApplication :  Linkage ApplicationEnvironmentScenario PartnerApplication
@@ -85,8 +81,8 @@ partnerApplication = membershipOfPartnerApplication  ∘  aggregationOfApplicati
 An application flow environment subject represents the application whose environment is illustrated by the application flow environment.
 -}
 -- Aggregate Member : Subject Application
-SubjectApplication : ClassOfClassOfBoundedIndividual
-SubjectApplication = ClassOfBoundedIndividual
+SubjectApplication : ClassOfMixedOrderEntity
+SubjectApplication = MixedOrderEntity
 
 
 
@@ -97,10 +93,6 @@ st-c334dc6e5ecb6f61-25c1a55461e20430 = polySubTypeOf-identity
 --  SubjectApplication is subTypeOf ParticipantSOftware
 st-c334dc6e5ecb6f61-25c1a32461e200b5 : SubjectApplication ⊏ₑ ParticipantSOftware
 st-c334dc6e5ecb6f61-25c1a32461e200b5 = polySubTypeOf-identity
-
---  SubjectApplication is subTypeOf Application
-st-c334dc6e5ecb6f61-bcebd8e9549144db : SubjectApplication ⊏ₑ Application
-st-c334dc6e5ecb6f61-bcebd8e9549144db = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectApplication :  Linkage ApplicationEnvironmentScenario SubjectApplication

@@ -15,18 +15,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7c40c3c85527466b where -- ========== Business Resource Process
+module SysFEAT.EA.7c40c3c85527466b where -- ========== BusinessResourceProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.b4ebbf3e5ffdccdf public -- Business Behavior
-open import SysFEAT.EA.e2ef095b62147bf9 public -- Resource Action Process
-open import SysFEAT.EA.57dfc5f555093444 public -- Value Stream
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
+open import SysFEAT.EA.b4ebbf3e5ffdccdf public -- BusinessBehavior
+open import SysFEAT.EA.e2ef095b62147bf9 public -- ResourceActionProcess
+open import SysFEAT.C-SOF.57dfc5f555093444 public -- ValueStream
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-BusinessResourceProcess : ClassOfClassOfBoundedIndividual
-BusinessResourceProcess = ClassOfBoundedIndividual
+BusinessResourceProcess : BoundedIndividualMetaClass
+BusinessResourceProcess = AssetType
 
 
 --  BusinessResourceProcess is subTypeOf BusinessBehavior
@@ -63,8 +63,9 @@ postulate -- realizedValueStream is subTypeOf realizedOperatingProcess
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Flow: -}
 -- Aggregate Member : Resource Flow
-ResourceFlow : ClassOfClassOfIndividual
-ResourceFlow = ClassOfIndividual
+ResourceFlow : TemporalOrderingType
+ResourceFlow = TemporalOrdering
+
 
 
 --  ResourceFlow is subTypeOf ResourceObjectFlow
@@ -92,8 +93,9 @@ resourceFlow = membershipOfResourceFlow  ∘  aggregationOfBusinessOutcomeEventR
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Activity Sequence: -}
 -- Aggregate Member : Resource Activity Sequence
-ResourceActivitySequence : ClassOfClassOfIndividual
-ResourceActivitySequence = ClassOfIndividual
+ResourceActivitySequence : TemporalOrderingType
+ResourceActivitySequence = TemporalOrdering
+
 
 
 --  ResourceActivitySequence is subTypeOf SequenceFlow
@@ -123,8 +125,8 @@ resourceActivitySequence = membershipOfResourceActivitySequence  ∘  aggregatio
 A Participant Business Agent is a Resource Behavior Participant indicating the role of an Agent actively engaged as a Business Agent Type within a Business Resource Process!
 -}
 -- Aggregate Member : Participant Business Agent
-ParticipantBusinessAgent : ClassOfClassOfBoundedIndividual
-ParticipantBusinessAgent = ClassOfBoundedIndividual
+ParticipantBusinessAgent : ClassOfClassOfIndividual
+ParticipantBusinessAgent = ClassOfIndividual
 
 
 
@@ -135,10 +137,6 @@ st-b4ebbe325ffdca40-e0e87af46578a950 = polySubTypeOf-identity
 --  ParticipantBusinessAgent is subTypeOf ParticipantResourceAgent
 st-b4ebbe325ffdca40-f8e61ffd621dbebc : ParticipantBusinessAgent ⊏ₑ ParticipantResourceAgent
 st-b4ebbe325ffdca40-f8e61ffd621dbebc = polySubTypeOf-identity
-
---  ParticipantBusinessAgent is subTypeOf BusinessAgentType
-st-b4ebbe325ffdca40-bcebd31f5491302c : ParticipantBusinessAgent ⊏ₑ BusinessAgentType
-st-b4ebbe325ffdca40-bcebd31f5491302c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantBusinessAgent :  Linkage BusinessResourceProcess ParticipantBusinessAgent
@@ -161,8 +159,8 @@ participantBusinessAgent = membershipOfParticipantBusinessAgent  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Business Resource Process Step: -}
 -- Aggregate Member : Business Resource Process Step
-BusinessResourceProcessStep : ClassOfClassOfBoundedIndividual
-BusinessResourceProcessStep = ClassOfBoundedIndividual
+BusinessResourceProcessStep : ClassOfClassOfIndividual
+BusinessResourceProcessStep = ClassOfIndividual
 
 
 
@@ -173,10 +171,6 @@ st-b4ebbe6b5ffdcb19-f8e62045621dbffb = polySubTypeOf-identity
 --  BusinessResourceProcessStep is subTypeOf BusinessBehaviorPart
 st-b4ebbe6b5ffdcb19-b777c1de68b07336 : BusinessResourceProcessStep ⊏ₑ BusinessBehaviorPart
 st-b4ebbe6b5ffdcb19-b777c1de68b07336 = polySubTypeOf-identity
-
---  BusinessResourceProcessStep is subTypeOf BusinessResourceProcess
-st-b4ebbe6b5ffdcb19-7c40c3c85527466b : BusinessResourceProcessStep ⊏ₑ BusinessResourceProcess
-st-b4ebbe6b5ffdcb19-7c40c3c85527466b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessResourceProcessStep :  Linkage BusinessResourceProcess BusinessResourceProcessStep

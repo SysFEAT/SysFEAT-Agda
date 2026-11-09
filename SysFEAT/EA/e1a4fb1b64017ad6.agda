@@ -12,13 +12,13 @@ Documentation : https://framework.sysfeat.com/pages/e1a4fb1b64017ad6.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.e1a4fb1b64017ad6 where -- ========== Wifi Hotspot
+module SysFEAT.EA.e1a4fb1b64017ad6 where -- ========== WifiHotspot
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be0fba5ee1d935 public -- Network Device
+open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
-WifiHotspot : ClassOfClassOfBoundedIndividual
-WifiHotspot = ClassOfBoundedIndividual
+WifiHotspot : BoundedIndividualMetaClass
+WifiHotspot = AssetType
 
 
 --  WifiHotspot is subTypeOf NetworkDevice

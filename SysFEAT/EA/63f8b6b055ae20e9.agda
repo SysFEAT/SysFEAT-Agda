@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/63f8b6b055ae20e9.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.63f8b6b055ae20e9 where -- ========== Stakeholder Driver Category
+module SysFEAT.EA.63f8b6b055ae20e9 where -- ========== StakeholderDriverCategory
 
 open import Agda.Primitive
 

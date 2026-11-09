@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/4edf5eab5fc58ef3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.4edf5eab5fc58ef3 where -- ========== Business System Environment Sxcenario
+module SysFEAT.EA.4edf5eab5fc58ef3 where -- ========== BusinessSystemEnvironmentSxcenario
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f337e61bae6d6 public -- Business Environment Scenario
-open import SysFEAT.EA.c450d4c261de5f07 public -- Business System Environment
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
+open import SysFEAT.EA.2b6f337e61bae6d6 public -- BusinessEnvironmentScenario
+open import SysFEAT.EA.c450d4c261de5f07 public -- BusinessSystemEnvironment
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
 
-BusinessSystemEnvironmentSxcenario : ClassOfClassOfBoundedIndividual
-BusinessSystemEnvironmentSxcenario = ClassOfBoundedIndividual
+BusinessSystemEnvironmentSxcenario : BoundedIndividualMetaClass
+BusinessSystemEnvironmentSxcenario = AssetType
 
 
 --  BusinessSystemEnvironmentSxcenario is subTypeOf BusinessEnvironmentScenario
@@ -41,18 +41,14 @@ postulate -- scenarizedSystemEnvironment is subTypeOf scenarizedBusinessEnvironm
 -- -------------------------------------------------------------------------------------------- 
 {- Subject System: -}
 -- Aggregate Member : Subject System
-SubjectSystem : ClassOfClassOfBoundedIndividual
-SubjectSystem = ClassOfBoundedIndividual
+SubjectSystem : ClassOfMixedOrderEntity
+SubjectSystem = MixedOrderEntity
 
 
 
 --  SubjectSystem is subTypeOf SubjectResourceAgent
 st-4edf5f1f5fc590f0-2b6f5c4161bafdfd : SubjectSystem ⊏ₑ SubjectResourceAgent
 st-4edf5f1f5fc590f0-2b6f5c4161bafdfd = polySubTypeOf-identity
-
---  SubjectSystem is subTypeOf BusinessSystem
-st-4edf5f1f5fc590f0-278675d65b252f4d : SubjectSystem ⊏ₑ BusinessSystem
-st-4edf5f1f5fc590f0-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectSystem :  Linkage BusinessSystemEnvironmentSxcenario SubjectSystem
@@ -75,8 +71,8 @@ subjectSystem = membershipOfSubjectSystem  ∘  aggregationOfBusinessSystemSubje
 -- -------------------------------------------------------------------------------------------- 
 {- Partner System: -}
 -- Aggregate Member : Partner System
-PartnerSystem : ClassOfClassOfBoundedIndividual
-PartnerSystem = ClassOfBoundedIndividual
+PartnerSystem : ClassOfMixedOrderEntity
+PartnerSystem = MixedOrderEntity
 
 
 
@@ -87,10 +83,6 @@ st-4edf5f445fc591d8-4edf5fa95fc593f0 = polySubTypeOf-identity
 --  PartnerSystem is subTypeOf PartnerResourceAgent
 st-4edf5f445fc591d8-2b6f35bc61baecc4 : PartnerSystem ⊏ₑ PartnerResourceAgent
 st-4edf5f445fc591d8-2b6f35bc61baecc4 = polySubTypeOf-identity
-
---  PartnerSystem is subTypeOf BusinessSystem
-st-4edf5f445fc591d8-278675d65b252f4d : PartnerSystem ⊏ₑ BusinessSystem
-st-4edf5f445fc591d8-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerSystem :  Linkage BusinessSystemEnvironmentSxcenario PartnerSystem
@@ -113,18 +105,14 @@ partnerSystem = membershipOfPartnerSystem  ∘  aggregationOfBusinessSystemPartn
 -- -------------------------------------------------------------------------------------------- 
 {- Participant System: -}
 -- Aggregate Member : Participant System
-ParticipantSystem : ClassOfClassOfBoundedIndividual
-ParticipantSystem = ClassOfBoundedIndividual
+ParticipantSystem : ClassOfMixedOrderEntity
+ParticipantSystem = MixedOrderEntity
 
 
 
---  ParticipantSystem is subTypeOf ParticipantEnterpriseAgent
-st-4edf5fa95fc593f0-2b6f3bf061baf60a : ParticipantSystem ⊏ₑ ParticipantEnterpriseAgent
+--  ParticipantSystem is subTypeOf ParticipantResourceAgent
+st-4edf5fa95fc593f0-2b6f3bf061baf60a : ParticipantSystem ⊏ₑ ParticipantResourceAgent
 st-4edf5fa95fc593f0-2b6f3bf061baf60a = polySubTypeOf-identity
-
---  ParticipantSystem is subTypeOf BusinessSystem
-st-4edf5fa95fc593f0-278675d65b252f4d : ParticipantSystem ⊏ₑ BusinessSystem
-st-4edf5fa95fc593f0-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantSystem :  Linkage BusinessSystemEnvironmentSxcenario ParticipantSystem

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/9815b1895f685dc3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9815b1895f685dc3 where -- ========== Contextualized Targeted Threshold
+module SysFEAT.EA.9815b1895f685dc3 where -- ========== ContextualizedTargetedThreshold
 
 open import Agda.Primitive
 

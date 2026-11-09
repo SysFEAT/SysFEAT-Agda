@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/dd27b91368a11464.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd27b91368a11464 where -- ========== Software Technology Capability Map
+module SysFEAT.EA.dd27b91368a11464 where -- ========== SOftwareTechnologyCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd27b40768a112f8 public -- Technology Capability Map
+open import SysFEAT.EA.dd27b40768a112f8 public -- TechnologyCapabilityMap
 
-SOftwareTechnologyCapabilityMap : PropertyType
-SOftwareTechnologyCapabilityMap = Property
+SOftwareTechnologyCapabilityMap : ClassOfMixedOrderEntity
+SOftwareTechnologyCapabilityMap = MixedOrderEntity
+
 
 --  SOftwareTechnologyCapabilityMap is subTypeOf TechnologyCapabilityMap
 st-dd27b91368a11464-dd27b40768a112f8 : SOftwareTechnologyCapabilityMap ⊏ₑ TechnologyCapabilityMap
 st-dd27b91368a11464-dd27b40768a112f8 = polySubTypeOf-identity
 
 
--- == Relations =======================

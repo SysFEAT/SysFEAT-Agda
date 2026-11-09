@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/8dbd9019609b4b86.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.8dbd9019609b4b86 where -- ========== Business Impact Analysis
+module SysFEAT.EA.8dbd9019609b4b86 where -- ========== BusinessImpactAnalysis
 
 open import Agda.Primitive
-open import SysFEAT.SOF.1737b76a5fe28204 public -- Governance Activity
-open import SysFEAT.EA.8dbd8f17609b4a70 public -- BCM System
-open import SysFEAT.EA.2cff31375eda90bd public -- Process Family
+open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
+open import SysFEAT.EA.8dbd8f17609b4a70 public -- BCMSystem
+open import SysFEAT.EA.2cff31375eda90bd public -- ProcessFamily
 
-BusinessImpactAnalysis : ClassOfBoundedIndividual
-BusinessImpactAnalysis = BoundedIndividual
+BusinessImpactAnalysis : WholeLifeClass
+BusinessImpactAnalysis = WholeLifeIndividual
 
 
 --  BusinessImpactAnalysis is subTypeOf GovernanceActivity

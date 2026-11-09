@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/91be945354882b15.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.91be945354882b15 where -- ========== Architectural Driver
+module SysFEAT.EA.91be945354882b15 where -- ========== ArchitecturalDriver
 
 open import Agda.Primitive
-open import SysFEAT.EA.7a717b8455962a34 public -- Endogenous Driver
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.EA.7a717b8455962a34 public -- EndogenousDriver
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
-ArchitecturalDriver : ClassOfBoundedIndividual
-ArchitecturalDriver = BoundedIndividual
+ArchitecturalDriver : ClassOfIndividual
+ArchitecturalDriver = Individual
 
 
 --  ArchitecturalDriver is subTypeOf EndogenousDriver

@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/952eaada67285ac3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.952eaada67285ac3 where -- ========== Policy Framework Category
+module SysFEAT.EA.952eaada67285ac3 where -- ========== PolicyFrameworkCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.952ea6c467285821 public -- Policy Category
+open import SysFEAT.SOF.952ea6c467285821 public -- PolicyCategory
 
 PolicyFrameworkCategory : ThirdOrderClass
-PolicyFrameworkCategory = SecondOrderClass
+PolicyFrameworkCategory = PropertyType
+
 
 --  PolicyFrameworkCategory is subTypeOf PolicyCategory
 st-952eaada67285ac3-952ea6c467285821 : PolicyFrameworkCategory ⊏ₑ PolicyCategory

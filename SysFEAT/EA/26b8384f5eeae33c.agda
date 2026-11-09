@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/26b8384f5eeae33c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.26b8384f5eeae33c where -- ========== Networking System
+module SysFEAT.EA.26b8384f5eeae33c where -- ========== NetworkingSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.d16006d362e085f2 public -- Technology Operating Asset
-open import SysFEAT.EA.d160042562e08353 public -- Network Interface
+open import SysFEAT.EA.d16006d362e085f2 public -- TechnologyOperatingAsset
+open import SysFEAT.EA.d160042562e08353 public -- NetworkInterface
 
-NetworkingSystem : ClassOfClassOfBoundedIndividual
-NetworkingSystem = ClassOfBoundedIndividual
+NetworkingSystem : BoundedIndividualMetaClass
+NetworkingSystem = AssetType
 
 
 --  NetworkingSystem is subTypeOf TechnologyOperatingAsset
@@ -63,18 +63,14 @@ networkConnection = membershipOfNetworkConnection  ∘  aggregationOfNetworkInte
 -- -------------------------------------------------------------------------------------------- 
 {- Networking Part: -}
 -- Aggregate Member : Networking Part
-NetworkingPart : ClassOfClassOfBoundedIndividual
-NetworkingPart = ClassOfBoundedIndividual
+NetworkingPart : ClassOfClassOfIndividual
+NetworkingPart = ClassOfIndividual
 
 
 
 --  NetworkingPart is subTypeOf TechnologySystemMember
 st-26b8386e5eeae4a4-d1600a8f62e08fb2 : NetworkingPart ⊏ₑ TechnologySystemMember
 st-26b8386e5eeae4a4-d1600a8f62e08fb2 = polySubTypeOf-identity
-
---  NetworkingPart is subTypeOf NetworkingSystem
-st-26b8386e5eeae4a4-26b8384f5eeae33c : NetworkingPart ⊏ₑ NetworkingSystem
-st-26b8386e5eeae4a4-26b8384f5eeae33c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfNetworkingPart :  Linkage NetworkingSystem NetworkingPart

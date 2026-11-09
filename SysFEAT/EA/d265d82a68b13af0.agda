@@ -12,13 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/d265d82a68b13af0.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d265d82a68b13af0 where -- ========== Technology Rule
+module SysFEAT.EA.d265d82a68b13af0 where -- ========== TechnologyRule
 
 open import Agda.Primitive
-open import SysFEAT.SOF.190c74f868966584 public -- Behavioral Rule
+open import SysFEAT.SOF.190c74f868966584 public -- BehavioralRule
 
-TechnologyRule : PropertyType
-TechnologyRule = Property
+TechnologyRule : AssetPropertyType
+TechnologyRule = Directive
+
 
 --  TechnologyRule is subTypeOf BehavioralRule
 st-d265d82a68b13af0-190c74f868966584 : TechnologyRule ⊏ₑ BehavioralRule

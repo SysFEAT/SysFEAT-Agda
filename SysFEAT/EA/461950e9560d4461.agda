@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/461950e9560d4461.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.461950e9560d4461 where -- ========== Logical Data Domain
+module SysFEAT.EA.461950e9560d4461 where -- ========== LogicalDataDomain
 
 open import Agda.Primitive
-open import SysFEAT.EA.325c32165eb02a4a public -- Data Domain
-open import SysFEAT.EA.fd1bf2a45fbc64fb public -- Logical Data Asset
-open import SysFEAT.EA.2b5858b85eec51d9 public -- Logical Data Element
+open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
+open import SysFEAT.EA.fd1bf2a45fbc64fb public -- LogicalDataAsset
+open import SysFEAT.EA.2b5858b85eec51d9 public -- LogicalDataElement
 
-LogicalDataDomain : ClassOfClassOfBoundedIndividual
-LogicalDataDomain = ClassOfBoundedIndividual
+LogicalDataDomain : ClassOfMixedOrderEntity
+LogicalDataDomain = MixedOrderEntity
+
 
 --  LogicalDataDomain is subTypeOf DataDomain
 st-461950e9560d4461-325c32165eb02a4a : LogicalDataDomain ⊏ₑ DataDomain
@@ -36,18 +37,13 @@ st-461950e9560d4461-fd1bf2a45fbc64fb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Logical Domain Object: -}
 -- Aggregate Member : Logical Domain Object
-LogicalDomainObject : ClassOfClassOfBoundedIndividual
-LogicalDomainObject = ClassOfBoundedIndividual
-
+LogicalDomainObject : ClassOfClassOfIndividual
+LogicalDomainObject = ClassOfIndividual
 
 
 --  LogicalDomainObject is subTypeOf DomainDataObject
 st-cb08cfb55ed041cb-6d2b7d9e5fbb65f3 : LogicalDomainObject ⊏ₑ DomainDataObject
 st-cb08cfb55ed041cb-6d2b7d9e5fbb65f3 = polySubTypeOf-identity
-
---  LogicalDomainObject is subTypeOf LogicalDataElement
-st-cb08cfb55ed041cb-2b5858b85eec51d9 : LogicalDomainObject ⊏ₑ LogicalDataElement
-st-cb08cfb55ed041cb-2b5858b85eec51d9 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDomainObject :  Linkage LogicalDataDomain LogicalDomainObject
@@ -77,10 +73,6 @@ LogicalDataDomainMember = ClassOfIndividual
 --  LogicalDataDomainMember is subTypeOf SubDataArea
 st-f4bee9605ee1c292-cbd9dff65fb7dd57 : LogicalDataDomainMember ⊏ₑ SubDataArea
 st-f4bee9605ee1c292-cbd9dff65fb7dd57 = polySubTypeOf-identity
-
---  LogicalDataDomainMember is subTypeOf LogicalDataDomain
-st-f4bee9605ee1c292-461950e9560d4461 : LogicalDataDomainMember ⊏ₑ LogicalDataDomain
-st-f4bee9605ee1c292-461950e9560d4461 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDataDomainMember :  Linkage LogicalDataDomain LogicalDataDomainMember

@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/036a3de3548f229e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.036a3de3548f229e where -- ========== Enterprise Initiative
+module SysFEAT.EA.036a3de3548f229e where -- ========== EnterpriseInitiative
 
 open import Agda.Primitive
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
-open import SysFEAT.EA.203b8fdb5a5f43dd public -- Concept Domain Map
-open import SysFEAT.EA.25c0a25061e2fd5a public -- Software System Environment
-open import SysFEAT.EA.7c4097c855271c8e public -- Conceptual Environment
-open import SysFEAT.EA.c189f8c868ae5b73 public -- Business Capability Map
-open import SysFEAT.EA.fe1c250d678803b6 public -- Individual Resource Behavior
-open import SysFEAT.EA.21ed240a689c08df public -- Value Proposition
+open import SysFEAT.EA.c189f8c868ae5b73 public -- BusinessCapabilityMap
+open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.C-SOF.7c4097c855271c8e public -- ConceptualEnvironment
+open import SysFEAT.C-SOF.622b76b06ae334e6 public -- ConceptDomainMap
+open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
+open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
 open import SysFEAT.EA.56ea5ff966047632 public -- Product
 
 EnterpriseInitiative : ClassOfBoundedIndividual
@@ -36,12 +36,12 @@ st-036a3de3548f229e-0ffeec41600be08a = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Enterprise Concept Map: 
-Top level concept map of the enterprise or of one its transformation stages.
--}
-enterpriseConceptMap :  Linkage EnterpriseInitiative ConceptDomainMap
-enterpriseConceptMap = make_Relation "Enterprise Concept Map" "Enterprise Concept Map"
+{- Enterprise Capability Map: -}
+enterpriseCapabilityMap :  Linkage EnterpriseInitiative BusinessCapabilityMap
+enterpriseCapabilityMap = make_Relation "Enterprise Capability Map" "Enterprise Capability Map"
 
+postulate -- enterpriseCapabilityMap is subTypeOf functionalScope
+  st-c189f8fd68ae5ba0-01f1214c689b6e0f  : enterpriseCapabilityMap  ⊏⋆ᵣ  functionalScope
 
 -- -------------------------------------------------------------------------------------------- 
 {- Enterprise IT Ecosystem: 
@@ -60,54 +60,17 @@ enterpriseConceptualEnvironment = make_Relation "Enterprise Conceptual Environme
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Enterprise Capability Map: -}
-enterpriseCapabilityMap :  Linkage EnterpriseInitiative BusinessCapabilityMap
-enterpriseCapabilityMap = make_instanceOf "Enterprise Capability Map" "Enterprise Capability Map"
-
-postulate -- enterpriseCapabilityMap is subTypeOf functionalScope
-  st-c189f8fd68ae5ba0-01f1214c689b6e0f  : enterpriseCapabilityMap  ⊏⋆ᵣ  functionalScope
-
--- -------------------------------------------------------------------------------------------- 
-{- Enterprise Course of Action: 
-A plan recognized by an enterprise as being essential to achieving its goals - i.e. a strategic specification of what the enterprise does. In other words, a Course of Action channels efforts towards Desired Results.Business Capabilities might be required by an Enterprise to conduct its Courses of Action.
--}
--- Aggregate Member : Enterprise Course of Action
-EnterpriseCourseOfAction : AggregateHolonymyType
-EnterpriseCourseOfAction = AggregateHolonymy
-
-
-
---  EnterpriseCourseOfAction is subTypeOf CourseOfAction
-st-dd2696c768a1d406-a56baa0c689c4e7a : EnterpriseCourseOfAction ⊏ₑ CourseOfAction
-st-dd2696c768a1d406-a56baa0c689c4e7a = polySubTypeOf-identity
-
---  EnterpriseCourseOfAction is subTypeOf IndividualResourceBehavior
-st-dd2696c768a1d406-fe1c250d678803b6 : EnterpriseCourseOfAction ⊏ₑ IndividualResourceBehavior
-st-dd2696c768a1d406-fe1c250d678803b6 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfEnterpriseCourseOfAction :  Linkage EnterpriseInitiative EnterpriseCourseOfAction
-membershipOfEnterpriseCourseOfAction = make_upwardNestingRelation "enterpriseCourseOfAction membership" "nested enterpriseCourseOfAction"
-
--- Aggregation relation
-aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction :  Linkage EnterpriseCourseOfAction IndividualResourceBehavior
-aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
-
-{- enterpriseCourseOfAction : derived relation obtained by composing
-   membershipOfEnterpriseCourseOfAction and aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction
-   It directly links an Enterprise Initiative to the final aggregated IndividualResourceBehavior
-   hiding the reifying EnterpriseCourseOfAction
--}
-enterpriseCourseOfAction : Linkage EnterpriseInitiative IndividualResourceBehavior
-enterpriseCourseOfAction = membershipOfEnterpriseCourseOfAction  ∘  aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction
-
+{- Enterprise Concept Map: -}
+enterpriseConceptMap : ∀ {u} →  Linkage EnterpriseInitiative (ConceptDomainMap u)
+enterpriseConceptMap = make_Relation "Enterprise Concept Map" "Enterprise Concept Map"
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Enterprise Desired Result: -}
 -- Aggregate Member : Enterprise Desired Result
-EnterpriseDesiredResult : ClassOfClassOfIndividual
-EnterpriseDesiredResult = ClassOfIndividual
+EnterpriseDesiredResult : ClassOfMixedOrderEntity
+EnterpriseDesiredResult = MixedOrderEntity
+
 
 
 --  EnterpriseDesiredResult is subTypeOf DesiredResult
@@ -133,10 +96,43 @@ enterpriseDesiredResult = membershipOfEnterpriseDesiredResult  ∘  aggregationO
 
 
 -- -------------------------------------------------------------------------------------------- 
+{- Enterprise Course of Action: 
+A plan recognized by an enterprise as being essential to achieving its goals - i.e. a strategic specification of what the enterprise does. In other words, a Course of Action channels efforts towards Desired Results.Business Capabilities might be required by an Enterprise to conduct its Courses of Action.
+-}
+-- Aggregate Member : Enterprise Course of Action
+EnterpriseCourseOfAction : AggregateHolonymyType
+EnterpriseCourseOfAction = AggregateHolonymy
+
+
+
+--  EnterpriseCourseOfAction is subTypeOf CourseOfAction
+st-dd2696c768a1d406-a56baa0c689c4e7a : EnterpriseCourseOfAction ⊏ₑ CourseOfAction
+st-dd2696c768a1d406-a56baa0c689c4e7a = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfEnterpriseCourseOfAction :  Linkage EnterpriseInitiative EnterpriseCourseOfAction
+membershipOfEnterpriseCourseOfAction = make_upwardNestingRelation "enterpriseCourseOfAction membership" "nested enterpriseCourseOfAction"
+
+-- Aggregation relation
+aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction :  Linkage EnterpriseCourseOfAction IndividualResourceBehavior
+aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction = make_Relation "IndividualResourceBehavior aggregation" "aggregated IndividualResourceBehavior"
+
+{- enterpriseCourseOfAction : derived relation obtained by composing
+   membershipOfEnterpriseCourseOfAction and aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction
+   It directly links an Enterprise Initiative to the final aggregated IndividualResourceBehavior
+   hiding the reifying EnterpriseCourseOfAction
+-}
+enterpriseCourseOfAction : Linkage EnterpriseInitiative IndividualResourceBehavior
+enterpriseCourseOfAction = membershipOfEnterpriseCourseOfAction  ∘  aggregationOfIndividualResourceBehaviorEnterpriseCourseOfAction
+
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Product: -}
 -- Aggregate Member : Product
-Product : ClassOfClassOfIndividual
-Product = ClassOfIndividual
+Product : ClassOfMixedOrderEntity
+Product = MixedOrderEntity
+
 
 
 --  Product withAspect InitiativeSubject

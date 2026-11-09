@@ -12,20 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/d16006d362e085f2.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d16006d362e085f2 where -- ========== Technology Operating Asset
+module SysFEAT.EA.d16006d362e085f2 where -- ========== TechnologyOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
-open import SysFEAT.EA.669abc806654e803 public -- Technology Functional Asset
-open import SysFEAT.EA.dd27b08d68a10b12 public -- Technology Capability
-open import SysFEAT.EA.d265d82a68b13af0 public -- Technology Rule
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.EA.669abc806654e803 public -- TechnologyFunctionalAsset
+open import SysFEAT.EA.dd27b08d68a10b12 public -- TechnologyCapability
+open import SysFEAT.EA.d265d82a68b13af0 public -- TechnologyRule
 
-TechnologyOperatingAsset : ClassOfClassOfBoundedIndividual
-TechnologyOperatingAsset = ClassOfBoundedIndividual
+TechnologyOperatingAsset : BoundedIndividualMetaClass
+TechnologyOperatingAsset = AssetType
 
 
---  TechnologyOperatingAsset is subTypeOf ResourceOperatingAsset
-st-d16006d362e085f2-f8e61da0621db6fa : TechnologyOperatingAsset ⊏ₑ ResourceOperatingAsset
+--  TechnologyOperatingAsset is subTypeOf ResourceOperatingAssetType
+st-d16006d362e085f2-f8e61da0621db6fa : TechnologyOperatingAsset ⊏ₑ ResourceOperatingAssetType
 st-d16006d362e085f2-f8e61da0621db6fa = polySubTypeOf-identity
 
 --  TechnologyOperatingAsset is subTypeOf TechnologyFunctionalAsset
@@ -46,7 +46,7 @@ postulate -- fulfilledTechnologyCapability is subTypeOf fulfilledResourceCapabil
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Rule Enforcement: -}
 -- Aggregate Member : Technology Rule Enforcement
-TechnologyRuleEnforcement : ClassOfClassOfAbstractEntity
+TechnologyRuleEnforcement : AbstractEntityMetaClass
 TechnologyRuleEnforcement = ClassOfAbstractEntity
 
 
@@ -76,18 +76,14 @@ technologyRuleEnforcement = membershipOfTechnologyRuleEnforcement  ∘  aggregat
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Operating Asset Part: -}
 -- Aggregate Member : Technology Operating Asset Part
-TechnologyOperatingAssetPart : ClassOfClassOfBoundedIndividual
-TechnologyOperatingAssetPart = ClassOfBoundedIndividual
+TechnologyOperatingAssetPart : ClassOfClassOfIndividual
+TechnologyOperatingAssetPart = ClassOfIndividual
 
 
 
 --  TechnologyOperatingAssetPart is subTypeOf ResourceOperatingAssetPart
 st-d265d98e68b13ce4-b776bf0868b0fbb3 : TechnologyOperatingAssetPart ⊏ₑ ResourceOperatingAssetPart
 st-d265d98e68b13ce4-b776bf0868b0fbb3 = polySubTypeOf-identity
-
---  TechnologyOperatingAssetPart is subTypeOf TechnologyOperatingAsset
-st-d265d98e68b13ce4-d16006d362e085f2 : TechnologyOperatingAssetPart ⊏ₑ TechnologyOperatingAsset
-st-d265d98e68b13ce4-d16006d362e085f2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfTechnologyOperatingAssetPart :  Linkage TechnologyOperatingAsset TechnologyOperatingAssetPart

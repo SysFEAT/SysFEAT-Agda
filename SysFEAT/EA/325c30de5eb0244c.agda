@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/325c30de5eb0244c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.325c30de5eb0244c where -- ========== Logical Data Map
+module SysFEAT.EA.325c30de5eb0244c where -- ========== LogicalDataMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.6d2b80db5fbb700b public -- Data Map
-open import SysFEAT.EA.fd1bf2a45fbc64fb public -- Logical Data Asset
-open import SysFEAT.EA.461950e9560d4461 public -- Logical Data Domain
+open import SysFEAT.EA.6d2b80db5fbb700b public -- DataMap
+open import SysFEAT.EA.fd1bf2a45fbc64fb public -- LogicalDataAsset
+open import SysFEAT.EA.461950e9560d4461 public -- LogicalDataDomain
 
-LogicalDataMap : ClassOfClassOfBoundedIndividual
-LogicalDataMap = ClassOfBoundedIndividual
+LogicalDataMap : MetaClass
+LogicalDataMap = ClassOfEntity
+
 
 --  LogicalDataMap is subTypeOf DataMap
 st-325c30de5eb0244c-6d2b80db5fbb700b : LogicalDataMap ⊏ₑ DataMap
@@ -40,17 +41,9 @@ ExternalDataDomainPart : ClassOfClassOfIndividual
 ExternalDataDomainPart = ClassOfIndividual
 
 
---  ExternalDataDomainPart is subTypeOf externalInformationArea
-st-cb08cf795ed040b2-dfa4e2b35ebb4ee8 : ExternalDataDomainPart ⊏ₑ externalInformationArea
-st-cb08cf795ed040b2-dfa4e2b35ebb4ee8 = polySubTypeOf-identity
-
 --  ExternalDataDomainPart is subTypeOf ExternalDataArea
 st-cb08cf795ed040b2-fd1bf5b05fbc6c5a : ExternalDataDomainPart ⊏ₑ ExternalDataArea
 st-cb08cf795ed040b2-fd1bf5b05fbc6c5a = polySubTypeOf-identity
-
---  ExternalDataDomainPart is subTypeOf LogicalDataDomain
-st-cb08cf795ed040b2-461950e9560d4461 : ExternalDataDomainPart ⊏ₑ LogicalDataDomain
-st-cb08cf795ed040b2-461950e9560d4461 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfExternalDataDomainPart :  Linkage LogicalDataMap ExternalDataDomainPart
@@ -80,10 +73,6 @@ LogicalDataAreaMember = ClassOfIndividual
 --  LogicalDataAreaMember is subTypeOf DataDomainMember
 st-fd1bf4d65fbc69be-6d2b81965fbb71ad : LogicalDataAreaMember ⊏ₑ DataDomainMember
 st-fd1bf4d65fbc69be-6d2b81965fbb71ad = polySubTypeOf-identity
-
---  LogicalDataAreaMember is subTypeOf LogicalDataDomain
-st-fd1bf4d65fbc69be-461950e9560d4461 : LogicalDataAreaMember ⊏ₑ LogicalDataDomain
-st-fd1bf4d65fbc69be-461950e9560d4461 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalDataAreaMember :  Linkage LogicalDataMap LogicalDataAreaMember

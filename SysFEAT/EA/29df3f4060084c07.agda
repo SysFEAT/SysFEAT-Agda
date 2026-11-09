@@ -18,14 +18,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.29df3f4060084c07 where -- ========== Management System
+module SysFEAT.EA.29df3f4060084c07 where -- ========== ManagementSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
-open import SysFEAT.SOF.d321c226601262ae public -- Enduring Initiative
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
+open import SysFEAT.SOF.d321c226601262ae public -- EnduringInitiative
 open import SysFEAT.EA.910196ca550a2ec2 public -- Organization
-open import SysFEAT.EA.05200e1c66474509 public -- Management Stage
-open import SysFEAT.SOF.0eb95f356855bf94 public -- Asset Block
+open import SysFEAT.EA.05200e1c66474509 public -- ManagementStage
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 ManagementSystem : ClassOfBoundedIndividual
 ManagementSystem = BoundedIndividual

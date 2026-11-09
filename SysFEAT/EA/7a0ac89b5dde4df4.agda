@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/7a0ac89b5dde4df4.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a0ac89b5dde4df4 where -- ========== Operational Risk Management System
+module SysFEAT.EA.7a0ac89b5dde4df4 where -- ========== OperationalRiskManagementSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca18d25dd85477 public -- Assurance System
-open import SysFEAT.SOF.4b94594b68a478f2 public -- Policy Framework
+open import SysFEAT.EA.07ca18d25dd85477 public -- AssuranceSystem
+open import SysFEAT.EA.786b34fc6abe5efe public -- PolicyFramework
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
 OperationalRiskManagementSystem : ClassOfBoundedIndividual
@@ -32,7 +32,7 @@ st-7a0ac89b5dde4df4-07ca18d25dd85477 = polySubTypeOf-identity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Controled Framework: -}
-controledFramework : ∀ {u} →  Linkage OperationalRiskManagementSystem (PolicyFramework u)
+controledFramework :  Linkage OperationalRiskManagementSystem PolicyFramework
 controledFramework = make_Relation "Controled Framework" "Controled Framework"
 
 postulate -- controledFramework is subTypeOf enforcedPolicyFramework

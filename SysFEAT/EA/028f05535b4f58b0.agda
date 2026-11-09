@@ -12,14 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/028f05535b4f58b0.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.028f05535b4f58b0 where -- ========== NoSQL Data Schema
+module SysFEAT.EA.028f05535b4f58b0 where -- ========== NoSQLDataSchema
 
 open import Agda.Primitive
-open import SysFEAT.EA.028f03ff5b4f55ee public -- Physical Data Domain
-open import SysFEAT.EA.8180baa3600110c8 public -- NoSQL Element
+open import SysFEAT.EA.d874be1f6ab728a2 public -- NoSQLDataAsset
+open import SysFEAT.EA.028f03ff5b4f55ee public -- PhysicalDataDomain
+open import SysFEAT.EA.8180baa3600110c8 public -- NoSQLElement
 
-NoSQLDataSchema : ClassOfClassOfBoundedIndividual
-NoSQLDataSchema = ClassOfBoundedIndividual
+NoSQLDataSchema : ClassOfMixedOrderEntity
+NoSQLDataSchema = MixedOrderEntity
+
+
+--  NoSQLDataSchema withAspect NoSQLDataAsset
+st-028f05535b4f58b0-d874be1f6ab728a2 : NoSQLDataSchema ⊏ₐₑ (NoSQLDataAsset (lsuc(lzero)))
+st-028f05535b4f58b0-d874be1f6ab728a2 = polySubTypeOf-identity
 
 --  NoSQLDataSchema is subTypeOf PhysicalDataDomain
 st-028f05535b4f58b0-028f03ff5b4f55ee : NoSQLDataSchema ⊏ₑ PhysicalDataDomain
@@ -31,18 +37,13 @@ st-028f05535b4f58b0-028f03ff5b4f55ee = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Included NoSQL Element: -}
 -- Aggregate Member : Included NoSQL Element
-IncludedNoSQLElement : ClassOfClassOfBoundedIndividual
-IncludedNoSQLElement = ClassOfBoundedIndividual
-
+IncludedNoSQLElement : ClassOfClassOfIndividual
+IncludedNoSQLElement = ClassOfIndividual
 
 
 --  IncludedNoSQLElement is subTypeOf PhysicalDomainObject
 st-82c3bfa05fdcccb5-e6f223f55f771b8d : IncludedNoSQLElement ⊏ₑ PhysicalDomainObject
 st-82c3bfa05fdcccb5-e6f223f55f771b8d = polySubTypeOf-identity
-
---  IncludedNoSQLElement is subTypeOf NoSQLElement
-st-82c3bfa05fdcccb5-8180baa3600110c8 : IncludedNoSQLElement ⊏ₑ NoSQLElement
-st-82c3bfa05fdcccb5-8180baa3600110c8 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfIncludedNoSQLElement :  Linkage NoSQLDataSchema IncludedNoSQLElement

@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/7d3786245fd04e18.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d3786245fd04e18 where -- ========== Privacy Representative
+module SysFEAT.EA.7d3786245fd04e18 where -- ========== PrivacyRepresentative
 
 open import Agda.Primitive
-open import SysFEAT.EA.7d3786425fd04ea2 public -- Privacy Block
+open import SysFEAT.EA.7d3786425fd04ea2 public -- PrivacyBlock
 open import SysFEAT.EA.c7dad43c5ae92d25 public -- Person
 
-PrivacyRepresentative : ClassOfBoundedIndividual
-PrivacyRepresentative = BoundedIndividual
+PrivacyRepresentative : ClassOfMixedOrderEntity
+PrivacyRepresentative = MixedOrderEntity
+
 
 --  PrivacyRepresentative is subTypeOf PrivacyBlock
 st-7d3786245fd04e18-7d3786425fd04ea2 : PrivacyRepresentative ⊏ₑ PrivacyBlock

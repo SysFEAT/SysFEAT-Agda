@@ -16,13 +16,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.46194ce9560d3ab8 where -- ========== Application Component
+module SysFEAT.EA.46194ce9560d3ab8 where -- ========== ApplicationComponent
 
 open import Agda.Primitive
-open import SysFEAT.EA.c30bdac25a5d9eaf public -- Software Module
+open import SysFEAT.EA.c30bdac25a5d9eaf public -- SOftwareModule
 
-ApplicationComponent : ClassOfClassOfBoundedIndividual
-ApplicationComponent = ClassOfBoundedIndividual
+ApplicationComponent : BoundedIndividualMetaClass
+ApplicationComponent = AssetType
+
 
 --  ApplicationComponent is subTypeOf SOftwareModule
 st-46194ce9560d3ab8-c30bdac25a5d9eaf : ApplicationComponent ⊏ₑ SOftwareModule

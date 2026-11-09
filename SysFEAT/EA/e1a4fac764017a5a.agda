@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/e1a4fac764017a5a.htm
 module SysFEAT.EA.e1a4fac764017a5a where -- ========== Router
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be0fba5ee1d935 public -- Network Device
+open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
-Router : ClassOfClassOfBoundedIndividual
-Router = ClassOfBoundedIndividual
+Router : BoundedIndividualMetaClass
+Router = AssetType
 
 
 --  Router is subTypeOf NetworkDevice

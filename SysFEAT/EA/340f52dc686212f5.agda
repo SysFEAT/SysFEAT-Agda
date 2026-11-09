@@ -15,13 +15,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.340f52dc686212f5 where -- ========== Physical Resource Agent
+module SysFEAT.EA.340f52dc686212f5 where -- ========== PhysicalResourceAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-PhysicalResourceAgent : ClassOfClassOfBoundedIndividual
-PhysicalResourceAgent = ClassOfBoundedIndividual
+PhysicalResourceAgent : AgentMetaClass
+PhysicalResourceAgent = AgentType
+
 
 --  PhysicalResourceAgent is subTypeOf ResourceAgentType
 st-340f52dc686212f5-e2ef091962147ad7 : PhysicalResourceAgent ⊏ₑ ResourceAgentType

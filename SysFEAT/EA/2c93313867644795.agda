@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/2c93313867644795.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2c93313867644795 where -- ========== Deployed Software System
+module SysFEAT.EA.2c93313867644795 where -- ========== DeployedSOftwareSystem
 
 open import Agda.Primitive
 

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecbeb5f607afb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecbeb5f607afb where -- ========== Median Value
+module SysFEAT.EA.affecbeb5f607afb where -- ========== MedianValue
 
 open import Agda.Primitive
 

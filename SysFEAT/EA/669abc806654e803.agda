@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/669abc806654e803.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.669abc806654e803 where -- ========== Technology Functional Asset
+module SysFEAT.EA.669abc806654e803 where -- ========== TechnologyFunctionalAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.9bec9fbf66fb0d6f public -- Resource Functional Asset
-open import SysFEAT.EA.5d4e752066f27329 public -- Technology Risk Type
+open import SysFEAT.EA.9bec9fbf66fb0d6f public -- ResourceFunctionalAsset
+open import SysFEAT.EA.5d4e752066f27329 public -- TechnologyRiskType
 
-TechnologyFunctionalAsset : ClassOfClassOfBoundedIndividual
-TechnologyFunctionalAsset = ClassOfBoundedIndividual
+TechnologyFunctionalAsset : BoundedIndividualMetaClass
+TechnologyFunctionalAsset = AssetType
 
 
 --  TechnologyFunctionalAsset is subTypeOf ResourceFunctionalAsset
@@ -34,14 +34,15 @@ st-669abc806654e803-9bec9fbf66fb0d6f = polySubTypeOf-identity
 specializedTechnologyAsset :  Linkage TechnologyFunctionalAsset TechnologyFunctionalAsset
 specializedTechnologyAsset = make_subTypeOf "Specialized Technology Asset" "Specialized Technology Asset"
 
-postulate -- specializedTechnologyAsset is subTypeOf specializedFunctionalAsset
-  st-7e1a9a4f66f54f71-6a7076d2678731e2  : specializedTechnologyAsset  ⊏⋆ᵣ  specializedFunctionalAsset
+postulate -- specializedTechnologyAsset is subTypeOf specializedAsset
+  st-7e1a9a4f66f54f71-12b0287266e936d5  : specializedTechnologyAsset  ⊏⋆ᵣ  specializedAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Risk: -}
 -- Aggregate Member : Technology Risk
-TechnologyRisk : ThirdOrderClass
-TechnologyRisk = SecondOrderClass
+TechnologyRisk : ClassOfMixedOrderEntity
+TechnologyRisk = MixedOrderEntity
+
 
 
 --  TechnologyRisk is subTypeOf Risk

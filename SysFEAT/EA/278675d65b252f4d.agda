@@ -18,17 +18,17 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.278675d65b252f4d where -- ========== Business System
+module SysFEAT.EA.278675d65b252f4d where -- ========== BusinessSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.6246927f61b81996 public -- Business System Asset
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
-open import SysFEAT.EA.7a0a06c45ddf969e public -- Business System Interaction Process
-open import SysFEAT.EA.46194939560d374f public -- System Process
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.6246927f61b81996 public -- BusinessSystemAsset
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
+open import SysFEAT.EA.7a0a06c45ddf969e public -- BusinessSystemInteractionProcess
+open import SysFEAT.EA.46194939560d374f public -- SystemProcess
 
-BusinessSystem : ClassOfClassOfBoundedIndividual
-BusinessSystem = ClassOfBoundedIndividual
+BusinessSystem : BoundedIndividualMetaClass
+BusinessSystem = AssetType
 
 
 --  BusinessSystem is subTypeOf BusinessAgentType
@@ -43,12 +43,6 @@ st-278675d65b252f4d-6246927f61b81996 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Enabler Technology System: -}
-enablerTechnologySystem :  Linkage BusinessSystem TechnologySystem
-enablerTechnologySystem = make_classOfHolonymy "Enabler Technology System" "Enabler Technology System"
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Specialized Business System: -}
 specializedBusinessSystem :  Linkage BusinessSystem BusinessSystem
 specializedBusinessSystem = make_subTypeOf "Specialized Business System" "Specialized Business System"
@@ -59,20 +53,22 @@ postulate -- specializedBusinessSystem is subTypeOf specializedBusinessSystemAss
   st-325a375d66f34096-325a37b966f34e1e  : specializedBusinessSystem  ⊏⋆ᵣ  specializedBusinessSystemAsset
 
 -- -------------------------------------------------------------------------------------------- 
+{- Enabler Technology System: -}
+enablerTechnologySystem :  Linkage BusinessSystem TechnologySystem
+enablerTechnologySystem = make_classOfHolonymy "Enabler Technology System" "Enabler Technology System"
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Performed Business System Scenario: -}
 -- Aggregate Member : Performed Business System Scenario
-PerformedBusinessSystemScenario : ClassOfClassOfBoundedIndividual
-PerformedBusinessSystemScenario = ClassOfBoundedIndividual
+PerformedBusinessSystemScenario : ClassOfClassOfIndividual
+PerformedBusinessSystemScenario = ClassOfIndividual
 
 
 
 --  PerformedBusinessSystemScenario is subTypeOf PerformedResourceScenario
 st-24034ee25fc79b20-230b3f9061d8937b : PerformedBusinessSystemScenario ⊏ₑ PerformedResourceScenario
 st-24034ee25fc79b20-230b3f9061d8937b = polySubTypeOf-identity
-
---  PerformedBusinessSystemScenario is subTypeOf BusinessSystemInteractionProcess
-st-24034ee25fc79b20-7a0a06c45ddf969e : PerformedBusinessSystemScenario ⊏ₑ BusinessSystemInteractionProcess
-st-24034ee25fc79b20-7a0a06c45ddf969e = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedBusinessSystemScenario :  Linkage BusinessSystem PerformedBusinessSystemScenario
@@ -97,8 +93,8 @@ performedBusinessSystemScenario = membershipOfPerformedBusinessSystemScenario  �
 An application process performance establishes the relationship between an application and the some dynamic behaviors described as BPMN processes. 
 -}
 -- Aggregate Member : Performed System Process
-PerformedSystemProcess : ClassOfClassOfBoundedIndividual
-PerformedSystemProcess = ClassOfBoundedIndividual
+PerformedSystemProcess : ClassOfClassOfIndividual
+PerformedSystemProcess = ClassOfIndividual
 
 
 
@@ -109,10 +105,6 @@ st-b4ebc8825ffdddbf-9e0fedcf68be6cd9 = polySubTypeOf-identity
 --  PerformedSystemProcess is subTypeOf PerformedBusinessResourceProcess
 st-b4ebc8825ffdddbf-240353b45fc7a13f : PerformedSystemProcess ⊏ₑ PerformedBusinessResourceProcess
 st-b4ebc8825ffdddbf-240353b45fc7a13f = polySubTypeOf-identity
-
---  PerformedSystemProcess is subTypeOf SystemProcess
-st-b4ebc8825ffdddbf-46194939560d374f : PerformedSystemProcess ⊏ₑ SystemProcess
-st-b4ebc8825ffdddbf-46194939560d374f = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPerformedSystemProcess :  Linkage BusinessSystem PerformedSystemProcess

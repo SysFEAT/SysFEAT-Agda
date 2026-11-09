@@ -22,21 +22,21 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.57dfc52d550932ef where -- ========== Business Process
+module SysFEAT.EA.57dfc52d550932ef where -- ========== BusinessProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.7c40c3c85527466b public -- Business Resource Process
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
-open import SysFEAT.EA.0185cc626221bb37 public -- Business Event
-open import SysFEAT.EA.c189cf1f68ae421a public -- Business Rule
+open import SysFEAT.EA.7c40c3c85527466b public -- BusinessResourceProcess
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.EA.0185cc626221bb37 public -- BusinessEvent
+open import SysFEAT.EA.c189cf1f68ae421a public -- BusinessRule
 open import SysFEAT.EA.dd26aa0568a1f939 public -- Functionality
-open import SysFEAT.EA.325c32165eb02a4a public -- Data Domain
+open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
-open import SysFEAT.EA.f160fb6267d72652 public -- Mezzo Business System
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
+open import SysFEAT.EA.f160fb6267d72652 public -- MezzoBusinessSystem
 
-BusinessProcess : ClassOfClassOfBoundedIndividual
-BusinessProcess = ClassOfBoundedIndividual
+BusinessProcess : BoundedIndividualMetaClass
+BusinessProcess = AssetType
 
 
 --  BusinessProcess is subTypeOf BusinessResourceProcess
@@ -59,8 +59,9 @@ postulate -- specializedBusinessProcess is subTypeOf specializedResourceProcess
 Information flow between process activities.
 -}
 -- Aggregate Member : Object Flow
-ObjectFlow : ClassOfClassOfIndividual
-ObjectFlow = ClassOfIndividual
+ObjectFlow : TemporalOrderingType
+ObjectFlow = TemporalOrdering
+
 
 
 --  ObjectFlow is subTypeOf ResourceFlow
@@ -90,8 +91,9 @@ objectFlow = membershipOfObjectFlow  ∘  aggregationOfBusinessOutcomeEventObjec
 An Operation Sequence is used to show the order in which steps of a process will be performed. Each Operation Sequence has only one source and only one target. 
 -}
 -- Aggregate Member : Operation Sequence
-OperationSequence : ClassOfClassOfIndividual
-OperationSequence = ClassOfIndividual
+OperationSequence : TemporalOrderingType
+OperationSequence = TemporalOrdering
+
 
 
 --  OperationSequence is subTypeOf ResourceActivitySequence
@@ -119,7 +121,7 @@ operationSequence = membershipOfOperationSequence  ∘  aggregationOfBusinessEve
 -- -------------------------------------------------------------------------------------------- 
 {- Business Rule Enforcement: -}
 -- Aggregate Member : Business Rule Enforcement
-BusinessRuleEnforcement : ClassOfClassOfAbstractEntity
+BusinessRuleEnforcement : AbstractEntityMetaClass
 BusinessRuleEnforcement = ClassOfAbstractEntity
 
 
@@ -178,17 +180,14 @@ requiredfunctionality = membershipOfRequiredfunctionality  ∘  aggregationOfFun
 A Business Object Store is a source of information required during the course of a Business Process.
 -}
 -- Aggregate Member : Business Object Store
-BusinessObjectStore : ClassOfClassOfIndividual
-BusinessObjectStore = ClassOfIndividual
+BusinessObjectStore : ClassOfMixedOrderEntity
+BusinessObjectStore = MixedOrderEntity
+
 
 
 --  BusinessObjectStore is subTypeOf BusinessDataStore
 st-e4c0058d5ed1f424-b4ebd0e45ffdef12 : BusinessObjectStore ⊏ₑ BusinessDataStore
 st-e4c0058d5ed1f424-b4ebd0e45ffdef12 = polySubTypeOf-identity
-
---  BusinessObjectStore is subTypeOf DataDomain
-st-e4c0058d5ed1f424-325c32165eb02a4a : BusinessObjectStore ⊏ₑ DataDomain
-st-e4c0058d5ed1f424-325c32165eb02a4a = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessObjectStore :  Linkage BusinessProcess BusinessObjectStore
@@ -213,18 +212,14 @@ businessObjectStore = membershipOfBusinessObjectStore  ∘  aggregationOfDataDom
 An Automated Participant is the role of an Application that acts as an active performer in a Business Process, 
 -}
 -- Aggregate Member : Automated Participant
-AutomatedParticipant : ClassOfClassOfBoundedIndividual
-AutomatedParticipant = ClassOfBoundedIndividual
+AutomatedParticipant : ClassOfClassOfIndividual
+AutomatedParticipant = ClassOfIndividual
 
 
 
 --  AutomatedParticipant is subTypeOf ParticipantBusinessAgent
 st-0f92123f5ebc184e-b4ebbe325ffdca40 : AutomatedParticipant ⊏ₑ ParticipantBusinessAgent
 st-0f92123f5ebc184e-b4ebbe325ffdca40 = polySubTypeOf-identity
-
---  AutomatedParticipant is subTypeOf Application
-st-0f92123f5ebc184e-bcebd8e9549144db : AutomatedParticipant ⊏ₑ Application
-st-0f92123f5ebc184e-bcebd8e9549144db = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAutomatedParticipant :  Linkage BusinessProcess AutomatedParticipant
@@ -249,18 +244,14 @@ automatedParticipant = membershipOfAutomatedParticipant  ∘  aggregationOfAppli
 A Human Resource Participant is the role of an Org-Unit Type that acts as an active performer in a Business Process. 
 -}
 -- Aggregate Member : Human Resource Participant
-HumanResourceParticipant : ClassOfClassOfBoundedIndividual
-HumanResourceParticipant = ClassOfBoundedIndividual
+HumanResourceParticipant : ClassOfClassOfIndividual
+HumanResourceParticipant = ClassOfIndividual
 
 
 
 --  HumanResourceParticipant is subTypeOf ParticipantBusinessAgent
 st-0f9212805ebc1917-b4ebbe325ffdca40 : HumanResourceParticipant ⊏ₑ ParticipantBusinessAgent
 st-0f9212805ebc1917-b4ebbe325ffdca40 = polySubTypeOf-identity
-
---  HumanResourceParticipant is subTypeOf OrgUnitType
-st-0f9212805ebc1917-076d15425a5e158c : HumanResourceParticipant ⊏ₑ OrgUnitType
-st-0f9212805ebc1917-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHumanResourceParticipant :  Linkage BusinessProcess HumanResourceParticipant
@@ -285,18 +276,14 @@ humanResourceParticipant = membershipOfHumanResourceParticipant  ∘  aggregatio
 An Instrument is a Business System used by a Human Resource Participant to perform an Activity in a Business Process. An Instrument can be an Application or a Hardware Equipment.
 -}
 -- Aggregate Member : Instrument
-Instrument : ClassOfClassOfBoundedIndividual
-Instrument = ClassOfBoundedIndividual
+Instrument : ClassOfClassOfIndividual
+Instrument = ClassOfIndividual
 
 
 
 --  Instrument is subTypeOf ResourceBehaviorParticipant
 st-0f9213345ebc1a67-e0e874626578a341 : Instrument ⊏ₑ ResourceBehaviorParticipant
 st-0f9213345ebc1a67-e0e874626578a341 = polySubTypeOf-identity
-
---  Instrument is subTypeOf MezzoBusinessSystem
-st-0f9213345ebc1a67-f160fb6267d72652 : Instrument ⊏ₑ MezzoBusinessSystem
-st-0f9213345ebc1a67-f160fb6267d72652 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfInstrument :  Linkage BusinessProcess Instrument
@@ -321,18 +308,14 @@ instrument = membershipOfInstrument  ∘  aggregationOfMezzoBusinessSystemInstru
 A Business-Process Step is a step in a Business Process executed by a participant of the proces (Human Resource Participant or Automated Participant).
 -}
 -- Aggregate Member : Business-Process Step
-BusinessProcessStep : ClassOfClassOfBoundedIndividual
-BusinessProcessStep = ClassOfBoundedIndividual
+BusinessProcessStep : ClassOfClassOfIndividual
+BusinessProcessStep = ClassOfIndividual
 
 
 
 --  BusinessProcessStep is subTypeOf BusinessResourceProcessStep
 st-0f92150e5ebc1c50-b4ebbe6b5ffdcb19 : BusinessProcessStep ⊏ₑ BusinessResourceProcessStep
 st-0f92150e5ebc1c50-b4ebbe6b5ffdcb19 = polySubTypeOf-identity
-
---  BusinessProcessStep is subTypeOf BusinessProcess
-st-0f92150e5ebc1c50-57dfc52d550932ef : BusinessProcessStep ⊏ₑ BusinessProcess
-st-0f92150e5ebc1c50-57dfc52d550932ef = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessProcessStep :  Linkage BusinessProcess BusinessProcessStep

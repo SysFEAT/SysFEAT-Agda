@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/f82ba59a60420db1.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f82ba59a60420db1 where -- ========== Software Technology Configuration
+module SysFEAT.EA.f82ba59a60420db1 where -- ========== SOftwareTechnologyConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.0463ea9a63fd8b6c public -- Software Technology System
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
+open import SysFEAT.EA.0463ea9a63fd8b6c public -- SOftwareTechnologySystem
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
 
-SOftwareTechnologyConfiguration : ClassOfClassOfBoundedIndividual
-SOftwareTechnologyConfiguration = ClassOfBoundedIndividual
+SOftwareTechnologyConfiguration : BoundedIndividualMetaClass
+SOftwareTechnologyConfiguration = AssetType
 
 
 --  SOftwareTechnologyConfiguration is subTypeOf SOftwareTechnologySystem
@@ -32,18 +32,14 @@ st-f82ba59a60420db1-0463ea9a63fd8b6c = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Software Technology Part: -}
 -- Aggregate Member : Software Technology Part
-SOftwareTechnologyPart : ClassOfClassOfBoundedIndividual
-SOftwareTechnologyPart = ClassOfBoundedIndividual
+SOftwareTechnologyPart : ClassOfClassOfIndividual
+SOftwareTechnologyPart = ClassOfIndividual
 
 
 
 --  SOftwareTechnologyPart is subTypeOf SOftwareSystemPart
 st-f82ba64460420f69-24035e705fc7afb1 : SOftwareTechnologyPart ⊏ₑ SOftwareSystemPart
 st-f82ba64460420f69-24035e705fc7afb1 = polySubTypeOf-identity
-
---  SOftwareTechnologyPart is subTypeOf SOftwareTechnology
-st-f82ba64460420f69-d5e6ddd05c46547c : SOftwareTechnologyPart ⊏ₑ SOftwareTechnology
-st-f82ba64460420f69-d5e6ddd05c46547c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSOftwareTechnologyPart :  Linkage SOftwareTechnologyConfiguration SOftwareTechnologyPart

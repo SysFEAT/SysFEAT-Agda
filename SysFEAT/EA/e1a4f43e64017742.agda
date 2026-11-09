@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/e1a4f43e64017742.htm
 module SysFEAT.EA.e1a4f43e64017742 where -- ========== Switch
 
 open import Agda.Primitive
-open import SysFEAT.EA.f4be0fba5ee1d935 public -- Network Device
+open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
-Switch : ClassOfClassOfBoundedIndividual
-Switch = ClassOfBoundedIndividual
+Switch : BoundedIndividualMetaClass
+Switch = AssetType
 
 
 --  Switch is subTypeOf NetworkDevice

@@ -16,15 +16,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.4619527e560d45eb where -- ========== Logical Data Entity
+module SysFEAT.EA.4619527e560d45eb where -- ========== LogicalDataEntity
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b5858b85eec51d9 public -- Logical Data Element
-open import SysFEAT.EA.325c32fc5eb02d02 public -- Data Entity
-open import SysFEAT.EA.7d5286635eae7273 public -- Logical Data Property
+open import SysFEAT.EA.2b5858b85eec51d9 public -- LogicalDataElement
+open import SysFEAT.EA.325c32fc5eb02d02 public -- DataEntity
+open import SysFEAT.EA.7d5286635eae7273 public -- LogicalDataProperty
 
-LogicalDataEntity : ClassOfClassOfBoundedIndividual
-LogicalDataEntity = ClassOfBoundedIndividual
+LogicalDataEntity : ClassOfMixedOrderEntity
+LogicalDataEntity = MixedOrderEntity
 
 
 --  LogicalDataEntity is subTypeOf LogicalDataElement
@@ -53,18 +53,14 @@ postulate -- specializedLogicalEntity is subTypeOf specializedDataObject
 An Attribute is a value property of a Logical Data Entity.
 -}
 -- Aggregate Member : Attribute
-Attribute : ClassOfClassOfBoundedIndividual
-Attribute = ClassOfBoundedIndividual
+Attribute : ClassOfMixedOrderEntity
+Attribute = MixedOrderEntity
 
 
 
 --  Attribute is subTypeOf Attribute
 st-f4be36695ee1c7fa-8f1c9ad668ca8db4 : Attribute ⊏ₑ Attribute
 st-f4be36695ee1c7fa-8f1c9ad668ca8db4 = polySubTypeOf-identity
-
---  Attribute is subTypeOf LogicalDataProperty
-st-f4be36695ee1c7fa-7d5286635eae7273 : Attribute ⊏ₑ LogicalDataProperty
-st-f4be36695ee1c7fa-7d5286635eae7273 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAttribute :  Linkage LogicalDataEntity Attribute
@@ -89,8 +85,8 @@ attribute = membershipOfAttribute  ∘  aggregationOfLogicalDataPropertyAttribut
 A part of a class, a component, etc. or a role of a collaboration.
 -}
 -- Aggregate Member : Logical Relationship
-LogicalRelationship : ClassOfClassOfBoundedIndividual
-LogicalRelationship = ClassOfBoundedIndividual
+LogicalRelationship : ClassOfMixedOrderEntity
+LogicalRelationship = MixedOrderEntity
 
 
 
@@ -101,10 +97,6 @@ st-f4be36b65ee1c923-e7e3fa0a5fbb0ddb = polySubTypeOf-identity
 --  LogicalRelationship is subTypeOf Relationship
 st-f4be36b65ee1c923-b6e3cc7a5fbb6878 : LogicalRelationship ⊏ₑ Relationship
 st-f4be36b65ee1c923-b6e3cc7a5fbb6878 = polySubTypeOf-identity
-
---  LogicalRelationship is subTypeOf LogicalDataEntity
-st-f4be36b65ee1c923-4619527e560d45eb : LogicalRelationship ⊏ₑ LogicalDataEntity
-st-f4be36b65ee1c923-4619527e560d45eb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfLogicalRelationship :  Linkage LogicalDataEntity LogicalRelationship

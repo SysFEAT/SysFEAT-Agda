@@ -15,14 +15,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.302238be5ec9020a where -- ========== Information Outcome Event
+module SysFEAT.EA.302238be5ec9020a where -- ========== InformationOutcomeEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
-open import SysFEAT.EA.6d2b7c935fbb6270 public -- Data Asset
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.EA.6d2b7c935fbb6270 public -- DataAsset
 
-InformationOutcomeEvent : ClassOfClassOfBoundedIndividual
-InformationOutcomeEvent = ClassOfBoundedIndividual
+InformationOutcomeEvent : BoundedIndividualMetaClass
+InformationOutcomeEvent = AssetType
 
 
 --  InformationOutcomeEvent is subTypeOf BusinessOutcomeEvent
@@ -35,18 +35,14 @@ st-302238be5ec9020a-9dcea4535ec76e6c = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Information Outcome: -}
 -- Aggregate Member : Information Outcome
-InformationOutcome : ClassOfClassOfBoundedIndividual
-InformationOutcome = ClassOfBoundedIndividual
+InformationOutcome : ClassOfMixedOrderEntity
+InformationOutcome = MixedOrderEntity
 
 
 
 --  InformationOutcome is subTypeOf BusinessOutcome
 st-be94e4d4655c8af9-be94e0c4655c85b4 : InformationOutcome ⊏ₑ BusinessOutcome
 st-be94e4d4655c8af9-be94e0c4655c85b4 = polySubTypeOf-identity
-
---  InformationOutcome is subTypeOf DataAsset
-st-be94e4d4655c8af9-6d2b7c935fbb6270 : InformationOutcome ⊏ₑ DataAsset
-st-be94e4d4655c8af9-6d2b7c935fbb6270 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfInformationOutcome :  Linkage InformationOutcomeEvent InformationOutcome

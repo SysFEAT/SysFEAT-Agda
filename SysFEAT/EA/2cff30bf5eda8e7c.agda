@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/2cff30bf5eda8e7c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2cff30bf5eda8e7c where -- ========== Risk Factor
+module SysFEAT.EA.2cff30bf5eda8e7c where -- ========== RiskFactor
 
 open import Agda.Primitive
 

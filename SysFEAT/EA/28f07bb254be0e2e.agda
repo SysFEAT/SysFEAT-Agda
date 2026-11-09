@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/28f07bb254be0e2e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.28f07bb254be0e2e where -- ========== Individual Type
+module SysFEAT.EA.28f07bb254be0e2e where -- ========== IndividualType
 
 open import Agda.Primitive
 

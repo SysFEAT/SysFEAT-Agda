@@ -14,14 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7a0afca35dde94f5 where -- ========== Scenario of Application System Environment
+module SysFEAT.EA.7a0afca35dde94f5 where -- ========== ScenarioOfApplicationSystemEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c0a10061e2fc12 public -- Software System Environment Scenario
-open import SysFEAT.EA.46194ca7560d3a45 public -- Application System
+open import SysFEAT.EA.25c0a10061e2fc12 public -- SOftwareSystemEnvironmentScenario
+open import SysFEAT.EA.46194ca7560d3a45 public -- ApplicationSystem
 
-ScenarioOfApplicationSystemEnvironment : ClassOfClassOfBoundedIndividual
-ScenarioOfApplicationSystemEnvironment = ClassOfBoundedIndividual
+ScenarioOfApplicationSystemEnvironment : BoundedIndividualMetaClass
+ScenarioOfApplicationSystemEnvironment = AssetType
 
 
 --  ScenarioOfApplicationSystemEnvironment is subTypeOf SOftwareSystemEnvironmentScenario
@@ -34,18 +34,14 @@ st-7a0afca35dde94f5-25c0a10061e2fc12 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Application System: -}
 -- Aggregate Member : Subject Application System
-SubjectApplicationSystem : ClassOfClassOfBoundedIndividual
-SubjectApplicationSystem = ClassOfBoundedIndividual
+SubjectApplicationSystem : ClassOfMixedOrderEntity
+SubjectApplicationSystem = MixedOrderEntity
 
 
 
 --  SubjectApplicationSystem is subTypeOf SubjectSOftwareSystem
 st-48d4f27b63b6a466-25c1a55461e20430 : SubjectApplicationSystem ⊏ₑ SubjectSOftwareSystem
 st-48d4f27b63b6a466-25c1a55461e20430 = polySubTypeOf-identity
-
---  SubjectApplicationSystem is subTypeOf ApplicationSystem
-st-48d4f27b63b6a466-46194ca7560d3a45 : SubjectApplicationSystem ⊏ₑ ApplicationSystem
-st-48d4f27b63b6a466-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectApplicationSystem :  Linkage ScenarioOfApplicationSystemEnvironment SubjectApplicationSystem
@@ -68,18 +64,14 @@ subjectApplicationSystem = membershipOfSubjectApplicationSystem  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Application System: -}
 -- Aggregate Member : Participant Application System
-ParticipantApplicationSystem : ClassOfClassOfBoundedIndividual
-ParticipantApplicationSystem = ClassOfBoundedIndividual
+ParticipantApplicationSystem : ClassOfMixedOrderEntity
+ParticipantApplicationSystem = MixedOrderEntity
 
 
 
 --  ParticipantApplicationSystem is subTypeOf PartnerSOftwareSystem
 st-48d4f34363b6a573-25c1a53f61e20355 : ParticipantApplicationSystem ⊏ₑ PartnerSOftwareSystem
 st-48d4f34363b6a573-25c1a53f61e20355 = polySubTypeOf-identity
-
---  ParticipantApplicationSystem is subTypeOf ApplicationSystem
-st-48d4f34363b6a573-46194ca7560d3a45 : ParticipantApplicationSystem ⊏ₑ ApplicationSystem
-st-48d4f34363b6a573-46194ca7560d3a45 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantApplicationSystem :  Linkage ScenarioOfApplicationSystemEnvironment ParticipantApplicationSystem

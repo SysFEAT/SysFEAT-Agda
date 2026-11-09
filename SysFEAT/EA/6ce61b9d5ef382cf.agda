@@ -12,12 +12,12 @@ Documentation : https://framework.sysfeat.com/pages/6ce61b9d5ef382cf.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.6ce61b9d5ef382cf where -- ========== Technology Portfolio
+module SysFEAT.EA.6ce61b9d5ef382cf where -- ========== TechnologyPortfolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8889c5eea8ab7 public -- Asset Portfolio
-open import SysFEAT.EA.dd27b91368a11464 public -- Software Technology Capability Map
-open import SysFEAT.EA.d5e6ddd05c46547c public -- Software Technology
+open import SysFEAT.EA.26b8889c5eea8ab7 public -- AssetPortfolio
+open import SysFEAT.EA.dd27b91368a11464 public -- SOftwareTechnologyCapabilityMap
+open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
 
 TechnologyPortfolio : ClassOfBoundedIndividual
 TechnologyPortfolio = BoundedIndividual
@@ -33,7 +33,7 @@ st-6ce61b9d5ef382cf-26b8889c5eea8ab7 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Functional Scope: -}
 functionalScope :  Linkage TechnologyPortfolio SOftwareTechnologyCapabilityMap
-functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
+functionalScope = make_Relation "Functional Scope" "Functional Scope"
 
 postulate -- functionalScope is subTypeOf portfolioFunctionalScope
   st-dd27b95768a114e1-dd2630ca68a0669f  : functionalScope  ⊏⋆ᵣ  portfolioFunctionalScope
@@ -43,8 +43,9 @@ postulate -- functionalScope is subTypeOf portfolioFunctionalScope
 A Managed Software Technology represents the characterics of a Software Technology under the management of a Technology Portfolio.
 -}
 -- Aggregate Member : Managed Software Technology
-ManagedSOftwareTechnology : ClassOfClassOfIndividual
-ManagedSOftwareTechnology = ClassOfIndividual
+ManagedSOftwareTechnology : ClassOfMixedOrderEntity
+ManagedSOftwareTechnology = MixedOrderEntity
+
 
 
 --  ManagedSOftwareTechnology withAspect ManagementSystemSubject

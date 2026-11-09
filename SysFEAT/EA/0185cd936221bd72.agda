@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Behavior: 
-An Resource Behavior is an Resource Operating Asset that describes any action or reaction of a Resource Agent Type to external or internal circumstances. This includes Resource Action Processes (actions), Resource Interaction Processs (stories) or service interactions (Business Service Interface).
+An Resource Behavior is an Resource Operating Asset Type that describes any action or reaction of a Resource Agent Type to external or internal circumstances. This includes Resource Action Processes (actions), Resource Interaction Processs (stories) or service interactions (Business Service Interface).
 
 Documentation : https://framework.sysfeat.com/pages/0185cd936221bd72.htm
 
@@ -12,19 +12,19 @@ Documentation : https://framework.sysfeat.com/pages/0185cd936221bd72.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0185cd936221bd72 where -- ========== Resource Behavior
+module SysFEAT.EA.0185cd936221bd72 where -- ========== ResourceBehavior
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- Resource Operating Asset
-open import SysFEAT.SOF.986cd4ec5ffca3ac public -- Behavior Type
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.SOF.986cd4ec5ffca3ac public -- BehaviorType
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-ResourceBehavior : ClassOfClassOfBoundedIndividual
-ResourceBehavior = ClassOfBoundedIndividual
+ResourceBehavior : BehaviorMetaClass
+ResourceBehavior = BehaviorType
 
 
---  ResourceBehavior is subTypeOf ResourceOperatingAsset
-st-0185cd936221bd72-f8e61da0621db6fa : ResourceBehavior ⊏ₑ ResourceOperatingAsset
+--  ResourceBehavior is subTypeOf ResourceOperatingAssetType
+st-0185cd936221bd72-f8e61da0621db6fa : ResourceBehavior ⊏ₑ ResourceOperatingAssetType
 st-0185cd936221bd72-f8e61da0621db6fa = polySubTypeOf-identity
 
 --  ResourceBehavior is subTypeOf BehaviorType
@@ -49,8 +49,8 @@ postulate -- specializedResourceBehavior is subTypeOf specializedResourceOperati
 A Resource Behavior Participant is the participation of a Resource Agent Type in a Resource Behavior.
 -}
 -- Aggregate Member : Resource Behavior Participant
-ResourceBehaviorParticipant : ClassOfClassOfBoundedIndividual
-ResourceBehaviorParticipant = ClassOfBoundedIndividual
+ResourceBehaviorParticipant : ClassOfClassOfIndividual
+ResourceBehaviorParticipant = ClassOfIndividual
 
 
 
@@ -61,10 +61,6 @@ st-e0e874626578a341-e0e86fad65789c43 = polySubTypeOf-identity
 --  ResourceBehaviorParticipant is subTypeOf ResourceOperatingAssetPart
 st-e0e874626578a341-b776bf0868b0fbb3 : ResourceBehaviorParticipant ⊏ₑ ResourceOperatingAssetPart
 st-e0e874626578a341-b776bf0868b0fbb3 = polySubTypeOf-identity
-
---  ResourceBehaviorParticipant is subTypeOf ResourceAgentType
-st-e0e874626578a341-e2ef091962147ad7 : ResourceBehaviorParticipant ⊏ₑ ResourceAgentType
-st-e0e874626578a341-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceBehaviorParticipant :  Linkage ResourceBehavior ResourceBehaviorParticipant

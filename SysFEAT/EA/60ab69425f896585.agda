@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/60ab69425f896585.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.60ab69425f896585 where -- ========== Business Capability Assessment
+module SysFEAT.EA.60ab69425f896585 where -- ========== BusinessCapabilityAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
-open import SysFEAT.EA.21ed240a689c08df public -- Value Proposition
+open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
 
-BusinessCapabilityAssessment : ClassOfBoundedIndividual
-BusinessCapabilityAssessment = BoundedIndividual
+BusinessCapabilityAssessment : ClassOfIndividual
+BusinessCapabilityAssessment = Individual
 
 
 --  BusinessCapabilityAssessment is subTypeOf Assessment

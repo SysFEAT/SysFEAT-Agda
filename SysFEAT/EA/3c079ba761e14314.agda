@@ -12,18 +12,19 @@ Documentation : https://framework.sysfeat.com/pages/3c079ba761e14314.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.3c079ba761e14314 where -- ========== Stored Procedure
+module SysFEAT.EA.3c079ba761e14314 where -- ========== StoredProcedure
 
 open import Agda.Primitive
-open import SysFEAT.EA.7731894d62166495 public -- Relational Data bLOCK
-open import SysFEAT.EA.362f3ca45b3b234b public -- Relational Entity
+open import SysFEAT.EA.d874bd8d6ab727f1 public -- RelationalDataBlock
+open import SysFEAT.EA.362f3ca45b3b234b public -- RelationalEntity
 
-StoredProcedure : ClassOfClassOfBoundedIndividual
-StoredProcedure = ClassOfBoundedIndividual
+StoredProcedure : ClassOfMixedOrderEntity
+StoredProcedure = MixedOrderEntity
 
---  StoredProcedure is subTypeOf RelationalDatabLOCK
-st-3c079ba761e14314-7731894d62166495 : StoredProcedure ⊏⋆ₑ RelationalDatabLOCK
-st-3c079ba761e14314-7731894d62166495 = polySubTypeOf-identity
+
+--  StoredProcedure withAspect RelationalDataBlock
+st-3c079ba761e14314-d874bd8d6ab727f1 : StoredProcedure ⊏ₐₑ (RelationalDataBlock (lsuc(lzero)))
+st-3c079ba761e14314-d874bd8d6ab727f1 = polySubTypeOf-identity
 
 
 -- == Relations =======================

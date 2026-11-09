@@ -14,13 +14,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.df118f645d5f65bb where -- ========== Computer Server
+module SysFEAT.EA.df118f645d5f65bb where -- ========== ComputerServer
 
 open import Agda.Primitive
-open import SysFEAT.EA.02f51209641c7ea4 public -- Computing Device
+open import SysFEAT.EA.02f51209641c7ea4 public -- ComputingDevice
 
-ComputerServer : ClassOfClassOfBoundedIndividual
-ComputerServer = ClassOfBoundedIndividual
+ComputerServer : BoundedIndividualMetaClass
+ComputerServer = AssetType
 
 
 --  ComputerServer is subTypeOf ComputingDevice

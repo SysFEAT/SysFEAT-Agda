@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/d5e6d8015c464b40.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d5e6d8015c464b40 where -- ========== Deployable Software System
+module SysFEAT.EA.d5e6d8015c464b40 where -- ========== DeployableSOftwareSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.24035cc65fc7ad7f public -- Concrete Software System
-open import SysFEAT.EA.d6cd02865ab966e8 public -- Business Software System
-open import SysFEAT.EA.624e6ac55ed972a7 public -- Physical Software Interface
+open import SysFEAT.EA.24035cc65fc7ad7f public -- ConcreteSOftwareSystem
+open import SysFEAT.EA.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+open import SysFEAT.EA.624e6ac55ed972a7 public -- PhysicalSOftwareInterface
 
-DeployableSOftwareSystem : ClassOfClassOfBoundedIndividual
-DeployableSOftwareSystem = ClassOfBoundedIndividual
+DeployableSOftwareSystem : AgentMetaClass
+DeployableSOftwareSystem = AgentType
 
 
 --  DeployableSOftwareSystem is subTypeOf ConcreteSOftwareSystem
@@ -76,18 +76,14 @@ sOftwarePhysicalChannel = membershipOfSOftwarePhysicalChannel  ∘  aggregationO
 -- -------------------------------------------------------------------------------------------- 
 {- Deployable Software Member: -}
 -- Aggregate Member : Deployable Software Member
-DeployableSOftwareMember : ClassOfClassOfBoundedIndividual
-DeployableSOftwareMember = ClassOfBoundedIndividual
+DeployableSOftwareMember : ClassOfClassOfIndividual
+DeployableSOftwareMember = ClassOfIndividual
 
 
 
 --  DeployableSOftwareMember is subTypeOf SOftwareSystemPart
 st-624e6cab5ed977a2-24035e705fc7afb1 : DeployableSOftwareMember ⊏ₑ SOftwareSystemPart
 st-624e6cab5ed977a2-24035e705fc7afb1 = polySubTypeOf-identity
-
---  DeployableSOftwareMember is subTypeOf DeployableSOftwareSystem
-st-624e6cab5ed977a2-d5e6d8015c464b40 : DeployableSOftwareMember ⊏ₑ DeployableSOftwareSystem
-st-624e6cab5ed977a2-d5e6d8015c464b40 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDeployableSOftwareMember :  Linkage DeployableSOftwareSystem DeployableSOftwareMember

@@ -14,13 +14,13 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.255833f95c6d1db3 where -- ========== Logical Application
+module SysFEAT.EA.255833f95c6d1db3 where -- ========== LogicalApplication
 
 open import Agda.Primitive
-open import SysFEAT.EA.2558338d5c6d1d1b public -- Logical Software System
+open import SysFEAT.EA.2558338d5c6d1d1b public -- LogicalSOftwareSystem
 
-LogicalApplication : ClassOfClassOfBoundedIndividual
-LogicalApplication = ClassOfBoundedIndividual
+LogicalApplication : BoundedIndividualMetaClass
+LogicalApplication = AssetType
 
 
 --  LogicalApplication is subTypeOf LogicalSOftwareSystem

@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/7d37c0565fd067ce.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d37c0565fd067ce where -- ========== Concept Lineage
+module SysFEAT.EA.7d37c0565fd067ce where -- ========== ConceptLineage
 
 open import Agda.Primitive
-open import SysFEAT.EA.23ab2e945da829b8 public -- Data Lineage
-open import SysFEAT.SOF.24ae31d75ed1c747 public -- Behavioral Event
-open import SysFEAT.EA.229b34eb5b3f79d2 public -- Conceptual Entity
+open import SysFEAT.EA.23ab2e945da829b8 public -- DataLineage
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-ConceptLineage : ClassOfClassOfBoundedIndividual
-ConceptLineage = ClassOfBoundedIndividual
+ConceptLineage : ClassOfClassOfIndividual
+ConceptLineage = ClassOfIndividual
+
 
 --  ConceptLineage is subTypeOf DataLineage
 st-7d37c0565fd067ce-23ab2e945da829b8 : ConceptLineage ⊏ₑ DataLineage
@@ -57,18 +58,13 @@ conceptLineageFlow = membershipOfConceptLineageFlow  ∘  aggregationOfBehaviora
 -- -------------------------------------------------------------------------------------------- 
 {- Final Business Object: -}
 -- Aggregate Member : Final Business Object
-FinalBusinessObject : ClassOfClassOfBoundedIndividual
-FinalBusinessObject = ClassOfBoundedIndividual
-
+FinalBusinessObject : ClassOfClassOfIndividual
+FinalBusinessObject = ClassOfIndividual
 
 
 --  FinalBusinessObject is subTypeOf FinalEntity
 st-acb4b7e762457faf-acb4b3b562457c32 : FinalBusinessObject ⊏ₑ FinalEntity
 st-acb4b7e762457faf-acb4b3b562457c32 = polySubTypeOf-identity
-
---  FinalBusinessObject is subTypeOf ConceptualEntity
-st-acb4b7e762457faf-229b34eb5b3f79d2 : FinalBusinessObject ⊏ₑ ConceptualEntity
-st-acb4b7e762457faf-229b34eb5b3f79d2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfFinalBusinessObject :  Linkage ConceptLineage FinalBusinessObject
@@ -91,18 +87,13 @@ finalBusinessObject = membershipOfFinalBusinessObject  ∘  aggregationOfConcept
 -- -------------------------------------------------------------------------------------------- 
 {- Origin Business Object: -}
 -- Aggregate Member : Origin Business Object
-OriginBusinessObject : ClassOfClassOfBoundedIndividual
-OriginBusinessObject = ClassOfBoundedIndividual
-
+OriginBusinessObject : ClassOfClassOfIndividual
+OriginBusinessObject = ClassOfIndividual
 
 
 --  OriginBusinessObject is subTypeOf OriginEntity
 st-acb4b81362458092-acb4af8462457ab3 : OriginBusinessObject ⊏ₑ OriginEntity
 st-acb4b81362458092-acb4af8462457ab3 = polySubTypeOf-identity
-
---  OriginBusinessObject is subTypeOf ConceptualEntity
-st-acb4b81362458092-229b34eb5b3f79d2 : OriginBusinessObject ⊏ₑ ConceptualEntity
-st-acb4b81362458092-229b34eb5b3f79d2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOriginBusinessObject :  Linkage ConceptLineage OriginBusinessObject
@@ -125,18 +116,13 @@ originBusinessObject = membershipOfOriginBusinessObject  ∘  aggregationOfConce
 -- -------------------------------------------------------------------------------------------- 
 {- Business Object Store: -}
 -- Aggregate Member : Business Object Store
-BusinessObjectStore : ClassOfClassOfBoundedIndividual
-BusinessObjectStore = ClassOfBoundedIndividual
-
+BusinessObjectStore : ClassOfClassOfIndividual
+BusinessObjectStore = ClassOfIndividual
 
 
 --  BusinessObjectStore is subTypeOf IntermediateEntity
 st-acb4b83f6245816d-acb4b3f162457d1a : BusinessObjectStore ⊏ₑ IntermediateEntity
 st-acb4b83f6245816d-acb4b3f162457d1a = polySubTypeOf-identity
-
---  BusinessObjectStore is subTypeOf ConceptualEntity
-st-acb4b83f6245816d-229b34eb5b3f79d2 : BusinessObjectStore ⊏ₑ ConceptualEntity
-st-acb4b83f6245816d-229b34eb5b3f79d2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfBusinessObjectStore :  Linkage ConceptLineage BusinessObjectStore

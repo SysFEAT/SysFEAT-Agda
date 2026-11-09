@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/84c799c1664d8b2f.htm
 module SysFEAT.EA.84c799c1664d8b2f where -- ========== Epic
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0520200666475f86 public -- Time-bound Initiative
+open import SysFEAT.SOF.0520200666475f86 public -- TimeboundInitiative
 
-Epic : ClassOfBoundedIndividual
-Epic = BoundedIndividual
+Epic : WholeLifeClass
+Epic = WholeLifeIndividual
 
 
 --  Epic is subTypeOf TimeboundInitiative

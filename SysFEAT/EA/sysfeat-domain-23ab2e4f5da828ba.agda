@@ -15,9 +15,8 @@ External references:
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-23ab2e4f5da828ba where -- ========== Data Governance
 
-open import SysFEAT.SOF.sysfeat-domain-02f70fdc600f4179 public -- Functional Asset and Operating Constraints
 open import SysFEAT.EA.sysfeat-domain-75ef50ab620fb787 public -- EA Pattern - Physical Data Domain
-open import SysFEAT.EA.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
+open import SysFEAT.C-SOF.sysfeat-domain-07e72dd55ecc888a public -- Enterprise Glossary
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
 open import SysFEAT.EA.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
 open import SysFEAT.SOF.sysfeat-domain-d6cd2c8b5ab98da5 public -- Information Assets
@@ -29,6 +28,7 @@ open import SysFEAT.EA.sysfeat-domain-fe663dd261817752 public -- Operational Ass
 open import SysFEAT.EA.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
 open import SysFEAT.EA.sysfeat-domain-a951eec1619413a3 public -- Deployed Facility Assets
 open import SysFEAT.SOF.sysfeat-domain-af4db12d62993434 public -- Model Block Packaging
+open import SysFEAT.EA.sysfeat-domain-7c3aae72617a2499 public -- Data Asset Assurance
 open import SysFEAT.EA.sysfeat-domain-362f37625b3b2050 public -- Physical Data Domain
 open import SysFEAT.EA.sysfeat-domain-d326d866617a49a5 public -- Data Provenance & Reliability Assurance
 open import SysFEAT.EA.sysfeat-domain-44254cce6182c076 public -- Data Governance Core

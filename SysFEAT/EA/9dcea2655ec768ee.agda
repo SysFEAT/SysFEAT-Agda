@@ -16,14 +16,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9dcea2655ec768ee where -- ========== Business Service Interface
+module SysFEAT.EA.9dcea2655ec768ee where -- ========== BusinessServiceInterface
 
 open import Agda.Primitive
-open import SysFEAT.EA.6a70c21067876cd8 public -- Resource Service Interface
-open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
+open import SysFEAT.EA.6a70c21067876cd8 public -- ResourceServiceInterface
+open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
 
-BusinessServiceInterface : ClassOfClassOfIndividual
-BusinessServiceInterface = ClassOfIndividual
+BusinessServiceInterface : BehaviorMetaClass
+BusinessServiceInterface = BehaviorType
+
 
 --  BusinessServiceInterface is subTypeOf ResourceServiceInterface
 st-9dcea2655ec768ee-6a70c21067876cd8 : BusinessServiceInterface ⊏ₑ ResourceServiceInterface
@@ -37,8 +38,8 @@ st-9dcea2655ec768ee-6a70c21067876cd8 = polySubTypeOf-identity
 A Business Flow Connection is a Business Outcome Event that occurs between the participants of a Business Service Interface.
 -}
 -- Aggregate Member : Business Flow Connection
-BusinessFlowConnection : ClassOfClassOfBoundedIndividual
-BusinessFlowConnection = ClassOfBoundedIndividual
+BusinessFlowConnection : ClassOfClassOfIndividual
+BusinessFlowConnection = ClassOfIndividual
 
 
 

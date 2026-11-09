@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/2cc969e45526346d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2cc969e45526346d where -- ========== Regulatory Driver
+module SysFEAT.EA.2cc969e45526346d where -- ========== RegulatoryDriver
 
 open import Agda.Primitive
-open import SysFEAT.EA.7a717ae75596283e public -- Exogenous Driver
-open import SysFEAT.SOF.4b94594b68a478f2 public -- Policy Framework
+open import SysFEAT.EA.7a717ae75596283e public -- ExogenousDriver
+open import SysFEAT.EA.786b34fc6abe5efe public -- PolicyFramework
 
-RegulatoryDriver : ClassOfBoundedIndividual
-RegulatoryDriver = BoundedIndividual
+RegulatoryDriver : ClassOfIndividual
+RegulatoryDriver = Individual
 
 
 --  RegulatoryDriver is subTypeOf ExogenousDriver
@@ -33,7 +33,7 @@ st-2cc969e45526346d-7a717ae75596283e = polySubTypeOf-identity
 {- Subject Policy: 
 Policy Framework which is the subject of a .Regulatory Driver
 -}
-subjectPolicy : ∀ {u} →  Linkage RegulatoryDriver (PolicyFramework u)
+subjectPolicy :  Linkage RegulatoryDriver PolicyFramework
 subjectPolicy = make_Relation "Subject Policy" "Subject Policy"
 
 postulate -- subjectPolicy is subTypeOf driverSubject

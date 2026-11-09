@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/d1701e155be84834.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d1701e155be84834 where -- ========== Benefit (Type)
+module SysFEAT.EA.d1701e155be84834 where -- ========== BenefitType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- Asset Property
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 
 BenefitType : AssetPropertyType
 BenefitType = AssetProperty
@@ -26,4 +26,3 @@ st-d1701e155be84834-515c6a856893324e : BenefitType ⊏ₑ AssetProperty
 st-d1701e155be84834-515c6a856893324e = polySubTypeOf-identity
 
 
--- == Relations =======================

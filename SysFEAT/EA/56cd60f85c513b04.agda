@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/56cd60f85c513b04.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.56cd60f85c513b04 where -- ========== Deployed Server
+module SysFEAT.EA.56cd60f85c513b04 where -- ========== DeployedServer
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.affeb2255f6051e6 public -- Deployed Data Store
-open import SysFEAT.EA.56cd60a95c513aaf public -- Deployed Application
-open import SysFEAT.EA.56cd60c05c513ad9 public -- Deployed Software Technology
-open import SysFEAT.EA.df118f645d5f65bb public -- Computer Server
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
+open import SysFEAT.EA.56cd60a95c513aaf public -- DeployedApplication
+open import SysFEAT.EA.56cd60c05c513ad9 public -- DeployedSOftwareTechnology
+open import SysFEAT.EA.df118f645d5f65bb public -- ComputerServer
 
-DeployedServer : ClassOfBoundedIndividual
-DeployedServer = BoundedIndividual
+DeployedServer : AssetType
+DeployedServer = IndividualAsset
 
 
 --  DeployedServer is subTypeOf DeployedBusinessSystem
@@ -53,7 +53,7 @@ hostedTechnology = make_holonymyRelation "Hosted Technology" "Hosted Technology"
 -- -------------------------------------------------------------------------------------------- 
 {- Server Type: -}
 serverType :  Linkage DeployedServer ComputerServer
-serverType = make_instanceOf "Server Type" "Server Type"
+serverType = make_Relation "Server Type" "Server Type"
 
 postulate -- serverType is subTypeOf businessSystemType
   st-e2dc103a66fd7e38-e2dc074666fd6d03  : serverType  ⊏⋆ᵣ  businessSystemType

@@ -15,10 +15,10 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.167124af6008e9d3 where -- ========== Regulatory agency
+module SysFEAT.EA.167124af6008e9d3 where -- ========== Regulatoryagency
 
 open import Agda.Primitive
-open import SysFEAT.EA.e78cee446618815a public -- Legal Entity
+open import SysFEAT.EA.e78cee446618815a public -- LegalEntity
 open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 
 Regulatoryagency : AgentType
@@ -38,4 +38,4 @@ regulatorLocation :  Linkage Regulatoryagency Location
 regulatorLocation = make_holonymyRelation "Regulator Location" "Regulator Location"
 
 postulate -- regulatorLocation is subTypeOf locatedat
-  st-167126066008ed22-167126a16008efeb  : regulatorLocation  ⊏⋆ᵣ  locatedat
+  st-167126066008ed22-b3c3c99d6ad02557  : regulatorLocation  ⊏⋆ᵣ  locatedat

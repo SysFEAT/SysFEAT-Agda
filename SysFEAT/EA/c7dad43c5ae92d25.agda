@@ -19,9 +19,9 @@ External references:
 module SysFEAT.EA.c7dad43c5ae92d25 where -- ========== Person
 
 open import Agda.Primitive
-open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- Responsible Human Entity
-open import SysFEAT.EA.66f8685a620b1440 public -- Individual Business Agent
-open import SysFEAT.EA.41b8e49f65ee66ec public -- Person Type
+open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
+open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.EA.41b8e49f65ee66ec public -- PersonType
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
 
 Person : AgentType
@@ -36,6 +36,8 @@ st-c7dad43c5ae92d25-c7dad03f5ae92ae9 = polySubTypeOf-identity
 st-c7dad43c5ae92d25-66f8685a620b1440 : Person ⊏ₑ IndividualBusinessAgent
 st-c7dad43c5ae92d25-66f8685a620b1440 = polySubTypeOf-identity
 
+postulate -- Person is PowerInstanceOf Person Type
+  pi-12b0270366e9333f : Person ∷ₚₑ PersonType
 
 -- == Relations =======================
 

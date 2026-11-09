@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/2191367d6786268d.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2191367d6786268d where -- ========== Deployed Computer Device
+module SysFEAT.EA.2191367d6786268d where -- ========== DeployedComputerDevice
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- Deployed Business System
-open import SysFEAT.EA.df118f995d5f65f1 public -- Computer Device
+open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.EA.df118f995d5f65f1 public -- ComputerDevice
 
-DeployedComputerDevice : ClassOfBoundedIndividual
-DeployedComputerDevice = BoundedIndividual
+DeployedComputerDevice : AssetType
+DeployedComputerDevice = IndividualAsset
 
 
 --  DeployedComputerDevice is subTypeOf DeployedBusinessSystem
@@ -32,7 +32,7 @@ st-2191367d6786268d-3642454f6007e80e = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Computer Type: -}
 computerType :  Linkage DeployedComputerDevice ComputerDevice
-computerType = make_instanceOf "Computer Type" "Computer Type"
+computerType = make_Relation "Computer Type" "Computer Type"
 
 postulate -- computerType is subTypeOf businessSystemType
   st-f603fd9467e47ae2-e2dc074666fd6d03  : computerType  ⊏⋆ᵣ  businessSystemType

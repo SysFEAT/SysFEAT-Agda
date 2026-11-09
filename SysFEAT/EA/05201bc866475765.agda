@@ -12,10 +12,10 @@ Documentation : https://framework.sysfeat.com/pages/05201bc866475765.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.05201bc866475765 where -- ========== Asset Management Initiative
+module SysFEAT.EA.05201bc866475765 where -- ========== AssetManagementInitiative
 
 open import Agda.Primitive
-open import SysFEAT.EA.05201b936647570a public -- Management Initiative
+open import SysFEAT.EA.05201b936647570a public -- ManagementInitiative
 
 AssetManagementInitiative : ClassOfBoundedIndividual
 AssetManagementInitiative = BoundedIndividual

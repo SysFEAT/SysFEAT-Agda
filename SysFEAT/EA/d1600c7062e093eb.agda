@@ -16,18 +16,18 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.d1600c7062e093eb where -- ========== Capability Configuration
+module SysFEAT.EA.d1600c7062e093eb where -- ========== CapabilityConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.26b8384f5eeae33c public -- Networking System
-open import SysFEAT.EA.ffdf64a868608999 public -- Resource Agent Configuration
-open import SysFEAT.EA.c30bf4015a5da72b public -- Concrete Hardware System
-open import SysFEAT.EA.a41ab3105b378b66 public -- IT Infrastructure System
-open import SysFEAT.EA.076d15425a5e158c public -- Org-Unit Type
+open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.EA.ffdf64a868608999 public -- ResourceAgentConfiguration
+open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
+open import SysFEAT.EA.a41ab3105b378b66 public -- ITInfrastructureSystem
+open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
-CapabilityConfiguration : ClassOfClassOfBoundedIndividual
-CapabilityConfiguration = ClassOfBoundedIndividual
+CapabilityConfiguration : BoundedIndividualMetaClass
+CapabilityConfiguration = AssetType
 
 
 --  CapabilityConfiguration is subTypeOf BusinessAgentType
@@ -50,8 +50,8 @@ st-d1600c7062e093eb-ffdf64a868608999 = polySubTypeOf-identity
 An Hardware Asset helps to define which hardware artifact or IoT Device is used within a System of Resources
 -}
 -- Aggregate Member : Hardware Asset
-HardwareAsset : ClassOfClassOfBoundedIndividual
-HardwareAsset = ClassOfBoundedIndividual
+HardwareAsset : ClassOfClassOfIndividual
+HardwareAsset = ClassOfIndividual
 
 
 
@@ -62,10 +62,6 @@ st-f4be14665ee1e9a0-26b8386e5eeae4a4 = polySubTypeOf-identity
 --  HardwareAsset is subTypeOf ResourceAgentPart
 st-f4be14665ee1e9a0-24034f6d5fc79c3f : HardwareAsset ⊏ₑ ResourceAgentPart
 st-f4be14665ee1e9a0-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  HardwareAsset is subTypeOf ConcreteHardwareSystem
-st-f4be14665ee1e9a0-c30bf4015a5da72b : HardwareAsset ⊏ₑ ConcreteHardwareSystem
-st-f4be14665ee1e9a0-c30bf4015a5da72b = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHardwareAsset :  Linkage CapabilityConfiguration HardwareAsset
@@ -90,8 +86,8 @@ hardwareAsset = membershipOfHardwareAsset  ∘  aggregationOfConcreteHardwareSys
 An IT Infrastrucure component helps to define that an IT Infrastructure or an IT Network is used within a System of Resources (Resource Architecture or Facility)
 -}
 -- Aggregate Member : IT Infrastructure Part
-ITInfrastructurePart : ClassOfClassOfBoundedIndividual
-ITInfrastructurePart = ClassOfBoundedIndividual
+ITInfrastructurePart : ClassOfClassOfIndividual
+ITInfrastructurePart = ClassOfIndividual
 
 
 
@@ -102,10 +98,6 @@ st-f4be18df5ee1f18d-24034f6d5fc79c3f = polySubTypeOf-identity
 --  ITInfrastructurePart is subTypeOf NetworkingPart
 st-f4be18df5ee1f18d-26b8386e5eeae4a4 : ITInfrastructurePart ⊏ₑ NetworkingPart
 st-f4be18df5ee1f18d-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  ITInfrastructurePart is subTypeOf ITInfrastructureSystem
-st-f4be18df5ee1f18d-a41ab3105b378b66 : ITInfrastructurePart ⊏ₑ ITInfrastructureSystem
-st-f4be18df5ee1f18d-a41ab3105b378b66 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfITInfrastructurePart :  Linkage CapabilityConfiguration ITInfrastructurePart
@@ -128,18 +120,14 @@ iTInfrastructurePart = membershipOfITInfrastructurePart  ∘  aggregationOfITInf
 -- -------------------------------------------------------------------------------------------- 
 {- Human Resource: -}
 -- Aggregate Member : Human Resource
-HumanResource : ClassOfClassOfBoundedIndividual
-HumanResource = ClassOfBoundedIndividual
+HumanResource : ClassOfClassOfIndividual
+HumanResource = ClassOfIndividual
 
 
 
 --  HumanResource is subTypeOf ResourceAgentPart
 st-26b8578c5eeae1c8-24034f6d5fc79c3f : HumanResource ⊏ₑ ResourceAgentPart
 st-26b8578c5eeae1c8-24034f6d5fc79c3f = polySubTypeOf-identity
-
---  HumanResource is subTypeOf OrgUnitType
-st-26b8578c5eeae1c8-076d15425a5e158c : HumanResource ⊏ₑ OrgUnitType
-st-26b8578c5eeae1c8-076d15425a5e158c = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfHumanResource :  Linkage CapabilityConfiguration HumanResource

@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecc1c5f607bdb.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecc1c5f607bdb where -- ========== Number of Completed Records
+module SysFEAT.EA.affecc1c5f607bdb where -- ========== NumberOfCompletedRecords
 
 open import Agda.Primitive
 

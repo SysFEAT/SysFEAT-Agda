@@ -12,16 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/582e764f66f6a4cc.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.582e764f66f6a4cc where -- ========== Control Measure Category
+module SysFEAT.EA.582e764f66f6a4cc where -- ========== ControlMeasureCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- Model Property Block
+open import SysFEAT.UpperOntology.308c3b3868e9141e public -- ClassOfMixedOrderEntity
 
-ControlMeasureCategory : ThirdOrderClass
-ControlMeasureCategory = SecondOrderClass
+ControlMeasureCategory : MixedOrderMetaClass
+ControlMeasureCategory = ClassOfMixedOrderEntity
 
---  ControlMeasureCategory withAspect ModelPropertyBlock
-st-582e764f66f6a4cc-0eb97aff6855cd23 : ControlMeasureCategory ⊏ₐₑ (ModelPropertyBlock (lsuc(lsuc(lzero))))
-st-582e764f66f6a4cc-0eb97aff6855cd23 = polySubTypeOf-identity
+
+--  ControlMeasureCategory withAspect ClassOfMixedOrderEntity
+st-582e764f66f6a4cc-308c3b3868e9141e : ControlMeasureCategory ⊏ₐₑ (ClassOfMixedOrderEntity (lsuc(lsuc(lzero))))
+st-582e764f66f6a4cc-308c3b3868e9141e = polySubTypeOf-identity
 
 

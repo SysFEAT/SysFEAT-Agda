@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/1ce3429d5c48982e.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.1ce3429d5c48982e where -- ========== Application Portfolio
+module SysFEAT.EA.1ce3429d5c48982e where -- ========== ApplicationPortfolio
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8889c5eea8ab7 public -- Asset Portfolio
-open import SysFEAT.EA.052015c666474dfe public -- Application Portfolio Stage
+open import SysFEAT.EA.26b8889c5eea8ab7 public -- AssetPortfolio
+open import SysFEAT.EA.052015c666474dfe public -- ApplicationPortfolioStage
 open import SysFEAT.EA.bcebd8e9549144db public -- Application
 
 ApplicationPortfolio : ClassOfBoundedIndividual
@@ -43,8 +43,9 @@ postulate -- roadmap is subTypeOf portfolioRoadmap
 A Managed Application represents the status of an Application under the management of an Application Portfolio.
 -}
 -- Aggregate Member : Managed Application
-ManagedApplication : ClassOfClassOfIndividual
-ManagedApplication = ClassOfIndividual
+ManagedApplication : ClassOfMixedOrderEntity
+ManagedApplication = MixedOrderEntity
+
 
 
 --  ManagedApplication is subTypeOf ManagedResourceAsset

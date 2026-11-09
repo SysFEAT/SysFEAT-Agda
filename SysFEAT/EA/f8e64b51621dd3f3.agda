@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Resource Operating Ecosystem: 
-An Resource Operating Ecosystem is an operating context in which a Resource Agent Type exists or lives for a specific purpose.For instance, the operating context of an enterprise includes its Business Partners (customers and suppliers).
+An Resource Operating Ecosystem is an operating context in which a Resource Agent Type exists or lives for a specific purpose.For instance, the operating context of an enterprise includes its Suppliers (customers and suppliers).
 
 Documentation : https://framework.sysfeat.com/pages/f8e64b51621dd3f3.htm
 
@@ -12,11 +12,11 @@ Documentation : https://framework.sysfeat.com/pages/f8e64b51621dd3f3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.f8e64b51621dd3f3 where -- ========== Resource Operating Ecosystem
+module SysFEAT.EA.f8e64b51621dd3f3 where -- ========== ResourceOperatingEcosystem
 
 open import Agda.Primitive
-open import SysFEAT.SOF.21c5276e655759fb public -- Operating Connection
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
 ResourceOperatingEcosystem : ClassOfClassOfBoundedIndividual
 ResourceOperatingEcosystem = ClassOfBoundedIndividual
@@ -25,56 +25,51 @@ ResourceOperatingEcosystem = ClassOfBoundedIndividual
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Enterprise Ecosystem Connection: -}
--- Aggregate Member : Enterprise Ecosystem Connection
-EnterpriseEcosystemConnection : ClassOfClassOfIndividual
-EnterpriseEcosystemConnection = ClassOfIndividual
+{- Resource Ecosystem Connection: -}
+-- Aggregate Member : Resource Ecosystem Connection
+ResourceEcosystemConnection : ClassOfClassOfIndividual
+ResourceEcosystemConnection = ClassOfIndividual
 
 
 -- Membership relation
-membershipOfEnterpriseEcosystemConnection :  Linkage ResourceOperatingEcosystem EnterpriseEcosystemConnection
-membershipOfEnterpriseEcosystemConnection = make_upwardNestingRelation "enterpriseEcosystemConnection membership" "nested enterpriseEcosystemConnection"
+membershipOfResourceEcosystemConnection :  Linkage ResourceOperatingEcosystem ResourceEcosystemConnection
+membershipOfResourceEcosystemConnection = make_upwardNestingRelation "resourceEcosystemConnection membership" "nested resourceEcosystemConnection"
 
 -- Aggregation relation
-aggregationOfOperatingConnectionEnterpriseEcosystemConnection :  Linkage EnterpriseEcosystemConnection OperatingConnection
-aggregationOfOperatingConnectionEnterpriseEcosystemConnection = make_Relation "OperatingConnection aggregation" "aggregated OperatingConnection"
+aggregationOfOperatingConnectionResourceEcosystemConnection :  Linkage ResourceEcosystemConnection OperatingConnection
+aggregationOfOperatingConnectionResourceEcosystemConnection = make_Relation "OperatingConnection aggregation" "aggregated OperatingConnection"
 
-{- enterpriseEcosystemConnection : derived relation obtained by composing
-   membershipOfEnterpriseEcosystemConnection and aggregationOfOperatingConnectionEnterpriseEcosystemConnection
+{- resourceEcosystemConnection : derived relation obtained by composing
+   membershipOfResourceEcosystemConnection and aggregationOfOperatingConnectionResourceEcosystemConnection
    It directly links an Resource Operating Ecosystem to the final aggregated OperatingConnection
-   hiding the reifying EnterpriseEcosystemConnection
+   hiding the reifying ResourceEcosystemConnection
 -}
-enterpriseEcosystemConnection : Linkage ResourceOperatingEcosystem OperatingConnection
-enterpriseEcosystemConnection = membershipOfEnterpriseEcosystemConnection  ∘  aggregationOfOperatingConnectionEnterpriseEcosystemConnection
+resourceEcosystemConnection : Linkage ResourceOperatingEcosystem OperatingConnection
+resourceEcosystemConnection = membershipOfResourceEcosystemConnection  ∘  aggregationOfOperatingConnectionResourceEcosystemConnection
 
 
 
 -- -------------------------------------------------------------------------------------------- 
-{- Enterprise Ecosystem Part: -}
--- Aggregate Member : Enterprise Ecosystem Part
-EnterpriseEcosystemPart : ClassOfClassOfBoundedIndividual
-EnterpriseEcosystemPart = ClassOfBoundedIndividual
+{- Resource Ecosystem Part: -}
+-- Aggregate Member : Resource Ecosystem Part
+ResourceEcosystemPart : ClassOfClassOfIndividual
+ResourceEcosystemPart = ClassOfIndividual
 
-
-
---  EnterpriseEcosystemPart is subTypeOf ResourceAgentType
-st-f8e6b83c621fffe6-e2ef091962147ad7 : EnterpriseEcosystemPart ⊏ₑ ResourceAgentType
-st-f8e6b83c621fffe6-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
-membershipOfEnterpriseEcosystemPart :  Linkage ResourceOperatingEcosystem EnterpriseEcosystemPart
-membershipOfEnterpriseEcosystemPart = make_upwardNestingRelation "enterpriseEcosystemPart membership" "nested enterpriseEcosystemPart"
+membershipOfResourceEcosystemPart :  Linkage ResourceOperatingEcosystem ResourceEcosystemPart
+membershipOfResourceEcosystemPart = make_upwardNestingRelation "resourceEcosystemPart membership" "nested resourceEcosystemPart"
 
 -- Aggregation relation
-aggregationOfResourceAgentTypeEnterpriseEcosystemPart :  Linkage EnterpriseEcosystemPart ResourceAgentType
-aggregationOfResourceAgentTypeEnterpriseEcosystemPart = make_Relation "ResourceAgentType aggregation" "aggregated ResourceAgentType"
+aggregationOfResourceAgentTypeResourceEcosystemPart :  Linkage ResourceEcosystemPart ResourceAgentType
+aggregationOfResourceAgentTypeResourceEcosystemPart = make_Relation "ResourceAgentType aggregation" "aggregated ResourceAgentType"
 
-{- enterpriseEcosystemPart : derived relation obtained by composing
-   membershipOfEnterpriseEcosystemPart and aggregationOfResourceAgentTypeEnterpriseEcosystemPart
+{- resourceEcosystemPart : derived relation obtained by composing
+   membershipOfResourceEcosystemPart and aggregationOfResourceAgentTypeResourceEcosystemPart
    It directly links an Resource Operating Ecosystem to the final aggregated ResourceAgentType
-   hiding the reifying EnterpriseEcosystemPart
+   hiding the reifying ResourceEcosystemPart
 -}
-enterpriseEcosystemPart : Linkage ResourceOperatingEcosystem ResourceAgentType
-enterpriseEcosystemPart = membershipOfEnterpriseEcosystemPart  ∘  aggregationOfResourceAgentTypeEnterpriseEcosystemPart
+resourceEcosystemPart : Linkage ResourceOperatingEcosystem ResourceAgentType
+resourceEcosystemPart = membershipOfResourceEcosystemPart  ∘  aggregationOfResourceAgentTypeResourceEcosystemPart
 
 

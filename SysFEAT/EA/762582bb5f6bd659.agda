@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.762582bb5f6bd659 where -- ========== Physical Data Entity
+module SysFEAT.EA.762582bb5f6bd659 where -- ========== PhysicalDataEntity
 
 open import Agda.Primitive
-open import SysFEAT.EA.7d37d08d5fd07aaa public -- Physical Data Asset
-open import SysFEAT.EA.325c32fc5eb02d02 public -- Data Entity
-open import SysFEAT.EA.e6f220d45f771837 public -- Physical Data Property
+open import SysFEAT.EA.7d37d08d5fd07aaa public -- PhysicalDataAsset
+open import SysFEAT.EA.325c32fc5eb02d02 public -- DataEntity
+open import SysFEAT.EA.e6f220d45f771837 public -- PhysicalDataProperty
 
-PhysicalDataEntity : ClassOfClassOfBoundedIndividual
-PhysicalDataEntity = ClassOfBoundedIndividual
+PhysicalDataEntity : BoundedIndividualMetaClass
+PhysicalDataEntity = AssetType
 
 
 --  PhysicalDataEntity is subTypeOf PhysicalDataAsset
@@ -49,18 +49,14 @@ postulate -- specializedPhysicalEntity is subTypeOf specializedPhysicalObject
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Data Slot: -}
 -- Aggregate Member : Physical Data Slot
-PhysicalDataSlot : ClassOfClassOfBoundedIndividual
-PhysicalDataSlot = ClassOfBoundedIndividual
+PhysicalDataSlot : ClassOfMixedOrderEntity
+PhysicalDataSlot = MixedOrderEntity
 
 
 
 --  PhysicalDataSlot is subTypeOf Attribute
 st-e6f222845f771913-8f1c9ad668ca8db4 : PhysicalDataSlot ⊏ₑ Attribute
 st-e6f222845f771913-8f1c9ad668ca8db4 = polySubTypeOf-identity
-
---  PhysicalDataSlot is subTypeOf PhysicalDataProperty
-st-e6f222845f771913-e6f220d45f771837 : PhysicalDataSlot ⊏ₑ PhysicalDataProperty
-st-e6f222845f771913-e6f220d45f771837 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalDataSlot :  Linkage PhysicalDataEntity PhysicalDataSlot
@@ -83,8 +79,8 @@ physicalDataSlot = membershipOfPhysicalDataSlot  ∘  aggregationOfPhysicalDataP
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Relationship: -}
 -- Aggregate Member : Physical Relationship
-PhysicalRelationship : ClassOfClassOfBoundedIndividual
-PhysicalRelationship = ClassOfBoundedIndividual
+PhysicalRelationship : ClassOfMixedOrderEntity
+PhysicalRelationship = MixedOrderEntity
 
 
 
@@ -95,10 +91,6 @@ st-b6e3df8e5fbb724d-163c29e85fda678c = polySubTypeOf-identity
 --  PhysicalRelationship is subTypeOf Relationship
 st-b6e3df8e5fbb724d-b6e3cc7a5fbb6878 : PhysicalRelationship ⊏ₑ Relationship
 st-b6e3df8e5fbb724d-b6e3cc7a5fbb6878 = polySubTypeOf-identity
-
---  PhysicalRelationship is subTypeOf PhysicalDataEntity
-st-b6e3df8e5fbb724d-762582bb5f6bd659 : PhysicalRelationship ⊏ₑ PhysicalDataEntity
-st-b6e3df8e5fbb724d-762582bb5f6bd659 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalRelationship :  Linkage PhysicalDataEntity PhysicalRelationship

@@ -12,16 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/7d337d67628134c5.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.7d337d67628134c5 where -- ========== Resource Interaction Process
+module SysFEAT.EA.7d337d67628134c5 where -- ========== ResourceInteractionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.0185cd936221bd72 public -- Resource Behavior
-open import SysFEAT.SOF.333f35ee5dde0c8c public -- Interaction Process Type
-open import SysFEAT.EA.6a70c0b36787698c public -- Resource Outcome Event
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
+open import SysFEAT.EA.0185cd936221bd72 public -- ResourceBehavior
+open import SysFEAT.SOF.333f35ee5dde0c8c public -- InteractionProcessType
+open import SysFEAT.EA.6a70c0b36787698c public -- ResourceOutcomeEvent
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
 
-ResourceInteractionProcess : ClassOfClassOfBoundedIndividual
-ResourceInteractionProcess = ClassOfBoundedIndividual
+ResourceInteractionProcess : BehaviorMetaClass
+ResourceInteractionProcess = BehaviorType
 
 
 --  ResourceInteractionProcess is subTypeOf ResourceBehavior
@@ -56,8 +56,8 @@ postulate -- realizedEnterpriseScenario is subTypeOf realizedScenario
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Object Flow: -}
 -- Aggregate Member : Resource Object Flow
-ResourceObjectFlow : ClassOfClassOfBoundedIndividual
-ResourceObjectFlow = ClassOfBoundedIndividual
+ResourceObjectFlow : ClassOfClassOfIndividual
+ResourceObjectFlow = ClassOfIndividual
 
 
 
@@ -86,8 +86,8 @@ resourceObjectFlow = membershipOfResourceObjectFlow  ∘  aggregationOfResourceO
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Scenario Participant: -}
 -- Aggregate Member : Resource Scenario Participant
-ResourceScenarioParticipant : ClassOfClassOfBoundedIndividual
-ResourceScenarioParticipant = ClassOfBoundedIndividual
+ResourceScenarioParticipant : ClassOfClassOfIndividual
+ResourceScenarioParticipant = ClassOfIndividual
 
 
 
@@ -98,10 +98,6 @@ st-7d337ddf628136aa-07e737495eccd831 = polySubTypeOf-identity
 --  ResourceScenarioParticipant is subTypeOf ResourceBehaviorParticipant
 st-7d337ddf628136aa-e0e874626578a341 : ResourceScenarioParticipant ⊏ₑ ResourceBehaviorParticipant
 st-7d337ddf628136aa-e0e874626578a341 = polySubTypeOf-identity
-
---  ResourceScenarioParticipant is subTypeOf ResourceAgentType
-st-7d337ddf628136aa-e2ef091962147ad7 : ResourceScenarioParticipant ⊏ₑ ResourceAgentType
-st-7d337ddf628136aa-e2ef091962147ad7 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfResourceScenarioParticipant :  Linkage ResourceInteractionProcess ResourceScenarioParticipant

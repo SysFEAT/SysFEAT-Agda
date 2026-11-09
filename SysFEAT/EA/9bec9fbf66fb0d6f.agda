@@ -12,19 +12,19 @@ Documentation : https://framework.sysfeat.com/pages/9bec9fbf66fb0d6f.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.9bec9fbf66fb0d6f where -- ========== Resource Functional Asset
+module SysFEAT.EA.9bec9fbf66fb0d6f where -- ========== ResourceFunctionalAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a44fb6bc6748b088 public -- Functional Asset
-open import SysFEAT.EA.d9f4dcc5688d5969 public -- Resource Asset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
+open import SysFEAT.EA.d9f4dcc5688d5969 public -- ResourceAsset
 
-ResourceFunctionalAsset : ClassOfClassOfBoundedIndividual
-ResourceFunctionalAsset = ClassOfBoundedIndividual
+ResourceFunctionalAsset : BoundedIndividualMetaClass
+ResourceFunctionalAsset = AssetType
 
 
---  ResourceFunctionalAsset is subTypeOf FunctionalAsset
-st-9bec9fbf66fb0d6f-a44fb6bc6748b088 : ResourceFunctionalAsset ⊏ₑ FunctionalAsset
-st-9bec9fbf66fb0d6f-a44fb6bc6748b088 = polySubTypeOf-identity
+--  ResourceFunctionalAsset is subTypeOf AssetType
+st-9bec9fbf66fb0d6f-a4a5b3f855585ce1 : ResourceFunctionalAsset ⊏ₑ AssetType
+st-9bec9fbf66fb0d6f-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  ResourceFunctionalAsset is subTypeOf ResourceAsset
 st-9bec9fbf66fb0d6f-d9f4dcc5688d5969 : ResourceFunctionalAsset ⊏ₑ ResourceAsset

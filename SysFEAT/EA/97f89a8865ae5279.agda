@@ -12,15 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/97f89a8865ae5279.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.97f89a8865ae5279 where -- ========== Technology Behavior
+module SysFEAT.EA.97f89a8865ae5279 where -- ========== TechnologyBehavior
 
 open import Agda.Primitive
-open import SysFEAT.EA.d16006d362e085f2 public -- Technology Operating Asset
-open import SysFEAT.EA.0185cd936221bd72 public -- Resource Behavior
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- Technology System
+open import SysFEAT.EA.d16006d362e085f2 public -- TechnologyOperatingAsset
+open import SysFEAT.EA.0185cd936221bd72 public -- ResourceBehavior
+open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
 
-TechnologyBehavior : ClassOfClassOfBoundedIndividual
-TechnologyBehavior = ClassOfBoundedIndividual
+TechnologyBehavior : BoundedIndividualMetaClass
+TechnologyBehavior = AssetType
 
 
 --  TechnologyBehavior is subTypeOf TechnologyOperatingAsset
@@ -37,14 +37,9 @@ st-97f89a8865ae5279-0185cd936221bd72 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Technology Participant: -}
 -- Aggregate Member : Technology Participant
-TechnologyParticipant : ClassOfClassOfBoundedIndividual
-TechnologyParticipant = ClassOfBoundedIndividual
+TechnologyParticipant : ClassOfClassOfIndividual
+TechnologyParticipant = ClassOfIndividual
 
-
-
---  TechnologyParticipant is subTypeOf TechnologySystem
-st-97f89bb365ae570f-0cbd1fa663fe18ac : TechnologyParticipant ⊏ₑ TechnologySystem
-st-97f89bb365ae570f-0cbd1fa663fe18ac = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfTechnologyParticipant :  Linkage TechnologyBehavior TechnologyParticipant

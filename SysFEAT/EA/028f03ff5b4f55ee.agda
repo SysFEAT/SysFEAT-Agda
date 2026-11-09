@@ -12,15 +12,16 @@ Documentation : https://framework.sysfeat.com/pages/028f03ff5b4f55ee.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.028f03ff5b4f55ee where -- ========== Physical Data Domain
+module SysFEAT.EA.028f03ff5b4f55ee where -- ========== PhysicalDataDomain
 
 open import Agda.Primitive
-open import SysFEAT.EA.325c32165eb02a4a public -- Data Domain
-open import SysFEAT.EA.8f1cad7d68ca9df0 public -- Physical Data Block
-open import SysFEAT.EA.7d37d08d5fd07aaa public -- Physical Data Asset
+open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
+open import SysFEAT.EA.8f1cad7d68ca9df0 public -- PhysicalDataBlock
+open import SysFEAT.EA.7d37d08d5fd07aaa public -- PhysicalDataAsset
 
-PhysicalDataDomain : ClassOfClassOfBoundedIndividual
-PhysicalDataDomain = ClassOfBoundedIndividual
+PhysicalDataDomain : ClassOfMixedOrderEntity
+PhysicalDataDomain = MixedOrderEntity
+
 
 --  PhysicalDataDomain is subTypeOf DataDomain
 st-028f03ff5b4f55ee-325c32165eb02a4a : PhysicalDataDomain ⊏ₑ DataDomain
@@ -36,18 +37,13 @@ st-028f03ff5b4f55ee-8f1cad7d68ca9df0 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Physical Domain Object: -}
 -- Aggregate Member : Physical Domain Object
-PhysicalDomainObject : ClassOfClassOfBoundedIndividual
-PhysicalDomainObject = ClassOfBoundedIndividual
-
+PhysicalDomainObject : ClassOfClassOfIndividual
+PhysicalDomainObject = ClassOfIndividual
 
 
 --  PhysicalDomainObject is subTypeOf DomainDataObject
 st-e6f223f55f771b8d-6d2b7d9e5fbb65f3 : PhysicalDomainObject ⊏ₑ DomainDataObject
 st-e6f223f55f771b8d-6d2b7d9e5fbb65f3 = polySubTypeOf-identity
-
---  PhysicalDomainObject is subTypeOf PhysicalDataAsset
-st-e6f223f55f771b8d-7d37d08d5fd07aaa : PhysicalDomainObject ⊏ₑ PhysicalDataAsset
-st-e6f223f55f771b8d-7d37d08d5fd07aaa = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPhysicalDomainObject :  Linkage PhysicalDataDomain PhysicalDomainObject

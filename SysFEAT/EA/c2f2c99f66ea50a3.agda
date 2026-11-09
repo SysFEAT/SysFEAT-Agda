@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/c2f2c99f66ea50a3.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c2f2c99f66ea50a3 where -- ========== Composite Composition
+module SysFEAT.EA.c2f2c99f66ea50a3 where -- ========== CompositeComposition
 
 open import Agda.Primitive
 

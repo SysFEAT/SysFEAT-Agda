@@ -14,14 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.dd26389d68a071f0 where -- ========== Functionality Map
+module SysFEAT.EA.dd26389d68a071f0 where -- ========== FunctionalityMap
 
 open import Agda.Primitive
-open import SysFEAT..dd2638ba68a073a8 public -- Business Resource Capability Map
+open import SysFEAT..dd2638ba68a073a8 public -- BusinessResourceCapabilityMap
 open import SysFEAT.EA.dd26aa0568a1f939 public -- Functionality
 
-FunctionalityMap : PropertyType
-FunctionalityMap = Property
+FunctionalityMap : ClassOfMixedOrderEntity
+FunctionalityMap = MixedOrderEntity
+
 
 --  FunctionalityMap is subTypeOf BusinessResourceCapabilityMap
 st-dd26389d68a071f0-dd2638ba68a073a8 : FunctionalityMap ⊏ₑ BusinessResourceCapabilityMap
@@ -35,8 +36,9 @@ st-dd26389d68a071f0-dd2638ba68a073a8 = polySubTypeOf-identity
 Set of Functionalitys that are is the scope of a Functionality Map.
 -}
 -- Aggregate Member : Scoped Functionality
-ScopedFunctionality : ClassOfClassOfIndividual
-ScopedFunctionality = ClassOfIndividual
+ScopedFunctionality : ClassOfMixedOrderEntity
+ScopedFunctionality = MixedOrderEntity
+
 
 
 --  ScopedFunctionality is subTypeOf BusinessResourceCapabilityMember

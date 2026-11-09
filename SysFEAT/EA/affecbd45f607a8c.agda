@@ -12,7 +12,7 @@ Documentation : https://framework.sysfeat.com/pages/affecbd45f607a8c.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.affecbd45f607a8c where -- ========== Average Value
+module SysFEAT.EA.affecbd45f607a8c where -- ========== AverageValue
 
 open import Agda.Primitive
 

@@ -14,7 +14,7 @@ Documentation : https://framework.sysfeat.com/pages/d670b6155ffe8bb1.htm
 module SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 where -- ========== SOF - Business Resource Operating Pattern (B-SOF)
 
 open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
-open import SysFEAT.EA.sysfeat-domain-19dc1a30555649d9 public -- Conceptual Operating Model
+open import SysFEAT.C-SOF.sysfeat-domain-19dc1a30555649d9 public -- Conceptual Operating Model
 open import SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 public -- System Operating Framework - SOF
 open import SysFEAT.EA.sysfeat-domain-2b58a67a5eec0662 public -- EA Pattern - Data Domain
 open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
@@ -30,7 +30,7 @@ open import SysFEAT.EA.dd26288968a05d00 public -- Business Resource Capability
 open import SysFEAT.EA.23bf9a7868ad2d94 public -- Business Resource Rule
 open import SysFEAT.EA.7c40c3c85527466b public -- Business Resource Process
 open import SysFEAT.EA.bcebd31f5491302c public -- Business Agent Type
-open import SysFEAT.EA.6a70b9f6678763db public -- Business Asset
+open import SysFEAT.EA.6a70b9f6678763db public -- Business Functional Asset
 open import SysFEAT.EA.82a9892166ec3b89 public -- Process Family
 open import SysFEAT.EA.9dcea4535ec76e6c public -- Business Outcome Event
 open import SysFEAT.EA.9dcea2655ec768ee public -- Business Service Interface

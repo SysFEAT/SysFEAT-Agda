@@ -12,14 +12,14 @@ Documentation : https://framework.sysfeat.com/pages/07ca18d25dd85477.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.07ca18d25dd85477 where -- ========== Assurance System
+module SysFEAT.EA.07ca18d25dd85477 where -- ========== AssuranceSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.29df3f4060084c07 public -- Management System
-open import SysFEAT.SOF.299e895568488eb3 public -- Assurance Initiative
-open import SysFEAT.EA.07ca19e95dd854e9 public -- Assurance Case
-open import SysFEAT.EA.7d3786ff5fd052e7 public -- Assurance Instrument
-open import SysFEAT.SOF.4b94594b68a478f2 public -- Policy Framework
+open import SysFEAT.EA.29df3f4060084c07 public -- ManagementSystem
+open import SysFEAT.SOF.299e895568488eb3 public -- AssuranceInitiative
+open import SysFEAT.EA.07ca19e95dd854e9 public -- AssuranceCase
+open import SysFEAT.EA.dc9c31326acd70d9 public -- AssuranceInstrument
+open import SysFEAT.EA.786b34fc6abe5efe public -- PolicyFramework
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
 AssuranceSystem : ClassOfBoundedIndividual
@@ -38,18 +38,18 @@ st-07ca18d25dd85477-299e895568488eb3 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Owned Assurance Case: 
+{- Packaged Assurance Case: 
 The set of Assurance Cases that a Assurance System is responsible for.
 -}
-ownedAssuranceCase :  Linkage AssuranceSystem AssuranceCase
-ownedAssuranceCase = make_nestingRelation "Owned Assurance Case" "Owned Assurance Case"
+packagedAssuranceCase :  Linkage AssuranceSystem AssuranceCase
+packagedAssuranceCase = make_nestingRelation "Packaged Assurance Case" "Packaged Assurance Case"
 
-postulate -- ownedAssuranceCase is subTypeOf packagedAssuranceInstrument
-  st-0b950f8868e54f9f-561f36fc68d68770  : ownedAssuranceCase  ⊏⋆ᵣ  packagedAssuranceInstrument
+postulate -- packagedAssuranceCase is subTypeOf packagedAssuranceInstrument
+  st-0b950f8868e54f9f-561f36fc68d68770  : packagedAssuranceCase  ⊏⋆ᵣ  packagedAssuranceInstrument
 
 -- -------------------------------------------------------------------------------------------- 
 {- Packaged Assurance Instrument: -}
-packagedAssuranceInstrument :  Linkage AssuranceSystem AssuranceInstrument
+packagedAssuranceInstrument : ∀ {u} →  Linkage AssuranceSystem (AssuranceInstrument u)
 packagedAssuranceInstrument = make_nestingRelation "Packaged Assurance Instrument" "Packaged Assurance Instrument"
 
 postulate -- packagedAssuranceInstrument is subTypeOf packagedInitiativeResource
@@ -59,7 +59,7 @@ postulate -- packagedAssuranceInstrument is subTypeOf packagedInitiativeResource
 {- Enforced Policy Framework: 
 The set of Policy Frameworks that an Assurance System is responsible for enforcing and verifying compliance against.
 -}
-enforcedPolicyFramework : ∀ {u} →  Linkage AssuranceSystem (PolicyFramework u)
+enforcedPolicyFramework :  Linkage AssuranceSystem PolicyFramework
 enforcedPolicyFramework = make_Relation "Enforced Policy Framework" "Enforced Policy Framework"
 
 

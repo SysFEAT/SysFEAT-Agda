@@ -12,14 +12,15 @@ Documentation : https://framework.sysfeat.com/pages/c450d4c261de5f07.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.c450d4c261de5f07 where -- ========== Business System Environment
+module SysFEAT.EA.c450d4c261de5f07 where -- ========== BusinessSystemEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f33a561bae7ab public -- Business Agent Environment
-open import SysFEAT.EA.278675d65b252f4d public -- Business System
+open import SysFEAT.EA.2b6f33a561bae7ab public -- BusinessAgentEnvironment
+open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
 
-BusinessSystemEnvironment : ClassOfClassOfBoundedIndividual
-BusinessSystemEnvironment = ClassOfBoundedIndividual
+BusinessSystemEnvironment : BoundedIndividualMetaClass
+BusinessSystemEnvironment = AssetType
+
 
 --  BusinessSystemEnvironment is subTypeOf BusinessAgentEnvironment
 st-c450d4c261de5f07-2b6f33a561bae7ab : BusinessSystemEnvironment ⊏ₑ BusinessAgentEnvironment
@@ -31,8 +32,8 @@ st-c450d4c261de5f07-2b6f33a561bae7ab = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Subject System: -}
 -- Aggregate Member : Subject System
-SubjectSystem : ClassOfClassOfBoundedIndividual
-SubjectSystem = ClassOfBoundedIndividual
+SubjectSystem : ClassOfMixedOrderEntity
+SubjectSystem = MixedOrderEntity
 
 
 
@@ -47,10 +48,6 @@ st-c450d59061de6127-fa4ffc205ec86201 = polySubTypeOf-identity
 --  SubjectSystem is subTypeOf ParticipantBusinessSystem
 st-c450d59061de6127-c450d63661de652a : SubjectSystem ⊏ₑ ParticipantBusinessSystem
 st-c450d59061de6127-c450d63661de652a = polySubTypeOf-identity
-
---  SubjectSystem is subTypeOf BusinessSystem
-st-c450d59061de6127-278675d65b252f4d : SubjectSystem ⊏ₑ BusinessSystem
-st-c450d59061de6127-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfSubjectSystem :  Linkage BusinessSystemEnvironment SubjectSystem
@@ -73,8 +70,8 @@ subjectSystem = membershipOfSubjectSystem  ∘  aggregationOfBusinessSystemSubje
 -- -------------------------------------------------------------------------------------------- 
 {- Partner System: -}
 -- Aggregate Member : Partner System
-PartnerSystem : ClassOfClassOfBoundedIndividual
-PartnerSystem = ClassOfBoundedIndividual
+PartnerSystem : ClassOfMixedOrderEntity
+PartnerSystem = MixedOrderEntity
 
 
 
@@ -89,10 +86,6 @@ st-c450d5b361de622e-c450d63661de652a = polySubTypeOf-identity
 --  PartnerSystem is subTypeOf PartnerAgent
 st-c450d5b361de622e-fa4ffc235ec86276 : PartnerSystem ⊏ₑ PartnerAgent
 st-c450d5b361de622e-fa4ffc235ec86276 = polySubTypeOf-identity
-
---  PartnerSystem is subTypeOf BusinessSystem
-st-c450d5b361de622e-278675d65b252f4d : PartnerSystem ⊏ₑ BusinessSystem
-st-c450d5b361de622e-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPartnerSystem :  Linkage BusinessSystemEnvironment PartnerSystem
@@ -115,18 +108,14 @@ partnerSystem = membershipOfPartnerSystem  ∘  aggregationOfBusinessSystemPartn
 -- -------------------------------------------------------------------------------------------- 
 {- Participant Business System: -}
 -- Aggregate Member : Participant Business System
-ParticipantBusinessSystem : ClassOfClassOfBoundedIndividual
-ParticipantBusinessSystem = ClassOfBoundedIndividual
+ParticipantBusinessSystem : ClassOfMixedOrderEntity
+ParticipantBusinessSystem = MixedOrderEntity
 
 
 
 --  ParticipantBusinessSystem is subTypeOf ParticipantAgent
 st-c450d63661de652a-80be28965fc2a6b8 : ParticipantBusinessSystem ⊏ₑ ParticipantAgent
 st-c450d63661de652a-80be28965fc2a6b8 = polySubTypeOf-identity
-
---  ParticipantBusinessSystem is subTypeOf BusinessSystem
-st-c450d63661de652a-278675d65b252f4d : ParticipantBusinessSystem ⊏ₑ BusinessSystem
-st-c450d63661de652a-278675d65b252f4d = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfParticipantBusinessSystem :  Linkage BusinessSystemEnvironment ParticipantBusinessSystem

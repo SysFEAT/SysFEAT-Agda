@@ -14,14 +14,14 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.2cc9b5a755264db7 where -- ========== Driver Assessment
+module SysFEAT.EA.2cc9b5a755264db7 where -- ========== DriverAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
 open import SysFEAT.EA.bcebd0565491287e public -- Driver
 
-DriverAssessment : ClassOfBoundedIndividual
-DriverAssessment = BoundedIndividual
+DriverAssessment : ClassOfIndividual
+DriverAssessment = Individual
 
 
 --  DriverAssessment is subTypeOf Assessment

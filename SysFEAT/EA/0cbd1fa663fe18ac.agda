@@ -16,15 +16,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.0cbd1fa663fe18ac where -- ========== Technology System
+module SysFEAT.EA.0cbd1fa663fe18ac where -- ========== TechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.d16006d362e085f2 public -- Technology Operating Asset
-open import SysFEAT.EA.e2ef091962147ad7 public -- Resource Agent Type
-open import SysFEAT.EA.26b8382f5eeae265 public -- Technology Interface
+open import SysFEAT.EA.d16006d362e085f2 public -- TechnologyOperatingAsset
+open import SysFEAT.EA.e2ef091962147ad7 public -- ResourceAgentType
+open import SysFEAT.EA.26b8382f5eeae265 public -- TechnologyInterface
 
-TechnologySystem : ClassOfClassOfBoundedIndividual
-TechnologySystem = ClassOfBoundedIndividual
+TechnologySystem : BoundedIndividualMetaClass
+TechnologySystem = AssetType
 
 
 --  TechnologySystem is subTypeOf TechnologyOperatingAsset
@@ -66,8 +66,8 @@ technologyConnection = membershipOfTechnologyConnection  ∘  aggregationOfTechn
 -- -------------------------------------------------------------------------------------------- 
 {- Technology System Member: -}
 -- Aggregate Member : Technology System Member
-TechnologySystemMember : ClassOfClassOfBoundedIndividual
-TechnologySystemMember = ClassOfBoundedIndividual
+TechnologySystemMember : ClassOfClassOfIndividual
+TechnologySystemMember = ClassOfIndividual
 
 
 
@@ -78,10 +78,6 @@ st-d1600a8f62e08fb2-d265d98e68b13ce4 = polySubTypeOf-identity
 --  TechnologySystemMember is subTypeOf ResourceAgentPart
 st-d1600a8f62e08fb2-e2ef09de62147eb7 : TechnologySystemMember ⊏ₑ ResourceAgentPart
 st-d1600a8f62e08fb2-e2ef09de62147eb7 = polySubTypeOf-identity
-
---  TechnologySystemMember is subTypeOf TechnologyOperatingAsset
-st-d1600a8f62e08fb2-d16006d362e085f2 : TechnologySystemMember ⊏ₑ TechnologyOperatingAsset
-st-d1600a8f62e08fb2-d16006d362e085f2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfTechnologySystemMember :  Linkage TechnologySystem TechnologySystemMember

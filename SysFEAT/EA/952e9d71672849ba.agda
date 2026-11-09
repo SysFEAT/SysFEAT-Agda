@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/952e9d71672849ba.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.952e9d71672849ba where -- ========== Customer Journey Category
+module SysFEAT.EA.952e9d71672849ba where -- ========== CustomerJourneyCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- Asset Category
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
 
-CustomerJourneyCategory : ThirdOrderClass
-CustomerJourneyCategory = SecondOrderClass
+CustomerJourneyCategory : ClassOfMixedOrderEntity
+CustomerJourneyCategory = MixedOrderEntity
 
---  CustomerJourneyCategory withAspect AssetCategory
-st-952e9d71672849ba-f69620466a0f9c2f : CustomerJourneyCategory ⊏ₐₑ (AssetCategory (lsuc(lsuc(lzero))))
+
+--  CustomerJourneyCategory withAspect AssetCategoryFamily
+st-952e9d71672849ba-f69620466a0f9c2f : CustomerJourneyCategory ⊏ₐₑ (AssetCategoryFamily (lsuc(lsuc(lzero))))
 st-952e9d71672849ba-f69620466a0f9c2f = polySubTypeOf-identity
 
 
--- == Relations =======================

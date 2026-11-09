@@ -14,15 +14,15 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.bcebd86d549143b4 where -- ========== IT Infrastructure
+module SysFEAT.EA.bcebd86d549143b4 where -- ========== ITInfrastructure
 
 open import Agda.Primitive
-open import SysFEAT.EA.a41ab3105b378b66 public -- IT Infrastructure System
-open import SysFEAT.EA.27a456b46407c665 public -- Configured Technology System
-open import SysFEAT.EA.a41ab2d25b378b12 public -- Computer Network
+open import SysFEAT.EA.a41ab3105b378b66 public -- ITInfrastructureSystem
+open import SysFEAT.EA.27a456b46407c665 public -- ConfiguredTechnologySystem
+open import SysFEAT.EA.a41ab2d25b378b12 public -- ComputerNetwork
 
-ITInfrastructure : ClassOfClassOfBoundedIndividual
-ITInfrastructure = ClassOfBoundedIndividual
+ITInfrastructure : BoundedIndividualMetaClass
+ITInfrastructure = AssetType
 
 
 --  ITInfrastructure is subTypeOf ITInfrastructureSystem
@@ -39,18 +39,14 @@ st-bcebd86d549143b4-27a456b46407c665 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Network Part: -}
 -- Aggregate Member : Network Part
-NetworkPart : ClassOfClassOfBoundedIndividual
-NetworkPart = ClassOfBoundedIndividual
+NetworkPart : ClassOfClassOfIndividual
+NetworkPart = ClassOfIndividual
 
 
 
 --  NetworkPart is subTypeOf NetworkingPart
 st-3a0ec88263ce3a46-26b8386e5eeae4a4 : NetworkPart ⊏ₑ NetworkingPart
 st-3a0ec88263ce3a46-26b8386e5eeae4a4 = polySubTypeOf-identity
-
---  NetworkPart is subTypeOf ComputerNetwork
-st-3a0ec88263ce3a46-a41ab2d25b378b12 : NetworkPart ⊏ₑ ComputerNetwork
-st-3a0ec88263ce3a46-a41ab2d25b378b12 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfNetworkPart :  Linkage ITInfrastructure NetworkPart

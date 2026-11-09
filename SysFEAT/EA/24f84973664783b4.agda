@@ -12,18 +12,20 @@ Documentation : https://framework.sysfeat.com/pages/24f84973664783b4.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.EA.24f84973664783b4 where -- ========== Hardware Portfolio Stage
+module SysFEAT.EA.24f84973664783b4 where -- ========== HardwarePortfolioStage
 
 open import Agda.Primitive
-open import SysFEAT.EA.24f8475766477e0a public -- Hardware Management Initiative
+open import SysFEAT.EA.24f8475766477e0a public -- HardwareManagementInitiative
 
 HardwarePortfolioStage : StateClass
 HardwarePortfolioStage = StateConcept
 
 
---  HardwarePortfolioStage is subTypeOf HardwareManagementInitiative
-st-24f84973664783b4-24f8475766477e0a : HardwarePortfolioStage ⊏ₑ HardwareManagementInitiative
-st-24f84973664783b4-24f8475766477e0a = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- State of Hardware Management Initiative: -}
+stateOfHardwareManagementInitiative :  Linkage HardwarePortfolioStage HardwareManagementInitiative
+stateOfHardwareManagementInitiative = make_meronymyRelation "State of Hardware Management Initiative" "State of Hardware Management Initiative"
+
