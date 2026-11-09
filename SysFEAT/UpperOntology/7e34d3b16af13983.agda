@@ -5,7 +5,7 @@
 
 Family Meta-Class: 
 
-Documentation : https://framework.sysfeat.com/pages/8d1fdcc56ae832d2.htm
+Documentation : https://framework.sysfeat.com/pages/7e34d3b16af13983.htm
 
 External references:
   Stanford Encyclopedia of Philosophy - Non-wellfounded set theory  : https://plato.stanford.edu/entries/nonwellfounded-set-theory/#1
@@ -18,7 +18,7 @@ External references:
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.8d1fdcc56ae832d2 where -- ============ FamilyMetaClass
+module SysFEAT.UpperOntology.7e34d3b16af13983 where -- ============ FamilyMetaClass
 
 open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and metaRelation
 
