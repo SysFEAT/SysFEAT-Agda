@@ -41,7 +41,7 @@ postulate -- appraisedAsset is subTypeOf eventSubject
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Appraisal Option: -}
 selectedAppraisalOption :  Linkage Appraisal AppraisalOption
-selectedAppraisalOption = make_Relation "Selected Appraisal Option" "Selected Appraisal Option"
+selectedAppraisalOption = make_instanceOf "Selected Appraisal Option" "Selected Appraisal Option"
 
 postulate -- selectedAppraisalOption is subTypeOf propertyOfIndividual
   st-6662932568dd6161-19763dbb68926a48  : selectedAppraisalOption  ⊏⋆ᵣ  propertyOfIndividual 

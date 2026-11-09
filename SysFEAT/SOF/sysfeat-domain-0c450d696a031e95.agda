@@ -17,6 +17,7 @@ module SysFEAT.SOF.sysfeat-domain-0c450d696a031e95 where -- ========== Systemic 
 
 open import SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 public -- Reflexive Knowledge Graph
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
+open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
 
 open import SysFEAT.SOF.0c4559c86a033792 public -- Operating Asset
 open import SysFEAT.SOF.8a37921c6ae72add public -- Operating Asset Categorization

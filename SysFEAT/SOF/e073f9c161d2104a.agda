@@ -43,7 +43,7 @@ postulate -- concernedAsset is subTypeOf appraisedAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Resolution Option: -}
 selectedResolutionOption :  Linkage Resolution ResolutionOutcome
-selectedResolutionOption = make_Relation "Selected Resolution Option" "Selected Resolution Option"
+selectedResolutionOption = make_instanceOf "Selected Resolution Option" "Selected Resolution Option"
 
 postulate -- selectedResolutionOption is subTypeOf selectedAppraisalOption
   st-97e09b4468dd6aca-6662932568dd6161  : selectedResolutionOption  ⊏⋆ᵣ  selectedAppraisalOption

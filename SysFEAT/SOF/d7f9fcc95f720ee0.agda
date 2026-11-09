@@ -41,7 +41,7 @@ postulate -- decisionSubject is subTypeOf concernedAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Decision Option: -}
 selectedDecisionOption :  Linkage Decision DecisionOutcome
-selectedDecisionOption = make_Relation "Selected Decision Option" "Selected Decision Option"
+selectedDecisionOption = make_instanceOf "Selected Decision Option" "Selected Decision Option"
 
 postulate -- selectedDecisionOption is subTypeOf selectedResolutionOption
   st-97e09d5368dd6d39-97e09b4468dd6aca  : selectedDecisionOption  ⊏⋆ᵣ  selectedResolutionOption

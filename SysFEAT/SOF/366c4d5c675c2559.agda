@@ -41,7 +41,7 @@ postulate -- architectureSubject is subTypeOf decisionSubject
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Architecture Option: -}
 selectedArchitectureOption :  Linkage ArchitectureDecision ArchitectureDecisionOutcome
-selectedArchitectureOption = make_Relation "Selected Architecture Option" "Selected Architecture Option"
+selectedArchitectureOption = make_instanceOf "Selected Architecture Option" "Selected Architecture Option"
 
 postulate -- selectedArchitectureOption is subTypeOf selectedDecisionOption
   st-97e09e9e68dd6e8c-97e09d5368dd6d39  : selectedArchitectureOption  ⊏⋆ᵣ  selectedDecisionOption

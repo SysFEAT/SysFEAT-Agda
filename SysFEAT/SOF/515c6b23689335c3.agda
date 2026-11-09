@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Directive: 
-A Directive is an authoritative declaration that indicates how Agent Types and their Behavior Types should be (or should not be) in the enterprise.Specifically, a Directive defines, constrains or liberates some aspects of an Agent Type and its Behavior Types. As such, Directives shall be considered as constraning Asset Propertys.Directives are intended to assert agent structures or to control or influence their Behaviors. Directives are stated in declarative form.
+A Directive is an authoritative declaration that indicates how Agent Types and their Behavior Types should be (or should not be) in the enterprise.Specifically, a Directive defines, constrains or liberates some aspects of an Agent Type and its Behavior Types. As such, Directives shall be considered as constraining Asset Propertys.Directives are intended to assert agent structures or to control or influence their Behaviors. Directives are stated in declarative form.
 
 Documentation : https://framework.sysfeat.com/pages/515c6b23689335c3.htm
 
@@ -49,7 +49,7 @@ st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Policy Category: -}
 policyCategory :  Linkage Directive PolicyCategory
-policyCategory = make_classOfRelation "Policy Category" "Policy Category"
+policyCategory = make_instanceOf "Policy Category" "Policy Category"
 
 postulate -- policyCategory is subTypeOf assetCategorizationScheme
   st-515c6b2b689335ef-f69620606a0f9c94  : policyCategory   ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}

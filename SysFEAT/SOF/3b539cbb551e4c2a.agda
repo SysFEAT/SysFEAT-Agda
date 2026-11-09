@@ -43,7 +43,7 @@ postulate -- assessedAsset is subTypeOf appraisedAsset
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Assessment Value: -}
 selectedAssessmentValue :  Linkage Assessment AssessmentValue
-selectedAssessmentValue = make_Relation "Selected Assessment Value" "Selected Assessment Value"
+selectedAssessmentValue = make_instanceOf "Selected Assessment Value" "Selected Assessment Value"
 
 postulate -- selectedAssessmentValue is subTypeOf selectedAppraisalOption
   st-6662956f68dd654c-6662932568dd6161  : selectedAssessmentValue  ⊏⋆ᵣ  selectedAppraisalOption

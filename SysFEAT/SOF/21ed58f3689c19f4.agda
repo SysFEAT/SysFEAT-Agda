@@ -38,7 +38,7 @@ postulate -- EnvironmentalProperty is PowerInstanceOf Environmental Property Typ
 -- -------------------------------------------------------------------------------------------- 
 {- Environmental Property Type: -}
 environmentalPropertyType :  Linkage EnvironmentalProperty EnvironmentalPropertyType
-environmentalPropertyType = make_classOfRelation "Environmental Property Type" "Environmental Property Type"
+environmentalPropertyType = make_instanceOf "Environmental Property Type" "Environmental Property Type"
 
 postulate -- environmentalPropertyType is subTypeOf conditionPropertyType
   st-21ed5b67689c1c35-21ed5a16689c1a59  : environmentalPropertyType  ⊏⋆ᵣ  conditionPropertyType
