@@ -15,20 +15,20 @@ Documentation : https://framework.sysfeat.com/pages/86b99dad6ac3265f.htm
 module SysFEAT.UpperOntology.86b99dad6ac3265f where -- ========== ElementaryPropertyType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
+open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
 ElementaryPropertyType : ThirdOrderClass
 ElementaryPropertyType = PropertyType
 
 
---  ElementaryPropertyType is subTypeOf PropertyType
-st-86b99dad6ac3265f-87d3062666e33965 : ElementaryPropertyType ⊏ₑ PropertyType
-st-86b99dad6ac3265f-87d3062666e33965 = polySubTypeOf-identity
-
 --  ElementaryPropertyType withAspect ElementaryBlock
 st-86b99dad6ac3265f-23d5c5fc685142de : ElementaryPropertyType ⊏ₐₑ (ElementaryBlock (lsuc(lsuc(lzero))))
 st-86b99dad6ac3265f-23d5c5fc685142de = polySubTypeOf-identity
+
+--  ElementaryPropertyType is subTypeOf PropertyType
+st-86b99dad6ac3265f-87d3062666e33965 : ElementaryPropertyType ⊏ₑ PropertyType
+st-86b99dad6ac3265f-87d3062666e33965 = polySubTypeOf-identity
 
 
 -- == Relations =======================

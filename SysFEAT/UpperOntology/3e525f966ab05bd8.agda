@@ -17,20 +17,20 @@ External references:
 module SysFEAT.UpperOntology.3e525f966ab05bd8 where -- ========== ElementaryProperty
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
+open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 open import SysFEAT.UpperOntology.86b99dad6ac3265f public -- ElementaryPropertyType
 
 ElementaryProperty : ElementaryPropertyType
 ElementaryProperty = Property
 
---  ElementaryProperty is subTypeOf Property
-st-3e525f966ab05bd8-746ac18368905aa2 : ElementaryProperty ⊏ₑ Property
-st-3e525f966ab05bd8-746ac18368905aa2 = polySubTypeOf-identity
-
 --  ElementaryProperty withAspect ElementaryBlock
 st-3e525f966ab05bd8-23d5c5fc685142de : ElementaryProperty ⊏ₐₑ (ElementaryBlock (lsuc(lzero)))
 st-3e525f966ab05bd8-23d5c5fc685142de = polySubTypeOf-identity
+
+--  ElementaryProperty is subTypeOf Property
+st-3e525f966ab05bd8-746ac18368905aa2 : ElementaryProperty ⊏ₑ Property
+st-3e525f966ab05bd8-746ac18368905aa2 = polySubTypeOf-identity
 
 postulate -- ElementaryProperty is PowerInstanceOf Elementary Property Type
   pi-86b99e936ac3274e : ElementaryProperty ∷ₚₑ ElementaryPropertyType
