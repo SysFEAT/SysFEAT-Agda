@@ -22,8 +22,8 @@ External references:
 module SysFEAT.UpperOntology.3492c53e619642ed where -- ========== ClassOfBoundedIndividual
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.6aa8cbcb65b32971 public -- ClassOfIndividual
 open import SysFEAT.UpperOntology.8cfa941b6852781f public -- BoundedAggregate
+open import SysFEAT.UpperOntology.6aa8cbcb65b32971 public -- ClassOfIndividual
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
 open import SysFEAT.UpperOntology.9429979a66823f90 public -- TemporalBoundingType
 open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
@@ -31,13 +31,13 @@ open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 ClassOfBoundedIndividual : BoundedIndividualMetaClass
 ClassOfBoundedIndividual = ClassOfIndividual
 
---  ClassOfBoundedIndividual is subTypeOf ClassOfIndividual
-st-3492c53e619642ed-6aa8cbcb65b32971 : ClassOfBoundedIndividual ⊏ₑ ClassOfIndividual
-st-3492c53e619642ed-6aa8cbcb65b32971 = polySubTypeOf-identity
-
 --  ClassOfBoundedIndividual withAspect BoundedAggregate
 st-3492c53e619642ed-8cfa941b6852781f : ClassOfBoundedIndividual ⊏ₐₑ (BoundedAggregate (lsuc(lzero)))
 st-3492c53e619642ed-8cfa941b6852781f = polySubTypeOf-identity
+
+--  ClassOfBoundedIndividual is subTypeOf ClassOfIndividual
+st-3492c53e619642ed-6aa8cbcb65b32971 : ClassOfBoundedIndividual ⊏ₑ ClassOfIndividual
+st-3492c53e619642ed-6aa8cbcb65b32971 = polySubTypeOf-identity
 
 postulate -- ClassOfBoundedIndividual is PowerInstanceOf Bounded Individual MetaClass
   pi-328b393a66e32434 : ClassOfBoundedIndividual ∷ₚₑ BoundedIndividualMetaClass
@@ -96,13 +96,13 @@ AggregateQualification = ClassOfAbstractEntity
 
 
 
---  AggregateQualification is subTypeOf ClassOfAbstractEntity
-st-b83e30bc696f51e5-3aca55ee6aa645c2 : AggregateQualification ⊏ₑ ClassOfAbstractEntity
-st-b83e30bc696f51e5-3aca55ee6aa645c2 = polySubTypeOf-identity
-
 --  AggregateQualification withAspect UnboundedMember
 st-b83e30bc696f51e5-8cfaf71a6852b042 : AggregateQualification ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
 st-b83e30bc696f51e5-8cfaf71a6852b042 = polySubTypeOf-identity
+
+--  AggregateQualification is subTypeOf ClassOfAbstractEntity
+st-b83e30bc696f51e5-3aca55ee6aa645c2 : AggregateQualification ⊏ₑ ClassOfAbstractEntity
+st-b83e30bc696f51e5-3aca55ee6aa645c2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAggregateQualification :  Linkage ClassOfBoundedIndividual AggregateQualification

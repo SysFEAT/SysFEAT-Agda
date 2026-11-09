@@ -17,20 +17,20 @@ External references:
 module SysFEAT.UpperOntology.3e525e406ab05b0d where -- ========== CompositeProperty
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 open import SysFEAT.UpperOntology.23d56d9868525869 public -- AggregateEntityBlock
+open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 open import SysFEAT.UpperOntology.86b99fec6ac32863 public -- CompositePropertyType
 
 CompositeProperty : CompositePropertyType
 CompositeProperty = Property
 
---  CompositeProperty is subTypeOf Property
-st-3e525e406ab05b0d-746ac18368905aa2 : CompositeProperty ⊏ₑ Property
-st-3e525e406ab05b0d-746ac18368905aa2 = polySubTypeOf-identity
-
 --  CompositeProperty withAspect AggregateEntityBlock
 st-3e525e406ab05b0d-23d56d9868525869 : CompositeProperty ⊏ₐₑ (AggregateEntityBlock (lsuc(lzero)))
 st-3e525e406ab05b0d-23d56d9868525869 = polySubTypeOf-identity
+
+--  CompositeProperty is subTypeOf Property
+st-3e525e406ab05b0d-746ac18368905aa2 : CompositeProperty ⊏ₑ Property
+st-3e525e406ab05b0d-746ac18368905aa2 = polySubTypeOf-identity
 
 postulate -- CompositeProperty is PowerInstanceOf Composite Property Type
   pi-86b9a0756ac3295e : CompositeProperty ∷ₚₑ CompositePropertyType
@@ -47,13 +47,13 @@ PropertyPart = ClassOfAbstractEntity
 
 
 
---  PropertyPart is subTypeOf ClassOfAbstractEntity
-st-3e5261066ab05e0f-3aca55ee6aa645c2 : PropertyPart ⊏ₑ ClassOfAbstractEntity
-st-3e5261066ab05e0f-3aca55ee6aa645c2 = polySubTypeOf-identity
-
 --  PropertyPart withAspect UnboundedMember
 st-3e5261066ab05e0f-8cfaf71a6852b042 : PropertyPart ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
 st-3e5261066ab05e0f-8cfaf71a6852b042 = polySubTypeOf-identity
+
+--  PropertyPart is subTypeOf ClassOfAbstractEntity
+st-3e5261066ab05e0f-3aca55ee6aa645c2 : PropertyPart ⊏ₑ ClassOfAbstractEntity
+st-3e5261066ab05e0f-3aca55ee6aa645c2 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfPropertyPart :  Linkage CompositeProperty PropertyPart
