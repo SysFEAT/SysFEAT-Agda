@@ -23,7 +23,7 @@ GovernanceActivity = WholeLifeIndividual
 
 
 --  GovernanceActivity withAspect GovernanceInstrument
-st-1737b76a5fe28204-6662916b68dd5f84 : GovernanceActivity ⊏ₐₑ (GovernanceInstrument lzero)
+st-1737b76a5fe28204-6662916b68dd5f84 : GovernanceActivity ⊏ₐₑ GovernanceInstrument lzero
 st-1737b76a5fe28204-6662916b68dd5f84 = polySubTypeOf-identity
 
 --  GovernanceActivity is subTypeOf WholeLifeIndividual

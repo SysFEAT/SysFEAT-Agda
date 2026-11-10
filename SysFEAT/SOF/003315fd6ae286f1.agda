@@ -18,12 +18,12 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
 open import SysFEAT.SOF.00330ec96ae27ee9 public -- InformationDomainGroup
 
-InformationDomainFamily : ∀ (u : Level) → MetaClass u 
-InformationDomainFamily u  = ClassOfEntity u 
+InformationDomainFamily : ∀ (u : Level) → MetaClass (lsuc u) 
+InformationDomainFamily u  = ClassOfEntity (lsuc u) 
 
 
 --  InformationDomainFamily is subTypeOf EnumeratedFamily
-st-003315fd6ae286f1-ad05c1986ae142c1 : ∀ {u v} → (InformationDomainFamily u) ⊏⋆ₑ (EnumeratedFamily v)
+st-003315fd6ae286f1-ad05c1986ae142c1 : ∀ {u v} → InformationDomainFamily u ⊏⋆ₑ EnumeratedFamily v
 st-003315fd6ae286f1-ad05c1986ae142c1 = trivialPolySubTypeOfEntity
 
 

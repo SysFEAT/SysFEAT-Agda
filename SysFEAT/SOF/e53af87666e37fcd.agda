@@ -38,4 +38,4 @@ combinedConditionType :  Linkage SetOfEnvironmentalConditionType SetOfEnvironmen
 combinedConditionType = make_classOfHolonymy "Combined Condition Type" "Combined Condition Type"
 
 postulate -- combinedConditionType is subTypeOf partOfPropertyType
-  st-c2f278bb66ea258a-86b9a0206ac32912  : combinedConditionType  ⊏⋆ᵣ  partOfPropertyType
+  st-c2f278bb66ea258a-86b9a0206ac32912  : combinedConditionType    ⊏⋆ᵣ  partOfPropertyType  

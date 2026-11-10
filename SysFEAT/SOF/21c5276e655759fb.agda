@@ -23,7 +23,7 @@ OperatingConnection = ClassOfIndividual
 
 
 --  OperatingConnection withAspect OrderingConnection
-st-21c5276e655759fb-23d5eaba68515533 : OperatingConnection ⊏ₐₑ (OrderingConnection (lsuc(lzero)))
+st-21c5276e655759fb-23d5eaba68515533 : OperatingConnection ⊏ₐₑ OrderingConnection (lsuc( lzero))
 st-21c5276e655759fb-23d5eaba68515533 = polySubTypeOf-identity
 
 --  OperatingConnection is subTypeOf ClassOfIndividual

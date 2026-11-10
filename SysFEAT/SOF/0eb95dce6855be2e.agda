@@ -28,11 +28,11 @@ ModelContainer u  = MixedOrderEntity u
 
 
 --  ModelContainer is subTypeOf ModelLexicalScope
-st-0eb95dce6855be2e-0eb95db46855bdd5 : ∀ {u v} → (ModelContainer u) ⊏⋆ₑ (ModelLexicalScope v)
+st-0eb95dce6855be2e-0eb95db46855bdd5 : ∀ {u v} → ModelContainer u ⊏⋆ₑ ModelLexicalScope v
 st-0eb95dce6855be2e-0eb95db46855bdd5 = trivialPolySubTypeOfEntity
 
 --  ModelContainer is subTypeOf Container
-st-0eb95dce6855be2e-0eb93b4268549a66 : ∀ {u v} → (ModelContainer u) ⊏⋆ₑ (Container v)
+st-0eb95dce6855be2e-0eb93b4268549a66 : ∀ {u v} → ModelContainer u ⊏⋆ₑ Container v
 st-0eb95dce6855be2e-0eb93b4268549a66 = trivialPolySubTypeOfEntity
 
 
@@ -44,7 +44,7 @@ packagedCategorizationBlock : ∀ {u v} →  Linkage (ModelContainer u) (ModelCa
 packagedCategorizationBlock = make_nestingRelation "Packaged Categorization Block" "Packaged Categorization Block"
 
 postulate -- packagedCategorizationBlock is subTypeOf scopedModelBlock
-  st-0eb97c566855cef7-0eb96a306855c816  : ∀ {u v} → packagedCategorizationBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}
+  st-0eb97c566855cef7-0eb96a306855c816  : ∀ {u v} → packagedCategorizationBlock  {u}  {v}  ⊏⋆ᵣ  scopedModelBlock  {u}  {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Packaged Model Block: -}
@@ -52,9 +52,9 @@ packagedModelBlock : ∀ {u v} →  Linkage (ModelContainer u) (ModelBuildingBlo
 packagedModelBlock = make_nestingRelation "Packaged Model Block" "Packaged Model Block"
 
 postulate -- packagedModelBlock is subTypeOf packagedBuildingBlock
-  st-3346b0ad687846e9-3346a99968784284  : ∀ {u v} → packagedModelBlock {u} {v}  ⊏⋆ᵣ  packagedBuildingBlock {u} {v}
+  st-3346b0ad687846e9-3346a99968784284  : ∀ {u v} → packagedModelBlock  {u}  {v}  ⊏⋆ᵣ  packagedBuildingBlock  {u}  {v}
 postulate -- packagedModelBlock is subTypeOf scopedModelBlock
-  st-3346b0ad687846e9-0eb96a306855c816  : ∀ {u v} → packagedModelBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}
+  st-3346b0ad687846e9-0eb96a306855c816  : ∀ {u v} → packagedModelBlock  {u}  {v}  ⊏⋆ᵣ  scopedModelBlock  {u}  {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Packaged Tag: -}
@@ -62,4 +62,4 @@ packagedTag : ∀ {u} →  Linkage (ModelContainer u) Tag
 packagedTag = make_nestingRelation "Packaged Tag" "Packaged Tag"
 
 postulate -- packagedTag is subTypeOf scopedAnnotationBlock
-  st-3346c67e68785433-0eb97bc46855ce52  : packagedTag {v}  ⊏⋆ᵣ  scopedAnnotationBlock {v}
+  st-3346c67e68785433-0eb97bc46855ce52  : ∀ {u} → packagedTag  {u}   ⊏⋆ᵣ  scopedAnnotationBlock  {u} 

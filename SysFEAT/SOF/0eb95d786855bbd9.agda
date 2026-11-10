@@ -23,7 +23,7 @@ ArchitectureLexicalScope u  = MixedOrderEntity u
 
 
 --  ArchitectureLexicalScope is subTypeOf ModelLexicalScope
-st-0eb95d786855bbd9-0eb95db46855bdd5 : ∀ {u v} → (ArchitectureLexicalScope u) ⊏⋆ₑ (ModelLexicalScope v)
+st-0eb95d786855bbd9-0eb95db46855bdd5 : ∀ {u v} → ArchitectureLexicalScope u ⊏⋆ₑ ModelLexicalScope v
 st-0eb95d786855bbd9-0eb95db46855bdd5 = trivialPolySubTypeOfEntity
 
 
@@ -35,4 +35,4 @@ scopedArchitectureBlock : ∀ {u v} →  Linkage (ArchitectureLexicalScope u) (A
 scopedArchitectureBlock = make_nestingRelation "Scoped Architecture Block" "Scoped Architecture Block"
 
 postulate -- scopedArchitectureBlock is subTypeOf scopedModelBlock
-  st-0eb95f9a6855c081-0eb96a306855c816  : ∀ {u v} → scopedArchitectureBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}
+  st-0eb95f9a6855c081-0eb96a306855c816  : ∀ {u v} → scopedArchitectureBlock  {u}  {v}  ⊏⋆ᵣ  scopedModelBlock  {u}  {v}

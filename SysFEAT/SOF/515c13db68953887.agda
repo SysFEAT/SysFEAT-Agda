@@ -34,7 +34,7 @@ Capability = AssetProperty
 
 
 --  Capability withAspect AssetBlock
-st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ (AssetBlock (lsuc(lzero)))
+st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ AssetBlock (lsuc( lzero))
 st-515c13db68953887-0eb95f356855bf94 = polySubTypeOf-identity
 
 --  Capability is subTypeOf AssetProperty
@@ -54,7 +54,7 @@ specializedCapability :  Linkage Capability Capability
 specializedCapability = make_subTypeOf "Specialized Capability" "Specialized Capability"
 
 postulate -- specializedCapability is subTypeOf specializedProperty
-  st-01f11e77689b6b10-1662112a68925f90  : specializedCapability  ⊏⋆ᵣ  specializedProperty
+  st-01f11e77689b6b10-1662112a68925f90  : specializedCapability    ⊏⋆ᵣ  specializedProperty  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Involved Information: -}
@@ -65,7 +65,7 @@ InvolvedInformation = MixedOrderEntity
 
 
 --  InvolvedInformation withAspect UnboundedMember
-st-01f11a37689b6677-8cfaf71a6852b042 : InvolvedInformation ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-01f11a37689b6677-8cfaf71a6852b042 : InvolvedInformation ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-01f11a37689b6677-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation
@@ -101,7 +101,7 @@ st-01f11c59689b68fe-3e5261066ab05e0f : CapabilityPart ⊏⋆ₑ PropertyPart
 st-01f11c59689b68fe-3e5261066ab05e0f = polySubTypeOf-identity
 
 --  CapabilityPart withAspect UnboundedMember
-st-01f11c59689b68fe-8cfaf71a6852b042 : CapabilityPart ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-01f11c59689b68fe-8cfaf71a6852b042 : CapabilityPart ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-01f11c59689b68fe-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

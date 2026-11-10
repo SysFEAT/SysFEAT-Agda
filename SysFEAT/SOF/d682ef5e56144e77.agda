@@ -49,7 +49,7 @@ specializedProcess :  Linkage ActionProcessType ActionProcessType
 specializedProcess = make_subTypeOf "Specialized Process" "Specialized Process"
 
 postulate -- specializedProcess is subTypeOf specializedBehavior
-  st-325a376e66f345e2-2b5b452d66ed5855  : specializedProcess  ⊏⋆ᵣ  specializedBehavior
+  st-325a376e66f345e2-2b5b452d66ed5855  : specializedProcess    ⊏⋆ᵣ  specializedBehavior  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Proces: -}
@@ -57,7 +57,7 @@ realizedProces :  Linkage ActionProcessType ActionProcessType
 realizedProces = make_subTypeOf "Realized Proces" "Realized Proces"
 
 postulate -- realizedProces is subTypeOf realizedBehavior
-  st-325a3a1466f35b22-2b5b45a466ed5920  : realizedProces  ⊏⋆ᵣ  realizedBehavior
+  st-325a3a1466f35b22-2b5b45a466ed5920  : realizedProces    ⊏⋆ᵣ  realizedBehavior  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sequence Flow: 
@@ -134,7 +134,7 @@ ProcessStore = MixedOrderEntity
 
 
 --  ProcessStore withAspect UnboundedMember
-st-e4c003255ed1f037-8cfaf71a6852b042 : ProcessStore ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-e4c003255ed1f037-8cfaf71a6852b042 : ProcessStore ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-e4c003255ed1f037-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

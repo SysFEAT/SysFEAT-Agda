@@ -27,7 +27,7 @@ Stakeholder = IndividualState
 
 
 --  Stakeholder withAspect GovernanceInstrument
-st-bcebd0175491272a-6662916b68dd5f84 : Stakeholder ⊏ₐₑ (GovernanceInstrument lzero)
+st-bcebd0175491272a-6662916b68dd5f84 : Stakeholder ⊏ₐₑ GovernanceInstrument lzero
 st-bcebd0175491272a-6662916b68dd5f84 = polySubTypeOf-identity
 
 --  Stakeholder is subTypeOf IndividualState

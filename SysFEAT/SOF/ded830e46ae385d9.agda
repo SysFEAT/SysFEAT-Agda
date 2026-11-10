@@ -23,7 +23,7 @@ DataCatagory u  = ClassOfEntity u
 
 
 --  DataCatagory is subTypeOf ConceptCategory
-st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → (DataCatagory u) ⊏⋆ₑ (ConceptCategory v)
+st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → DataCatagory u ⊏⋆ₑ ConceptCategory v
 st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
@@ -35,4 +35,4 @@ dataCategoryFamily : ∀ {u v} →  Linkage (DataCatagory u) (DataCategoryFamily
 dataCategoryFamily = make_instanceOf "Data Category Family" "Data Category Family"
 
 postulate -- dataCategoryFamily is subTypeOf parentFamily
-  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {v}  ⊏⋆ᵣ  parentFamily {u} {v}
+  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily  {u}  {u ⊔ v}  ⊏⋆ᵣ  parentFamily  {u}  {u ⊔ v}

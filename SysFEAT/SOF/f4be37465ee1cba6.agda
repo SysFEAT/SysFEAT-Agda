@@ -68,7 +68,7 @@ Finding = MixedOrderEntity
 
 
 --  Finding withAspect UnboundedMember
-st-8339882968e33e98-8cfaf71a6852b042 : Finding ⊏ₐₑ (UnboundedMember lzero)
+st-8339882968e33e98-8cfaf71a6852b042 : Finding ⊏ₐₑ UnboundedMember lzero
 st-8339882968e33e98-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

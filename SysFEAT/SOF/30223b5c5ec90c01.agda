@@ -46,7 +46,7 @@ Outcome = MixedOrderEntity
 
 
 --  Outcome withAspect UnboundedMember
-st-af41ed1265ea77e5-8cfaf71a6852b042 : Outcome ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-af41ed1265ea77e5-8cfaf71a6852b042 : Outcome ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-af41ed1265ea77e5-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

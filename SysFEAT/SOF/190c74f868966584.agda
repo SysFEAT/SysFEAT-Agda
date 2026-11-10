@@ -38,7 +38,7 @@ specializedBehavioralRule :  Linkage BehavioralRule BehavioralRule
 specializedBehavioralRule = make_subTypeOf "Specialized Behavioral Rule" "Specialized Behavioral Rule"
 
 postulate -- specializedBehavioralRule is subTypeOf specializedDirective
-  st-01f10e56689b5157-190c79c26896690d  : specializedBehavioralRule  ⊏⋆ᵣ  specializedDirective
+  st-01f10e56689b5157-190c79c26896690d  : specializedBehavioralRule    ⊏⋆ᵣ  specializedDirective  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Policy Derivation: 
@@ -71,5 +71,5 @@ policyDerivation : Linkage BehavioralRule Policy
 policyDerivation = membershipOfPolicyDerivation  ∘  aggregationOfPolicyPolicyDerivation
 
 postulate -- policyDerivation is subTypeOf realizedDirective
-  st-7bc2add56899a8e3-190c7a7f6896696e  : policyDerivation  ⊏⋆ᵣ  realizedDirective
+  st-7bc2add56899a8e3-190c7a7f6896696e  : policyDerivation    ⊏⋆ᵣ  realizedDirective  
 

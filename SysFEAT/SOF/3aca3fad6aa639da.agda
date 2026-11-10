@@ -25,7 +25,7 @@ Library = MixedOrderEntity
 
 
 --  Library withAspect ArchitectureContainer
-st-3aca3fad6aa639da-0eb95f1b6855bf64 : Library ⊏ₐₑ (ArchitectureContainer lzero)
+st-3aca3fad6aa639da-0eb95f1b6855bf64 : Library ⊏ₐₑ ArchitectureContainer lzero
 st-3aca3fad6aa639da-0eb95f1b6855bf64 = polySubTypeOf-identity
 
 --  Library is subTypeOf ModelPackage
@@ -41,4 +41,4 @@ parentLibrary :  Linkage Library Library
 parentLibrary = make_Relation "Library Basing" "Parent Library"
 
 postulate -- parentLibrary is subTypeOf parentModelPackage
-  st-e7cb01db6a976047-e7cb000b6a975e4c  : parentLibrary  ⊏⋆ᵣ  parentModelPackage
+  st-e7cb01db6a976047-e7cb000b6a975e4c  : parentLibrary    ⊏⋆ᵣ  parentModelPackage  

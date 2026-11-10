@@ -21,16 +21,16 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 
-InformationDomain : ∀ (u : Level) → MetaClass u 
-InformationDomain u  = ClassOfEntity u 
+InformationDomain : ∀ (u : Level) → MetaClass (lsuc u) 
+InformationDomain u  = ClassOfEntity (lsuc u) 
 
 
 --  InformationDomain is subTypeOf EnumeratedFamily
-st-cd90e5976ae187c0-ad05c1986ae142c1 : ∀ {u v} → (InformationDomain u) ⊏⋆ₑ (EnumeratedFamily v)
+st-cd90e5976ae187c0-ad05c1986ae142c1 : ∀ {u v} → InformationDomain u ⊏⋆ₑ EnumeratedFamily v
 st-cd90e5976ae187c0-ad05c1986ae142c1 = trivialPolySubTypeOfEntity
 
 --  InformationDomain is subTypeOf ThirdOrderClass
-st-cd90e5976ae187c0-bab6c7346ad70999 : ∀ {u} → (InformationDomain u) ⊏ₘₑ ThirdOrderClass
+st-cd90e5976ae187c0-bab6c7346ad70999 : ∀ {u} → InformationDomain lzero ⊏ₘₑ ThirdOrderClass
 st-cd90e5976ae187c0-bab6c7346ad70999 = polySubTypeOf-identity
 
 

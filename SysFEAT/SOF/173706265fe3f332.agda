@@ -25,7 +25,7 @@ MeasurementInstrument = BoundedIndividual
 
 
 --  MeasurementInstrument withAspect GovernanceInstrument
-st-173706265fe3f332-6662916b68dd5f84 : MeasurementInstrument ⊏ₐₑ (GovernanceInstrument lzero)
+st-173706265fe3f332-6662916b68dd5f84 : MeasurementInstrument ⊏ₐₑ GovernanceInstrument lzero
 st-173706265fe3f332-6662916b68dd5f84 = polySubTypeOf-identity
 
 --  MeasurementInstrument is subTypeOf BoundedIndividual

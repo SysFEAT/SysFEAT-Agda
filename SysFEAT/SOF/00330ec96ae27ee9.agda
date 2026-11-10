@@ -18,12 +18,12 @@ open import Agda.Primitive
 open import SysFEAT.SOF.003315fd6ae286f1 public -- InformationDomainFamily
 open import SysFEAT.SOF.cd90e5976ae187c0 public -- InformationDomain
 
-InformationDomainGroup : ∀ (u : Level) → MetaClass u 
-InformationDomainGroup u  = ClassOfEntity u 
+InformationDomainGroup : ∀ (u : Level) → MetaClass (lsuc u) 
+InformationDomainGroup u  = ClassOfEntity (lsuc u) 
 
 
 --  InformationDomainGroup is subTypeOf InformationDomainFamily
-st-00330ec96ae27ee9-003315fd6ae286f1 : ∀ {u v} → (InformationDomainGroup u) ⊏⋆ₑ (InformationDomainFamily v)
+st-00330ec96ae27ee9-003315fd6ae286f1 : ∀ {u v} → InformationDomainGroup u ⊏⋆ₑ InformationDomainFamily v
 st-00330ec96ae27ee9-003315fd6ae286f1 = trivialPolySubTypeOfEntity
 
 
@@ -35,4 +35,4 @@ informationDomainMember : ∀ {u v} →  Linkage (InformationDomainGroup u) (Inf
 informationDomainMember = make_classOfRelation "Information Domain Member" "Information Domain Member"
 
 postulate -- informationDomainMember is subTypeOf memberClass
-  st-003300fa6ae27701-c40ecc196ae113ff  : ∀ {u v} → informationDomainMember {u} {v}  ⊏⋆ᵣ  memberClass {u} {v}
+  st-003300fa6ae27701-c40ecc196ae113ff  : ∀ {u v} → informationDomainMember  {u}  {v}  ⊏⋆ᵣ  memberClass  {u ⊔ v}  {v}

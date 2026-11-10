@@ -25,7 +25,7 @@ ModelLexicalScope u  = MixedOrderEntity u
 
 
 --  ModelLexicalScope is subTypeOf BlockLexicalScope
-st-0eb95db46855bdd5-23d5c494685141b5 : ∀ {u v} → (ModelLexicalScope u) ⊏⋆ₑ (BlockLexicalScope v)
+st-0eb95db46855bdd5-23d5c494685141b5 : ∀ {u v} → ModelLexicalScope u ⊏⋆ₑ BlockLexicalScope v
 st-0eb95db46855bdd5-23d5c494685141b5 = trivialPolySubTypeOfEntity
 
 
@@ -37,7 +37,7 @@ scopedModelBlock : ∀ {u v} →  Linkage (ModelLexicalScope u) (ModelBuildingBl
 scopedModelBlock = make_nestingRelation "Scoped Model Block" "Scoped Model Block"
 
 postulate -- scopedModelBlock is subTypeOf scopedBuildingBlock
-  st-0eb96a306855c816-0eb946496854a02e  : ∀ {u v} → scopedModelBlock {u} {v}  ⊏⋆ᵣ  scopedBuildingBlock {u} {v}
+  st-0eb96a306855c816-0eb946496854a02e  : ∀ {u v} → scopedModelBlock  {u}  {v}  ⊏⋆ᵣ  scopedBuildingBlock  {u}  {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Scoped Annotation Block: 
@@ -47,7 +47,7 @@ scopedAnnotationBlock : ∀ {u} →  Linkage (ModelLexicalScope u) AnnotationBlo
 scopedAnnotationBlock = make_nestingRelation "Scoped Annotation Block" "Scoped Annotation Block"
 
 postulate -- scopedAnnotationBlock is subTypeOf scopedBuildingBlock
-  st-0eb97bc46855ce52-0eb946496854a02e  : scopedAnnotationBlock {u}  ⊏⋆ᵣ  scopedBuildingBlock {u} {v}
+  st-0eb97bc46855ce52-0eb946496854a02e  : ∀ {u} → scopedAnnotationBlock  {u}   ⊏⋆ᵣ  scopedBuildingBlock  {u}  {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Nested Description Note: -}
@@ -55,4 +55,4 @@ nestedDescriptionNote : ∀ {u} →  Linkage (ModelLexicalScope u) DescriptionNo
 nestedDescriptionNote = make_nestingRelation "Nested Description Note" "Nested Description Note"
 
 postulate -- nestedDescriptionNote is subTypeOf scopedAnnotationBlock
-  st-3346bde868784e38-0eb97bc46855ce52  : nestedDescriptionNote {v}  ⊏⋆ᵣ  scopedAnnotationBlock {v}
+  st-3346bde868784e38-0eb97bc46855ce52  : ∀ {u} → nestedDescriptionNote  {u}   ⊏⋆ᵣ  scopedAnnotationBlock  {u} 

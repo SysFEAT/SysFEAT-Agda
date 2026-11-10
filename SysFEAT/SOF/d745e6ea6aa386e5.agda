@@ -27,7 +27,7 @@ AnnotationBlock = AbstractEntity
 
 
 --  AnnotationBlock withAspect BuildingBlock
-st-d745e6ea6aa386e5-23d5a9ea68513ced : AnnotationBlock ⊏ₐₑ (BuildingBlock lzero)
+st-d745e6ea6aa386e5-23d5a9ea68513ced : AnnotationBlock ⊏ₐₑ BuildingBlock lzero
 st-d745e6ea6aa386e5-23d5a9ea68513ced = polySubTypeOf-identity
 
 --  AnnotationBlock is subTypeOf AbstractEntity
@@ -43,6 +43,6 @@ annotedElement : ∀ {u} →  Linkage AnnotationBlock (Element u)
 annotedElement = make_Relation "Annoted Element" "Annoted Element"
 
 postulate -- annotedElement is subTypeOf referenceRelation
-  st-3346b23668784855-23d5398f68511bc1  : annotedElement  ⊏⋆ᵣ  referenceRelation {lzero} {lzero}
+  st-3346b23668784855-23d5398f68511bc1  : ∀ {u} → annotedElement   {u}  ⊏⋆ᵣ  referenceRelation  {lzero}  {u}
 postulate -- annotedElement is subTypeOf existentialDependency
-  st-3346b23668784855-cbfce7da685358e9  : annotedElement  ⊏⋆ᵣ  existentialDependency {lzero} {lzero}
+  st-3346b23668784855-cbfce7da685358e9  : ∀ {u} → annotedElement   {u}  ⊏⋆ᵣ  existentialDependency  {lzero}  {u}

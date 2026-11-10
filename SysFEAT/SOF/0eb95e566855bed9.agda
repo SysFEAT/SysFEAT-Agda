@@ -22,7 +22,7 @@ ModelBuildingBlock u  = MixedOrderEntity u
 
 
 --  ModelBuildingBlock is subTypeOf BuildingBlock
-st-0eb95e566855bed9-23d5a9ea68513ced : ∀ {u v} → (ModelBuildingBlock u) ⊏⋆ₑ (BuildingBlock v)
+st-0eb95e566855bed9-23d5a9ea68513ced : ∀ {u v} → ModelBuildingBlock u ⊏⋆ₑ BuildingBlock v
 st-0eb95e566855bed9-23d5a9ea68513ced = trivialPolySubTypeOfEntity
 
 

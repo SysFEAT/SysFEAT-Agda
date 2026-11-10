@@ -22,7 +22,7 @@ InformationBlock u  = MixedOrderEntity u
 
 
 --  InformationBlock is subTypeOf ArchitectureBlock
-st-6c5f80e468587f06-9397b45268777e3b : ∀ {u v} → (InformationBlock u) ⊏⋆ₑ (ArchitectureBlock v)
+st-6c5f80e468587f06-9397b45268777e3b : ∀ {u v} → InformationBlock u ⊏⋆ₑ ArchitectureBlock v
 st-6c5f80e468587f06-9397b45268777e3b = trivialPolySubTypeOfEntity
 
 

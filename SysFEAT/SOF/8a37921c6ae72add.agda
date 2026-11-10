@@ -17,12 +17,12 @@ module SysFEAT.SOF.8a37921c6ae72add where -- ========== OperatingAssetCategoriza
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
 
-OperatingAssetCategorization : ∀ (u : Level) → MetaClass u 
-OperatingAssetCategorization u  = ClassOfEntity u 
+OperatingAssetCategorization : ∀ (u : Level) → MetaClass (lsuc u) 
+OperatingAssetCategorization u  = ClassOfEntity (lsuc u) 
 
 
 --  OperatingAssetCategorization is subTypeOf CategorizationFamily
-st-8a37921c6ae72add-220d23706ad71311 : ∀ {u v} → (OperatingAssetCategorization u) ⊏⋆ₑ (CategorizationFamily v)
+st-8a37921c6ae72add-220d23706ad71311 : ∀ {u v} → OperatingAssetCategorization u ⊏⋆ₑ CategorizationFamily v
 st-8a37921c6ae72add-220d23706ad71311 = trivialPolySubTypeOfEntity
 
 

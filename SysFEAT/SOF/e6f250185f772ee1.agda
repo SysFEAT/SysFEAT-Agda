@@ -32,7 +32,7 @@ st-e6f250185f772ee1-a4a5b3f855585ce1 : InformationAsset ⊏ₑ AssetType
 st-e6f250185f772ee1-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  InformationAsset withAspect InformationBlock
-st-e6f250185f772ee1-6c5f80e468587f06 : InformationAsset ⊏ₐₑ (InformationBlock (lsuc(lzero)))
+st-e6f250185f772ee1-6c5f80e468587f06 : InformationAsset ⊏ₐₑ InformationBlock (lsuc( lzero))
 st-e6f250185f772ee1-6c5f80e468587f06 = polySubTypeOf-identity
 
 
@@ -44,7 +44,7 @@ specializedInformationAsset :  Linkage InformationAsset InformationAsset
 specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
 
 postulate -- specializedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
+  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset    ⊏⋆ᵣ  subTypeOfEntity  {lzero}  {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Information Asset: -}
@@ -52,7 +52,7 @@ realizedInformationAsset :  Linkage InformationAsset InformationAsset
 realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized Information Asset"
 
 postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lsuc(lzero)}
+  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset    ⊏⋆ᵣ  subTypeOfEntity  {lzero}  {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Categorization: 
@@ -62,7 +62,7 @@ dataCategorization : ∀ {u} →  Linkage InformationAsset (DataCatagory u)
 dataCategorization = make_subTypeOf "Data Categorization" "Data Categorization"
 
 postulate -- dataCategorization is subTypeOf assetCategorization
-  st-ded838016ae3883c-4efc6b426ae48e32  : dataCategorization  {lsuc(lzero)}  ⊏⋆ᵣ  assetCategorization  {lsuc(lzero)}
+  st-ded838016ae3883c-4efc6b426ae48e32  : ∀ {u} → dataCategorization   {u}  ⊏⋆ᵣ  assetCategorization   {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Categorization Scheme: 
@@ -72,7 +72,7 @@ dataCategorizationScheme : ∀ {u} →  Linkage InformationAsset (DataCategoryFa
 dataCategorizationScheme = make_classOfRelation "Data Categorization Scheme" "Data Categorization Scheme"
 
 postulate -- dataCategorizationScheme is subTypeOf assetCategorizationScheme
-  st-435652586a111043-f69620606a0f9c94  : dataCategorizationScheme  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
+  st-435652586a111043-f69620606a0f9c94  : ∀ {u} → dataCategorizationScheme   {u}  ⊏⋆ᵣ  assetCategorizationScheme   {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Risk: 
@@ -117,7 +117,7 @@ InformationAssetRelationship = MixedOrderEntity
 
 
 --  InformationAssetRelationship withAspect AggregateMember
-st-18eb1f335fdb6e7f-23d5ddef68514dba : InformationAssetRelationship ⊏ₐₑ (AggregateMember (lsuc(lzero)))
+st-18eb1f335fdb6e7f-23d5ddef68514dba : InformationAssetRelationship ⊏ₐₑ AggregateMember (lsuc( lzero))
 st-18eb1f335fdb6e7f-23d5ddef68514dba = polySubTypeOf-identity
 
 -- Membership relation

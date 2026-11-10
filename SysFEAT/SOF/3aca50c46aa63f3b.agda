@@ -25,7 +25,7 @@ ReferenceDictionary = MixedOrderEntity
 
 
 --  ReferenceDictionary withAspect ArchitectureContainer
-st-3aca50c46aa63f3b-0eb95f1b6855bf64 : ReferenceDictionary ⊏ₐₑ (ArchitectureContainer lzero)
+st-3aca50c46aa63f3b-0eb95f1b6855bf64 : ReferenceDictionary ⊏ₐₑ ArchitectureContainer lzero
 st-3aca50c46aa63f3b-0eb95f1b6855bf64 = polySubTypeOf-identity
 
 --  ReferenceDictionary is subTypeOf ModelPackage

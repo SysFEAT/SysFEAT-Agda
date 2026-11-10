@@ -25,7 +25,7 @@ IndividualOperatingAsset = IndividualAsset
 
 
 --  IndividualOperatingAsset withAspect AssetBlock
-st-9f61cf9166833fb7-0eb95f356855bf94 : IndividualOperatingAsset ⊏ₐₑ (AssetBlock lzero)
+st-9f61cf9166833fb7-0eb95f356855bf94 : IndividualOperatingAsset ⊏ₐₑ AssetBlock lzero
 st-9f61cf9166833fb7-0eb95f356855bf94 = polySubTypeOf-identity
 
 --  IndividualOperatingAsset is subTypeOf IndividualAsset
@@ -47,7 +47,7 @@ exhibitedCapability :  Linkage IndividualOperatingAsset Capability
 exhibitedCapability = make_instanceOf "Exhibited Capability" "Exhibited Capability"
 
 postulate -- exhibitedCapability is subTypeOf propertyOfIndividual
-  st-e44104b768d586bb-19763dbb68926a48  : exhibitedCapability  ⊏⋆ᵣ  propertyOfIndividual 
+  st-e44104b768d586bb-19763dbb68926a48  : exhibitedCapability    ⊏⋆ᵣ  propertyOfIndividual  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Individual Operating Part: 

@@ -35,4 +35,4 @@ policyDecisionType :  Linkage PolicyapplicabilityStatus PolicyDecisionType
 policyDecisionType = make_instanceOf "Policy Decision Type" "Policy Decision Type"
 
 postulate -- policyDecisionType is subTypeOf decisionType
-  st-97e0a1e168dd7342-97e09d2068dd6cd0  : policyDecisionType  ⊏⋆ᵣ  decisionType
+  st-97e0a1e168dd7342-97e09d2068dd6cd0  : policyDecisionType    ⊏⋆ᵣ  decisionType  

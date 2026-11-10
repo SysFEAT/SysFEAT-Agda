@@ -30,11 +30,11 @@ Initiative = BoundedIndividual
 
 
 --  Initiative withAspect BlockCollection
-st-0ffeec41600be08a-23d5aa4868513f43 : Initiative ⊏ₐₑ (BlockCollection lzero)
+st-0ffeec41600be08a-23d5aa4868513f43 : Initiative ⊏ₐₑ BlockCollection lzero
 st-0ffeec41600be08a-23d5aa4868513f43 = polySubTypeOf-identity
 
 --  Initiative withAspect InitiativeBlock
-st-0ffeec41600be08a-01ce05f9685979d8 : Initiative ⊏ₐₑ (InitiativeBlock lzero)
+st-0ffeec41600be08a-01ce05f9685979d8 : Initiative ⊏ₐₑ InitiativeBlock lzero
 st-0ffeec41600be08a-01ce05f9685979d8 = polySubTypeOf-identity
 
 --  Initiative is subTypeOf BoundedIndividual
@@ -50,7 +50,7 @@ steeringAuthority :  Linkage Initiative ResponsibleHumanEntity
 steeringAuthority = make_holonymyRelation "Steering Authority" "Steering Authority"
 
 postulate -- steeringAuthority is subTypeOf referenceHolonymy
-  st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority  ⊏⋆ᵣ  referenceHolonymy
+  st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority    ⊏⋆ᵣ  referenceHolonymy  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Course of Action: 
@@ -95,7 +95,7 @@ InitiativeSubject u  = MixedOrderEntity u
 
 
 --  InitiativeSubject is subTypeOf UnboundedMember
-st-0f642fd06859b0d5-8cfaf71a6852b042 : ∀ {u v} → (InitiativeSubject u) ⊏⋆ₑ (UnboundedMember v)
+st-0f642fd06859b0d5-8cfaf71a6852b042 : ∀ {u v} → InitiativeSubject u ⊏⋆ₑ UnboundedMember v
 st-0f642fd06859b0d5-8cfaf71a6852b042 = trivialPolySubTypeOfEntity
 
 -- Membership relation
@@ -115,5 +115,5 @@ initiativeSubject : ∀ {u w} → Linkage Initiative (AssetBlock w)
 initiativeSubject {u} {w}  = membershipOfInitiativeSubject {u}   ∘  aggregationOfAssetBlockInitiativeSubject {w} 
 
 postulate -- initiativeSubject is subTypeOf referenceHolonymy
-  st-0f642fd06859b0d5-9653a95669701e02  : initiativeSubject  ⊏⋆ᵣ  referenceHolonymy
+  st-0f642fd06859b0d5-9653a95669701e02  : ∀ {u} → initiativeSubject  {lzero}  {lzero}  ⊏⋆ᵣ  referenceHolonymy  
 

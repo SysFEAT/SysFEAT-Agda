@@ -27,7 +27,7 @@ st-08570d835ed129a3-267b6a126675a0b9 : InitiativeMilestone ⊏ₑ TemporalBoundi
 st-08570d835ed129a3-267b6a126675a0b9 = polySubTypeOf-identity
 
 --  InitiativeMilestone withAspect InitiativeBlock
-st-08570d835ed129a3-01ce05f9685979d8 : InitiativeMilestone ⊏ₐₑ (InitiativeBlock lzero)
+st-08570d835ed129a3-01ce05f9685979d8 : InitiativeMilestone ⊏ₐₑ InitiativeBlock lzero
 st-08570d835ed129a3-01ce05f9685979d8 = polySubTypeOf-identity
 
 

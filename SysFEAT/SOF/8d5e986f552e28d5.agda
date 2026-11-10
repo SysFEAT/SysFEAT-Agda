@@ -39,4 +39,4 @@ subSite :  Linkage Location Location
 subSite = make_meronymyRelation "Sub-Site" "Sub-Site"
 
 postulate -- subSite is subTypeOf meronymyRelation
-  st-b3c3ca876ad025f3-e818e86d6ad45d7a  : subSite  ⊏⋆ᵣ  meronymyRelation
+  st-b3c3ca876ad025f3-e818e86d6ad45d7a  : subSite    ⊏⋆ᵣ  meronymyRelation  

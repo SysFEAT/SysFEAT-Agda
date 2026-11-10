@@ -23,7 +23,7 @@ InformationDictionary = MixedOrderEntity
 
 
 --  InformationDictionary withAspect InformationLexicalScope
-st-d745ed256aa38edc-6c5f808b68587e49 : InformationDictionary ⊏ₐₑ (InformationLexicalScope lzero)
+st-d745ed256aa38edc-6c5f808b68587e49 : InformationDictionary ⊏ₐₑ InformationLexicalScope lzero
 st-d745ed256aa38edc-6c5f808b68587e49 = polySubTypeOf-identity
 
 --  InformationDictionary is subTypeOf ModelPackage
@@ -41,4 +41,4 @@ importedInformationDictionary :  Linkage InformationDictionary InformationDictio
 importedInformationDictionary = make_Relation "Imported Information Dictionary" "Imported Information Dictionary"
 
 postulate -- importedInformationDictionary is subTypeOf importedModelContainer
-  st-0f64145168598226-0eb97ce26855cf57  : importedInformationDictionary  ⊏⋆ᵣ  importedModelContainer
+  st-0f64145168598226-0eb97ce26855cf57  : importedInformationDictionary    ⊏⋆ᵣ  importedModelContainer  {lsuc(lsuc(lzero))}  {lzero}

@@ -24,7 +24,7 @@ GovernanceEvent = Individual
 
 
 --  GovernanceEvent withAspect GovernanceInstrument
-st-1737b50b5fe27cba-6662916b68dd5f84 : GovernanceEvent ⊏ₐₑ (GovernanceInstrument lzero)
+st-1737b50b5fe27cba-6662916b68dd5f84 : GovernanceEvent ⊏ₐₑ GovernanceInstrument lzero
 st-1737b50b5fe27cba-6662916b68dd5f84 = polySubTypeOf-identity
 
 --  GovernanceEvent is subTypeOf Individual
@@ -40,4 +40,4 @@ eventSubject : ∀ {u} →  Linkage GovernanceEvent (AssetBlock u)
 eventSubject = make_Relation "Event Subject" "Event Subject"
 
 postulate -- eventSubject is subTypeOf existentialDependency
-  st-0f642d4d6859ad70-cbfce7da685358e9  : eventSubject  ⊏⋆ᵣ  existentialDependency {lzero} {lzero}
+  st-0f642d4d6859ad70-cbfce7da685358e9  : ∀ {u} → eventSubject   {u}  ⊏⋆ᵣ  existentialDependency  {lzero}  {u}

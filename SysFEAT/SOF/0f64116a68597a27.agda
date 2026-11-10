@@ -23,7 +23,7 @@ GovernanceContainer u  = MixedOrderEntity u
 
 
 --  GovernanceContainer is subTypeOf ModelContainer
-st-0f64116a68597a27-0eb95dce6855be2e : ∀ {u v} → (GovernanceContainer u) ⊏⋆ₑ (ModelContainer v)
+st-0f64116a68597a27-0eb95dce6855be2e : ∀ {u v} → GovernanceContainer u ⊏⋆ₑ ModelContainer v
 st-0f64116a68597a27-0eb95dce6855be2e = trivialPolySubTypeOfEntity
 
 
@@ -35,4 +35,4 @@ packagedGovernanceBlock : ∀ {u v} →  Linkage (GovernanceContainer u) (Govern
 packagedGovernanceBlock = make_nestingRelation "Packaged Governance Block" "Packaged Governance Block"
 
 postulate -- packagedGovernanceBlock is subTypeOf packagedModelBlock
-  st-0f6410c668597695-3346b0ad687846e9  : ∀ {u v} → packagedGovernanceBlock {u} {v}  ⊏⋆ᵣ  packagedModelBlock {u} {v}
+  st-0f6410c668597695-3346b0ad687846e9  : ∀ {u v} → packagedGovernanceBlock  {u}  {v}  ⊏⋆ᵣ  packagedModelBlock  {u}  {v}
