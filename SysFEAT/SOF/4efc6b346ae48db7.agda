@@ -23,11 +23,11 @@ AssetCategory u  = MixedOrderEntity u
 
 
 --  AssetCategory is subTypeOf ModelCategorizationBlock
-st-4efc6b346ae48db7-0eb97aff6855cd23 : ∀ {u v} → (AssetCategory u) ⊏⋆ₑ (ModelCategorizationBlock v)
+st-4efc6b346ae48db7-0eb97aff6855cd23 : ∀ {u v} → AssetCategory u ⊏⋆ₑ ModelCategorizationBlock (lsuc( v))
 st-4efc6b346ae48db7-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategory is subTypeOf ConceptCategory
-st-4efc6b346ae48db7-629565166ad71b60 : ∀ {u v} → (AssetCategory u) ⊏⋆ₑ (ConceptCategory v)
+st-4efc6b346ae48db7-629565166ad71b60 : ∀ {u v} → AssetCategory u ⊏⋆ₑ ConceptCategory v
 st-4efc6b346ae48db7-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 

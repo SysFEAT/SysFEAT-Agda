@@ -38,7 +38,7 @@ concernedAsset : ∀ {u} →  Linkage Resolution (AssetBlock u)
 concernedAsset = make_Relation "Concerned Asset" "Concerned Asset"
 
 postulate -- concernedAsset is subTypeOf appraisedAsset
-  st-0f642afd6859a59f-6bf17d4e68598487  : concernedAsset  ⊏⋆ᵣ  appraisedAsset
+  st-0f642afd6859a59f-6bf17d4e68598487  : ∀ {u} → concernedAsset   {u}  ⊏⋆ᵣ  appraisedAsset   {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Resolution Option: -}
@@ -46,4 +46,4 @@ selectedResolutionOption :  Linkage Resolution ResolutionOutcome
 selectedResolutionOption = make_instanceOf "Selected Resolution Option" "Selected Resolution Option"
 
 postulate -- selectedResolutionOption is subTypeOf selectedAppraisalOption
-  st-97e09b4468dd6aca-6662932568dd6161  : selectedResolutionOption  ⊏⋆ᵣ  selectedAppraisalOption
+  st-97e09b4468dd6aca-6662932568dd6161  : selectedResolutionOption    ⊏⋆ᵣ  selectedAppraisalOption  

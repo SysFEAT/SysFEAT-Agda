@@ -50,7 +50,7 @@ specializedAgent :  Linkage AgentType AgentType
 specializedAgent = make_subTypeOf "Specialized Agent" "Specialized Agent"
 
 postulate -- specializedAgent is subTypeOf specializedOperatingAsset
-  st-2b5b440b66ed56d4-6a70772167873276  : specializedAgent  ⊏⋆ᵣ  specializedOperatingAsset
+  st-2b5b440b66ed56d4-6a70772167873276  : specializedAgent    ⊏⋆ᵣ  specializedOperatingAsset  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Agent: -}
@@ -58,7 +58,7 @@ realizedAgent :  Linkage AgentType AgentType
 realizedAgent = make_subTypeOf "Realized Agent" "Realized Agent"
 
 postulate -- realizedAgent is subTypeOf realizedOperatingAsset
-  st-2b5b449f66ed57a2-7dc193da6849536c  : realizedAgent  ⊏⋆ᵣ  realizedOperatingAsset
+  st-2b5b449f66ed57a2-7dc193da6849536c  : realizedAgent    ⊏⋆ᵣ  realizedOperatingAsset  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Interaction Channel: -}
@@ -69,7 +69,7 @@ InteractionChannel = MixedOrderEntity
 
 
 --  InteractionChannel withAspect OrderingConnector
-st-24ae34bb5ed1cb17-478a4a4468565425 : InteractionChannel ⊏ₐₑ (OrderingConnector (lsuc(lzero)))
+st-24ae34bb5ed1cb17-478a4a4468565425 : InteractionChannel ⊏ₐₑ OrderingConnector (lsuc( lzero))
 st-24ae34bb5ed1cb17-478a4a4468565425 = polySubTypeOf-identity
 
 -- Membership relation
@@ -197,7 +197,7 @@ InformationStore = MixedOrderEntity
 
 
 --  InformationStore withAspect UnboundedMember
-st-f4bee5925ee1be5b-8cfaf71a6852b042 : InformationStore ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-f4bee5925ee1be5b-8cfaf71a6852b042 : InformationStore ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-f4bee5925ee1be5b-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

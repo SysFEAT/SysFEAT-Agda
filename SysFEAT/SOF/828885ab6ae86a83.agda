@@ -22,7 +22,7 @@ LogicalResource u  = ResourceLevel u
 
 
 --  LogicalResource is subTypeOf ResourceLevel
-st-828885ab6ae86a83-a04ea6866ae7465e : ∀ {u v} → (LogicalResource u) ⊏⋆ₑ (ResourceLevel v)
+st-828885ab6ae86a83-a04ea6866ae7465e : ∀ {u v} → LogicalResource u ⊏⋆ₑ ResourceLevel (lsuc(lsuc(lsuc( v))))
 st-828885ab6ae86a83-a04ea6866ae7465e = trivialPolySubTypeOfEntity
 
 

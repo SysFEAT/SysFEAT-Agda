@@ -31,7 +31,7 @@ st-a371a43b5b865817-a4a5b3f855585ce1 : OperatingAssetType ⊏ₑ AssetType
 st-a371a43b5b865817-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  OperatingAssetType withAspect OperatingAsset
-st-a371a43b5b865817-0c4559c86a033792 : OperatingAssetType ⊏ₐₑ (OperatingAsset (lsuc(lzero)))
+st-a371a43b5b865817-0c4559c86a033792 : OperatingAssetType ⊏ₐₑ OperatingAsset (lsuc( lzero))
 st-a371a43b5b865817-0c4559c86a033792 = polySubTypeOf-identity
 
 
@@ -45,7 +45,7 @@ fulfilledCapability :  Linkage OperatingAssetType Capability
 fulfilledCapability = make_subTypeOf "Fulfilled Capability" "Fulfilled Capability"
 
 postulate -- fulfilledCapability is subTypeOf assetTypeQualification
-  st-190c72c368966198-a04ea2346ae7302f  : fulfilledCapability  ⊏⋆ᵣ  assetTypeQualification
+  st-190c72c368966198-a04ea2346ae7302f  : fulfilledCapability    ⊏⋆ᵣ  assetTypeQualification  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Operating Asset: -}
@@ -53,9 +53,9 @@ specializedOperatingAsset :  Linkage OperatingAssetType OperatingAssetType
 specializedOperatingAsset = make_subTypeOf "Specialized Operating Asset" "Specialized Operating Asset"
 
 postulate -- specializedOperatingAsset is subTypeOf specializedAsset
-  st-6a70772167873276-12b0287266e936d5  : specializedOperatingAsset  ⊏⋆ᵣ  specializedAsset
+  st-6a70772167873276-12b0287266e936d5  : specializedOperatingAsset    ⊏⋆ᵣ  specializedAsset  
 postulate -- specializedOperatingAsset is subTypeOf specializedClassOfBoundedIndividual
-  st-6a70772167873276-e53a627766e4b4cd  : specializedOperatingAsset  ⊏⋆ᵣ  specializedClassOfBoundedIndividual
+  st-6a70772167873276-e53a627766e4b4cd  : specializedOperatingAsset    ⊏⋆ᵣ  specializedClassOfBoundedIndividual  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Operating Asset: -}
@@ -63,7 +63,7 @@ realizedOperatingAsset :  Linkage OperatingAssetType OperatingAssetType
 realizedOperatingAsset = make_subTypeOf "Realized Operating Asset" "Realized Operating Asset"
 
 postulate -- realizedOperatingAsset is subTypeOf realizedFunctionalAsset
-  st-7dc193da6849536c-7dc1907b684951ae  : realizedOperatingAsset  ⊏⋆ᵣ  realizedFunctionalAsset
+  st-7dc193da6849536c-7dc1907b684951ae  : realizedOperatingAsset    ⊏⋆ᵣ  realizedFunctionalAsset  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Rule Enforcement: 

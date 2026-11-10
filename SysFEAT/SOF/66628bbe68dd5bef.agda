@@ -28,7 +28,7 @@ st-66628bbe68dd5bef-746ac18368905aa2 : GovernanceProperty ⊏ₑ Property
 st-66628bbe68dd5bef-746ac18368905aa2 = polySubTypeOf-identity
 
 --  GovernanceProperty withAspect GovernanceInstrument
-st-66628bbe68dd5bef-6662916b68dd5f84 : GovernanceProperty ⊏ₐₑ (GovernanceInstrument (lsuc(lzero)))
+st-66628bbe68dd5bef-6662916b68dd5f84 : GovernanceProperty ⊏ₐₑ GovernanceInstrument (lsuc( lzero))
 st-66628bbe68dd5bef-6662916b68dd5f84 = polySubTypeOf-identity
 
 
@@ -40,4 +40,4 @@ governancePropertyType :  Linkage GovernanceProperty GovernancePropertyType
 governancePropertyType = make_instanceOf "Governance Property Type" "Governance Property Type"
 
 postulate -- governancePropertyType is subTypeOf propertyClassification
-  st-666293d768dd6238-1976247d68925c3e  : governancePropertyType  ⊏⋆ᵣ  propertyClassification
+  st-666293d768dd6238-1976247d68925c3e  : governancePropertyType    ⊏⋆ᵣ  propertyClassification  

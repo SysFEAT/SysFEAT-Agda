@@ -23,7 +23,7 @@ OperatingAssetCategory u  = MixedOrderEntity u
 
 
 --  OperatingAssetCategory is subTypeOf AssetCategory
-st-e83018fb6ae53018-4efc6b346ae48db7 : ∀ {u v} → (OperatingAssetCategory u) ⊏⋆ₑ (AssetCategory v)
+st-e83018fb6ae53018-4efc6b346ae48db7 : ∀ {u v} → OperatingAssetCategory u ⊏⋆ₑ AssetCategory v
 st-e83018fb6ae53018-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 
 
@@ -35,7 +35,7 @@ family : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCatego
 family = make_instanceOf "Family" "Family"
 
 postulate -- family is subTypeOf assetCategoryFamily
-  st-5d545e516ae83f24-8d1fa3b46ae827f6  : ∀ {u v} → family {u} {v}  ⊏⋆ᵣ  assetCategoryFamily {u} {v}
+  st-5d545e516ae83f24-8d1fa3b46ae827f6  : ∀ {u v} → family  {u}  {u ⊔ v}  ⊏⋆ᵣ  assetCategoryFamily  {u}  {u ⊔ v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Parent Operating Category: -}
@@ -43,4 +43,4 @@ parentOperatingCategory : ∀ {u v} →  Linkage (OperatingAssetCategory u) (Ope
 parentOperatingCategory = make_subTypeOf "Parent Operating Category" "Parent Operating Category"
 
 postulate -- parentOperatingCategory is subTypeOf parentAssetCategory
-  st-800b817a6ae83115-38f63c776aec1911  : ∀ {u v} → parentOperatingCategory {u} {v}  ⊏⋆ᵣ  parentAssetCategory {u} {v}
+  st-800b817a6ae83115-38f63c776aec1911  : ∀ {u v} → parentOperatingCategory  {u}  {v}  ⊏⋆ᵣ  parentAssetCategory  {u}  {v}

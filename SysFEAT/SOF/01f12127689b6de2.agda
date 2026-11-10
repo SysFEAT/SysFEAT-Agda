@@ -23,7 +23,7 @@ CapabilityMap = MixedOrderEntity
 
 
 --  CapabilityMap withAspect UnboundedAggregate
-st-01f12127689b6de2-8cfa942f68527849 : CapabilityMap ⊏ₐₑ (UnboundedAggregate (lsuc(lzero)))
+st-01f12127689b6de2-8cfa942f68527849 : CapabilityMap ⊏ₐₑ UnboundedAggregate (lsuc( lzero))
 st-01f12127689b6de2-8cfa942f68527849 = polySubTypeOf-identity
 
 
@@ -40,7 +40,7 @@ CapabilityMember = MixedOrderEntity
 
 
 --  CapabilityMember withAspect UnboundedMember
-st-01f12228689b6efa-8cfaf71a6852b042 : CapabilityMember ⊏ₐₑ (UnboundedMember (lsuc(lzero)))
+st-01f12228689b6efa-8cfaf71a6852b042 : CapabilityMember ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-01f12228689b6efa-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation

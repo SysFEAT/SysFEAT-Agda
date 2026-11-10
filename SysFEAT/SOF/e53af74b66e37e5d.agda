@@ -40,4 +40,4 @@ measurementCategory : ∀ {u} →  Linkage MeasurePropertyType (MeasurementCateg
 measurementCategory = make_subTypeOf "Measurement Category" "Measurement Category"
 
 postulate -- measurementCategory is subTypeOf conditionCategory
-  st-4efc77496ae49f78-4efc6ca86ae4901b  : measurementCategory  ⊏⋆ᵣ  conditionCategory
+  st-4efc77496ae49f78-4efc6ca86ae4901b  : ∀ {u} → measurementCategory   {u}  ⊏⋆ᵣ  conditionCategory   {u}

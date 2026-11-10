@@ -44,12 +44,12 @@ conditionCategory : ∀ {u} →  Linkage ConditionPropertyType (ConditionCategor
 conditionCategory = make_subTypeOf "Condition Category" "Condition Category"
 
 postulate -- conditionCategory is subTypeOf conceptCategorization
-  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : conditionCategory  ⊏⋆ᵣ  conceptCategorization {lsuc(lzero)} {lsuc(lzero)}
+  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : ∀ {u} → conditionCategory   {u}  ⊏⋆ᵣ  conceptCategorization  {lsuc(lzero)}  {u}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Family of Measurement: -}
-familyOfMeasurement : ∀ {u} →  Linkage ConditionPropertyType (FamilyOfMeasurement u)
-familyOfMeasurement = make_classOfRelation "Family of Measurement" "Family of Measurement"
+{- Categorizing Measurement Family: -}
+categorizingMeasurementFamily : ∀ {u} →  Linkage ConditionPropertyType (FamilyOfMeasurement u)
+categorizingMeasurementFamily = make_classOfRelation "Categorizing Measurement Family" "Categorizing Measurement Family"
 
-postulate -- familyOfMeasurement is subTypeOf parentFamily
-  st-051d13f06ae96ff0-890a8a9e6ae8578e  : familyOfMeasurement  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  parentFamily {lsuc(lzero)} {lsuc(lsuc(lzero))} {lsuc(lzero)} {lsuc(lsuc(lzero))}
+postulate -- categorizingMeasurementFamily is subTypeOf categorizationScheme
+  st-051d13f06ae96ff0-7e3436566af249a4  : ∀ {u} → categorizingMeasurementFamily   {u}  ⊏⋆ᵣ  categorizationScheme  {lsuc(lzero)}  {u}

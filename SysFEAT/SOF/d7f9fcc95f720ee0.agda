@@ -36,7 +36,7 @@ decisionSubject : ∀ {u} →  Linkage Decision (AssetBlock u)
 decisionSubject = make_Relation "Decision Subject" "Decision Subject"
 
 postulate -- decisionSubject is subTypeOf concernedAsset
-  st-6bf18905685999a3-0f642afd6859a59f  : decisionSubject  ⊏⋆ᵣ  concernedAsset
+  st-6bf18905685999a3-0f642afd6859a59f  : ∀ {u} → decisionSubject   {u}  ⊏⋆ᵣ  concernedAsset   {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Decision Option: -}
@@ -44,4 +44,4 @@ selectedDecisionOption :  Linkage Decision DecisionOutcome
 selectedDecisionOption = make_instanceOf "Selected Decision Option" "Selected Decision Option"
 
 postulate -- selectedDecisionOption is subTypeOf selectedResolutionOption
-  st-97e09d5368dd6d39-97e09b4468dd6aca  : selectedDecisionOption  ⊏⋆ᵣ  selectedResolutionOption
+  st-97e09d5368dd6d39-97e09b4468dd6aca  : selectedDecisionOption    ⊏⋆ᵣ  selectedResolutionOption  

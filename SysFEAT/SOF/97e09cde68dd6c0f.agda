@@ -35,4 +35,4 @@ decisionType :  Linkage DecisionOutcome DecisionType
 decisionType = make_instanceOf "Decision Type" "Decision Type"
 
 postulate -- decisionType is subTypeOf resolutionType
-  st-97e09d2068dd6cd0-97e09c3d68dd6b51  : decisionType  ⊏⋆ᵣ  resolutionType
+  st-97e09d2068dd6cd0-97e09c3d68dd6b51  : decisionType    ⊏⋆ᵣ  resolutionType  

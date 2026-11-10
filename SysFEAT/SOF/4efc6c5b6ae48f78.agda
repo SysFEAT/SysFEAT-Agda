@@ -23,7 +23,7 @@ ConditionCategory u  = ClassOfEntity u
 
 
 --  ConditionCategory is subTypeOf ConceptCategory
-st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → (ConditionCategory u) ⊏⋆ₑ (ConceptCategory v)
+st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → ConditionCategory u ⊏⋆ₑ ConceptCategory v
 st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
@@ -35,6 +35,4 @@ conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOf
 conditionCategoryFamily = make_instanceOf "Condition Category Family" "Condition Category Family"
 
 postulate -- conditionCategoryFamily is subTypeOf parentFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {lsuc u} {lsuc(u ⊔ v)}
-
-  --8d1fa37b6ae82572 :                    ∀ {u v} → parentFamily {u} {u ⊔ v} ⊏⋆ᵣ instanceOfEntity {lsuc u} {lsuc (u ⊔ v)}
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily  {u}  {u ⊔ v}  ⊏⋆ᵣ  parentFamily  {u}  {u ⊔ v}

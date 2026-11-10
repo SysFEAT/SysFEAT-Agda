@@ -45,11 +45,11 @@ DesiredResult = MixedOrderEntity
 
 
 --  DesiredResult withAspect AggregateMember
-st-a56ba5d1689c4ba1-23d5ddef68514dba : DesiredResult ⊏ₐₑ (AggregateMember (lsuc(lzero)))
+st-a56ba5d1689c4ba1-23d5ddef68514dba : DesiredResult ⊏ₐₑ AggregateMember (lsuc( lzero))
 st-a56ba5d1689c4ba1-23d5ddef68514dba = polySubTypeOf-identity
 
 --  DesiredResult withAspect PropertyOfIndividual
-st-a56ba5d1689c4ba1-19763dbb68926a48 : DesiredResult ⊏ₐₑ (PropertyOfIndividual (lsuc(lzero)))
+st-a56ba5d1689c4ba1-19763dbb68926a48 : DesiredResult ⊏ₐₑ PropertyOfIndividual (lsuc(lsuc(lsuc( lzero))))
 st-a56ba5d1689c4ba1-19763dbb68926a48 = polySubTypeOf-identity
 
 -- Membership relation

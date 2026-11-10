@@ -37,4 +37,4 @@ environmentalCategory : ∀ {u} →  Linkage EnvironmentalPropertyType (Environm
 environmentalCategory = make_subTypeOf "Environmental Category" "Environmental Category"
 
 postulate -- environmentalCategory is subTypeOf conditionCategory
-  st-4efc78bb6ae4a140-4efc6ca86ae4901b  : environmentalCategory  ⊏⋆ᵣ  conditionCategory
+  st-4efc78bb6ae4a140-4efc6ca86ae4901b  : ∀ {u} → environmentalCategory   {u}  ⊏⋆ᵣ  conditionCategory   {u}

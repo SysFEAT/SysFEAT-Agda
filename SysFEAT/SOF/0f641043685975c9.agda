@@ -22,7 +22,7 @@ GovernanceBuildingBlock u  = MixedOrderEntity u
 
 
 --  GovernanceBuildingBlock is subTypeOf ModelBuildingBlock
-st-0f641043685975c9-0eb95e566855bed9 : ∀ {u v} → (GovernanceBuildingBlock u) ⊏⋆ₑ (ModelBuildingBlock v)
+st-0f641043685975c9-0eb95e566855bed9 : ∀ {u v} → GovernanceBuildingBlock u ⊏⋆ₑ ModelBuildingBlock v
 st-0f641043685975c9-0eb95e566855bed9 = trivialPolySubTypeOfEntity
 
 

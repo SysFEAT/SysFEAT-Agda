@@ -23,7 +23,7 @@ GovernancePropertyType = PropertyType
 
 
 --  GovernancePropertyType withAspect GovernanceInstrument
-st-83f8933a67407206-6662916b68dd5f84 : GovernancePropertyType ⊏ₐₑ (GovernanceInstrument (lsuc(lsuc(lzero))))
+st-83f8933a67407206-6662916b68dd5f84 : GovernancePropertyType ⊏ₐₑ GovernanceInstrument (lsuc(lsuc( lzero)))
 st-83f8933a67407206-6662916b68dd5f84 = polySubTypeOf-identity
 
 --  GovernancePropertyType is subTypeOf PropertyType

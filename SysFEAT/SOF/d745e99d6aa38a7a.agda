@@ -24,7 +24,7 @@ Tag = MixedOrderEntity
 
 
 --  Tag withAspect ElementaryBlock
-st-d745e99d6aa38a7a-23d5c5fc685142de : Tag ⊏ₐₑ (ElementaryBlock lzero)
+st-d745e99d6aa38a7a-23d5c5fc685142de : Tag ⊏ₐₑ ElementaryBlock lzero
 st-d745e99d6aa38a7a-23d5c5fc685142de = polySubTypeOf-identity
 
 --  Tag is subTypeOf AnnotationBlock
@@ -40,4 +40,4 @@ taggedElement : ∀ {u} →  Linkage Tag (Entity u)
 taggedElement = make_Relation "Tagged Element" "Tagged Element"
 
 postulate -- taggedElement is subTypeOf annotedElement
-  st-3346c41a6878530e-3346b23668784855  : taggedElement  ⊏⋆ᵣ  annotedElement
+  st-3346c41a6878530e-3346b23668784855  : ∀ {u} → taggedElement   {u}  ⊏⋆ᵣ  annotedElement   {u}

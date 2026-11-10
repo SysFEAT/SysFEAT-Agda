@@ -18,16 +18,16 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
 
-AssetCategoryFamily : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-AssetCategoryFamily u  = MixedOrderEntity u 
+AssetCategoryFamily : ∀ (u : Level) → ClassOfMixedOrderEntity (lsuc u) 
+AssetCategoryFamily u  = MixedOrderEntity (lsuc u) 
 
 
 --  AssetCategoryFamily is subTypeOf ModelCategorizationBlock
-st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → (AssetCategoryFamily u) ⊏⋆ₑ (ModelCategorizationBlock v)
+st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc( v))))
 st-f69620466a0f9c2f-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategoryFamily is subTypeOf CategorizationFamily
-st-f69620466a0f9c2f-220d23706ad71311 : ∀ {u v} → (AssetCategoryFamily u) ⊏⋆ₑ (CategorizationFamily v)
+st-f69620466a0f9c2f-220d23706ad71311 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ CategorizationFamily v
 st-f69620466a0f9c2f-220d23706ad71311 = trivialPolySubTypeOfEntity
 
 

@@ -22,7 +22,7 @@ PhysicalResource u  = ResourceLevel u
 
 
 --  PhysicalResource is subTypeOf ResourceLevel
-st-828885fa6ae86b23-a04ea6866ae7465e : ∀ {u v} → (PhysicalResource u) ⊏⋆ₑ (ResourceLevel v)
+st-828885fa6ae86b23-a04ea6866ae7465e : ∀ {u v} → PhysicalResource u ⊏⋆ₑ ResourceLevel (lsuc(lsuc(lsuc( v))))
 st-828885fa6ae86b23-a04ea6866ae7465e = trivialPolySubTypeOfEntity
 
 

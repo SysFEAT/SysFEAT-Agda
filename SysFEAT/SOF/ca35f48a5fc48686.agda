@@ -32,7 +32,7 @@ st-ca35f48a5fc48686-a4a5b3f855585ce1 : OperatingEcoSystem ⊏ₑ AssetType
 st-ca35f48a5fc48686-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 --  OperatingEcoSystem withAspect AssetBlock
-st-ca35f48a5fc48686-0eb95f356855bf94 : OperatingEcoSystem ⊏ₐₑ (AssetBlock (lsuc(lzero)))
+st-ca35f48a5fc48686-0eb95f356855bf94 : OperatingEcoSystem ⊏ₐₑ AssetBlock (lsuc( lzero))
 st-ca35f48a5fc48686-0eb95f356855bf94 = polySubTypeOf-identity
 
 
@@ -47,7 +47,7 @@ OperatingConnector = MixedOrderEntity
 
 
 --  OperatingConnector withAspect OrderingConnector
-st-3d3f4b4062013550-478a4a4468565425 : OperatingConnector ⊏ₐₑ (OrderingConnector (lsuc(lzero)))
+st-3d3f4b4062013550-478a4a4468565425 : OperatingConnector ⊏ₐₑ OrderingConnector (lsuc( lzero))
 st-3d3f4b4062013550-478a4a4468565425 = polySubTypeOf-identity
 
 -- Membership relation
@@ -77,7 +77,7 @@ EcosystemMember = MixedOrderEntity
 
 
 --  EcosystemMember withAspect BoundedMember
-st-3d3f4aed6201346c-0eb999956855e070 : EcosystemMember ⊏ₐₑ (BoundedMember (lsuc(lzero)))
+st-3d3f4aed6201346c-0eb999956855e070 : EcosystemMember ⊏ₐₑ BoundedMember (lsuc( lzero))
 st-3d3f4aed6201346c-0eb999956855e070 = polySubTypeOf-identity
 
 -- Membership relation

@@ -38,7 +38,7 @@ measuredAsset : ∀ {u} →  Linkage KeyIndicator (AssetBlock u)
 measuredAsset = make_Relation "Measured Asset" "Measured Asset"
 
 postulate -- measuredAsset is subTypeOf holonymyRelation
-  st-6bf1872268599564-f626f77b6ad475d4  : measuredAsset  ⊏⋆ᵣ  holonymyRelation
+  st-6bf1872268599564-f626f77b6ad475d4  : ∀ {u} → measuredAsset   {lzero}  ⊏⋆ᵣ  holonymyRelation  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Measurement: 
@@ -51,7 +51,7 @@ Measurement = MixedOrderEntity
 
 
 --  Measurement withAspect HierarchicalMember
-st-3b1bc7f668cdaca9-fb660a9068699cde : Measurement ⊏ₐₑ (HierarchicalMember (lsuc(lzero)))
+st-3b1bc7f668cdaca9-fb660a9068699cde : Measurement ⊏ₐₑ HierarchicalMember (lsuc( lzero))
 st-3b1bc7f668cdaca9-fb660a9068699cde = polySubTypeOf-identity
 
 -- Membership relation

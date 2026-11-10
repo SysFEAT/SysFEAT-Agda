@@ -22,7 +22,7 @@ EnvironmentalCategory u  = ClassOfEntity u
 
 
 --  EnvironmentalCategory is subTypeOf ConditionCategory
-st-4efc77266ae49efb-4efc6c5b6ae48f78 : ∀ {u v} → (EnvironmentalCategory u) ⊏⋆ₑ (ConditionCategory v)
+st-4efc77266ae49efb-4efc6c5b6ae48f78 : ∀ {u v} → EnvironmentalCategory u ⊏⋆ₑ ConditionCategory v
 st-4efc77266ae49efb-4efc6c5b6ae48f78 = trivialPolySubTypeOfEntity
 
 

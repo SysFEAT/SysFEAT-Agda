@@ -23,7 +23,7 @@ InformationLexicalScope u  = MixedOrderEntity u
 
 
 --  InformationLexicalScope is subTypeOf ArchitectureLexicalScope
-st-6c5f808b68587e49-0eb95d786855bbd9 : ∀ {u v} → (InformationLexicalScope u) ⊏⋆ₑ (ArchitectureLexicalScope v)
+st-6c5f808b68587e49-0eb95d786855bbd9 : ∀ {u v} → InformationLexicalScope u ⊏⋆ₑ ArchitectureLexicalScope v
 st-6c5f808b68587e49-0eb95d786855bbd9 = trivialPolySubTypeOfEntity
 
 
@@ -35,4 +35,4 @@ scopedInformationBlock : ∀ {u v} →  Linkage (InformationLexicalScope u) (Inf
 scopedInformationBlock = make_nestingRelation "Scoped Information Block" "Scoped Information Block"
 
 postulate -- scopedInformationBlock is subTypeOf scopedArchitectureBlock
-  st-6c5f82aa68588092-0eb95f9a6855c081  : ∀ {u v} → scopedInformationBlock {u} {v}  ⊏⋆ᵣ  scopedArchitectureBlock {u} {v}
+  st-6c5f82aa68588092-0eb95f9a6855c081  : ∀ {u v} → scopedInformationBlock  {u}  {v}  ⊏⋆ᵣ  scopedArchitectureBlock  {u}  {v}

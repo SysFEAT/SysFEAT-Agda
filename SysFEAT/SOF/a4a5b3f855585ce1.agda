@@ -38,7 +38,7 @@ AssetType : BoundedIndividualMetaClass
 AssetType = ClassOfBoundedIndividual
 
 --  AssetType withAspect AssetBlock
-st-a4a5b3f855585ce1-0eb95f356855bf94 : AssetType ⊏ₐₑ (AssetBlock (lsuc(lzero)))
+st-a4a5b3f855585ce1-0eb95f356855bf94 : AssetType ⊏ₐₑ AssetBlock (lsuc( lzero))
 st-a4a5b3f855585ce1-0eb95f356855bf94 = polySubTypeOf-identity
 
 --  AssetType is subTypeOf ClassOfBoundedIndividual
@@ -56,7 +56,7 @@ assetTypeQualification :  Linkage AssetType AssetProperty
 assetTypeQualification = make_subTypeOf "Asset Type Qualification" "Asset Type Qualification"
 
 postulate -- assetTypeQualification is subTypeOf qualifyingProperty
-  st-a04ea2346ae7302f-16621f9a689131e0  : assetTypeQualification  ⊏⋆ᵣ  qualifyingProperty
+  st-a04ea2346ae7302f-16621f9a689131e0  : assetTypeQualification    ⊏⋆ᵣ  qualifyingProperty  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Asset: 
@@ -66,7 +66,7 @@ specializedAsset :  Linkage AssetType AssetType
 specializedAsset = make_subTypeOf "Specialized Asset" "Specialized Asset"
 
 postulate -- specializedAsset is subTypeOf specializedClassOfBoundedIndividual
-  st-12b0287266e936d5-e53a627766e4b4cd  : specializedAsset  ⊏⋆ᵣ  specializedClassOfBoundedIndividual
+  st-12b0287266e936d5-e53a627766e4b4cd  : specializedAsset    ⊏⋆ᵣ  specializedClassOfBoundedIndividual  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Functional Asset: 
@@ -76,7 +76,7 @@ realizedFunctionalAsset :  Linkage AssetType AssetType
 realizedFunctionalAsset = make_subTypeOf "Realized Functional Asset" "Realized Functional Asset"
 
 postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
-  st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset  ⊏⋆ᵣ  specializedClassOfIndividual
+  st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset    ⊏⋆ᵣ  specializedClassOfIndividual  
 
 -- -------------------------------------------------------------------------------------------- 
 {- Applicable Condition Type: 
@@ -86,7 +86,7 @@ applicableConditionType :  Linkage AssetType ConditionPropertyType
 applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicable Condition Type"
 
 postulate -- applicableConditionType is subTypeOf categorizingFamily
-  st-c2f2709166ea21a0-d9b8dfaa6ae044ee  : applicableConditionType  ⊏⋆ᵣ  categorizingFamily
+  st-c2f2709166ea21a0-d9b8dfaa6ae044ee  : applicableConditionType    ⊏⋆ᵣ  categorizingFamily  {lzero}  {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Categorization: -}
@@ -94,7 +94,7 @@ assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategory u)
 assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
 
 postulate -- assetCategorization is subTypeOf conceptCategorization
-  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : assetCategorization  {lsuc(lzero)}  ⊏⋆ᵣ  conceptCategorization {lsuc(lzero)} {lsuc(lzero)}
+  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization   {u}  ⊏⋆ᵣ  conceptCategorization  {lzero}  {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Categorization Scheme: -}
@@ -102,7 +102,7 @@ assetCategorizationScheme : ∀ {u} →  Linkage AssetType (AssetCategoryFamily 
 assetCategorizationScheme = make_classOfRelation "Asset Categorization Scheme" "Asset Categorization Scheme"
 
 postulate -- assetCategorizationScheme is subTypeOf categorizingFamily
-  st-f69620606a0f9c94-d9b8dfaa6ae044ee  : assetCategorizationScheme  {lsuc(lsuc(lzero))}  ⊏⋆ᵣ  categorizingFamily
+  st-f69620606a0f9c94-d9b8dfaa6ae044ee  : ∀ {u} → assetCategorizationScheme   {u}  ⊏⋆ᵣ  categorizingFamily  {lzero}  {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Risk: 
@@ -115,7 +115,7 @@ Risk = MixedOrderEntity
 
 
 --  Risk withAspect UnboundedMember
-st-0e55219466f11fd7-8cfaf71a6852b042 : Risk ⊏ₐₑ (UnboundedMember (lsuc(lsuc(lzero))))
+st-0e55219466f11fd7-8cfaf71a6852b042 : Risk ⊏ₐₑ UnboundedMember (lsuc(lsuc( lzero)))
 st-0e55219466f11fd7-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation
@@ -167,5 +167,5 @@ policyConformance : Linkage AssetType Policy
 policyConformance = membershipOfPolicyConformance  ∘  aggregationOfPolicyPolicyConformance
 
 postulate -- policyConformance is subTypeOf assetTypeQualification
-  st-01f1189f689b641d-a04ea2346ae7302f  : policyConformance  ⊏⋆ᵣ  assetTypeQualification
+  st-01f1189f689b641d-a04ea2346ae7302f  : policyConformance    ⊏⋆ᵣ  assetTypeQualification  
 
