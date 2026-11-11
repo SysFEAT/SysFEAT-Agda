@@ -23,7 +23,7 @@ CompositePropertyType = PropertyType
 
 
 --  CompositePropertyType withAspect AggregateEntityBlock
-st-86b99fec6ac32863-23d56d9868525869 : CompositePropertyType ⊏ₐₑ AggregateEntityBlock (lsuc((lsuc( lzero))))
+st-86b99fec6ac32863-23d56d9868525869 : CompositePropertyType ⊏ₐₑ AggregateEntityBlock (lsuc(lsuc( lzero)))
 st-86b99fec6ac32863-23d56d9868525869 = polySubTypeOf-identity
 
 --  CompositePropertyType is subTypeOf PropertyType
