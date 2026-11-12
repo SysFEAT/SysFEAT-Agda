@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
 open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
 
-ConditionCategory : ∀ (u : Level) → MetaClass u 
-ConditionCategory u  = ClassOfEntity u 
+ConditionCategory : ∀ (u : Level) → CategorizationFamily u 
+ConditionCategory u  = ConceptCategory u 
 
 
 --  ConditionCategory is subTypeOf ConceptCategory
@@ -35,4 +35,4 @@ conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOf
 conditionCategoryFamily = make_instanceOf "Condition Category Family" "Condition Category Family"
 
 postulate -- conditionCategoryFamily is subTypeOf parentFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily  {u}  {u ⊔ v}  ⊏⋆ᵣ  parentFamily  {u}  {u ⊔ v}
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {u} {u ⊔ v}

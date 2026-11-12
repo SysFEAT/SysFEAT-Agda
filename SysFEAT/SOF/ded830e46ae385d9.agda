@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 
-DataCatagory : ∀ (u : Level) → MetaClass u 
-DataCatagory u  = ClassOfEntity u 
+DataCatagory : ∀ (u : Level) → CategorizationFamily u 
+DataCatagory u  = ConceptCategory u 
 
 
 --  DataCatagory is subTypeOf ConceptCategory
@@ -35,4 +35,4 @@ dataCategoryFamily : ∀ {u v} →  Linkage (DataCatagory u) (DataCategoryFamily
 dataCategoryFamily = make_instanceOf "Data Category Family" "Data Category Family"
 
 postulate -- dataCategoryFamily is subTypeOf parentFamily
-  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily  {u}  {u ⊔ v}  ⊏⋆ᵣ  parentFamily  {u}  {u ⊔ v}
+  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {u} {u ⊔ v}

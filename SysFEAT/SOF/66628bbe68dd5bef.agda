@@ -40,4 +40,4 @@ governancePropertyType :  Linkage GovernanceProperty GovernancePropertyType
 governancePropertyType = make_instanceOf "Governance Property Type" "Governance Property Type"
 
 postulate -- governancePropertyType is subTypeOf propertyClassification
-  st-666293d768dd6238-1976247d68925c3e  : governancePropertyType    ⊏⋆ᵣ  propertyClassification  
+  st-666293d768dd6238-1976247d68925c3e  : governancePropertyType  ⊏⋆ᵣ  propertyClassification

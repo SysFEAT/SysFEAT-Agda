@@ -18,9 +18,9 @@ External references:
 module SysFEAT.SOF.0ffeec41600be08a where -- ========== Initiative
 
 open import Agda.Primitive
+open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
 open import SysFEAT.SOF.01ce05f9685979d8 public -- InitiativeBlock
-open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
 open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
@@ -29,6 +29,10 @@ Initiative : ClassOfBoundedIndividual
 Initiative = BoundedIndividual
 
 
+--  Initiative is subTypeOf BoundedIndividual
+st-0ffeec41600be08a-28f07b2354be0d69 : Initiative ⊏ₑ BoundedIndividual
+st-0ffeec41600be08a-28f07b2354be0d69 = polySubTypeOf-identity
+
 --  Initiative withAspect BlockCollection
 st-0ffeec41600be08a-23d5aa4868513f43 : Initiative ⊏ₐₑ BlockCollection lzero
 st-0ffeec41600be08a-23d5aa4868513f43 = polySubTypeOf-identity
@@ -36,10 +40,6 @@ st-0ffeec41600be08a-23d5aa4868513f43 = polySubTypeOf-identity
 --  Initiative withAspect InitiativeBlock
 st-0ffeec41600be08a-01ce05f9685979d8 : Initiative ⊏ₐₑ InitiativeBlock lzero
 st-0ffeec41600be08a-01ce05f9685979d8 = polySubTypeOf-identity
-
---  Initiative is subTypeOf BoundedIndividual
-st-0ffeec41600be08a-28f07b2354be0d69 : Initiative ⊏ₑ BoundedIndividual
-st-0ffeec41600be08a-28f07b2354be0d69 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -50,7 +50,7 @@ steeringAuthority :  Linkage Initiative ResponsibleHumanEntity
 steeringAuthority = make_holonymyRelation "Steering Authority" "Steering Authority"
 
 postulate -- steeringAuthority is subTypeOf referenceHolonymy
-  st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority    ⊏⋆ᵣ  referenceHolonymy  
+  st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority  ⊏⋆ᵣ  referenceHolonymy
 
 -- -------------------------------------------------------------------------------------------- 
 {- Course of Action: 
@@ -115,5 +115,5 @@ initiativeSubject : ∀ {u w} → Linkage Initiative (AssetBlock w)
 initiativeSubject {u} {w}  = membershipOfInitiativeSubject {u}   ∘  aggregationOfAssetBlockInitiativeSubject {w} 
 
 postulate -- initiativeSubject is subTypeOf referenceHolonymy
-  st-0f642fd06859b0d5-9653a95669701e02  : ∀ {u} → initiativeSubject  {lzero}  {lzero}  ⊏⋆ᵣ  referenceHolonymy  
+  st-0f642fd06859b0d5-9653a95669701e02  : initiativeSubject {lzero} {lzero}  ⊏⋆ᵣ  referenceHolonymy
 

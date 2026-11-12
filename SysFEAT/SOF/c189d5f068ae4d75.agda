@@ -42,7 +42,7 @@ specializedInformationProperty :  Linkage InformationProperty InformationPropert
 specializedInformationProperty = make_subTypeOf "Specialized Information Property" "Specialized Information Property"
 
 postulate -- specializedInformationProperty is subTypeOf specializedInformationAsset
-  st-c189dcc568ae56ac-325a372e66f33bca  : specializedInformationProperty    ⊏⋆ᵣ  specializedInformationAsset  
+  st-c189dcc568ae56ac-325a372e66f33bca  : specializedInformationProperty  ⊏⋆ᵣ  specializedInformationAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Information Property: -}

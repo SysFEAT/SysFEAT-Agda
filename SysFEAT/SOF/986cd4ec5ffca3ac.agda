@@ -44,7 +44,7 @@ specializedBehavior :  Linkage BehaviorType BehaviorType
 specializedBehavior = make_subTypeOf "Specialized Behavior" "Specialized Behavior"
 
 postulate -- specializedBehavior is subTypeOf specializedOperatingAsset
-  st-2b5b452d66ed5855-6a70772167873276  : specializedBehavior    ⊏⋆ᵣ  specializedOperatingAsset  
+  st-2b5b452d66ed5855-6a70772167873276  : specializedBehavior  ⊏⋆ᵣ  specializedOperatingAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Behavior: -}
@@ -52,7 +52,7 @@ realizedBehavior :  Linkage BehaviorType BehaviorType
 realizedBehavior = make_subTypeOf "Realized Behavior" "Realized Behavior"
 
 postulate -- realizedBehavior is subTypeOf realizedOperatingAsset
-  st-2b5b45a466ed5920-7dc193da6849536c  : realizedBehavior    ⊏⋆ᵣ  realizedOperatingAsset  
+  st-2b5b45a466ed5920-7dc193da6849536c  : realizedBehavior  ⊏⋆ᵣ  realizedOperatingAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Behavior Participant: 

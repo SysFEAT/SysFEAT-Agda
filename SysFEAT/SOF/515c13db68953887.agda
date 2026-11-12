@@ -24,18 +24,14 @@ External references:
 module SysFEAT.SOF.515c13db68953887 where -- ========== Capability
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
-open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 
 Capability : AssetPropertyType
 Capability = AssetProperty
 
-
---  Capability withAspect AssetBlock
-st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ AssetBlock (lsuc( lzero))
-st-515c13db68953887-0eb95f356855bf94 = polySubTypeOf-identity
 
 --  Capability is subTypeOf AssetProperty
 st-515c13db68953887-515c6a856893324e : Capability ⊏ₑ AssetProperty
@@ -44,6 +40,10 @@ st-515c13db68953887-515c6a856893324e = polySubTypeOf-identity
 --  Capability is subTypeOf CompositeProperty
 st-515c13db68953887-3e525e406ab05b0d : Capability ⊏ₑ CompositeProperty
 st-515c13db68953887-3e525e406ab05b0d = polySubTypeOf-identity
+
+--  Capability withAspect AssetBlock
+st-515c13db68953887-0eb95f356855bf94 : Capability ⊏ₐₑ AssetBlock (lsuc( lzero))
+st-515c13db68953887-0eb95f356855bf94 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -54,35 +54,41 @@ specializedCapability :  Linkage Capability Capability
 specializedCapability = make_subTypeOf "Specialized Capability" "Specialized Capability"
 
 postulate -- specializedCapability is subTypeOf specializedProperty
-  st-01f11e77689b6b10-1662112a68925f90  : specializedCapability    ⊏⋆ᵣ  specializedProperty  
+  st-01f11e77689b6b10-1662112a68925f90  : specializedCapability  ⊏⋆ᵣ  specializedProperty
 
 -- -------------------------------------------------------------------------------------------- 
-{- Involved Information: -}
--- Aggregate Member : Involved Information
-InvolvedInformation : ClassOfMixedOrderEntity
-InvolvedInformation = MixedOrderEntity
+{- Outcome Production: 
+Asset Type or state of Asset Type that  Operating Asset Types having the Capability are capable to produce.
+-}
+-- Aggregate Member : Outcome Production
+OutcomeProduction : SecondOrderClass
+OutcomeProduction = FirstOrderClass
 
 
 
---  InvolvedInformation withAspect UnboundedMember
-st-01f11a37689b6677-8cfaf71a6852b042 : InvolvedInformation ⊏ₐₑ UnboundedMember (lsuc( lzero))
+--  OutcomeProduction withAspect UnboundedMember
+st-01f11a37689b6677-8cfaf71a6852b042 : OutcomeProduction ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-01f11a37689b6677-8cfaf71a6852b042 = polySubTypeOf-identity
 
+--  OutcomeProduction is subTypeOf FirstOrderClass
+st-01f11a37689b6677-c463c6106aa23c35 : OutcomeProduction ⊏ₑ FirstOrderClass
+st-01f11a37689b6677-c463c6106aa23c35 = polySubTypeOf-identity
+
 -- Membership relation
-membershipOfInvolvedInformation :  Linkage Capability InvolvedInformation
-membershipOfInvolvedInformation = make_upwardNestingRelation "involvedInformation membership" "nested involvedInformation"
+membershipOfOutcomeProduction :  Linkage Capability OutcomeProduction
+membershipOfOutcomeProduction = make_upwardNestingRelation "outcomeProduction membership" "nested outcomeProduction"
 
 -- Aggregation relation
-aggregationOfInformationAssetInvolvedInformation :  Linkage InvolvedInformation InformationAsset
-aggregationOfInformationAssetInvolvedInformation = make_Relation "InformationAsset aggregation" "aggregated InformationAsset"
+aggregationOfAssetTypeOutcomeProduction :  Linkage OutcomeProduction AssetType
+aggregationOfAssetTypeOutcomeProduction = make_Relation "AssetType aggregation" "aggregated AssetType"
 
-{- involvedInformation : derived relation obtained by composing
-   membershipOfInvolvedInformation and aggregationOfInformationAssetInvolvedInformation
-   It directly links an Capability to the final aggregated InformationAsset
-   hiding the reifying InvolvedInformation
+{- outcomeProduction : derived relation obtained by composing
+   membershipOfOutcomeProduction and aggregationOfAssetTypeOutcomeProduction
+   It directly links an Capability to the final aggregated AssetType
+   hiding the reifying OutcomeProduction
 -}
-involvedInformation : Linkage Capability InformationAsset
-involvedInformation = membershipOfInvolvedInformation  ∘  aggregationOfInformationAssetInvolvedInformation
+outcomeProduction : Linkage Capability AssetType
+outcomeProduction = membershipOfOutcomeProduction  ∘  aggregationOfAssetTypeOutcomeProduction
 
 
 

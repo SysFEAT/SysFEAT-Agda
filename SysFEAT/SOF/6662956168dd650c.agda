@@ -35,4 +35,4 @@ assessmentType :  Linkage AssessmentValue AssessmentType
 assessmentType = make_instanceOf "Assessment Type" "Assessment Type"
 
 postulate -- assessmentType is subTypeOf appraisalType
-  st-6662961868dd65f6-666294f768dd64bc  : assessmentType    ⊏⋆ᵣ  appraisalType  
+  st-6662961868dd65f6-666294f768dd64bc  : assessmentType  ⊏⋆ᵣ  appraisalType

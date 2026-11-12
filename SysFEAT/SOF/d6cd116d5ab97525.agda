@@ -39,4 +39,4 @@ specializedInformationDomain :  Linkage InformationDomain InformationDomain
 specializedInformationDomain = make_subTypeOf "Specialized Information Domain" "Specialized Information Domain"
 
 postulate -- specializedInformationDomain is subTypeOf subTypeOfEntity
-  st-325a380a66f34efb-8336837268e9448b  : specializedInformationDomain    ⊏⋆ᵣ  subTypeOfEntity  {lzero}  {lzero}
+  st-325a380a66f34efb-8336837268e9448b  : specializedInformationDomain  ⊏⋆ᵣ  subTypeOfEntity {lzero}

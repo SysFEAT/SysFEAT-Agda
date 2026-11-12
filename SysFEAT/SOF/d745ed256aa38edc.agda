@@ -15,20 +15,20 @@ Documentation : https://framework.sysfeat.com/pages/d745ed256aa38edc.htm
 module SysFEAT.SOF.d745ed256aa38edc where -- ========== InformationDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.6c5f808b68587e49 public -- InformationLexicalScope
 open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
+open import SysFEAT.SOF.6c5f808b68587e49 public -- InformationLexicalScope
 
-InformationDictionary : ClassOfMixedOrderEntity
-InformationDictionary = MixedOrderEntity
+InformationDictionary : ClassOfAbstractEntity
+InformationDictionary = AbstractEntity
 
-
---  InformationDictionary withAspect InformationLexicalScope
-st-d745ed256aa38edc-6c5f808b68587e49 : InformationDictionary ⊏ₐₑ InformationLexicalScope lzero
-st-d745ed256aa38edc-6c5f808b68587e49 = polySubTypeOf-identity
 
 --  InformationDictionary is subTypeOf ModelPackage
 st-d745ed256aa38edc-d745dbaa6aa3840b : InformationDictionary ⊏ₑ ModelPackage
 st-d745ed256aa38edc-d745dbaa6aa3840b = polySubTypeOf-identity
+
+--  InformationDictionary withAspect InformationLexicalScope
+st-d745ed256aa38edc-6c5f808b68587e49 : InformationDictionary ⊏ₐₑ InformationLexicalScope lzero
+st-d745ed256aa38edc-6c5f808b68587e49 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -41,4 +41,4 @@ importedInformationDictionary :  Linkage InformationDictionary InformationDictio
 importedInformationDictionary = make_Relation "Imported Information Dictionary" "Imported Information Dictionary"
 
 postulate -- importedInformationDictionary is subTypeOf importedModelContainer
-  st-0f64145168598226-0eb97ce26855cf57  : importedInformationDictionary    ⊏⋆ᵣ  importedModelContainer  {lsuc(lsuc(lzero))}  {lzero}
+  st-0f64145168598226-0eb97ce26855cf57  : importedInformationDictionary  ⊏⋆ᵣ  importedModelContainer {lsuc(lsuc(lzero))} {lsuc(lsuc(lzero))}

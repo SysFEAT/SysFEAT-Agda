@@ -17,21 +17,21 @@ External references:
 module SysFEAT.SOF.d745e8936aa388e0 where -- ========== DescriptionNote
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.SOF.d745e6ea6aa386e5 public -- AnnotationBlock
+open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity
 
-DescriptionNote : ClassOfMixedOrderEntity
-DescriptionNote = MixedOrderEntity
+DescriptionNote : ClassOfAbstractEntity
+DescriptionNote = AbstractEntity
 
-
---  DescriptionNote withAspect ElementaryBlock
-st-d745e8936aa388e0-23d5c5fc685142de : DescriptionNote ⊏ₐₑ ElementaryBlock lzero
-st-d745e8936aa388e0-23d5c5fc685142de = polySubTypeOf-identity
 
 --  DescriptionNote is subTypeOf AnnotationBlock
 st-d745e8936aa388e0-d745e6ea6aa386e5 : DescriptionNote ⊏ₑ AnnotationBlock
 st-d745e8936aa388e0-d745e6ea6aa386e5 = polySubTypeOf-identity
+
+--  DescriptionNote withAspect ElementaryBlock
+st-d745e8936aa388e0-23d5c5fc685142de : DescriptionNote ⊏ₐₑ ElementaryBlock lzero
+st-d745e8936aa388e0-23d5c5fc685142de = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -42,4 +42,4 @@ describedElement : ∀ {u} →  Linkage DescriptionNote (Entity u)
 describedElement = make_Relation "Described Element" "Described Element"
 
 postulate -- describedElement is subTypeOf annotedElement
-  st-3346bfad68785033-3346b23668784855  : ∀ {u} → describedElement   {u}  ⊏⋆ᵣ  annotedElement   {u}
+  st-3346bfad68785033-3346b23668784855  : ∀ {u} → describedElement {u}  ⊏⋆ᵣ  annotedElement {u}

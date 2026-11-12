@@ -40,4 +40,4 @@ appraisalType :  Linkage AppraisalOption AppraisalType
 appraisalType = make_instanceOf "Appraisal Type" "Appraisal Type"
 
 postulate -- appraisalType is subTypeOf governancePropertyType
-  st-666294f768dd64bc-666293d768dd6238  : appraisalType    ⊏⋆ᵣ  governancePropertyType  
+  st-666294f768dd64bc-666293d768dd6238  : appraisalType  ⊏⋆ᵣ  governancePropertyType

@@ -17,8 +17,8 @@ module SysFEAT.SOF.4efc77266ae49efb where -- ========== EnvironmentalCategory
 open import Agda.Primitive
 open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
 
-EnvironmentalCategory : ∀ (u : Level) → MetaClass u 
-EnvironmentalCategory u  = ClassOfEntity u 
+EnvironmentalCategory : ∀ (u : Level) → CategorizationFamily u 
+EnvironmentalCategory u  = ConceptCategory u 
 
 
 --  EnvironmentalCategory is subTypeOf ConditionCategory

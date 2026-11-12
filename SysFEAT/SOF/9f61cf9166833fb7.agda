@@ -47,7 +47,7 @@ exhibitedCapability :  Linkage IndividualOperatingAsset Capability
 exhibitedCapability = make_instanceOf "Exhibited Capability" "Exhibited Capability"
 
 postulate -- exhibitedCapability is subTypeOf propertyOfIndividual
-  st-e44104b768d586bb-19763dbb68926a48  : exhibitedCapability    ⊏⋆ᵣ  propertyOfIndividual  
+  st-e44104b768d586bb-19763dbb68926a48  : exhibitedCapability  ⊏⋆ᵣ  propertyOfIndividual
 
 -- -------------------------------------------------------------------------------------------- 
 {- Individual Operating Part: 

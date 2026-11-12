@@ -17,8 +17,8 @@ module SysFEAT.SOF.4356520b6a110f68 where -- ========== DataCategoryFamily
 open import Agda.Primitive
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
 
-DataCategoryFamily : ∀ (u : Level) → ClassOfMixedOrderEntity (lsuc u) 
-DataCategoryFamily u  = MixedOrderEntity (lsuc u) 
+DataCategoryFamily : ∀ (u : Level) → MetaClass (lsuc u) 
+DataCategoryFamily u  = ClassOfEntity (lsuc u) 
 
 
 --  DataCategoryFamily is subTypeOf AssetCategoryFamily

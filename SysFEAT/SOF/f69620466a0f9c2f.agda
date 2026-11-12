@@ -15,19 +15,19 @@ Documentation : https://framework.sysfeat.com/pages/f69620466a0f9c2f.htm
 module SysFEAT.SOF.f69620466a0f9c2f where -- ========== AssetCategoryFamily
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 
-AssetCategoryFamily : ∀ (u : Level) → ClassOfMixedOrderEntity (lsuc u) 
-AssetCategoryFamily u  = MixedOrderEntity (lsuc u) 
+AssetCategoryFamily : ∀ (u : Level) → MetaClass (lsuc u) 
+AssetCategoryFamily u  = ClassOfEntity (lsuc u) 
 
-
---  AssetCategoryFamily is subTypeOf ModelCategorizationBlock
-st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc( v))))
-st-f69620466a0f9c2f-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategoryFamily is subTypeOf CategorizationFamily
 st-f69620466a0f9c2f-220d23706ad71311 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ CategorizationFamily v
 st-f69620466a0f9c2f-220d23706ad71311 = trivialPolySubTypeOfEntity
+
+--  AssetCategoryFamily is subTypeOf ModelCategorizationBlock
+st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc( v))))
+st-f69620466a0f9c2f-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 

@@ -35,4 +35,4 @@ informationDomainMember : ∀ {u v} →  Linkage (InformationDomainGroup u) (Inf
 informationDomainMember = make_classOfRelation "Information Domain Member" "Information Domain Member"
 
 postulate -- informationDomainMember is subTypeOf memberClass
-  st-003300fa6ae27701-c40ecc196ae113ff  : ∀ {u v} → informationDomainMember  {u}  {v}  ⊏⋆ᵣ  memberClass  {u ⊔ v}  {v}
+  st-003300fa6ae27701-c40ecc196ae113ff  : ∀ {u v} → informationDomainMember {u} {v}  ⊏⋆ᵣ  memberClass {u ⊔ v} {v}

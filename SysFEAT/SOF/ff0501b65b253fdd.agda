@@ -19,9 +19,9 @@ External references:
 module SysFEAT.SOF.ff0501b65b253fdd where -- ========== GoverningTeam
 
 open import Agda.Primitive
+open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 open import SysFEAT.SOF.0f64116a68597a27 public -- GovernanceContainer
 open import SysFEAT.SOF.0f641043685975c9 public -- GovernanceBuildingBlock
-open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 open import SysFEAT.SOF.f4be37465ee1cba6 public -- Audit
 open import SysFEAT.SOF.1737b50b5fe27cba public -- GovernanceEvent
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
@@ -32,6 +32,10 @@ GoverningTeam : WholeLifeClass
 GoverningTeam = WholeLifeIndividual
 
 
+--  GoverningTeam is subTypeOf WholeLifeIndividual
+st-ff0501b65b253fdd-342f74b166156e02 : GoverningTeam ⊏ₑ WholeLifeIndividual
+st-ff0501b65b253fdd-342f74b166156e02 = polySubTypeOf-identity
+
 --  GoverningTeam withAspect GovernanceContainer
 st-ff0501b65b253fdd-0f64116a68597a27 : GoverningTeam ⊏ₐₑ GovernanceContainer lzero
 st-ff0501b65b253fdd-0f64116a68597a27 = polySubTypeOf-identity
@@ -39,10 +43,6 @@ st-ff0501b65b253fdd-0f64116a68597a27 = polySubTypeOf-identity
 --  GoverningTeam withAspect GovernanceBuildingBlock
 st-ff0501b65b253fdd-0f641043685975c9 : GoverningTeam ⊏ₐₑ GovernanceBuildingBlock lzero
 st-ff0501b65b253fdd-0f641043685975c9 = polySubTypeOf-identity
-
---  GoverningTeam is subTypeOf WholeLifeIndividual
-st-ff0501b65b253fdd-342f74b166156e02 : GoverningTeam ⊏ₑ WholeLifeIndividual
-st-ff0501b65b253fdd-342f74b166156e02 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -59,7 +59,7 @@ packagedTeamEvent :  Linkage GoverningTeam GovernanceEvent
 packagedTeamEvent = make_nestingRelation "Packaged Team Event" "Packaged Team Event"
 
 postulate -- packagedTeamEvent is subTypeOf packagedGovernanceBlock
-  st-9c94c1ad695f3777-0f6410c668597695  : packagedTeamEvent    ⊏⋆ᵣ  packagedGovernanceBlock  {lzero}  {lzero}
+  st-9c94c1ad695f3777-0f6410c668597695  : packagedTeamEvent  ⊏⋆ᵣ  packagedGovernanceBlock {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Governed Initiative: -}
@@ -67,9 +67,9 @@ governedInitiative :  Linkage GoverningTeam Initiative
 governedInitiative = make_holonymyRelation "Governed Initiative" "Governed Initiative"
 
 postulate -- governedInitiative is subTypeOf referenceHolonymy
-  st-18a81ed15eeb5d60-9653a95669701e02  : governedInitiative    ⊏⋆ᵣ  referenceHolonymy  
+  st-18a81ed15eeb5d60-9653a95669701e02  : governedInitiative  ⊏⋆ᵣ  referenceHolonymy
 postulate -- governedInitiative is subTypeOf existentialDependency
-  st-18a81ed15eeb5d60-cbfce7da685358e9  : governedInitiative    ⊏⋆ᵣ  existentialDependency  {lzero}  {lzero}
+  st-18a81ed15eeb5d60-cbfce7da685358e9  : governedInitiative  ⊏⋆ᵣ  existentialDependency {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Recorded Measure: -}
@@ -77,7 +77,7 @@ recordedMeasure :  Linkage GoverningTeam MeasurementInstrument
 recordedMeasure = make_holonymyRelation "Recorded Measure" "Recorded Measure"
 
 postulate -- recordedMeasure is subTypeOf packagedGovernanceBlock
-  st-3d9074d55ffcf128-0f6410c668597695  : recordedMeasure    ⊏⋆ᵣ  packagedGovernanceBlock  {lzero}  {lzero}
+  st-3d9074d55ffcf128-0f6410c668597695  : recordedMeasure  ⊏⋆ᵣ  packagedGovernanceBlock {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Team: -}
@@ -85,9 +85,9 @@ subTeam :  Linkage GoverningTeam GoverningTeam
 subTeam = make_holonymyRelation "Sub-Team" "Sub-Team"
 
 postulate -- subTeam is subTypeOf nestingRelation
-  st-ac98b16e60a38cbc-02a506a968540333  : subTeam    ⊏⋆ᵣ  nestingRelation  {lzero}  {lzero}
+  st-ac98b16e60a38cbc-02a506a968540333  : subTeam  ⊏⋆ᵣ  nestingRelation {lzero} {lzero}
 postulate -- subTeam is subTypeOf holonymyRelation
-  st-ac98b16e60a38cbc-f626f77b6ad475d4  : subTeam    ⊏⋆ᵣ  holonymyRelation  
+  st-ac98b16e60a38cbc-f626f77b6ad475d4  : subTeam  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Team Committee: -}
@@ -95,4 +95,4 @@ teamCommittee :  Linkage GoverningTeam GovernanceCommittee
 teamCommittee = make_holonymyRelation "Team Committee" "Team Committee"
 
 postulate -- teamCommittee is subTypeOf referenceHolonymy
-  st-b0d7b34f5ea02f2c-9653a95669701e02  : teamCommittee    ⊏⋆ᵣ  referenceHolonymy  
+  st-b0d7b34f5ea02f2c-9653a95669701e02  : teamCommittee  ⊏⋆ᵣ  referenceHolonymy

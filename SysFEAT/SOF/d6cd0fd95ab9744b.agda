@@ -39,7 +39,7 @@ specializedOperatingEnvironment :  Linkage AgentTypeEnvironment AgentTypeEnviron
 specializedOperatingEnvironment = make_subTypeOf "Specialized Operating Environment" "Specialized Operating Environment"
 
 postulate -- specializedOperatingEnvironment is subTypeOf specializedAsset
-  st-325a373d66f33dca-12b0287266e936d5  : specializedOperatingEnvironment    ⊏⋆ᵣ  specializedAsset  
+  st-325a373d66f33dca-12b0287266e936d5  : specializedOperatingEnvironment  ⊏⋆ᵣ  specializedAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Operating Environment: -}
@@ -47,7 +47,7 @@ realizedOperatingEnvironment :  Linkage AgentTypeEnvironment AgentTypeEnvironmen
 realizedOperatingEnvironment = make_subTypeOf "Realized Operating Environment" "Realized Operating Environment"
 
 postulate -- realizedOperatingEnvironment is subTypeOf realizedFunctionalAsset
-  st-325a3a1066f35860-7dc1907b684951ae  : realizedOperatingEnvironment    ⊏⋆ᵣ  realizedFunctionalAsset  
+  st-325a3a1066f35860-7dc1907b684951ae  : realizedOperatingEnvironment  ⊏⋆ᵣ  realizedFunctionalAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Service Channel: -}
