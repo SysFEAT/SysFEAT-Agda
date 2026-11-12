@@ -44,7 +44,7 @@ specializedInformationEntity :  Linkage InformationEntity InformationEntity
 specializedInformationEntity = make_subTypeOf "Specialized Information Entity" "Specialized Information Entity"
 
 postulate -- specializedInformationEntity is subTypeOf specializedInformationAsset
-  st-325a37b966f34da2-325a372e66f33bca  : specializedInformationEntity    ⊏⋆ᵣ  specializedInformationAsset  
+  st-325a37b966f34da2-325a372e66f33bca  : specializedInformationEntity  ⊏⋆ᵣ  specializedInformationAsset
 
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Information Property: -}

@@ -38,7 +38,7 @@ specializedScenario :  Linkage InteractionProcessType InteractionProcessType
 specializedScenario = make_subTypeOf "Specialized Scenario" "Specialized Scenario"
 
 postulate -- specializedScenario is subTypeOf specializedBehavior
-  st-325a373a66f33d61-2b5b452d66ed5855  : specializedScenario    ⊏⋆ᵣ  specializedBehavior  
+  st-325a373a66f33d61-2b5b452d66ed5855  : specializedScenario  ⊏⋆ᵣ  specializedBehavior
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Scenario: -}
@@ -46,7 +46,7 @@ realizedScenario :  Linkage InteractionProcessType InteractionProcessType
 realizedScenario = make_subTypeOf "Realized Scenario" "Realized Scenario"
 
 postulate -- realizedScenario is subTypeOf realizedBehavior
-  st-325a3a0e66f356d7-2b5b45a466ed5920  : realizedScenario    ⊏⋆ᵣ  realizedBehavior  
+  st-325a3a0e66f356d7-2b5b45a466ed5920  : realizedScenario  ⊏⋆ᵣ  realizedBehavior
 
 -- -------------------------------------------------------------------------------------------- 
 {- Interaction Flow: -}

@@ -44,7 +44,7 @@ specializedInformationAsset :  Linkage InformationAsset InformationAsset
 specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
 
 postulate -- specializedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset    ⊏⋆ᵣ  subTypeOfEntity  {lzero}  {lzero}
+  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Information Asset: -}
@@ -52,7 +52,7 @@ realizedInformationAsset :  Linkage InformationAsset InformationAsset
 realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized Information Asset"
 
 postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset    ⊏⋆ᵣ  subTypeOfEntity  {lzero}  {lzero}
+  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Categorization: 
@@ -62,7 +62,7 @@ dataCategorization : ∀ {u} →  Linkage InformationAsset (DataCatagory u)
 dataCategorization = make_subTypeOf "Data Categorization" "Data Categorization"
 
 postulate -- dataCategorization is subTypeOf assetCategorization
-  st-ded838016ae3883c-4efc6b426ae48e32  : ∀ {u} → dataCategorization   {u}  ⊏⋆ᵣ  assetCategorization   {u}
+  st-ded838016ae3883c-4efc6b426ae48e32  : ∀ {u} → dataCategorization {u}  ⊏⋆ᵣ  assetCategorization {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Categorization Scheme: 
@@ -72,7 +72,7 @@ dataCategorizationScheme : ∀ {u} →  Linkage InformationAsset (DataCategoryFa
 dataCategorizationScheme = make_classOfRelation "Data Categorization Scheme" "Data Categorization Scheme"
 
 postulate -- dataCategorizationScheme is subTypeOf assetCategorizationScheme
-  st-435652586a111043-f69620606a0f9c94  : ∀ {u} → dataCategorizationScheme   {u}  ⊏⋆ᵣ  assetCategorizationScheme   {u}
+  st-435652586a111043-f69620606a0f9c94  : ∀ {u} → dataCategorizationScheme {u}  ⊏⋆ᵣ  assetCategorizationScheme {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Risk: 

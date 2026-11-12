@@ -34,4 +34,4 @@ parentRisk :  Linkage RiskType RiskType
 parentRisk = make_subTypeOf "Parent Risk" "Parent Risk"
 
 postulate -- parentRisk is subTypeOf specializedPropertyType
-  st-332c410066f1656d-12b01dee66e92b43  : parentRisk    ⊏⋆ᵣ  specializedPropertyType  
+  st-332c410066f1656d-12b01dee66e92b43  : parentRisk  ⊏⋆ᵣ  specializedPropertyType

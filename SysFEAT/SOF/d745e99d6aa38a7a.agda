@@ -15,21 +15,21 @@ Documentation : https://framework.sysfeat.com/pages/d745e99d6aa38a7a.htm
 module SysFEAT.SOF.d745e99d6aa38a7a where -- ========== Tag
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.SOF.d745e6ea6aa386e5 public -- AnnotationBlock
+open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity
 
-Tag : ClassOfMixedOrderEntity
-Tag = MixedOrderEntity
+Tag : ClassOfAbstractEntity
+Tag = AbstractEntity
 
-
---  Tag withAspect ElementaryBlock
-st-d745e99d6aa38a7a-23d5c5fc685142de : Tag ⊏ₐₑ ElementaryBlock lzero
-st-d745e99d6aa38a7a-23d5c5fc685142de = polySubTypeOf-identity
 
 --  Tag is subTypeOf AnnotationBlock
 st-d745e99d6aa38a7a-d745e6ea6aa386e5 : Tag ⊏ₑ AnnotationBlock
 st-d745e99d6aa38a7a-d745e6ea6aa386e5 = polySubTypeOf-identity
+
+--  Tag withAspect ElementaryBlock
+st-d745e99d6aa38a7a-23d5c5fc685142de : Tag ⊏ₐₑ ElementaryBlock lzero
+st-d745e99d6aa38a7a-23d5c5fc685142de = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -40,4 +40,4 @@ taggedElement : ∀ {u} →  Linkage Tag (Entity u)
 taggedElement = make_Relation "Tagged Element" "Tagged Element"
 
 postulate -- taggedElement is subTypeOf annotedElement
-  st-3346c41a6878530e-3346b23668784855  : ∀ {u} → taggedElement   {u}  ⊏⋆ᵣ  annotedElement   {u}
+  st-3346c41a6878530e-3346b23668784855  : ∀ {u} → taggedElement {u}  ⊏⋆ᵣ  annotedElement {u}

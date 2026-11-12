@@ -40,7 +40,7 @@ includedArchitectureDictionary : ∀ {u v} →  Linkage (ArchitectureContainer u
 includedArchitectureDictionary = make_nestingRelation "Included Architecture Dictionary" "Included Architecture Dictionary"
 
 postulate -- includedArchitectureDictionary is subTypeOf nestingRelation
-  st-0f6416aa685987e1-02a506a968540333  : ∀ {u v} → includedArchitectureDictionary  {u}  {v}  ⊏⋆ᵣ  nestingRelation  {u}  {v}
+  st-0f6416aa685987e1-02a506a968540333  : ∀ {u v} → includedArchitectureDictionary {u} {v}  ⊏⋆ᵣ  nestingRelation {u} {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Packaged Asset Block: 
@@ -50,9 +50,9 @@ packagedAssetBlock : ∀ {u v} →  Linkage (ArchitectureContainer u) (AssetBloc
 packagedAssetBlock = make_nestingRelation "Packaged Asset Block" "Packaged Asset Block"
 
 postulate -- packagedAssetBlock is subTypeOf packagedModelBlock
-  st-9397bbda687781e0-3346b0ad687846e9  : ∀ {u v} → packagedAssetBlock  {u}  {v}  ⊏⋆ᵣ  packagedModelBlock  {u}  {v}
+  st-9397bbda687781e0-3346b0ad687846e9  : ∀ {u v} → packagedAssetBlock {u} {v}  ⊏⋆ᵣ  packagedModelBlock {u} {v}
 postulate -- packagedAssetBlock is subTypeOf scopedArchitectureBlock
-  st-9397bbda687781e0-0eb95f9a6855c081  : ∀ {u v} → packagedAssetBlock  {u}  {v}  ⊏⋆ᵣ  scopedArchitectureBlock  {u}  {v}
+  st-9397bbda687781e0-0eb95f9a6855c081  : ∀ {u v} → packagedAssetBlock {u} {v}  ⊏⋆ᵣ  scopedArchitectureBlock {u} {v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Imported Architecture Container: 
@@ -62,4 +62,4 @@ importedArchitectureContainer : ∀ {u v} →  Linkage (ArchitectureContainer u)
 importedArchitectureContainer = make_Relation "Imported Architecture Container" "Imported Architecture Container"
 
 postulate -- importedArchitectureContainer is subTypeOf importedModelContainer
-  st-0eb984ce6855d3ca-0eb97ce26855cf57  : ∀ {u v} → importedArchitectureContainer  {u}  {v}  ⊏⋆ᵣ  importedModelContainer  {u}  {u ⊔ v}
+  st-0eb984ce6855d3ca-0eb97ce26855cf57  : ∀ {u v} → importedArchitectureContainer {u} {v}  ⊏⋆ᵣ  importedModelContainer {u} {u ⊔ v}

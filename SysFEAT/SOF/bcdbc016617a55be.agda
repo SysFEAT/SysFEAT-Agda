@@ -36,7 +36,7 @@ appraisedAsset : ∀ {u} →  Linkage Appraisal (AssetBlock u)
 appraisedAsset = make_Relation "Appraised Asset" "Appraised Asset"
 
 postulate -- appraisedAsset is subTypeOf eventSubject
-  st-6bf17d4e68598487-0f642d4d6859ad70  : ∀ {u} → appraisedAsset   {u}  ⊏⋆ᵣ  eventSubject   {u}
+  st-6bf17d4e68598487-0f642d4d6859ad70  : ∀ {u} → appraisedAsset {u}  ⊏⋆ᵣ  eventSubject {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Appraisal Option: -}
@@ -44,4 +44,4 @@ selectedAppraisalOption :  Linkage Appraisal AppraisalOption
 selectedAppraisalOption = make_instanceOf "Selected Appraisal Option" "Selected Appraisal Option"
 
 postulate -- selectedAppraisalOption is subTypeOf propertyOfIndividual
-  st-6662932568dd6161-19763dbb68926a48  : selectedAppraisalOption    ⊏⋆ᵣ  propertyOfIndividual  
+  st-6662932568dd6161-19763dbb68926a48  : selectedAppraisalOption  ⊏⋆ᵣ  propertyOfIndividual

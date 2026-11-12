@@ -35,4 +35,4 @@ packagedGovernanceBlock : ∀ {u v} →  Linkage (GovernanceContainer u) (Govern
 packagedGovernanceBlock = make_nestingRelation "Packaged Governance Block" "Packaged Governance Block"
 
 postulate -- packagedGovernanceBlock is subTypeOf packagedModelBlock
-  st-0f6410c668597695-3346b0ad687846e9  : ∀ {u v} → packagedGovernanceBlock  {u}  {v}  ⊏⋆ᵣ  packagedModelBlock  {u}  {v}
+  st-0f6410c668597695-3346b0ad687846e9  : ∀ {u v} → packagedGovernanceBlock {u} {v}  ⊏⋆ᵣ  packagedModelBlock {u} {v}

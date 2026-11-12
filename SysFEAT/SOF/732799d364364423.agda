@@ -39,7 +39,7 @@ applicabilityDomain :  Linkage PolicyDecision AssetType
 applicabilityDomain = make_Relation "Applicability Domain" "Applicability Domain"
 
 postulate -- applicabilityDomain is subTypeOf concernedAsset
-  st-6bf187b168599781-0f642afd6859a59f  : applicabilityDomain    ⊏⋆ᵣ  concernedAsset   {lsuc(lzero)}
+  st-6bf187b168599781-0f642afd6859a59f  : applicabilityDomain  ⊏⋆ᵣ  concernedAsset {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Concerned Policy: 
@@ -49,7 +49,7 @@ concernedPolicy :  Linkage PolicyDecision Policy
 concernedPolicy = make_Relation "Concerned Policy" "Concerned Policy"
 
 postulate -- concernedPolicy is subTypeOf decisionSubject
-  st-9397cbcf687793de-6bf18905685999a3  : concernedPolicy    ⊏⋆ᵣ  decisionSubject   {lsuc(lzero)}
+  st-9397cbcf687793de-6bf18905685999a3  : concernedPolicy  ⊏⋆ᵣ  decisionSubject {lsuc(lzero)}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Selected Policy Option: -}
@@ -57,4 +57,4 @@ selectedPolicyOption :  Linkage PolicyDecision PolicyapplicabilityStatus
 selectedPolicyOption = make_instanceOf "Selected Policy Option" "Selected Policy Option"
 
 postulate -- selectedPolicyOption is subTypeOf selectedDecisionOption
-  st-97e0a1b668dd7256-97e09d5368dd6d39  : selectedPolicyOption    ⊏⋆ᵣ  selectedDecisionOption  
+  st-97e0a1b668dd7256-97e09d5368dd6d39  : selectedPolicyOption  ⊏⋆ᵣ  selectedDecisionOption

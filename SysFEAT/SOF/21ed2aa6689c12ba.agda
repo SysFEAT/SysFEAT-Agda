@@ -43,4 +43,4 @@ measurePropertyType :  Linkage MeasureProperty MeasurePropertyType
 measurePropertyType = make_instanceOf "Measure Property Type" "Measure Property Type"
 
 postulate -- measurePropertyType is subTypeOf conditionPropertyType
-  st-21ed59d8689c1a21-21ed5a16689c1a59  : measurePropertyType    ⊏⋆ᵣ  conditionPropertyType  
+  st-21ed59d8689c1a21-21ed5a16689c1a59  : measurePropertyType  ⊏⋆ᵣ  conditionPropertyType

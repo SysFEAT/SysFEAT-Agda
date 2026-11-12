@@ -38,7 +38,7 @@ measuredAsset : ∀ {u} →  Linkage KeyIndicator (AssetBlock u)
 measuredAsset = make_Relation "Measured Asset" "Measured Asset"
 
 postulate -- measuredAsset is subTypeOf holonymyRelation
-  st-6bf1872268599564-f626f77b6ad475d4  : ∀ {u} → measuredAsset   {lzero}  ⊏⋆ᵣ  holonymyRelation  
+  st-6bf1872268599564-f626f77b6ad475d4  : measuredAsset {lzero}  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Measurement: 

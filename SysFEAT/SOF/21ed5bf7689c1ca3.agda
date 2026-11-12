@@ -43,7 +43,7 @@ setOfEnvironmentalConditionType :  Linkage SetOfConditionProperties SetOfEnviron
 setOfEnvironmentalConditionType = make_instanceOf "Set of Environmental Condition Type" "Set of Environmental Condition Type"
 
 postulate -- setOfEnvironmentalConditionType is subTypeOf conditionPropertyType
-  st-21ed5c28689c1d28-21ed5a16689c1a59  : setOfEnvironmentalConditionType    ⊏⋆ᵣ  conditionPropertyType  
+  st-21ed5c28689c1d28-21ed5a16689c1a59  : setOfEnvironmentalConditionType  ⊏⋆ᵣ  conditionPropertyType
 
 -- -------------------------------------------------------------------------------------------- 
 {- Combined Property: 

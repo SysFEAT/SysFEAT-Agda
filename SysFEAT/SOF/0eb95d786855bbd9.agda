@@ -35,4 +35,4 @@ scopedArchitectureBlock : ∀ {u v} →  Linkage (ArchitectureLexicalScope u) (A
 scopedArchitectureBlock = make_nestingRelation "Scoped Architecture Block" "Scoped Architecture Block"
 
 postulate -- scopedArchitectureBlock is subTypeOf scopedModelBlock
-  st-0eb95f9a6855c081-0eb96a306855c816  : ∀ {u v} → scopedArchitectureBlock  {u}  {v}  ⊏⋆ᵣ  scopedModelBlock  {u}  {v}
+  st-0eb95f9a6855c081-0eb96a306855c816  : ∀ {u v} → scopedArchitectureBlock {u} {v}  ⊏⋆ᵣ  scopedModelBlock {u} {v}

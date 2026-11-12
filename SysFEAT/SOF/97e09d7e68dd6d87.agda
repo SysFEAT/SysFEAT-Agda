@@ -35,4 +35,4 @@ architectureDecisionType :  Linkage ArchitectureDecisionOutcome ArchitectureDeci
 architectureDecisionType = make_instanceOf "Architecture Decision Type" "Architecture Decision Type"
 
 postulate -- architectureDecisionType is subTypeOf decisionType
-  st-97e0a05268dd7053-97e09d2068dd6cd0  : architectureDecisionType    ⊏⋆ᵣ  decisionType  
+  st-97e0a05268dd7053-97e09d2068dd6cd0  : architectureDecisionType  ⊏⋆ᵣ  decisionType

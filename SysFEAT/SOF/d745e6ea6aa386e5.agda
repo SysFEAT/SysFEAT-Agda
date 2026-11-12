@@ -18,21 +18,21 @@ External references:
 module SysFEAT.SOF.d745e6ea6aa386e5 where -- ========== AnnotationBlock
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 open import SysFEAT.UpperOntology.3aca52346aa6418d public -- AbstractEntity
+open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 open import SysFEAT.UpperOntology.23d5249e68510ff9 public -- Element
 
 AnnotationBlock : ClassOfAbstractEntity
 AnnotationBlock = AbstractEntity
 
 
---  AnnotationBlock withAspect BuildingBlock
-st-d745e6ea6aa386e5-23d5a9ea68513ced : AnnotationBlock ⊏ₐₑ BuildingBlock lzero
-st-d745e6ea6aa386e5-23d5a9ea68513ced = polySubTypeOf-identity
-
 --  AnnotationBlock is subTypeOf AbstractEntity
 st-d745e6ea6aa386e5-3aca52346aa6418d : AnnotationBlock ⊏ₑ AbstractEntity
 st-d745e6ea6aa386e5-3aca52346aa6418d = polySubTypeOf-identity
+
+--  AnnotationBlock withAspect BuildingBlock
+st-d745e6ea6aa386e5-23d5a9ea68513ced : AnnotationBlock ⊏ₐₑ BuildingBlock lzero
+st-d745e6ea6aa386e5-23d5a9ea68513ced = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -43,6 +43,6 @@ annotedElement : ∀ {u} →  Linkage AnnotationBlock (Element u)
 annotedElement = make_Relation "Annoted Element" "Annoted Element"
 
 postulate -- annotedElement is subTypeOf referenceRelation
-  st-3346b23668784855-23d5398f68511bc1  : ∀ {u} → annotedElement   {u}  ⊏⋆ᵣ  referenceRelation  {lzero}  {u}
+  st-3346b23668784855-23d5398f68511bc1  : ∀ {u} → annotedElement {u}  ⊏⋆ᵣ  referenceRelation {lzero} {u}
 postulate -- annotedElement is subTypeOf existentialDependency
-  st-3346b23668784855-cbfce7da685358e9  : ∀ {u} → annotedElement   {u}  ⊏⋆ᵣ  existentialDependency  {lzero}  {u}
+  st-3346b23668784855-cbfce7da685358e9  : ∀ {u} → annotedElement {u}  ⊏⋆ᵣ  existentialDependency {lzero} {u}

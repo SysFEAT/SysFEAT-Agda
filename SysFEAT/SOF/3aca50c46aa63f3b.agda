@@ -17,20 +17,20 @@ External references:
 module SysFEAT.SOF.3aca50c46aa63f3b where -- ========== ReferenceDictionary
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95f1b6855bf64 public -- ArchitectureContainer
 open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
+open import SysFEAT.SOF.0eb95f1b6855bf64 public -- ArchitectureContainer
 
-ReferenceDictionary : ClassOfMixedOrderEntity
-ReferenceDictionary = MixedOrderEntity
+ReferenceDictionary : ClassOfAbstractEntity
+ReferenceDictionary = AbstractEntity
 
-
---  ReferenceDictionary withAspect ArchitectureContainer
-st-3aca50c46aa63f3b-0eb95f1b6855bf64 : ReferenceDictionary ⊏ₐₑ ArchitectureContainer lzero
-st-3aca50c46aa63f3b-0eb95f1b6855bf64 = polySubTypeOf-identity
 
 --  ReferenceDictionary is subTypeOf ModelPackage
 st-3aca50c46aa63f3b-d745dbaa6aa3840b : ReferenceDictionary ⊏ₑ ModelPackage
 st-3aca50c46aa63f3b-d745dbaa6aa3840b = polySubTypeOf-identity
+
+--  ReferenceDictionary withAspect ArchitectureContainer
+st-3aca50c46aa63f3b-0eb95f1b6855bf64 : ReferenceDictionary ⊏ₐₑ ArchitectureContainer lzero
+st-3aca50c46aa63f3b-0eb95f1b6855bf64 = polySubTypeOf-identity
 
 
 -- == Relations =======================

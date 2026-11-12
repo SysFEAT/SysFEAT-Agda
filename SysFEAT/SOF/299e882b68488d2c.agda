@@ -38,7 +38,7 @@ functionalScope :  Linkage OperationalTransformation CapabilityMap
 functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
 
 postulate -- functionalScope is subTypeOf propertyOfIndividual
-  st-01f1214c689b6e0f-19763dbb68926a48  : functionalScope    ⊏⋆ᵣ  propertyOfIndividual  
+  st-01f1214c689b6e0f-19763dbb68926a48  : functionalScope  ⊏⋆ᵣ  propertyOfIndividual
 
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Operating Asset: -}

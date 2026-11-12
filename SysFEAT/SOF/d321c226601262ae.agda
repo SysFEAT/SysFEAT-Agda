@@ -15,9 +15,9 @@ Documentation : https://framework.sysfeat.com/pages/d321c226601262ae.htm
 module SysFEAT.SOF.d321c226601262ae where -- ========== EnduringInitiative
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.SOF.01ce05606859794a public -- InitiativeInstrument
 open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
@@ -26,10 +26,6 @@ EnduringInitiative : WholeLifeClass
 EnduringInitiative = WholeLifeIndividual
 
 
---  EnduringInitiative withAspect ModelContainer
-st-d321c226601262ae-0eb95dce6855be2e : EnduringInitiative ⊏ₐₑ ModelContainer lzero
-st-d321c226601262ae-0eb95dce6855be2e = polySubTypeOf-identity
-
 --  EnduringInitiative is subTypeOf Initiative
 st-d321c226601262ae-0ffeec41600be08a : EnduringInitiative ⊏ₑ Initiative
 st-d321c226601262ae-0ffeec41600be08a = polySubTypeOf-identity
@@ -37,6 +33,10 @@ st-d321c226601262ae-0ffeec41600be08a = polySubTypeOf-identity
 --  EnduringInitiative is subTypeOf WholeLifeIndividual
 st-d321c226601262ae-342f74b166156e02 : EnduringInitiative ⊏ₑ WholeLifeIndividual
 st-d321c226601262ae-342f74b166156e02 = polySubTypeOf-identity
+
+--  EnduringInitiative withAspect ModelContainer
+st-d321c226601262ae-0eb95dce6855be2e : EnduringInitiative ⊏ₐₑ ModelContainer lzero
+st-d321c226601262ae-0eb95dce6855be2e = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -47,7 +47,7 @@ packagedInitiativeResource : ∀ {u} →  Linkage EnduringInitiative (Initiative
 packagedInitiativeResource = make_nestingRelation "Packaged Initiative Resource" "Packaged Initiative Resource"
 
 postulate -- packagedInitiativeResource is subTypeOf packagedModelBlock
-  st-01ce058868597974-3346b0ad687846e9  : ∀ {u} → packagedInitiativeResource   {u}  ⊏⋆ᵣ  packagedModelBlock  {lzero}  {u}
+  st-01ce058868597974-3346b0ad687846e9  : ∀ {u} → packagedInitiativeResource {u}  ⊏⋆ᵣ  packagedModelBlock {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Dependent Initiative: -}
@@ -55,7 +55,7 @@ dependentInitiative :  Linkage EnduringInitiative EnduringInitiative
 dependentInitiative = make_holonymyRelation "Dependent Initiative" "Dependent Initiative"
 
 postulate -- dependentInitiative is subTypeOf importedContainer
-  st-5b7a0d6361f5633f-0eb94b9b6854a563  : dependentInitiative    ⊏⋆ᵣ  importedContainer  {lzero}  {lzero}
+  st-5b7a0d6361f5633f-0eb94b9b6854a563  : dependentInitiative  ⊏⋆ᵣ  importedContainer {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Initiative: -}
@@ -63,9 +63,9 @@ subInitiative :  Linkage EnduringInitiative EnduringInitiative
 subInitiative = make_holonymyRelation "Sub-Initiative" "Sub-Initiative"
 
 postulate -- subInitiative is subTypeOf holonymyRelation
-  st-5b7a0ecf61f5650a-f626f77b6ad475d4  : subInitiative    ⊏⋆ᵣ  holonymyRelation  
+  st-5b7a0ecf61f5650a-f626f77b6ad475d4  : subInitiative  ⊏⋆ᵣ  holonymyRelation
 postulate -- subInitiative is subTypeOf scopedModelBlock
-  st-5b7a0ecf61f5650a-0eb96a306855c816  : subInitiative    ⊏⋆ᵣ  scopedModelBlock  {lzero}  {lzero}
+  st-5b7a0ecf61f5650a-0eb96a306855c816  : subInitiative  ⊏⋆ᵣ  scopedModelBlock {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Roadmap: 
@@ -75,9 +75,9 @@ roadmap :  Linkage EnduringInitiative InitiativeStage
 roadmap = make_holonymyRelation "Roadmap" "Roadmap"
 
 postulate -- roadmap is subTypeOf scopedModelBlock
-  st-29df685860086c52-0eb96a306855c816  : roadmap    ⊏⋆ᵣ  scopedModelBlock  {lzero}  {lzero}
+  st-29df685860086c52-0eb96a306855c816  : roadmap  ⊏⋆ᵣ  scopedModelBlock {lzero} {lzero}
 postulate -- roadmap is subTypeOf holonymyRelation
-  st-29df685860086c52-f626f77b6ad475d4  : roadmap    ⊏⋆ᵣ  holonymyRelation  
+  st-29df685860086c52-f626f77b6ad475d4  : roadmap  ⊏⋆ᵣ  holonymyRelation
 
 -- -------------------------------------------------------------------------------------------- 
 {- Goal: 

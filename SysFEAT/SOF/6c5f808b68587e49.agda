@@ -35,4 +35,4 @@ scopedInformationBlock : ∀ {u v} →  Linkage (InformationLexicalScope u) (Inf
 scopedInformationBlock = make_nestingRelation "Scoped Information Block" "Scoped Information Block"
 
 postulate -- scopedInformationBlock is subTypeOf scopedArchitectureBlock
-  st-6c5f82aa68588092-0eb95f9a6855c081  : ∀ {u v} → scopedInformationBlock  {u}  {v}  ⊏⋆ᵣ  scopedArchitectureBlock  {u}  {v}
+  st-6c5f82aa68588092-0eb95f9a6855c081  : ∀ {u v} → scopedInformationBlock {u} {v}  ⊏⋆ᵣ  scopedArchitectureBlock {u} {v}

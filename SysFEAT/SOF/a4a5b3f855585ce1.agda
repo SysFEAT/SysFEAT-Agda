@@ -26,11 +26,11 @@ module SysFEAT.SOF.a4a5b3f855585ce1 where -- ========== AssetType
 open import Agda.Primitive
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
-open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
 open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategory
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
@@ -49,6 +49,28 @@ st-a4a5b3f855585ce1-3492c53e619642ed = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Applicable Condition Type: 
+Set of Condition Property Types that can be applied to an Asset Type.
+-}
+applicableConditionType :  Linkage AssetType ConditionPropertyType
+applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicable Condition Type"
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Asset Categorization: -}
+assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategory u)
+assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
+
+postulate -- assetCategorization is subTypeOf conceptCategorization
+  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Asset Categorization Scheme: -}
+assetCategorizationScheme : ∀ {u} →  Linkage AssetType (AssetCategoryFamily u)
+assetCategorizationScheme = make_classOfRelation "Asset Categorization Scheme" "Asset Categorization Scheme"
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Asset Type Qualification: 
 Qualification of an Asset Type by an Asset Property.
 -}
@@ -56,7 +78,7 @@ assetTypeQualification :  Linkage AssetType AssetProperty
 assetTypeQualification = make_subTypeOf "Asset Type Qualification" "Asset Type Qualification"
 
 postulate -- assetTypeQualification is subTypeOf qualifyingProperty
-  st-a04ea2346ae7302f-16621f9a689131e0  : assetTypeQualification    ⊏⋆ᵣ  qualifyingProperty  
+  st-a04ea2346ae7302f-16621f9a689131e0  : assetTypeQualification  ⊏⋆ᵣ  qualifyingProperty
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Asset: 
@@ -66,7 +88,7 @@ specializedAsset :  Linkage AssetType AssetType
 specializedAsset = make_subTypeOf "Specialized Asset" "Specialized Asset"
 
 postulate -- specializedAsset is subTypeOf specializedClassOfBoundedIndividual
-  st-12b0287266e936d5-e53a627766e4b4cd  : specializedAsset    ⊏⋆ᵣ  specializedClassOfBoundedIndividual  
+  st-12b0287266e936d5-e53a627766e4b4cd  : specializedAsset  ⊏⋆ᵣ  specializedClassOfBoundedIndividual
 
 -- -------------------------------------------------------------------------------------------- 
 {- Realized Functional Asset: 
@@ -76,47 +98,25 @@ realizedFunctionalAsset :  Linkage AssetType AssetType
 realizedFunctionalAsset = make_subTypeOf "Realized Functional Asset" "Realized Functional Asset"
 
 postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
-  st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset    ⊏⋆ᵣ  specializedClassOfIndividual  
-
--- -------------------------------------------------------------------------------------------- 
-{- Applicable Condition Type: 
-Set of Condition Property Types that can be applied to an Asset Type.
--}
-applicableConditionType :  Linkage AssetType ConditionPropertyType
-applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicable Condition Type"
-
-postulate -- applicableConditionType is subTypeOf categorizingFamily
-  st-c2f2709166ea21a0-d9b8dfaa6ae044ee  : applicableConditionType    ⊏⋆ᵣ  categorizingFamily  {lzero}  {lzero}
-
--- -------------------------------------------------------------------------------------------- 
-{- Asset Categorization: -}
-assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategory u)
-assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
-
-postulate -- assetCategorization is subTypeOf conceptCategorization
-  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization   {u}  ⊏⋆ᵣ  conceptCategorization  {lzero}  {u}
-
--- -------------------------------------------------------------------------------------------- 
-{- Asset Categorization Scheme: -}
-assetCategorizationScheme : ∀ {u} →  Linkage AssetType (AssetCategoryFamily u)
-assetCategorizationScheme = make_classOfRelation "Asset Categorization Scheme" "Asset Categorization Scheme"
-
-postulate -- assetCategorizationScheme is subTypeOf categorizingFamily
-  st-f69620606a0f9c94-d9b8dfaa6ae044ee  : ∀ {u} → assetCategorizationScheme   {u}  ⊏⋆ᵣ  categorizingFamily  {lzero}  {u}
+  st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset  ⊏⋆ᵣ  specializedClassOfIndividual
 
 -- -------------------------------------------------------------------------------------------- 
 {- Risk: 
 A  Risk refers to the potential for loss resulting from inadequate structure or behavior of a Functional Asset.
 -}
 -- Aggregate Member : Risk
-Risk : ClassOfMixedOrderEntity
-Risk = MixedOrderEntity
+Risk : ThirdOrderClass
+Risk = SecondOrderClass
 
 
 
 --  Risk withAspect UnboundedMember
 st-0e55219466f11fd7-8cfaf71a6852b042 : Risk ⊏ₐₑ UnboundedMember (lsuc(lsuc( lzero)))
 st-0e55219466f11fd7-8cfaf71a6852b042 = polySubTypeOf-identity
+
+--  Risk is subTypeOf SecondOrderClass
+st-0e55219466f11fd7-a599a7e46aa370fb : Risk ⊏ₑ SecondOrderClass
+st-0e55219466f11fd7-a599a7e46aa370fb = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfRisk :  Linkage AssetType Risk
@@ -167,5 +167,5 @@ policyConformance : Linkage AssetType Policy
 policyConformance = membershipOfPolicyConformance  ∘  aggregationOfPolicyPolicyConformance
 
 postulate -- policyConformance is subTypeOf assetTypeQualification
-  st-01f1189f689b641d-a04ea2346ae7302f  : policyConformance    ⊏⋆ᵣ  assetTypeQualification  
+  st-01f1189f689b641d-a04ea2346ae7302f  : policyConformance  ⊏⋆ᵣ  assetTypeQualification
 
