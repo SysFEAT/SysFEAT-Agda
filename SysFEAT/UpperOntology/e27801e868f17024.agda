@@ -33,7 +33,7 @@ open import SysFEAT.UpperOntology.20702bc568e969f4 public -- Class of Entity and
 {- Represents the absolute top-level space (M3) of the ontology. 
    A MetaClass categorizes standard Entity Classes (M2), enforcing 
    the reflexive and stratified architecture of the SysFEAT framework. -}
-MetaClass : (u : Level) → Set (lsuc (lsuc (lsuc u)))
+MetaClass : (u : Level) → ClassOfEntity (lsuc (lsuc u))
 MetaClass u = ClassOfEntity (lsuc u)
 
 MetaClass-isSubTypeOf-ClassOfEntity : ∀ {u} → (MetaClass u) ⊏⋆ₑ (ClassOfEntity (lsuc u))
