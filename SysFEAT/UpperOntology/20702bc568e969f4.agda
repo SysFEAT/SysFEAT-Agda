@@ -40,7 +40,7 @@ open import SysFEAT.UpperOntology.20702b2568e9694d public -- Class of Element
 -- ============================================================
 -- I. CLASS OF ENTITY
 -- ============================================================
-ClassOfEntity : (u : Level) → Set (lsuc (lsuc u))
+ClassOfEntity : (u : Level) → ClassOfElement (lsuc u)
 ClassOfEntity u = ClassOfElement u
 
 -- ClassOfEntity isSubTypeOf ClassOfElement : definitional alias, proved
