@@ -246,12 +246,12 @@ HomClassOfMeronymy = HomClassOfRelation
 make_classOfHolonymy : ∀ {u} (label fwdRole : String) → Linkage (ClassOfEntity u) (ClassOfEntity u)
 make_classOfHolonymy = make_Linkage HomClassOfHolonymy
 
-make_classOfMeronymyRelation : ∀ {u v} (label fwdRole : String) → Linkage (ClassOfEntity u) (ClassOfEntity v)
-make_classOfMeronymyRelation = make_Linkage HomClassOfMeronymy
+make_classOfMeronymy : ∀ {u v} (label fwdRole : String) → Linkage (ClassOfEntity u) (ClassOfEntity v)
+make_classOfMeronymy = make_Linkage HomClassOfMeronymy
 
 -- The polymorphic roots (one family, every metalevel).
 polyClassOfHolonymy : ∀ {u} → Linkage (ClassOfEntity u) (ClassOfEntity u)
 polyClassOfHolonymy = make_classOfHolonymy "Class of Whole->Part relationship" "Part Class"
 
 polyClassOfMeronymy : ∀ {u v} → Linkage (ClassOfEntity u) (ClassOfEntity v)
-polyClassOfMeronymy = make_classOfMeronymyRelation "Class of Part->Whole relationship" "Whole Class"
+polyClassOfMeronymy = make_classOfMeronymy "Class of Part->Whole relationship" "Whole Class"

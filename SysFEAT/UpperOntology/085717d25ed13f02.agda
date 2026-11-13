@@ -17,8 +17,7 @@ module SysFEAT.UpperOntology.085717d25ed13f02 where -- ========== Past
 open import Agda.Primitive
 open import SysFEAT.SOF.08570d835ed129a3 public -- InitiativeMilestone
 
-Past : ∀ (u : Level) → ClassOfMixedOrderEntity u
-Past u = MixedOrderEntity u
+
 
 
 -- == Relations =======================

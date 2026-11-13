@@ -17,8 +17,7 @@ module SysFEAT.UpperOntology.085717ea5ed13f63 where -- ========== Future
 open import Agda.Primitive
 open import SysFEAT.SOF.08570d835ed129a3 public -- InitiativeMilestone
 
-Future : ∀ (u : Level) → ClassOfMixedOrderEntity u
-Future u = MixedOrderEntity u
+
 
 
 -- == Relations =======================
