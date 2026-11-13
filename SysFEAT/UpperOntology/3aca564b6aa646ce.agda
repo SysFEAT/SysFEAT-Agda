@@ -17,7 +17,7 @@ External references:
 module SysFEAT.UpperOntology.3aca564b6aa646ce where -- ========== AbstractEntityMetaClass
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
+open import SysFEAT.UpperOntology.f88216e76af71a76 public -- ConceptMetaClass
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- SecondOrderClass
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 
@@ -25,9 +25,9 @@ AbstractEntityMetaClass : ThirdOrderClass
 AbstractEntityMetaClass = SecondOrderClass
 
 
---  AbstractEntityMetaClass withAspect ConceptClass
-st-3aca564b6aa646ce-8d1fa46c6ae82899 : AbstractEntityMetaClass ⊏ₐₑ ConceptClass (lsuc( lzero))
-st-3aca564b6aa646ce-8d1fa46c6ae82899 = polySubTypeOf-identity
+--  AbstractEntityMetaClass withAspect ConceptMetaClass
+st-3aca564b6aa646ce-f88216e76af71a76 : AbstractEntityMetaClass ⊏ₐₑ ConceptMetaClass lzero
+st-3aca564b6aa646ce-f88216e76af71a76 = polySubTypeOf-identity
 
 --  AbstractEntityMetaClass is subTypeOf SecondOrderClass
 st-3aca564b6aa646ce-a599a7e46aa370fb : AbstractEntityMetaClass ⊏ₑ SecondOrderClass

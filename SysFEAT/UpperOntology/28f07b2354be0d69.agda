@@ -123,3 +123,5 @@ aggregationOfTemporalBoundingTemporalOrdering = make_Relation "TemporalBounding 
 -}
 temporalOrdering : Linkage BoundedIndividual TemporalBounding
 temporalOrdering = membershipOfTemporalOrdering  ∘  aggregationOfTemporalBoundingTemporalOrdering
+
+

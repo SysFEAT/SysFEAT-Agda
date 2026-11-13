@@ -32,6 +32,7 @@ open import SysFEAT.UpperOntology.e27801e868f17024 public -- Meta-Class
 open import SysFEAT.UpperOntology.003302806ae27b7c public -- Fourth Order Class
 open import SysFEAT.UpperOntology.dc9c0cbb6acd4ee9 public -- N-Plus Order Entity
 open import SysFEAT.UpperOntology.c463c6106aa23c35 public -- First Order Class
+open import SysFEAT.UpperOntology.f88216e76af71a76 public -- Concept MetaClass
 open import SysFEAT.UpperOntology.6ef572f868f1366f public -- Mixed-Order Entity
 open import SysFEAT.UpperOntology.7d35645c68f37329 public -- Class of Ordered Entity
 open import SysFEAT.UpperOntology.5425a2df6aa225cf public -- First Order Entity
@@ -43,7 +44,7 @@ open import SysFEAT.UpperOntology.629565166ad71b60 public -- Concept Category
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- Second Order Class
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- Enumerated Family
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- Third Order Class
-open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- Family meta-Class
+open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- Family Meta-Class
 open import SysFEAT.UpperOntology.d9cce31f69371045 public -- Mixed-Order MetaClass
 open import SysFEAT.UpperOntology.a39aaa7f685e5118 public -- Lexical Scope
 open import SysFEAT.UpperOntology.e8b2f7c7673d36d1 public -- Entity
