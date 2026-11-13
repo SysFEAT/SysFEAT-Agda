@@ -60,13 +60,13 @@ TemporalOrderingType = ClassOfIndividual
 
 
 
---  TemporalOrderingType is subTypeOf ClassOfIndividual
-st-2557481f6758a91a-6aa8cbcb65b32971 : TemporalOrderingType ⊏ₑ ClassOfIndividual
-st-2557481f6758a91a-6aa8cbcb65b32971 = polySubTypeOf-identity
-
 --  TemporalOrderingType withAspect OrderingConnector
 st-2557481f6758a91a-478a4a4468565425 : TemporalOrderingType ⊏ₐₑ OrderingConnector (lsuc( lzero))
 st-2557481f6758a91a-478a4a4468565425 = polySubTypeOf-identity
+
+--  TemporalOrderingType is subTypeOf ClassOfIndividual
+st-2557481f6758a91a-6aa8cbcb65b32971 : TemporalOrderingType ⊏ₑ ClassOfIndividual
+st-2557481f6758a91a-6aa8cbcb65b32971 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfTemporalOrderingType :  Linkage ClassOfBoundedIndividual TemporalOrderingType
@@ -134,13 +134,13 @@ AggregateHolonymyType = ClassOfIndividual
 
 
 
---  AggregateHolonymyType is subTypeOf ClassOfIndividual
-st-c2f2c83b66ea4d78-6aa8cbcb65b32971 : AggregateHolonymyType ⊏ₑ ClassOfIndividual
-st-c2f2c83b66ea4d78-6aa8cbcb65b32971 = polySubTypeOf-identity
-
 --  AggregateHolonymyType withAspect BoundedMember
 st-c2f2c83b66ea4d78-0eb999956855e070 : AggregateHolonymyType ⊏ₐₑ BoundedMember (lsuc( lzero))
 st-c2f2c83b66ea4d78-0eb999956855e070 = polySubTypeOf-identity
+
+--  AggregateHolonymyType is subTypeOf ClassOfIndividual
+st-c2f2c83b66ea4d78-6aa8cbcb65b32971 : AggregateHolonymyType ⊏ₑ ClassOfIndividual
+st-c2f2c83b66ea4d78-6aa8cbcb65b32971 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfAggregateHolonymyType :  Linkage ClassOfBoundedIndividual AggregateHolonymyType

@@ -103,6 +103,6 @@ make_classOfHolonymySpecialization label fwdRole = record
 
 make_classOfMeronymySpecialization : (label fwdRole : String) → ClassParthood.MeronymySpecialization {ClassParthood.rootFibreLevel}
 make_classOfMeronymySpecialization label fwdRole = record
-  { relation = make_classOfMeronymyRelation label fwdRole
+  { relation = make_classOfMeronymy label fwdRole
   ; inj      = λ h → h
   }
