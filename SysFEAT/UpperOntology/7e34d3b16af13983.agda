@@ -25,7 +25,7 @@ open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and metaR
 -- ============================================================
 -- I. Concept definition
 -- ============================================================ 
-FamilyMetaClass : (u : Level) → Set (lsuc (lsuc (lsuc u)))
+FamilyMetaClass : (u : Level) → MetaClass (lsuc u)
 FamilyMetaClass u = MetaClass u
 
 -- FamilyMetaClass isSubTypeOf MetaClass

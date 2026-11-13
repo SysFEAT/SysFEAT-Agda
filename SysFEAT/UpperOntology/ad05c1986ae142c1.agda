@@ -28,7 +28,7 @@ open import SysFEAT.UpperOntology.8d1fa46c6ae82899 public -- ConceptClass
 -- ============================================================
 -- I. Concept declaration
 -- ============================================================
-EnumeratedFamily : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
+EnumeratedFamily : ∀ (u : Level) → MetaClass (lsuc u)
 EnumeratedFamily u = FamilyMetaClass u
 
 -- EnumeratedFamily is subTypeOf MixedOrderMetaClass

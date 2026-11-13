@@ -28,7 +28,7 @@ open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- FamilyMetaClass
 -- I. Concept declaration
 -- ============================================================ 
 
-CategorizationFamily : ∀ (u : Level) → Set (lsuc (lsuc (lsuc u)))
+CategorizationFamily : ∀ (u : Level) → MetaClass (lsuc u)
 CategorizationFamily u = FamilyMetaClass u
 
 --  CategorizationFamily is subTypeOf FamilyMetaClass
