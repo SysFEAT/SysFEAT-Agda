@@ -16,7 +16,7 @@ module SysFEAT.SOF.e83018fb6ae53018 where -- ========== OperatingAssetCategory
 
 open import Agda.Primitive
 open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategory
-open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetCategorization
+open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetFamily
 
 OperatingAssetCategory : ∀ (u : Level) → CategorizationFamily u 
 OperatingAssetCategory u  = ConceptCategory u 
@@ -31,7 +31,7 @@ st-e83018fb6ae53018-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Family: -}
-family : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetCategorization v)
+family : ∀ {u v} →  Linkage (OperatingAssetCategory u) (OperatingAssetFamily v)
 family = make_instanceOf "Family" "Family"
 
 postulate -- family is subTypeOf assetCategoryFamily

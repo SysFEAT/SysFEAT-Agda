@@ -3,8 +3,8 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Family of Measurement: 
-A Family of Measurement is a top level grouping of Condition Category(ies) that belong to a common domain.
+Measurement Schema: 
+A Measurement Schema is a top level grouping of Condition Category(ies) that belong to a common domain.
 
 Documentation : https://framework.sysfeat.com/pages/6f9c71356a0f3116.htm
 
@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/6f9c71356a0f3116.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.6f9c71356a0f3116 where -- ========== FamilyOfMeasurement
+module SysFEAT.SOF.6f9c71356a0f3116 where -- ========== MeasurementSchema
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
+open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationSchema
 
-FamilyOfMeasurement : ∀ (u : Level) → MetaClass (lsuc u) 
-FamilyOfMeasurement u  = ClassOfEntity (lsuc u) 
+MeasurementSchema : ∀ (u : Level) → MetaClass (lsuc u) 
+MeasurementSchema u  = ClassOfEntity (lsuc u) 
 
 
---  FamilyOfMeasurement is subTypeOf CategorizationFamily
-st-6f9c71356a0f3116-220d23706ad71311 : ∀ {u v} → FamilyOfMeasurement u ⊏⋆ₑ CategorizationFamily v
+--  MeasurementSchema is subTypeOf CategorizationSchema
+st-6f9c71356a0f3116-220d23706ad71311 : ∀ {u v} → MeasurementSchema u ⊏⋆ₑ CategorizationSchema v
 st-6f9c71356a0f3116-220d23706ad71311 = trivialPolySubTypeOfEntity
 
 

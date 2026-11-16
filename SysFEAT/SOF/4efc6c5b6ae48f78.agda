@@ -15,15 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/4efc6c5b6ae48f78.htm
 module SysFEAT.SOF.4efc6c5b6ae48f78 where -- ========== ConditionCategory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
-open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
+open import SysFEAT.SOF.6f9c71356a0f3116 public -- MeasurementSchema
 
-ConditionCategory : ∀ (u : Level) → CategorizationFamily u 
-ConditionCategory u  = ConceptCategory u 
+ConditionCategory : ∀ (u : Level) → MetaClass u 
+ConditionCategory u  = ClassOfEntity u 
 
 
---  ConditionCategory is subTypeOf ConceptCategory
-st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → ConditionCategory u ⊏⋆ₑ ConceptCategory v
+--  ConditionCategory is subTypeOf ConceptCategoryType
+st-4efc6c5b6ae48f78-629565166ad71b60 : ∀ {u v} → ConditionCategory u ⊏⋆ₑ ConceptCategoryType v
 st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
@@ -31,8 +31,8 @@ st-4efc6c5b6ae48f78-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 -- -------------------------------------------------------------------------------------------- 
 {- Condition Category Family: -}
-conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (FamilyOfMeasurement v)
+conditionCategoryFamily : ∀ {u v} →  Linkage (ConditionCategory u) (MeasurementSchema v)
 conditionCategoryFamily = make_instanceOf "Condition Category Family" "Condition Category Family"
 
-postulate -- conditionCategoryFamily is subTypeOf parentFamily
-  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {u} {u ⊔ v}
+postulate -- conditionCategoryFamily is subTypeOf parentScheme
+  st-051d13656ae96f13-890a8a9e6ae8578e  : ∀ {u v} → conditionCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentScheme {u} {u ⊔ v}

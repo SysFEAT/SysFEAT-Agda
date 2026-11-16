@@ -20,6 +20,7 @@ module SysFEAT.SOF.cd90e5976ae187c0 where -- ========== InformationDomain
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
+open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 
 InformationDomain : ∀ (u : Level) → MetaClass (lsuc u) 
 InformationDomain u  = ClassOfEntity (lsuc u) 
@@ -35,3 +36,11 @@ st-cd90e5976ae187c0-bab6c7346ad70999 = polySubTypeOf-identity
 
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Domain Asset: -}
+domainAsset : ∀ {u} →  Linkage (InformationDomain u) InformationAsset
+domainAsset = make_classOfRelation "Domain Asset" "Domain Asset"
+
+postulate -- domainAsset is subTypeOf memberClass
+  st-cd90e5d46ae18892-c40ecc196ae113ff  : ∀ {u} → domainAsset {u}  ⊏⋆ᵣ  memberClass {u}

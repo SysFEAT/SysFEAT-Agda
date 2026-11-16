@@ -23,7 +23,7 @@ module SysFEAT.SOF.e53af71366e37de2 where -- ========== ConditionPropertyType
 open import Agda.Primitive
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
-open import SysFEAT.SOF.6f9c71356a0f3116 public -- FamilyOfMeasurement
+open import SysFEAT.SOF.6f9c71356a0f3116 public -- MeasurementSchema
 
 ConditionPropertyType : ThirdOrderClass
 ConditionPropertyType = PropertyType
@@ -44,12 +44,10 @@ conditionCategory : ∀ {u} →  Linkage ConditionPropertyType (ConditionCategor
 conditionCategory = make_subTypeOf "Condition Category" "Condition Category"
 
 postulate -- conditionCategory is subTypeOf conceptCategorization
-  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : ∀ {u} → conditionCategory {u}  ⊏⋆ᵣ  conceptCategorization {lsuc(lzero)} {u}
+  st-4efc6ca86ae4901b-8d1fcd3c6ae82f99  : ∀ {u} → conditionCategory {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Categorizing Measurement Family: -}
-categorizingMeasurementFamily : ∀ {u} →  Linkage ConditionPropertyType (FamilyOfMeasurement u)
-categorizingMeasurementFamily = make_classOfRelation "Categorizing Measurement Family" "Categorizing Measurement Family"
+{- Measurement Scheme: -}
+measurementScheme : ∀ {u} →  Linkage ConditionPropertyType (MeasurementSchema u)
+measurementScheme = make_classOfRelation "Measurement Scheme" "Measurement Scheme"
 
-postulate -- categorizingMeasurementFamily is subTypeOf categorizationScheme
-  st-051d13f06ae96ff0-7e3436566af249a4  : ∀ {u} → categorizingMeasurementFamily {u}  ⊏⋆ᵣ  categorizationScheme {lsuc(lzero)} {u}

@@ -15,15 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/ded830e46ae385d9.htm
 module SysFEAT.SOF.ded830e46ae385d9 where -- ========== DataCatagory
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 
-DataCatagory : ∀ (u : Level) → CategorizationFamily u 
-DataCatagory u  = ConceptCategory u 
+DataCatagory : ∀ (u : Level) → MetaClass u 
+DataCatagory u  = ClassOfEntity u 
 
 
---  DataCatagory is subTypeOf ConceptCategory
-st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → DataCatagory u ⊏⋆ₑ ConceptCategory v
+--  DataCatagory is subTypeOf ConceptCategoryType
+st-ded830e46ae385d9-629565166ad71b60 : ∀ {u v} → DataCatagory u ⊏⋆ₑ ConceptCategoryType v
 st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
@@ -34,5 +34,5 @@ st-ded830e46ae385d9-629565166ad71b60 = trivialPolySubTypeOfEntity
 dataCategoryFamily : ∀ {u v} →  Linkage (DataCatagory u) (DataCategoryFamily v)
 dataCategoryFamily = make_instanceOf "Data Category Family" "Data Category Family"
 
-postulate -- dataCategoryFamily is subTypeOf parentFamily
-  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentFamily {u} {u ⊔ v}
+postulate -- dataCategoryFamily is subTypeOf parentScheme
+  st-ded8314a6ae38677-890a8a9e6ae8578e  : ∀ {u v} → dataCategoryFamily {u} {u ⊔ v}  ⊏⋆ᵣ  parentScheme {u} {u ⊔ v}

@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Measurement Category: 
-A Measurement Category is a category of Measure Property Type.It is used to group Measure Property Type(ies) by domain of concerns represented by Family of Measurements.Example: Performance, Security, Cost.
+A Measurement Category is a category of Measure Property Type.It is used to group Measure Property Type(ies) by domain of concerns represented by Measurement Schemas.Example: Performance, Security, Cost.
 
 Documentation : https://framework.sysfeat.com/pages/4efc76226ae49da5.htm
 
@@ -17,8 +17,8 @@ module SysFEAT.SOF.4efc76226ae49da5 where -- ========== MeasurementCategory
 open import Agda.Primitive
 open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
 
-MeasurementCategory : ∀ (u : Level) → CategorizationFamily u 
-MeasurementCategory u  = ConceptCategory u 
+MeasurementCategory : ∀ (u : Level) → MetaClass u 
+MeasurementCategory u  = ClassOfEntity u 
 
 
 --  MeasurementCategory is subTypeOf ConditionCategory
@@ -26,3 +26,4 @@ st-4efc76226ae49da5-4efc6c5b6ae48f78 : ∀ {u v} → MeasurementCategory u ⊏�
 st-4efc76226ae49da5-4efc6c5b6ae48f78 = trivialPolySubTypeOfEntity
 
 
+-- == Relations =======================

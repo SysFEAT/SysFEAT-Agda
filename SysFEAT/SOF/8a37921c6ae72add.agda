@@ -3,7 +3,7 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Operating Asset Categorization: 
+Operating Asset Family: 
 
 
 Documentation : https://framework.sysfeat.com/pages/8a37921c6ae72add.htm
@@ -12,17 +12,17 @@ Documentation : https://framework.sysfeat.com/pages/8a37921c6ae72add.htm
 
 {-# OPTIONS --cubical --guardedness #-}
 
-module SysFEAT.SOF.8a37921c6ae72add where -- ========== OperatingAssetCategorization
+module SysFEAT.SOF.8a37921c6ae72add where -- ========== OperatingAssetFamily
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationFamily
 
-OperatingAssetCategorization : ∀ (u : Level) → MetaClass (lsuc u) 
-OperatingAssetCategorization u  = ClassOfEntity (lsuc u) 
+OperatingAssetFamily : ∀ (u : Level) → MetaClass (lsuc u) 
+OperatingAssetFamily u  = ClassOfEntity (lsuc u) 
 
 
---  OperatingAssetCategorization is subTypeOf CategorizationFamily
-st-8a37921c6ae72add-220d23706ad71311 : ∀ {u v} → OperatingAssetCategorization u ⊏⋆ₑ CategorizationFamily v
+--  OperatingAssetFamily is subTypeOf CategorizationFamily
+st-8a37921c6ae72add-220d23706ad71311 : ∀ {u v} → OperatingAssetFamily u ⊏⋆ₑ CategorizationFamily v
 st-8a37921c6ae72add-220d23706ad71311 = trivialPolySubTypeOfEntity
 
 

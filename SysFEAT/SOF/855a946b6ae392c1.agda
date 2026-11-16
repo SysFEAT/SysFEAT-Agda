@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Systemic Level Family: 
-
+Systemic Level Family is an Operating Asset Family that classifies Operating Assets in levels of system granularity.
 
 Documentation : https://framework.sysfeat.com/pages/855a946b6ae392c1.htm
 
@@ -15,9 +15,9 @@ Documentation : https://framework.sysfeat.com/pages/855a946b6ae392c1.htm
 module SysFEAT.SOF.855a946b6ae392c1 where -- ========== SystemicLevelFamily
 
 open import Agda.Primitive
-open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetCategorization
+open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetFamily
 
-SystemicLevelFamily : OperatingAssetCategorization
+SystemicLevelFamily : OperatingAssetFamily
 SystemicLevelFamily = Unknown
 
 

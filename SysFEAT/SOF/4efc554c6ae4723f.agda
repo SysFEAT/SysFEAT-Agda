@@ -15,10 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/4efc554c6ae4723f.htm
 module SysFEAT.SOF.4efc554c6ae4723f where -- ========== MicroOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
+open import SysFEAT.SOF.d85fe7f86afa53a1 public -- SystemicLevel
 
-MicroOperatingAsset : SystemicLevelFamily
-MicroOperatingAsset = Unknown
+MicroOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u 
+MicroOperatingAsset u  = AbstractionCategory u 
+
+
+--  MicroOperatingAsset is subTypeOf SystemicLevel
+st-4efc554c6ae4723f-d85fe7f86afa53a1 : ∀ {u v} → MicroOperatingAsset u ⊏⋆ₑ SystemicLevel v
+st-4efc554c6ae4723f-d85fe7f86afa53a1 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================

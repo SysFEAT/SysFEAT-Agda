@@ -21,15 +21,19 @@ External references:
 module SysFEAT.SOF.515c6b23689335c3 where -- ========== Directive
 
 open import Agda.Primitive
+open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
-open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.SOF.7e3474f06af36c2f public -- PolicyCategoryType
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
-open import SysFEAT.SOF.7e3474f06af36c2f public -- PolicyCategory
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 
 Directive : AssetPropertyType
 Directive = AssetProperty
+
+--  Directive withAspect PolicyAsset
+st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ PolicyAsset (lsuc( lzero))
+st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
 
 --  Directive is subTypeOf AssetProperty
 st-515c6b23689335c3-515c6a856893324e : Directive ⊏ₑ AssetProperty
@@ -39,12 +43,16 @@ st-515c6b23689335c3-515c6a856893324e = polySubTypeOf-identity
 st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
 st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
 
---  Directive withAspect PolicyAsset
-st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ PolicyAsset (lsuc( lzero))
-st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
-
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Policy Categorization: -}
+policyCategorization : ∀ {u} →  Linkage Directive (PolicyCategoryType u)
+policyCategorization = make_subTypeOf "Policy Categorization" "Policy Categorization"
+
+postulate -- policyCategorization is subTypeOf conceptCategorization
+  st-7e3475256af36cd1-8d1fcd3c6ae82f99  : ∀ {u} → policyCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Specialized Directive: -}
@@ -61,14 +69,6 @@ realizedDirective = make_subTypeOf "Realized Directive" "Realized Directive"
 
 postulate -- realizedDirective is subTypeOf specializedProperty
   st-190c7a7f6896696e-1662112a68925f90  : realizedDirective  ⊏⋆ᵣ  specializedProperty
-
--- -------------------------------------------------------------------------------------------- 
-{- Policy Categorization: -}
-policyCategorization : ∀ {u} →  Linkage Directive (PolicyCategory u)
-policyCategorization = make_subTypeOf "Policy Categorization" "Policy Categorization"
-
-postulate -- policyCategorization is subTypeOf conceptCategorization
-  st-7e3475256af36cd1-8d1fcd3c6ae82f99  : ∀ {u} → policyCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Directive Subject: 

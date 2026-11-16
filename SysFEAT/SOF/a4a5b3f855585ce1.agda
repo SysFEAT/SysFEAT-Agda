@@ -28,8 +28,8 @@ open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
-open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategory
-open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
+open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategoryType
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
@@ -58,17 +58,19 @@ applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicabl
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Categorization: -}
-assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategory u)
+assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategoryType u)
 assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
 
 postulate -- assetCategorization is subTypeOf conceptCategorization
   st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Asset Categorization Scheme: -}
-assetCategorizationScheme : ∀ {u} →  Linkage AssetType (AssetCategoryFamily u)
-assetCategorizationScheme = make_classOfRelation "Asset Categorization Scheme" "Asset Categorization Scheme"
+{- Applicable Asset Scheme: -}
+applicableAssetScheme : ∀ {u} →  Linkage AssetType (AssetCategorizationSchema u)
+applicableAssetScheme = make_classOfRelation "Applicable Asset Scheme" "Applicable Asset Scheme"
 
+postulate -- applicableAssetScheme is subTypeOf applicableScheme
+  st-f69620606a0f9c94-d85ffebc6afa62f1  : ∀ {u} → applicableAssetScheme {u}  ⊏⋆ᵣ  applicableScheme {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Type Qualification: 

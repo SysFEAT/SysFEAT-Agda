@@ -26,3 +26,4 @@ st-31cf367c6ad16c33-3aca55ee6aa645c2 : PeriodType ⊏ₑ ClassOfAbstractEntity
 st-31cf367c6ad16c33-3aca55ee6aa645c2 = polySubTypeOf-identity
 
 
+-- == Relations =======================
