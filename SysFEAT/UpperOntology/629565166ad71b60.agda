@@ -52,15 +52,15 @@ parentScheme = make_instanceOf "Category Classification" "Parent Scheme"
 
 
 {- Super Concept Category Type. -}
-parentCategorization : ∀ {u} →  Linkage (ConceptCategoryType u) (ConceptCategoryType u)
+parentCategorization : ∀ {u v} →  Linkage (ConceptCategoryType u) (ConceptCategoryType v)
 parentCategorization = make_subTypeOf "Parent Categorization" "Parent Category"
 
--- parentCategorization isSubTypeOf subTypeOfEntity
---800b80a26ae82d7f : ∀ {u} → parentCategorization {u} ⊏⋆ᵣ subTypeOfEntity {u} 
---800b80a26ae82d7f {u} {u} =
---  polySubTypeOfRel-fromExtensionMap
---    {subRel   = parentScheme {u} {u} }
---    {superRel = subTypeOfEntity {u} {u} }
---    (λ w → w)
+-- parentCategorization isSubTypeOf polySubTypeOfEntity
+800b80a26ae82d7f : ∀ {u v} → parentCategorization {u} {v} ⊏⋆ᵣ polySubTypeOfEntity {lsuc(u)} {lsuc(v)} 
+800b80a26ae82d7f {u} {v} =
+  polySubTypeOfRel-fromExtensionMap
+    {subRel   = parentCategorization {u} {v} }
+    {superRel = polySubTypeOfEntity {lsuc(u)} {lsuc(v)} }
+    (λ w → w)
 
 
