@@ -16,7 +16,7 @@ External references:
 
  - ============================== -}
 
-{-# OPTIONS --cubical --guardedness #-}
+{-# OPTIONS --safe --cubical --guardedness #-}
 
 module SysFEAT.UpperOntology.7e34d3b16af13983 where -- ============ FamilyMetaClass
 
@@ -25,11 +25,11 @@ open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and metaR
 -- ============================================================
 -- I. Concept definition
 -- ============================================================ 
-FamilyMetaClass : (u : Level) → MetaClass (lsuc u)
-FamilyMetaClass u = MetaClass u
+FamilyMetaClass : (u : Level) → MetaClass (lsuc(lsuc u))
+FamilyMetaClass u = MetaClass (lsuc u)
 
 -- FamilyMetaClass isSubTypeOf MetaClass
-8d1fdce76ae8335d : ∀ {u} →  (FamilyMetaClass u) ⊏⋆ₑ (MetaClass u)
-8d1fdce76ae8335d {u} = polySubTypeOf-identity
+7e34d6b56af13a7e : ∀ {u} →  (FamilyMetaClass u) ⊏⋆ₑ (MetaClass (lsuc u))
+7e34d6b56af13a7e {u} = polySubTypeOf-identity
 
 

@@ -5,7 +5,7 @@
 
 Concept Class: 
 A Concept Class is a  Class of Entity whose instances are classes that represent concepts, 
-unlike Category of Entity which represents grouping of class of concepts within a Categorization Family.
+unlike Category of Entity which represents grouping of class of concepts within a Categorization Schema.
 
 Documentation : https://framework.sysfeat.com/pages/8d1fa46c6ae82899.htm
 
@@ -22,7 +22,7 @@ External references:
 
 module SysFEAT.UpperOntology.8d1fa46c6ae82899 where -- ============ ConceptClass
 
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategory
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 
 -- ============================================================
 -- I. Concept definition
@@ -34,36 +34,18 @@ ConceptClass u = ClassOfEntity u
 8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ClassOfEntity u)
 8d1fbb286ae82e54 {u} = polySubTypeOf-identity
 
--- ============================================================
--- II. Relation
--- ============================================================ 
--- -------------------------------------------------------------------------------------------- 
-{- Concept Categorization: 
-Concept Categorization is classification of Concept Classs by means of Category of Entity.
--}
-conceptCategorization :  ∀ {u v} → Linkage (ConceptClass u) (ConceptCategory v)
-conceptCategorization = make_subTypeOf "Concept Categorization" "Categorizing Category"
-
--- conceptCategorization isSubTypeOf polySubTypeOfEntity
-8d1fcd8e6ae8301f : ∀ {u v} → conceptCategorization {u} {v} ⊏⋆ᵣ polySubTypeOfEntity {u} {v}
-8d1fcd8e6ae8301f {u} {v} =
-  polySubTypeOfRel-fromExtensionMap
-    {subRel   = conceptCategorization {u} {v}}
-    {superRel = polySubTypeOfEntity {u} {v}}
-    (λ w → w)
-
 -- -------------------------------------------------------------------------------------------- 
 {- Categorization Scheme: 
-Categorization Family that defines allowed concept categories for a given Concept Class
+Categorization Schema that defines allowed concept categories for a given Concept Class
 -}
-categorizationScheme :  ∀ {u v} → Linkage (ConceptClass u) (CategorizationFamily v)
-categorizationScheme = make_classOfRelation "Concept Categorization Sheme" "Scheme Family"
+applicableScheme :  ∀ {u v} → Linkage (ConceptClass u) (CategorizationSchema v)
+applicableScheme = make_classOfRelation "Concept Categorization Sheme" "Scheme Family"
 
--- categorizationScheme isSubTypeOf classOfRelation
-7e3437356af24a05 : ∀ {u v} → categorizationScheme {u} {v} ⊏⋆ᵣ classOfRelation {u} {lsuc(v)}
+-- applicableScheme isSubTypeOf classOfRelation
+7e3437356af24a05 : ∀ {u v} → applicableScheme {u} {v} ⊏⋆ᵣ classOfRelation {u} {lsuc(lsuc(v))}
 7e3437356af24a05 {u} {v} =
   polySubTypeOfRel-fromExtensionMap
-    {subRel   = categorizationScheme {u} {v}}
-    {superRel = classOfRelation {u} {lsuc(v)}}
+    {subRel   = applicableScheme {u} {v}}
+    {superRel = classOfRelation {u} {lsuc(lsuc(v))}}
     (λ w → w)
 

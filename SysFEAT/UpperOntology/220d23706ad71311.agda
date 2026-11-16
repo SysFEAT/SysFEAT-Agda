@@ -3,10 +3,10 @@
    This work is released under the MIT License.
    framework.sysfeat.com
 
-Categorization Family:
-A Categorization Family is a family of Class of Entities, based on their paritioning in Category of Entities
+Categorization Scheme:
+Categorization Schema is a Family Meta-Class, based on the paritioning of Concept Classes in Concept Categorys.
 Example:
-The Systemic Level Family categorizes Operating Asset in Micro Operating Asset, Mezzo Operating Asset and Macro Operating Asset. 
+The Systemic Level Family categorizes Operating Asset in Micro Operating Asset, , Mezzo Operating Asset and Macro Operating Asset.
 
 Documentation : https://framework.sysfeat.com/pages/220d23706ad71311.htm
 
@@ -17,9 +17,9 @@ External references:
 
  - ============================== -}
 
-{-# OPTIONS --cubical --guardedness #-}
+{-# OPTIONS --safe --cubical --guardedness #-}
 
-module SysFEAT.UpperOntology.220d23706ad71311 where -- ========== CategorizationFamily
+module SysFEAT.UpperOntology.220d23706ad71311 where -- ========== CategorizationSchema
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- FamilyMetaClass
@@ -28,10 +28,10 @@ open import SysFEAT.UpperOntology.7e34d3b16af13983 public -- FamilyMetaClass
 -- I. Concept declaration
 -- ============================================================ 
 
-CategorizationFamily : ∀ (u : Level) → MetaClass (lsuc u)
-CategorizationFamily u = FamilyMetaClass u
+CategorizationSchema : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+CategorizationSchema u = FamilyMetaClass u
 
---  CategorizationFamily is subTypeOf FamilyMetaClass
-8d1fdee16ae8344f : ∀ {u v} → (CategorizationFamily u) ⊏⋆ₑ (FamilyMetaClass v)
-8d1fdee16ae8344f = trivialPolySubTypeOfEntity
+--  CategorizationSchema is subTypeOf FamilyMetaClass
+7e34dd1a6af13b29 : ∀ {u v} → (CategorizationSchema u) ⊏⋆ₑ (FamilyMetaClass v)
+7e34dd1a6af13b29 = trivialPolySubTypeOfEntity
 

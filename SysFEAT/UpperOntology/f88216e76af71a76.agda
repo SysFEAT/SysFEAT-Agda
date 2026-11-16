@@ -22,7 +22,7 @@ External references:
 module SysFEAT.UpperOntology.f88216e76af71a76 where -- ========== ConceptMetaClass
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.e27801e868f17024 public -- MetaClass and MetaRelation
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 
 -- ============================================================
 -- I. The metaclass of all concept class of classes
@@ -34,3 +34,21 @@ ConceptMetaClass u = MetaClass u
 f88216f66af71ad7 : ∀ {u} →  (ConceptMetaClass u) ⊏⋆ₑ (MetaClass u)
 f88216f66af71ad7 {u} = polySubTypeOf-identity
 
+-- ============================================================
+-- II. Relation
+-- ============================================================ 
+
+-- -------------------------------------------------------------------------------------------- 
+{- Concept Categorization: 
+Concept Categorization is classification of Concept Meta-Class by means of Concept Categories.
+-}
+conceptCategorization :  ∀ {u v} → Linkage (ConceptMetaClass u) (ConceptCategoryType v)
+conceptCategorization = make_subTypeOf "Concept Categorization" "Categorizing Category"
+
+-- conceptCategorization isSubTypeOf polySubTypeOfEntity
+8d1fcd8e6ae8301f : ∀ {u v} → conceptCategorization {u} {v} ⊏⋆ᵣ polySubTypeOfEntity {lsuc(u)} {lsuc(v)}
+8d1fcd8e6ae8301f {u} {v} =
+  polySubTypeOfRel-fromExtensionMap
+    {subRel   = conceptCategorization {u} {v}}
+    {superRel = polySubTypeOfEntity {lsuc(u)} {lsuc(v)}}
+    (λ w → w)
