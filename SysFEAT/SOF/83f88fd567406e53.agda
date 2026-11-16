@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
 AssetPropertyType : ThirdOrderClass
-AssetPropertyType = PropertyType
+AssetPropertyType = SecondOrderClass
 
 
 --  AssetPropertyType is subTypeOf PropertyType

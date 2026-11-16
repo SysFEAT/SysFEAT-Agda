@@ -17,8 +17,8 @@ module SysFEAT.SOF.366c4627675c1aad where -- ========== ResolutionType
 open import Agda.Primitive
 open import SysFEAT.SOF.366c3ea8675c13e2 public -- AppraisalType
 
-ResolutionType : ThirdOrderClass
-ResolutionType = PropertyType
+ResolutionType : ClassOfMixedOrderEntity
+ResolutionType = MixedOrderEntity
 
 
 --  ResolutionType is subTypeOf AppraisalType

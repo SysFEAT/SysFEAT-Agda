@@ -17,8 +17,8 @@ module SysFEAT.SOF.366c4033675c1636 where -- ========== AssessmentType
 open import Agda.Primitive
 open import SysFEAT.SOF.366c3ea8675c13e2 public -- AppraisalType
 
-AssessmentType : ThirdOrderClass
-AssessmentType = PropertyType
+AssessmentType : ClassOfMixedOrderEntity
+AssessmentType = MixedOrderEntity
 
 
 --  AssessmentType is subTypeOf AppraisalType

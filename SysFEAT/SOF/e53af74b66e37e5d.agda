@@ -22,7 +22,7 @@ open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 open import SysFEAT.SOF.4efc76226ae49da5 public -- MeasurementCategory
 
 MeasurePropertyType : ThirdOrderClass
-MeasurePropertyType = PropertyType
+MeasurePropertyType = SecondOrderClass
 
 
 --  MeasurePropertyType is subTypeOf ConditionPropertyType

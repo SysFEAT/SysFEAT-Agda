@@ -17,8 +17,8 @@ module SysFEAT.SOF.366c47e1675c1c07 where -- ========== DecisionType
 open import Agda.Primitive
 open import SysFEAT.SOF.366c4627675c1aad public -- ResolutionType
 
-DecisionType : ThirdOrderClass
-DecisionType = PropertyType
+DecisionType : ClassOfMixedOrderEntity
+DecisionType = MixedOrderEntity
 
 
 --  DecisionType is subTypeOf ResolutionType

@@ -23,7 +23,7 @@ AssetCategory : AssetCategoryType
 AssetCategory = ConceptCategory
 
 --  AssetCategory is subTypeOf ModelCategorizationBlock
-st-1a461b676afb4ec5-0eb97aff6855cd23 : ∀ {u v} → AssetCategory (lsuc(lsuc( u))) ⊏ₘₑ ModelCategorizationBlock v
+st-1a461b676afb4ec5-0eb97aff6855cd23 : ∀ {u v} → AssetCategory u ⊏⋆ₑ ModelCategorizationBlock (lsuc( v))
 st-1a461b676afb4ec5-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategory is subTypeOf ConceptCategory

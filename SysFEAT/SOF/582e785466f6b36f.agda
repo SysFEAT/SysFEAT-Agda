@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 
 DataRiskType : ThirdOrderClass
-DataRiskType = PropertyType
+DataRiskType = SecondOrderClass
 
 
 --  DataRiskType is subTypeOf RiskType

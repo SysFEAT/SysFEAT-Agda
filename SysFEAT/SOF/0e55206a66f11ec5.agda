@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 
 RiskType : ThirdOrderClass
-RiskType = PropertyType
+RiskType = SecondOrderClass
 
 
 --  RiskType is subTypeOf AssetPropertyType

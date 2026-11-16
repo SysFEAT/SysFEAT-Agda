@@ -20,7 +20,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 
 SetOfEnvironmentalConditionType : ThirdOrderClass
-SetOfEnvironmentalConditionType = PropertyType
+SetOfEnvironmentalConditionType = SecondOrderClass
 
 
 --  SetOfEnvironmentalConditionType is subTypeOf ConditionPropertyType

@@ -35,12 +35,12 @@ st-4efc6b346ae48db7-629565166ad71b60 = trivialPolySubTypeOfEntity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Parent Asset Categorization Scheme: -}
-parentAssetCategorizationScheme : ∀ {u v} →  Linkage (AssetCategoryType u) (AssetCategorizationSchema v)
-parentAssetCategorizationScheme = make_instanceOf "Parent Asset Categorization Scheme" "Parent Asset Categorization Scheme"
+{- Parent Asset Scheme: -}
+parentAssetScheme : ∀ {u v} →  Linkage (AssetCategoryType u) (AssetCategorizationSchema v)
+parentAssetScheme = make_instanceOf "Parent Asset Scheme" "Parent Asset Scheme"
 
-postulate -- parentAssetCategorizationScheme is subTypeOf parentScheme
-  st-8d1fa3b46ae827f6-890a8a9e6ae8578e  : ∀ {u v} → parentAssetCategorizationScheme {u} {u ⊔ v}  ⊏⋆ᵣ  parentScheme {u} {u ⊔ v}
+postulate -- parentAssetScheme is subTypeOf parentScheme
+  st-8d1fa3b46ae827f6-890a8a9e6ae8578e  : ∀ {u v} → parentAssetScheme {u} {u ⊔ v}  ⊏⋆ᵣ  parentScheme {u} {u ⊔ v}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Parent Asset Category: -}
