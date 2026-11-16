@@ -29,7 +29,6 @@ module SysFEAT.UpperOntology.sysfeat-domain-e278fa2568f06541 where -- ==========
 open import SysFEAT.UpperOntology.sysfeat-domain-ae26f9c25acd52d4 public -- Predication Substrate
 
 open import SysFEAT.UpperOntology.e27801e868f17024 public -- Meta-Class
-open import SysFEAT.UpperOntology.003302806ae27b7c public -- Fourth Order Class
 open import SysFEAT.UpperOntology.dc9c0cbb6acd4ee9 public -- N-Plus Order Entity
 open import SysFEAT.UpperOntology.c463c6106aa23c35 public -- First Order Class
 open import SysFEAT.UpperOntology.f88216e76af71a76 public -- Concept MetaClass

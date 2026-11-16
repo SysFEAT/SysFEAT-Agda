@@ -18,10 +18,10 @@ module SysFEAT.UpperOntology.87d3062666e33965 where -- ========== PropertyType
 
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.3aca564b6aa646ce public -- AbstractEntityMetaClass
-open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 
 PropertyType : ThirdOrderClass
 PropertyType = SecondOrderClass
+
 
 --  PropertyType is subTypeOf AbstractEntityMetaClass
 st-87d3062666e33965-3aca564b6aa646ce : PropertyType ⊏ₑ AbstractEntityMetaClass

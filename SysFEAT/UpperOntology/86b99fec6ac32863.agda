@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d56d9868525869 public -- AggregateEntityBlock
 open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
-CompositePropertyType : ThirdOrderClass
-CompositePropertyType = PropertyType
+CompositePropertyType : ClassOfMixedOrderEntity
+CompositePropertyType = MixedOrderEntity
 
 
 --  CompositePropertyType withAspect AggregateEntityBlock
@@ -31,3 +31,12 @@ st-86b99fec6ac32863-87d3062666e33965 : CompositePropertyType ⊏ₑ PropertyType
 st-86b99fec6ac32863-87d3062666e33965 = polySubTypeOf-identity
 
 
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Part of Property Type: -}
+partOfPropertyType :  Linkage CompositePropertyType PropertyType
+partOfPropertyType = make_classOfHolonymy "Part of Property Type" "Part of Property Type"
+
+postulate -- partOfPropertyType is subTypeOf metaHolonymy
+  st-86b9a0206ac32912-59345d466aae06af  : partOfPropertyType  ⊏⋆ᵣ  metaHolonymy

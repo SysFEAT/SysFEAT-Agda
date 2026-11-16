@@ -22,17 +22,22 @@ External references:
 
 module SysFEAT.UpperOntology.8d1fa46c6ae82899 where -- ============ ConceptClass
 
+open import SysFEAT.UpperOntology.f88216e76af71a76 public -- ConceptMetaClass
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 
 -- ============================================================
 -- I. Concept definition
 -- ============================================================ 
-ConceptClass : (u : Level) → MetaClass u
+ConceptClass :  ∀ (u : Level) → ConceptMetaClass u
 ConceptClass u = ClassOfEntity u
 
 -- Concept Class isSubTypeOf ClassOfEntity
 8d1fbb286ae82e54 : ∀ {u} → (ConceptClass u) ⊏ₑ (ClassOfEntity u)
 8d1fbb286ae82e54 {u} = polySubTypeOf-identity
+
+-- ConceptClass isPowerInstanceOf SecondOrderClass
+f88217796af71b6f :  ∀ {u} → (ConceptClass u) ∷ₚₑ (ConceptMetaClass u)
+f88217796af71b6f  = powerInstanceOfEntity-fromCoercion (λ A → Lift _ A)
 
 -- -------------------------------------------------------------------------------------------- 
 {- Categorization Scheme: 

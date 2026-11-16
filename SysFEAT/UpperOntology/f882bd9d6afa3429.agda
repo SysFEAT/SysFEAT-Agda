@@ -37,3 +37,8 @@ ConceptCategory u = ClassOfEntity u
 d85fde136afa497e : ∀ {u} → (ConceptCategory u) ⊏ₑ (ClassOfEntity u)
 d85fde136afa497e {u} = polySubTypeOf-identity
 
+-- ConceptCategory isPowerInstanceOf SecondOrderClass
+f88217796af71b6f :  ∀ {u} → (ConceptCategory u) ∷ₚₑ (ConceptCategoryType u)
+f88217796af71b6f  = powerInstanceOfEntity-fromCoercion (λ A → Lift _ A)
+
+
