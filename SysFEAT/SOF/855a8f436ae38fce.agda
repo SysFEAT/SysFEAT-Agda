@@ -15,11 +15,15 @@ Documentation : https://framework.sysfeat.com/pages/855a8f436ae38fce.htm
 module SysFEAT.SOF.855a8f436ae38fce where -- ========== MezzoOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e83018fb6ae53018 public -- OperatingAssetCategory
-open import SysFEAT.SOF.855a946b6ae392c1 public -- SystemicLevelFamily
+open import SysFEAT.SOF.d85fe7f86afa53a1 public -- SystemicLevel
 
-MezzoOperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u
-MezzoOperatingAsset u = MixedOrderEntity u
+MezzoOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u 
+MezzoOperatingAsset u  = AbstractionCategory u 
+
+
+--  MezzoOperatingAsset is subTypeOf SystemicLevel
+st-855a8f436ae38fce-d85fe7f86afa53a1 : ∀ {u v} → MezzoOperatingAsset u ⊏⋆ₑ SystemicLevel v
+st-855a8f436ae38fce-d85fe7f86afa53a1 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================

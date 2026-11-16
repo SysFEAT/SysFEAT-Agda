@@ -19,9 +19,8 @@ open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 open import SysFEAT.SOF.e13ce1cd678f1111 public -- WholeLifeAssetType
 
-WholeLifeAsset : AssetType
+WholeLifeAsset : WholeLifeAssetType
 WholeLifeAsset = IndividualAsset
-
 
 --  WholeLifeAsset is subTypeOf IndividualAsset
 st-3a2f3b516796620e-ebcfaeac5ad76ed7 : WholeLifeAsset ⊏ₑ IndividualAsset

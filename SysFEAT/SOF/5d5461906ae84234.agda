@@ -15,9 +15,9 @@ Documentation : https://framework.sysfeat.com/pages/5d5461906ae84234.htm
 module SysFEAT.SOF.5d5461906ae84234 where -- ========== ConceptualizationLevel
 
 open import Agda.Primitive
-open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetCategorization
+open import SysFEAT.SOF.8a37921c6ae72add public -- OperatingAssetFamily
 
-ConceptualizationLevel : OperatingAssetCategorization
+ConceptualizationLevel : OperatingAssetFamily
 ConceptualizationLevel = Unknown
 
 
