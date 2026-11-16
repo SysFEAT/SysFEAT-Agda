@@ -4,7 +4,7 @@
    framework.sysfeat.com
 
 Reflexive Knowledge Graph: 
-The Reflexive Knowledge Graph domain defines the top level constructs of Entitys, Relations, their multi-level classification and mereological relationships.It forms the second layer of SysFEATs graph architecture. In this domain, Relations are refied as first class Elements, allowing them to be further described and qualified.Multi-level classification is implemented by PowerTyping, which enables open and flexible meta-modeling capabilities, This includes support for reflexive meta-modeling,  for example allowing Meta-Class to be an instance of itself.Powertyping also applies to relationships, including the Holonymy Relation.This design grounds the Reflexive Knowledge Graph in non-well-founded set theory, ensuring consistency in circular and self-referential structures (see associated external references).The 4D Composite Knowledge Graph provides additional structuring of Entitys and Relations by implementing the Compositionality pattern which establishes the concepts of dynamic locality and connections.
+The Reflexive Knowledge Graph domain defines the top level constructs of Entitys, Relations, their multi-level classification and mereological relationships.It forms the second layer of SysFEATs graph architecture. In this domain, Relations are refied as first class Elements, allowing them to be further described and qualified.Multi-level classification is implemented by PowerTyping, which enables open and flexible meta-modeling capabilities, This includes support for:1) Reflexive meta-modeling,  for example allowing Meta-Class to be an instance of itself.2) Pattern based meta-modeling relying on Mixed-Order Entitys that can span accross meta-ordering levels.3) Categorization of  Concept Classes thought Family Meta-Classes.Powertyping also applies to relationships, including the Holonymy Relation.This design grounds the Reflexive Knowledge Graph in non-well-founded set theory, ensuring consistency in circular and self-referential structures (see associated external references).The 4D Composite Knowledge Graph provides additional structuring of Entitys and Relations by implementing the Compositionality pattern which establishes the concepts of dynamic locality and connections.
 
 Documentation : https://framework.sysfeat.com/pages/e278fa2568f06541.htm
 
@@ -39,8 +39,8 @@ open import SysFEAT.UpperOntology.5425a2df6aa225cf public -- First Order Entity
 open import SysFEAT.UpperOntology.d9cce4e96937128c public -- Ordered Meta-Class
 open import SysFEAT.UpperOntology.0dd6b365690d316b public -- Ordered Entity
 open import SysFEAT.UpperOntology.308c3b3868e9141e public -- Class of Mixed-Order Entity
-open import SysFEAT.UpperOntology.220d23706ad71311 public -- Categorization Family
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- Concept Category
+open import SysFEAT.UpperOntology.220d23706ad71311 public -- Categorization Schema
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- Concept Category Type
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- Second Order Class
 open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- Enumerated Family
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- Third Order Class
