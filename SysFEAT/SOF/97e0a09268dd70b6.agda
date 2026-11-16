@@ -17,8 +17,8 @@ module SysFEAT.SOF.97e0a09268dd70b6 where -- ========== PolicyDecisionType
 open import Agda.Primitive
 open import SysFEAT.SOF.366c47e1675c1c07 public -- DecisionType
 
-PolicyDecisionType : ThirdOrderClass
-PolicyDecisionType = PropertyType
+PolicyDecisionType : ClassOfMixedOrderEntity
+PolicyDecisionType = MixedOrderEntity
 
 
 --  PolicyDecisionType is subTypeOf DecisionType

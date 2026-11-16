@@ -26,7 +26,7 @@ open import SysFEAT.SOF.4efc6c5b6ae48f78 public -- ConditionCategory
 open import SysFEAT.SOF.6f9c71356a0f3116 public -- MeasurementSchema
 
 ConditionPropertyType : ThirdOrderClass
-ConditionPropertyType = PropertyType
+ConditionPropertyType = SecondOrderClass
 
 
 --  ConditionPropertyType is subTypeOf AssetPropertyType

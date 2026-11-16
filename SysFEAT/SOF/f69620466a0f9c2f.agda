@@ -23,7 +23,7 @@ AssetCategorizationSchema u  = MixedOrderEntity (lsuc u)
 
 
 --  AssetCategorizationSchema is subTypeOf ModelCategorizationBlock
-st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → AssetCategorizationSchema u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc(lsuc( v)))))
+st-f69620466a0f9c2f-0eb97aff6855cd23 : ∀ {u v} → AssetCategorizationSchema u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc( v))))
 st-f69620466a0f9c2f-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategorizationSchema is subTypeOf CategorizationSchema

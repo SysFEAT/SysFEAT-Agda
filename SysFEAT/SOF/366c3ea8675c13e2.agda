@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.83f8933a67407206 public -- GovernancePropertyType
 open import SysFEAT.SOF.6662916b68dd5f84 public -- GovernanceInstrument
 
-AppraisalType : ThirdOrderClass
-AppraisalType = PropertyType
+AppraisalType : ClassOfMixedOrderEntity
+AppraisalType = MixedOrderEntity
 
 
 --  AppraisalType is subTypeOf GovernancePropertyType

@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
 
 BehaviorMetaClass : ThirdOrderClass
-BehaviorMetaClass = ClassOfClassOfIndividual
+BehaviorMetaClass = SecondOrderClass
 
 
 --  BehaviorMetaClass is subTypeOf BoundedIndividualMetaClass

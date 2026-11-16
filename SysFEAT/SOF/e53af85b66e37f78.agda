@@ -19,7 +19,7 @@ open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 open import SysFEAT.SOF.4efc77266ae49efb public -- EnvironmentalCategory
 
 EnvironmentalPropertyType : ThirdOrderClass
-EnvironmentalPropertyType = PropertyType
+EnvironmentalPropertyType = SecondOrderClass
 
 
 --  EnvironmentalPropertyType is subTypeOf ConditionPropertyType

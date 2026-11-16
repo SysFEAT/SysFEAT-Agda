@@ -23,7 +23,7 @@ AssetCategoryFamily : AssetCategorizationSchema
 AssetCategoryFamily = CategorizationFamily
 
 --  AssetCategoryFamily is subTypeOf ModelCategorizationBlock
-st-0e0c15616afb4b13-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc(lsuc( v))))
+st-0e0c15616afb4b13-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryFamily u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc( v)))
 st-0e0c15616afb4b13-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategoryFamily is subTypeOf CategorizationFamily
