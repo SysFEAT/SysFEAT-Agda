@@ -19,7 +19,6 @@ module SysFEAT.UpperOntology.3aca564b6aa646ce where -- ========== AbstractEntity
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.f88216e76af71a76 public -- ConceptMetaClass
 open import SysFEAT.UpperOntology.a599a7e46aa370fb public -- SecondOrderClass
-open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 
 AbstractEntityMetaClass : ThirdOrderClass
 AbstractEntityMetaClass = SecondOrderClass

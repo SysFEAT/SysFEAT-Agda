@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndividual
 
 BoundedIndividualMetaClass : ThirdOrderClass
-BoundedIndividualMetaClass = ClassOfClassOfIndividual
+BoundedIndividualMetaClass = SecondOrderClass
 
 
 --  BoundedIndividualMetaClass is subTypeOf ClassOfClassOfIndividual

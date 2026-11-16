@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d5c5fc685142de public -- ElementaryBlock
 open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 
-ElementaryPropertyType : ThirdOrderClass
-ElementaryPropertyType = PropertyType
+ElementaryPropertyType : ClassOfMixedOrderEntity
+ElementaryPropertyType = MixedOrderEntity
 
 
 --  ElementaryPropertyType withAspect ElementaryBlock
