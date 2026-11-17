@@ -21,8 +21,8 @@ open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
 open import SysFEAT.UpperOntology.a39aaa7f685e5118 public -- LexicalScope
 open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 
-BlockLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-BlockLexicalScope u  = MixedOrderEntity u 
+BlockLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u
+BlockLexicalScope u = MixedOrderEntity u
 
 
 --  BlockLexicalScope is subTypeOf BlockCollection
