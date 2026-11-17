@@ -19,20 +19,20 @@ External references:
 module SysFEAT.C-SOF.190c2cd368965534 where -- ========== ConceptProperty
 
 open import Agda.Primitive
-open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 open import SysFEAT.SOF.c189d5f068ae4d75 public -- InformationProperty
+open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 
-ConceptProperty : ClassOfElement
-ConceptProperty = Element
+ConceptProperty : PropertyType
+ConceptProperty = Property
 
-
---  ConceptProperty withAspect ConceptualEntityAsset
-st-190c2cd368965534-2c9c86dc6adb8147 : ConceptProperty ⊏ₐₑ (ConceptualEntityAsset (lsuc(lzero)))
-st-190c2cd368965534-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 --  ConceptProperty is subTypeOf InformationProperty
 st-190c2cd368965534-c189d5f068ae4d75 : ConceptProperty ⊏ₑ InformationProperty
 st-190c2cd368965534-c189d5f068ae4d75 = polySubTypeOf-identity
+
+--  ConceptProperty withAspect ConceptualEntityAsset
+st-190c2cd368965534-2c9c86dc6adb8147 : ConceptProperty ⊏ₐₑ ConceptualEntityAsset lzero
+st-190c2cd368965534-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 
 -- == Relations =======================

@@ -17,8 +17,8 @@ module SysFEAT.C-SOF.229b33d95b3f7993 where -- ========== ConceptView
 open import Agda.Primitive
 open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-ConceptView : ClassOfElement
-ConceptView = Element
+ConceptView : BoundedIndividualMetaClass
+ConceptView = ClassOfBoundedIndividual
 
 
 --  ConceptView is subTypeOf ConceptualEntity

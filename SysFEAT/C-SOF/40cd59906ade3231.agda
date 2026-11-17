@@ -17,8 +17,8 @@ module SysFEAT.C-SOF.40cd59906ade3231 where -- ========== EventConceptType
 open import Agda.Primitive
 open import SysFEAT.C-SOF.2c9c90e16adb8d02 public -- ConceptualEntityType
 
-EventConceptType : ClassOfElement
-EventConceptType = Element
+EventConceptType : ThirdOrderClass
+EventConceptType = SecondOrderClass
 
 
 --  EventConceptType is subTypeOf ConceptualEntityType

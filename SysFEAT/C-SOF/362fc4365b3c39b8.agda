@@ -27,7 +27,7 @@ open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 open import SysFEAT.C-SOF.2c9c867b6adb80c1 public -- ConceptType
 
 Concept : ConceptType
-Concept = Element
+Concept = ClassOfBoundedIndividual
 
 --  Concept is subTypeOf ConceptualEntity
 st-362fc4365b3c39b8-229b34eb5b3f79d2 : Concept ⊏ₑ ConceptualEntity

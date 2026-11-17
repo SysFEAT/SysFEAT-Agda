@@ -16,10 +16,10 @@ module SysFEAT.C-SOF.21916383678642d1 where -- ========== ConceptualOutcomeEvent
 
 open import Agda.Primitive
 open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
-open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualFunctionalAsset
+open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualAsset
 
-ConceptualOutcomeEvent : BoundedIndividualMetaClass
-ConceptualOutcomeEvent = AssetType
+ConceptualOutcomeEvent : ClassOfClassOfIndividual
+ConceptualOutcomeEvent = ClassOfIndividual
 
 
 --  ConceptualOutcomeEvent is subTypeOf OutcomeEvent
@@ -28,6 +28,30 @@ st-21916383678642d1-30223b5c5ec90c01 = polySubTypeOf-identity
 
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Conceptual Outcome: -}
+-- Aggregate Member : Conceptual Outcome
+
+
+
+-- Membership relation
+membershipOfAggregateHolonymyType :  Linkage ConceptualOutcomeEvent ConceptualOutcome
+membershipOfAggregateHolonymyType = make_upwardNestingRelation "conceptualOutcome membership" "nested conceptualOutcome"
+
+-- Aggregation relation
+96AF99A76ADB5A79 :  Linkage ConceptualOutcome ConceptualAsset
+96AF99A76ADB5A79 = make_Relation "ConceptualAsset aggregation" "aggregated ConceptualAsset"
+
+{- conceptualOutcome : derived relation obtained by composing
+   membershipOfAggregateHolonymyType and 96AF99A76ADB5A79
+   It directly links an Conceptual Outcome Event to the final aggregated ConceptualAsset
+   hiding the reifying ConceptualOutcome
+-}
+conceptualOutcome : Linkage ConceptualOutcomeEvent ConceptualAsset
+conceptualOutcome = membershipOfAggregateHolonymyType  ∘  96AF99A76ADB5A79
+
+
 
 -- -------------------------------------------------------------------------------------------- 
 {- Conceptual Outcome: 
@@ -48,15 +72,15 @@ membershipOfConceptualOutcome :  Linkage ConceptualOutcomeEvent ConceptualOutcom
 membershipOfConceptualOutcome = make_upwardNestingRelation "conceptualOutcome membership" "nested conceptualOutcome"
 
 -- Aggregation relation
-a135A5E46786358C :  Linkage ConceptualOutcome ConceptualFunctionalAsset
-a135A5E46786358C = make_Relation "ConceptualFunctionalAsset aggregation" "aggregated ConceptualFunctionalAsset"
+a135A5E46786358C :  Linkage ConceptualOutcome ConceptualAsset
+a135A5E46786358C = make_Relation "ConceptualAsset aggregation" "aggregated ConceptualAsset"
 
 {- conceptualOutcome : derived relation obtained by composing
    membershipOfConceptualOutcome and a135A5E46786358C
-   It directly links an Conceptual Outcome Event to the final aggregated ConceptualFunctionalAsset
+   It directly links an Conceptual Outcome Event to the final aggregated ConceptualAsset
    hiding the reifying ConceptualOutcome
 -}
-conceptualOutcome : Linkage ConceptualOutcomeEvent ConceptualFunctionalAsset
+conceptualOutcome : Linkage ConceptualOutcomeEvent ConceptualAsset
 conceptualOutcome = membershipOfConceptualOutcome  ∘  a135A5E46786358C
 
 

@@ -16,8 +16,7 @@ module SysFEAT.C-SOF.63828cb767e23ec9 where -- ========== ConceptualOperatingCon
 
 open import Agda.Primitive
 
-ConceptualOperatingConnection : ClassOfClassOfIndividual
-ConceptualOperatingConnection = ClassOfIndividual
+
 
 
 -- == Relations =======================

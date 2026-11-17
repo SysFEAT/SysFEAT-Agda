@@ -18,20 +18,20 @@ module SysFEAT.C-SOF.c8b2238961e5385a where -- ========== ConceptualOperatingAss
 
 open import Agda.Primitive
 open import SysFEAT.SOF.a371a43b5b865817 public -- OperatingAssetType
-open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualFunctionalAsset
+open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualAsset
 open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
 open import SysFEAT.C-SOF.dd269a5468a09a74 public -- ConceptualBusinessRule
 
 ConceptualOperatingAsset : BoundedIndividualMetaClass
-ConceptualOperatingAsset = AssetType
+ConceptualOperatingAsset = ClassOfBoundedIndividual
 
 
 --  ConceptualOperatingAsset is subTypeOf OperatingAssetType
 st-c8b2238961e5385a-a371a43b5b865817 : ConceptualOperatingAsset ⊏ₑ OperatingAssetType
 st-c8b2238961e5385a-a371a43b5b865817 = polySubTypeOf-identity
 
---  ConceptualOperatingAsset is subTypeOf ConceptualFunctionalAsset
-st-c8b2238961e5385a-cb94ec53681855c2 : ConceptualOperatingAsset ⊏ₑ ConceptualFunctionalAsset
+--  ConceptualOperatingAsset is subTypeOf ConceptualAsset
+st-c8b2238961e5385a-cb94ec53681855c2 : ConceptualOperatingAsset ⊏ₑ ConceptualAsset
 st-c8b2238961e5385a-cb94ec53681855c2 = polySubTypeOf-identity
 
 

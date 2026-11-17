@@ -21,20 +21,20 @@ External references:
 module SysFEAT.C-SOF.7c4094d2552717db where -- ========== BusinessFunction
 
 open import Agda.Primitive
-open import SysFEAT.SOF.855a8f436ae38fce public -- MezzoOperatingAsset
 open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
+open import SysFEAT.SOF.855a8f436ae38fce public -- MezzoOperatingAsset
 
 BusinessFunction : AgentMetaClass
 BusinessFunction = AgentType
 
 
---  BusinessFunction withAspect MezzoOperatingAsset
-st-7c4094d2552717db-855a8f436ae38fce : BusinessFunction ⊏ₐₑ (MezzoOperatingAsset (lsuc(lzero)))
-st-7c4094d2552717db-855a8f436ae38fce = polySubTypeOf-identity
-
 --  BusinessFunction is subTypeOf ConceptualAgent
 st-7c4094d2552717db-7c40987055271d04 : BusinessFunction ⊏ₑ ConceptualAgent
 st-7c4094d2552717db-7c40987055271d04 = polySubTypeOf-identity
+
+--  BusinessFunction withAspect MezzoOperatingAsset
+st-7c4094d2552717db-855a8f436ae38fce : BusinessFunction ⊏ₐₑ MezzoOperatingAsset lzero
+st-7c4094d2552717db-855a8f436ae38fce = polySubTypeOf-identity
 
 
 -- == Relations =======================

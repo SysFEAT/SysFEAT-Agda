@@ -19,11 +19,10 @@ open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 open import SysFEAT.C-SOF.40cd59906ade3231 public -- EventConceptType
 open import SysFEAT.SOF.31cf367c6ad16c33 public -- PeriodType
 
-EventConcept : EventConceptType
-EventConcept = Element
+
 
 --  EventConcept withAspect ConceptualEntityAsset
-st-362ff4b55b3c45e6-2c9c86dc6adb8147 : EventConcept ⊏ₐₑ (ConceptualEntityAsset (lsuc(lzero)))
+st-362ff4b55b3c45e6-2c9c86dc6adb8147 : EventConcept ⊏ₐₑ ConceptualEntityAsset lzero
 st-362ff4b55b3c45e6-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 postulate -- EventConcept is PowerInstanceOf Event Concept Type
@@ -46,8 +45,7 @@ periodType = make_classOfMeronymy "Period Type" "Period Type"
 -- -------------------------------------------------------------------------------------------- 
 {- Event Part: -}
 -- Aggregate Member : Event Part
-EventPart : ClassOfClassOfIndividual
-EventPart = ClassOfIndividual
+
 
 
 -- Membership relation

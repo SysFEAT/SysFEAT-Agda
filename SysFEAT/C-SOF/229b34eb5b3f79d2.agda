@@ -21,22 +21,22 @@ External references:
 module SysFEAT.C-SOF.229b34eb5b3f79d2 where -- ========== ConceptualEntity
 
 open import Agda.Primitive
-open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- InformationEntity
+open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 open import SysFEAT.C-SOF.190c2cd368965534 public -- ConceptProperty
 open import SysFEAT.C-SOF.362ff4b55b3c45e6 public -- EventConcept
 
-ConceptualEntity : ClassOfElement
-ConceptualEntity = Element
+ConceptualEntity : BoundedIndividualMetaClass
+ConceptualEntity = ClassOfBoundedIndividual
 
-
---  ConceptualEntity withAspect ConceptualEntityAsset
-st-229b34eb5b3f79d2-2c9c86dc6adb8147 : ConceptualEntity ⊏ₐₑ (ConceptualEntityAsset (lsuc(lzero)))
-st-229b34eb5b3f79d2-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 --  ConceptualEntity is subTypeOf InformationEntity
 st-229b34eb5b3f79d2-d6cd2cea5ab98e5f : ConceptualEntity ⊏ₑ InformationEntity
 st-229b34eb5b3f79d2-d6cd2cea5ab98e5f = polySubTypeOf-identity
+
+--  ConceptualEntity withAspect ConceptualEntityAsset
+st-229b34eb5b3f79d2-2c9c86dc6adb8147 : ConceptualEntity ⊏ₐₑ ConceptualEntityAsset lzero
+st-229b34eb5b3f79d2-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -54,8 +54,7 @@ postulate -- specializedConceptualEntity is subTypeOf specializedInformationEnti
 Immutable characteristics of a Conceptual Entity.The default cardinality is [0..1] which means that Concept Property optional.
 -}
 -- Aggregate Member : Concept Attribute
-ConceptAttribute : ClassOfClassOfIndividual
-ConceptAttribute = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -79,8 +78,7 @@ conceptAttribute = membershipOfConceptAttribute  ∘  aggregationOfConceptProper
 -- -------------------------------------------------------------------------------------------- 
 {- End Event: -}
 -- Aggregate Member : End Event
-EndEvent : ClassOfClassOfIndividual
-EndEvent = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -104,8 +102,7 @@ endEvent = membershipOfEndEvent  ∘  aggregationOfEventConceptEndEvent
 -- -------------------------------------------------------------------------------------------- 
 {- Intermediate Event: -}
 -- Aggregate Member : Intermediate Event
-IntermediateEvent : ClassOfClassOfIndividual
-IntermediateEvent = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -129,8 +126,7 @@ intermediateEvent = membershipOfIntermediateEvent  ∘  aggregationOfEventConcep
 -- -------------------------------------------------------------------------------------------- 
 {- Start Event: -}
 -- Aggregate Member : Start Event
-StartEvent : ClassOfClassOfIndividual
-StartEvent = ClassOfIndividual
+
 
 
 -- Membership relation

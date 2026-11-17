@@ -21,7 +21,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.190c74f868966584 public -- BehavioralRule
 
 ConceptualBusinessRule : AssetPropertyType
-ConceptualBusinessRule = Directive
+ConceptualBusinessRule = AssetProperty
 
 
 --  ConceptualBusinessRule is subTypeOf BehavioralRule

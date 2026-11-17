@@ -22,16 +22,16 @@ open import SysFEAT.SOF.cd90e5976ae187c0 public -- InformationDomain
 open import SysFEAT.C-SOF.6bf190796859b4ff public -- BusinessDictionaryBlock
 open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-ConceptDomain : ∀ (u : Level) → MetaClass u 
-ConceptDomain u  = ClassOfEntity u 
+ConceptDomain : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+ConceptDomain u = MetaClass (lsuc  u)
 
 
 --  ConceptDomain is subTypeOf InformationDomain
-st-855a863b6ae3778d-cd90e5976ae187c0 : ∀ {u v} → (ConceptDomain u) ⊏⋆ₑ (InformationDomain v)
+st-855a863b6ae3778d-cd90e5976ae187c0 : ∀ {u v} → ConceptDomain u ⊏⋆ₑ InformationDomain v
 st-855a863b6ae3778d-cd90e5976ae187c0 = trivialPolySubTypeOfEntity
 
 --  ConceptDomain is subTypeOf BusinessDictionaryBlock
-st-855a863b6ae3778d-6bf190796859b4ff : ∀ {u v} → (ConceptDomain u) ⊏ₘₑ (BusinessDictionaryBlock v)
+st-855a863b6ae3778d-6bf190796859b4ff : ∀ {u v} → ConceptDomain u ⊏⋆ₑ BusinessDictionaryBlock (lsuc(lsuc(lsuc( v))))
 st-855a863b6ae3778d-6bf190796859b4ff = trivialPolySubTypeOfEntity
 
 

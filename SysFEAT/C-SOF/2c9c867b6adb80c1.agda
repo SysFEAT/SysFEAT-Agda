@@ -17,8 +17,8 @@ module SysFEAT.C-SOF.2c9c867b6adb80c1 where -- ========== ConceptType
 open import Agda.Primitive
 open import SysFEAT.C-SOF.2c9c90e16adb8d02 public -- ConceptualEntityType
 
-ConceptType : ClassOfElement
-ConceptType = Element
+ConceptType : ThirdOrderClass
+ConceptType = SecondOrderClass
 
 
 --  ConceptType is subTypeOf ConceptualEntityType

@@ -18,12 +18,12 @@ open import Agda.Primitive
 open import SysFEAT.C-SOF.855a87506ae37dbc public -- ConceptDomainFamily
 open import SysFEAT.C-SOF.855a863b6ae3778d public -- ConceptDomain
 
-ConceptDomainGroup : ∀ (u : Level) → MetaClass u 
-ConceptDomainGroup u  = ClassOfEntity u 
+ConceptDomainGroup : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+ConceptDomainGroup u = MetaClass (lsuc  u)
 
 
 --  ConceptDomainGroup is subTypeOf ConceptDomainFamily
-st-855a872c6ae37d5b-855a87506ae37dbc : ∀ {u v} → (ConceptDomainGroup u) ⊏⋆ₑ (ConceptDomainFamily v)
+st-855a872c6ae37d5b-855a87506ae37dbc : ∀ {u v} → ConceptDomainGroup u ⊏⋆ₑ ConceptDomainFamily v
 st-855a872c6ae37d5b-855a87506ae37dbc = trivialPolySubTypeOfEntity
 
 

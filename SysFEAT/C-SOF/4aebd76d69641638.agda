@@ -17,12 +17,12 @@ module SysFEAT.C-SOF.4aebd76d69641638 where -- ========== ConceptualElement
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d5249e68510ff9 public -- Element
 
-ConceptualElement : ∀ (u : Level) → ClassOfElement u 
-ConceptualElement u  = Element u 
+ConceptualElement : ∀ (u : Level) → ClassOfElement u
+ConceptualElement u = Element u
 
 
 --  ConceptualElement is subTypeOf Element
-st-4aebd76d69641638-23d5249e68510ff9 : ∀ {u v} → (ConceptualElement u) ⊏⋆ₑ (Element v)
+st-4aebd76d69641638-23d5249e68510ff9 : ∀ {u v} → ConceptualElement u ⊏⋆ₑ Element v
 st-4aebd76d69641638-23d5249e68510ff9 = trivialPolySubTypeOfEntity
 
 

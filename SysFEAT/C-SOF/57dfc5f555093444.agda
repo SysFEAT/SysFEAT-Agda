@@ -27,6 +27,7 @@ module SysFEAT.C-SOF.57dfc5f555093444 where -- ========== ValueStream
 open import Agda.Primitive
 open import SysFEAT.C-SOF.f97e3119632b25f8 public -- ConceptualBehavior
 open import SysFEAT.SOF.d682ef5e56144e77 public -- ActionProcessType
+open import SysFEAT.C-SOF.21918fed6786592c public -- ConceptualEvent
 open import SysFEAT.C-SOF.21916383678642d1 public -- ConceptualOutcomeEvent
 open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
 open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
@@ -59,6 +60,38 @@ postulate -- specializedValueStream is subTypeOf specializedProcess
   st-325a376d66f34577-325a376e66f345e2  : specializedValueStream  ⊏⋆ᵣ  specializedProcess
 
 -- -------------------------------------------------------------------------------------------- 
+{- Value Stream Sequence: 
+A sequence flow is used to show the order in which steps of a process will be performed. Each sequence flow has only one source and only one target. 
+-}
+-- Aggregate Member : Value Stream Sequence
+ValueStreamSequence : TemporalOrderingType
+ValueStreamSequence = TemporalOrdering
+
+
+
+--  ValueStreamSequence is subTypeOf SequenceFlow
+st-fd70bbb75fd93566-40d5416b5ee36739 : ValueStreamSequence ⊏ₑ SequenceFlow
+st-fd70bbb75fd93566-40d5416b5ee36739 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfValueStreamSequence :  Linkage ValueStream ValueStreamSequence
+membershipOfValueStreamSequence = make_upwardNestingRelation "valueStreamSequence membership" "nested valueStreamSequence"
+
+-- Aggregation relation
+aggregationOfConceptualEventValueStreamSequence :  Linkage ValueStreamSequence ConceptualEvent
+aggregationOfConceptualEventValueStreamSequence = make_Relation "ConceptualEvent aggregation" "aggregated ConceptualEvent"
+
+{- valueStreamSequence : derived relation obtained by composing
+   membershipOfValueStreamSequence and aggregationOfConceptualEventValueStreamSequence
+   It directly links an Value Stream to the final aggregated ConceptualEvent
+   hiding the reifying ValueStreamSequence
+-}
+valueStreamSequence : Linkage ValueStream ConceptualEvent
+valueStreamSequence = membershipOfValueStreamSequence  ∘  aggregationOfConceptualEventValueStreamSequence
+
+
+
+-- -------------------------------------------------------------------------------------------- 
 {- Value Stream Flow: 
 Flow of resource or information between stages of a Value Stream.
 -}
@@ -68,13 +101,13 @@ ValueStreamFlow = TemporalOrdering
 
 
 
---  ValueStreamFlow is subTypeOf ValueStreamSequence
-st-2188e56d5ec84356-fd70bbb75fd93566 : ValueStreamFlow ⊏ₑ ValueStreamSequence
-st-2188e56d5ec84356-fd70bbb75fd93566 = polySubTypeOf-identity
-
 --  ValueStreamFlow is subTypeOf ObjectFlow
 st-2188e56d5ec84356-e4c0fff75ed0ec45 : ValueStreamFlow ⊏ₑ ObjectFlow
 st-2188e56d5ec84356-e4c0fff75ed0ec45 = polySubTypeOf-identity
+
+--  ValueStreamFlow is subTypeOf ValueStreamSequence
+st-2188e56d5ec84356-fd70bbb75fd93566 : ValueStreamFlow ⊏ₑ ValueStreamSequence
+st-2188e56d5ec84356-fd70bbb75fd93566 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfValueStreamFlow :  Linkage ValueStream ValueStreamFlow
@@ -97,8 +130,7 @@ valueStreamFlow = membershipOfValueStreamFlow  ∘  aggregationOfConceptualOutco
 -- -------------------------------------------------------------------------------------------- 
 {- Required Capability: -}
 -- Aggregate Member : Required Capability
-RequiredCapability : ClassOfClassOfIndividual
-RequiredCapability = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -116,6 +148,42 @@ aggregationOfBusinessCapabilityRequiredCapability = make_Relation "BusinessCapab
 -}
 requiredCapability : Linkage ValueStream BusinessCapability
 requiredCapability = membershipOfRequiredCapability  ∘  aggregationOfBusinessCapabilityRequiredCapability
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Value Stream Participant: 
+Participation of a Conceptual Agent in a Value Stream.
+-}
+-- Aggregate Member : Value Stream Participant
+ValueStreamParticipant : ClassOfClassOfIndividual
+ValueStreamParticipant = ClassOfIndividual
+
+
+
+--  ValueStreamParticipant is subTypeOf ActiveParticipant
+st-3b4b3d365ebc2856-004b041f5ebd1119 : ValueStreamParticipant ⊏ₑ ActiveParticipant
+st-3b4b3d365ebc2856-004b041f5ebd1119 = polySubTypeOf-identity
+
+--  ValueStreamParticipant is subTypeOf ConceptualParticipant
+st-3b4b3d365ebc2856-6a7098be67875823 : ValueStreamParticipant ⊏ₑ ConceptualParticipant
+st-3b4b3d365ebc2856-6a7098be67875823 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfValueStreamParticipant :  Linkage ValueStream ValueStreamParticipant
+membershipOfValueStreamParticipant = make_upwardNestingRelation "valueStreamParticipant membership" "nested valueStreamParticipant"
+
+-- Aggregation relation
+aggregationOfConceptualAgentValueStreamParticipant :  Linkage ValueStreamParticipant ConceptualAgent
+aggregationOfConceptualAgentValueStreamParticipant = make_Relation "ConceptualAgent aggregation" "aggregated ConceptualAgent"
+
+{- valueStreamParticipant : derived relation obtained by composing
+   membershipOfValueStreamParticipant and aggregationOfConceptualAgentValueStreamParticipant
+   It directly links an Value Stream to the final aggregated ConceptualAgent
+   hiding the reifying ValueStreamParticipant
+-}
+valueStreamParticipant : Linkage ValueStream ConceptualAgent
+valueStreamParticipant = membershipOfValueStreamParticipant  ∘  aggregationOfConceptualAgentValueStreamParticipant
 
 
 
@@ -220,8 +288,7 @@ businessFunctionParticipant = membershipOfBusinessFunctionParticipant  ∘  aggr
 Store of Business Objects that the Value Stream requires for the executing of its activities.
 -}
 -- Aggregate Member : Business Object Store
-BusinessObjectStore : ClassOfClassOfIndividual
-BusinessObjectStore = ClassOfIndividual
+
 
 
 -- Membership relation

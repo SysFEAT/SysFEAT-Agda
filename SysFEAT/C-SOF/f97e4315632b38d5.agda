@@ -20,8 +20,8 @@ open import SysFEAT.SOF.ca3513af5fc59413 public -- InteractionProcessTypeEnviron
 open import SysFEAT.C-SOF.9810b060551137d0 public -- OperatingDomain
 open import SysFEAT.C-SOF.08d17cde678a2b47 public -- Supplier
 
-ConceptualEnvironmentScenario : BoundedIndividualMetaClass
-ConceptualEnvironmentScenario = AssetType
+ConceptualEnvironmentScenario : AbstractionCategoryType
+ConceptualEnvironmentScenario = AbstractionCategory
 
 
 --  ConceptualEnvironmentScenario is subTypeOf ConceptualEcosystem

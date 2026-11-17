@@ -15,10 +15,16 @@ Documentation : https://framework.sysfeat.com/pages/08d17cde678a2b47.htm
 module SysFEAT.C-SOF.08d17cde678a2b47 where -- ========== Supplier
 
 open import Agda.Primitive
+open import SysFEAT.SOF.a04ea65b6ae745ef public -- ConceptualLevel
 open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-Supplier : ClassOfClassOfBoundedIndividual
-Supplier = ClassOfBoundedIndividual
+Supplier : AbstractionCategoryType
+Supplier = AbstractionCategory
+
+
+--  Supplier withAspect ConceptualLevel
+st-08d17cde678a2b47-a04ea65b6ae745ef : Supplier ⊏ₐₑ ConceptualLevel lzero
+st-08d17cde678a2b47-a04ea65b6ae745ef = polySubTypeOf-identity
 
 
 -- == Relations =======================

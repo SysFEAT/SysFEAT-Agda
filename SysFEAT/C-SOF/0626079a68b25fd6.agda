@@ -18,8 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.C-SOF.0626070868b25f1d public -- StateConcept
 open import SysFEAT.C-SOF.346a3677655b5325 public -- ConceptualIndividual
 
-IndividualStateConcept : StateConcept
-IndividualStateConcept = Unknown
+
 
 postulate -- IndividualStateConcept is PowerInstanceOf State Concept
   pi-062607d368b2606e : IndividualStateConcept ∷ₚₑ StateConcept

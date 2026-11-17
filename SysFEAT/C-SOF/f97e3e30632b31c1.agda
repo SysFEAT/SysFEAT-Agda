@@ -15,12 +15,17 @@ Documentation : https://framework.sysfeat.com/pages/f97e3e30632b31c1.htm
 module SysFEAT.C-SOF.f97e3e30632b31c1 where -- ========== ConceptualEcosystem
 
 open import Agda.Primitive
+open import SysFEAT.SOF.a04ea65b6ae745ef public -- ConceptualLevel
 open import SysFEAT.SOF.ca35f48a5fc48686 public -- OperatingEcoSystem
 open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
 
-ConceptualEcosystem : BoundedIndividualMetaClass
-ConceptualEcosystem = AssetType
+ConceptualEcosystem : AbstractionCategoryType
+ConceptualEcosystem = AbstractionCategory
 
+
+--  ConceptualEcosystem withAspect ConceptualLevel
+st-f97e3e30632b31c1-a04ea65b6ae745ef : ConceptualEcosystem ⊏ₐₑ ConceptualLevel lzero
+st-f97e3e30632b31c1-a04ea65b6ae745ef = polySubTypeOf-identity
 
 --  ConceptualEcosystem is subTypeOf OperatingEcoSystem
 st-f97e3e30632b31c1-ca35f48a5fc48686 : ConceptualEcosystem ⊏ₑ OperatingEcoSystem
@@ -32,8 +37,7 @@ st-f97e3e30632b31c1-ca35f48a5fc48686 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Conceptual Ecosystem Member: -}
 -- Aggregate Member : Conceptual Ecosystem Member
-ConceptualEcosystemMember : ClassOfClassOfIndividual
-ConceptualEcosystemMember = ClassOfIndividual
+
 
 
 --  ConceptualEcosystemMember is subTypeOf ResourceEcosystemPart

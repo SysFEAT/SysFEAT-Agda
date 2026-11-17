@@ -21,12 +21,12 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb95db46855bdd5 public -- ModelLexicalScope
 open import SysFEAT.C-SOF.3f066af36858706e public -- BusinessVocabularyBlock
 
-BusinessVocabulary : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-BusinessVocabulary u  = MixedOrderEntity u 
+BusinessVocabulary : ∀ (u : Level) → ClassOfMixedOrderEntity u
+BusinessVocabulary u = MixedOrderEntity u
 
 
 --  BusinessVocabulary is subTypeOf ModelLexicalScope
-st-3f066acc68587000-0eb95db46855bdd5 : ∀ {u v} → (BusinessVocabulary u) ⊏⋆ₑ (ModelLexicalScope v)
+st-3f066acc68587000-0eb95db46855bdd5 : ∀ {u v} → BusinessVocabulary u ⊏⋆ₑ ModelLexicalScope v
 st-3f066acc68587000-0eb95db46855bdd5 = trivialPolySubTypeOfEntity
 
 

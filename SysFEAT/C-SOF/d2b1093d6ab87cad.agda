@@ -35,4 +35,4 @@ namedElement : ∀ {u} →  Linkage ConceptName (ConceptualElement u)
 namedElement = make_classOfRelation "Named Element" "Named Element"
 
 postulate -- namedElement is subTypeOf designation
-  st-4aebdcae69641fd4-4aebdcf669642033  : namedElement  ⊏⋆ᵣ  designation
+  st-4aebdcae69641fd4-4aebdcf669642033  : ∀ {u} → namedElement {u}  ⊏⋆ᵣ  designation {u}

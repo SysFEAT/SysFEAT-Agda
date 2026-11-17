@@ -21,7 +21,7 @@ module SysFEAT.C-SOF.dd268f2868a08150 where -- ========== BusinessCapability
 
 open import Agda.Primitive
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
-open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualFunctionalAsset
+open import SysFEAT.C-SOF.cb94ec53681855c2 public -- ConceptualAsset
 
 BusinessCapability : AssetPropertyType
 BusinessCapability = AssetProperty
@@ -45,13 +45,13 @@ postulate -- specializedBusinessCapability is subTypeOf specializedCapability
 -- -------------------------------------------------------------------------------------------- 
 {- Involved Conceptual Object: -}
 -- Aggregate Member : Involved Conceptual Object
-InvolvedConceptualObject : ClassOfMixedOrderEntity
-InvolvedConceptualObject = MixedOrderEntity
+InvolvedConceptualObject : SecondOrderClass
+InvolvedConceptualObject = FirstOrderClass
 
 
 
---  InvolvedConceptualObject is subTypeOf InvolvedInformation
-st-dd2690df68a08308-01f11a37689b6677 : InvolvedConceptualObject ⊏ₑ InvolvedInformation
+--  InvolvedConceptualObject is subTypeOf OutcomeProduction
+st-dd2690df68a08308-01f11a37689b6677 : InvolvedConceptualObject ⊏ₑ OutcomeProduction
 st-dd2690df68a08308-01f11a37689b6677 = polySubTypeOf-identity
 
 -- Membership relation
@@ -59,15 +59,15 @@ membershipOfInvolvedConceptualObject :  Linkage BusinessCapability InvolvedConce
 membershipOfInvolvedConceptualObject = make_upwardNestingRelation "involvedConceptualObject membership" "nested involvedConceptualObject"
 
 -- Aggregation relation
-dD2690DF68A08318 :  Linkage InvolvedConceptualObject ConceptualFunctionalAsset
-dD2690DF68A08318 = make_Relation "ConceptualFunctionalAsset aggregation" "aggregated ConceptualFunctionalAsset"
+dD2690DF68A08318 :  Linkage InvolvedConceptualObject ConceptualAsset
+dD2690DF68A08318 = make_Relation "ConceptualAsset aggregation" "aggregated ConceptualAsset"
 
 {- involvedConceptualObject : derived relation obtained by composing
    membershipOfInvolvedConceptualObject and dD2690DF68A08318
-   It directly links an Business Capability to the final aggregated ConceptualFunctionalAsset
+   It directly links an Business Capability to the final aggregated ConceptualAsset
    hiding the reifying InvolvedConceptualObject
 -}
-involvedConceptualObject : Linkage BusinessCapability ConceptualFunctionalAsset
+involvedConceptualObject : Linkage BusinessCapability ConceptualAsset
 involvedConceptualObject = membershipOfInvolvedConceptualObject  ∘  dD2690DF68A08318
 
 
