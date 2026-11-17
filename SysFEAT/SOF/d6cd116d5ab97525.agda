@@ -19,7 +19,7 @@ open import SysFEAT.SOF.cd90e5976ae187c0 public -- InformationDomain
 open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
 
 InformationDomain : MetaClass
-InformationDomain = ClassOfEntity
+InformationDomain = MetaClass
 
 
 --  InformationDomain withAspect InformationDomain

@@ -19,7 +19,7 @@ open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.UpperOntology.00ae5d3b667038fc public -- WholeLifeClass
 
 WholeLifeAssetType : BoundedIndividualMetaClass
-WholeLifeAssetType = AssetType
+WholeLifeAssetType = ClassOfBoundedIndividual
 
 
 --  WholeLifeAssetType is subTypeOf AssetType

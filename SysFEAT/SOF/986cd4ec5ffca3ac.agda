@@ -27,7 +27,7 @@ open import SysFEAT.SOF.a881197c6ad97047 public -- BehaviorMetaClass
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
 BehaviorType : BehaviorMetaClass
-BehaviorType = AssetType
+BehaviorType = ClassOfBoundedIndividual
 
 --  BehaviorType is subTypeOf OperatingAssetType
 st-986cd4ec5ffca3ac-a371a43b5b865817 : BehaviorType ⊏ₑ OperatingAssetType

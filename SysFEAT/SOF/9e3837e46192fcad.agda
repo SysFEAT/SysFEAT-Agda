@@ -38,9 +38,8 @@ postulate -- IndividualAgent is PowerInstanceOf Agent Type
 An Agent Part is the Aggregate Holonymy of an Individual Agent in a parent Individual Agent.
 -}
 -- Aggregate Member : Agent Part
-AgentPart : AggregateHolonymyType
+AgentPart : AgentPart
 AgentPart = AggregateHolonymy
-
 
 
 --  AgentPart is subTypeOf IndividualOperatingPart

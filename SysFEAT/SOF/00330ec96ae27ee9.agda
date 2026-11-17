@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.003315fd6ae286f1 public -- InformationDomainFamily
 open import SysFEAT.SOF.cd90e5976ae187c0 public -- InformationDomain
 
-InformationDomainGroup : ∀ (u : Level) → MetaClass (lsuc u) 
-InformationDomainGroup u  = ClassOfEntity (lsuc u) 
+InformationDomainGroup : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+InformationDomainGroup u = MetaClass (lsuc  u)
 
 
 --  InformationDomainGroup is subTypeOf InformationDomainFamily

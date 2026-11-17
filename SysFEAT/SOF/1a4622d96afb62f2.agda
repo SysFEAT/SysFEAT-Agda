@@ -17,8 +17,8 @@ module SysFEAT.SOF.1a4622d96afb62f2 where -- ========== PhysicalLevel
 open import Agda.Primitive
 open import SysFEAT.SOF.1a461f766afb5920 public -- ResourceLevel
 
-PhysicalLevel : ∀ (u : Level) → AbstractionCategoryType u 
-PhysicalLevel u  = AbstractionCategory u 
+PhysicalLevel : ∀ (u : Level) → AbstractionCategoryType u
+PhysicalLevel u = AbstractionCategory u
 
 
 --  PhysicalLevel is subTypeOf ResourceLevel

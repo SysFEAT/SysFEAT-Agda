@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategoryType
 open import SysFEAT.SOF.1a4623c86afb6437 public -- AbstractionSchema
 
-AbstractionCategoryType : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-AbstractionCategoryType u  = MixedOrderEntity u 
+AbstractionCategoryType : ∀ (u : Level) → MetaClass (lsuc u)
+AbstractionCategoryType u = MetaClass u
 
 
 --  AbstractionCategoryType is subTypeOf AssetCategoryType
@@ -34,5 +34,5 @@ st-1a4643fa6afb786e-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 abstractionSchema : ∀ {u v} →  Linkage (AbstractionCategoryType u) (AbstractionSchema v)
 abstractionSchema = make_instanceOf "Abstraction Schema" "Abstraction Schema"
 
-postulate -- abstractionSchema is subTypeOf parentAssetCategorizationScheme
-  st-1a4644336afb7927-8d1fa3b46ae827f6  : ∀ {u v} → abstractionSchema {u} {u ⊔ v}  ⊏⋆ᵣ  parentAssetCategorizationScheme {u} {u ⊔ v}
+postulate -- abstractionSchema is subTypeOf parentAssetScheme
+  st-1a4644336afb7927-8d1fa3b46ae827f6  : ∀ {u v} → abstractionSchema {u} {u ⊔ v}  ⊏⋆ᵣ  parentAssetScheme {u} {u ⊔ v}

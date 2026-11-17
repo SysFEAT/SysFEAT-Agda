@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationSchema
 
-AssetCategorizationSchema : ∀ (u : Level) → ClassOfMixedOrderEntity (lsuc u) 
-AssetCategorizationSchema u  = MixedOrderEntity (lsuc u) 
+AssetCategorizationSchema : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+AssetCategorizationSchema u = MetaClass (lsuc  u)
 
 
 --  AssetCategorizationSchema is subTypeOf ModelCategorizationBlock

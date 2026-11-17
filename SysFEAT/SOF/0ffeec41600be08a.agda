@@ -22,8 +22,8 @@ open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
 open import SysFEAT.SOF.01ce05f9685979d8 public -- InitiativeBlock
 open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
-open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 Initiative : ClassOfBoundedIndividual
 Initiative = BoundedIndividual
@@ -51,40 +51,6 @@ steeringAuthority = make_holonymyRelation "Steering Authority" "Steering Authori
 
 postulate -- steeringAuthority is subTypeOf referenceHolonymy
   st-b2f2d64d5f47e364-9653a95669701e02  : steeringAuthority  ⊏⋆ᵣ  referenceHolonymy
-
--- -------------------------------------------------------------------------------------------- 
-{- Initiative Subject: 
-Set of Asset Blocks that are the subject of changes undertaken by an Initiative.
--}
--- Aggregate Member : Initiative Subject
-InitiativeSubject : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-InitiativeSubject u  = MixedOrderEntity u 
-
-
-
---  InitiativeSubject is subTypeOf UnboundedMember
-st-0f642fd06859b0d5-8cfaf71a6852b042 : ∀ {u v} → InitiativeSubject u ⊏⋆ₑ UnboundedMember v
-st-0f642fd06859b0d5-8cfaf71a6852b042 = trivialPolySubTypeOfEntity
-
--- Membership relation
-membershipOfInitiativeSubject : ∀ {u} →  Linkage Initiative (InitiativeSubject u)
-membershipOfInitiativeSubject = make_upwardNestingRelation "initiativeSubject membership" "nested initiativeSubject"
-
--- Aggregation relation
-aggregationOfAssetBlockInitiativeSubject : ∀ {u v} →  Linkage (InitiativeSubject u) (AssetBlock v)
-aggregationOfAssetBlockInitiativeSubject = make_Relation "AssetBlock aggregation" "aggregated AssetBlock"
-
-{- initiativeSubject : derived relation obtained by composing
-   membershipOfInitiativeSubject and aggregationOfAssetBlockInitiativeSubject
-   It directly links an Initiative to the final aggregated AssetBlock
-   hiding the reifying InitiativeSubject
--}
-initiativeSubject : ∀ {u w} → Linkage Initiative (AssetBlock w)
-initiativeSubject {u} {w}  = membershipOfInitiativeSubject {u}   ∘  aggregationOfAssetBlockInitiativeSubject {w} 
-
-postulate -- initiativeSubject is subTypeOf referenceHolonymy
-  st-0f642fd06859b0d5-9653a95669701e02  : initiativeSubject {lzero} {lzero}  ⊏⋆ᵣ  referenceHolonymy
-
 
 -- -------------------------------------------------------------------------------------------- 
 {- Course of Action: 
@@ -116,4 +82,38 @@ aggregationOfIndividualResourceBehaviorCourseOfAction = make_Relation "Individua
 courseOfAction : Linkage Initiative IndividualResourceBehavior
 courseOfAction = membershipOfCourseOfAction  ∘  aggregationOfIndividualResourceBehaviorCourseOfAction
 
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Initiative Subject: 
+Set of Asset Blocks that are the subject of changes undertaken by an Initiative.
+-}
+-- Aggregate Member : Initiative Subject
+InitiativeSubject : ∀ (u : Level) → ClassOfHolonymy (lsuc(lsuc u))
+InitiativeSubject u = holonymyRelation u
+
+
+
+--  InitiativeSubject is subTypeOf UnboundedMember
+st-0f642fd06859b0d5-8cfaf71a6852b042 : ∀ {u v} → InitiativeSubject u ⊏⋆ₑ UnboundedMember v
+st-0f642fd06859b0d5-8cfaf71a6852b042 = trivialPolySubTypeOfEntity
+
+-- Membership relation
+membershipOfInitiativeSubject : ∀ {u} →  Linkage Initiative (InitiativeSubject u)
+membershipOfInitiativeSubject = make_upwardNestingRelation "initiativeSubject membership" "nested initiativeSubject"
+
+-- Aggregation relation
+aggregationOfAssetBlockInitiativeSubject : ∀ {u v} →  Linkage (InitiativeSubject u) (AssetBlock v)
+aggregationOfAssetBlockInitiativeSubject = make_Relation "AssetBlock aggregation" "aggregated AssetBlock"
+
+{- initiativeSubject : derived relation obtained by composing
+   membershipOfInitiativeSubject and aggregationOfAssetBlockInitiativeSubject
+   It directly links an Initiative to the final aggregated AssetBlock
+   hiding the reifying InitiativeSubject
+-}
+initiativeSubject : ∀ {u w} → Linkage Initiative (AssetBlock w)
+initiativeSubject {u} {w}  = membershipOfInitiativeSubject {u}   ∘  aggregationOfAssetBlockInitiativeSubject {w} 
+
+postulate -- initiativeSubject is subTypeOf referenceHolonymy
+  st-0f642fd06859b0d5-9653a95669701e02  : initiativeSubject {lzero} {lzero}  ⊏⋆ᵣ  referenceHolonymy
 

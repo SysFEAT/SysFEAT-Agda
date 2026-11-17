@@ -17,8 +17,8 @@ module SysFEAT.SOF.1a461f766afb5920 where -- ========== ResourceLevel
 open import Agda.Primitive
 open import SysFEAT.SOF.a04ea6866ae7465e public -- ConceptualizationLevel
 
-ResourceLevel : ∀ (u : Level) → AbstractionCategoryType u 
-ResourceLevel u  = AbstractionCategory u 
+ResourceLevel : ∀ (u : Level) → AbstractionCategoryType u
+ResourceLevel u = AbstractionCategory u
 
 
 --  ResourceLevel is subTypeOf ConceptualizationLevel

@@ -24,7 +24,7 @@ open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
 
 OperatingEcoSystem : BoundedIndividualMetaClass
-OperatingEcoSystem = AssetType
+OperatingEcoSystem = ClassOfBoundedIndividual
 
 
 --  OperatingEcoSystem is subTypeOf AssetType

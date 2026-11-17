@@ -17,8 +17,8 @@ module SysFEAT.SOF.5e32bf586929baab where -- ========== Nonapplicable
 open import Agda.Primitive
 open import SysFEAT.SOF.5e32ba416929b430 public -- PolicityDecisionOption
 
-Nonapplicable : Property
-Nonapplicable = PropertyValue
+Nonapplicable : PolicyapplicabilityStatus
+Nonapplicable = PolicityDecisionOption
 
 
 --  Nonapplicable is subTypeOf PolicityDecisionOption

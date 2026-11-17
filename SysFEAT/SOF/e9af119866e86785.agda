@@ -39,9 +39,8 @@ postulate -- IndividualBehavior is PowerInstanceOf Behavior Type
 An Individual Behavior Part is the Aggregate Holonymy of an Individual Behavior in a parent Individual Behavior.
 -}
 -- Aggregate Member : Individual Behavior Part
-IndividualBehaviorPart : AggregateHolonymyType
+IndividualBehaviorPart : BehaviorPart
 IndividualBehaviorPart = AggregateHolonymy
-
 
 
 --  IndividualBehaviorPart is subTypeOf IndividualOperatingPart

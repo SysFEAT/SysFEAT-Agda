@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.1a4645156afb79dd public -- AbstractionCategory
 open import SysFEAT.SOF.1a461dd76afb55cd public -- ConceptualizationFamily
 
-ConceptualizationLevel : ∀ (u : Level) → AbstractionCategoryType u 
-ConceptualizationLevel u  = AbstractionCategory u 
+ConceptualizationLevel : ∀ (u : Level) → AbstractionCategoryType u
+ConceptualizationLevel u = AbstractionCategory u
 
 
 --  ConceptualizationLevel is subTypeOf AbstractionCategory

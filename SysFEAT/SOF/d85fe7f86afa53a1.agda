@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.1a4645156afb79dd public -- AbstractionCategory
 open import SysFEAT.SOF.0e0c12ee6afb4347 public -- SystemicFamily
 
-SystemicLevel : ∀ (u : Level) → AbstractionCategoryType u 
-SystemicLevel u  = AbstractionCategory u 
+SystemicLevel : ∀ (u : Level) → AbstractionCategoryType u
+SystemicLevel u = AbstractionCategory u
 
 
 --  SystemicLevel is subTypeOf AbstractionCategory

@@ -21,8 +21,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.UpperOntology.542599db6aa21e06 public -- ContainerPackage
 
-ModelPackage : ClassOfMixedOrderEntity
-ModelPackage = MixedOrderEntity
+ModelPackage : ClassOfAbstractEntity
+ModelPackage = AbstractEntity
 
 
 --  ModelPackage withAspect ModelContainer

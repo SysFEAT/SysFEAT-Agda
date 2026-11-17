@@ -17,8 +17,8 @@ module SysFEAT.SOF.9397c3d86877842f where -- ========== PolicyAsset
 open import Agda.Primitive
 open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
-PolicyAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-PolicyAsset u  = MixedOrderEntity u 
+PolicyAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u
+PolicyAsset u = MixedOrderEntity u
 
 
 --  PolicyAsset is subTypeOf ArchitectureBlock

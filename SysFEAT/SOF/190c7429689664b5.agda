@@ -21,7 +21,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
 
 Policy : AssetPropertyType
-Policy = Directive
+Policy = AssetProperty
 
 
 --  Policy is subTypeOf Directive

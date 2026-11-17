@@ -21,9 +21,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- TemporalBounding
 open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 
-IndividualEvent : TemporalBoundingType
+IndividualEvent : BehavioralEvent
 IndividualEvent = TemporalBounding
-
 
 --  IndividualEvent is subTypeOf TemporalBounding
 st-e9af133166e86be3-267b6a126675a0b9 : IndividualEvent ⊏ₑ TemporalBounding

@@ -17,8 +17,8 @@ module SysFEAT.SOF.855a8f436ae38fce where -- ========== MezzoOperatingAsset
 open import Agda.Primitive
 open import SysFEAT.SOF.d85fe7f86afa53a1 public -- SystemicLevel
 
-MezzoOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u 
-MezzoOperatingAsset u  = AbstractionCategory u 
+MezzoOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u
+MezzoOperatingAsset u = AbstractionCategory u
 
 
 --  MezzoOperatingAsset is subTypeOf SystemicLevel

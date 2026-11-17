@@ -21,9 +21,8 @@ open import SysFEAT.SOF.e9af119866e86785 public -- IndividualBehavior
 open import SysFEAT.SOF.d682ef5e56144e77 public -- ActionProcessType
 open import SysFEAT.SOF.9e3837e46192fcad public -- IndividualAgent
 
-IndividualProcess : BehaviorType
+IndividualProcess : ActionProcessType
 IndividualProcess = IndividualBehavior
-
 
 --  IndividualProcess is subTypeOf IndividualBehavior
 st-a273b4f465b7a81f-e9af119866e86785 : IndividualProcess ⊏ₑ IndividualBehavior
@@ -37,8 +36,8 @@ postulate -- IndividualProcess is PowerInstanceOf Action Process Type
 -- -------------------------------------------------------------------------------------------- 
 {- Individual Process Part: -}
 -- Aggregate Member : Individual Process Part
-IndividualProcessPart : AggregateHolonymyType
-IndividualProcessPart = AggregateHolonymy
+IndividualProcessPart : BehaviorPart
+IndividualProcessPart = IndividualBehaviorPart
 
 
 
@@ -69,9 +68,8 @@ individualProcessPart = membershipOfIndividualProcessPart  ∘  aggregationOfInd
 An Active Participant is the Aggregate Holonymy of an Individual Agent that indicates that the aggregated Individual Agent is an active participant of the Individual Process.
 -}
 -- Aggregate Member : Active Participant
-ActiveParticipant : AggregateHolonymyType
+ActiveParticipant : ActiveParticipant
 ActiveParticipant = AggregateHolonymy
-
 
 
 --  ActiveParticipant is subTypeOf IndividualParticipant

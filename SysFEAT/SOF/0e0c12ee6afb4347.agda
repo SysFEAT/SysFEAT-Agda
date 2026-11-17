@@ -17,8 +17,8 @@ module SysFEAT.SOF.0e0c12ee6afb4347 where -- ========== SystemicFamily
 open import Agda.Primitive
 open import SysFEAT.SOF.1a4623e76afb6497 public -- AbstractionFamily
 
-SystemicFamily : ∀ (u : Level) → AbstractionSchema u 
-SystemicFamily u  = AbstractionFamily u 
+SystemicFamily : ∀ (u : Level) → AbstractionSchema u
+SystemicFamily u = AbstractionFamily u
 
 
 --  SystemicFamily is subTypeOf AbstractionFamily

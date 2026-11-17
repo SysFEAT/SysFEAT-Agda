@@ -17,8 +17,8 @@ module SysFEAT.SOF.1a4623c86afb6437 where -- ========== AbstractionSchema
 open import Agda.Primitive
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
-AbstractionSchema : ∀ (u : Level) → ClassOfMixedOrderEntity (lsuc u) 
-AbstractionSchema u  = MixedOrderEntity (lsuc u) 
+AbstractionSchema : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+AbstractionSchema u = MetaClass (lsuc  u)
 
 
 --  AbstractionSchema is subTypeOf AssetCategorizationSchema

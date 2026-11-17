@@ -43,8 +43,8 @@ postulate -- functionalScope is subTypeOf propertyOfIndividual
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Operating Asset: -}
 -- Aggregate Member : Subject Operating Asset
-SubjectOperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-SubjectOperatingAsset u  = MixedOrderEntity u 
+SubjectOperatingAsset : ∀ (u : Level) → ClassOfHolonymy (lsuc(lsuc u))
+SubjectOperatingAsset u = HolonymyRelation (lsuc (lsuc  u))
 
 
 

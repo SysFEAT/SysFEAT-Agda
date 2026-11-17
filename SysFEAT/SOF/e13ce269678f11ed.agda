@@ -19,7 +19,7 @@ open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.UpperOntology.342f43ae66156429 public -- StateClass
 
 AssetStateType : BoundedIndividualMetaClass
-AssetStateType = AssetType
+AssetStateType = ClassOfBoundedIndividual
 
 
 --  AssetStateType is subTypeOf AssetType

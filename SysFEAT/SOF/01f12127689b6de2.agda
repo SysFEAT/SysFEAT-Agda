@@ -18,8 +18,6 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.8cfa942f68527849 public -- UnboundedAggregate
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 
-CapabilityMap : ClassOfMixedOrderEntity
-CapabilityMap = MixedOrderEntity
 
 
 --  CapabilityMap withAspect UnboundedAggregate

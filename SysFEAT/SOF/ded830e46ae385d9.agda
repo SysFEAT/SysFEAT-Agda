@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 
-DataCatagory : ∀ (u : Level) → MetaClass u 
-DataCatagory u  = ClassOfEntity u 
+DataCatagory : ∀ (u : Level) → MetaClass (lsuc u)
+DataCatagory u = MetaClass u
 
 
 --  DataCatagory is subTypeOf ConceptCategoryType

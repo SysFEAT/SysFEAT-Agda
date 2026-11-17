@@ -20,8 +20,8 @@ module SysFEAT.SOF.0eb95f356855bf94 where -- ========== AssetBlock
 open import Agda.Primitive
 open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
-AssetBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-AssetBlock u  = MixedOrderEntity u 
+AssetBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+AssetBlock u = MixedOrderEntity u
 
 
 --  AssetBlock is subTypeOf ArchitectureBlock

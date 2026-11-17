@@ -17,8 +17,8 @@ module SysFEAT.SOF.00330ffb6ae2806c where -- ========== InformationDomainMap
 open import Agda.Primitive
 open import SysFEAT.SOF.003315fd6ae286f1 public -- InformationDomainFamily
 
-InformationDomainMap : ∀ (u : Level) → MetaClass (lsuc u) 
-InformationDomainMap u  = ClassOfEntity (lsuc u) 
+InformationDomainMap : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+InformationDomainMap u = MetaClass (lsuc  u)
 
 
 --  InformationDomainMap is subTypeOf InformationDomainFamily
