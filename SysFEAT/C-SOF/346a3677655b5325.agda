@@ -15,21 +15,21 @@ Documentation : https://framework.sysfeat.com/pages/346a3677655b5325.htm
 module SysFEAT.C-SOF.346a3677655b5325 where -- ========== ConceptualIndividual
 
 open import Agda.Primitive
-open import SysFEAT.C-SOF.6bf190796859b4ff public -- BusinessDictionaryBlock
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
+open import SysFEAT.C-SOF.6bf190796859b4ff public -- BusinessDictionaryBlock
 open import SysFEAT.C-SOF.190c2cd368965534 public -- ConceptProperty
 
 ConceptualIndividual : AssetType
 ConceptualIndividual = IndividualAsset
 
 
---  ConceptualIndividual withAspect BusinessDictionaryBlock
-st-346a3677655b5325-6bf190796859b4ff : ConceptualIndividual ⊏ₐₑ (BusinessDictionaryBlock lzero)
-st-346a3677655b5325-6bf190796859b4ff = polySubTypeOf-identity
-
 --  ConceptualIndividual is subTypeOf IndividualAsset
 st-346a3677655b5325-ebcfaeac5ad76ed7 : ConceptualIndividual ⊏ₑ IndividualAsset
 st-346a3677655b5325-ebcfaeac5ad76ed7 = polySubTypeOf-identity
+
+--  ConceptualIndividual withAspect BusinessDictionaryBlock
+st-346a3677655b5325-6bf190796859b4ff : ConceptualIndividual ⊏ₐₑ BusinessDictionaryBlock lzero
+st-346a3677655b5325-6bf190796859b4ff = polySubTypeOf-identity
 
 
 -- == Relations =======================
@@ -37,5 +37,5 @@ st-346a3677655b5325-ebcfaeac5ad76ed7 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Qualifying Concept Property: -}
 qualifyingConceptProperty :  Linkage ConceptualIndividual ConceptProperty
-qualifyingConceptProperty = make_Relation "Qualifying Concept Property" "Qualifying Concept Property"
+qualifyingConceptProperty = make_instanceOf "Qualifying Concept Property" "Qualifying Concept Property"
 

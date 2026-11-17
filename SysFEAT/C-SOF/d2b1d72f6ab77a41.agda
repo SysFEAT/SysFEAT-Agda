@@ -23,7 +23,7 @@ Language = ClassOfAbstractEntity
 
 
 --  Language withAspect BusinessVocabularyBlock
-st-d2b1d72f6ab77a41-3f066af36858706e : Language ⊏ₐₑ (BusinessVocabularyBlock (lsuc(lzero)))
+st-d2b1d72f6ab77a41-3f066af36858706e : Language ⊏ₐₑ BusinessVocabularyBlock (lsuc( lzero))
 st-d2b1d72f6ab77a41-3f066af36858706e = polySubTypeOf-identity
 
 --  Language is subTypeOf ClassOfAbstractEntity
@@ -31,3 +31,4 @@ st-d2b1d72f6ab77a41-3aca55ee6aa645c2 : Language ⊏ₑ ClassOfAbstractEntity
 st-d2b1d72f6ab77a41-3aca55ee6aa645c2 = polySubTypeOf-identity
 
 
+-- == Relations =======================

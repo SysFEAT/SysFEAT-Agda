@@ -23,6 +23,7 @@ open import SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 public -- System Operati
 open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
 open import SysFEAT.EA.sysfeat-domain-d17029ff5be84c49 public -- Product & Customer Experience
 open import SysFEAT.SOF.sysfeat-domain-0c450d696a031e95 public -- Systemic and Conceptualization Levels
+open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
 
 open import SysFEAT.C-SOF.c8b2238961e5385a public -- Conceptual Operating Asset
 open import SysFEAT.C-SOF.57dfc5f555093444 public -- Value Stream
@@ -39,5 +40,5 @@ open import SysFEAT.C-SOF.7c4097c855271c8e public -- Conceptual Environment
 open import SysFEAT.C-SOF.dd269a5468a09a74 public -- Conceptual Business Rule
 open import SysFEAT.C-SOF.21916383678642d1 public -- Conceptual Outcome Event
 open import SysFEAT.C-SOF.21918fed6786592c public -- Conceptual Event
-open import SysFEAT.C-SOF.cb94ec53681855c2 public -- Conceptual Functional Asset
+open import SysFEAT.C-SOF.cb94ec53681855c2 public -- Conceptual Asset
 open import SysFEAT.C-SOF.7c40987055271d04 public -- Conceptual Agent

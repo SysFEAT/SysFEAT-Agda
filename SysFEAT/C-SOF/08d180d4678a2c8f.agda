@@ -18,8 +18,9 @@ open import Agda.Primitive
 open import SysFEAT.C-SOF.08d17cde678a2b47 public -- Supplier
 open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
 
-Supplier : ClassOfClassOfBoundedIndividual
-Supplier = ClassOfBoundedIndividual
+Supplier : AbstractionCategoryType
+Supplier = AbstractionCategory
+
 
 --  Supplier is subTypeOf Supplier
 st-08d180d4678a2c8f-08d17cde678a2b47 : Supplier ⊏ₑ Supplier

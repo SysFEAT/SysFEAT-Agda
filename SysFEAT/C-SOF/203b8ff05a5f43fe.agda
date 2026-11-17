@@ -23,11 +23,11 @@ ConceptDomain = MixedOrderEntity
 
 
 --  ConceptDomain withAspect BusinessDictionaryBlock
-st-203b8ff05a5f43fe-6bf190796859b4ff : ConceptDomain ⊏ₐₑ (BusinessDictionaryBlock (lsuc(lzero)))
+st-203b8ff05a5f43fe-6bf190796859b4ff : ConceptDomain ⊏ₐₑ BusinessDictionaryBlock (lsuc( lzero))
 st-203b8ff05a5f43fe-6bf190796859b4ff = polySubTypeOf-identity
 
 --  ConceptDomain withAspect ConceptDomain
-st-203b8ff05a5f43fe-855a863b6ae3778d : ConceptDomain ⊏ₐₑ (ConceptDomain (lsuc(lzero)))
+st-203b8ff05a5f43fe-855a863b6ae3778d : ConceptDomain ⊏ₐₑ ConceptDomain lzero
 st-203b8ff05a5f43fe-855a863b6ae3778d = polySubTypeOf-identity
 
 

@@ -17,12 +17,12 @@ module SysFEAT.C-SOF.3f066af36858706e where -- ========== BusinessVocabularyBloc
 open import Agda.Primitive
 open import SysFEAT.C-SOF.9397d98f6877c4e5 public -- DictionaryLexicalBlock
 
-BusinessVocabularyBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-BusinessVocabularyBlock u  = MixedOrderEntity u 
+BusinessVocabularyBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+BusinessVocabularyBlock u = MixedOrderEntity u
 
 
 --  BusinessVocabularyBlock is subTypeOf DictionaryLexicalBlock
-st-3f066af36858706e-9397d98f6877c4e5 : ∀ {u v} → (BusinessVocabularyBlock u) ⊏⋆ₑ (DictionaryLexicalBlock v)
+st-3f066af36858706e-9397d98f6877c4e5 : ∀ {u v} → BusinessVocabularyBlock u ⊏⋆ₑ DictionaryLexicalBlock v
 st-3f066af36858706e-9397d98f6877c4e5 = trivialPolySubTypeOfEntity
 
 

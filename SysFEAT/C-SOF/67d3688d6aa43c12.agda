@@ -19,16 +19,14 @@ open import SysFEAT.C-SOF.6c5f6da668587c34 public -- DictionaryLexicalScope
 open import SysFEAT.C-SOF.3f066acc68587000 public -- BusinessVocabulary
 open import SysFEAT.C-SOF.6bf190796859b4ff public -- BusinessDictionaryBlock
 
-BusinessDictionary : ClassOfMixedOrderEntity
-BusinessDictionary = MixedOrderEntity
 
 
 --  BusinessDictionary withAspect DictionaryLexicalScope
-st-67d3688d6aa43c12-6c5f6da668587c34 : BusinessDictionary ⊏ₐₑ (DictionaryLexicalScope lzero)
+st-67d3688d6aa43c12-6c5f6da668587c34 : BusinessDictionary ⊏ₐₑ DictionaryLexicalScope lzero
 st-67d3688d6aa43c12-6c5f6da668587c34 = polySubTypeOf-identity
 
 --  BusinessDictionary withAspect BusinessVocabulary
-st-67d3688d6aa43c12-3f066acc68587000 : BusinessDictionary ⊏ₐₑ (BusinessVocabulary lzero)
+st-67d3688d6aa43c12-3f066acc68587000 : BusinessDictionary ⊏ₐₑ BusinessVocabulary lzero
 st-67d3688d6aa43c12-3f066acc68587000 = polySubTypeOf-identity
 
 
@@ -40,7 +38,7 @@ packagedDictionaryAsset : ∀ {u} →  Linkage BusinessDictionary (BusinessDicti
 packagedDictionaryAsset = make_nestingRelation "Packaged Dictionary Asset" "Packaged Dictionary Asset"
 
 postulate -- packagedDictionaryAsset is subTypeOf scopedDictionaryBlock
-  st-9397da2b6877c770-6bf192976859b8ba  : packagedDictionaryAsset  ⊏⋆ᵣ  scopedDictionaryBlock
+  st-9397da2b6877c770-6bf192976859b8ba  : ∀ {u} → packagedDictionaryAsset {u}  ⊏⋆ᵣ  scopedDictionaryBlock {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Imported Business Dictionary: 

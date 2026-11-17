@@ -35,4 +35,4 @@ synonym : ∀ {u} →  Linkage ConceptSynonym (ConceptualElement u)
 synonym = make_classOfRelation "Synonym" "Synonym"
 
 postulate -- synonym is subTypeOf designation
-  st-4aebdd71696420d6-4aebdcf669642033  : synonym  ⊏⋆ᵣ  designation
+  st-4aebdd71696420d6-4aebdcf669642033  : ∀ {u} → synonym {u}  ⊏⋆ᵣ  designation {u}

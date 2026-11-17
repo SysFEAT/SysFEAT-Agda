@@ -119,8 +119,7 @@ conceptualAgentPart = membershipOfConceptualAgentPart  ∘  aggregationOfConcept
 Relationship between a Conceptual Agent and Conceptual Interaction Scenarios that it performs.
 -}
 -- Aggregate Member : Performed Conceptual Scenario
-PerformedConceptualScenario : ClassOfClassOfIndividual
-PerformedConceptualScenario = ClassOfIndividual
+
 
 
 -- Membership relation

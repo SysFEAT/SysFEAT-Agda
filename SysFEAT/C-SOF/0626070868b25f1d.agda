@@ -18,8 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.C-SOF.2c9c92946adb8e75 public -- StateConceptType
 open import SysFEAT.C-SOF.229b34eb5b3f79d2 public -- ConceptualEntity
 
-StateConcept : StateConceptType
-StateConcept = Unknown
+
 
 postulate -- StateConcept is PowerInstanceOf State Concept Type
   pi-346537716ade458b : StateConcept ∷ₚₑ StateConceptType

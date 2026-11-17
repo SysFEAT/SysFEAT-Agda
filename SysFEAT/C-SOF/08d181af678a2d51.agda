@@ -19,11 +19,12 @@ module SysFEAT.C-SOF.08d181af678a2d51 where -- ========== Customer
 
 open import Agda.Primitive
 open import SysFEAT.C-SOF.08d17cde678a2b47 public -- Supplier
-open import SysFEAT.EA.4efc703b6ae4991a public -- CustomerSegment
 open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.EA.4efc703b6ae4991a public -- CustomerSegment
 
-Customer : ClassOfClassOfBoundedIndividual
-Customer = ClassOfBoundedIndividual
+Customer : AbstractionCategoryType
+Customer = AbstractionCategory
+
 
 --  Customer is subTypeOf Supplier
 st-08d181af678a2d51-08d17cde678a2b47 : Customer ⊏ₑ Supplier
@@ -33,15 +34,15 @@ st-08d181af678a2d51-08d17cde678a2b47 = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Customer Segment: -}
-customerSegment : ∀ {u} →  Linkage Customer (CustomerSegment u)
-customerSegment = make_subTypeOf "Customer Segment" "Customer Segment"
-
-postulate -- customerSegment is subTypeOf assetCategorizationScheme
-  st-4efc70776ae499ad-f69620606a0f9c94  : customerSegment  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
-
--- -------------------------------------------------------------------------------------------- 
 {- State of Business Agent Type: -}
 stateOfBusinessAgentType :  Linkage Customer BusinessAgentType
 stateOfBusinessAgentType = make_classOfMeronymy "State of Business Agent Type" "State of Business Agent Type"
 
+
+-- -------------------------------------------------------------------------------------------- 
+{- Customer Segment: -}
+customerSegment : ∀ {u} →  Linkage Customer (CustomerSegment u)
+customerSegment = make_subTypeOf "Customer Segment" "Customer Segment"
+
+postulate -- customerSegment is subTypeOf applicableAssetScheme
+  st-4efc70776ae499ad-f69620606a0f9c94  : ∀ {u} → customerSegment {u}  ⊏⋆ᵣ  applicableAssetScheme {u}

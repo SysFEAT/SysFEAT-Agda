@@ -19,21 +19,21 @@ External references:
 module SysFEAT.C-SOF.9810b060551137d0 where -- ========== OperatingDomain
 
 open import Agda.Primitive
-open import SysFEAT.SOF.ded858a36ae39422 public -- MacroOperatingAsset
 open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
+open import SysFEAT.SOF.ded858a36ae39422 public -- MacroOperatingAsset
 open import SysFEAT.C-SOF.7c4094d2552717db public -- BusinessFunction
 
 OperatingDomain : AgentMetaClass
 OperatingDomain = AgentType
 
 
---  OperatingDomain withAspect MacroOperatingAsset
-st-9810b060551137d0-ded858a36ae39422 : OperatingDomain ⊏ₐₑ (MacroOperatingAsset (lsuc(lzero)))
-st-9810b060551137d0-ded858a36ae39422 = polySubTypeOf-identity
-
 --  OperatingDomain is subTypeOf ConceptualAgent
 st-9810b060551137d0-7c40987055271d04 : OperatingDomain ⊏ₑ ConceptualAgent
 st-9810b060551137d0-7c40987055271d04 = polySubTypeOf-identity
+
+--  OperatingDomain withAspect MacroOperatingAsset
+st-9810b060551137d0-ded858a36ae39422 : OperatingDomain ⊏ₐₑ MacroOperatingAsset lzero
+st-9810b060551137d0-ded858a36ae39422 = polySubTypeOf-identity
 
 
 -- == Relations =======================

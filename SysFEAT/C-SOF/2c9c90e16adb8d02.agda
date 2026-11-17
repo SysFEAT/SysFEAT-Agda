@@ -18,12 +18,12 @@ open import Agda.Primitive
 open import SysFEAT.EA.2c9c86dc6adb8147 public -- ConceptualEntityAsset
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
 
-ConceptualEntityType : ClassOfElement
-ConceptualEntityType = Element
+ConceptualEntityType : ThirdOrderClass
+ConceptualEntityType = SecondOrderClass
 
 
 --  ConceptualEntityType withAspect ConceptualEntityAsset
-st-2c9c90e16adb8d02-2c9c86dc6adb8147 : ConceptualEntityType ⊏ₐₑ (ConceptualEntityAsset (lsuc(lsuc(lzero))))
+st-2c9c90e16adb8d02-2c9c86dc6adb8147 : ConceptualEntityType ⊏ₐₑ ConceptualEntityAsset (lsuc( lzero))
 st-2c9c90e16adb8d02-2c9c86dc6adb8147 = polySubTypeOf-identity
 
 --  ConceptualEntityType is subTypeOf BoundedIndividualMetaClass

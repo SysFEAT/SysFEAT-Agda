@@ -17,8 +17,8 @@ module SysFEAT.C-SOF.2c9c92946adb8e75 where -- ========== StateConceptType
 open import Agda.Primitive
 open import SysFEAT.C-SOF.2c9c90e16adb8d02 public -- ConceptualEntityType
 
-StateConceptType : ClassOfElement
-StateConceptType = Element
+StateConceptType : ThirdOrderClass
+StateConceptType = SecondOrderClass
 
 
 --  StateConceptType is subTypeOf ConceptualEntityType

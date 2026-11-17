@@ -23,9 +23,10 @@ open import SysFEAT.EA.9dcea2655ec768ee public -- BusinessServiceInterface
 open import SysFEAT.C-SOF.08d180d4678a2c8f public -- Supplier
 open import SysFEAT.C-SOF.9810b060551137d0 public -- OperatingDomain
 open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
+open import SysFEAT.C-SOF.7c40987055271d04 public -- ConceptualAgent
 
-ConceptualEnvironment : BoundedIndividualMetaClass
-ConceptualEnvironment = AssetType
+ConceptualEnvironment : AbstractionCategoryType
+ConceptualEnvironment = AbstractionCategory
 
 
 --  ConceptualEnvironment is subTypeOf ConceptualEcosystem
@@ -80,8 +81,7 @@ businessInteraction = membershipOfBusinessInteraction  ∘  aggregationOfBusines
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Supplier: -}
 -- Aggregate Member : Partner Supplier
-PartnerSupplier : ClassOfClassOfIndividual
-PartnerSupplier = ClassOfIndividual
+
 
 
 --  PartnerSupplier is subTypeOf ResourceEcosystemPart
@@ -171,5 +171,35 @@ aggregationOfCustomerCustomer = make_Relation "Customer aggregation" "aggregated
 -}
 customer : Linkage ConceptualEnvironment Customer
 customer = membershipOfCustomer  ∘  aggregationOfCustomerCustomer
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Business Operating Agent: -}
+-- Aggregate Member : Business Operating Agent
+BusinessOperatingAgent : ClassOfMixedOrderEntity
+BusinessOperatingAgent = MixedOrderEntity
+
+
+
+--  BusinessOperatingAgent is subTypeOf ParticipantAgent
+st-1c3bf9f5601c673d-80be28965fc2a6b8 : BusinessOperatingAgent ⊏ₑ ParticipantAgent
+st-1c3bf9f5601c673d-80be28965fc2a6b8 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfBusinessOperatingAgent :  Linkage ConceptualEnvironment BusinessOperatingAgent
+membershipOfBusinessOperatingAgent = make_upwardNestingRelation "businessOperatingAgent membership" "nested businessOperatingAgent"
+
+-- Aggregation relation
+aggregationOfConceptualAgentBusinessOperatingAgent :  Linkage BusinessOperatingAgent ConceptualAgent
+aggregationOfConceptualAgentBusinessOperatingAgent = make_Relation "ConceptualAgent aggregation" "aggregated ConceptualAgent"
+
+{- businessOperatingAgent : derived relation obtained by composing
+   membershipOfBusinessOperatingAgent and aggregationOfConceptualAgentBusinessOperatingAgent
+   It directly links an Conceptual Environment to the final aggregated ConceptualAgent
+   hiding the reifying BusinessOperatingAgent
+-}
+businessOperatingAgent : Linkage ConceptualEnvironment ConceptualAgent
+businessOperatingAgent = membershipOfBusinessOperatingAgent  ∘  aggregationOfConceptualAgentBusinessOperatingAgent
 
 

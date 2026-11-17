@@ -43,6 +43,7 @@ open import SysFEAT.C-SOF.2c9c867b6adb80c1 public -- Concept Type
 open import SysFEAT.C-SOF.2c9c90e16adb8d02 public -- Conceptual Entity Type
 open import SysFEAT.C-SOF.2c9c92946adb8e75 public -- State Concept Type
 open import SysFEAT.C-SOF.203b8ff05a5f43fe public -- Concept Domain
+open import SysFEAT.EA.2c9c86dc6adb8147 public -- Conceptual Entity Asset
 open import SysFEAT.C-SOF.3f066acc68587000 public -- Business Vocabulary
 open import SysFEAT.C-SOF.6c5f6da668587c34 public -- Dictionary Lexical Scope
 open import SysFEAT.C-SOF.3f066af36858706e public -- Business Vocabulary Block
