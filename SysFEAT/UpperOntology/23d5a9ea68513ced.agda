@@ -22,8 +22,8 @@ module SysFEAT.UpperOntology.23d5a9ea68513ced where -- ========== BuildingBlock
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.86b9b1d46ac32bda public -- AspectOfEntity
 
-BuildingBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-BuildingBlock u  = MixedOrderEntity u 
+BuildingBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+BuildingBlock u = MixedOrderEntity u
 
 
 --  BuildingBlock is subTypeOf AspectOfEntity

@@ -17,8 +17,8 @@ module SysFEAT.UpperOntology.8cfa942f68527849 where -- ========== UnboundedAggre
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d56d9868525869 public -- AggregateEntityBlock
 
-UnboundedAggregate : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-UnboundedAggregate u  = MixedOrderEntity u 
+UnboundedAggregate : ∀ (u : Level) → ClassOfMixedOrderEntity u
+UnboundedAggregate u = MixedOrderEntity u
 
 
 --  UnboundedAggregate is subTypeOf AggregateEntityBlock
