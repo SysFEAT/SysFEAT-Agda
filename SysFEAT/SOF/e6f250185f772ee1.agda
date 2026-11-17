@@ -24,7 +24,7 @@ open import SysFEAT.SOF.4356520b6a110f68 public -- DataCategoryFamily
 open import SysFEAT.SOF.582e785466f6b36f public -- DataRiskType
 
 InformationAsset : BoundedIndividualMetaClass
-InformationAsset = AssetType
+InformationAsset = ClassOfBoundedIndividual
 
 
 --  InformationAsset is subTypeOf AssetType
@@ -37,6 +37,22 @@ st-e6f250185f772ee1-6c5f80e468587f06 = polySubTypeOf-identity
 
 
 -- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Specialized Information Asset: -}
+specializedInformationAsset :  Linkage InformationAsset InformationAsset
+specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
+
+postulate -- specializedInformationAsset is subTypeOf subTypeOfEntity
+  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Realized Information Asset: -}
+realizedInformationAsset :  Linkage InformationAsset InformationAsset
+realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized Information Asset"
+
+postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
+  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Categorization: 
@@ -57,22 +73,6 @@ dataCategorizationScheme = make_classOfRelation "Data Categorization Scheme" "Da
 
 postulate -- dataCategorizationScheme is subTypeOf applicableAssetScheme
   st-435652586a111043-f69620606a0f9c94  : ∀ {u} → dataCategorizationScheme {u}  ⊏⋆ᵣ  applicableAssetScheme {u}
-
--- -------------------------------------------------------------------------------------------- 
-{- Specialized Information Asset: -}
-specializedInformationAsset :  Linkage InformationAsset InformationAsset
-specializedInformationAsset = make_subTypeOf "Specialized Information Asset" "Specialized Information Asset"
-
-postulate -- specializedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a372e66f33bca-8336837268e9448b  : specializedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
-
--- -------------------------------------------------------------------------------------------- 
-{- Realized Information Asset: -}
-realizedInformationAsset :  Linkage InformationAsset InformationAsset
-realizedInformationAsset = make_subTypeOf "Realized Information Asset" "Realized Information Asset"
-
-postulate -- realizedInformationAsset is subTypeOf subTypeOfEntity
-  st-325a3a0b66f354a7-8336837268e9448b  : realizedInformationAsset  ⊏⋆ᵣ  subTypeOfEntity {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Data Risk: 

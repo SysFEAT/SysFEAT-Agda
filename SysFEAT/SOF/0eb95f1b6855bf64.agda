@@ -19,8 +19,8 @@ open import SysFEAT.SOF.0eb95d786855bbd9 public -- ArchitectureLexicalScope
 open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
-ArchitectureContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ArchitectureContainer u  = MixedOrderEntity u 
+ArchitectureContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ArchitectureContainer u = MixedOrderEntity u
 
 
 --  ArchitectureContainer is subTypeOf ArchitectureLexicalScope

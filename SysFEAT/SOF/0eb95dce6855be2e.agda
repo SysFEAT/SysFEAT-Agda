@@ -23,8 +23,8 @@ open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 open import SysFEAT.SOF.d745e99d6aa38a7a public -- Tag
 
-ModelContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ModelContainer u  = MixedOrderEntity u 
+ModelContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ModelContainer u = MixedOrderEntity u
 
 
 --  ModelContainer is subTypeOf ModelLexicalScope

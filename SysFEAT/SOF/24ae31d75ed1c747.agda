@@ -26,8 +26,8 @@ open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.UpperOntology.9429979a66823f90 public -- TemporalBoundingType
 open import SysFEAT.UpperOntology.608767a668de7fb6 public -- ClassOfClassOfIndividual
 
-BehavioralEvent : BoundedIndividualMetaClass
-BehavioralEvent = AssetType
+BehavioralEvent : ClassOfClassOfIndividual
+BehavioralEvent = ClassOfIndividual
 
 
 --  BehavioralEvent is subTypeOf OperatingConnection

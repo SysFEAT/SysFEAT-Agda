@@ -21,8 +21,8 @@ open import SysFEAT.SOF.0e0c12ee6afb4347 public -- SystemicFamily
 open import SysFEAT.SOF.1a461dd76afb55cd public -- ConceptualizationFamily
 open import SysFEAT.SOF.1a4623c86afb6437 public -- AbstractionSchema
 
-OperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-OperatingAsset u  = MixedOrderEntity u 
+OperatingAsset : ∀ (u : Level) → ClassOfMixedOrderEntity u
+OperatingAsset u = MixedOrderEntity u
 
 
 --  OperatingAsset is subTypeOf AssetBlock

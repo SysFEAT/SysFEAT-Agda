@@ -17,8 +17,8 @@ module SysFEAT.SOF.4efc554c6ae4723f where -- ========== MicroOperatingAsset
 open import Agda.Primitive
 open import SysFEAT.SOF.d85fe7f86afa53a1 public -- SystemicLevel
 
-MicroOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u 
-MicroOperatingAsset u  = AbstractionCategory u 
+MicroOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u
+MicroOperatingAsset u = AbstractionCategory u
 
 
 --  MicroOperatingAsset is subTypeOf SystemicLevel

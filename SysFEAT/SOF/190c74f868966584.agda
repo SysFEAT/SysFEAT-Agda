@@ -22,7 +22,7 @@ open import SysFEAT.SOF.515c6b23689335c3 public -- Directive
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
 BehavioralRule : AssetPropertyType
-BehavioralRule = Directive
+BehavioralRule = AssetProperty
 
 
 --  BehavioralRule is subTypeOf Directive

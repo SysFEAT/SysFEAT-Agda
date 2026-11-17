@@ -20,7 +20,7 @@ open import SysFEAT.SOF.30223b5c5ec90c01 public -- OutcomeEvent
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
 InteractionProcessTypeEnvironment : BoundedIndividualMetaClass
-InteractionProcessTypeEnvironment = AssetType
+InteractionProcessTypeEnvironment = ClassOfBoundedIndividual
 
 
 --  InteractionProcessTypeEnvironment is subTypeOf OperatingEcoSystem

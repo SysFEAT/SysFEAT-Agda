@@ -20,8 +20,8 @@ open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 open import SysFEAT.SOF.d745e6ea6aa386e5 public -- AnnotationBlock
 open import SysFEAT.SOF.d745e8936aa388e0 public -- DescriptionNote
 
-ModelLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ModelLexicalScope u  = MixedOrderEntity u 
+ModelLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ModelLexicalScope u = MixedOrderEntity u
 
 
 --  ModelLexicalScope is subTypeOf BlockLexicalScope

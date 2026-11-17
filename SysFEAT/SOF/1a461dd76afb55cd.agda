@@ -17,8 +17,8 @@ module SysFEAT.SOF.1a461dd76afb55cd where -- ========== ConceptualizationFamily
 open import Agda.Primitive
 open import SysFEAT.SOF.1a4623e76afb6497 public -- AbstractionFamily
 
-ConceptualizationFamily : ∀ (u : Level) → AbstractionSchema u 
-ConceptualizationFamily u  = AbstractionFamily u 
+ConceptualizationFamily : ∀ (u : Level) → AbstractionSchema u
+ConceptualizationFamily u = AbstractionFamily u
 
 
 --  ConceptualizationFamily is subTypeOf AbstractionFamily

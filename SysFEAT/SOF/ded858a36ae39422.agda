@@ -17,8 +17,8 @@ module SysFEAT.SOF.ded858a36ae39422 where -- ========== MacroOperatingAsset
 open import Agda.Primitive
 open import SysFEAT.SOF.d85fe7f86afa53a1 public -- SystemicLevel
 
-MacroOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u 
-MacroOperatingAsset u  = AbstractionCategory u 
+MacroOperatingAsset : ∀ (u : Level) → AbstractionCategoryType u
+MacroOperatingAsset u = AbstractionCategory u
 
 
 --  MacroOperatingAsset is subTypeOf SystemicLevel

@@ -28,14 +28,15 @@ open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
 open import SysFEAT.UpperOntology.60876d5c68de82f2 public -- BoundedIndividualMetaClass
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategoryType
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
-open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.0e55206a66f11ec5 public -- RiskType
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
 
 AssetType : BoundedIndividualMetaClass
 AssetType = ClassOfBoundedIndividual
+
 
 --  AssetType withAspect AssetBlock
 st-a4a5b3f855585ce1-0eb95f356855bf94 : AssetType ⊏ₐₑ AssetBlock (lsuc( lzero))
@@ -55,22 +56,6 @@ Set of Condition Property Types that can be applied to an Asset Type.
 applicableConditionType :  Linkage AssetType ConditionPropertyType
 applicableConditionType = make_instanceOf "Applicable Condition Type" "Applicable Condition Type"
 
-
--- -------------------------------------------------------------------------------------------- 
-{- Asset Categorization: -}
-assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategoryType u)
-assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
-
-postulate -- assetCategorization is subTypeOf conceptCategorization
-  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
-
--- -------------------------------------------------------------------------------------------- 
-{- Applicable Asset Scheme: -}
-applicableAssetScheme : ∀ {u} →  Linkage AssetType (AssetCategorizationSchema u)
-applicableAssetScheme = make_classOfRelation "Applicable Asset Scheme" "Applicable Asset Scheme"
-
-postulate -- applicableAssetScheme is subTypeOf applicableScheme
-  st-f69620606a0f9c94-d85ffebc6afa62f1  : ∀ {u} → applicableAssetScheme {u}  ⊏⋆ᵣ  applicableScheme {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Asset Type Qualification: 
@@ -101,6 +86,22 @@ realizedFunctionalAsset = make_subTypeOf "Realized Functional Asset" "Realized F
 
 postulate -- realizedFunctionalAsset is subTypeOf specializedClassOfIndividual
   st-7dc1907b684951ae-e429632e66ec72ab  : realizedFunctionalAsset  ⊏⋆ᵣ  specializedClassOfIndividual
+
+-- -------------------------------------------------------------------------------------------- 
+{- Asset Categorization: -}
+assetCategorization : ∀ {u} →  Linkage AssetType (AssetCategoryType u)
+assetCategorization = make_subTypeOf "Asset Categorization" "Asset Categorization"
+
+postulate -- assetCategorization is subTypeOf conceptCategorization
+  st-4efc6b426ae48e32-8d1fcd3c6ae82f99  : ∀ {u} → assetCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
+
+-- -------------------------------------------------------------------------------------------- 
+{- Applicable Asset Scheme: -}
+applicableAssetScheme : ∀ {u} →  Linkage AssetType (AssetCategorizationSchema u)
+applicableAssetScheme = make_classOfRelation "Applicable Asset Scheme" "Applicable Asset Scheme"
+
+postulate -- applicableAssetScheme is subTypeOf applicableScheme
+  st-f69620606a0f9c94-d85ffebc6afa62f1  : ∀ {u} → applicableAssetScheme {u}  ⊏⋆ᵣ  applicableScheme {lzero} {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Risk: 

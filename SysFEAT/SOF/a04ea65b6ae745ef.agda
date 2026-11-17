@@ -17,8 +17,8 @@ module SysFEAT.SOF.a04ea65b6ae745ef where -- ========== ConceptualLevel
 open import Agda.Primitive
 open import SysFEAT.SOF.a04ea6866ae7465e public -- ConceptualizationLevel
 
-ConceptualLevel : ∀ (u : Level) → AbstractionCategoryType u 
-ConceptualLevel u  = AbstractionCategory u 
+ConceptualLevel : ∀ (u : Level) → AbstractionCategoryType u
+ConceptualLevel u = AbstractionCategory u
 
 
 --  ConceptualLevel is subTypeOf ConceptualizationLevel

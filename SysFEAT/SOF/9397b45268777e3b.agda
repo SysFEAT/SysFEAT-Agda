@@ -17,8 +17,8 @@ module SysFEAT.SOF.9397b45268777e3b where -- ========== ArchitectureBlock
 open import Agda.Primitive
 open import SysFEAT.SOF.0eb95e566855bed9 public -- ModelBuildingBlock
 
-ArchitectureBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ArchitectureBlock u  = MixedOrderEntity u 
+ArchitectureBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ArchitectureBlock u = MixedOrderEntity u
 
 
 --  ArchitectureBlock is subTypeOf ModelBuildingBlock

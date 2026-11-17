@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
 open import SysFEAT.SOF.0f641043685975c9 public -- GovernanceBuildingBlock
 
-GovernanceContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-GovernanceContainer u  = MixedOrderEntity u 
+GovernanceContainer : ∀ (u : Level) → ClassOfMixedOrderEntity u
+GovernanceContainer u = MixedOrderEntity u
 
 
 --  GovernanceContainer is subTypeOf ModelContainer

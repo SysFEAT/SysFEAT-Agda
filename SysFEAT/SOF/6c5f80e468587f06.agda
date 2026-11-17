@@ -17,8 +17,8 @@ module SysFEAT.SOF.6c5f80e468587f06 where -- ========== InformationBlock
 open import Agda.Primitive
 open import SysFEAT.SOF.9397b45268777e3b public -- ArchitectureBlock
 
-InformationBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-InformationBlock u  = MixedOrderEntity u 
+InformationBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+InformationBlock u = MixedOrderEntity u
 
 
 --  InformationBlock is subTypeOf ArchitectureBlock

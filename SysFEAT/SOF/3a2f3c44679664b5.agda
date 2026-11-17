@@ -18,8 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.e13ce269678f11ed public -- AssetStateType
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
 
-AssetState : AssetStateType
-AssetState = Unknown
+
 
 postulate -- AssetState is PowerInstanceOf Asset State Type
   pi-9e79b30e68d25de0 : AssetState ∷ₚₑ AssetStateType

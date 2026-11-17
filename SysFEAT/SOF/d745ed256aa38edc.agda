@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.6c5f808b68587e49 public -- InformationLexicalScope
 open import SysFEAT.SOF.d745dbaa6aa3840b public -- ModelPackage
 
-InformationDictionary : ClassOfMixedOrderEntity
-InformationDictionary = MixedOrderEntity
+InformationDictionary : ClassOfAbstractEntity
+InformationDictionary = AbstractEntity
 
 
 --  InformationDictionary withAspect InformationLexicalScope

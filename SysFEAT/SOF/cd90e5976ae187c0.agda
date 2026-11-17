@@ -22,8 +22,8 @@ open import SysFEAT.UpperOntology.ad05c1986ae142c1 public -- EnumeratedFamily
 open import SysFEAT.UpperOntology.bab6c7346ad70999 public -- ThirdOrderClass
 open import SysFEAT.SOF.e6f250185f772ee1 public -- InformationAsset
 
-InformationDomain : ∀ (u : Level) → MetaClass (lsuc u) 
-InformationDomain u  = ClassOfEntity (lsuc u) 
+InformationDomain : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+InformationDomain u = MetaClass (lsuc  u)
 
 
 --  InformationDomain is subTypeOf EnumeratedFamily

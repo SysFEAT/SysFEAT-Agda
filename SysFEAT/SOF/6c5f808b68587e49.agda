@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0eb95d786855bbd9 public -- ArchitectureLexicalScope
 open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
 
-InformationLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-InformationLexicalScope u  = MixedOrderEntity u 
+InformationLexicalScope : ∀ (u : Level) → ClassOfMixedOrderEntity u
+InformationLexicalScope u = MixedOrderEntity u
 
 
 --  InformationLexicalScope is subTypeOf ArchitectureLexicalScope

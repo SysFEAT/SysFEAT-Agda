@@ -23,7 +23,7 @@ open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 open import SysFEAT.SOF.ca3513af5fc59413 public -- InteractionProcessTypeEnvironment
 
 AgentTypeEnvironment : BoundedIndividualMetaClass
-AgentTypeEnvironment = AssetType
+AgentTypeEnvironment = ClassOfBoundedIndividual
 
 
 --  AgentTypeEnvironment is subTypeOf OperatingEcoSystem

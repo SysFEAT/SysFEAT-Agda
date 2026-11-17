@@ -17,8 +17,8 @@ module SysFEAT.SOF.6f9c71356a0f3116 where -- ========== MeasurementSchema
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.220d23706ad71311 public -- CategorizationSchema
 
-MeasurementSchema : ∀ (u : Level) → MetaClass (lsuc u) 
-MeasurementSchema u  = ClassOfEntity (lsuc u) 
+MeasurementSchema : ∀ (u : Level) → MetaClass (lsuc(lsuc u))
+MeasurementSchema u = MetaClass (lsuc  u)
 
 
 --  MeasurementSchema is subTypeOf CategorizationSchema

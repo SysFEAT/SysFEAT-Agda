@@ -15,21 +15,21 @@ Documentation : https://framework.sysfeat.com/pages/4efc6b346ae48db7.htm
 module SysFEAT.SOF.4efc6b346ae48db7 where -- ========== AssetCategoryType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
+open import SysFEAT.SOF.0eb97aff6855cd23 public -- ModelCategorizationBlock
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
-AssetCategoryType : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-AssetCategoryType u  = MixedOrderEntity u 
+AssetCategoryType : ∀ (u : Level) → MetaClass (lsuc u)
+AssetCategoryType u = MetaClass u
 
-
---  AssetCategoryType is subTypeOf ModelCategorizationBlock
-st-4efc6b346ae48db7-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryType u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc( v)))
-st-4efc6b346ae48db7-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 --  AssetCategoryType is subTypeOf ConceptCategoryType
 st-4efc6b346ae48db7-629565166ad71b60 : ∀ {u v} → AssetCategoryType u ⊏⋆ₑ ConceptCategoryType v
 st-4efc6b346ae48db7-629565166ad71b60 = trivialPolySubTypeOfEntity
+
+--  AssetCategoryType is subTypeOf ModelCategorizationBlock
+st-4efc6b346ae48db7-0eb97aff6855cd23 : ∀ {u v} → AssetCategoryType u ⊏⋆ₑ ModelCategorizationBlock (lsuc(lsuc( v)))
+st-4efc6b346ae48db7-0eb97aff6855cd23 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================

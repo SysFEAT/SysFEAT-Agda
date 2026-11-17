@@ -33,7 +33,7 @@ open import SysFEAT.SOF.333f35ee5dde0c8c public -- InteractionProcessType
 open import SysFEAT.SOF.d6cd116d5ab97525 public -- InformationDomain
 
 AgentType : AgentMetaClass
-AgentType = AssetType
+AgentType = ClassOfBoundedIndividual
 
 --  AgentType is subTypeOf OperatingAssetType
 st-79368381561716a6-a371a43b5b865817 : AgentType ⊏ₑ OperatingAssetType

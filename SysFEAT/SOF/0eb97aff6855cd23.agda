@@ -17,8 +17,8 @@ module SysFEAT.SOF.0eb97aff6855cd23 where -- ========== ModelCategorizationBlock
 open import Agda.Primitive
 open import SysFEAT.UpperOntology.23d5a9ea68513ced public -- BuildingBlock
 
-ModelCategorizationBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ModelCategorizationBlock u  = MixedOrderEntity u 
+ModelCategorizationBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ModelCategorizationBlock u = MixedOrderEntity u
 
 
 --  ModelCategorizationBlock is subTypeOf BuildingBlock

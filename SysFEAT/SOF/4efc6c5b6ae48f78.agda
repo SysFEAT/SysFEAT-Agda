@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 open import SysFEAT.SOF.6f9c71356a0f3116 public -- MeasurementSchema
 
-ConditionCategory : ∀ (u : Level) → MetaClass u 
-ConditionCategory u  = ClassOfEntity u 
+ConditionCategory : ∀ (u : Level) → MetaClass (lsuc u)
+ConditionCategory u = MetaClass u
 
 
 --  ConditionCategory is subTypeOf ConceptCategoryType
