@@ -1,0 +1,1 @@
+R-SOF in a specialization of the SO Library to handle opeating concept at the resource conceptualisation level.
