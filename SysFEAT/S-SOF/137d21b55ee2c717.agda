@@ -1,0 +1,46 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Table: 
+ATable is a relational data structure, used as the reference for the switch to production. The Table is the central element of the relational databases. A table is accessible by means of a primary key, and if necessary foreign keys; it is described by an ordered sequence of Columns. A Table is generally derived from a Logical Data Entity or asssociation.
+
+Documentation : https://framework.sysfeat.com/pages/137d21b55ee2c717.htm
+
+External references:
+  DDD - Glossary - Entity: https://www.dddcommunity.org/resources/ddd_terms?[entity]
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.137d21b55ee2c717 where -- ========== Table
+
+open import Agda.Primitive
+open import SysFEAT.S-SOF.362f3ca45b3b234b public -- RelationalEntity
+open import SysFEAT.S-SOF.4619527e560d45eb public -- LogicalDataEntity
+
+Table : BoundedIndividualMetaClass
+Table = ClassOfBoundedIndividual
+
+
+--  Table is subTypeOf RelationalEntity
+st-137d21b55ee2c717-362f3ca45b3b234b : Table ⊏ₑ RelationalEntity
+st-137d21b55ee2c717-362f3ca45b3b234b = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Specialized Table: -}
+specializedTable :  Linkage Table Table
+specializedTable = make_subTypeOf "Specialized Table" "Specialized Table"
+
+postulate -- specializedTable is subTypeOf specializedPhysicalEntity
+  st-325a373866f33d05-325a375866f33f11  : specializedTable  ⊏⋆ᵣ  specializedPhysicalEntity
+
+-- -------------------------------------------------------------------------------------------- 
+{- Realized Data Entity: -}
+realizedDataEntity :  Linkage Table LogicalDataEntity
+realizedDataEntity = make_subTypeOf "Realized Data Entity" "Realized Data Entity"
+

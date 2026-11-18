@@ -1,0 +1,31 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Data Block: 
+A Data Block is an Information Block used for the description of data consumed and produced by Software System Types.They are defined in Data Dictionary(ies).
+
+Documentation : https://framework.sysfeat.com/pages/8f1c937168ca8195.htm
+
+External references:
+  NIST - Data Asset: https://csrc.nist.gov/glossary/term/data_asset
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.8f1c937168ca8195 where -- ========== DataBlock
+
+open import Agda.Primitive
+open import SysFEAT.SOF.6c5f80e468587f06 public -- InformationBlock
+
+DataBlock : ∀ (u : Level) → ClassOfMixedOrderEntity u
+DataBlock u = MixedOrderEntity u
+
+
+--  DataBlock is subTypeOf InformationBlock
+st-8f1c937168ca8195-6c5f80e468587f06 : ∀ {u v} → DataBlock u ⊏⋆ₑ InformationBlock v
+st-8f1c937168ca8195-6c5f80e468587f06 = trivialPolySubTypeOfEntity
+
+
+-- == Relations =======================

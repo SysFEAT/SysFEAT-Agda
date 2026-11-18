@@ -1,0 +1,54 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Computing System: 
+A Computing System is a system that can host and run software code ( Application code or Software Technology code) and to host data.Examples: Computer Devices, Computer Servers, Cloud Services.
+
+Documentation : https://framework.sysfeat.com/pages/f4be0eda5ee1d6c0.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.f4be0eda5ee1d6c0 where -- ========== ComputingSystem
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.d16006d362e085f2 public -- TechnologyOperatingAsset
+open import SysFEAT.S-SOF.24035cc65fc7ad7f public -- ConcreteSOftwareSystem
+
+ComputingSystem : BoundedIndividualMetaClass
+ComputingSystem = ClassOfBoundedIndividual
+
+
+--  ComputingSystem is subTypeOf TechnologyOperatingAsset
+st-f4be0eda5ee1d6c0-d16006d362e085f2 : ComputingSystem ⊏ₑ TechnologyOperatingAsset
+st-f4be0eda5ee1d6c0-d16006d362e085f2 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Hosted Software: -}
+-- Aggregate Member : Hosted Software
+
+
+
+-- Membership relation
+membershipOfHostedSOftware :  Linkage ComputingSystem HostedSOftware
+membershipOfHostedSOftware = make_upwardNestingRelation "hostedSOftware membership" "nested hostedSOftware"
+
+-- Aggregation relation
+aggregationOfConcreteSOftwareSystemHostedSOftware :  Linkage HostedSOftware ConcreteSOftwareSystem
+aggregationOfConcreteSOftwareSystemHostedSOftware = make_Relation "ConcreteSOftwareSystem aggregation" "aggregated ConcreteSOftwareSystem"
+
+{- hostedSOftware : derived relation obtained by composing
+   membershipOfHostedSOftware and aggregationOfConcreteSOftwareSystemHostedSOftware
+   It directly links an Computing System to the final aggregated ConcreteSOftwareSystem
+   hiding the reifying HostedSOftware
+-}
+hostedSOftware : Linkage ComputingSystem ConcreteSOftwareSystem
+hostedSOftware = membershipOfHostedSOftware  ∘  aggregationOfConcreteSOftwareSystemHostedSOftware
+
+

@@ -1,0 +1,80 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Logical Data Property: 
+A Logical Data Property is an immutable type that is distinguishable only by the state of its properties. That is, unlike a Logical Data Entity, which has a unique identifier and remains distinct even if its properties are otherwise identical, two Value Objects with the exact same properties can be considered equal.
+
+Documentation : https://framework.sysfeat.com/pages/7d5286635eae7273.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.7d5286635eae7273 where -- ========== LogicalDataProperty
+
+open import Agda.Primitive
+open import SysFEAT.S-SOF.2b5858b85eec51d9 public -- LogicalDataElement
+open import SysFEAT.S-SOF.8f1c991068ca8a23 public -- DataProperty
+
+LogicalDataProperty : ClassOfMixedOrderEntity
+LogicalDataProperty = MixedOrderEntity
+
+
+--  LogicalDataProperty is subTypeOf LogicalDataElement
+st-7d5286635eae7273-2b5858b85eec51d9 : LogicalDataProperty ⊏ₑ LogicalDataElement
+st-7d5286635eae7273-2b5858b85eec51d9 = polySubTypeOf-identity
+
+--  LogicalDataProperty is subTypeOf DataProperty
+st-7d5286635eae7273-8f1c991068ca8a23 : LogicalDataProperty ⊏ₑ DataProperty
+st-7d5286635eae7273-8f1c991068ca8a23 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Specialized Logical Value: -}
+specializedLogicalValue :  Linkage LogicalDataProperty LogicalDataProperty
+specializedLogicalValue = make_subTypeOf "Specialized Logical Value" "Specialized Logical Value"
+
+postulate -- specializedLogicalValue is subTypeOf specializedDataObject
+  st-325a37b266f34974-325a380d66f3515e  : specializedLogicalValue  ⊏⋆ᵣ  specializedDataObject
+
+-- -------------------------------------------------------------------------------------------- 
+{- Data Value Member: -}
+-- Aggregate Member : Data Value Member
+DataValueMember : ClassOfMixedOrderEntity
+DataValueMember = MixedOrderEntity
+
+
+
+--  DataValueMember is subTypeOf LogicalDataMember
+st-2b585ad05eec569f-e7e3fa0a5fbb0ddb : DataValueMember ⊏ₑ LogicalDataMember
+st-2b585ad05eec569f-e7e3fa0a5fbb0ddb = polySubTypeOf-identity
+
+--  DataValueMember is subTypeOf SubDataProperty
+st-2b585ad05eec569f-8f1c9c3268ca90a3 : DataValueMember ⊏⋆ₑ SubDataProperty
+st-2b585ad05eec569f-8f1c9c3268ca90a3 = polySubTypeOf-identity
+
+--  DataValueMember is subTypeOf InformationRelation
+st-2b585ad05eec569f-dfa4e2305ebb4d2b : DataValueMember ⊏ₑ InformationRelation
+st-2b585ad05eec569f-dfa4e2305ebb4d2b = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfDataValueMember :  Linkage LogicalDataProperty DataValueMember
+membershipOfDataValueMember = make_upwardNestingRelation "dataValueMember membership" "nested dataValueMember"
+
+-- Aggregation relation
+aggregationOfLogicalDataPropertyDataValueMember :  Linkage DataValueMember LogicalDataProperty
+aggregationOfLogicalDataPropertyDataValueMember = make_Relation "LogicalDataProperty aggregation" "aggregated LogicalDataProperty"
+
+{- dataValueMember : derived relation obtained by composing
+   membershipOfDataValueMember and aggregationOfLogicalDataPropertyDataValueMember
+   It directly links an Logical Data Property to the final aggregated LogicalDataProperty
+   hiding the reifying DataValueMember
+-}
+dataValueMember : Linkage LogicalDataProperty LogicalDataProperty
+dataValueMember = membershipOfDataValueMember  ∘  aggregationOfLogicalDataPropertyDataValueMember
+
+
