@@ -1,0 +1,1 @@
+Library of the Hardware Resource Operating Framework : H-SOF.
