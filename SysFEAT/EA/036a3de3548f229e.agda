@@ -17,11 +17,11 @@ module SysFEAT.EA.036a3de3548f229e where -- ========== EnterpriseInitiative
 open import Agda.Primitive
 open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.EA.c189f8c868ae5b73 public -- BusinessCapabilityMap
-open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.S-SOF.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
 open import SysFEAT.C-SOF.7c4097c855271c8e public -- ConceptualEnvironment
 open import SysFEAT.C-SOF.622b76b06ae334e6 public -- ConceptDomainMap
 open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
-open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.R-SOF.fe1c250d678803b6 public -- IndividualResourceBehavior
 open import SysFEAT.EA.56ea5ff966047632 public -- Product
 
 EnterpriseInitiative : ClassOfBoundedIndividual
@@ -38,7 +38,7 @@ st-036a3de3548f229e-0ffeec41600be08a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Enterprise Capability Map: -}
 enterpriseCapabilityMap :  Linkage EnterpriseInitiative BusinessCapabilityMap
-enterpriseCapabilityMap = make_Relation "Enterprise Capability Map" "Enterprise Capability Map"
+enterpriseCapabilityMap = make_instanceOf "Enterprise Capability Map" "Enterprise Capability Map"
 
 postulate -- enterpriseCapabilityMap is subTypeOf functionalScope
   st-c189f8fd68ae5ba0-01f1214c689b6e0f  : enterpriseCapabilityMap  ⊏⋆ᵣ  functionalScope
@@ -130,13 +130,13 @@ enterpriseCourseOfAction = membershipOfEnterpriseCourseOfAction  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Product: -}
 -- Aggregate Member : Product
-Product : ClassOfMixedOrderEntity
-Product = MixedOrderEntity
+Product : ClassOfHolonymy
+Product = HolonymyRelation
 
 
 
 --  Product withAspect InitiativeSubject
-st-dd269ae968a1db15-0f642fd06859b0d5 : Product ⊏ₐₑ (InitiativeSubject (lsuc(lzero)))
+st-dd269ae968a1db15-0f642fd06859b0d5 : Product ⊏ₐₑ InitiativeSubject (lsuc( lzero))
 st-dd269ae968a1db15-0f642fd06859b0d5 = polySubTypeOf-identity
 
 -- Membership relation

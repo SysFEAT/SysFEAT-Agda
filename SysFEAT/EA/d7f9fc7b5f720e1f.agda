@@ -16,7 +16,7 @@ module SysFEAT.EA.d7f9fc7b5f720e1f where -- ========== DataIssue
 
 open import Agda.Primitive
 open import SysFEAT..d059da695ef11294 public -- Incident
-open import SysFEAT.EA.b90ac213600e39bb public -- DataGovernanceBlock
+open import SysFEAT.OA-SOF.b90ac213600e39bb public -- DataGovernanceBlock
 
 DataIssue : ClassOfIndividual
 DataIssue = Individual

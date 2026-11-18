@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/2c93337b67644a6a.htm
 module SysFEAT.EA.2c93337b67644a6a where -- ========== HumanResource
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
-open import SysFEAT.EA.ffdf61506860875a public -- HumanAgentType
+open import SysFEAT.R-SOF.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.R-SOF.ffdf61506860875a public -- HumanAgentType
 
 HumanResource : BoundedIndividualMetaClass
-HumanResource = AssetType
+HumanResource = ClassOfBoundedIndividual
 
 
 --  HumanResource is subTypeOf BusinessAgentType

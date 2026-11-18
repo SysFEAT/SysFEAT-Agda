@@ -44,7 +44,7 @@ driverSubject : ∀ {u} →  Linkage Driver (AssetBlock u)
 driverSubject = make_Relation "Driver Subject" "Driver Subject"
 
 postulate -- driverSubject is subTypeOf eventSubject
-  st-4b945a6e68a47bdf-0f642d4d6859ad70  : driverSubject  ⊏⋆ᵣ  eventSubject
+  st-4b945a6e68a47bdf-0f642d4d6859ad70  : ∀ {u} → driverSubject {u}  ⊏⋆ᵣ  eventSubject {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Relevant Location: 

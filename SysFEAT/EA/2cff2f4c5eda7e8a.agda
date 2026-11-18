@@ -16,7 +16,6 @@ module SysFEAT.EA.2cff2f4c5eda7e8a where -- ========== WorkPaper
 
 open import Agda.Primitive
 
-WorkPaper : ClassOfClassOfBoundedIndividual
-WorkPaper = ClassOfBoundedIndividual
+
 
 

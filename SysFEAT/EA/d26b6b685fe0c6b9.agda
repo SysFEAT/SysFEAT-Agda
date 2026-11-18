@@ -20,12 +20,10 @@ open import Agda.Primitive
 open import SysFEAT.EA.52e0b14c6abf4c76 public -- ProgramAsset
 open import SysFEAT.EA.91be97ff54882d9f public -- Project
 
-ProjectPortfolio : ClassOfMixedOrderEntity
-ProjectPortfolio = MixedOrderEntity
 
 
 --  ProjectPortfolio withAspect ProgramAsset
-st-d26b6b685fe0c6b9-52e0b14c6abf4c76 : ProjectPortfolio ⊏ₐₑ (ProgramAsset lzero)
+st-d26b6b685fe0c6b9-52e0b14c6abf4c76 : ProjectPortfolio ⊏ₐₑ ProgramAsset lzero
 st-d26b6b685fe0c6b9-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 
@@ -36,8 +34,6 @@ st-d26b6b685fe0c6b9-52e0b14c6abf4c76 = polySubTypeOf-identity
 A Project Portfolio line is defined to enable the assessment of a Project in a given Portfolio.It is related to assessment criteria defined at the portfolio level, and its corresponding score.
 -}
 -- Aggregate Member : Portfolio Line
-PortfolioLine : ClassOfOrderedEntity (lsuc(lzero))
-PortfolioLine = AggregateMember (lsuc(lzero))
 
 
 

@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/56cd60f85c513b04.htm
 module SysFEAT.EA.56cd60f85c513b04 where -- ========== DeployedServer
 
 open import Agda.Primitive
-open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.R-SOF.3642454f6007e80e public -- DeployedBusinessSystem
 open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
 open import SysFEAT.EA.56cd60a95c513aaf public -- DeployedApplication
-open import SysFEAT.EA.56cd60c05c513ad9 public -- DeployedSOftwareTechnology
-open import SysFEAT.EA.df118f645d5f65bb public -- ComputerServer
+open import SysFEAT.S-SOF.56cd60c05c513ad9 public -- DeployedSOftwareTechnology
+open import SysFEAT.H-SOF.df118f645d5f65bb public -- ComputerServer
 
-DeployedServer : AssetType
-DeployedServer = IndividualAsset
+DeployedServer : BusinessAgentType
+DeployedServer = IndividualBusinessAgent
 
 
 --  DeployedServer is subTypeOf DeployedBusinessSystem
@@ -53,7 +53,7 @@ hostedTechnology = make_holonymyRelation "Hosted Technology" "Hosted Technology"
 -- -------------------------------------------------------------------------------------------- 
 {- Server Type: -}
 serverType :  Linkage DeployedServer ComputerServer
-serverType = make_Relation "Server Type" "Server Type"
+serverType = make_instanceOf "Server Type" "Server Type"
 
 postulate -- serverType is subTypeOf businessSystemType
   st-e2dc103a66fd7e38-e2dc074666fd6d03  : serverType  ⊏⋆ᵣ  businessSystemType

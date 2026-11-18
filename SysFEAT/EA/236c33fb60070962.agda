@@ -19,7 +19,7 @@ open import SysFEAT.SOF.173706265fe3f332 public -- MeasurementInstrument
 open import SysFEAT.EA.d1701e155be84834 public -- BenefitType
 open import SysFEAT.EA.8a5c926e5c0d632c public -- CustomerActivity
 
-Benefit : ClassOfBoundedIndividual
+Benefit : BenefitType
 Benefit = BoundedIndividual
 
 

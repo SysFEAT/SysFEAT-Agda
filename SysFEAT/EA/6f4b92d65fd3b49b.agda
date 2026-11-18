@@ -16,13 +16,13 @@ module SysFEAT.EA.6f4b92d65fd3b49b where -- ========== BusinessEnvironment
 
 open import Agda.Primitive
 open import SysFEAT.EA.2b705f2661ba04de public -- BusinessEcosystem
-open import SysFEAT.EA.2b6f33a561bae7ab public -- BusinessAgentEnvironment
-open import SysFEAT.EA.9dcea2655ec768ee public -- BusinessServiceInterface
+open import SysFEAT.R-SOF.2b6f33a561bae7ab public -- BusinessAgentEnvironment
+open import SysFEAT.R-SOF.9dcea2655ec768ee public -- BusinessServiceInterface
 open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
 
 BusinessEnvironment : BoundedIndividualMetaClass
-BusinessEnvironment = AssetType
+BusinessEnvironment = ClassOfBoundedIndividual
 
 
 --  BusinessEnvironment is subTypeOf BusinessEcosystem

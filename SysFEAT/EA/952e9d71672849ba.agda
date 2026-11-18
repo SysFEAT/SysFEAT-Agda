@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/952e9d71672849ba.htm
 module SysFEAT.EA.952e9d71672849ba where -- ========== CustomerJourneyCategory
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
-CustomerJourneyCategory : ClassOfMixedOrderEntity
-CustomerJourneyCategory = MixedOrderEntity
+CustomerJourneyCategory : MetaClass
+CustomerJourneyCategory = MetaClass
 
 
---  CustomerJourneyCategory withAspect AssetCategoryFamily
-st-952e9d71672849ba-f69620466a0f9c2f : CustomerJourneyCategory ⊏ₐₑ (AssetCategoryFamily (lsuc(lsuc(lzero))))
+--  CustomerJourneyCategory withAspect AssetCategorizationSchema
+st-952e9d71672849ba-f69620466a0f9c2f : CustomerJourneyCategory ⊏ₐₑ AssetCategorizationSchema lzero
 st-952e9d71672849ba-f69620466a0f9c2f = polySubTypeOf-identity
 
 

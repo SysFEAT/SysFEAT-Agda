@@ -22,7 +22,7 @@ open import SysFEAT.EA.27a456b46407c665 public -- ConfiguredTechnologySystem
 open import SysFEAT.EA.a41ab2d25b378b12 public -- ComputerNetwork
 
 ITInfrastructure : BoundedIndividualMetaClass
-ITInfrastructure = AssetType
+ITInfrastructure = ClassOfBoundedIndividual
 
 
 --  ITInfrastructure is subTypeOf ITInfrastructureSystem

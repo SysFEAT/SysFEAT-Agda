@@ -19,14 +19,19 @@ External references:
 module SysFEAT.EA.2c9c86dc6adb8147 where -- ========== ConceptualEntityAsset
 
 open import Agda.Primitive
+open import SysFEAT.SOF.a04ea65b6ae745ef public -- ConceptualLevel
 open import SysFEAT.C-SOF.4aebd76d69641638 public -- ConceptualElement
 
-ConceptualEntityAsset : ∀ (u : Level) → ClassOfElement u 
-ConceptualEntityAsset u  = Element u 
+ConceptualEntityAsset : ∀ (u : Level) → AbstractionCategoryType u
+ConceptualEntityAsset u = AbstractionCategory u
 
+
+--  ConceptualEntityAsset is subTypeOf ConceptualLevel
+st-2c9c86dc6adb8147-a04ea65b6ae745ef : ∀ {u v} → ConceptualEntityAsset u ⊏⋆ₑ ConceptualLevel v
+st-2c9c86dc6adb8147-a04ea65b6ae745ef = trivialPolySubTypeOfEntity
 
 --  ConceptualEntityAsset is subTypeOf ConceptualElement
-st-2c9c86dc6adb8147-4aebd76d69641638 : ∀ {u v} → (ConceptualEntityAsset u) ⊏⋆ₑ (ConceptualElement v)
+st-2c9c86dc6adb8147-4aebd76d69641638 : ∀ {u v} → ConceptualEntityAsset u ⊏⋆ₑ ConceptualElement (lsuc( v))
 st-2c9c86dc6adb8147-4aebd76d69641638 = trivialPolySubTypeOfEntity
 
 

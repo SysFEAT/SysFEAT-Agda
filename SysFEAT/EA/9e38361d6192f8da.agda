@@ -17,12 +17,12 @@ External references:
 module SysFEAT.EA.9e38361d6192f8da where -- ========== InfrastructureLandscape
 
 open import Agda.Primitive
-open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.R-SOF.66f8685a620b1440 public -- IndividualBusinessAgent
 open import SysFEAT.EA.9e38352f6192f750 public -- DataCenter
 open import SysFEAT.EA.46195775560d4ec0 public -- SystemOfSystems
 
-InfrastructureLandscape : AssetType
-InfrastructureLandscape = IndividualAsset
+InfrastructureLandscape : BusinessAgentType
+InfrastructureLandscape = IndividualBusinessAgent
 
 
 --  InfrastructureLandscape is subTypeOf IndividualBusinessAgent
@@ -41,5 +41,5 @@ ownedDataCenter = make_holonymyRelation "Owned Data Center" "Owned Data Center"
 -- -------------------------------------------------------------------------------------------- 
 {- Infrastructure Type: -}
 infrastructureType :  Linkage InfrastructureLandscape SystemOfSystems
-infrastructureType = make_Relation "Infrastructure Type" "Infrastructure Type"
+infrastructureType = make_instanceOf "Infrastructure Type" "Infrastructure Type"
 

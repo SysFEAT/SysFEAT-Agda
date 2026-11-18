@@ -41,13 +41,13 @@ postulate -- ownedPortfolioStage is subTypeOf roadmap
 -- -------------------------------------------------------------------------------------------- 
 {- Managed Product: -}
 -- Aggregate Member : Managed Product
-ManagedProduct : ClassOfMixedOrderEntity
-ManagedProduct = MixedOrderEntity
+ManagedProduct : ClassOfHolonymy
+ManagedProduct = holonymyRelation
 
 
 
 --  ManagedProduct withAspect ManagementSystemSubject
-st-45df7704618e075e-6bf17ffc68598c26 : ManagedProduct ⊏ₐₑ (ManagementSystemSubject (lsuc(lzero)))
+st-45df7704618e075e-6bf17ffc68598c26 : ManagedProduct ⊏ₐₑ ManagementSystemSubject (lsuc( lzero))
 st-45df7704618e075e-6bf17ffc68598c26 = polySubTypeOf-identity
 
 -- Membership relation

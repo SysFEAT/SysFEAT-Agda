@@ -16,7 +16,6 @@ module SysFEAT.EA.63f8b6b055ae20e9 where -- ========== StakeholderDriverCategory
 
 open import Agda.Primitive
 
-StakeholderDriverCategory : ClassOfClassOfBoundedIndividual
-StakeholderDriverCategory = ClassOfBoundedIndividual
+
 
 

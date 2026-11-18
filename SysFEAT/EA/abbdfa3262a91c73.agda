@@ -16,7 +16,7 @@ module SysFEAT.EA.abbdfa3262a91c73 where -- ========== HardwareAssetAssessment
 
 open import Agda.Primitive
 open import SysFEAT.SOF.3b539cbb551e4c2a public -- Assessment
-open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
+open import SysFEAT.H-SOF.c30bf4015a5da72b public -- ConcreteHardwareSystem
 
 HardwareAssetAssessment : ClassOfIndividual
 HardwareAssetAssessment = Individual
@@ -35,4 +35,4 @@ assessedHardwareAsset :  Linkage HardwareAssetAssessment ConcreteHardwareSystem
 assessedHardwareAsset = make_Relation "Assessed Hardware Asset" "Assessed Hardware Asset"
 
 postulate -- assessedHardwareAsset is subTypeOf assessedAsset
-  st-abbdfaaf62a91d49-6bf1843a68599028  : assessedHardwareAsset  ⊏⋆ᵣ  assessedAsset
+  st-abbdfaaf62a91d49-6bf1843a68599028  : assessedHardwareAsset  ⊏⋆ᵣ  assessedAsset {lsuc(lzero)}

@@ -16,7 +16,6 @@ module SysFEAT.EA.2cff31375eda90bd where -- ========== ProcessFamily
 
 open import Agda.Primitive
 
-ProcessFamily : ClassOfClassOfBoundedIndividual
-ProcessFamily = ClassOfBoundedIndividual
+
 
 

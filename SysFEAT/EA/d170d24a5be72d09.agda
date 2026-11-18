@@ -19,8 +19,7 @@ open import SysFEAT.EA.8a5c926e5c0d632c public -- CustomerActivity
 open import SysFEAT.EA.d170d3075be72e6b public -- CustomerNeed
 open import SysFEAT.EA.d170d9925be73b35 public -- PainPointType
 
-CustomerTask : ClassOfClassOfBoundedIndividual
-CustomerTask = ClassOfBoundedIndividual
+
 
 --  CustomerTask is subTypeOf CustomerActivity
 st-d170d24a5be72d09-8a5c926e5c0d632c : CustomerTask ⊏ₑ CustomerActivity

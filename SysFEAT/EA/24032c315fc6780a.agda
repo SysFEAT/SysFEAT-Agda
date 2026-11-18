@@ -44,7 +44,7 @@ packagedProgramAsset : ∀ {u} →  Linkage TransformationProgram (ProgramAsset 
 packagedProgramAsset = make_nestingRelation "Packaged Program Asset" "Packaged Program Asset"
 
 postulate -- packagedProgramAsset is subTypeOf packagedInitiativeResource
-  st-52e0b1b76abf4cfa-01ce058868597974  : packagedProgramAsset  ⊏⋆ᵣ  packagedInitiativeResource
+  st-52e0b1b76abf4cfa-01ce058868597974  : ∀ {u} → packagedProgramAsset {u}  ⊏⋆ᵣ  packagedInitiativeResource {u}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Roadmap: -}

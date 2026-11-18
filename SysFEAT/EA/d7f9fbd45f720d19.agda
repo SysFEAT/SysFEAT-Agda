@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/d7f9fbd45f720d19.htm
 module SysFEAT.EA.d7f9fbd45f720d19 where -- ========== DataControlExecution
 
 open import Agda.Primitive
-open import SysFEAT.EA.b90ac213600e39bb public -- DataGovernanceBlock
+open import SysFEAT.OA-SOF.b90ac213600e39bb public -- DataGovernanceBlock
 open import SysFEAT.SOF.1737b76a5fe28204 public -- GovernanceActivity
 open import SysFEAT.EA.003f595c64775717 public -- DataQualityIndicator
 open import SysFEAT.EA.d7f9fc7b5f720e1f public -- DataIssue
-open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
+open import SysFEAT.OA-SOF.b90aeac8600e619f public -- DataAssuranceCase
 
 DataControlExecution : ClassOfMixedOrderEntity
 DataControlExecution = MixedOrderEntity

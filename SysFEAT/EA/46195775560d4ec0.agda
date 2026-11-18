@@ -21,7 +21,7 @@ open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 open import SysFEAT.EA.f4be11b15ee1e0fa public -- SystemOfResources
 
 SystemOfSystems : BoundedIndividualMetaClass
-SystemOfSystems = AssetType
+SystemOfSystems = ClassOfBoundedIndividual
 
 
 --  SystemOfSystems is subTypeOf CapabilityConfiguration
@@ -68,8 +68,7 @@ systemOfSystemMember = membershipOfSystemOfSystemMember  ∘  aggregationOfSyste
 -- -------------------------------------------------------------------------------------------- 
 {- System of Resource Member: -}
 -- Aggregate Member : System of Resource Member
-SystemOfResourceMember : ClassOfClassOfIndividual
-SystemOfResourceMember = ClassOfIndividual
+
 
 
 -- Membership relation

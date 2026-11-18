@@ -22,7 +22,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 
 SystemOfResources : BoundedIndividualMetaClass
-SystemOfResources = AssetType
+SystemOfResources = ClassOfBoundedIndividual
 
 
 --  SystemOfResources is subTypeOf CapabilityConfiguration

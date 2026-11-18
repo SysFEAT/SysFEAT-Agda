@@ -13,11 +13,11 @@ Documentation : https://framework.sysfeat.com/pages/a951ee816194126b.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-a951ee816194126b where -- ========== Facility Asset Architecture
 
-open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
-open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
-open import SysFEAT.EA.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
-open import SysFEAT.EA.sysfeat-domain-c80a74e46785ad9f public -- SOF -  Business Hardware Operating Model
+open import SysFEAT.R-SOF.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
+open import SysFEAT.H-SOF.sysfeat-domain-c80a74e46785ad9f public -- SOF -  Business Hardware Operating Model
 
 open import SysFEAT.EA.070b0d5564011dbb public -- Networking System
 open import SysFEAT.EA.f4be14d25ee1eaff public -- Resource Configuration

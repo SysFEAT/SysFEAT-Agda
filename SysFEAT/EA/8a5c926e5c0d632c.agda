@@ -17,8 +17,7 @@ module SysFEAT.EA.8a5c926e5c0d632c where -- ========== CustomerActivity
 open import Agda.Primitive
 open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
 
-CustomerActivity : ClassOfClassOfBoundedIndividual
-CustomerActivity = ClassOfBoundedIndividual
+
 
 
 -- == Relations =======================
@@ -36,8 +35,7 @@ portrayedCustomer = make_classOfHolonymy "Portrayed Customer" "Portrayed Custome
 Step of a Customer Journey where a Customer experiences offered capability through Touch Points.that can be either a Customer Job Activity or another Customer Journey 
 -}
 -- Aggregate Member : Customer Activity Member
-CustomerActivityMember : ClassOfClassOfIndividual
-CustomerActivityMember = ClassOfIndividual
+
 
 
 -- Membership relation

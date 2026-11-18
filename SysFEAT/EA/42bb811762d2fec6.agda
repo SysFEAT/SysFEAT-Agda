@@ -16,7 +16,6 @@ module SysFEAT.EA.42bb811762d2fec6 where -- ========== Vision
 
 open import Agda.Primitive
 
-Vision : PropertyType
-Vision = Property
+
 
 

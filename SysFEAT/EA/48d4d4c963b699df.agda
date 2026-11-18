@@ -16,7 +16,6 @@ module SysFEAT.EA.48d4d4c963b699df where -- ========== ProjectMilesone
 
 open import Agda.Primitive
 
-ProjectMilesone : ClassOfBoundedIndividual
-ProjectMilesone = BoundedIndividual
+
 
 

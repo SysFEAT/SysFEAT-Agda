@@ -15,14 +15,12 @@ Documentation : https://framework.sysfeat.com/pages/7d3786425fd04ea2.htm
 module SysFEAT.EA.7d3786425fd04ea2 where -- ========== PrivacyBlock
 
 open import Agda.Primitive
-open import SysFEAT.EA.622b7c7d6ae3438e public -- DataAssuranceInstrument
+open import SysFEAT.OA-SOF.622b7c7d6ae3438e public -- DataAssuranceInstrument
 
-PrivacyBlock : ClassOfMixedOrderEntity
-PrivacyBlock = MixedOrderEntity
 
 
 --  PrivacyBlock withAspect DataAssuranceInstrument
-st-7d3786425fd04ea2-622b7c7d6ae3438e : PrivacyBlock ⊏ₐₑ (DataAssuranceInstrument lzero)
+st-7d3786425fd04ea2-622b7c7d6ae3438e : PrivacyBlock ⊏ₐₑ DataAssuranceInstrument lzero
 st-7d3786425fd04ea2-622b7c7d6ae3438e = polySubTypeOf-identity
 
 

@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
 open import SysFEAT.EA.036a3de3548f229e public -- EnterpriseInitiative
 open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
-open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.R-SOF.fe1c250d678803b6 public -- IndividualResourceBehavior
 
 EnterpriseStage : StateClass
 EnterpriseStage = IndividualState

@@ -37,4 +37,4 @@ subjectPolicy :  Linkage RegulatoryDriver PolicyFramework
 subjectPolicy = make_Relation "Subject Policy" "Subject Policy"
 
 postulate -- subjectPolicy is subTypeOf driverSubject
-  st-4b945a3d68a47b96-4b945a6e68a47bdf  : subjectPolicy  ⊏⋆ᵣ  driverSubject
+  st-4b945a3d68a47b96-4b945a6e68a47bdf  : subjectPolicy  ⊏⋆ᵣ  driverSubject {lzero}

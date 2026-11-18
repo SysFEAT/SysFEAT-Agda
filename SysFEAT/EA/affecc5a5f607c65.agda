@@ -16,7 +16,6 @@ module SysFEAT.EA.affecc5a5f607c65 where -- ========== NumberOfDistinctValues
 
 open import Agda.Primitive
 
-NumberOfDistinctValues : PropertyType
-NumberOfDistinctValues = Property
+
 
 

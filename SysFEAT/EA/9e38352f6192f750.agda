@@ -27,8 +27,8 @@ open import SysFEAT.SOF.8d5e986f552e28d5 public -- Location
 open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
 open import SysFEAT.EA.f4be0e865ee1d53b public -- Facility
 
-DataCenter : AssetType
-DataCenter = IndividualAsset
+DataCenter : BusinessAgentType
+DataCenter = IndividualBusinessAgent
 
 
 --  DataCenter is subTypeOf IndividualFacility
@@ -65,5 +65,5 @@ hostedDataStore = make_holonymyRelation "Hosted Data Store" "Hosted Data Store"
 -- -------------------------------------------------------------------------------------------- 
 {- Data Center Type: -}
 dataCenterType :  Linkage DataCenter Facility
-dataCenterType = make_Relation "Data Center Type" "Data Center Type"
+dataCenterType = make_instanceOf "Data Center Type" "Data Center Type"
 

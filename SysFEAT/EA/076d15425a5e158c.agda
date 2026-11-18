@@ -23,13 +23,13 @@ module SysFEAT.EA.076d15425a5e158c where -- ========== OrgUnitType
 
 open import Agda.Primitive
 open import SysFEAT.EA.2c93337b67644a6a public -- HumanResource
-open import SysFEAT.EA.c80afd2f6784305d public -- IntangibleResourceAgent
+open import SysFEAT.R-SOF.c80afd2f6784305d public -- IntangibleResourceAgent
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
 open import SysFEAT.EA.c189cf1f68ae421a public -- BusinessRule
 open import SysFEAT.EA.6f4b93a15fd3b6bf public -- BusinessInteractionProcess
 
 OrgUnitType : BoundedIndividualMetaClass
-OrgUnitType = AssetType
+OrgUnitType = ClassOfBoundedIndividual
 
 
 --  OrgUnitType is subTypeOf HumanResource

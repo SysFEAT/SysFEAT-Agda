@@ -17,7 +17,7 @@ module SysFEAT.EA.0520133e66474954 where -- ========== AssetPortfolioStage
 open import Agda.Primitive
 open import SysFEAT.EA.05200e1c66474509 public -- ManagementStage
 open import SysFEAT.EA.05201bc866475765 public -- AssetManagementInitiative
-open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
+open import SysFEAT.R-SOF.dd265414689f5987 public -- ResourceCapability
 
 AssetPortfolioStage : StateClass
 AssetPortfolioStage = IndividualState
@@ -39,8 +39,7 @@ stateOfAssetManagementInitiative = make_meronymyRelation "State of Asset Managem
 -- -------------------------------------------------------------------------------------------- 
 {- Exhibited Resource Capability: -}
 -- Aggregate Member : Exhibited Resource Capability
-ExhibitedResourceCapability : ClassOfClassOfIndividual
-ExhibitedResourceCapability = ClassOfIndividual
+
 
 
 -- Membership relation

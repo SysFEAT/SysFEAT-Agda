@@ -18,8 +18,6 @@ open import Agda.Primitive
 open import SysFEAT..dd2638ba68a073a8 public -- BusinessResourceCapabilityMap
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
 
-SkillMap : ClassOfMixedOrderEntity
-SkillMap = MixedOrderEntity
 
 
 --  SkillMap is subTypeOf BusinessResourceCapabilityMap

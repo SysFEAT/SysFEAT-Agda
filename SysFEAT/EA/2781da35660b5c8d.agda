@@ -20,7 +20,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
 
 OperationsProcess : BoundedIndividualMetaClass
-OperationsProcess = AssetType
+OperationsProcess = ClassOfBoundedIndividual
 
 
 --  OperationsProcess is subTypeOf BusinessProcess

@@ -24,8 +24,8 @@ open import Agda.Primitive
 open import SysFEAT.EA.910196ca550a2ec2 public -- Organization
 open import SysFEAT.EA.c0a3c7c666417665 public -- LegalEntityType
 
-LegalEntity : AgentType
-LegalEntity = IndividualAgent
+LegalEntity : LegalEntityType
+LegalEntity = Organization
 
 
 --  LegalEntity is subTypeOf Organization

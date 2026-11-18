@@ -16,7 +16,6 @@ module SysFEAT.EA.affec2485f6072e2 where -- ========== LastModifiedDate
 
 open import Agda.Primitive
 
-LastModifiedDate : PropertyType
-LastModifiedDate = Property
+
 
 

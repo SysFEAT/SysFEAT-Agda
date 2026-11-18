@@ -17,8 +17,6 @@ module SysFEAT.EA.22ba264367643346 where -- ========== TechnologyPortfolioStage
 open import Agda.Primitive
 open import SysFEAT.EA.22ba23ea67643262 public -- TechnologyManagementInitiative
 
-TechnologyPortfolioStage : StateClass
-TechnologyPortfolioStage = StateConcept
 
 
 

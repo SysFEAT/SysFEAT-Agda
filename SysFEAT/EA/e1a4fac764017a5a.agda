@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
 Router : BoundedIndividualMetaClass
-Router = AssetType
+Router = ClassOfBoundedIndividual
 
 
 --  Router is subTypeOf NetworkDevice

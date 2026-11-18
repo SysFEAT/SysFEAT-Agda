@@ -15,9 +15,9 @@ Documentation : https://framework.sysfeat.com/pages/f1606a8267d86149.htm
 module SysFEAT.EA.f1606a8267d86149 where -- ========== OperationalAssuranceCase
 
 open import Agda.Primitive
-open import SysFEAT.EA.07ca19e95dd854e9 public -- AssuranceCase
+open import SysFEAT.OA-SOF.07ca19e95dd854e9 public -- AssuranceCase
 open import SysFEAT.EA.f1606adf67d861a5 public -- OperatingRiskType
-open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
 OperationalAssuranceCase : ClassOfClassOfIndividual
 OperationalAssuranceCase = ClassOfIndividual
@@ -63,8 +63,7 @@ mitigatedOperationalRisk = membershipOfMitigatedOperationalRisk  ∘  aggregatio
 -- -------------------------------------------------------------------------------------------- 
 {- Resource Operating Asset Type: -}
 -- Aggregate Member : Resource Operating Asset Type
-ResourceOperatingAssetType : ClassOfClassOfIndividual
-ResourceOperatingAssetType = ClassOfIndividual
+
 
 
 --  ResourceOperatingAssetType is subTypeOf InvolvedAsset

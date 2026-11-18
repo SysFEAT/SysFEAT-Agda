@@ -25,14 +25,14 @@ open import SysFEAT.EA.84c799c1664d8b2f public -- Epic
 open import SysFEAT.EA.24ac695354881cbe public -- ProjectType
 open import SysFEAT.EA.2d18f6705ac37b70 public -- ProjetRiskType
 open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
-open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-Project : ClassOfMixedOrderEntity
-Project = MixedOrderEntity
+Project : ClassOfBoundedIndividual
+Project = BoundedIndividual
 
 
 --  Project withAspect ProgramAsset
-st-91be97ff54882d9f-52e0b14c6abf4c76 : Project ⊏ₐₑ (ProgramAsset lzero)
+st-91be97ff54882d9f-52e0b14c6abf4c76 : Project ⊏ₐₑ ProgramAsset lzero
 st-91be97ff54882d9f-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 --  Project is subTypeOf ManagementInitiative
@@ -49,20 +49,19 @@ st-91be97ff54882d9f-84c799c1664d8b2f = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Project Classification: -}
 projectClassification :  Linkage Project ProjectType
-projectClassification = make_Relation "Project Classification" "Project Classification"
+projectClassification = make_instanceOf "Project Classification" "Project Classification"
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Project Risk: -}
 projectRisk :  Linkage Project ProjetRiskType
-projectRisk = make_Relation "Project Risk" "Project Risk"
+projectRisk = make_instanceOf "Project Risk" "Project Risk"
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Project Purpose: -}
 -- Aggregate Member : Project Purpose
-ProjectPurpose : ClassOfClassOfIndividual
-ProjectPurpose = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -86,8 +85,6 @@ projectPurpose = membershipOfProjectPurpose  ∘  aggregationOfBusinessCapabilit
 -- -------------------------------------------------------------------------------------------- 
 {- Project Dependency: -}
 -- Aggregate Member : Project Dependency
-ProjectDependency : ClassOfOrderedEntity (lsuc(lzero))
-ProjectDependency = AggregateMember (lsuc(lzero))
 
 
 
@@ -112,13 +109,13 @@ projectDependency = membershipOfProjectDependency  ∘  aggregationOfProjectProj
 -- -------------------------------------------------------------------------------------------- 
 {- Project Deliverable: -}
 -- Aggregate Member : Project Deliverable
-ProjectDeliverable : ClassOfElement
-ProjectDeliverable = Element
+ProjectDeliverable : ClassOfHolonymy
+ProjectDeliverable = HolonymyRelation
 
 
 
 --  ProjectDeliverable withAspect InitiativeSubject
-st-3c8b5d236283cb99-0f642fd06859b0d5 : ProjectDeliverable ⊏ₐₑ (InitiativeSubject (lsuc(lzero)))
+st-3c8b5d236283cb99-0f642fd06859b0d5 : ProjectDeliverable ⊏ₐₑ InitiativeSubject (lsuc( lzero))
 st-3c8b5d236283cb99-0f642fd06859b0d5 = polySubTypeOf-identity
 
 -- Membership relation
@@ -142,8 +139,7 @@ projectDeliverable = membershipOfProjectDeliverable  ∘  aggregationOfResourceO
 -- -------------------------------------------------------------------------------------------- 
 {- Project Risk: -}
 -- Aggregate Member : Project Risk
-ProjectRisk : ClassOfClassOfIndividual
-ProjectRisk = ClassOfIndividual
+
 
 
 -- Membership relation

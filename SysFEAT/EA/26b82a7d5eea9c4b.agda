@@ -17,11 +17,11 @@ External references:
 module SysFEAT.EA.26b82a7d5eea9c4b where -- ========== SystemOfSystemEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f33a561bae7ab public -- BusinessAgentEnvironment
+open import SysFEAT.R-SOF.2b6f33a561bae7ab public -- BusinessAgentEnvironment
 open import SysFEAT.EA.46195775560d4ec0 public -- SystemOfSystems
 
 SystemOfSystemEnvironment : BoundedIndividualMetaClass
-SystemOfSystemEnvironment = AssetType
+SystemOfSystemEnvironment = ClassOfBoundedIndividual
 
 
 --  SystemOfSystemEnvironment is subTypeOf BusinessAgentEnvironment

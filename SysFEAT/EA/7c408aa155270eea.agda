@@ -28,7 +28,7 @@ open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
 open import SysFEAT.EA.076d151c5a5e1561 public -- OrganizationalPosition
 
 DepartmentType : BoundedIndividualMetaClass
-DepartmentType = AssetType
+DepartmentType = ClassOfBoundedIndividual
 
 
 --  DepartmentType is subTypeOf OrgUnitType

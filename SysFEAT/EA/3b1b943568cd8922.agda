@@ -15,10 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/3b1b943568cd8922.htm
 module SysFEAT.EA.3b1b943568cd8922 where -- ========== IndividualHumanAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.R-SOF.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.R-SOF.ffdf61506860875a public -- HumanAgentType
 
-IndividualHumanAgent : AgentType
-IndividualHumanAgent = IndividualAgent
+IndividualHumanAgent : HumanAgentType
+IndividualHumanAgent = IndividualResourceAgent
 
 
 --  IndividualHumanAgent is subTypeOf IndividualResourceAgent
