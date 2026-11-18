@@ -24,6 +24,7 @@ open import SysFEAT.SOF.e53af74b66e37e5d public -- MeasurePropertyType
 MeasureProperty : MeasurePropertyType
 MeasureProperty = ElementaryProperty
 
+
 --  MeasureProperty is subTypeOf ConditionProperty
 st-21ed2aa6689c12ba-21ed231d689c0679 : MeasureProperty ⊏ₑ ConditionProperty
 st-21ed2aa6689c12ba-21ed231d689c0679 = polySubTypeOf-identity

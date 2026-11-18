@@ -26,4 +26,3 @@ st-1a4622d96afb62f2-1a461f766afb5920 : ∀ {u v} → PhysicalLevel u ⊏⋆ₑ R
 st-1a4622d96afb62f2-1a461f766afb5920 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

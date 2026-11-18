@@ -21,6 +21,7 @@ open import SysFEAT.SOF.31cf367c6ad16c33 public -- PeriodType
 Period : PeriodType
 Period = AbstractEntity
 
+
 --  Period is subTypeOf AbstractEntity
 st-31cf36be6ad16caa-3aca52346aa6418d : Period ⊏ₑ AbstractEntity
 st-31cf36be6ad16caa-3aca52346aa6418d = polySubTypeOf-identity

@@ -15,20 +15,20 @@ Documentation : https://framework.sysfeat.com/pages/7e3474f06af36c2f.htm
 module SysFEAT.SOF.7e3474f06af36c2f where -- ========== PolicyCategoryType
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.UpperOntology.629565166ad71b60 public -- ConceptCategoryType
 
 PolicyCategoryType : ∀ (u : Level) → MetaClass (lsuc u)
 PolicyCategoryType u = MetaClass u
 
 
---  PolicyCategoryType is subTypeOf ConceptCategoryType
-st-7e3474f06af36c2f-629565166ad71b60 : ∀ {u v} → PolicyCategoryType u ⊏⋆ₑ ConceptCategoryType v
-st-7e3474f06af36c2f-629565166ad71b60 = trivialPolySubTypeOfEntity
-
 --  PolicyCategoryType is subTypeOf PolicyAsset
 st-7e3474f06af36c2f-9397c3d86877842f : ∀ {u v} → PolicyCategoryType u ⊏⋆ₑ PolicyAsset (lsuc(lsuc( v)))
 st-7e3474f06af36c2f-9397c3d86877842f = trivialPolySubTypeOfEntity
+
+--  PolicyCategoryType is subTypeOf ConceptCategoryType
+st-7e3474f06af36c2f-629565166ad71b60 : ∀ {u v} → PolicyCategoryType u ⊏⋆ₑ ConceptCategoryType v
+st-7e3474f06af36c2f-629565166ad71b60 = trivialPolySubTypeOfEntity
 
 
 -- == Relations =======================

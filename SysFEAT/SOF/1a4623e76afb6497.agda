@@ -18,14 +18,15 @@ open import Agda.Primitive
 open import SysFEAT.SOF.0e0c15616afb4b13 public -- AssetCategoryFamily
 open import SysFEAT.SOF.1a4623c86afb6437 public -- AbstractionSchema
 
-AbstractionFamily : AbstractionSchema
-AbstractionFamily = AssetCategoryFamily
+AbstractionFamily : ∀ (u : Level) → AbstractionSchema u
+AbstractionFamily u = AssetCategoryFamily u
+
 
 --  AbstractionFamily is subTypeOf AssetCategoryFamily
 st-1a4623e76afb6497-0e0c15616afb4b13 : ∀ {u v} → AbstractionFamily u ⊏⋆ₑ AssetCategoryFamily v
 st-1a4623e76afb6497-0e0c15616afb4b13 = trivialPolySubTypeOfEntity
 
 postulate -- AbstractionFamily is PowerInstanceOf Abstraction Schema
-  pi-1a4624766afb65f7 : AbstractionFamily ∷ₚₑ AbstractionSchema
+  pi-1a4624766afb65f7 : ∀ {u} → AbstractionFamily u  ∷ₚₑ AbstractionSchema u 
 
 -- == Relations =======================

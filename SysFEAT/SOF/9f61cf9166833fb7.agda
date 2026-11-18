@@ -15,26 +15,21 @@ Documentation : https://framework.sysfeat.com/pages/9f61cf9166833fb7.htm
 module SysFEAT.SOF.9f61cf9166833fb7 where -- ========== IndividualOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
+open import SysFEAT.SOF.0c4559c86a033792 public -- OperatingAsset
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
-open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 
 IndividualOperatingAsset : AssetType
 IndividualOperatingAsset = IndividualAsset
 
 
---  IndividualOperatingAsset withAspect AssetBlock
-st-9f61cf9166833fb7-0eb95f356855bf94 : IndividualOperatingAsset ⊏ₐₑ AssetBlock lzero
-st-9f61cf9166833fb7-0eb95f356855bf94 = polySubTypeOf-identity
+--  IndividualOperatingAsset withAspect OperatingAsset
+st-9f61cf9166833fb7-0c4559c86a033792 : IndividualOperatingAsset ⊏ₐₑ OperatingAsset lzero
+st-9f61cf9166833fb7-0c4559c86a033792 = polySubTypeOf-identity
 
 --  IndividualOperatingAsset is subTypeOf IndividualAsset
 st-9f61cf9166833fb7-ebcfaeac5ad76ed7 : IndividualOperatingAsset ⊏ₑ IndividualAsset
 st-9f61cf9166833fb7-ebcfaeac5ad76ed7 = polySubTypeOf-identity
-
---  IndividualOperatingAsset is subTypeOf BoundedIndividual
-st-9f61cf9166833fb7-28f07b2354be0d69 : IndividualOperatingAsset ⊏ₑ BoundedIndividual
-st-9f61cf9166833fb7-28f07b2354be0d69 = polySubTypeOf-identity
 
 
 -- == Relations =======================

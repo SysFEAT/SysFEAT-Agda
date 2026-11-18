@@ -24,6 +24,7 @@ open import SysFEAT.SOF.9e3837e46192fcad public -- IndividualAgent
 IndividualProcess : ActionProcessType
 IndividualProcess = IndividualBehavior
 
+
 --  IndividualProcess is subTypeOf IndividualBehavior
 st-a273b4f465b7a81f-e9af119866e86785 : IndividualProcess ⊏ₑ IndividualBehavior
 st-a273b4f465b7a81f-e9af119866e86785 = polySubTypeOf-identity
@@ -70,6 +71,7 @@ An Active Participant is the Aggregate Holonymy of an Individual Agent that indi
 -- Aggregate Member : Active Participant
 ActiveParticipant : ActiveParticipant
 ActiveParticipant = AggregateHolonymy
+
 
 
 --  ActiveParticipant is subTypeOf IndividualParticipant

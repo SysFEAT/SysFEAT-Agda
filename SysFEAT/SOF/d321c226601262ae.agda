@@ -15,8 +15,8 @@ Documentation : https://framework.sysfeat.com/pages/d321c226601262ae.htm
 module SysFEAT.SOF.d321c226601262ae where -- ========== EnduringInitiative
 
 open import Agda.Primitive
-open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.SOF.0ffeec41600be08a public -- Initiative
 open import SysFEAT.UpperOntology.342f74b166156e02 public -- WholeLifeIndividual
 open import SysFEAT.SOF.01ce05606859794a public -- InitiativeInstrument
 open import SysFEAT.SOF.e78c5eb0661989f9 public -- InitiativeStage
@@ -26,13 +26,13 @@ EnduringInitiative : WholeLifeClass
 EnduringInitiative = WholeLifeIndividual
 
 
---  EnduringInitiative is subTypeOf Initiative
-st-d321c226601262ae-0ffeec41600be08a : EnduringInitiative ⊏ₑ Initiative
-st-d321c226601262ae-0ffeec41600be08a = polySubTypeOf-identity
-
 --  EnduringInitiative withAspect ModelContainer
 st-d321c226601262ae-0eb95dce6855be2e : EnduringInitiative ⊏ₐₑ ModelContainer lzero
 st-d321c226601262ae-0eb95dce6855be2e = polySubTypeOf-identity
+
+--  EnduringInitiative is subTypeOf Initiative
+st-d321c226601262ae-0ffeec41600be08a : EnduringInitiative ⊏ₑ Initiative
+st-d321c226601262ae-0ffeec41600be08a = polySubTypeOf-identity
 
 --  EnduringInitiative is subTypeOf WholeLifeIndividual
 st-d321c226601262ae-342f74b166156e02 : EnduringInitiative ⊏ₑ WholeLifeIndividual

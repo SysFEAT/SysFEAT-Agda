@@ -18,14 +18,15 @@ open import Agda.Primitive
 open import SysFEAT.UpperOntology.f882bd9d6afa3429 public -- ConceptCategory
 open import SysFEAT.SOF.7e3474f06af36c2f public -- PolicyCategoryType
 
-PolicyCategory : PolicyCategoryType
-PolicyCategory = ConceptCategory
+PolicyCategory : ∀ (u : Level) → PolicyCategoryType u
+PolicyCategory u = ConceptCategory u
+
 
 --  PolicyCategory is subTypeOf ConceptCategory
 st-1a4648986afb7cd2-f882bd9d6afa3429 : ∀ {u v} → PolicyCategory u ⊏⋆ₑ ConceptCategory v
 st-1a4648986afb7cd2-f882bd9d6afa3429 = trivialPolySubTypeOfEntity
 
 postulate -- PolicyCategory is PowerInstanceOf Policy Category Type
-  pi-1a4648bc6afb7d7c : PolicyCategory ∷ₚₑ PolicyCategoryType
+  pi-1a4648bc6afb7d7c : ∀ {u} → PolicyCategory u  ∷ₚₑ PolicyCategoryType u 
 
 -- == Relations =======================

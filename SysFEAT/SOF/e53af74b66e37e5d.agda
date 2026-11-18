@@ -19,6 +19,7 @@ module SysFEAT.SOF.e53af74b66e37e5d where -- ========== MeasurePropertyType
 
 open import Agda.Primitive
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
+open import SysFEAT.UpperOntology.86b99dad6ac3265f public -- ElementaryPropertyType
 open import SysFEAT.SOF.4efc76226ae49da5 public -- MeasurementCategory
 
 MeasurePropertyType : ThirdOrderClass
@@ -28,6 +29,10 @@ MeasurePropertyType = SecondOrderClass
 --  MeasurePropertyType is subTypeOf ConditionPropertyType
 st-e53af74b66e37e5d-e53af71366e37de2 : MeasurePropertyType ⊏ₑ ConditionPropertyType
 st-e53af74b66e37e5d-e53af71366e37de2 = polySubTypeOf-identity
+
+--  MeasurePropertyType is subTypeOf ElementaryPropertyType
+st-e53af74b66e37e5d-86b99dad6ac3265f : MeasurePropertyType ⊏ₑ ElementaryPropertyType
+st-e53af74b66e37e5d-86b99dad6ac3265f = polySubTypeOf-identity
 
 
 -- == Relations =======================

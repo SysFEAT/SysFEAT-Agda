@@ -21,8 +21,8 @@ External references:
 module SysFEAT.SOF.515c6b23689335c3 where -- ========== Directive
 
 open import Agda.Primitive
-open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
+open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.7e3474f06af36c2f public -- PolicyCategoryType
@@ -32,13 +32,13 @@ Directive : AssetPropertyType
 Directive = AssetProperty
 
 
---  Directive is subTypeOf AssetProperty
-st-515c6b23689335c3-515c6a856893324e : Directive ⊏ₑ AssetProperty
-st-515c6b23689335c3-515c6a856893324e = polySubTypeOf-identity
-
 --  Directive withAspect PolicyAsset
 st-515c6b23689335c3-9397c3d86877842f : Directive ⊏ₐₑ PolicyAsset (lsuc( lzero))
 st-515c6b23689335c3-9397c3d86877842f = polySubTypeOf-identity
+
+--  Directive is subTypeOf AssetProperty
+st-515c6b23689335c3-515c6a856893324e : Directive ⊏ₑ AssetProperty
+st-515c6b23689335c3-515c6a856893324e = polySubTypeOf-identity
 
 --  Directive is subTypeOf CompositeProperty
 st-515c6b23689335c3-3e525e406ab05b0d : Directive ⊏ₑ CompositeProperty
@@ -81,13 +81,13 @@ DirectiveSubject = FirstOrderClass
 
 
 
---  DirectiveSubject withAspect UnboundedMember
-st-190c75cc689666a9-8cfaf71a6852b042 : DirectiveSubject ⊏ₐₑ UnboundedMember (lsuc( lzero))
-st-190c75cc689666a9-8cfaf71a6852b042 = polySubTypeOf-identity
-
 --  DirectiveSubject is subTypeOf FirstOrderClass
 st-190c75cc689666a9-c463c6106aa23c35 : DirectiveSubject ⊏ₑ FirstOrderClass
 st-190c75cc689666a9-c463c6106aa23c35 = polySubTypeOf-identity
+
+--  DirectiveSubject withAspect UnboundedMember
+st-190c75cc689666a9-8cfaf71a6852b042 : DirectiveSubject ⊏ₐₑ UnboundedMember (lsuc( lzero))
+st-190c75cc689666a9-8cfaf71a6852b042 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDirectiveSubject :  Linkage Directive DirectiveSubject

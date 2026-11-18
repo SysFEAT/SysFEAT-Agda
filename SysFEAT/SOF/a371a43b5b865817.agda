@@ -17,8 +17,8 @@ External references:
 module SysFEAT.SOF.a371a43b5b865817 where -- ========== OperatingAssetType
 
 open import Agda.Primitive
-open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.0c4559c86a033792 public -- OperatingAsset
+open import SysFEAT.SOF.a4a5b3f855585ce1 public -- AssetType
 open import SysFEAT.SOF.515c13db68953887 public -- Capability
 open import SysFEAT.SOF.190c74f868966584 public -- BehavioralRule
 
@@ -26,13 +26,13 @@ OperatingAssetType : BoundedIndividualMetaClass
 OperatingAssetType = ClassOfBoundedIndividual
 
 
---  OperatingAssetType is subTypeOf AssetType
-st-a371a43b5b865817-a4a5b3f855585ce1 : OperatingAssetType ⊏ₑ AssetType
-st-a371a43b5b865817-a4a5b3f855585ce1 = polySubTypeOf-identity
-
 --  OperatingAssetType withAspect OperatingAsset
 st-a371a43b5b865817-0c4559c86a033792 : OperatingAssetType ⊏ₐₑ OperatingAsset (lsuc( lzero))
 st-a371a43b5b865817-0c4559c86a033792 = polySubTypeOf-identity
+
+--  OperatingAssetType is subTypeOf AssetType
+st-a371a43b5b865817-a4a5b3f855585ce1 : OperatingAssetType ⊏ₑ AssetType
+st-a371a43b5b865817-a4a5b3f855585ce1 = polySubTypeOf-identity
 
 
 -- == Relations =======================
