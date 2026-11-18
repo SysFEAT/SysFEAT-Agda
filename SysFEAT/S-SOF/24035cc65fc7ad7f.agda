@@ -1,0 +1,45 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Concrete Software System: 
+A Concrete Software System is a Software System Type that is the concrete implementation of an Business Software System.
+
+Documentation : https://framework.sysfeat.com/pages/24035cc65fc7ad7f.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.24035cc65fc7ad7f where -- ========== ConcreteSOftwareSystem
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.ffdf5e1f68608352 public -- SOftwareSystemType
+open import SysFEAT.S-SOF.dd27aff168a108b9 public -- SOftwareTechnologyCapability
+open import SysFEAT.S-SOF.d6cd02865ab966e8 public -- BusinessSOftwareSystem
+
+ConcreteSOftwareSystem : AgentMetaClass
+ConcreteSOftwareSystem = AgentType
+
+
+--  ConcreteSOftwareSystem is subTypeOf SOftwareSystemType
+st-24035cc65fc7ad7f-ffdf5e1f68608352 : ConcreteSOftwareSystem ⊏ₑ SOftwareSystemType
+st-24035cc65fc7ad7f-ffdf5e1f68608352 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Fulfilled Technology Capability: -}
+fulfilledTechnologyCapability :  Linkage ConcreteSOftwareSystem SOftwareTechnologyCapability
+fulfilledTechnologyCapability = make_subTypeOf "Fulfilled Technology Capability" "Fulfilled Technology Capability"
+
+postulate -- fulfilledTechnologyCapability is subTypeOf fulfilledTechnologyCapability
+  st-dd27d12668a11786-dd27b1d668a10d0a  : fulfilledTechnologyCapability  ⊏⋆ᵣ  fulfilledTechnologyCapability
+
+-- -------------------------------------------------------------------------------------------- 
+{- Realized Software System: -}
+realizedSOftwareSystem :  Linkage ConcreteSOftwareSystem BusinessSOftwareSystem
+realizedSOftwareSystem = make_subTypeOf "Realized Software System" "Realized Software System"
+

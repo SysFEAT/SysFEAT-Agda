@@ -1,0 +1,93 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Physical Data Map: 
+A Physical Data Map is a top level grouping of Physical Data Domains.
+
+Documentation : https://framework.sysfeat.com/pages/f4be4bb95ee18b51.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.f4be4bb95ee18b51 where -- ========== PhysicalDataMap
+
+open import Agda.Primitive
+open import SysFEAT.S-SOF.6d2b80db5fbb700b public -- DataMap
+open import SysFEAT.S-SOF.8f1cad7d68ca9df0 public -- PhysicalDataBlock
+open import SysFEAT.S-SOF.028f03ff5b4f55ee public -- PhysicalDataDomain
+
+PhysicalDataMap : MetaClass
+PhysicalDataMap = MetaClass
+
+
+--  PhysicalDataMap is subTypeOf DataMap
+st-f4be4bb95ee18b51-6d2b80db5fbb700b : PhysicalDataMap ⊏ₑ DataMap
+st-f4be4bb95ee18b51-6d2b80db5fbb700b = polySubTypeOf-identity
+
+--  PhysicalDataMap withAspect PhysicalDataBlock
+st-f4be4bb95ee18b51-8f1cad7d68ca9df0 : PhysicalDataMap ⊏ₐₑ PhysicalDataBlock (lsuc( lzero))
+st-f4be4bb95ee18b51-8f1cad7d68ca9df0 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- External Physical Domain: -}
+-- Aggregate Member : External Physical Domain
+
+
+
+--  ExternalPhysicalDomain is subTypeOf ExternalDataArea
+st-4447473c5f4f6a69-fd1bf5b05fbc6c5a : ExternalPhysicalDomain ⊏ₑ ExternalDataArea
+st-4447473c5f4f6a69-fd1bf5b05fbc6c5a = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfExternalPhysicalDomain :  Linkage PhysicalDataMap ExternalPhysicalDomain
+membershipOfExternalPhysicalDomain = make_upwardNestingRelation "externalPhysicalDomain membership" "nested externalPhysicalDomain"
+
+-- Aggregation relation
+aggregationOfPhysicalDataDomainExternalPhysicalDomain :  Linkage ExternalPhysicalDomain PhysicalDataDomain
+aggregationOfPhysicalDataDomainExternalPhysicalDomain = make_Relation "PhysicalDataDomain aggregation" "aggregated PhysicalDataDomain"
+
+{- externalPhysicalDomain : derived relation obtained by composing
+   membershipOfExternalPhysicalDomain and aggregationOfPhysicalDataDomainExternalPhysicalDomain
+   It directly links an Physical Data Map to the final aggregated PhysicalDataDomain
+   hiding the reifying ExternalPhysicalDomain
+-}
+externalPhysicalDomain : Linkage PhysicalDataMap PhysicalDataDomain
+externalPhysicalDomain = membershipOfExternalPhysicalDomain  ∘  aggregationOfPhysicalDataDomainExternalPhysicalDomain
+
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Physical Domain Member: 
+Physical Data Domain that is a part of a Physical Data Map.
+-}
+-- Aggregate Member : Physical Domain Member
+
+
+
+--  PhysicalDomainMember is subTypeOf DataDomainMember
+st-f4be4c025ee18d1e-6d2b81965fbb71ad : PhysicalDomainMember ⊏ₑ DataDomainMember
+st-f4be4c025ee18d1e-6d2b81965fbb71ad = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfPhysicalDomainMember :  Linkage PhysicalDataMap PhysicalDomainMember
+membershipOfPhysicalDomainMember = make_upwardNestingRelation "physicalDomainMember membership" "nested physicalDomainMember"
+
+-- Aggregation relation
+aggregationOfPhysicalDataDomainPhysicalDomainMember :  Linkage PhysicalDomainMember PhysicalDataDomain
+aggregationOfPhysicalDataDomainPhysicalDomainMember = make_Relation "PhysicalDataDomain aggregation" "aggregated PhysicalDataDomain"
+
+{- physicalDomainMember : derived relation obtained by composing
+   membershipOfPhysicalDomainMember and aggregationOfPhysicalDataDomainPhysicalDomainMember
+   It directly links an Physical Data Map to the final aggregated PhysicalDataDomain
+   hiding the reifying PhysicalDomainMember
+-}
+physicalDomainMember : Linkage PhysicalDataMap PhysicalDataDomain
+physicalDomainMember = membershipOfPhysicalDomainMember  ∘  aggregationOfPhysicalDataDomainPhysicalDomainMember
+
+
