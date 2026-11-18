@@ -16,6 +16,7 @@ module SysFEAT.SOF.e53af85b66e37f78 where -- ========== EnvironmentalPropertyTyp
 
 open import Agda.Primitive
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
+open import SysFEAT.UpperOntology.86b99dad6ac3265f public -- ElementaryPropertyType
 open import SysFEAT.SOF.4efc77266ae49efb public -- EnvironmentalCategory
 
 EnvironmentalPropertyType : ThirdOrderClass
@@ -25,6 +26,10 @@ EnvironmentalPropertyType = SecondOrderClass
 --  EnvironmentalPropertyType is subTypeOf ConditionPropertyType
 st-e53af85b66e37f78-e53af71366e37de2 : EnvironmentalPropertyType ⊏ₑ ConditionPropertyType
 st-e53af85b66e37f78-e53af71366e37de2 = polySubTypeOf-identity
+
+--  EnvironmentalPropertyType is subTypeOf ElementaryPropertyType
+st-e53af85b66e37f78-86b99dad6ac3265f : EnvironmentalPropertyType ⊏ₑ ElementaryPropertyType
+st-e53af85b66e37f78-86b99dad6ac3265f = polySubTypeOf-identity
 
 
 -- == Relations =======================

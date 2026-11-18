@@ -26,4 +26,3 @@ st-a04ea65b6ae745ef-a04ea6866ae7465e : ∀ {u v} → ConceptualLevel u ⊏⋆ₑ
 st-a04ea65b6ae745ef-a04ea6866ae7465e = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

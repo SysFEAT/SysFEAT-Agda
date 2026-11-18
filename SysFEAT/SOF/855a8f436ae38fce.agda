@@ -26,4 +26,3 @@ st-855a8f436ae38fce-d85fe7f86afa53a1 : ∀ {u v} → MezzoOperatingAsset u ⊏�
 st-855a8f436ae38fce-d85fe7f86afa53a1 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

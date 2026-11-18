@@ -24,6 +24,7 @@ open import SysFEAT.SOF.e53af87666e37fcd public -- SetOfEnvironmentalConditionTy
 SetOfConditionProperties : SetOfEnvironmentalConditionType
 SetOfConditionProperties = CompositeProperty
 
+
 --  SetOfConditionProperties is subTypeOf ConditionProperty
 st-21ed5bf7689c1ca3-21ed231d689c0679 : SetOfConditionProperties ⊏ₑ ConditionProperty
 st-21ed5bf7689c1ca3-21ed231d689c0679 = polySubTypeOf-identity

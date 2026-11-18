@@ -24,6 +24,7 @@ open import SysFEAT.SOF.ef5df90463212593 public -- LocationType
 Location : LocationType
 Location = BoundedIndividual
 
+
 --  Location is subTypeOf BoundedIndividual
 st-8d5e986f552e28d5-28f07b2354be0d69 : Location ⊏ₑ BoundedIndividual
 st-8d5e986f552e28d5-28f07b2354be0d69 = polySubTypeOf-identity

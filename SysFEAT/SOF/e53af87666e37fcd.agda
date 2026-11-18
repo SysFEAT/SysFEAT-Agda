@@ -18,6 +18,7 @@ module SysFEAT.SOF.e53af87666e37fcd where -- ========== SetOfEnvironmentalCondit
 
 open import Agda.Primitive
 open import SysFEAT.SOF.e53af71366e37de2 public -- ConditionPropertyType
+open import SysFEAT.UpperOntology.86b99fec6ac32863 public -- CompositePropertyType
 
 SetOfEnvironmentalConditionType : ThirdOrderClass
 SetOfEnvironmentalConditionType = SecondOrderClass
@@ -26,6 +27,10 @@ SetOfEnvironmentalConditionType = SecondOrderClass
 --  SetOfEnvironmentalConditionType is subTypeOf ConditionPropertyType
 st-e53af87666e37fcd-e53af71366e37de2 : SetOfEnvironmentalConditionType ⊏ₑ ConditionPropertyType
 st-e53af87666e37fcd-e53af71366e37de2 = polySubTypeOf-identity
+
+--  SetOfEnvironmentalConditionType is subTypeOf CompositePropertyType
+st-e53af87666e37fcd-86b99fec6ac32863 : SetOfEnvironmentalConditionType ⊏ₑ CompositePropertyType
+st-e53af87666e37fcd-86b99fec6ac32863 = polySubTypeOf-identity
 
 
 -- == Relations =======================

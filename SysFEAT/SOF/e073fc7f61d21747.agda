@@ -26,4 +26,3 @@ st-e073fc7f61d21747-e073f9c161d2104a : Advise ⊏ₑ Resolution
 st-e073fc7f61d21747-e073f9c161d2104a = polySubTypeOf-identity
 
 
--- == Relations =======================

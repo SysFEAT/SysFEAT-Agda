@@ -25,6 +25,7 @@ open import SysFEAT.SOF.9e3837e46192fcad public -- IndividualAgent
 IndividualBehavior : BehaviorType
 IndividualBehavior = IndividualAsset
 
+
 --  IndividualBehavior is subTypeOf IndividualOperatingAsset
 st-e9af119866e86785-9f61cf9166833fb7 : IndividualBehavior ⊏ₑ IndividualOperatingAsset
 st-e9af119866e86785-9f61cf9166833fb7 = polySubTypeOf-identity
@@ -41,6 +42,7 @@ An Individual Behavior Part is the Aggregate Holonymy of an Individual Behavior 
 -- Aggregate Member : Individual Behavior Part
 IndividualBehaviorPart : BehaviorPart
 IndividualBehaviorPart = AggregateHolonymy
+
 
 
 --  IndividualBehaviorPart is subTypeOf IndividualOperatingPart

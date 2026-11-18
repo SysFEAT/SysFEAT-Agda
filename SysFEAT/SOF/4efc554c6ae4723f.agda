@@ -26,4 +26,3 @@ st-4efc554c6ae4723f-d85fe7f86afa53a1 : ∀ {u v} → MicroOperatingAsset u ⊏�
 st-4efc554c6ae4723f-d85fe7f86afa53a1 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

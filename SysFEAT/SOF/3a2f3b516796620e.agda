@@ -22,6 +22,7 @@ open import SysFEAT.SOF.e13ce1cd678f1111 public -- WholeLifeAssetType
 WholeLifeAsset : WholeLifeAssetType
 WholeLifeAsset = IndividualAsset
 
+
 --  WholeLifeAsset is subTypeOf IndividualAsset
 st-3a2f3b516796620e-ebcfaeac5ad76ed7 : WholeLifeAsset ⊏ₑ IndividualAsset
 st-3a2f3b516796620e-ebcfaeac5ad76ed7 = polySubTypeOf-identity

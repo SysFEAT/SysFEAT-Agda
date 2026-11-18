@@ -29,4 +29,3 @@ st-ef5df90463212593-3492c53e619642ed : LocationType ⊏ₑ ClassOfBoundedIndivid
 st-ef5df90463212593-3492c53e619642ed = polySubTypeOf-identity
 
 
--- == Relations =======================

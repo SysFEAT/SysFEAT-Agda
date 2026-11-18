@@ -21,6 +21,7 @@ open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 AssetProperty : AssetPropertyType
 AssetProperty = Property
 
+
 --  AssetProperty is subTypeOf Property
 st-515c6a856893324e-746ac18368905aa2 : AssetProperty ⊏ₑ Property
 st-515c6a856893324e-746ac18368905aa2 = polySubTypeOf-identity

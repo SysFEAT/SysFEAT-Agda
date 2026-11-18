@@ -22,6 +22,7 @@ open import SysFEAT.SOF.e53af85b66e37f78 public -- EnvironmentalPropertyType
 EnvironmentalProperty : EnvironmentalPropertyType
 EnvironmentalProperty = ElementaryProperty
 
+
 --  EnvironmentalProperty is subTypeOf ConditionProperty
 st-21ed58f3689c19f4-21ed231d689c0679 : EnvironmentalProperty ⊏ₑ ConditionProperty
 st-21ed58f3689c19f4-21ed231d689c0679 = polySubTypeOf-identity

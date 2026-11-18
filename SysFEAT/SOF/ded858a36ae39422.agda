@@ -26,4 +26,3 @@ st-ded858a36ae39422-d85fe7f86afa53a1 : ∀ {u v} → MacroOperatingAsset u ⊏�
 st-ded858a36ae39422-d85fe7f86afa53a1 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================

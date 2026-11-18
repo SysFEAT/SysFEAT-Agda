@@ -15,10 +15,16 @@ Documentation : https://framework.sysfeat.com/pages/3a2f3c44679664b5.htm
 module SysFEAT.SOF.3a2f3c44679664b5 where -- ========== AssetState
 
 open import Agda.Primitive
-open import SysFEAT.SOF.e13ce269678f11ed public -- AssetStateType
 open import SysFEAT.SOF.ebcfaeac5ad76ed7 public -- IndividualAsset
+open import SysFEAT.SOF.e13ce269678f11ed public -- AssetStateType
+
+AssetState : AssetStateType
+AssetState = IndividualAsset
 
 
+--  AssetState is subTypeOf IndividualAsset
+st-3a2f3c44679664b5-ebcfaeac5ad76ed7 : AssetState ⊏ₑ IndividualAsset
+st-3a2f3c44679664b5-ebcfaeac5ad76ed7 = polySubTypeOf-identity
 
 postulate -- AssetState is PowerInstanceOf Asset State Type
   pi-9e79b30e68d25de0 : AssetState ∷ₚₑ AssetStateType

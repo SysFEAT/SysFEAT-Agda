@@ -26,4 +26,3 @@ st-1a461faf6afb5a0e-1a461f766afb5920 : ∀ {u v} → LogicalLevel u ⊏⋆ₑ Re
 st-1a461faf6afb5a0e-1a461f766afb5920 = trivialPolySubTypeOfEntity
 
 
--- == Relations =======================
