@@ -1,0 +1,34 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Resource Event: 
+A Resource Event is a Behavioral Event produced and consumed by Resource Behaviors.
+
+Documentation : https://framework.sysfeat.com/pages/6a70c0c8678769d3.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.R-SOF.6a70c0c8678769d3 where -- ========== ResourceEvent
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.9bec9fbf66fb0d6f public -- ResourceFunctionalAsset
+open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
+
+ResourceEvent : BoundedIndividualMetaClass
+ResourceEvent = ClassOfBoundedIndividual
+
+
+--  ResourceEvent is subTypeOf ResourceFunctionalAsset
+st-6a70c0c8678769d3-9bec9fbf66fb0d6f : ResourceEvent ⊏ₑ ResourceFunctionalAsset
+st-6a70c0c8678769d3-9bec9fbf66fb0d6f = polySubTypeOf-identity
+
+--  ResourceEvent is subTypeOf BehavioralEvent
+st-6a70c0c8678769d3-24ae31d75ed1c747 : ResourceEvent ⊏ₑ BehavioralEvent
+st-6a70c0c8678769d3-24ae31d75ed1c747 = polySubTypeOf-identity
+
+
+-- == Relations =======================

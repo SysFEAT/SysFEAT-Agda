@@ -1,0 +1,81 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Resource Behavior: 
+An Resource Behavior is an Resource Operating Asset Type that describes any action or reaction of a Resource Agent Type to external or internal circumstances. This includes Resource Action Processes (actions), Resource Interaction Processs (stories) or service interactions (Business Service Interface).
+
+Documentation : https://framework.sysfeat.com/pages/0185cd936221bd72.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.R-SOF.0185cd936221bd72 where -- ========== ResourceBehavior
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.SOF.986cd4ec5ffca3ac public -- BehaviorType
+open import SysFEAT.R-SOF.e2ef091962147ad7 public -- ResourceAgentType
+
+ResourceBehavior : BehaviorMetaClass
+ResourceBehavior = BehaviorType
+
+
+--  ResourceBehavior is subTypeOf ResourceOperatingAssetType
+st-0185cd936221bd72-f8e61da0621db6fa : ResourceBehavior ⊏ₑ ResourceOperatingAssetType
+st-0185cd936221bd72-f8e61da0621db6fa = polySubTypeOf-identity
+
+--  ResourceBehavior is subTypeOf BehaviorType
+st-0185cd936221bd72-986cd4ec5ffca3ac : ResourceBehavior ⊏ₑ BehaviorType
+st-0185cd936221bd72-986cd4ec5ffca3ac = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Specialized Resource Behavior: -}
+specializedResourceBehavior :  Linkage ResourceBehavior ResourceBehavior
+specializedResourceBehavior = make_subTypeOf "Specialized Resource Behavior" "Specialized Resource Behavior"
+
+postulate -- specializedResourceBehavior is subTypeOf specializedBehavior
+  st-325a376866f343d3-2b5b452d66ed5855  : specializedResourceBehavior  ⊏⋆ᵣ  specializedBehavior
+postulate -- specializedResourceBehavior is subTypeOf specializedResourceOperatingAsset
+  st-325a376866f343d3-82a9879766ec3a29  : specializedResourceBehavior  ⊏⋆ᵣ  specializedResourceOperatingAsset
+
+-- -------------------------------------------------------------------------------------------- 
+{- Resource Behavior Participant: 
+A Resource Behavior Participant is the participation of a Resource Agent Type in a Resource Behavior.
+-}
+-- Aggregate Member : Resource Behavior Participant
+ResourceBehaviorParticipant : ClassOfClassOfIndividual
+ResourceBehaviorParticipant = ClassOfIndividual
+
+
+
+--  ResourceBehaviorParticipant is subTypeOf BehaviorParticipant
+st-e0e874626578a341-e0e86fad65789c43 : ResourceBehaviorParticipant ⊏ₑ BehaviorParticipant
+st-e0e874626578a341-e0e86fad65789c43 = polySubTypeOf-identity
+
+--  ResourceBehaviorParticipant is subTypeOf ResourceOperatingAssetPart
+st-e0e874626578a341-b776bf0868b0fbb3 : ResourceBehaviorParticipant ⊏ₑ ResourceOperatingAssetPart
+st-e0e874626578a341-b776bf0868b0fbb3 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfResourceBehaviorParticipant :  Linkage ResourceBehavior ResourceBehaviorParticipant
+membershipOfResourceBehaviorParticipant = make_upwardNestingRelation "resourceBehaviorParticipant membership" "nested resourceBehaviorParticipant"
+
+-- Aggregation relation
+aggregationOfResourceAgentTypeResourceBehaviorParticipant :  Linkage ResourceBehaviorParticipant ResourceAgentType
+aggregationOfResourceAgentTypeResourceBehaviorParticipant = make_Relation "ResourceAgentType aggregation" "aggregated ResourceAgentType"
+
+{- resourceBehaviorParticipant : derived relation obtained by composing
+   membershipOfResourceBehaviorParticipant and aggregationOfResourceAgentTypeResourceBehaviorParticipant
+   It directly links an Resource Behavior to the final aggregated ResourceAgentType
+   hiding the reifying ResourceBehaviorParticipant
+-}
+resourceBehaviorParticipant : Linkage ResourceBehavior ResourceAgentType
+resourceBehaviorParticipant = membershipOfResourceBehaviorParticipant  ∘  aggregationOfResourceAgentTypeResourceBehaviorParticipant
+
+
