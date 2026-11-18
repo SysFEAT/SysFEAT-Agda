@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/f160fb6267d72652.htm
 module SysFEAT.EA.f160fb6267d72652 where -- ========== MezzoBusinessSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
+open import SysFEAT.R-SOF.278675d65b252f4d public -- BusinessSystem
 open import SysFEAT.EA.61e3afb3679f1256 public -- MezzoResourceOperatingAsset
 
 MezzoBusinessSystem : BoundedIndividualMetaClass
-MezzoBusinessSystem = AssetType
+MezzoBusinessSystem = ClassOfBoundedIndividual
 
 
 --  MezzoBusinessSystem is subTypeOf BusinessSystem

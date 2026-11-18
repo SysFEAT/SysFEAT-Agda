@@ -19,15 +19,15 @@ External references:
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-2d1874635ac352f3 where -- ========== Business Operations
 
-open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
-open import SysFEAT.EA.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
+open import SysFEAT.R-SOF.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
+open import SysFEAT.S-SOF.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
 open import SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 public -- System Operating Framework - SOF
-open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
 open import SysFEAT.EA.sysfeat-domain-d17029ff5be84c49 public -- Product & Customer Experience
-open import SysFEAT.EA.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
-open import SysFEAT.EA.sysfeat-domain-2b58a67a5eec0662 public -- EA Pattern - Data Domain
+open import SysFEAT.R-SOF.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
+open import SysFEAT.S-SOF.sysfeat-domain-2b58a67a5eec0662 public -- EA Pattern - Data Domain
 open import SysFEAT.SOF.sysfeat-domain-69346af86005efa9 public -- Initiative and Transformation Pattern
 open import SysFEAT.EA.sysfeat-domain-c30bf8035a5dba7f public -- Organization & Processes
-open import SysFEAT.EA.sysfeat-domain-c80a10c167853bca public -- EA Pattern - Physical Resource Agent
+open import SysFEAT.R-SOF.sysfeat-domain-c80a10c167853bca public -- EA Pattern - Physical Resource Agent
 

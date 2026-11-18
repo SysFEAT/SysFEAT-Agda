@@ -21,10 +21,10 @@ module SysFEAT.EA.076d151c5a5e1561 where -- ========== OrganizationalPosition
 
 open import Agda.Primitive
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
-open import SysFEAT.EA.278675d65b252f4d public -- BusinessSystem
+open import SysFEAT.R-SOF.278675d65b252f4d public -- BusinessSystem
 
 OrganizationalPosition : BoundedIndividualMetaClass
-OrganizationalPosition = AssetType
+OrganizationalPosition = ClassOfBoundedIndividual
 
 
 --  OrganizationalPosition is subTypeOf OrgUnitType
@@ -47,8 +47,7 @@ postulate -- specializedPositionType is subTypeOf specializedResourceAgent
 An Equipment is a Business System made available to an Organizational Position for the purpose of accomplishing his/her work.For example, numerous companies equip their employees with smartphones to facilitate coordination of their activities.
 -}
 -- Aggregate Member : Equipment
-Equipment : ClassOfClassOfIndividual
-Equipment = ClassOfIndividual
+
 
 
 -- Membership relation

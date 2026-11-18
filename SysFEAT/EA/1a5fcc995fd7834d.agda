@@ -16,7 +16,6 @@ module SysFEAT.EA.1a5fcc995fd7834d where -- ========== CustomerJourneyPhase
 
 open import Agda.Primitive
 
-CustomerJourneyPhase : ClassOfClassOfBoundedIndividual
-CustomerJourneyPhase = ClassOfBoundedIndividual
+
 
 

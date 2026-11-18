@@ -17,11 +17,11 @@ External references:
 module SysFEAT.EA.3b1bb6eb68cd9da2 where -- ========== IndividualIntangibleResourceAgent
 
 open import Agda.Primitive
-open import SysFEAT.EA.fe1c231267880201 public -- IndividualResourceAgent
-open import SysFEAT.EA.c80afd2f6784305d public -- IntangibleResourceAgent
+open import SysFEAT.R-SOF.fe1c231267880201 public -- IndividualResourceAgent
+open import SysFEAT.R-SOF.c80afd2f6784305d public -- IntangibleResourceAgent
 
-IndividualIntangibleResourceAgent : AgentType
-IndividualIntangibleResourceAgent = IndividualAgent
+IndividualIntangibleResourceAgent : IntangibleResourceAgent
+IndividualIntangibleResourceAgent = IndividualResourceAgent
 
 
 --  IndividualIntangibleResourceAgent is subTypeOf IndividualResourceAgent

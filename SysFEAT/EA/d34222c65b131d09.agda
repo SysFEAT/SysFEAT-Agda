@@ -45,17 +45,17 @@ postulate -- subProject is subTypeOf subTeam
 -- -------------------------------------------------------------------------------------------- 
 {- Architecture Deliverable: -}
 -- Aggregate Member : Architecture Deliverable
-ArchitectureDeliverable : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ArchitectureDeliverable u  = MixedOrderEntity u 
+ArchitectureDeliverable : ∀ (u : Level) → ClassOfMixedOrderEntity u
+ArchitectureDeliverable u = MixedOrderEntity u
 
 
 
 --  ArchitectureDeliverable is subTypeOf UnboundedMember
-st-6bf178f2685976d3-8cfaf71a6852b042 : ∀ {u v} → (ArchitectureDeliverable u) ⊏⋆ₑ (UnboundedMember v)
+st-6bf178f2685976d3-8cfaf71a6852b042 : ∀ {u v} → ArchitectureDeliverable u ⊏⋆ₑ UnboundedMember v
 st-6bf178f2685976d3-8cfaf71a6852b042 = trivialPolySubTypeOfEntity
 
 --  ArchitectureDeliverable is subTypeOf BlockMember
-st-6bf178f2685976d3-fb660d4b68699ec2 : ∀ {u v} → (ArchitectureDeliverable u) ⊏⋆ₑ (BlockMember v)
+st-6bf178f2685976d3-fb660d4b68699ec2 : ∀ {u v} → ArchitectureDeliverable u ⊏⋆ₑ BlockMember v
 st-6bf178f2685976d3-fb660d4b68699ec2 = trivialPolySubTypeOfEntity
 
 -- Membership relation

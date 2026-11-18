@@ -79,13 +79,13 @@ postulate -- /ManagementRoadmap is subTypeOf roadmap
 -- -------------------------------------------------------------------------------------------- 
 {- Management System Subject: -}
 -- Aggregate Member : Management System Subject
-ManagementSystemSubject : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-ManagementSystemSubject u  = MixedOrderEntity u 
+ManagementSystemSubject : ∀ (u : Level) → ClassOfHolonymy (lsuc(lsuc u))
+ManagementSystemSubject u = holonymyRelation u
 
 
 
 --  ManagementSystemSubject is subTypeOf InitiativeSubject
-st-6bf17ffc68598c26-0f642fd06859b0d5 : ∀ {u v} → (ManagementSystemSubject u) ⊏⋆ₑ (InitiativeSubject v)
+st-6bf17ffc68598c26-0f642fd06859b0d5 : ∀ {u v} → ManagementSystemSubject u ⊏⋆ₑ InitiativeSubject v
 st-6bf17ffc68598c26-0f642fd06859b0d5 = trivialPolySubTypeOfEntity
 
 -- Membership relation

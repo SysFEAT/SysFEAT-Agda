@@ -16,7 +16,7 @@ module SysFEAT.EA.003f595c64775717 where -- ========== DataQualityIndicator
 
 open import Agda.Primitive
 open import SysFEAT.SOF.8f46e8eb64b7719a public -- KeyIndicator
-open import SysFEAT.EA.b90aeac8600e619f public -- DataAssuranceCase
+open import SysFEAT.OA-SOF.b90aeac8600e619f public -- DataAssuranceCase
 
 DataQualityIndicator : ClassOfBoundedIndividual
 DataQualityIndicator = BoundedIndividual
@@ -32,8 +32,7 @@ st-003f595c64775717-8f46e8eb64b7719a = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Monitored Data Assurance Case: -}
 -- Aggregate Member : Monitored Data Assurance Case
-MonitoredDataAssuranceCase : ClassOfClassOfIndividual
-MonitoredDataAssuranceCase = ClassOfIndividual
+
 
 
 -- Membership relation

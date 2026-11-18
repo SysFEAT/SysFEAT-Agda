@@ -25,11 +25,11 @@ ProjectType = MixedOrderEntity
 
 
 --  ProjectType withAspect ProgramAsset
-st-24ac695354881cbe-52e0b14c6abf4c76 : ProjectType ⊏ₐₑ (ProgramAsset (lsuc(lzero)))
+st-24ac695354881cbe-52e0b14c6abf4c76 : ProjectType ⊏ₐₑ ProgramAsset (lsuc( lzero))
 st-24ac695354881cbe-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 --  ProjectType withAspect ModelCategorizationBlock
-st-24ac695354881cbe-0eb97aff6855cd23 : ProjectType ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
+st-24ac695354881cbe-0eb97aff6855cd23 : ProjectType ⊏ₐₑ ModelCategorizationBlock (lsuc( lzero))
 st-24ac695354881cbe-0eb97aff6855cd23 = polySubTypeOf-identity
 
 

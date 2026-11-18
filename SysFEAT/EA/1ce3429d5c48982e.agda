@@ -17,7 +17,7 @@ module SysFEAT.EA.1ce3429d5c48982e where -- ========== ApplicationPortfolio
 open import Agda.Primitive
 open import SysFEAT.EA.26b8889c5eea8ab7 public -- AssetPortfolio
 open import SysFEAT.EA.052015c666474dfe public -- ApplicationPortfolioStage
-open import SysFEAT.EA.bcebd8e9549144db public -- Application
+open import SysFEAT.S-SOF.bcebd8e9549144db public -- Application
 
 ApplicationPortfolio : ClassOfBoundedIndividual
 ApplicationPortfolio = BoundedIndividual
@@ -43,8 +43,8 @@ postulate -- roadmap is subTypeOf portfolioRoadmap
 A Managed Application represents the status of an Application under the management of an Application Portfolio.
 -}
 -- Aggregate Member : Managed Application
-ManagedApplication : ClassOfMixedOrderEntity
-ManagedApplication = MixedOrderEntity
+ManagedApplication : ClassOfHolonymy
+ManagedApplication = holonymyRelation
 
 
 

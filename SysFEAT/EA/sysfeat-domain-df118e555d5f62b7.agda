@@ -13,16 +13,16 @@ Documentation : https://framework.sysfeat.com/pages/df118e555d5f62b7.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-df118e555d5f62b7 where -- ========== Facility & Platform ArcOps
 
-open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
-open import SysFEAT.EA.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
+open import SysFEAT.R-SOF.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
+open import SysFEAT.S-SOF.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
-open import SysFEAT.EA.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
-open import SysFEAT.EA.sysfeat-domain-25c09f1b61e2f2a0 public -- SOF - Business Software Operating Model
-open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
-open import SysFEAT.EA.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
-open import SysFEAT.EA.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
+open import SysFEAT.S-SOF.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
+open import SysFEAT.S-SOF.sysfeat-domain-25c09f1b61e2f2a0 public -- SOF - Business Software Operating Model
+open import SysFEAT.R-SOF.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
+open import SysFEAT.R-SOF.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
 open import SysFEAT.EA.sysfeat-domain-a951ee816194126b public -- Facility Asset Architecture
-open import SysFEAT.EA.sysfeat-domain-362f37625b3b2050 public -- Physical Data Domain
+open import SysFEAT.S-SOF.sysfeat-domain-362f37625b3b2050 public -- Physical Data Domain
 open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
-open import SysFEAT.EA.sysfeat-domain-c80a74e46785ad9f public -- SOF -  Business Hardware Operating Model
+open import SysFEAT.H-SOF.sysfeat-domain-c80a74e46785ad9f public -- SOF -  Business Hardware Operating Model
 

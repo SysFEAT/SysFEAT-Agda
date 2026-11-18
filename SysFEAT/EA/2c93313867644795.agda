@@ -16,7 +16,6 @@ module SysFEAT.EA.2c93313867644795 where -- ========== DeployedSOftwareSystem
 
 open import Agda.Primitive
 
-DeployedSOftwareSystem : ClassOfBoundedIndividual
-DeployedSOftwareSystem = BoundedIndividual
+
 
 

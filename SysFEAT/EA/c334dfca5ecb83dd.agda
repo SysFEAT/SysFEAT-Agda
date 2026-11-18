@@ -16,13 +16,13 @@ module SysFEAT.EA.c334dfca5ecb83dd where -- ========== BusinessScenario
 
 open import Agda.Primitive
 open import SysFEAT.EA.2b705f2661ba04de public -- BusinessEcosystem
-open import SysFEAT.EA.2b6f337e61bae6d6 public -- BusinessEnvironmentScenario
+open import SysFEAT.R-SOF.2b6f337e61bae6d6 public -- BusinessEnvironmentScenario
 open import SysFEAT.EA.6f4b92d65fd3b49b public -- BusinessEnvironment
 open import SysFEAT.C-SOF.08d181af678a2d51 public -- Customer
 open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 
 BusinessScenario : BoundedIndividualMetaClass
-BusinessScenario = AssetType
+BusinessScenario = ClassOfBoundedIndividual
 
 
 --  BusinessScenario is subTypeOf BusinessEcosystem
@@ -47,8 +47,6 @@ postulate -- scenarizedBusinessEnvironment is subTypeOf scenarizedBusinessEnviro
 -- -------------------------------------------------------------------------------------------- 
 {- Served customer: -}
 -- Aggregate Member : Served customer
-Servedcustomer : ClassOfMixedOrderEntity
-Servedcustomer = MixedOrderEntity
 
 
 
@@ -77,8 +75,6 @@ servedcustomer = membershipOfServedcustomer  ∘  aggregationOfCustomerServedcus
 -- -------------------------------------------------------------------------------------------- 
 {- Subject-Department: -}
 -- Aggregate Member : Subject-Department
-SubjectDepartment : ClassOfMixedOrderEntity
-SubjectDepartment = MixedOrderEntity
 
 
 
@@ -111,8 +107,6 @@ subjectDepartment = membershipOfSubjectDepartment  ∘  aggregationOfDepartmentT
 -- -------------------------------------------------------------------------------------------- 
 {- Partner Department: -}
 -- Aggregate Member : Partner Department
-PartnerDepartment : ClassOfMixedOrderEntity
-PartnerDepartment = MixedOrderEntity
 
 
 

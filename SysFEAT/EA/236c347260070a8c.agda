@@ -19,7 +19,7 @@ open import SysFEAT.SOF.173706265fe3f332 public -- MeasurementInstrument
 open import SysFEAT.EA.d170d9925be73b35 public -- PainPointType
 open import SysFEAT.EA.8a5c926e5c0d632c public -- CustomerActivity
 
-Painpoint : ClassOfBoundedIndividual
+Painpoint : PainPointType
 Painpoint = BoundedIndividual
 
 

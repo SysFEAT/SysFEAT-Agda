@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/c94a7376684a0c07.htm
 module SysFEAT.EA.c94a7376684a0c07 where -- ========== ResourceOperationalAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
 ResourceOperationalAsset : BoundedIndividualMetaClass
-ResourceOperationalAsset = AssetType
+ResourceOperationalAsset = ClassOfBoundedIndividual
 
 
 --  ResourceOperationalAsset is subTypeOf ResourceOperatingAssetType

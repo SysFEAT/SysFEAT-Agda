@@ -17,8 +17,7 @@ module SysFEAT.EA.762577d85f6b7dcc where -- ========== Syncrhonization
 open import Agda.Primitive
 open import SysFEAT.EA.762579ee5f6b8724 public -- InventoryPeriod
 
-Syncrhonization : ClassOfIndividual
-Syncrhonization = Individual
+
 
 
 -- == Relations =======================

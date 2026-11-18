@@ -24,7 +24,7 @@ open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 
 LegalEntityType : BoundedIndividualMetaClass
-LegalEntityType = AssetType
+LegalEntityType = ClassOfBoundedIndividual
 
 
 --  LegalEntityType is subTypeOf OrgUnitType
@@ -37,8 +37,7 @@ st-c0a3c7c666417665-076d15425a5e158c = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Department Type: -}
 -- Aggregate Member : Department Type
-DepartmentType : ClassOfClassOfIndividual
-DepartmentType = ClassOfIndividual
+
 
 
 -- Membership relation

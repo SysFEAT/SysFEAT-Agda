@@ -16,14 +16,14 @@ module SysFEAT.EA.61e3afb3679f1256 where -- ========== MezzoResourceOperatingAss
 
 open import Agda.Primitive
 open import SysFEAT.SOF.855a8f436ae38fce public -- MezzoOperatingAsset
-open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
-MezzoResourceOperatingAsset : BoundedIndividualMetaClass
-MezzoResourceOperatingAsset = AssetType
+MezzoResourceOperatingAsset : AbstractionCategoryType
+MezzoResourceOperatingAsset = AbstractionCategory
 
 
 --  MezzoResourceOperatingAsset withAspect MezzoOperatingAsset
-st-61e3afb3679f1256-855a8f436ae38fce : MezzoResourceOperatingAsset ⊏ₐₑ (MezzoOperatingAsset (lsuc(lzero)))
+st-61e3afb3679f1256-855a8f436ae38fce : MezzoResourceOperatingAsset ⊏ₐₑ MezzoOperatingAsset lzero
 st-61e3afb3679f1256-855a8f436ae38fce = polySubTypeOf-identity
 
 --  MezzoResourceOperatingAsset is subTypeOf ResourceOperatingAssetType

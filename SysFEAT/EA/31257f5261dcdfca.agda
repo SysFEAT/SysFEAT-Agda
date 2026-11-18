@@ -16,7 +16,6 @@ module SysFEAT.EA.31257f5261dcdfca where -- ========== ProductPortfolioStage
 
 open import Agda.Primitive
 
-ProductPortfolioStage : ClassOfBoundedIndividual
-ProductPortfolioStage = BoundedIndividual
+
 
 

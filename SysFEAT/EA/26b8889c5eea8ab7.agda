@@ -44,7 +44,7 @@ st-26b8889c5eea8ab7-05201bc866475765 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Portfolio Functional Scope: -}
 portfolioFunctionalScope :  Linkage AssetPortfolio ResourceCapabilityMap
-portfolioFunctionalScope = make_Relation "Portfolio Functional Scope" "Portfolio Functional Scope"
+portfolioFunctionalScope = make_instanceOf "Portfolio Functional Scope" "Portfolio Functional Scope"
 
 postulate -- portfolioFunctionalScope is subTypeOf functionalScope
   st-dd2630ca68a0669f-01f1214c689b6e0f  : portfolioFunctionalScope  ⊏⋆ᵣ  functionalScope
@@ -64,13 +64,13 @@ postulate -- portfolioRoadmap is subTypeOf /ManagementRoadmap
 A Managed Resource Asset represents the status of a Business Operating Asset which creation, maintenance, evolutation and rating is under the control of an Asset Portfolio.
 -}
 -- Aggregate Member : Managed Resource Asset
-ManagedResourceAsset : ClassOfMixedOrderEntity
-ManagedResourceAsset = MixedOrderEntity
+ManagedResourceAsset : ClassOfHolonymy
+ManagedResourceAsset = holonymyRelation
 
 
 
 --  ManagedResourceAsset withAspect ManagementSystemSubject
-st-f57af6ca62d21904-6bf17ffc68598c26 : ManagedResourceAsset ⊏ₐₑ (ManagementSystemSubject (lsuc(lzero)))
+st-f57af6ca62d21904-6bf17ffc68598c26 : ManagedResourceAsset ⊏ₐₑ ManagementSystemSubject (lsuc( lzero))
 st-f57af6ca62d21904-6bf17ffc68598c26 = polySubTypeOf-identity
 
 -- Membership relation

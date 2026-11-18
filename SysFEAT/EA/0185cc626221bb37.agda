@@ -17,11 +17,11 @@ External references:
 module SysFEAT.EA.0185cc626221bb37 where -- ========== BusinessEvent
 
 open import Agda.Primitive
-open import SysFEAT.EA.6a70b9f6678763db public -- BusinessFunctionalAsset
+open import SysFEAT.R-SOF.6a70b9f6678763db public -- BusinessFunctionalAsset
 open import SysFEAT.SOF.24ae31d75ed1c747 public -- BehavioralEvent
 
 BusinessEvent : BoundedIndividualMetaClass
-BusinessEvent = AssetType
+BusinessEvent = ClassOfBoundedIndividual
 
 
 --  BusinessEvent is subTypeOf BusinessFunctionalAsset

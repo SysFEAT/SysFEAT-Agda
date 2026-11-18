@@ -24,12 +24,12 @@ module SysFEAT.EA.910196ca550a2ec2 where -- ========== Organization
 
 open import Agda.Primitive
 open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
-open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.R-SOF.66f8685a620b1440 public -- IndividualBusinessAgent
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 open import SysFEAT.EA.c7dad43c5ae92d25 public -- Person
 
-Organization : AgentType
-Organization = IndividualAgent
+Organization : OrgUnitType
+Organization = IndividualBusinessAgent
 
 
 --  Organization is subTypeOf ResponsibleHumanEntity
@@ -48,8 +48,6 @@ postulate -- Organization is PowerInstanceOf Org-Unit Type
 -- -------------------------------------------------------------------------------------------- 
 {- Sub Contractor: -}
 -- Aggregate Member : Sub Contractor
-SubContractor : ClassOfOrderedEntity (lsuc(lzero))
-SubContractor = AggregateMember (lsuc(lzero))
 
 
 
@@ -74,8 +72,6 @@ subContractor = membershipOfSubContractor  ∘  aggregationOfOrganizationSubCont
 -- -------------------------------------------------------------------------------------------- 
 {- Organizational Position: -}
 -- Aggregate Member : Organizational Position
-OrganizationalPosition : ClassOfOrderedEntity (lsuc(lzero))
-OrganizationalPosition = AggregateMember (lsuc(lzero))
 
 
 
@@ -100,8 +96,6 @@ organizationalPosition = membershipOfOrganizationalPosition  ∘  aggregationOfP
 -- -------------------------------------------------------------------------------------------- 
 {- Organizational Reponsibility: -}
 -- Aggregate Member : Organizational Reponsibility
-OrganizationalReponsibility : ClassOfOrderedEntity (lsuc(lzero))
-OrganizationalReponsibility = AggregateMember (lsuc(lzero))
 
 
 
@@ -126,8 +120,6 @@ organizationalReponsibility = membershipOfOrganizationalReponsibility  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Unit: -}
 -- Aggregate Member : Sub-Unit
-SubUnit : ClassOfOrderedEntity (lsuc(lzero))
-SubUnit = AggregateMember (lsuc(lzero))
 
 
 

@@ -17,9 +17,9 @@ External references:
 module SysFEAT.EA.1084480e5fce4ccb where -- ========== ApplicationSystemDeploymentArchitecture
 
 open import Agda.Primitive
-open import SysFEAT.EA.10844c325fce4e80 public -- SOftwareDeploymentArchitecture
-open import SysFEAT.EA.46194ca7560d3a45 public -- ApplicationSystem
-open import SysFEAT.EA.d5e6d7c65c464ae3 public -- ApplicationDeploymentArchitecture
+open import SysFEAT.S-SOF.10844c325fce4e80 public -- SOftwareDeploymentArchitecture
+open import SysFEAT.S-SOF.46194ca7560d3a45 public -- ApplicationSystem
+open import SysFEAT.S-SOF.d5e6d7c65c464ae3 public -- ApplicationDeploymentArchitecture
 
 ApplicationSystemDeploymentArchitecture : AgentMetaClass
 ApplicationSystemDeploymentArchitecture = AgentType

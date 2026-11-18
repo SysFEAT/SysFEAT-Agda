@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/4efc703b6ae4991a.htm
 module SysFEAT.EA.4efc703b6ae4991a where -- ========== CustomerSegment
 
 open import Agda.Primitive
-open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategory
+open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategoryType
 
-CustomerSegment : ∀ (u : Level) → ClassOfMixedOrderEntity u 
-CustomerSegment u  = MixedOrderEntity u 
+CustomerSegment : ∀ (u : Level) → MetaClass (lsuc u)
+CustomerSegment u = MetaClass u
 
 
---  CustomerSegment is subTypeOf AssetCategory
-st-4efc703b6ae4991a-4efc6b346ae48db7 : ∀ {u v} → (CustomerSegment u) ⊏⋆ₑ (AssetCategory v)
+--  CustomerSegment is subTypeOf AssetCategoryType
+st-4efc703b6ae4991a-4efc6b346ae48db7 : ∀ {u v} → CustomerSegment u ⊏⋆ₑ AssetCategoryType v
 st-4efc703b6ae4991a-4efc6b346ae48db7 = trivialPolySubTypeOfEntity
 
 

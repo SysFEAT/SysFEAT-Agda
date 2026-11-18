@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/070b0d5564011dbb.htm
 module SysFEAT.EA.070b0d5564011dbb where -- ========== NetworkingSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
+open import SysFEAT.H-SOF.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.R-SOF.0cbd1fa663fe18ac public -- TechnologySystem
 
 NetworkingSystem : BoundedIndividualMetaClass
-NetworkingSystem = AssetType
+NetworkingSystem = ClassOfBoundedIndividual
 
 
 --  NetworkingSystem is subTypeOf NetworkingSystem

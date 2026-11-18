@@ -23,7 +23,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.f4be11b15ee1e0fa public -- SystemOfResources
 
 Facility : BoundedIndividualMetaClass
-Facility = AssetType
+Facility = ClassOfBoundedIndividual
 
 
 --  Facility is subTypeOf SystemOfResources

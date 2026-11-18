@@ -22,7 +22,7 @@ DataProcessingCategory = MixedOrderEntity
 
 
 --  DataProcessingCategory withAspect ModelCategorizationBlock
-st-c195014a5fc19153-0eb97aff6855cd23 : DataProcessingCategory ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
+st-c195014a5fc19153-0eb97aff6855cd23 : DataProcessingCategory ⊏ₐₑ ModelCategorizationBlock (lsuc( lzero))
 st-c195014a5fc19153-0eb97aff6855cd23 = polySubTypeOf-identity
 
 

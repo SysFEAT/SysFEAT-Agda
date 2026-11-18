@@ -20,12 +20,12 @@ module SysFEAT.EA.c7dad43c5ae92d25 where -- ========== Person
 
 open import Agda.Primitive
 open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
-open import SysFEAT.EA.66f8685a620b1440 public -- IndividualBusinessAgent
+open import SysFEAT.R-SOF.66f8685a620b1440 public -- IndividualBusinessAgent
 open import SysFEAT.EA.41b8e49f65ee66ec public -- PersonType
 open import SysFEAT.EA.dd26f17a68a0b08b public -- Skill
 
-Person : AgentType
-Person = IndividualAgent
+Person : PersonType
+Person = IndividualBusinessAgent
 
 
 --  Person is subTypeOf ResponsibleHumanEntity
@@ -46,8 +46,7 @@ postulate -- Person is PowerInstanceOf Person Type
 An ability that has been acquired by training.
 -}
 -- Aggregate Member : Acquired Skill
-AcquiredSkill : ClassOfClassOfIndividual
-AcquiredSkill = ClassOfIndividual
+
 
 
 -- Membership relation

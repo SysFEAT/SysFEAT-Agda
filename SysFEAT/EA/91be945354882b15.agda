@@ -35,4 +35,4 @@ subjectAsset : ∀ {u} →  Linkage ArchitecturalDriver (AssetBlock u)
 subjectAsset = make_Relation "Subject Asset" "Subject Asset"
 
 postulate -- subjectAsset is subTypeOf driverSubject
-  st-4b945c6868a47d9d-4b945a6e68a47bdf  : subjectAsset  ⊏⋆ᵣ  driverSubject
+  st-4b945c6868a47d9d-4b945a6e68a47bdf  : ∀ {u} → subjectAsset {u}  ⊏⋆ᵣ  driverSubject {u}

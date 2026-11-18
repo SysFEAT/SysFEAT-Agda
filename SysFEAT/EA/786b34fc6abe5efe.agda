@@ -24,6 +24,7 @@ open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
 PolicyFramework : PolicyFrameworkClass
 PolicyFramework = MixedOrderEntity
 
+
 --  PolicyFramework is subTypeOf ReferenceDictionary
 st-786b34fc6abe5efe-3aca50c46aa63f3b : PolicyFramework ⊏ₑ ReferenceDictionary
 st-786b34fc6abe5efe-3aca50c46aa63f3b = polySubTypeOf-identity
@@ -39,8 +40,8 @@ packagedPolicyAsset : ∀ {u} →  Linkage PolicyFramework (PolicyAsset u)
 packagedPolicyAsset = make_nestingRelation "Packaged Policy Asset" "Packaged Policy Asset"
 
 postulate -- packagedPolicyAsset is subTypeOf scopedModelBlock
-  st-4b94598868a47965-0eb96a306855c816  : packagedPolicyAsset  ⊏⋆ᵣ  scopedModelBlock {lzero} {lzero}
+  st-4b94598868a47965-0eb96a306855c816  : ∀ {u} → packagedPolicyAsset {u}  ⊏⋆ᵣ  scopedModelBlock {lzero} {u}
 postulate -- packagedPolicyAsset is subTypeOf packagedAssetBlock
-  st-4b94598868a47965-9397bbda687781e0  : packagedPolicyAsset  ⊏⋆ᵣ  packagedAssetBlock {lzero} {lzero}
+  st-4b94598868a47965-9397bbda687781e0  : ∀ {u} → packagedPolicyAsset {u}  ⊏⋆ᵣ  packagedAssetBlock {lzero} {u}
 postulate -- packagedPolicyAsset is subTypeOf scopedArchitectureBlock
-  st-4b94598868a47965-0eb95f9a6855c081  : packagedPolicyAsset  ⊏⋆ᵣ  scopedArchitectureBlock {lzero} {lzero}
+  st-4b94598868a47965-0eb95f9a6855c081  : ∀ {u} → packagedPolicyAsset {u}  ⊏⋆ᵣ  scopedArchitectureBlock {lzero} {u}

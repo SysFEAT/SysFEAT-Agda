@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/c189cf1f68ae421a.htm
 module SysFEAT.EA.c189cf1f68ae421a where -- ========== BusinessRule
 
 open import Agda.Primitive
-open import SysFEAT.EA.23bf9a7868ad2d94 public -- BusinessResourceRule
+open import SysFEAT.R-SOF.23bf9a7868ad2d94 public -- BusinessResourceRule
 
 BusinessRule : AssetPropertyType
-BusinessRule = Directive
+BusinessRule = AssetProperty
 
 
 --  BusinessRule is subTypeOf BusinessResourceRule

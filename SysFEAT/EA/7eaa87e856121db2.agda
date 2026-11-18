@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/7eaa87e856121db2.htm
 module SysFEAT.EA.7eaa87e856121db2 where -- ========== LogicalDataDictionary
 
 open import Agda.Primitive
-open import SysFEAT.EA.67d376e36aa45056 public -- DataDictionary
+open import SysFEAT.S-SOF.67d376e36aa45056 public -- DataDictionary
 open import SysFEAT.EA.fd1bf2a45fbc64fb public -- LogicalDataAsset
 
-LogicalDataDictionary : ClassOfMixedOrderEntity
-LogicalDataDictionary = MixedOrderEntity
+LogicalDataDictionary : ClassOfAbstractEntity
+LogicalDataDictionary = AbstractEntity
 
 
 --  LogicalDataDictionary is subTypeOf DataDictionary

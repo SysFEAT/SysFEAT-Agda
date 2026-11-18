@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.SOF.582e785466f6b36f public -- DataRiskType
 
 DataQualityRiskType : ThirdOrderClass
-DataQualityRiskType = PropertyType
+DataQualityRiskType = SecondOrderClass
 
 
 --  DataQualityRiskType is subTypeOf DataRiskType
@@ -26,4 +26,3 @@ st-582e7ac266f6b8ef-582e785466f6b36f : DataQualityRiskType ⊏ₑ DataRiskType
 st-582e7ac266f6b8ef-582e785466f6b36f = polySubTypeOf-identity
 
 
--- == Relations =======================

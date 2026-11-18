@@ -17,11 +17,11 @@ External references:
 module SysFEAT.EA.affeb2255f6051e6 where -- ========== DeployedDataStore
 
 open import Agda.Primitive
-open import SysFEAT.EA.d874bfae6ab72b78 public -- NoSQLDictionary
-open import SysFEAT.EA.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.S-SOF.d874bfae6ab72b78 public -- NoSQLDictionary
+open import SysFEAT.R-SOF.3642454f6007e80e public -- DeployedBusinessSystem
 
-DeployedDataStore : ClassOfMixedOrderEntity
-DeployedDataStore = MixedOrderEntity
+DeployedDataStore : ClassOfAbstractEntity
+DeployedDataStore = AbstractEntity
 
 
 --  DeployedDataStore is subTypeOf NoSQLDictionary

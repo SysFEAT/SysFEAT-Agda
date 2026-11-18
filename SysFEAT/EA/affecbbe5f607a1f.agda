@@ -16,7 +16,6 @@ module SysFEAT.EA.affecbbe5f607a1f where -- ========== MinimumValue
 
 open import Agda.Primitive
 
-MinimumValue : PropertyType
-MinimumValue = Property
+
 
 

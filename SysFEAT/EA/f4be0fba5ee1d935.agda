@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.070b0d5564011dbb public -- NetworkingSystem
 
 NetworkDevice : BoundedIndividualMetaClass
-NetworkDevice = AssetType
+NetworkDevice = ClassOfBoundedIndividual
 
 
 --  NetworkDevice is subTypeOf NetworkingSystem

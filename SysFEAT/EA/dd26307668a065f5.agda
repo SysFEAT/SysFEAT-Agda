@@ -16,10 +16,8 @@ module SysFEAT.EA.dd26307668a065f5 where -- ========== ResourceCapabilityMap
 
 open import Agda.Primitive
 open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
-open import SysFEAT.EA.dd265414689f5987 public -- ResourceCapability
+open import SysFEAT.R-SOF.dd265414689f5987 public -- ResourceCapability
 
-ResourceCapabilityMap : ClassOfMixedOrderEntity
-ResourceCapabilityMap = MixedOrderEntity
 
 
 --  ResourceCapabilityMap is subTypeOf CapabilityMap

@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/ae7c99be60234bcf.htm
 module SysFEAT.EA.ae7c99be60234bcf where -- ========== BusinessLine
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
-BusinessLine : ClassOfMixedOrderEntity
-BusinessLine = MixedOrderEntity
+BusinessLine : MetaClass
+BusinessLine = MetaClass
 
 
---  BusinessLine withAspect AssetCategoryFamily
-st-ae7c99be60234bcf-f69620466a0f9c2f : BusinessLine ⊏ₐₑ (AssetCategoryFamily (lsuc(lzero)))
+--  BusinessLine withAspect AssetCategorizationSchema
+st-ae7c99be60234bcf-f69620466a0f9c2f : BusinessLine ⊏ₐₑ AssetCategorizationSchema lzero
 st-ae7c99be60234bcf-f69620466a0f9c2f = polySubTypeOf-identity
 
 

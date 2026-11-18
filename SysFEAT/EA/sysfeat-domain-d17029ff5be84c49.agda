@@ -25,11 +25,12 @@ External references:
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-d17029ff5be84c49 where -- ========== Product & Customer Experience
 
-open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
 open import SysFEAT.C-SOF.sysfeat-domain-19dc1a30555649d9 public -- Conceptual Operating Model
 open import SysFEAT.SOF.sysfeat-domain-02af0a4b5a182417 public -- System Operating Framework - SOF
-open import SysFEAT.EA.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-d670b6155ffe8bb1 public -- SOF - Business Resource Operating Pattern (B-SOF)
 open import SysFEAT.EA.sysfeat-domain-a951ee816194126b public -- Facility Asset Architecture
+open import SysFEAT.SOF.sysfeat-domain-0c450d696a031e95 public -- Systemic and Conceptualization Levels
 open import SysFEAT.EA.sysfeat-domain-76147feb6182230a public -- Enterprise Architecting & Management
 open import SysFEAT.SOF.sysfeat-domain-dc0bed9d5ae95bc0 public -- Teams Pattern
 open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets

@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/25582c685c6d1c93.htm
 module SysFEAT.EA.25582c685c6d1c93 where -- ========== LogicalOperatingEnvironment
 
 open import Agda.Primitive
-open import SysFEAT.EA.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
-open import SysFEAT.EA.255833cb5c6d1d64 public -- LogicalApplicationSystem
+open import SysFEAT.S-SOF.25c0a25061e2fd5a public -- SOftwareSystemEnvironment
+open import SysFEAT.S-SOF.255833cb5c6d1d64 public -- LogicalApplicationSystem
 
 LogicalOperatingEnvironment : BoundedIndividualMetaClass
-LogicalOperatingEnvironment = AssetType
+LogicalOperatingEnvironment = ClassOfBoundedIndividual
 
 
 --  LogicalOperatingEnvironment is subTypeOf SOftwareSystemEnvironment

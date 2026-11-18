@@ -19,15 +19,15 @@ External references:
 module SysFEAT.EA.d1600c7062e093eb where -- ========== CapabilityConfiguration
 
 open import Agda.Primitive
-open import SysFEAT.EA.bcebd31f5491302c public -- BusinessAgentType
-open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
-open import SysFEAT.EA.ffdf64a868608999 public -- ResourceAgentConfiguration
-open import SysFEAT.EA.c30bf4015a5da72b public -- ConcreteHardwareSystem
+open import SysFEAT.R-SOF.bcebd31f5491302c public -- BusinessAgentType
+open import SysFEAT.H-SOF.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.R-SOF.ffdf64a868608999 public -- ResourceAgentConfiguration
+open import SysFEAT.H-SOF.c30bf4015a5da72b public -- ConcreteHardwareSystem
 open import SysFEAT.EA.a41ab3105b378b66 public -- ITInfrastructureSystem
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
 CapabilityConfiguration : BoundedIndividualMetaClass
-CapabilityConfiguration = AssetType
+CapabilityConfiguration = ClassOfBoundedIndividual
 
 
 --  CapabilityConfiguration is subTypeOf BusinessAgentType
