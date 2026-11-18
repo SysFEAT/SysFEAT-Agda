@@ -16,7 +16,6 @@ module SysFEAT.EA.56ea2d1e66059a5a where -- ========== BusinessOutput
 
 open import Agda.Primitive
 
-BusinessOutput : ClassOfClassOfIndividual
-BusinessOutput = ClassOfIndividual
+
 
 

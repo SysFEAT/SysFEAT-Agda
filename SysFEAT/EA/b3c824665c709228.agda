@@ -16,7 +16,6 @@ module SysFEAT.EA.b3c824665c709228 where -- ==========
 
 open import Agda.Primitive
 
- : ClassOfClassOfBoundedIndividual
- = ClassOfBoundedIndividual
+
 
 

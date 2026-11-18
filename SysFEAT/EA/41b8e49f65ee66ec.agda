@@ -16,10 +16,10 @@ module SysFEAT.EA.41b8e49f65ee66ec where -- ========== PersonType
 
 open import Agda.Primitive
 open import SysFEAT.EA.2c93337b67644a6a public -- HumanResource
-open import SysFEAT.EA.be94e82f655c90e7 public -- PhysicalBusinessAgent
+open import SysFEAT.R-SOF.be94e82f655c90e7 public -- PhysicalBusinessAgent
 
 PersonType : BoundedIndividualMetaClass
-PersonType = AssetType
+PersonType = ClassOfBoundedIndividual
 
 
 --  PersonType is subTypeOf HumanResource

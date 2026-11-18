@@ -35,4 +35,4 @@ assessedBusinessCapability :  Linkage BusinessCapabilityAssessment ValueProposit
 assessedBusinessCapability = make_Relation "Assessed Business Capability" "Assessed Business Capability"
 
 postulate -- assessedBusinessCapability is subTypeOf assessedAsset
-  st-6d3ca59b5f89b3c1-6bf1843a68599028  : assessedBusinessCapability  ⊏⋆ᵣ  assessedAsset
+  st-6d3ca59b5f89b3c1-6bf1843a68599028  : assessedBusinessCapability  ⊏⋆ᵣ  assessedAsset {lsuc(lzero)}

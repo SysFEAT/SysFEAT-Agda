@@ -18,7 +18,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.0e55230266f12252 public -- OperationalRiskType
 
 OperatingRiskType : ThirdOrderClass
-OperatingRiskType = PropertyType
+OperatingRiskType = SecondOrderClass
 
 
 --  OperatingRiskType is subTypeOf OperationalRiskType
@@ -26,4 +26,3 @@ st-f1606adf67d861a5-0e55230266f12252 : OperatingRiskType ⊏ₑ OperationalRiskT
 st-f1606adf67d861a5-0e55230266f12252 = polySubTypeOf-identity
 
 
--- == Relations =======================

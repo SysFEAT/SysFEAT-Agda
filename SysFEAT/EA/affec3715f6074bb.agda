@@ -16,7 +16,6 @@ module SysFEAT.EA.affec3715f6074bb where -- ========== NumberOfEntities
 
 open import Agda.Primitive
 
-NumberOfEntities : PropertyType
-NumberOfEntities = Property
+
 
 

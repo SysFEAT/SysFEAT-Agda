@@ -26,8 +26,7 @@ open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
 open import SysFEAT.EA.1a5fcc995fd7834d public -- CustomerJourneyPhase
 open import SysFEAT.EA.d17034875be85304 public -- Jobtobedone
 
-CustomerJourney : ClassOfClassOfBoundedIndividual
-CustomerJourney = ClassOfBoundedIndividual
+
 
 --  CustomerJourney is subTypeOf CustomerActivity
 st-d170d6a25be734ed-8a5c926e5c0d632c : CustomerJourney ⊏ₑ CustomerActivity
@@ -41,22 +40,21 @@ st-d170d6a25be734ed-8a5c926e5c0d632c = polySubTypeOf-identity
 categorizingBusinessLine :  Linkage CustomerJourney BusinessLine
 categorizingBusinessLine = make_classOfHolonymy "Categorizing Business Line" "Categorizing Business Line"
 
-postulate -- categorizingBusinessLine is subTypeOf assetCategorizationScheme
-  st-ae7c9a2b60234de6-f69620606a0f9c94  : categorizingBusinessLine  ⊏⋆ᵣ  assetCategorizationScheme  {lsuc(lsuc(lzero))}
+postulate -- categorizingBusinessLine is subTypeOf applicableAssetScheme
+  st-ae7c9a2b60234de6-f69620606a0f9c94  : categorizingBusinessLine  ⊏⋆ᵣ  applicableAssetScheme {lsuc(lsuc(lzero))}
 
 -- -------------------------------------------------------------------------------------------- 
 {- Customer Journey Category: 
 A categorization of Customer Journeys.
 -}
 customerJourneyCategory :  Linkage CustomerJourney CustomerJourneyCategory
-customerJourneyCategory = make_classOfRelation "Customer Journey Category" "Customer Journey Category"
+customerJourneyCategory = make_instanceOf "Customer Journey Category" "Customer Journey Category"
 
 
 -- -------------------------------------------------------------------------------------------- 
 {- Sequence: -}
 -- Aggregate Member : Sequence
-Sequence : ClassOfClassOfIndividual
-Sequence = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -82,8 +80,7 @@ sequence = membershipOfSequence  ∘  aggregationOfBehavioralEventSequence
 A Touch Point describes an interaction point between a persona and an enterprise where a Business Capability is exposed as a Value Proposition to the persona as a means to achieve its Job-to-be-done.
 -}
 -- Aggregate Member : Touch Point
-TouchPoint : ClassOfClassOfIndividual
-TouchPoint = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -109,8 +106,7 @@ touchPoint = membershipOfTouchPoint  ∘  aggregationOfValuePropositionTouchPoin
 A client sub-journey is a client journey resulting from another client journey. It is used to describe the hierarchy of journeys. Like any client journey, it describes interactions between the enterprise and a persona for a given result.
 -}
 -- Aggregate Member : Sub Customer Journey
-SubCustomerJourney : ClassOfClassOfIndividual
-SubCustomerJourney = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -136,8 +132,7 @@ subCustomerJourney = membershipOfSubCustomerJourney  ∘  aggregationOfCustomerJ
 A phase context defines the context for carrying out the action plan. It is used to schedule the phases for a single client journey.
 -}
 -- Aggregate Member : Phase Status
-PhaseStatus : ClassOfClassOfIndividual
-PhaseStatus = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -163,8 +158,7 @@ phaseStatus = membershipOfPhaseStatus  ∘  aggregationOfCustomerJourneyPhasePha
 A client journey step is the basic elementary advancement unit of a client via a client journey phase.
 -}
 -- Aggregate Member : Customer Journey Step
-CustomerJourneyStep : ClassOfClassOfIndividual
-CustomerJourneyStep = ClassOfIndividual
+
 
 
 --  CustomerJourneyStep is subTypeOf CustomerActivityMember

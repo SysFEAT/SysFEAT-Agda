@@ -13,7 +13,7 @@ Documentation : https://framework.sysfeat.com/pages/fe663f0d61817c3e.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-fe663f0d61817c3e where -- ========== Asset Portfolio Pattern
 
-open import SysFEAT.EA.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
+open import SysFEAT.R-SOF.sysfeat-domain-e2ef086d62147802 public -- SOF - Resource System Operating Pattern (R-SOF)
 open import SysFEAT.SOF.sysfeat-domain-69346af86005efa9 public -- Initiative and Transformation Pattern
 open import SysFEAT.EA.sysfeat-domain-76147feb6182230a public -- Enterprise Architecting & Management
 

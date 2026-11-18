@@ -15,16 +15,16 @@ Documentation : https://framework.sysfeat.com/pages/137d23125ee2cb47.htm
 module SysFEAT.EA.137d23125ee2cb47 where -- ========== RelationalDataMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.d874bd8d6ab727f1 public -- RelationalDataBlock
-open import SysFEAT.EA.f4be4bb95ee18b51 public -- PhysicalDataMap
-open import SysFEAT.EA.362f3c7e5b3b22f8 public -- RelationalSchema
+open import SysFEAT.S-SOF.d874bd8d6ab727f1 public -- RelationalDataBlock
+open import SysFEAT.S-SOF.f4be4bb95ee18b51 public -- PhysicalDataMap
+open import SysFEAT.S-SOF.362f3c7e5b3b22f8 public -- RelationalSchema
 
-RelationalDataMap : ClassOfMixedOrderEntity
-RelationalDataMap = MixedOrderEntity
+RelationalDataMap : MetaClass
+RelationalDataMap = MetaClass
 
 
 --  RelationalDataMap withAspect RelationalDataBlock
-st-137d23125ee2cb47-d874bd8d6ab727f1 : RelationalDataMap ⊏ₐₑ (RelationalDataBlock (lsuc(lzero)))
+st-137d23125ee2cb47-d874bd8d6ab727f1 : RelationalDataMap ⊏ₐₑ RelationalDataBlock (lsuc( lzero))
 st-137d23125ee2cb47-d874bd8d6ab727f1 = polySubTypeOf-identity
 
 --  RelationalDataMap is subTypeOf PhysicalDataMap
@@ -37,8 +37,7 @@ st-137d23125ee2cb47-f4be4bb95ee18b51 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Sub-Relational Domain: -}
 -- Aggregate Member : Sub-Relational Domain
-SubRelationalDomain : ClassOfClassOfIndividual
-SubRelationalDomain = ClassOfIndividual
+
 
 
 --  SubRelationalDomain is subTypeOf PhysicalDomainMember
@@ -66,8 +65,7 @@ subRelationalDomain = membershipOfSubRelationalDomain  ∘  aggregationOfRelatio
 -- -------------------------------------------------------------------------------------------- 
 {- External Relational Domain: -}
 -- Aggregate Member : External Relational Domain
-ExternalRelationalDomain : ClassOfClassOfIndividual
-ExternalRelationalDomain = ClassOfIndividual
+
 
 
 --  ExternalRelationalDomain is subTypeOf ExternalPhysicalDomain

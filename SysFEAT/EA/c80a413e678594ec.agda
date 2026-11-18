@@ -18,8 +18,8 @@ open import Agda.Primitive
 open import SysFEAT.EA.c80a41b7678595bb public -- IndividualSystemOfResources
 open import SysFEAT.EA.f4be0e865ee1d53b public -- Facility
 
-IndividualFacility : AssetType
-IndividualFacility = IndividualAsset
+IndividualFacility : BusinessAgentType
+IndividualFacility = IndividualBusinessAgent
 
 
 --  IndividualFacility is subTypeOf IndividualSystemOfResources
@@ -32,7 +32,7 @@ st-c80a413e678594ec-c80a41b7678595bb = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Facility Type: -}
 facilityType :  Linkage IndividualFacility Facility
-facilityType = make_Relation "Facility Type" "Facility Type"
+facilityType = make_instanceOf "Facility Type" "Facility Type"
 
 postulate -- facilityType is subTypeOf systemOfResourceType
   st-c80a415e67859561-c80a436c67859774  : facilityType  ⊏⋆ᵣ  systemOfResourceType

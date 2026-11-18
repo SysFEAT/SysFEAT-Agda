@@ -17,7 +17,7 @@ module SysFEAT.EA.6ce61b9d5ef382cf where -- ========== TechnologyPortfolio
 open import Agda.Primitive
 open import SysFEAT.EA.26b8889c5eea8ab7 public -- AssetPortfolio
 open import SysFEAT.EA.dd27b91368a11464 public -- SOftwareTechnologyCapabilityMap
-open import SysFEAT.EA.d5e6ddd05c46547c public -- SOftwareTechnology
+open import SysFEAT.S-SOF.d5e6ddd05c46547c public -- SOftwareTechnology
 
 TechnologyPortfolio : ClassOfBoundedIndividual
 TechnologyPortfolio = BoundedIndividual
@@ -33,7 +33,7 @@ st-6ce61b9d5ef382cf-26b8889c5eea8ab7 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Functional Scope: -}
 functionalScope :  Linkage TechnologyPortfolio SOftwareTechnologyCapabilityMap
-functionalScope = make_Relation "Functional Scope" "Functional Scope"
+functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
 
 postulate -- functionalScope is subTypeOf portfolioFunctionalScope
   st-dd27b95768a114e1-dd2630ca68a0669f  : functionalScope  ⊏⋆ᵣ  portfolioFunctionalScope
@@ -43,13 +43,13 @@ postulate -- functionalScope is subTypeOf portfolioFunctionalScope
 A Managed Software Technology represents the characterics of a Software Technology under the management of a Technology Portfolio.
 -}
 -- Aggregate Member : Managed Software Technology
-ManagedSOftwareTechnology : ClassOfMixedOrderEntity
-ManagedSOftwareTechnology = MixedOrderEntity
+ManagedSOftwareTechnology : ClassOfHolonymy
+ManagedSOftwareTechnology = HolonymyRelation
 
 
 
 --  ManagedSOftwareTechnology withAspect ManagementSystemSubject
-st-e9b802705f51200e-6bf17ffc68598c26 : ManagedSOftwareTechnology ⊏ₐₑ (ManagementSystemSubject (lsuc(lzero)))
+st-e9b802705f51200e-6bf17ffc68598c26 : ManagedSOftwareTechnology ⊏ₐₑ ManagementSystemSubject (lsuc( lzero))
 st-e9b802705f51200e-6bf17ffc68598c26 = polySubTypeOf-identity
 
 --  ManagedSOftwareTechnology is subTypeOf ManagedResourceAsset

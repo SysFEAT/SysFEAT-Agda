@@ -1,0 +1,31 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Intangible Resource Agent: 
+An Intangible Resource Agent is a Resource Agent Type whose instances do not have physical substance.Example:- Software System Type;- Social groups,
+
+Documentation : https://framework.sysfeat.com/pages/c80afd2f6784305d.htm
+
+External references:
+  WordNet - Intangible Asset: https://en-word.net/ili/i106769
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.R-SOF.c80afd2f6784305d where -- ========== IntangibleResourceAgent
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.e2ef091962147ad7 public -- ResourceAgentType
+
+IntangibleResourceAgent : AgentMetaClass
+IntangibleResourceAgent = AgentType
+
+
+--  IntangibleResourceAgent is subTypeOf ResourceAgentType
+st-c80afd2f6784305d-e2ef091962147ad7 : IntangibleResourceAgent ⊏ₑ ResourceAgentType
+st-c80afd2f6784305d-e2ef091962147ad7 = polySubTypeOf-identity
+
+
+-- == Relations =======================

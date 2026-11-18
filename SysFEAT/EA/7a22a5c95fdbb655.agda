@@ -16,7 +16,6 @@ module SysFEAT.EA.7a22a5c95fdbb655 where -- ========== RiskLikelihood
 
 open import Agda.Primitive
 
-RiskLikelihood : PropertyType
-RiskLikelihood = Property
+
 
 

@@ -23,8 +23,7 @@ module SysFEAT.EA.d17034875be85304 where -- ========== Jobtobedone
 open import Agda.Primitive
 open import SysFEAT.EA.d170d24a5be72d09 public -- CustomerTask
 
-Jobtobedone : ClassOfClassOfBoundedIndividual
-Jobtobedone = ClassOfBoundedIndividual
+
 
 --  Jobtobedone is subTypeOf CustomerTask
 st-d17034875be85304-d170d24a5be72d09 : Jobtobedone ⊏ₑ CustomerTask
@@ -36,8 +35,7 @@ st-d17034875be85304-d170d24a5be72d09 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Included Job to be done: -}
 -- Aggregate Member : Included Job to be done
-IncludedJobtobedone : ClassOfClassOfIndividual
-IncludedJobtobedone = ClassOfIndividual
+
 
 
 -- Membership relation

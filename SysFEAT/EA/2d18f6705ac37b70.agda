@@ -23,11 +23,11 @@ ProjetRiskType = MixedOrderEntity
 
 
 --  ProjetRiskType withAspect ProgramAsset
-st-2d18f6705ac37b70-52e0b14c6abf4c76 : ProjetRiskType ⊏ₐₑ (ProgramAsset (lsuc(lzero)))
+st-2d18f6705ac37b70-52e0b14c6abf4c76 : ProjetRiskType ⊏ₐₑ ProgramAsset (lsuc( lzero))
 st-2d18f6705ac37b70-52e0b14c6abf4c76 = polySubTypeOf-identity
 
 --  ProjetRiskType withAspect ModelCategorizationBlock
-st-2d18f6705ac37b70-0eb97aff6855cd23 : ProjetRiskType ⊏ₐₑ (ModelCategorizationBlock (lsuc(lzero)))
+st-2d18f6705ac37b70-0eb97aff6855cd23 : ProjetRiskType ⊏ₐₑ ModelCategorizationBlock (lsuc( lzero))
 st-2d18f6705ac37b70-0eb97aff6855cd23 = polySubTypeOf-identity
 
 

@@ -17,8 +17,6 @@ module SysFEAT.EA.5e5206f867af76bb where -- ========== PersonState
 open import Agda.Primitive
 open import SysFEAT.EA.c7dad43c5ae92d25 public -- Person
 
-PersonState : StateClass
-PersonState = StateConcept
 
 
 

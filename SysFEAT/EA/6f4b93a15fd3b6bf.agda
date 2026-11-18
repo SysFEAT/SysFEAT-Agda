@@ -15,11 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/6f4b93a15fd3b6bf.htm
 module SysFEAT.EA.6f4b93a15fd3b6bf where -- ========== BusinessInteractionProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.230b35b461d8884d public -- BusinessResourceInteractionProcess
+open import SysFEAT.R-SOF.230b35b461d8884d public -- BusinessResourceInteractionProcess
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
 BusinessInteractionProcess : BoundedIndividualMetaClass
-BusinessInteractionProcess = AssetType
+BusinessInteractionProcess = ClassOfBoundedIndividual
 
 
 --  BusinessInteractionProcess is subTypeOf BusinessResourceInteractionProcess

@@ -15,10 +15,9 @@ Documentation : https://framework.sysfeat.com/pages/affeb4c45f60553c.htm
 module SysFEAT.EA.affeb4c45f60553c where -- ========== DataFieldSnapshot
 
 open import Agda.Primitive
-open import SysFEAT.EA.762580705f6bd560 public -- DataSourceSnaphotItem
+open import SysFEAT.OA-SOF.762580705f6bd560 public -- DataSourceSnaphotItem
 
-DataFieldSnapshot : ClassOfBoundedIndividual
-DataFieldSnapshot = BoundedIndividual
+
 
 --  DataFieldSnapshot is subTypeOf DataSourceSnaphotItem
 st-affeb4c45f60553c-762580705f6bd560 : DataFieldSnapshot ⊏ₑ DataSourceSnaphotItem

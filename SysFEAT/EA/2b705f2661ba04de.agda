@@ -15,12 +15,11 @@ Documentation : https://framework.sysfeat.com/pages/2b705f2661ba04de.htm
 module SysFEAT.EA.2b705f2661ba04de where -- ========== BusinessEcosystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.2b6f332061bae622 public -- BusinessResourceEcosystem
+open import SysFEAT.R-SOF.2b6f332061bae622 public -- BusinessResourceEcosystem
 open import SysFEAT.SOF.21c5276e655759fb public -- OperatingConnection
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 
-BusinessEcosystem : ClassOfClassOfBoundedIndividual
-BusinessEcosystem = ClassOfBoundedIndividual
+
 
 --  BusinessEcosystem is subTypeOf BusinessResourceEcosystem
 st-2b705f2661ba04de-2b6f332061bae622 : BusinessEcosystem ⊏ₑ BusinessResourceEcosystem
@@ -32,8 +31,7 @@ st-2b705f2661ba04de-2b6f332061bae622 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Business Ecosystem Connection: -}
 -- Aggregate Member : Business Ecosystem Connection
-BusinessEcosystemConnection : ClassOfClassOfIndividual
-BusinessEcosystemConnection = ClassOfIndividual
+
 
 
 --  BusinessEcosystemConnection is subTypeOf BusinessEcosystemConnection
@@ -61,8 +59,7 @@ businessEcosystemConnection = membershipOfBusinessEcosystemConnection  ∘  aggr
 -- -------------------------------------------------------------------------------------------- 
 {- Business Ecosystem Part: -}
 -- Aggregate Member : Business Ecosystem Part
-BusinessEcosystemPart : ClassOfClassOfIndividual
-BusinessEcosystemPart = ClassOfIndividual
+
 
 
 --  BusinessEcosystemPart is subTypeOf ResourceEcosystemPart

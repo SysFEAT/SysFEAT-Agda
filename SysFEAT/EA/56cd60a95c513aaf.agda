@@ -15,12 +15,12 @@ Documentation : https://framework.sysfeat.com/pages/56cd60a95c513aaf.htm
 module SysFEAT.EA.56cd60a95c513aaf where -- ========== DeployedApplication
 
 open import Agda.Primitive
-open import SysFEAT.EA.66f870ce620b2d8c public -- IndividualBusinessSOftwareSystem
-open import SysFEAT.EA.56cd60c05c513ad9 public -- DeployedSOftwareTechnology
-open import SysFEAT.EA.bcebd8e9549144db public -- Application
+open import SysFEAT.S-SOF.66f870ce620b2d8c public -- IndividualBusinessSOftwareSystem
+open import SysFEAT.S-SOF.56cd60c05c513ad9 public -- DeployedSOftwareTechnology
+open import SysFEAT.S-SOF.bcebd8e9549144db public -- Application
 
-DeployedApplication : AssetType
-DeployedApplication = IndividualAsset
+DeployedApplication : BusinessAgentType
+DeployedApplication = IndividualBusinessAgent
 
 
 --  DeployedApplication is subTypeOf IndividualBusinessSOftwareSystem
@@ -39,7 +39,7 @@ technologyInstallationUsed = make_holonymyRelation "Technology Installation Used
 -- -------------------------------------------------------------------------------------------- 
 {- Application Type: -}
 applicationType :  Linkage DeployedApplication Application
-applicationType = make_Relation "Application Type" "Application Type"
+applicationType = make_instanceOf "Application Type" "Application Type"
 
 postulate -- applicationType is subTypeOf sOftwareSystemType
   st-e2dc054b66fd4a63-e2dc060266fd4c0c  : applicationType  ⊏⋆ᵣ  sOftwareSystemType

@@ -15,10 +15,8 @@ Documentation : https://framework.sysfeat.com/pages/dd27b91368a11464.htm
 module SysFEAT.EA.dd27b91368a11464 where -- ========== SOftwareTechnologyCapabilityMap
 
 open import Agda.Primitive
-open import SysFEAT.EA.dd27b40768a112f8 public -- TechnologyCapabilityMap
+open import SysFEAT.R-SOF.dd27b40768a112f8 public -- TechnologyCapabilityMap
 
-SOftwareTechnologyCapabilityMap : ClassOfMixedOrderEntity
-SOftwareTechnologyCapabilityMap = MixedOrderEntity
 
 
 --  SOftwareTechnologyCapabilityMap is subTypeOf TechnologyCapabilityMap

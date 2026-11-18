@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/16e319be5bf83cb9.htm
 module SysFEAT.EA.16e319be5bf83cb9 where -- ========== ProcessingActivity
 
 open import Agda.Primitive
-open import SysFEAT.EA.426a57325aeb3d76 public -- PrivacyProcessing
-open import SysFEAT.EA.258c68065fd254de public -- TransferSafeGuard
+open import SysFEAT.OA-SOF.426a57325aeb3d76 public -- PrivacyProcessing
+open import SysFEAT.OA-SOF.258c68065fd254de public -- TransferSafeGuard
 open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
-open import SysFEAT.EA.bcebd8e9549144db public -- Application
+open import SysFEAT.S-SOF.bcebd8e9549144db public -- Application
 
 ProcessingActivity : ClassOfClassOfIndividual
 ProcessingActivity = ClassOfIndividual
@@ -34,8 +34,7 @@ st-16e319be5bf83cb9-426a57325aeb3d76 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Transfer Safe Guard: -}
 -- Aggregate Member : Transfer Safe Guard
-TransferSafeGuard : ClassOfClassOfIndividual
-TransferSafeGuard = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -61,8 +60,7 @@ transferSafeGuard = 1B0468F869F8558C  ∘  aggregationOfTransferSafeGuardTransfe
 Any  human activity which, for a given purpose of the enterprise, manipulates personal data, including collection, use, recording, etc.
 -}
 -- Aggregate Member : Business Process
-BusinessProcess : ClassOfClassOfIndividual
-BusinessProcess = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -88,8 +86,7 @@ businessProcess = membershipOfBusinessProcess  ∘  aggregationOfBusinessProcess
 Any  IT activity which, for a given purpose of the enterprise, manipulates personal data, including collection, use, recording, etc.
 -}
 -- Aggregate Member : Application
-Application : ClassOfClassOfIndividual
-Application = ClassOfIndividual
+
 
 
 -- Membership relation

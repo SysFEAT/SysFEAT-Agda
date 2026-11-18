@@ -21,7 +21,7 @@ open import Agda.Primitive
 open import SysFEAT.EA.57dfc52d550932ef public -- BusinessProcess
 
 BusinessProcedure : BoundedIndividualMetaClass
-BusinessProcedure = AssetType
+BusinessProcedure = ClassOfBoundedIndividual
 
 
 --  BusinessProcedure is subTypeOf BusinessProcess

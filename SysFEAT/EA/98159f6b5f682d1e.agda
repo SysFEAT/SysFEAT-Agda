@@ -16,12 +16,12 @@ module SysFEAT.EA.98159f6b5f682d1e where -- ========== DataQualityPolicy
 
 open import Agda.Primitive
 open import SysFEAT.SOF.190c7429689664b5 public -- Policy
-open import SysFEAT.EA.d7f90fc35f737c24 public -- DataQualityMeasureValue
-open import SysFEAT.EA.98159fba5f682ded public -- MeasurableDataQuality
+open import SysFEAT.OA-SOF.d7f90fc35f737c24 public -- DataQualityMeasureValue
+open import SysFEAT.OA-SOF.98159fba5f682ded public -- MeasurableDataQuality
 open import SysFEAT.SOF.d6cd2cea5ab98e5f public -- InformationEntity
 
 DataQualityPolicy : AssetPropertyType
-DataQualityPolicy = Directive
+DataQualityPolicy = AssetProperty
 
 
 --  DataQualityPolicy is subTypeOf Policy

@@ -23,7 +23,7 @@ open import SysFEAT.EA.070b0d5564011dbb public -- NetworkingSystem
 open import SysFEAT.EA.f4be0fba5ee1d935 public -- NetworkDevice
 
 ComputerNetwork : BoundedIndividualMetaClass
-ComputerNetwork = AssetType
+ComputerNetwork = ClassOfBoundedIndividual
 
 
 --  ComputerNetwork is subTypeOf ITInfrastructureSystem

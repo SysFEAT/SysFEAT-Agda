@@ -27,18 +27,18 @@ open import SysFEAT.SOF.299e882b68488d2c public -- OperationalTransformation
 open import SysFEAT.EA.dd26f21668a0b0fd public -- SkillMap
 open import SysFEAT.EA.9e38361d6192f8da public -- InfrastructureLandscape
 open import SysFEAT.EA.29df3f4060084c07 public -- ManagementSystem
-open import SysFEAT.EA.f4be4bb95ee18b51 public -- PhysicalDataMap
-open import SysFEAT.EA.d6cd260b5ab9886c public -- ApplicationSystemEnvironment
+open import SysFEAT.S-SOF.f4be4bb95ee18b51 public -- PhysicalDataMap
+open import SysFEAT.S-SOF.d6cd260b5ab9886c public -- ApplicationSystemEnvironment
 open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
 open import SysFEAT.EA.e78cee446618815a public -- LegalEntity
-open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.R-SOF.fe1c250d678803b6 public -- IndividualResourceBehavior
 
-Enterprise : ClassOfMixedOrderEntity
-Enterprise = MixedOrderEntity
+Enterprise : ClassOfBoundedIndividual
+Enterprise = BoundedIndividual
 
 
 --  Enterprise withAspect ArchitectureContainer
-st-b181b82a54891668-0eb95f1b6855bf64 : Enterprise ⊏ₐₑ (ArchitectureContainer lzero)
+st-b181b82a54891668-0eb95f1b6855bf64 : Enterprise ⊏ₐₑ ArchitectureContainer lzero
 st-b181b82a54891668-0eb95f1b6855bf64 = polySubTypeOf-identity
 
 --  Enterprise is subTypeOf EnterpriseInitiative
@@ -57,7 +57,7 @@ st-b181b82a54891668-299e882b68488d2c = polySubTypeOf-identity
 Family of Skill of an Enterprise.
 -}
 enterpriseSkillMap :  Linkage Enterprise SkillMap
-enterpriseSkillMap = make_Relation "Enterprise Skill Map" "Enterprise Skill Map"
+enterpriseSkillMap = make_instanceOf "Enterprise Skill Map" "Enterprise Skill Map"
 
 
 -- -------------------------------------------------------------------------------------------- 
@@ -139,11 +139,11 @@ LegalStructure = MixedOrderEntity
 
 
 --  LegalStructure withAspect BoundedMember
-st-a7ac82b45ff545ba-0eb999956855e070 : LegalStructure ⊏ₐₑ (BoundedMember lzero)
+st-a7ac82b45ff545ba-0eb999956855e070 : LegalStructure ⊏ₐₑ BoundedMember lzero
 st-a7ac82b45ff545ba-0eb999956855e070 = polySubTypeOf-identity
 
 --  LegalStructure withAspect SteeringAuthority
-st-a7ac82b45ff545ba-b2f2d64d5f47e364 : LegalStructure ⊏ₐₑ (SteeringAuthority lzero)
+st-a7ac82b45ff545ba-b2f2d64d5f47e364 : LegalStructure ⊏ₐₑ SteeringAuthority (lsuc(lsuc( lzero)))
 st-a7ac82b45ff545ba-b2f2d64d5f47e364 = polySubTypeOf-identity
 
 -- Membership relation

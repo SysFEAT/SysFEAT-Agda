@@ -16,7 +16,6 @@ module SysFEAT.EA.762579ee5f6b8724 where -- ========== InventoryPeriod
 
 open import Agda.Primitive
 
-InventoryPeriod : ∀ (u : Level) → ClassOfMixedOrderEntity u
-InventoryPeriod u = MixedOrderEntity u
+
 
 

@@ -16,7 +16,6 @@ module SysFEAT.EA.affecc0a5f607b6c where -- ========== NumberOfNulls
 
 open import Agda.Primitive
 
-NumberOfNulls : PropertyType
-NumberOfNulls = Property
+
 
 

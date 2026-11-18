@@ -39,8 +39,7 @@ st-21ed240a689c08df-515c6a856893324e = polySubTypeOf-identity
 The set of Business Capabilitys that expresses the functional value of a Value Proposition.
 -}
 -- Aggregate Member : Functional Value
-FunctionalValue : ClassOfClassOfIndividual
-FunctionalValue = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -66,8 +65,7 @@ functionalValue = membershipOfFunctionalValue  ∘  aggregationOfBusinessCapabil
 The set of Condition Propertys that expresses the non-functional characteristics of a Value Proposition.
 -}
 -- Aggregate Member : Non Functional Value
-NonFunctionalValue : ClassOfClassOfIndividual
-NonFunctionalValue = ClassOfIndividual
+
 
 
 -- Membership relation

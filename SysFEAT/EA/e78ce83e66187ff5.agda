@@ -22,8 +22,8 @@ open import Agda.Primitive
 open import SysFEAT.EA.910196ca550a2ec2 public -- Organization
 open import SysFEAT.EA.7c408aa155270eea public -- DepartmentType
 
-Department : AgentType
-Department = IndividualAgent
+Department : DepartmentType
+Department = Organization
 
 
 --  Department is subTypeOf Organization

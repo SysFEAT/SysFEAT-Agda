@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/61e3b04c679f13de.htm
 module SysFEAT.EA.61e3b04c679f13de where -- ========== MicroResourceOperatingAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.f8e61da0621db6fa public -- ResourceOperatingAssetType
+open import SysFEAT.R-SOF.f8e61da0621db6fa public -- ResourceOperatingAssetType
 
 MicroResourceOperatingAsset : BoundedIndividualMetaClass
-MicroResourceOperatingAsset = AssetType
+MicroResourceOperatingAsset = ClassOfBoundedIndividual
 
 
 --  MicroResourceOperatingAsset is subTypeOf ResourceOperatingAssetType

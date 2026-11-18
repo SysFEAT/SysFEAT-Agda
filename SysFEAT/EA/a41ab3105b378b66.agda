@@ -18,11 +18,11 @@ External references:
 module SysFEAT.EA.a41ab3105b378b66 where -- ========== ITInfrastructureSystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.26b8384f5eeae33c public -- NetworkingSystem
-open import SysFEAT.EA.02f51209641c7ea4 public -- ComputingDevice
+open import SysFEAT.H-SOF.26b8384f5eeae33c public -- NetworkingSystem
+open import SysFEAT.H-SOF.02f51209641c7ea4 public -- ComputingDevice
 
 ITInfrastructureSystem : BoundedIndividualMetaClass
-ITInfrastructureSystem = AssetType
+ITInfrastructureSystem = ClassOfBoundedIndividual
 
 
 --  ITInfrastructureSystem is subTypeOf NetworkingSystem

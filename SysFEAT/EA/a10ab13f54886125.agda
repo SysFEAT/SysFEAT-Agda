@@ -37,4 +37,4 @@ subjectPartner :  Linkage BusinessDriver Supplier
 subjectPartner = make_Relation "Subject Partner" "Subject Partner"
 
 postulate -- subjectPartner is subTypeOf driverSubject
-  st-2cc9764f55263e70-4b945a6e68a47bdf  : subjectPartner  ⊏⋆ᵣ  driverSubject
+  st-2cc9764f55263e70-4b945a6e68a47bdf  : subjectPartner  ⊏⋆ᵣ  driverSubject {lsuc(lzero)}

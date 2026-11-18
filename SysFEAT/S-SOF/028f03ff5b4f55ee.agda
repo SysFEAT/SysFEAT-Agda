@@ -1,0 +1,63 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Physical Data Domain: 
+A Physical Data Domain is subset of the metadata of an enterprises data store.For instance, a  Sales  Physical Data Domain contains a  Client  Table and a  Order  Table.Each Physical Data Entity in a Physical Data Domain has CRUD characteristics. For instance, the  Client  Table in the  Sales  Physical Data Domain, has all CRUD characteristics.Physical Data Domains define functional data boundaries used both for Data Allocation to Business Systems (see Resource Agent Store) and data governance for data stewardship (see Data Catalog).
+
+Documentation : https://framework.sysfeat.com/pages/028f03ff5b4f55ee.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.S-SOF.028f03ff5b4f55ee where -- ========== PhysicalDataDomain
+
+open import Agda.Primitive
+open import SysFEAT.S-SOF.325c32165eb02a4a public -- DataDomain
+open import SysFEAT.S-SOF.8f1cad7d68ca9df0 public -- PhysicalDataBlock
+open import SysFEAT.S-SOF.7d37d08d5fd07aaa public -- PhysicalDataAsset
+
+PhysicalDataDomain : ClassOfMixedOrderEntity
+PhysicalDataDomain = MixedOrderEntity
+
+
+--  PhysicalDataDomain is subTypeOf DataDomain
+st-028f03ff5b4f55ee-325c32165eb02a4a : PhysicalDataDomain ⊏ₑ DataDomain
+st-028f03ff5b4f55ee-325c32165eb02a4a = polySubTypeOf-identity
+
+--  PhysicalDataDomain withAspect PhysicalDataBlock
+st-028f03ff5b4f55ee-8f1cad7d68ca9df0 : PhysicalDataDomain ⊏ₐₑ PhysicalDataBlock (lsuc( lzero))
+st-028f03ff5b4f55ee-8f1cad7d68ca9df0 = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- Physical Domain Object: -}
+-- Aggregate Member : Physical Domain Object
+
+
+
+--  PhysicalDomainObject is subTypeOf DomainDataObject
+st-e6f223f55f771b8d-6d2b7d9e5fbb65f3 : PhysicalDomainObject ⊏ₑ DomainDataObject
+st-e6f223f55f771b8d-6d2b7d9e5fbb65f3 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfPhysicalDomainObject :  Linkage PhysicalDataDomain PhysicalDomainObject
+membershipOfPhysicalDomainObject = make_upwardNestingRelation "physicalDomainObject membership" "nested physicalDomainObject"
+
+-- Aggregation relation
+aggregationOfPhysicalDataAssetPhysicalDomainObject :  Linkage PhysicalDomainObject PhysicalDataAsset
+aggregationOfPhysicalDataAssetPhysicalDomainObject = make_Relation "PhysicalDataAsset aggregation" "aggregated PhysicalDataAsset"
+
+{- physicalDomainObject : derived relation obtained by composing
+   membershipOfPhysicalDomainObject and aggregationOfPhysicalDataAssetPhysicalDomainObject
+   It directly links an Physical Data Domain to the final aggregated PhysicalDataAsset
+   hiding the reifying PhysicalDomainObject
+-}
+physicalDomainObject : Linkage PhysicalDataDomain PhysicalDataAsset
+physicalDomainObject = membershipOfPhysicalDomainObject  ∘  aggregationOfPhysicalDataAssetPhysicalDomainObject
+
+

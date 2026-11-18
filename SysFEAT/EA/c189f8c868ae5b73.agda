@@ -18,8 +18,6 @@ open import Agda.Primitive
 open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
 open import SysFEAT.C-SOF.dd268f2868a08150 public -- BusinessCapability
 
-BusinessCapabilityMap : ClassOfMixedOrderEntity
-BusinessCapabilityMap = MixedOrderEntity
 
 
 --  BusinessCapabilityMap is subTypeOf CapabilityMap

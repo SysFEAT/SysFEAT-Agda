@@ -25,18 +25,18 @@ External references:
 module SysFEAT.EA.57dfc52d550932ef where -- ========== BusinessProcess
 
 open import Agda.Primitive
-open import SysFEAT.EA.7c40c3c85527466b public -- BusinessResourceProcess
-open import SysFEAT.EA.9dcea4535ec76e6c public -- BusinessOutcomeEvent
+open import SysFEAT.R-SOF.7c40c3c85527466b public -- BusinessResourceProcess
+open import SysFEAT.R-SOF.9dcea4535ec76e6c public -- BusinessOutcomeEvent
 open import SysFEAT.EA.0185cc626221bb37 public -- BusinessEvent
 open import SysFEAT.EA.c189cf1f68ae421a public -- BusinessRule
-open import SysFEAT.EA.dd26aa0568a1f939 public -- Functionality
-open import SysFEAT.EA.325c32165eb02a4a public -- DataDomain
-open import SysFEAT.EA.bcebd8e9549144db public -- Application
+open import SysFEAT.R-SOF.dd26aa0568a1f939 public -- Functionality
+open import SysFEAT.S-SOF.325c32165eb02a4a public -- DataDomain
+open import SysFEAT.S-SOF.bcebd8e9549144db public -- Application
 open import SysFEAT.EA.076d15425a5e158c public -- OrgUnitType
 open import SysFEAT.EA.f160fb6267d72652 public -- MezzoBusinessSystem
 
 BusinessProcess : BoundedIndividualMetaClass
-BusinessProcess = AssetType
+BusinessProcess = ClassOfBoundedIndividual
 
 
 --  BusinessProcess is subTypeOf BusinessResourceProcess
@@ -153,8 +153,7 @@ businessRuleEnforcement = membershipOfBusinessRuleEnforcement  ∘  aggregationO
 Functionality required during the course of a Business Process.
 -}
 -- Aggregate Member : Required functionality
-Requiredfunctionality : ClassOfClassOfIndividual
-Requiredfunctionality = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -180,8 +179,6 @@ requiredfunctionality = membershipOfRequiredfunctionality  ∘  aggregationOfFun
 A Business Object Store is a source of information required during the course of a Business Process.
 -}
 -- Aggregate Member : Business Object Store
-BusinessObjectStore : ClassOfMixedOrderEntity
-BusinessObjectStore = MixedOrderEntity
 
 
 

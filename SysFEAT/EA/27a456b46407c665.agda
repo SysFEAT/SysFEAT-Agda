@@ -15,10 +15,10 @@ Documentation : https://framework.sysfeat.com/pages/27a456b46407c665.htm
 module SysFEAT.EA.27a456b46407c665 where -- ========== ConfiguredTechnologySystem
 
 open import Agda.Primitive
-open import SysFEAT.EA.0cbd1fa663fe18ac public -- TechnologySystem
+open import SysFEAT.R-SOF.0cbd1fa663fe18ac public -- TechnologySystem
 
 ConfiguredTechnologySystem : BoundedIndividualMetaClass
-ConfiguredTechnologySystem = AssetType
+ConfiguredTechnologySystem = ClassOfBoundedIndividual
 
 
 --  ConfiguredTechnologySystem is subTypeOf TechnologySystem

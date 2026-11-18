@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/258c28655fd35ea2.htm
 module SysFEAT.EA.258c28655fd35ea2 where -- ========== ProcessingSensitivity
 
 open import Agda.Primitive
-open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategoryFamily
+open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
-ProcessingSensitivity : ClassOfMixedOrderEntity
-ProcessingSensitivity = MixedOrderEntity
+ProcessingSensitivity : MetaClass
+ProcessingSensitivity = MetaClass
 
 
---  ProcessingSensitivity withAspect AssetCategoryFamily
-st-258c28655fd35ea2-f69620466a0f9c2f : ProcessingSensitivity ⊏ₐₑ (AssetCategoryFamily (lsuc(lzero)))
+--  ProcessingSensitivity withAspect AssetCategorizationSchema
+st-258c28655fd35ea2-f69620466a0f9c2f : ProcessingSensitivity ⊏ₐₑ AssetCategorizationSchema lzero
 st-258c28655fd35ea2-f69620466a0f9c2f = polySubTypeOf-identity
 
 

@@ -21,12 +21,11 @@ External references:
 module SysFEAT.EA.56ea5ff966047632 where -- ========== Product
 
 open import Agda.Primitive
-open import SysFEAT.EA.d9f4dcc5688d5969 public -- ResourceAsset
+open import SysFEAT.R-SOF.d9f4dcc5688d5969 public -- ResourceAsset
 open import SysFEAT.EA.21ed240a689c08df public -- ValueProposition
 open import SysFEAT.EA.d1600c7062e093eb public -- CapabilityConfiguration
 
-Product : ClassOfClassOfBoundedIndividual
-Product = ClassOfBoundedIndividual
+
 
 
 -- == Relations =======================
@@ -42,8 +41,7 @@ stateOfResourceAsset = make_classOfMeronymy "State of Resource Asset" "State of 
 A Product Characteristic is expressed by a Value Proposition which defines the Functional Value (Business Capability) of a Product and its Non Functional Value (Condition Property).
 -}
 -- Aggregate Member : Product Characteristic
-ProductCharacteristic : ClassOfClassOfIndividual
-ProductCharacteristic = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -69,8 +67,7 @@ productCharacteristic = membershipOfProductCharacteristic  ∘  aggregationOfVal
 Goods Offerings are Resource Functional Assets, productized as goods in the context of an enterprise offering (Products).
 -}
 -- Aggregate Member : Goods Offering
-GoodsOffering : ClassOfClassOfIndividual
-GoodsOffering = ClassOfIndividual
+
 
 
 -- Membership relation
@@ -96,8 +93,7 @@ goodsOffering = membershipOfGoodsOffering  ∘  aggregationOfResourceAssetGoodsO
 Service Offerings are exposed Business Service Interfaces, productized as services provisions the context of an enterprise offering (Products), 
 -}
 -- Aggregate Member : Service Offering
-ServiceOffering : ClassOfClassOfIndividual
-ServiceOffering = ClassOfIndividual
+
 
 
 -- Membership relation

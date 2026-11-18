@@ -13,14 +13,14 @@ Documentation : https://framework.sysfeat.com/pages/1ce330355c4878d7.htm
 {-# OPTIONS --cubical --guardedness #-}
 module SysFEAT.EA.sysfeat-domain-1ce330355c4878d7 where -- ========== IT Asset Management
 
-open import SysFEAT.EA.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
+open import SysFEAT.S-SOF.sysfeat-domain-d5e6d6b05c4648d8 public -- Application Functional Architecture
 open import SysFEAT.EA.sysfeat-domain-1ce356355c48c0e2 public -- People & Accountability
-open import SysFEAT.EA.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
+open import SysFEAT.S-SOF.sysfeat-domain-c2dbe1db5b026b30 public -- Software Technology ArcOps
 open import SysFEAT.SOF.sysfeat-domain-83bb9d706192357b public -- Appraisal Pattern
 open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
 open import SysFEAT.EA.sysfeat-domain-fe663f0d61817c3e public -- Asset Portfolio Pattern
-open import SysFEAT.EA.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
-open import SysFEAT.EA.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
+open import SysFEAT.R-SOF.sysfeat-domain-d160039d62e081a5 public -- EA Pattern - Technology Operating Pattern
+open import SysFEAT.R-SOF.sysfeat-domain-255cd30862aa0da8 public -- SOF - Business System Operating Pattern
 open import SysFEAT..sysfeat-domain-a44fde866749da49 public -- Business Asset Portfolio
 
 open import SysFEAT.EA.e57e0a415fb820e5 public -- IT Asset Assessment

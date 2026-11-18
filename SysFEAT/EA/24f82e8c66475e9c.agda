@@ -32,5 +32,5 @@ st-24f82e8c66475e9c-05201bc866475765 = polySubTypeOf-identity
 -- -------------------------------------------------------------------------------------------- 
 {- Functional Scope: -}
 functionalScope :  Linkage ApplicationManagementInitiative FunctionalityMap
-functionalScope = make_Relation "Functional Scope" "Functional Scope"
+functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
 

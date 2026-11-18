@@ -15,14 +15,14 @@ Documentation : https://framework.sysfeat.com/pages/fd1bf2a45fbc64fb.htm
 module SysFEAT.EA.fd1bf2a45fbc64fb where -- ========== LogicalDataAsset
 
 open import Agda.Primitive
-open import SysFEAT.EA.8f1c937168ca8195 public -- DataBlock
+open import SysFEAT.S-SOF.8f1c937168ca8195 public -- DataBlock
 
 LogicalDataAsset : ClassOfMixedOrderEntity
 LogicalDataAsset = MixedOrderEntity
 
 
 --  LogicalDataAsset withAspect DataBlock
-st-fd1bf2a45fbc64fb-8f1c937168ca8195 : LogicalDataAsset ⊏ₐₑ (DataBlock (lsuc(lzero)))
+st-fd1bf2a45fbc64fb-8f1c937168ca8195 : LogicalDataAsset ⊏ₐₑ DataBlock (lsuc( lzero))
 st-fd1bf2a45fbc64fb-8f1c937168ca8195 = polySubTypeOf-identity
 
 

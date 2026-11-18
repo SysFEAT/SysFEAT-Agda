@@ -16,7 +16,6 @@ module SysFEAT.EA.2cff2f755eda80c2 where -- ========== Recommendation
 
 open import Agda.Primitive
 
-Recommendation : ClassOfClassOfBoundedIndividual
-Recommendation = ClassOfBoundedIndividual
+
 
 

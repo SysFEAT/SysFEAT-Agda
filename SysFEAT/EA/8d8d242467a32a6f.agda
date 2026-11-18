@@ -17,8 +17,6 @@ module SysFEAT.EA.8d8d242467a32a6f where -- ========== Vendor
 open import Agda.Primitive
 open import SysFEAT.EA.e78cee446618815a public -- LegalEntity
 
-Vendor : StateClass
-Vendor = StateConcept
 
 
 

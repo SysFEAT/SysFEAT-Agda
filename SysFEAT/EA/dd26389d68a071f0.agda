@@ -18,10 +18,8 @@ module SysFEAT.EA.dd26389d68a071f0 where -- ========== FunctionalityMap
 
 open import Agda.Primitive
 open import SysFEAT..dd2638ba68a073a8 public -- BusinessResourceCapabilityMap
-open import SysFEAT.EA.dd26aa0568a1f939 public -- Functionality
+open import SysFEAT.R-SOF.dd26aa0568a1f939 public -- Functionality
 
-FunctionalityMap : ClassOfMixedOrderEntity
-FunctionalityMap = MixedOrderEntity
 
 
 --  FunctionalityMap is subTypeOf BusinessResourceCapabilityMap
