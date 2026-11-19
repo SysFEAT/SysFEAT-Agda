@@ -1,0 +1,25 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Operational Risk Assurance: 
+The Operational Risk Assurance domain is the discipline of mastering operational risks.
+
+Documentation : https://framework.sysfeat.com/pages/7a0ac65f5dde3e8a.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+module SysFEAT.SOPAS.sysfeat-domain-7a0ac65f5dde3e8a where -- ========== Operational Risk Assurance
+
+open import SysFEAT.SOF.sysfeat-domain-83bb9d706192357b public -- Appraisal Pattern
+open import SysFEAT.SOF.sysfeat-domain-ab6f7f85681a69f1 public -- Architecture Packages
+open import SysFEAT.SOPAS.sysfeat-domain-fe663dd261817752 public -- Operational Assurance
+open import SysFEAT.SOF.sysfeat-domain-8350a1e86759fc48 public -- Measurement
+open import SysFEAT.SOF.sysfeat-domain-c30bd1505a5d97f9 public -- Architecture Assets
+
+open import SysFEAT.SOPAS.762590ae5f6c7cc1 public -- Key Risk Indicator
+open import SysFEAT.SOPAS.0430341c6003d9c9 public -- Operational Incident
+open import SysFEAT.SOPAS.d059db765ef118fc public -- Operational Risk Assessment
+open import SysFEAT.SOPAS.7a0ac89b5dde4df4 public -- Operational Risk Management System
