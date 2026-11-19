@@ -1,0 +1,48 @@
+﻿{- ============================== 
+   Copyright (c) 2026 SysFEAT - Systemic Framework for Enterprise Architecture & Transformation
+   This work is released under the MIT License.
+   framework.sysfeat.com
+
+Data Inventory Snapshot: 
+A Data Inventory Snapshot the state a Deployed Data Store at a given period.This state comprises the status of all monitored NoSQL Datasets and of the value slot owned by these NoSQL Datasets.
+
+Documentation : https://framework.sysfeat.com/pages/affeb4425f6053d9.htm
+
+ - ============================== -}
+
+{-# OPTIONS --cubical --guardedness #-}
+
+module SysFEAT.SOPAS.affeb4425f6053d9 where -- ========== DataInventorySnapshot
+
+open import Agda.Primitive
+open import SysFEAT.R-SOF.3642454f6007e80e public -- DeployedBusinessSystem
+open import SysFEAT.SOF.0eb95dce6855be2e public -- ModelContainer
+open import SysFEAT.EA.affeb2255f6051e6 public -- DeployedDataStore
+open import SysFEAT.SOPAS.affeb4955f6054cd public -- DataSetSnapshot
+
+DataInventorySnapshot : BusinessAgentType
+DataInventorySnapshot = IndividualBusinessAgent
+
+
+--  DataInventorySnapshot is subTypeOf DeployedBusinessSystem
+st-affeb4425f6053d9-3642454f6007e80e : DataInventorySnapshot ⊏ₑ DeployedBusinessSystem
+st-affeb4425f6053d9-3642454f6007e80e = polySubTypeOf-identity
+
+--  DataInventorySnapshot withAspect ModelContainer
+st-affeb4425f6053d9-0eb95dce6855be2e : DataInventorySnapshot ⊏ₐₑ ModelContainer lzero
+st-affeb4425f6053d9-0eb95dce6855be2e = polySubTypeOf-identity
+
+
+-- == Relations =======================
+
+-- -------------------------------------------------------------------------------------------- 
+{- registered snapshot: -}
+registeredsnapshot :  Linkage DataInventorySnapshot DeployedDataStore
+registeredsnapshot = make_holonymyRelation "registered snapshot" "registered snapshot"
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Owned Data Set Snapshot: -}
+ownedDataSetSnapshot :  Linkage DataInventorySnapshot DataSetSnapshot
+ownedDataSetSnapshot = make_holonymyRelation "Owned Data Set Snapshot" "Owned Data Set Snapshot"
+
