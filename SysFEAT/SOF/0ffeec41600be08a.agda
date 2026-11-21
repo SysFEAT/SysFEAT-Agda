@@ -22,7 +22,7 @@ open import SysFEAT.UpperOntology.23d5aa4868513f43 public -- BlockCollection
 open import SysFEAT.SOF.01ce05f9685979d8 public -- InitiativeBlock
 open import SysFEAT.UpperOntology.28f07b2354be0d69 public -- BoundedIndividual
 open import SysFEAT.SOF.c7dad03f5ae92ae9 public -- ResponsibleHumanEntity
-open import SysFEAT.EA.fe1c250d678803b6 public -- IndividualResourceBehavior
+open import SysFEAT.R-SOF.fe1c250d678803b6 public -- IndividualResourceBehavior
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 Initiative : ClassOfBoundedIndividual
