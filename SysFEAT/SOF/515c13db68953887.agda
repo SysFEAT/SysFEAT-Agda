@@ -66,13 +66,13 @@ OutcomeProduction = FirstOrderClass
 
 
 
---  OutcomeProduction is subTypeOf FirstOrderClass
-st-01f11a37689b6677-c463c6106aa23c35 : OutcomeProduction ⊏ₑ FirstOrderClass
-st-01f11a37689b6677-c463c6106aa23c35 = polySubTypeOf-identity
-
 --  OutcomeProduction withAspect UnboundedMember
 st-01f11a37689b6677-8cfaf71a6852b042 : OutcomeProduction ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-01f11a37689b6677-8cfaf71a6852b042 = polySubTypeOf-identity
+
+--  OutcomeProduction is subTypeOf FirstOrderClass
+st-01f11a37689b6677-c463c6106aa23c35 : OutcomeProduction ⊏ₑ FirstOrderClass
+st-01f11a37689b6677-c463c6106aa23c35 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfOutcomeProduction :  Linkage Capability OutcomeProduction

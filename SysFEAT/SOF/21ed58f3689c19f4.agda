@@ -20,7 +20,7 @@ open import SysFEAT.UpperOntology.3e525f966ab05bd8 public -- ElementaryProperty
 open import SysFEAT.SOF.e53af85b66e37f78 public -- EnvironmentalPropertyType
 
 EnvironmentalProperty : EnvironmentalPropertyType
-EnvironmentalProperty = ElementaryProperty
+EnvironmentalProperty = ConditionProperty
 
 
 --  EnvironmentalProperty is subTypeOf ConditionProperty

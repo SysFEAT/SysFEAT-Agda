@@ -22,7 +22,7 @@ open import SysFEAT.SOF.9f61cf9166833fb7 public -- IndividualOperatingAsset
 open import SysFEAT.SOF.79368381561716a6 public -- AgentType
 
 IndividualAgent : AgentType
-IndividualAgent = IndividualAsset
+IndividualAgent = IndividualOperatingAsset
 
 
 --  IndividualAgent is subTypeOf IndividualOperatingAsset
@@ -40,7 +40,7 @@ An Agent Part is the Aggregate Holonymy of an Individual Agent in a parent Indiv
 -}
 -- Aggregate Member : Agent Part
 AgentPart : AgentPart
-AgentPart = AggregateHolonymy
+AgentPart = IndividualOperatingPart
 
 
 
