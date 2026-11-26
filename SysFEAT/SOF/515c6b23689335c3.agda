@@ -24,8 +24,8 @@ open import Agda.Primitive
 open import SysFEAT.SOF.9397c3d86877842f public -- PolicyAsset
 open import SysFEAT.SOF.515c6a856893324e public -- AssetProperty
 open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
-open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.SOF.7e3474f06af36c2f public -- PolicyCategoryType
+open import SysFEAT.SOF.83f88fd567406e53 public -- AssetPropertyType
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 
 Directive : AssetPropertyType
@@ -48,6 +48,14 @@ st-515c6b23689335c3-3e525e406ab05b0d = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
+{- Policy Categorization: -}
+policyCategorization : ∀ {u} →  Linkage Directive (PolicyCategoryType u)
+policyCategorization = make_subTypeOf "Policy Categorization" "Policy Categorization"
+
+postulate -- policyCategorization is subTypeOf conceptCategorization
+  st-7e3475256af36cd1-8d1fcd3c6ae82f99  : ∀ {u} → policyCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
+
+-- -------------------------------------------------------------------------------------------- 
 {- Specialized Directive: -}
 specializedDirective :  Linkage Directive Directive
 specializedDirective = make_subTypeOf "Specialized Directive" "Specialized Directive"
@@ -64,14 +72,6 @@ postulate -- realizedDirective is subTypeOf specializedProperty
   st-190c7a7f6896696e-1662112a68925f90  : realizedDirective  ⊏⋆ᵣ  specializedProperty
 
 -- -------------------------------------------------------------------------------------------- 
-{- Policy Categorization: -}
-policyCategorization : ∀ {u} →  Linkage Directive (PolicyCategoryType u)
-policyCategorization = make_subTypeOf "Policy Categorization" "Policy Categorization"
-
-postulate -- policyCategorization is subTypeOf conceptCategorization
-  st-7e3475256af36cd1-8d1fcd3c6ae82f99  : ∀ {u} → policyCategorization {u}  ⊏⋆ᵣ  conceptCategorization {lzero} {u}
-
--- -------------------------------------------------------------------------------------------- 
 {- Directive Subject: 
 Any Asset Type that is the subject of a Directive.
 -}
@@ -81,13 +81,13 @@ DirectiveSubject = FirstOrderClass
 
 
 
---  DirectiveSubject is subTypeOf FirstOrderClass
-st-190c75cc689666a9-c463c6106aa23c35 : DirectiveSubject ⊏ₑ FirstOrderClass
-st-190c75cc689666a9-c463c6106aa23c35 = polySubTypeOf-identity
-
 --  DirectiveSubject withAspect UnboundedMember
 st-190c75cc689666a9-8cfaf71a6852b042 : DirectiveSubject ⊏ₐₑ UnboundedMember (lsuc( lzero))
 st-190c75cc689666a9-8cfaf71a6852b042 = polySubTypeOf-identity
+
+--  DirectiveSubject is subTypeOf FirstOrderClass
+st-190c75cc689666a9-c463c6106aa23c35 : DirectiveSubject ⊏ₑ FirstOrderClass
+st-190c75cc689666a9-c463c6106aa23c35 = polySubTypeOf-identity
 
 -- Membership relation
 membershipOfDirectiveSubject :  Linkage Directive DirectiveSubject

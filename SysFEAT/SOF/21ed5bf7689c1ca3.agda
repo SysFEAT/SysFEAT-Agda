@@ -22,7 +22,7 @@ open import SysFEAT.UpperOntology.3e525e406ab05b0d public -- CompositeProperty
 open import SysFEAT.SOF.e53af87666e37fcd public -- SetOfEnvironmentalConditionType
 
 SetOfConditionProperties : SetOfEnvironmentalConditionType
-SetOfConditionProperties = CompositeProperty
+SetOfConditionProperties = ConditionProperty
 
 
 --  SetOfConditionProperties is subTypeOf ConditionProperty

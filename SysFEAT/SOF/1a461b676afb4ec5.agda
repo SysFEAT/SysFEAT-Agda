@@ -20,7 +20,7 @@ open import SysFEAT.UpperOntology.f882bd9d6afa3429 public -- ConceptCategory
 open import SysFEAT.SOF.4efc6b346ae48db7 public -- AssetCategoryType
 
 AssetCategory : ∀ (u : Level) → AssetCategoryType u
-AssetCategory u = ConceptCategory u
+AssetCategory u = ModelCategorizationBlock (lsuc  u)
 
 
 --  AssetCategory is subTypeOf ModelCategorizationBlock

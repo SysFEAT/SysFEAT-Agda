@@ -16,7 +16,7 @@ module SysFEAT.SOF.299e882b68488d2c where -- ========== OperationalTransformatio
 
 open import Agda.Primitive
 open import SysFEAT.SOF.d321c226601262ae public -- EnduringInitiative
-open import SysFEAT.SOF.01f12127689b6de2 public -- CapabilityMap
+open import SysFEAT.SOF.c721cde56afd55b8 public -- CapabilityMap
 open import SysFEAT.SOF.0eb95f356855bf94 public -- AssetBlock
 
 OperationalTransformation : WholeLifeClass
@@ -31,14 +31,10 @@ st-299e882b68488d2c-d321c226601262ae = polySubTypeOf-identity
 -- == Relations =======================
 
 -- -------------------------------------------------------------------------------------------- 
-{- Functional Scope: 
-The defining set of  Capabilitys establishing the functional characteriscs required for Assets subject to the Operational Transformation.
--}
-functionalScope :  Linkage OperationalTransformation CapabilityMap
-functionalScope = make_instanceOf "Functional Scope" "Functional Scope"
+{- Functional Scope: -}
+functionalScope : ∀ {u} →  Linkage OperationalTransformation (CapabilityMap u)
+functionalScope = make_Relation "Functional Scope" "Functional Scope"
 
-postulate -- functionalScope is subTypeOf propertyOfIndividual
-  st-01f1214c689b6e0f-19763dbb68926a48  : functionalScope  ⊏⋆ᵣ  propertyOfIndividual
 
 -- -------------------------------------------------------------------------------------------- 
 {- Subject Operating Asset: -}

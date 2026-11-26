@@ -70,7 +70,7 @@ An Active Participant is the Aggregate Holonymy of an Individual Agent that indi
 -}
 -- Aggregate Member : Active Participant
 ActiveParticipant : ActiveParticipant
-ActiveParticipant = AggregateHolonymy
+ActiveParticipant = IndividualParticipant
 
 
 

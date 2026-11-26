@@ -20,7 +20,7 @@ open import SysFEAT.UpperOntology.d85f0b3a6afb699b public -- CategorizationFamil
 open import SysFEAT.SOF.f69620466a0f9c2f public -- AssetCategorizationSchema
 
 AssetCategoryFamily : ∀ (u : Level) → AssetCategorizationSchema u
-AssetCategoryFamily u = CategorizationFamily u
+AssetCategoryFamily u = ModelCategorizationBlock (lsuc (lsuc  u))
 
 
 --  AssetCategoryFamily is subTypeOf ModelCategorizationBlock
