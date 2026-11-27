@@ -24,6 +24,7 @@ open import SysFEAT.UpperOntology.3aca564b6aa646ce public -- AbstractEntityMetaC
 ClassOfAbstractEntity : AbstractEntityMetaClass
 ClassOfAbstractEntity = FirstOrderClass
 
+
 --  ClassOfAbstractEntity withAspect ConceptClass
 st-3aca55ee6aa645c2-8d1fa46c6ae82899 : ClassOfAbstractEntity ⊏ₐₑ ConceptClass lzero
 st-3aca55ee6aa645c2-8d1fa46c6ae82899 = polySubTypeOf-identity

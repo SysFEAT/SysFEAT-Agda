@@ -23,21 +23,22 @@ External references:
 module SysFEAT.UpperOntology.28f07b2354be0d69 where -- ========== BoundedIndividual
 
 open import Agda.Primitive
-open import SysFEAT.UpperOntology.4df9512266826e23 public -- Individual
 open import SysFEAT.UpperOntology.8cfa941b6852781f public -- BoundedAggregate
+open import SysFEAT.UpperOntology.4df9512266826e23 public -- Individual
 open import SysFEAT.UpperOntology.3492c53e619642ed public -- ClassOfBoundedIndividual
 open import SysFEAT.UpperOntology.267b6a126675a0b9 public -- TemporalBounding
 
 BoundedIndividual : ClassOfBoundedIndividual
 BoundedIndividual = Individual
 
---  BoundedIndividual is subTypeOf Individual
-st-28f07b2354be0d69-4df9512266826e23 : BoundedIndividual ⊏ₑ Individual
-st-28f07b2354be0d69-4df9512266826e23 = polySubTypeOf-identity
 
 --  BoundedIndividual withAspect BoundedAggregate
 st-28f07b2354be0d69-8cfa941b6852781f : BoundedIndividual ⊏ₐₑ BoundedAggregate lzero
 st-28f07b2354be0d69-8cfa941b6852781f = polySubTypeOf-identity
+
+--  BoundedIndividual is subTypeOf Individual
+st-28f07b2354be0d69-4df9512266826e23 : BoundedIndividual ⊏ₑ Individual
+st-28f07b2354be0d69-4df9512266826e23 = polySubTypeOf-identity
 
 postulate -- BoundedIndividual is PowerInstanceOf Class of Bounded Individual
   pi-96a19b6566e85713 : BoundedIndividual ∷ₚₑ ClassOfBoundedIndividual
@@ -57,45 +58,13 @@ postulate -- referenceHolonymy is subTypeOf referenceRelation
   st-9653a95669701e02-23d5398f68511bc1  : referenceHolonymy  ⊏⋆ᵣ  referenceRelation {lzero} {lzero}
 
 -- -------------------------------------------------------------------------------------------- 
-{- Temporal Ordering: -}
--- Aggregate Member : Temporal Ordering
-TemporalOrdering : TemporalOrderingType
-TemporalOrdering = Individual
-
-
---  TemporalOrdering withAspect OrderingConnector
-st-255744cb6758a69e-478a4a4468565425 : TemporalOrdering ⊏ₐₑ OrderingConnector lzero
-st-255744cb6758a69e-478a4a4468565425 = polySubTypeOf-identity
-
---  TemporalOrdering is subTypeOf Individual
-st-255744cb6758a69e-4df9512266826e23 : TemporalOrdering ⊏ₑ Individual
-st-255744cb6758a69e-4df9512266826e23 = polySubTypeOf-identity
-
--- Membership relation
-membershipOfTemporalOrdering :  Linkage BoundedIndividual TemporalOrdering
-membershipOfTemporalOrdering = make_upwardNestingRelation "temporalOrdering membership" "nested temporalOrdering"
-
--- Aggregation relation
-aggregationOfTemporalBoundingTemporalOrdering :  Linkage TemporalOrdering TemporalBounding
-aggregationOfTemporalBoundingTemporalOrdering = make_Relation "TemporalBounding aggregation" "aggregated TemporalBounding"
-
-{- temporalOrdering : derived relation obtained by composing
-   membershipOfTemporalOrdering and aggregationOfTemporalBoundingTemporalOrdering
-   It directly links an Bounded Individual to the final aggregated TemporalBounding
-   hiding the reifying TemporalOrdering
--}
-temporalOrdering : Linkage BoundedIndividual TemporalBounding
-temporalOrdering = membershipOfTemporalOrdering  ∘  aggregationOfTemporalBoundingTemporalOrdering
-
-
-
--- -------------------------------------------------------------------------------------------- 
 {- Aggregate Holonymy: 
 Aggregate Holonymy is a reified Holonymy Relation where the composed Bounded Individual becomes a Bounded Member of the whole Bounded Individual.
 -}
 -- Aggregate Member : Aggregate Holonymy
 AggregateHolonymy : AggregateHolonymyType
 AggregateHolonymy = Individual
+
 
 
 --  AggregateHolonymy withAspect BoundedMember
@@ -124,4 +93,38 @@ aggregateHolonymy = membershipOfAggregateHolonymy  ∘  aggregationOfBoundedIndi
 
 postulate -- aggregateHolonymy is subTypeOf holonymyRelation
   st-c2f2c9a166ea50e2-f626f77b6ad475d4  : aggregateHolonymy  ⊏⋆ᵣ  holonymyRelation
+
+
+-- -------------------------------------------------------------------------------------------- 
+{- Temporal Ordering: -}
+-- Aggregate Member : Temporal Ordering
+TemporalOrdering : TemporalOrderingType
+TemporalOrdering = Individual
+
+
+
+--  TemporalOrdering withAspect OrderingConnector
+st-255744cb6758a69e-478a4a4468565425 : TemporalOrdering ⊏ₐₑ OrderingConnector lzero
+st-255744cb6758a69e-478a4a4468565425 = polySubTypeOf-identity
+
+--  TemporalOrdering is subTypeOf Individual
+st-255744cb6758a69e-4df9512266826e23 : TemporalOrdering ⊏ₑ Individual
+st-255744cb6758a69e-4df9512266826e23 = polySubTypeOf-identity
+
+-- Membership relation
+membershipOfTemporalOrdering :  Linkage BoundedIndividual TemporalOrdering
+membershipOfTemporalOrdering = make_upwardNestingRelation "temporalOrdering membership" "nested temporalOrdering"
+
+-- Aggregation relation
+aggregationOfTemporalBoundingTemporalOrdering :  Linkage TemporalOrdering TemporalBounding
+aggregationOfTemporalBoundingTemporalOrdering = make_Relation "TemporalBounding aggregation" "aggregated TemporalBounding"
+
+{- temporalOrdering : derived relation obtained by composing
+   membershipOfTemporalOrdering and aggregationOfTemporalBoundingTemporalOrdering
+   It directly links an Bounded Individual to the final aggregated TemporalBounding
+   hiding the reifying TemporalOrdering
+-}
+temporalOrdering : Linkage BoundedIndividual TemporalBounding
+temporalOrdering = membershipOfTemporalOrdering  ∘  aggregationOfTemporalBoundingTemporalOrdering
+
 
