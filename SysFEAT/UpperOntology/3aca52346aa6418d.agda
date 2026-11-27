@@ -23,6 +23,7 @@ open import SysFEAT.UpperOntology.3aca55ee6aa645c2 public -- ClassOfAbstractEnti
 AbstractEntity : ClassOfAbstractEntity
 AbstractEntity = FirstOrderEntity
 
+
 --  AbstractEntity is subTypeOf FirstOrderEntity
 st-3aca52346aa6418d-5425a2df6aa225cf : AbstractEntity ⊏ₑ FirstOrderEntity
 st-3aca52346aa6418d-5425a2df6aa225cf = polySubTypeOf-identity

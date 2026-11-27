@@ -28,6 +28,7 @@ open import SysFEAT.UpperOntology.87d3062666e33965 public -- PropertyType
 Property : PropertyType
 Property = ClassOfAbstractEntity
 
+
 --  Property withAspect BuildingBlock
 st-746ac18368905aa2-23d5a9ea68513ced : Property ⊏ₐₑ BuildingBlock (lsuc( lzero))
 st-746ac18368905aa2-23d5a9ea68513ced = polySubTypeOf-identity

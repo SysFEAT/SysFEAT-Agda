@@ -25,6 +25,7 @@ open import SysFEAT.UpperOntology.746ac18368905aa2 public -- Property
 Individual : ClassOfIndividual
 Individual = FirstOrderEntity
 
+
 --  Individual is subTypeOf FirstOrderEntity
 st-4df9512266826e23-5425a2df6aa225cf : Individual ⊏ₑ FirstOrderEntity
 st-4df9512266826e23-5425a2df6aa225cf = polySubTypeOf-identity
